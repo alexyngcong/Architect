@@ -1,0 +1,292 @@
+{
+  "project": {
+    "title": "Yngcong Residence",
+    "subtitle": "3-Storey Industrial-Modern Home with Entertainment Penthouse",
+    "owner": "Anna Lynn V. Yngcong",
+    "location": "Tangub Street, Brgy. Tiza / Brgy. Tangub, Roxas City, Capiz, Western Visayas",
+    "title_no": "TCT No. 097-2022002243",
+    "lot": "Lot 1-A, Block 8 (subdivision survey)",
+    "lot_area_sqm": 402,
+    "lot_dims": "≈ 23.0 m × 17.5 m corner lot (two 12 m road frontages: Road Lot 8 SE, Road Lot 10 NE)",
+    "style": "Industrial Modern",
+    "total_gfa_sqm": 379,
+    "height_m": 12.3,
+    "storeys": 3
+  },
+  "materials": [
+    "Board-formed / exposed concrete",
+    "Black structural steel frame",
+    "Floor-to-ceiling glazing with black-steel mullions",
+    "Microcement / polished-concrete floors",
+    "Steel-and-glass railings",
+    "Flat roofs + roof terrace",
+    "Deep concrete eaves / brise-soleil for sun + rain",
+    "Corten & black-metal accents"
+  ],
+  "climate": "Hot, humid, typhoon-prone coastal site (Roxas City). High glass is paired with deep concrete eaves, cross-ventilation and shaded terraces.",
+  "features": [
+    "2-car covered garage",
+    "Helper's quarters + service area",
+    "Outdoor event pavilion & outdoor kitchen",
+    "Elevator-shaft provision",
+    "Event garden lawn (~120 m²)"
+  ],
+  "floors": [
+    {
+      "key": "ground",
+      "name": "Ground Floor",
+      "level": 0,
+      "height_m": 3.6,
+      "gfa_sqm": 142,
+      "blurb": "Arrival, living and service. Double-height foyer void, full-height glass living opening to the lanai and event garden.",
+      "rooms": [
+        {
+          "name": "Covered Garage",
+          "sub": "2 cars",
+          "area_sqm": 37.2,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Foyer",
+          "sub": "double-height void",
+          "area_sqm": 7,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Powder",
+          "sub": null,
+          "area_sqm": 3.4,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Stair & Elevator",
+          "sub": null,
+          "area_sqm": 6.4,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Living",
+          "sub": null,
+          "area_sqm": 27,
+          "open": false,
+          "glass": true
+        },
+        {
+          "name": "Kitchen",
+          "sub": "clean",
+          "area_sqm": 12.6,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Dining",
+          "sub": null,
+          "area_sqm": 20.3,
+          "open": false,
+          "glass": true
+        },
+        {
+          "name": "Helper's Room",
+          "sub": null,
+          "area_sqm": 7.5,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Service T&B",
+          "sub": null,
+          "area_sqm": 6,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Dirty Kitchen / Laundry",
+          "sub": null,
+          "area_sqm": 14.4,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Lanai",
+          "sub": "covered, open to garden",
+          "area_sqm": 11.7,
+          "open": true,
+          "glass": false
+        }
+      ]
+    },
+    {
+      "key": "second",
+      "name": "Second Floor",
+      "level": 1,
+      "height_m": 3.2,
+      "gfa_sqm": 142,
+      "blurb": "Sleeping level. Master suite with ensuite, walk-in and private balcony, plus three bedrooms and a family lounge.",
+      "rooms": [
+        {
+          "name": "Bedroom 2",
+          "sub": null,
+          "area_sqm": 15.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Bedroom 3",
+          "sub": null,
+          "area_sqm": 15.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Shared Bath",
+          "sub": null,
+          "area_sqm": 8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Linen",
+          "sub": null,
+          "area_sqm": 7.7,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Family Lounge",
+          "sub": null,
+          "area_sqm": 18,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Stair, Elevator & Hall",
+          "sub": null,
+          "area_sqm": 13.5,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Bedroom 4",
+          "sub": null,
+          "area_sqm": 15.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Master Bedroom",
+          "sub": null,
+          "area_sqm": 29.3,
+          "open": false,
+          "glass": true
+        },
+        {
+          "name": "Master Ensuite",
+          "sub": null,
+          "area_sqm": 8.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Walk-in Closet",
+          "sub": null,
+          "area_sqm": 9.2,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Master Balcony",
+          "sub": null,
+          "area_sqm": 9.9,
+          "open": true,
+          "glass": false
+        }
+      ]
+    },
+    {
+      "key": "third",
+      "name": "Third Floor — Entertainment",
+      "level": 2,
+      "height_m": 5.5,
+      "gfa_sqm": 95,
+      "blurb": "The entertainment level: a double-height hall (5.5 m) wrapped in floor-to-ceiling glass with black-steel mullions, a bar, and a large roof-terrace balcony over the garden.",
+      "rooms": [
+        {
+          "name": "Stair & Elevator",
+          "sub": null,
+          "area_sqm": 4.6,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Powder",
+          "sub": null,
+          "area_sqm": 2.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Media / Lounge",
+          "sub": null,
+          "area_sqm": 3.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Bar / Pantry",
+          "sub": null,
+          "area_sqm": 3.8,
+          "open": false,
+          "glass": false
+        },
+        {
+          "name": "Entertainment Hall",
+          "sub": "double-height, high glass",
+          "area_sqm": 52.5,
+          "open": false,
+          "glass": true
+        },
+        {
+          "name": "Roof Terrace / Balcony",
+          "sub": null,
+          "area_sqm": 40.5,
+          "open": true,
+          "glass": false
+        },
+        {
+          "name": "Roof Terrace",
+          "sub": null,
+          "area_sqm": 33.8,
+          "open": true,
+          "glass": false
+        }
+      ]
+    }
+  ],
+  "site": {
+    "lot_w": 23,
+    "lot_d": 17.5,
+    "house": {
+      "x": 2,
+      "y": 7,
+      "w": 13.5,
+      "d": 10.5
+    },
+    "setbacks_m": {
+      "S": 5,
+      "E": 3,
+      "W": 2,
+      "N": 2
+    },
+    "streets": {
+      "S": "ROAD LOT 8  ·  SE  ·  12 m WIDE",
+      "E": "ROAD LOT 10  ·  NE  ·  12 m WIDE",
+      "W": "LOT 15, BLK 8 (adjacent)",
+      "N": "rear boundary (NW)"
+    },
+    "open_area_sqm": 261
+  }
+}

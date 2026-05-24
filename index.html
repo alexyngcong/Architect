@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yngcong Residence — 3-Storey Industrial-Modern Home</title>
+<link rel="stylesheet" href="css/styles.css" />
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three.module.js",
+  "three/addons/controls/OrbitControls.js": "./vendor/OrbitControls.js"
+} }
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">YNGCONG&nbsp;RESIDENCE<span>Roxas City · Capiz</span></div>
+  <nav id="nav">
+    <a href="#hero" class="active">Overview</a>
+    <a href="#model">3D Model</a>
+    <a href="#site">Site</a>
+    <a href="#plans">Floor Plans</a>
+    <a href="#drawings">Elevation</a>
+    <a href="#spec">Spec</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <img class="hero-img" src="svg/axon.svg" alt="Axonometric of the residence" />
+  <div class="hero-copy">
+    <p class="eyebrow">3-storey · industrial modern · entertainment penthouse</p>
+    <h1>A glass-crowned home<br />built for gathering.</h1>
+    <p class="lede" id="hero-lede">—</p>
+    <div class="stats" id="hero-stats"></div>
+  </div>
+</section>
+
+<!-- 3D MODEL -->
+<section id="model" class="block">
+  <div class="block-head">
+    <h2>Interactive 3D Model</h2>
+    <p>Drag to orbit · scroll to zoom · right-drag to pan.</p>
+  </div>
+  <div class="model-wrap">
+    <canvas id="model-canvas"></canvas>
+    <div class="model-fallback" id="model-fallback">
+      <p>WebGL isn’t available here.<br />Open this page in a desktop browser to explore the live 3D model.</p>
+      <img src="svg/axon.svg" alt="Axonometric fallback" />
+    </div>
+    <div class="view-btns">
+      <button data-view="aerial" class="active">Aerial</button>
+      <button data-view="garden">Garden</button>
+      <button data-view="street">Street</button>
+      <button data-view="rear">Rear</button>
+    </div>
+  </div>
+</section>
+
+<!-- SITE -->
+<section id="site" class="block">
+  <div class="block-head"><h2>Site Development Plan</h2><p>402 m² corner lot · house pushed to the rear-left to open an L-shaped event garden along the two streets.</p></div>
+  <div class="drawing-card"><img src="svg/site-plan.svg" alt="Site plan" /></div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section id="plans" class="block">
+  <div class="block-head"><h2>Floor Plans</h2><p>To scale (1:100). Hover a room for its area and notes.</p></div>
+  <div class="tabs" id="floor-tabs">
+    <button data-floor="ground" class="active">Ground</button>
+    <button data-floor="second">Second</button>
+    <button data-floor="third">Third · Entertainment</button>
+  </div>
+  <div class="plan-layout">
+    <div class="drawing-card"><img id="plan-img" src="svg/ground.svg" alt="Floor plan" /></div>
+    <aside class="room-list">
+      <h3 id="floor-title">—</h3>
+      <p class="floor-blurb" id="floor-blurb">—</p>
+      <ul id="room-ul"></ul>
+    </aside>
+  </div>
+</section>
+
+<!-- DRAWINGS -->
+<section id="drawings" class="block">
+  <div class="block-head"><h2>Elevation &amp; Section</h2><p>The high-glass façade and the double-height entertainment hall.</p></div>
+  <div class="grid-2">
+    <div class="drawing-card"><img src="svg/elevations.svg" alt="Front elevation" /></div>
+    <div class="drawing-card"><img src="svg/section.svg" alt="Section" /></div>
+  </div>
+</section>
+
+<!-- SPEC -->
+<section id="spec" class="block">
+  <div class="block-head"><h2>Design Specification</h2></div>
+  <div class="spec-grid">
+    <div class="spec-card"><h3>Project</h3><dl id="spec-project"></dl></div>
+    <div class="spec-card"><h3>Materials</h3><ul id="spec-materials"></ul></div>
+    <div class="spec-card"><h3>Features</h3><ul id="spec-features"></ul></div>
+    <div class="spec-card wide"><h3>Climate response</h3><p id="spec-climate">—</p></div>
+    <div class="spec-card wide"><h3>Floor schedule</h3><div id="spec-floors"></div></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <p>Schematic design · generated for <strong>Anna Lynn V. Yngcong</strong> · TCT No. 097-2022002243 · Brgy. Tangub, Roxas City, Capiz.</p>
+  <p class="dim">Dimensions and areas are indicative schematic figures, not construction documents. Verify against a licensed architect/engineer and the National Building Code before building.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
