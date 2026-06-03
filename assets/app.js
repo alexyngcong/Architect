@@ -82,7 +82,10 @@
       <div class="hero">
         <div class="ring"></div><div class="ring two"></div>
         <h1>Welcome to Office Pro Academy 👋</h1>
-        <p>Your complete, step-by-step path from total beginner to a confident, skilled office assistant & coordinator. Learn at your own pace — your progress saves automatically.</p>
+        <p>Your complete, step-by-step path from total beginner to a confident, skilled office assistant, coordinator, administrative staffer &amp; executive assistant. Learn at your own pace — your progress saves automatically.</p>
+        <div class="btn-row" style="margin-top:18px">
+          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="OPA.go('plan')">🚀 Start the Fast-Track Plan</button>
+        </div>
         <div class="progress-summary">
           <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">Lessons done</div></div>
           <div class="stat"><div class="num">${pct}%</div><div class="lbl">Course complete</div></div>
@@ -138,7 +141,27 @@
         <span>${mp.done} of ${mp.total} lessons complete</span><span>${mp.pct}%</span>
       </div>
       ${rows}
+      ${examCta(m, mp)}
     `;
+  }
+
+  /* The "Final Exam" call-to-action shown at the bottom of each module. */
+  function examCta(m, mp) {
+    progress.exam = progress.exam || {};
+    const score = progress.exam[m.id] || 0;
+    const passed = score >= 80;
+    const ready = mp.pct === 100;
+    return `
+      <div class="reader" style="margin-top:18px;padding:22px;text-align:center;${passed ? "border:1px solid #16a34a" : ""}">
+        <div style="font-size:30px">${passed ? "🏆" : "🎓"}</div>
+        <h3 style="margin:6px 0">${escapeHtml(m.title)} — Final Exam</h3>
+        <p style="color:var(--ink-soft);margin-bottom:14px">
+          ${passed ? `You passed with <b>${score}%</b>. Great work! You can retake it any time.`
+                   : (ready ? "You've finished every lesson — time to prove it! Score 80% to earn this module's badge."
+                            : `Finish the lessons first, then take the exam. ${score ? "Best so far: " + score + "%." : ""}`)}
+        </p>
+        <button class="btn" onclick="OPA.go('exam/${m.id}')">${passed ? "Retake exam" : "Take the Final Exam ›"}</button>
+      </div>`;
   }
 
   function renderLesson(moduleId, lessonId) {
@@ -245,6 +268,173 @@
     window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; draw(); };
 
     draw();
+  }
+
+  /* ---------- Fast-Track Plan screen ---------- */
+  function renderPlan() {
+    const ft = DATA.fastTrack;
+    const lessonById = {};
+    allLessons().forEach(l => { lessonById[l.id] = l; });
+
+    const dayCards = ft.days.map(d => {
+      const items = d.lessons.map(id => {
+        const l = lessonById[id];
+        if (!l) return "";
+        const done = !!progress.done[id];
+        return `<button class="lesson-row ${done ? "done" : ""}" style="margin-bottom:8px"
+                  onclick="OPA.go('lesson/${l.moduleId}/${l.id}')">
+                  <div class="check">✓</div>
+                  <div class="info"><h4>${l.title}</h4>
+                    <div class="sub"><span class="level-tag level-${l.level}">${l.level}</span><span>⏱ ${l.minutes} min</span></div>
+                  </div><div class="arrow">›</div>
+                </button>`;
+      }).join("");
+      const dayDone = d.lessons.every(id => progress.done[id]);
+      return `
+        <div class="reader" style="padding:18px;margin-bottom:14px;${dayDone ? "border:1px solid #16a34a" : ""}">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="background:${dayDone ? "#16a34a" : "var(--brand)"};color:#fff;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-weight:800">${dayDone ? "✓" : "D" + d.day}</div>
+            <div><div style="font-weight:800;font-size:16px">Day ${d.day}</div>
+            <div style="color:var(--ink-soft);font-size:13px">${d.focus}</div></div>
+          </div>
+          ${items}
+        </div>`;
+    }).join("");
+
+    app.innerHTML = `
+      <a class="back-link" onclick="OPA.go('')">‹ Back to dashboard</a>
+      <div class="module-head">
+        <div class="icon" style="background:#4f46e522;color:#4f46e5">🚀</div>
+        <div><h1>${ft.title}</h1>
+        <div style="color:var(--ink-soft)">${ft.intro}</div></div>
+      </div>
+      <div style="margin:18px 0">${dayCards}</div>
+    `;
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Module Final Exam ---------- */
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  }
+
+  function renderExam(moduleId) {
+    const m = DATA.modules.find(x => x.id === moduleId);
+    if (!m) return renderNotFound();
+    // Pool all quiz questions across the module's lessons.
+    const pool = m.lessons.flatMap(l => (l.quiz || []).map(q => ({ ...q })));
+    const questions = shuffle(pool).slice(0, Math.min(10, pool.length)); // up to 10 Qs
+    const state = { answers: {}, submitted: false };
+
+    function draw() {
+      const blocks = questions.map((item, qi) => {
+        const chosen = state.answers[qi];
+        const choices = item.choices.map((c, ci) => {
+          let cls = "choice";
+          if (state.submitted) {
+            if (ci === item.answer) cls += " correct";
+            else if (chosen === ci) cls += " wrong";
+          } else if (chosen === ci) cls += " selected";
+          const mark = state.submitted ? (ci === item.answer ? '<span class="mark">✓</span>' : (chosen === ci ? '<span class="mark">✗</span>' : "")) : "";
+          return `<button class="${cls}" ${state.submitted ? "disabled" : ""} onclick="OPA._examPick(${qi},${ci})">${escapeHtml(c)}${mark}</button>`;
+        }).join("");
+        return `<div class="q-block"><div class="q-text">${qi + 1}. ${escapeHtml(item.q)}</div>${choices}</div>`;
+      }).join("");
+
+      let banner = "";
+      let footer = `<div class="btn-row"><button class="btn" onclick="OPA._examSubmit()" ${Object.keys(state.answers).length < questions.length ? "disabled" : ""}>Submit exam</button>
+                    <button class="btn ghost" onclick="OPA.go('module/${m.id}')">Back to module</button></div>`;
+
+      if (state.submitted) {
+        const correct = questions.filter((it, qi) => state.answers[qi] === it.answer).length;
+        const pct = Math.round((correct / questions.length) * 100);
+        const pass = pct >= 80;
+        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🏆" : "💪"} Exam score: ${correct}/${questions.length} (${pct}%). ${pass ? "PASSED — module mastered!" : "You need 80% to pass. Review the lessons and try again."}</div>`;
+        footer = `<div class="btn-row">
+          <button class="btn ghost" onclick="OPA._examRetry()">Retake exam</button>
+          ${pass ? `<button class="btn" onclick="OPA.go('certificate')">View your progress / certificate ›</button>` : `<button class="btn" onclick="OPA.go('module/${m.id}')">Back to lessons</button>`}
+        </div>`;
+      }
+
+      app.innerHTML = `
+        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ Back to ${escapeHtml(m.title)}</a>
+        <div class="quiz">
+          <h3>🎓 ${escapeHtml(m.title)} — Final Exam</h3>
+          <div class="qsub">${questions.length} questions drawn from the whole module. You need <b>80%</b> to pass and earn this module's badge.</div>
+          ${banner}${blocks}${footer}
+        </div>`;
+    }
+
+    window.OPA._examPick = (qi, ci) => { if (!state.submitted) { state.answers[qi] = ci; draw(); } };
+    window.OPA._examSubmit = () => {
+      state.submitted = true;
+      const correct = questions.filter((it, qi) => state.answers[qi] === it.answer).length;
+      const pct = Math.round((correct / questions.length) * 100);
+      progress.exam = progress.exam || {};
+      if (pct > (progress.exam[m.id] || 0)) { progress.exam[m.id] = pct; saveProgress(progress); }
+      if (pct >= 80) { celebrate(); toast(m.title + " exam passed! 🏆"); }
+      draw();
+    };
+    window.OPA._examRetry = () => { go("exam/" + m.id); }; // regenerate a fresh question set
+
+    draw();
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Certificate ---------- */
+  function renderCertificate() {
+    progress.exam = progress.exam || {};
+    const done = doneCount(), total = totalLessons();
+    const examsPassed = DATA.modules.filter(m => (progress.exam[m.id] || 0) >= 80).length;
+    const allDone = done === total && examsPassed === DATA.modules.length;
+    const name = progress.name || "";
+
+    const moduleStatus = DATA.modules.map(m => {
+      const mp = moduleProgress(m);
+      const ex = progress.exam[m.id] || 0;
+      const passed = ex >= 80;
+      return `<div class="short-card" style="margin-bottom:10px"><div class="row">
+        <span style="font-size:22px">${m.icon}</span>
+        <span style="flex:1"><b>${m.title}</b><br><span style="color:var(--ink-soft);font-size:13px">${mp.done}/${mp.total} lessons · Exam: ${ex ? ex + "%" : "not taken"}</span></span>
+        <span class="level-tag ${passed ? "level-Basic" : "level-Advanced"}">${passed ? "✓ Passed" : (mp.pct === 100 ? "Take exam" : "In progress")}</span>
+      </div></div>`;
+    }).join("");
+
+    app.innerHTML = `
+      <a class="back-link" onclick="OPA.go('')">‹ Back to dashboard</a>
+      <div class="module-head">
+        <div class="icon" style="background:#f59e0b22;color:#f59e0b">🏆</div>
+        <div><h1>Your Certificate & Progress</h1>
+        <div style="color:var(--ink-soft)">Complete every lesson and pass all ${DATA.modules.length} module exams to earn your certificate.</div></div>
+      </div>
+
+      <div style="margin:14px 0 22px">
+        <label style="font-weight:600;font-size:14px">Your name on the certificate:</label>
+        <input id="certName" type="text" value="${escapeHtml(name)}" placeholder="Type your name…"
+          oninput="OPA._setName(this.value)"
+          style="display:block;width:100%;max-width:360px;margin-top:6px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
+      </div>
+
+      ${allDone ? `
+        <div id="cert" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border:3px solid #f59e0b;border-radius:20px;padding:36px;text-align:center;margin-bottom:18px">
+          <div style="font-size:42px">🎓</div>
+          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#b45309;font-weight:700;margin-top:8px">Certificate of Completion</div>
+          <div style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || "Your Name")}</div>
+          <div style="color:#475569">has successfully completed</div>
+          <div style="font-size:18px;font-weight:700;margin:6px 0 14px;color:var(--brand-dark)">Office Pro Academy — Microsoft Office &amp; Office Administration</div>
+          <div style="color:#475569;font-size:14px">All ${total} lessons &amp; ${DATA.modules.length} module exams passed 🏆</div>
+        </div>
+        <div class="btn-row"><button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button></div>
+      ` : `
+        <div class="result-banner fail">📋 ${done}/${total} lessons done · ${examsPassed}/${DATA.modules.length} module exams passed. Keep going — your certificate unlocks when both are complete!</div>
+      `}
+
+      <div class="section-title">Module-by-module status</div>
+      ${moduleStatus}
+    `;
+    window.scrollTo(0, 0);
   }
 
   /* ---------- Shortcuts cheat-sheet ---------- */
@@ -363,7 +553,9 @@
     go,
     completeLesson(mId, lId) { markDone(lId); celebrate(); toast("Lesson complete! Progress saved ✓"); setTimeout(() => go("module/" + mId), 700); },
     clearSearch() { searchInput.value = ""; go(""); },
-    _pick() {}, _submitQuiz() {}, _retryQuiz() {} // replaced per-quiz
+    _setName(v) { progress.name = v; saveProgress(progress); },
+    _pick() {}, _submitQuiz() {}, _retryQuiz() {},       // replaced per-quiz
+    _examPick() {}, _examSubmit() {}, _examRetry() {}      // replaced per-exam
   };
 
   function render() {
@@ -372,6 +564,9 @@
     if (!parts.length) renderDashboard();
     else if (parts[0] === "module") renderModule(parts[1]);
     else if (parts[0] === "lesson") renderLesson(parts[1], parts[2]);
+    else if (parts[0] === "exam") renderExam(parts[1]);
+    else if (parts[0] === "plan") renderPlan();
+    else if (parts[0] === "certificate") renderCertificate();
     else if (parts[0] === "shortcuts") renderShortcuts();
     else renderNotFound();
     updateNav();
@@ -379,8 +574,12 @@
 
   function updateNav() {
     const h = window.location.hash;
+    let current = "home";
+    if (h.includes("shortcuts")) current = "shortcuts";
+    else if (h.includes("plan")) current = "plan";
+    else if (h.includes("certificate")) current = "certificate";
     document.querySelectorAll("[data-nav]").forEach(el => {
-      el.classList.toggle("active", el.getAttribute("data-nav") === (h.includes("shortcuts") ? "shortcuts" : "home") && !searchInput.value.trim());
+      el.classList.toggle("active", el.getAttribute("data-nav") === current && !searchInput.value.trim());
     });
   }
 

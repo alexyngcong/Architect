@@ -29,8 +29,9 @@ email, phone) and it just works.
 
 ## 📚 What's inside
 
-The course is organised as a clear learning path — work through it **top to bottom**.
-Each lesson goes from **Basic → Intermediate → Advanced**.
+The course follows a clear **flow**: pick a **category (module)** → work through the
+**training lessons** (Basic → Intermediate → Advanced) → pass the **module Final
+Exam** → earn your **Certificate** when everything's complete.
 
 | # | Module | What you'll learn |
 |---|--------|-------------------|
@@ -40,9 +41,14 @@ Each lesson goes from **Basic → Intermediate → Advanced**.
 | 4 | 📽️ **PowerPoint** | Slides & design, tasteful animations, delivering with Presenter View |
 | 5 | 📧 **Outlook, Email & Calendar** | Professional email, inbox organisation, scheduling meetings |
 | 6 | 🗂️ **Office Coordinator Skills** | The role, professional communication, organisation & filing, meeting minutes, travel & confidentiality |
+| 7 | 🧰 **Practical Office Work** | Typing & data-entry accuracy, business-writing templates, customer service, office equipment, money basics (invoices, expenses, petty cash) |
+| 8 | 👔 **Executive Assistant & Admin Pro** | Managing an exec's calendar/inbox, prioritising & follow-up, projects & events, operations (onboarding, records, compliance, procurement), being a trusted right hand |
 
-Plus a searchable **⌨️ Master Shortcut Cheat-Sheet** of the keyboard shortcuts that
-work almost everywhere.
+**Also included:**
+- 🚀 **Fast-Track Plan** — a guided ~2½-week, day-by-day schedule so she knows exactly what to do each day to get job-ready ASAP.
+- 🎓 **Module Final Exams** — pass at 80% to earn each module's badge.
+- 🏆 **Certificate of Completion** — unlocks when every lesson is done and every exam passed; print it or save as PDF.
+- ⌨️ **Master Shortcut Cheat-Sheet** — searchable, for shortcuts that work almost everywhere.
 
 ---
 

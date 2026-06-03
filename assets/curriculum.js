@@ -38,6 +38,32 @@ const OFFICE_CURRICULUM = {
     { keys: "Ctrl + Mouse Wheel", action: "Zoom in and out" }
   ],
 
+  /* A guided "learn ASAP" schedule. Each day points to the lessons to finish.
+     ~2 short lessons a day; the whole course in two weeks. */
+  fastTrack: {
+    title: "Fast-Track to Job-Ready (about 2½ weeks)",
+    intro: "Do these lessons in order — about 2 short lessons a day (20–30 minutes). Finish the quiz on each to tick it off. By the end you'll have covered everything an office assistant, coordinator, administrative staffer or executive assistant needs — basics to advanced.",
+    days: [
+      { day: 1,  focus: "Get comfortable with any Office program", lessons: ["f1", "f2"] },
+      { day: 2,  focus: "Core moves + start typing practice",       lessons: ["f3", "x1"] },
+      { day: 3,  focus: "Word: typing & formatting documents",      lessons: ["w1", "w2"] },
+      { day: 4,  focus: "Word: editing, tables & pictures",         lessons: ["w3", "w4"] },
+      { day: 5,  focus: "Word: advanced + business writing",        lessons: ["w5", "x2"] },
+      { day: 6,  focus: "Excel: the grid & making it readable",     lessons: ["e1", "e2"] },
+      { day: 7,  focus: "Excel: formulas that do the maths",        lessons: ["e3", "e4"] },
+      { day: 8,  focus: "Excel: lookups, PivotTables & charts",     lessons: ["e5"] },
+      { day: 9,  focus: "PowerPoint: build a clean presentation",   lessons: ["p1", "p2"] },
+      { day: 10, focus: "Present well + professional email",        lessons: ["p3", "o1"] },
+      { day: 11, focus: "Outlook: organise inbox & calendar",       lessons: ["o2", "o3"] },
+      { day: 12, focus: "The role + professional communication",    lessons: ["c1", "c2"] },
+      { day: 13, focus: "Organising, meetings & customer service",  lessons: ["c3", "c4", "x3"] },
+      { day: 14, focus: "Advanced coordinator + equipment & money", lessons: ["c5", "x4", "x5"] },
+      { day: 15, focus: "Exec support: calendar/inbox + priorities", lessons: ["ea1", "ea2"] },
+      { day: 16, focus: "Projects/events + operations & onboarding",  lessons: ["ea3", "ea4"] },
+      { day: 17, focus: "Being a trusted right hand (graduate!)",     lessons: ["ea5"] }
+    ]
+  },
+
   modules: [
 
     /* ====================================================================
@@ -1004,6 +1030,438 @@ const OFFICE_CURRICULUM = {
             { q: "What's the best format for travel details?", choices: ["Ten separate emails", "One clear itinerary with flights, hotel, transport, and contacts together", "Memorising it", "A voicemail"], answer: 1 },
             { q: "How should you treat salaries, contracts and personal data?", choices: ["Share with friends", "As strictly confidential", "Post on the noticeboard", "Email to everyone"], answer: 1 },
             { q: "What helps you grow toward executive assistant or office manager roles?", choices: ["Avoiding new tasks", "Upskilling (advanced Excel, writing), building relationships, asking for feedback", "Staying silent", "Never learning the business"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 7 — PRACTICAL OFFICE WORK
+       ================================================================= */
+    {
+      id: "practical",
+      title: "Practical Office Work",
+      icon: "🧰",
+      color: "#0d9488",
+      blurb: "The hands-on daily skills: typing fast & accurately, business writing, customer service, office equipment, and handling money.",
+      lessons: [
+        {
+          id: "x1",
+          title: "Typing Speed, Accuracy & Data Entry",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>Fast, accurate typing is the single biggest day-to-day productivity skill in any office. A few weeks of practice pays off for your whole career.</p>
+            <h4>Touch typing — type without looking</h4>
+            <ul>
+              <li>Rest your fingers on the <b>home row</b>: left hand on <b>A S D F</b>, right hand on <b>J K L ;</b>. Feel the little bumps on F and J — they guide your fingers back without looking.</li>
+              <li>Each finger "owns" certain keys. Let the thumbs handle the spacebar.</li>
+              <li><b>Accuracy first, speed second.</b> Speed comes naturally once your fingers learn the positions — chasing speed just teaches mistakes.</li>
+            </ul>
+            <h4>Practise (free)</h4>
+            <p>Spend 10–15 minutes a day on a free typing trainer (e.g. typing.com, keybr.com, or Microsoft's own typing practice). Aim to build from ~20 words-per-minute to 50+ wpm over a few weeks.</p>
+            <h4>Data entry: accuracy is everything</h4>
+            <ul>
+              <li><b>Double-check numbers</b> — one wrong digit in an invoice or phone number causes real problems. Read it back.</li>
+              <li><b>Use Tab</b> to move neatly between fields/cells instead of the mouse — it's far faster.</li>
+              <li><b>Be consistent</b> — pick one date format, one way to write names, and stick to it across the whole sheet.</li>
+              <li><b>The number pad</b> (right side of a full keyboard) is fastest for typing lots of figures — practise it.</li>
+            </ul>
+          `,
+          tips: [
+            "Sit up, screen at eye level, wrists floating (not resting hard) — good posture lets you type longer without aching.",
+            "Don't look at the keys — covering your hands while practising forces your fingers to learn.",
+            "When entering data, verify totals add up; a quick =SUM check catches typos instantly."
+          ],
+          shortcuts: [
+            { keys: "Tab", action: "Jump to the next field or cell (faster than the mouse)" },
+            { keys: "Shift + Tab", action: "Jump back to the previous field" },
+            { keys: "Num Lock", action: "Turn the number pad on for fast figure entry" }
+          ],
+          quiz: [
+            { q: "Where do your fingers rest in touch typing (the 'home row')?", choices: ["Q W E R / U I O P", "A S D F / J K L ;", "Z X C V / M , . /", "The number row"], answer: 1 },
+            { q: "What matters MOST when learning to type and doing data entry?", choices: ["Speed above all", "Accuracy first — speed follows", "Using only the mouse", "Looking at the keys"], answer: 1 },
+            { q: "What's the fastest way to move between cells/fields while entering data?", choices: ["The mouse", "The Tab key", "Scrolling", "Closing and reopening"], answer: 1 }
+          ]
+        },
+        {
+          id: "x2",
+          title: "Business Writing & Ready-to-Use Templates",
+          level: "Intermediate",
+          minutes: 10,
+          content: `
+            <p>Clear, correct writing makes you look professional and saves everyone time. Keep it simple, polite, and to the point.</p>
+            <h4>The rules of good business writing</h4>
+            <ul>
+              <li><b>Get to the point fast</b> — say what you need in the first sentence or two.</li>
+              <li><b>Short sentences, plain words.</b> "Use" not "utilise"; "before" not "prior to".</li>
+              <li><b>Be polite and positive</b> — "Could you please…", "Thank you for…".</li>
+              <li><b>Proofread</b> — read it once out loud; spellcheck won't catch "their/there" or a wrong name.</li>
+              <li><b>One topic per message</b>; use bullet points for anything with steps or lists.</li>
+            </ul>
+            <h4>Template: professional email</h4>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">Subject: [Clear topic — e.g. Invoice #204, due 12 June]<br><br>Dear [Name],<br><br>[One line of purpose.] [Any detail or request, with a deadline.]<br><br>Please let me know if you need anything further.<br><br>Kind regards,<br>[Your name] · [Title] · [Phone]</p>
+            <h4>Template: formal business letter</h4>
+            <p>Top: your company details, the date, then the recipient's name and address. Open with "Dear Mr/Ms [Surname],". State the purpose, give the details, finish with the action you'd like. Close "Yours sincerely," (if you named them) or "Yours faithfully," (if you wrote "Dear Sir/Madam"). Leave space for a signature, then your typed name and title.</p>
+            <h4>Template: internal memo</h4>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">MEMO<br>To: [team]   From: [you]   Date: [date]   Re: [subject]<br><br>[Purpose in one line, then the key points as bullets, then any action needed.]</p>
+          `,
+          tips: [
+            "Save your finished letter/memo/email layouts as Word templates so you never start from scratch.",
+            "Keep a 'snippets' note of polite phrases you reuse: greetings, sign-offs, 'please find attached', 'thank you for your patience'.",
+            "If an email feels emotional, write it, wait 10 minutes, re-read, THEN send."
+          ],
+          shortcuts: [
+            { keys: "F7", action: "Run the spelling & grammar check before sending" },
+            { keys: "Ctrl + Shift + V", action: "Paste text in clean formatting" }
+          ],
+          quiz: [
+            { q: "What's the golden rule of business writing?", choices: ["Use big, impressive words", "Get to the point fast with short, plain sentences", "Write as much as possible", "Skip the greeting"], answer: 1 },
+            { q: "If you opened a letter with 'Dear Sir/Madam', how should you close it?", choices: ["Yours sincerely", "Yours faithfully", "Cheers", "Love"], answer: 1 },
+            { q: "Why save your letter and memo layouts as templates?", choices: ["They print faster", "So you never start from scratch and stay consistent", "It uses less ink", "It's required by law"], answer: 1 }
+          ]
+        },
+        {
+          id: "x3",
+          title: "Customer Service & Front-Desk Excellence",
+          level: "Basic",
+          minutes: 9,
+          content: `
+            <p>As an assistant or coordinator you're often the face and voice of the organisation. Great service makes people feel looked after — and reflects well on everyone.</p>
+            <h4>The service mindset</h4>
+            <ul>
+              <li><b>Be warm and present</b> — make eye contact, smile, greet people promptly. Nobody should feel ignored.</li>
+              <li><b>Listen fully</b> before responding. Let them finish; don't interrupt.</li>
+              <li><b>Be helpful, not just polite</b> — "Let me find out for you" beats "I don't know".</li>
+              <li><b>Follow through</b> — if you promise to call back or send something, do it, on time.</li>
+            </ul>
+            <h4>Greeting visitors</h4>
+            <ol>
+              <li>Welcome them immediately: "Good morning, welcome to [Company]. How can I help?"</li>
+              <li>Find out who they're here to see and whether they have an appointment.</li>
+              <li>Notify the host; offer the guest a seat and water while they wait.</li>
+              <li>Sign them in if your office requires it (visitor log/badge).</li>
+            </ol>
+            <h4>Handling complaints or upset people — the LEAP method</h4>
+            <ul>
+              <li><b>L</b>isten without interrupting.</li>
+              <li><b>E</b>mpathise: "I understand why that's frustrating."</li>
+              <li><b>A</b>pologise for the trouble (even if it wasn't your fault).</li>
+              <li><b>P</b>rovide a solution or escalate to someone who can.</li>
+            </ul>
+            <p>Stay calm, never take it personally, and never argue. Your composure defuses almost everything.</p>
+          `,
+          tips: [
+            "A genuine smile changes your tone of voice — people can 'hear' it on the phone.",
+            "Use the person's name once or twice; it makes service feel personal.",
+            "Under-promise and over-deliver: say 'by end of day' and surprise them by lunchtime."
+          ],
+          shortcuts: [],
+          quiz: [
+            { q: "What does the 'E' in the LEAP method for upset people stand for?", choices: ["Explain", "Empathise", "Exit", "Email"], answer: 1 },
+            { q: "What's better than telling a visitor 'I don't know'?", choices: ["Ignoring them", "'Let me find out for you'", "'That's not my job'", "Walking away"], answer: 1 },
+            { q: "How should you handle someone who is upset?", choices: ["Argue back", "Stay calm, listen, empathise, and provide/escalate a solution", "Take it personally", "Hang up"], answer: 1 }
+          ]
+        },
+        {
+          id: "x4",
+          title: "Office Equipment & Everyday Tech",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>Knowing the everyday machines makes you the reliable person who 'just sorts it out'.</p>
+            <h4>Printers</h4>
+            <ul>
+              <li><b>Before printing</b>, use <b>Print Preview</b> (Ctrl+P shows it) to avoid wasting paper.</li>
+              <li><b>Double-sided</b> (duplex) saves paper — set it in the print dialog.</li>
+              <li>Common fixes: paper jam (open the tray, gently remove paper in the direction it feeds), "out of toner", or the wrong printer selected. Check the queue if nothing comes out.</li>
+            </ul>
+            <h4>Scanners & copiers</h4>
+            <ul>
+              <li><b>Scanning</b> turns paper into a digital file (usually a PDF) you can email or store. Place the page face-down, line it up with the corner arrow.</li>
+              <li><b>Multi-page</b> documents: use the top feeder (ADF) and choose "PDF" so they save as one file.</li>
+              <li><b>Copying</b> just makes paper duplicates — choose number of copies, single/double-sided, and size.</li>
+            </ul>
+            <h4>Video meetings (Teams / Zoom)</h4>
+            <ul>
+              <li>Test your <b>camera, microphone and speakers</b> before the meeting starts.</li>
+              <li><b>Mute</b> yourself when not speaking to avoid background noise.</li>
+              <li>Know how to <b>share your screen</b> and to <b>record</b> if asked.</li>
+            </ul>
+            <h4>Saving & sharing files</h4>
+            <p><b>PDF</b> is the safe format for sending finished documents — it looks the same everywhere and can't be easily edited. For big files, share a <b>OneDrive/Drive link</b> rather than a huge attachment.</p>
+          `,
+          tips: [
+            "Keep a simple note of how to do recurring tasks on each machine (scan-to-email, double-sided) — and where supplies/toner are kept.",
+            "If a print job 'disappears', check you sent it to the right printer, then open the print queue to clear stuck jobs.",
+            "Always do a quick test scan/print of one page before running 200."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + P", action: "Print (and see the print preview)" },
+            { keys: "Win + Shift + S", action: "Screenshot part of the screen (great for quick help notes)" }
+          ],
+          quiz: [
+            { q: "Which file format looks the same on every device and is best for sending finished documents?", choices: ["A Word file only", "PDF", "A screenshot", "A zip file"], answer: 1 },
+            { q: "What should you do before printing a long document?", choices: ["Nothing", "Use Print Preview and consider double-sided to save paper", "Print 10 test copies", "Turn off the printer"], answer: 1 },
+            { q: "In a video meeting, what's good etiquette when you're not speaking?", choices: ["Talk over others", "Mute your microphone", "Turn the lights off", "Leave the call"], answer: 1 }
+          ]
+        },
+        {
+          id: "x5",
+          title: "Money Basics: Invoices, Expenses & Petty Cash",
+          level: "Intermediate",
+          minutes: 10,
+          content: `
+            <p>Assistants and coordinators often handle small financial tasks. You don't need to be an accountant — just accurate, organised, and honest.</p>
+            <h4>Invoices</h4>
+            <ul>
+              <li>An <b>invoice</b> is a bill — a request for payment. A <b>receipt</b> is proof a payment was made.</li>
+              <li>A proper invoice shows: a unique <b>invoice number</b>, the date, who it's from and to, a description of goods/services, amounts, any tax, the <b>total due</b>, the <b>due date</b>, and how to pay.</li>
+              <li>When invoices arrive, log them, get them approved by the right person, and pay/file them before the due date so nothing is late.</li>
+            </ul>
+            <h4>Expenses</h4>
+            <ul>
+              <li>An <b>expense claim</b> reimburses someone for money they spent for work (travel, supplies).</li>
+              <li><b>Keep every receipt</b> — no receipt usually means no reimbursement. Photograph or scan them so they don't get lost.</li>
+              <li>A simple expense sheet: date, what it was for, category, amount, and the receipt attached. Total it with <b>=SUM</b> in Excel.</li>
+            </ul>
+            <h4>Petty cash</h4>
+            <ul>
+              <li>A small cash float for minor purchases (stamps, milk, taxi).</li>
+              <li><b>Golden rule:</b> cash out + receipts in should always equal the starting float. Record every transaction in a petty-cash log.</li>
+              <li>Count it regularly and report any shortfall immediately — accuracy here protects your reputation.</li>
+            </ul>
+            <h4>Purchase orders (PO)</h4>
+            <p>A <b>purchase order</b> is an official request to buy something, approved before the money is spent. Suppliers then match their invoice to the PO number. It keeps spending controlled and traceable.</p>
+          `,
+          tips: [
+            "Never throw away a receipt until it's logged and filed — photograph it the moment you get it.",
+            "Use an Excel table with =SUM to keep a running total of expenses or petty cash; it adds up automatically.",
+            "Be scrupulously honest and accurate with money — trust here is everything, and easy to lose."
+          ],
+          shortcuts: [
+            { keys: "Alt + =", action: "AutoSum a column of amounts in Excel" },
+            { keys: "Ctrl + ;", action: "Enter today's date in a cell" }
+          ],
+          quiz: [
+            { q: "What's the difference between an invoice and a receipt?", choices: ["They're the same", "An invoice requests payment; a receipt proves payment was made", "A receipt is bigger", "An invoice is only for cash"], answer: 1 },
+            { q: "What must you keep to claim back work expenses?", choices: ["Nothing", "Every receipt", "Just a verbal note", "A screenshot of your bank app only"], answer: 1 },
+            { q: "What's the golden rule of petty cash?", choices: ["Spend it fast", "Cash remaining + receipts should equal the starting float", "Never write anything down", "Keep it secret"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 8 — EXECUTIVE ASSISTANT & ADMIN PRO
+       ================================================================= */
+    {
+      id: "exec",
+      title: "Executive Assistant & Admin Pro",
+      icon: "👔",
+      color: "#be123c",
+      blurb: "The full scope of senior admin work: managing an executive's day, projects and events, operations, and being a trusted right hand.",
+      lessons: [
+        {
+          id: "ea1",
+          title: "Managing an Executive's Calendar & Inbox (Gatekeeping)",
+          level: "Advanced",
+          minutes: 11,
+          content: `
+            <p>An executive assistant protects the most valuable thing a leader has: their <b>time and attention</b>. You become the trusted gatekeeper.</p>
+            <h4>Owning the calendar</h4>
+            <ul>
+              <li><b>Protect focus time</b> — block periods for deep work; don't let the day fill with back-to-back meetings.</li>
+              <li><b>Add buffers</b> — travel time, prep time, and breaks between meetings so the day doesn't collapse when one runs over.</li>
+              <li><b>Prioritise</b> — when two things clash, know which matters more (and ask if unsure). Decline or rebook the lesser one politely.</li>
+              <li><b>Prepare ahead</b> — for each meeting, ensure your exec has the agenda, documents, and any background they need.</li>
+              <li><b>Time zones & travel</b> — always confirm the zone; never book a 7am call the morning after a long flight.</li>
+            </ul>
+            <h4>Managing the inbox (with permission)</h4>
+            <ul>
+              <li><b>Triage</b> — flag what's urgent, file what's reference, draft replies for routine messages.</li>
+              <li><b>Use folders/categories</b> and rules so important senders never get lost.</li>
+              <li><b>Draft on their behalf</b> in their voice; let them approve sensitive replies.</li>
+            </ul>
+            <h4>Gatekeeping with grace</h4>
+            <p>You'll say "no" or "not now" often — do it warmly. "He's fully booked this week; can I help, or shall I find time next week?" You shield your exec without making people feel shut out.</p>
+          `,
+          tips: [
+            "Start each day with a quick 'look-ahead' so your exec knows what's coming and you've spotted any clashes.",
+            "Keep a shared, colour-coded calendar so the whole team can see (appropriate) availability.",
+            "Learn your exec's preferences once — how they like meetings spaced, who gets priority — and apply them consistently."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + 2", action: "Open the Calendar in Outlook" },
+            { keys: "Ctrl + Shift + Q", action: "New meeting request" }
+          ],
+          quiz: [
+            { q: "What is an executive assistant primarily protecting?", choices: ["The office plants", "The executive's time and attention", "The printer", "The petty cash"], answer: 1 },
+            { q: "Why add 'buffers' between meetings?", choices: ["To look busy", "So the day doesn't collapse when a meeting runs over (travel/prep/breaks)", "To waste time", "There's no reason"], answer: 1 },
+            { q: "What's the best way to 'gatekeep' someone you must turn away?", choices: ["Ignore them", "Say no warmly and offer an alternative or help", "Be rude so they go away", "Promise something you can't do"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea2",
+          title: "Prioritising, Task Tracking & Reliable Follow-Up",
+          level: "Intermediate",
+          minutes: 9,
+          content: `
+            <p>The admin superpower is that <b>nothing falls through the cracks</b>. That comes from a system, not a good memory.</p>
+            <h4>Prioritise with the urgent/important grid</h4>
+            <ul>
+              <li><b>Urgent + Important</b> → do now.</li>
+              <li><b>Important, not urgent</b> → schedule it (this is where good work lives).</li>
+              <li><b>Urgent, not important</b> → do quickly or delegate.</li>
+              <li><b>Neither</b> → drop it.</li>
+            </ul>
+            <h4>One trusted task list</h4>
+            <p>Keep <b>every</b> task in one place — a notebook, Outlook Tasks, Microsoft To Do, or a simple Excel tracker — and review it first thing each morning and last thing each day. A scattered system is no system.</p>
+            <h4>Tracking other people's actions</h4>
+            <p>You'll constantly chase things others owe (a signed form, a reply, a report). Keep a simple <b>follow-up log</b>: task · who · promised date · status. Send a friendly nudge as deadlines approach — politely persistent gets results.</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">Task            | Owner  | Due     | Status<br>Sign contract   | Sarah  | 10 Jun  | Reminded 6 Jun</p>
+            <h4>Close the loop</h4>
+            <p>When you finish a task, briefly confirm it's done ("Booked — confirmation attached"). That visible reliability is what makes people trust you with bigger things.</p>
+          `,
+          tips: [
+            "End each day by writing tomorrow's top 3 priorities — you'll start focused instead of reactive.",
+            "A gentle reminder isn't nagging; people are busy and usually grateful for it.",
+            "Use Outlook flags or Microsoft To Do so reminders pop up automatically — don't rely on memory."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + Shift + K", action: "Create a new task in Outlook" },
+            { keys: "Insert", action: "Flag the selected email for follow-up" }
+          ],
+          quiz: [
+            { q: "In the urgent/important grid, what do you do with 'important but NOT urgent' tasks?", choices: ["Drop them", "Schedule them", "Ignore them", "Always do them last forever"], answer: 1 },
+            { q: "What's the key to nothing falling through the cracks?", choices: ["A great memory", "One trusted task list reviewed daily", "Doing everything at once", "Avoiding tasks"], answer: 1 },
+            { q: "How should you handle following up on what others owe you?", choices: ["Never remind anyone", "Keep a follow-up log and send polite, timely nudges", "Do their work for them", "Complain to everyone"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea3",
+          title: "Coordinating Projects, Events & Big Meetings",
+          level: "Advanced",
+          minutes: 12,
+          content: `
+            <p>Coordinators and EAs often run the moving parts of projects and events. The tools: a checklist, a timeline, and clear ownership.</p>
+            <h4>Project coordination basics</h4>
+            <ul>
+              <li><b>Break it down</b> into tasks with an owner and a due date for each.</li>
+              <li><b>Track it</b> in a simple plan (Excel, Planner, or a to-do tool): task · owner · deadline · status.</li>
+              <li><b>Communicate</b> — short status updates keep everyone aligned; flag risks early, don't hide them.</li>
+              <li><b>Follow up</b> relentlessly so nothing slips.</li>
+            </ul>
+            <h4>Planning an event or big meeting (e.g. board meeting, off-site, AGM)</h4>
+            <ol>
+              <li><b>Define</b> the purpose, date, budget, and guest list.</li>
+              <li><b>Book</b> the venue/room, catering, equipment (AV, projector, video link).</li>
+              <li><b>Invite & track RSVPs</b>; chase non-responders.</li>
+              <li><b>Prepare materials</b> — agenda, packs, name cards, presentations.</li>
+              <li><b>Build a run-sheet</b> — a timed schedule of exactly what happens when, and who's responsible.</li>
+              <li><b>On the day</b> — arrive early, test everything, greet attendees, keep to time.</li>
+              <li><b>After</b> — circulate minutes/actions, settle invoices, note what to improve next time.</li>
+            </ol>
+            <h4>The two tools that never fail</h4>
+            <p>A <b>checklist with deadlines</b> (so nothing is forgotten) and a <b>run-sheet</b> (so the day runs to time). Master these and you can run anything from a team lunch to a conference.</p>
+          `,
+          tips: [
+            "Always have a Plan B — backup AV, a printed copy of the slides, extra chairs. Things go wrong; prepared people stay calm.",
+            "Confirm everything 24–48 hours before (venue, catering numbers, attendees) — confirmations prevent disasters.",
+            "Keep a reusable event checklist template; each event makes it better."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + T", action: "Make a tracking Table in Excel (filters + auto-fill)" },
+            { keys: "Ctrl + Shift + L", action: "Toggle filters to sort your task list" }
+          ],
+          quiz: [
+            { q: "What is a 'run-sheet'?", choices: ["A list of attendees", "A timed schedule of exactly what happens when, and who's responsible", "The catering bill", "A type of email"], answer: 1 },
+            { q: "What two tools make events and projects run smoothly?", choices: ["A pen and paper only", "A checklist with deadlines and a run-sheet", "Luck and memory", "A bigger budget"], answer: 1 },
+            { q: "When should you confirm venue, catering and attendees?", choices: ["Never", "24–48 hours before the event", "A year before only", "During the event"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea4",
+          title: "Admin Operations: Onboarding, Records, Compliance & Procurement",
+          level: "Intermediate",
+          minutes: 11,
+          content: `
+            <p>Administrative staff keep the office's behind-the-scenes machinery running. Here are the core operational duties.</p>
+            <h4>Onboarding new staff</h4>
+            <ul>
+              <li>Prepare before day one: desk, computer/login, email, building access, welcome pack.</li>
+              <li>Collect and file their paperwork (contract, ID, bank/tax details) — handle it confidentially.</li>
+              <li>Arrange their induction schedule and introduce them around. A warm start matters.</li>
+            </ul>
+            <h4>Records & document management</h4>
+            <ul>
+              <li><b>Consistent filing</b> — agreed names and folders, one shared source of truth.</li>
+              <li><b>Retention</b> — know how long to keep records (contracts, invoices, HR files) and archive or securely dispose of the rest.</li>
+              <li><b>Version control</b> — keep the latest version clearly marked; avoid duplicate "finals".</li>
+            </ul>
+            <h4>Data protection & compliance</h4>
+            <ul>
+              <li>Personal data (staff, customers) must be kept <b>secure and confidential</b> — lock screens, don't share logins, follow your organisation's data-protection rules (e.g. GDPR).</li>
+              <li>Only collect and keep what's needed; dispose of sensitive paper by shredding.</li>
+              <li>Follow basic <b>health & safety</b> admin too — fire exits, first-aid, incident logs.</li>
+            </ul>
+            <h4>Supplies & procurement</h4>
+            <ul>
+              <li>Track stock (stationery, kitchen, toner); reorder <b>before</b> running out.</li>
+              <li>Get quotes, raise purchase orders, and build good relationships with reliable suppliers.</li>
+              <li>Check deliveries against the order, and match invoices to the PO before paying.</li>
+            </ul>
+          `,
+          tips: [
+            "Build an onboarding checklist so every new starter gets a consistent, welcoming first day.",
+            "Treat all HR and personal data as strictly confidential — store it securely, share it with no one unauthorised.",
+            "Keep a supplier contact list with account numbers and lead times so reordering is instant."
+          ],
+          shortcuts: [
+            { keys: "Windows + L", action: "Lock your screen to protect data when you step away" }
+          ],
+          quiz: [
+            { q: "What should be ready BEFORE a new employee's first day?", choices: ["Nothing", "Desk, computer/login, email, access and a welcome pack", "Only a chair", "Their resignation letter"], answer: 1 },
+            { q: "How must personal and HR data be handled?", choices: ["Shared freely", "Kept secure and strictly confidential, per data-protection rules", "Left on the desk", "Emailed to everyone"], answer: 1 },
+            { q: "What's good practice with office supplies?", choices: ["Reorder after you run out", "Track stock and reorder before running out", "Never reorder", "Order ten years' worth"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea5",
+          title: "Being a Trusted Right Hand: Executives, Stakeholders & Discretion",
+          level: "Advanced",
+          minutes: 10,
+          content: `
+            <p>At the senior end, the role is about judgement, trust, and relationships as much as tasks. This is what makes you indispensable.</p>
+            <h4>Anticipate, don't just react</h4>
+            <p>The best assistants see what's needed before being asked — prepping a document the exec will want, spotting a calendar clash next week, having the travel detail ready. Think one step ahead.</p>
+            <h4>Communicate 'upward' well</h4>
+            <ul>
+              <li><b>Be concise</b> — give leaders the headline first, detail only if needed.</li>
+              <li><b>Bring solutions, not just problems</b> — "X happened; I suggest Y — okay?"</li>
+              <li><b>Be honest</b> — flag issues early; never hide a mistake. Trust depends on it.</li>
+            </ul>
+            <h4>Managing relationships & stakeholders</h4>
+            <p>You're the link between your exec and everyone else — staff, clients, board members, vendors. Be professional, friendly and even-handed with all of them. A strong network across the organisation lets you get things done fast.</p>
+            <h4>Discretion & professionalism — the foundation</h4>
+            <ul>
+              <li>You'll know confidential things — salaries, strategy, personal matters. <b>Say nothing.</b> Discretion is your reputation.</li>
+              <li>Stay calm and composed under pressure; you set the tone.</li>
+              <li>Represent your exec and organisation well in every email, call and conversation.</li>
+            </ul>
+            <h4>Keep growing</h4>
+            <p>Learn the business, ask for feedback, and keep building skills (advanced Excel, project tools, clear writing). This is the path from assistant to office manager, chief of staff, or operations roles.</p>
+          `,
+          tips: [
+            "Anticipation is the #1 trait leaders praise — keep a 'what will they need next?' mindset.",
+            "Bring a recommendation with every problem you raise; it shows judgement and saves their time.",
+            "Confidentiality is built once and lost in a moment — guard it like your reputation, because it is."
+          ],
+          shortcuts: [],
+          quiz: [
+            { q: "What single trait do leaders value most in a great assistant?", choices: ["Typing speed", "Anticipating needs before being asked", "Working late", "Knowing gossip"], answer: 1 },
+            { q: "How should you raise a problem to a busy executive?", choices: ["Just dump the problem", "Bring the headline AND a suggested solution", "Hide it", "Tell everyone else first"], answer: 1 },
+            { q: "Why is discretion so important?", choices: ["It isn't", "You handle confidential information; trust is your reputation and easily lost", "To seem mysterious", "To avoid work"], answer: 1 }
           ]
         }
       ]

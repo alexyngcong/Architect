@@ -45,7 +45,9 @@ ${css}
     </div>
     <div class="spacer"></div>
     <button class="nav-pill" data-nav="home" onclick="OPA.go('')">🏠 <span>Home</span></button>
+    <button class="nav-pill" data-nav="plan" onclick="OPA.go('plan')">🚀 <span>Plan</span></button>
     <button class="nav-pill" data-nav="shortcuts" onclick="OPA.go('shortcuts')">⌨️ <span>Shortcuts</span></button>
+    <button class="nav-pill" data-nav="certificate" onclick="OPA.go('certificate')">🏆 <span>Certificate</span></button>
     <label class="searchbox" title="Search lessons & shortcuts">
       🔍 <input id="search" type="text" placeholder="Search lessons or shortcuts…" autocomplete="off" />
     </label>
