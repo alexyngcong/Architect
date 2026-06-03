@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Office Pro Academy — Learn Microsoft Office & Office Skills</title>
+  <meta name="description" content="A complete, friendly, step-by-step course to take you from beginner to advanced Microsoft Office and professional office-assistant skills." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo" onclick="OPA.go('')">
+      <span class="badge">🎓</span>
+      <span>Office Pro Academy</span>
+    </div>
+    <div class="spacer"></div>
+    <button class="nav-pill" data-nav="home" onclick="OPA.go('')">🏠 <span>Home</span></button>
+    <button class="nav-pill" data-nav="shortcuts" onclick="OPA.go('shortcuts')">⌨️ <span>Shortcuts</span></button>
+    <label class="searchbox" title="Search lessons & shortcuts">
+      🔍 <input id="search" type="text" placeholder="Search lessons or shortcuts…" autocomplete="off" />
+    </label>
+  </header>
+
+  <main class="wrap" id="app"><!-- screens render here --></main>
+
+  <!-- Content data first, then the app that uses it -->
+  <script src="assets/curriculum.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

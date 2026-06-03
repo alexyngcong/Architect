@@ -1,0 +1,1015 @@
+/* ============================================================================
+   OFFICE PRO ACADEMY — Curriculum Data
+   ----------------------------------------------------------------------------
+   This file defines every module, lesson, tip, keyboard shortcut and quiz.
+   It is plain data so the content is easy to read, edit and extend.
+   To add a lesson: copy an existing { ... } block and change the text.
+   ========================================================================= */
+
+const OFFICE_CURRICULUM = {
+
+  /* Keyboard shortcuts that work almost everywhere in Office + Windows.
+     These also power the searchable "Shortcuts" cheat-sheet screen. */
+  globalShortcuts: [
+    { keys: "Ctrl + C", action: "Copy the selected item" },
+    { keys: "Ctrl + X", action: "Cut the selected item" },
+    { keys: "Ctrl + V", action: "Paste" },
+    { keys: "Ctrl + Shift + V", action: "Paste without formatting (paste as plain text)" },
+    { keys: "Ctrl + Z", action: "Undo your last action" },
+    { keys: "Ctrl + Y", action: "Redo (put back what you undid)" },
+    { keys: "Ctrl + A", action: "Select everything" },
+    { keys: "Ctrl + S", action: "Save — do this constantly!" },
+    { keys: "F12", action: "Save As (save a new copy with a new name)" },
+    { keys: "Ctrl + P", action: "Print" },
+    { keys: "Ctrl + F", action: "Find a word on the page" },
+    { keys: "Ctrl + H", action: "Find and Replace" },
+    { keys: "Ctrl + B", action: "Bold" },
+    { keys: "Ctrl + I", action: "Italic" },
+    { keys: "Ctrl + U", action: "Underline" },
+    { keys: "Ctrl + Home", action: "Jump to the very top of the document" },
+    { keys: "Ctrl + End", action: "Jump to the very bottom of the document" },
+    { keys: "Ctrl + Arrow", action: "Move one whole word / cell-edge at a time" },
+    { keys: "Shift + Arrow", action: "Select text or cells as you move" },
+    { keys: "Alt + Tab", action: "Switch between open programs" },
+    { keys: "Windows + D", action: "Show the desktop (minimise everything)" },
+    { keys: "Windows + L", action: "Lock your computer when you step away" },
+    { keys: "Windows + V", action: "Open clipboard history (copy several things, paste any)" },
+    { keys: "PrtScn / Win+Shift+S", action: "Take a screenshot (Snipping Tool)" },
+    { keys: "Ctrl + Mouse Wheel", action: "Zoom in and out" }
+  ],
+
+  modules: [
+
+    /* ====================================================================
+       MODULE 1 — FOUNDATIONS
+       ================================================================= */
+    {
+      id: "foundations",
+      title: "Office Foundations",
+      icon: "🧭",
+      color: "#6366f1",
+      blurb: "Start here. The core skills every single office program shares — so everything after this feels easy.",
+      lessons: [
+        {
+          id: "f1",
+          title: "How the Office Ribbon Works",
+          level: "Basic",
+          minutes: 6,
+          content: `
+            <p>Every Microsoft Office program (Word, Excel, PowerPoint, Outlook) looks similar on purpose. The strip of buttons across the top is called the <b>Ribbon</b>. Learn it once and you know all of them.</p>
+            <h4>The parts of the screen</h4>
+            <ul>
+              <li><b>Tabs</b> — the words across the very top: <i>Home, Insert, Layout, Review, View</i>. Each tab opens a different set of buttons.</li>
+              <li><b>Ribbon</b> — the buttons that appear when you click a tab. <i>Home</i> has the everyday tools (font, colour, bold).</li>
+              <li><b>Quick Access Toolbar</b> — the tiny icons in the very top-left corner (Save, Undo, Redo). You can right-click any button and choose "Add to Quick Access Toolbar".</li>
+              <li><b>File / Backstage</b> — the coloured <b>File</b> tab on the far left. This is where you Open, Save, Print, and Share.</li>
+              <li><b>Status Bar</b> — the thin strip at the very bottom showing page number, word count, and zoom.</li>
+            </ul>
+            <h4>The golden rule of Office</h4>
+            <p><b>Select first, then act.</b> Highlight the text, cell, or picture you want to change <i>before</i> you click a button. The Ribbon only changes the thing that is selected.</p>
+          `,
+          tips: [
+            "Double-click any tab name to hide the Ribbon and get more space. Double-click again to bring it back.",
+            "If a button looks greyed-out, it usually means nothing is selected yet.",
+            "Hover your mouse over any button for 2 seconds — a little label tells you what it does."
+          ],
+          shortcuts: [
+            { keys: "Alt", action: "Press Alt alone to reveal letter shortcuts on the Ribbon" },
+            { keys: "Ctrl + F1", action: "Hide or show the Ribbon" }
+          ],
+          quiz: [
+            { q: "What is the strip of buttons across the top of every Office program called?", choices: ["The Toolbar", "The Ribbon", "The Menu Bar", "The Header"], answer: 1 },
+            { q: "What should you always do BEFORE clicking a formatting button?", choices: ["Save the file", "Print a copy", "Select the text or item you want to change", "Close other programs"], answer: 2 },
+            { q: "Where do you go to Open, Save, or Print a file?", choices: ["The View tab", "The File tab (Backstage)", "The Insert tab", "The status bar"], answer: 1 }
+          ]
+        },
+        {
+          id: "f2",
+          title: "Files, Folders & Never Losing Your Work",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>An office assistant is trusted with important documents. Knowing exactly where things are saved — and never losing work — is one of the most valued skills you can have.</p>
+            <h4>Folders = digital filing cabinet</h4>
+            <p>A <b>folder</b> holds files. Folders can hold other folders. Keep a tidy structure, for example:</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">📁 2026<br>&nbsp;&nbsp;📁 Invoices<br>&nbsp;&nbsp;📁 Meeting Minutes<br>&nbsp;&nbsp;📁 Contracts</p>
+            <h4>Saving the smart way</h4>
+            <ul>
+              <li><b>Save</b> (Ctrl+S) updates the file you already have. Do it every few minutes — make it a reflex.</li>
+              <li><b>Save As</b> (F12) makes a brand-new copy with a different name — perfect before you make big changes you might want to undo.</li>
+              <li><b>File names matter.</b> Use clear names with dates: <code>2026-06-03 Board Minutes.docx</code>. Dates written year-month-day sort neatly in order.</li>
+            </ul>
+            <h4>The cloud (OneDrive / SharePoint)</h4>
+            <p>When a file is saved to <b>OneDrive</b>, it auto-saves every few seconds and you can open it from any device. You'll see "AutoSave" turn on (a toggle in the top-left). For shared team files this is a lifesaver — multiple people can edit at once.</p>
+          `,
+          tips: [
+            "Never name a file 'Final' — you'll end up with 'Final v2 REAL final'. Use dates instead.",
+            "If you ever close without saving, reopen the program — Office often recovers it under 'Recover Unsaved Documents'.",
+            "Avoid spaces and symbols like / \\ : * ? in file names; they can cause errors."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + S", action: "Save right now" },
+            { keys: "F12", action: "Save As (new copy)" },
+            { keys: "Ctrl + O", action: "Open an existing file" },
+            { keys: "Ctrl + N", action: "Create a new blank file" }
+          ],
+          quiz: [
+            { q: "Which shortcut saves your work instantly?", choices: ["Ctrl + P", "Ctrl + S", "Ctrl + O", "F1"], answer: 1 },
+            { q: "What is the best way to name files so they sort in order?", choices: ["Use the word Final", "Start with the date as Year-Month-Day", "Use random numbers", "All capital letters"], answer: 1 },
+            { q: "What does 'Save As' do?", choices: ["Deletes the original", "Prints the file", "Makes a new copy with a different name", "Emails the file"], answer: 2 }
+          ]
+        },
+        {
+          id: "f3",
+          title: "Copy, Cut, Paste & Undo Like a Pro",
+          level: "Basic",
+          minutes: 5,
+          content: `
+            <p>These four actions are the muscles of office work. You will use them hundreds of times a day, so make them automatic.</p>
+            <table class="lesson-table">
+              <tr><th>Action</th><th>What it does</th><th>Shortcut</th></tr>
+              <tr><td>Copy</td><td>Makes a duplicate, leaves the original</td><td>Ctrl + C</td></tr>
+              <tr><td>Cut</td><td>Removes it, ready to move elsewhere</td><td>Ctrl + X</td></tr>
+              <tr><td>Paste</td><td>Drops in what you copied or cut</td><td>Ctrl + V</td></tr>
+              <tr><td>Undo</td><td>Reverses your last action — your safety net</td><td>Ctrl + Z</td></tr>
+            </table>
+            <h4>The power move: Paste Special</h4>
+            <p>Sometimes copying from a website brings ugly colours and fonts with it. Use <b>Ctrl + Shift + V</b> to paste as plain text — it takes on the clean formatting of where you paste it.</p>
+            <h4>Clipboard history</h4>
+            <p>Press <b>Windows + V</b> to see the last several things you copied, and paste any one of them. Most people don't know this exists — it's a huge time-saver.</p>
+          `,
+          tips: [
+            "Ctrl + Z (Undo) can be pressed many times to step back through your changes.",
+            "Pressed Undo too far? Ctrl + Y redoes it.",
+            "You can copy a file in your folders the same way — click it, Ctrl+C, go to the new folder, Ctrl+V."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + C", action: "Copy" },
+            { keys: "Ctrl + X", action: "Cut" },
+            { keys: "Ctrl + V", action: "Paste" },
+            { keys: "Ctrl + Shift + V", action: "Paste as plain text" },
+            { keys: "Ctrl + Z", action: "Undo" },
+            { keys: "Windows + V", action: "Clipboard history" }
+          ],
+          quiz: [
+            { q: "Which shortcut UNDOES your last mistake?", choices: ["Ctrl + U", "Ctrl + Z", "Ctrl + V", "Ctrl + D"], answer: 1 },
+            { q: "You copied text from a website but it brought ugly colours. What pastes it as clean plain text?", choices: ["Ctrl + V", "Ctrl + Shift + V", "Ctrl + C", "Ctrl + B"], answer: 1 },
+            { q: "What does Windows + V open?", choices: ["The volume control", "Clipboard history of recent copies", "A new document", "The print menu"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 2 — MICROSOFT WORD
+       ================================================================= */
+    {
+      id: "word",
+      title: "Microsoft Word",
+      icon: "📝",
+      color: "#2563eb",
+      blurb: "Create clean, professional letters, reports and documents — from your first paragraph to advanced mail merge.",
+      lessons: [
+        {
+          id: "w1",
+          title: "Typing, Formatting & Making Text Look Professional",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>Word is for documents you read: letters, memos, reports, policies. The skill is making them look clean and consistent.</p>
+            <h4>The essential formatting buttons (Home tab)</h4>
+            <ul>
+              <li><b>Font</b> & <b>Size</b> — pick one professional font (Calibri or Arial, size 11–12) and stick with it.</li>
+              <li><b>Bold / Italic / Underline</b> — for emphasis. Use sparingly; if everything is bold, nothing stands out.</li>
+              <li><b>Alignment</b> — Left for most text, Center for titles, Justify for a clean block edge.</li>
+              <li><b>Bullets & Numbering</b> — turn a wall of text into a scannable list.</li>
+              <li><b>Line spacing</b> — 1.15 or 1.5 makes documents easier to read.</li>
+            </ul>
+            <h4>Select text fast</h4>
+            <ul>
+              <li><b>Double-click</b> a word to select it.</li>
+              <li><b>Triple-click</b> to select a whole paragraph.</li>
+              <li><b>Ctrl + A</b> selects the entire document.</li>
+            </ul>
+            <h4>The Format Painter — copy a look</h4>
+            <p>Select text that looks right, click the little <b>paintbrush</b> (Format Painter), then drag over other text to instantly give it the same formatting. Double-click the paintbrush to apply it to several places.</p>
+          `,
+          tips: [
+            "Less is more — two fonts maximum in any professional document.",
+            "Use Styles (Heading 1, Heading 2) instead of manually making text big and bold — it keeps everything consistent and lets you build a table of contents automatically.",
+            "Press Ctrl + Spacebar to strip messy formatting off selected text back to normal."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + B / I / U", action: "Bold / Italic / Underline" },
+            { keys: "Ctrl + L / E / R / J", action: "Align Left / Center / Right / Justify" },
+            { keys: "Ctrl + ] / [", action: "Make font bigger / smaller" },
+            { keys: "Ctrl + Spacebar", action: "Clear formatting" }
+          ],
+          quiz: [
+            { q: "How do you select a whole paragraph quickly?", choices: ["Single click", "Double-click", "Triple-click", "Right-click"], answer: 2 },
+            { q: "What does the Format Painter (paintbrush) do?", choices: ["Changes the page colour", "Copies formatting from one place to another", "Draws pictures", "Deletes text"], answer: 1 },
+            { q: "What is a sensible, professional font and size?", choices: ["Comic Sans, size 20", "Calibri or Arial, size 11–12", "Five different fonts", "All capitals, size 8"], answer: 1 }
+          ]
+        },
+        {
+          id: "w2",
+          title: "Page Layout, Headers, Footers & Page Numbers",
+          level: "Intermediate",
+          minutes: 7,
+          content: `
+            <p>A polished document has consistent margins, page numbers, and a header or footer with the company name or date.</p>
+            <h4>Margins & orientation (Layout tab)</h4>
+            <ul>
+              <li><b>Margins</b> — the white space around the edge. "Normal" (2.54cm / 1 inch) is standard for letters.</li>
+              <li><b>Orientation</b> — Portrait (tall) for letters, Landscape (wide) for tables and certificates.</li>
+              <li><b>Size</b> — A4 is standard in most of the world; Letter in the US.</li>
+            </ul>
+            <h4>Headers & footers (Insert tab)</h4>
+            <p>Click <b>Insert → Header</b> (or Footer) to add text that repeats on every page — perfect for a company name, document title, or confidentiality note. Double-click into the header area to edit it; double-click back in the main body to leave.</p>
+            <h4>Page numbers</h4>
+            <p><b>Insert → Page Number</b> lets you place automatic numbers (bottom-center is common). They renumber themselves as the document grows.</p>
+            <h4>Page break vs. pressing Enter</h4>
+            <p>To start fresh on a new page, never hammer the Enter key. Press <b>Ctrl + Enter</b> for a clean <i>page break</i> — the new page stays put even if you edit earlier text.</p>
+          `,
+          tips: [
+            "Turn on the ¶ button (Home tab) to see hidden spaces and breaks — it reveals why your layout is misbehaving.",
+            "For a cover page with no number but numbers everywhere else, tick 'Different First Page' in the Header & Footer tools.",
+            "Insert → Date & Time can add a date that updates automatically every time you open the document."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + Enter", action: "Insert a clean page break" },
+            { keys: "Shift + Enter", action: "New line without starting a new paragraph" }
+          ],
+          quiz: [
+            { q: "What is the correct way to start text on a brand-new page?", choices: ["Press Enter many times", "Ctrl + Enter (page break)", "Change the font size", "Add a header"], answer: 1 },
+            { q: "Where does a repeating company name on every page go?", choices: ["In the header or footer", "In the margin settings", "In a text box only", "In the file name"], answer: 0 },
+            { q: "Which orientation is best for a wide table or certificate?", choices: ["Portrait", "Landscape", "A4", "Justified"], answer: 1 }
+          ]
+        },
+        {
+          id: "w3",
+          title: "Spelling, Grammar, Track Changes & Comments",
+          level: "Intermediate",
+          minutes: 7,
+          content: `
+            <p>Office assistants are often the last set of eyes before a document goes out. These tools make you reliable and collaborative.</p>
+            <h4>Spelling & grammar (Review tab)</h4>
+            <p>Red wavy underline = possible spelling error. Blue = grammar/style. Right-click the word for suggestions, or press <b>F7</b> to check the whole document. Always read it yourself too — spellcheck won't catch "form" vs "from".</p>
+            <h4>Track Changes — the editor's superpower</h4>
+            <p>Turn on <b>Review → Track Changes</b> and every edit you make is shown in colour, so the author can see exactly what you changed and <b>Accept</b> or <b>Reject</b> each one. Essential when several people review a contract or report.</p>
+            <h4>Comments</h4>
+            <p>Select text and click <b>New Comment</b> to leave a note in the margin (like "Please confirm this date") without changing the document itself. Reply to and resolve comments to keep a conversation tidy.</p>
+          `,
+          tips: [
+            "Before sending a final file, go Review → Accept All Changes and delete comments, or use File → Check for Issues → Inspect Document to remove hidden tracked edits.",
+            "Add words like a company name to the dictionary so spellcheck stops flagging them.",
+            "Use @name inside a comment to tag a colleague — in cloud files they get notified."
+          ],
+          shortcuts: [
+            { keys: "F7", action: "Run spelling & grammar check" },
+            { keys: "Ctrl + Shift + E", action: "Turn Track Changes on/off" },
+            { keys: "Alt + Ctrl + M", action: "Insert a new comment" }
+          ],
+          quiz: [
+            { q: "What does Track Changes let the author do with each edit?", choices: ["Print it", "Accept or Reject it", "Email it", "Translate it"], answer: 1 },
+            { q: "How do you leave a note for the author WITHOUT changing the text?", choices: ["Bold the text", "Insert a Comment", "Delete the sentence", "Change the font"], answer: 1 },
+            { q: "What does a red wavy underline usually mean?", choices: ["The text is bold", "A possible spelling error", "A hyperlink", "A tracked change"], answer: 1 }
+          ]
+        },
+        {
+          id: "w4",
+          title: "Tables, Pictures & Page Design",
+          level: "Intermediate",
+          minutes: 8,
+          content: `
+            <p>Well-placed tables and images make a document clear and attractive.</p>
+            <h4>Insert a table</h4>
+            <p><b>Insert → Table</b>, then drag to choose how many rows and columns. Once it's in:</p>
+            <ul>
+              <li><b>Tab key</b> jumps to the next cell; press Tab in the last cell to add a new row.</li>
+              <li>The <b>Table Design</b> tab offers instant professional colour styles.</li>
+              <li>Hover near a row/column edge and click the <b>+</b> to insert more.</li>
+            </ul>
+            <h4>Pictures</h4>
+            <p><b>Insert → Pictures</b> to add an image from your computer. The key skill is <b>Wrap Text</b> (click the picture → Layout Options): "In Line with Text" keeps it in the flow, "Square" or "Tight" lets text flow around it, "Behind Text" makes a watermark-style background.</p>
+            <h4>Make it look designed</h4>
+            <ul>
+              <li><b>Insert → Shapes</b> for lines, arrows and boxes.</li>
+              <li><b>Insert → SmartArt</b> for instant diagrams (org charts, process steps).</li>
+              <li><b>Design tab</b> applies a whole-document colour theme in one click.</li>
+            </ul>
+          `,
+          tips: [
+            "To make table columns line up perfectly, select them and use Table Layout → Distribute Columns.",
+            "Always add 'Alt Text' to images (right-click → Edit Alt Text) so the document is accessible to screen readers — many organisations require this.",
+            "Hold Shift while resizing a picture from its corner to keep it from stretching out of shape."
+          ],
+          shortcuts: [
+            { keys: "Tab", action: "Move to next table cell (adds a row at the end)" },
+            { keys: "Shift + Tab", action: "Move to previous table cell" }
+          ],
+          quiz: [
+            { q: "In a table, what does pressing Tab in the very last cell do?", choices: ["Saves the file", "Deletes the row", "Adds a new row", "Nothing"], answer: 2 },
+            { q: "Which feature lets text flow around a picture?", choices: ["Wrap Text / Layout Options", "Format Painter", "Track Changes", "Page Break"], answer: 0 },
+            { q: "What should you add to images for accessibility?", choices: ["A border", "Alt Text", "A caption number", "A hyperlink"], answer: 1 }
+          ]
+        },
+        {
+          id: "w5",
+          title: "Advanced: Styles, Table of Contents & Mail Merge",
+          level: "Advanced",
+          minutes: 12,
+          content: `
+            <p>These are the skills that separate a confident office professional from a beginner.</p>
+            <h4>Styles → automatic Table of Contents</h4>
+            <p>If you mark your headings using the built-in <b>Heading 1 / Heading 2</b> styles (Home tab), Word can build a clickable <b>Table of Contents</b> for you: <b>References → Table of Contents</b>. Change a heading later and just click "Update Table" — the page numbers fix themselves.</p>
+            <h4>Mail Merge — send 200 personalised letters at once</h4>
+            <p>This is the classic office power-skill. One template letter + one list of names = hundreds of personalised letters, labels, or emails.</p>
+            <ol>
+              <li>Make your list of recipients in Excel (columns like First Name, Address).</li>
+              <li>In Word: <b>Mailings → Start Mail Merge → Letters</b>.</li>
+              <li><b>Select Recipients → Use an Existing List</b> and pick your Excel file.</li>
+              <li>Type your letter; where the name should go, click <b>Insert Merge Field → First Name</b>.</li>
+              <li><b>Preview Results</b> to flip through each person, then <b>Finish & Merge</b> to print or email them all.</li>
+            </ol>
+            <h4>Templates</h4>
+            <p>Save a document you reuse (letterhead, memo) as a <b>Word Template (.dotx)</b> via Save As. Opening it always gives a fresh copy, protecting the master.</p>
+          `,
+          tips: [
+            "Mail Merge is perfect for name badges, envelopes, certificates, and holiday cards — not just letters.",
+            "Keep your Excel recipient list clean: one header row, no blank rows, one record per line.",
+            "Press Ctrl + A then F9 to update every field (including the Table of Contents) in one go."
+          ],
+          shortcuts: [
+            { keys: "Alt + Ctrl + 1 / 2 / 3", action: "Apply Heading 1 / 2 / 3 styles instantly" },
+            { keys: "F9", action: "Update a selected field (like the Table of Contents)" }
+          ],
+          quiz: [
+            { q: "What must you use on your headings so Word can build an automatic Table of Contents?", choices: ["Bold text", "Heading styles (Heading 1, 2…)", "Bigger font", "Underline"], answer: 1 },
+            { q: "Mail Merge combines a template letter with what?", choices: ["A picture", "A list of recipients (e.g. from Excel)", "A page break", "A footer"], answer: 1 },
+            { q: "Why save a reusable letterhead as a Template (.dotx)?", choices: ["It prints faster", "Opening it gives a fresh copy and protects the master", "It uses less ink", "It can't be edited"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 3 — MICROSOFT EXCEL
+       ================================================================= */
+    {
+      id: "excel",
+      title: "Microsoft Excel",
+      icon: "📊",
+      color: "#16a34a",
+      blurb: "The most powerful office skill of all. Track, calculate, and analyse anything — from a simple list to dashboards.",
+      lessons: [
+        {
+          id: "e1",
+          title: "Cells, Rows, Columns & Entering Data",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>Excel is a giant grid. Master the grid and you master Excel.</p>
+            <h4>The vocabulary</h4>
+            <ul>
+              <li><b>Cell</b> — one box. Each has an address like <b>A1</b> (column A, row 1).</li>
+              <li><b>Column</b> — runs up-and-down, labelled with letters (A, B, C…).</li>
+              <li><b>Row</b> — runs left-to-right, labelled with numbers (1, 2, 3…).</li>
+              <li><b>Worksheet (tab)</b> — one page; a file can hold many tabs along the bottom.</li>
+            </ul>
+            <h4>Entering data</h4>
+            <ul>
+              <li>Click a cell and type. Press <b>Enter</b> to go down, <b>Tab</b> to go right.</li>
+              <li>To edit what's already there, double-click the cell or press <b>F2</b>.</li>
+              <li><b>AutoFill</b>: type "January" in a cell, grab the little square at the bottom-right corner, drag down — Excel fills February, March… Same with dates and numbers (1, 2, 3…).</li>
+            </ul>
+            <h4>Moving around fast</h4>
+            <p><b>Ctrl + Arrow keys</b> jump to the edge of your data instantly — essential in big sheets. <b>Ctrl + Home</b> goes back to cell A1.</p>
+          `,
+          tips: [
+            "Always put headings in row 1 (Name, Date, Amount) — Excel's smart features expect them.",
+            "Numbers line up on the right, text on the left. If a number sits on the left, Excel thinks it's text — usually a stray space.",
+            "Press Ctrl + ; (semicolon) to instantly type today's date."
+          ],
+          shortcuts: [
+            { keys: "F2", action: "Edit the selected cell" },
+            { keys: "Ctrl + Arrow", action: "Jump to the edge of your data" },
+            { keys: "Ctrl + ;", action: "Insert today's date" },
+            { keys: "Alt + Enter", action: "Start a new line inside the same cell" }
+          ],
+          quiz: [
+            { q: "What is the address of the cell in column B, row 3?", choices: ["3B", "B3", "BB3", "B-3"], answer: 1 },
+            { q: "What does AutoFill do when you type 'Monday' and drag the corner down?", choices: ["Deletes the cell", "Fills Tuesday, Wednesday…", "Changes the colour", "Prints the sheet"], answer: 1 },
+            { q: "A number is sitting on the LEFT of its cell. What does that usually mean?", choices: ["It's bold", "Excel is treating it as text, not a number", "It's the largest value", "It's a formula"], answer: 1 }
+          ]
+        },
+        {
+          id: "e2",
+          title: "Formatting & Making Spreadsheets Readable",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>A spreadsheet nobody can read is useless. Formatting turns raw numbers into a clear report.</p>
+            <h4>Number formats (Home tab)</h4>
+            <ul>
+              <li><b>Currency</b> ($, £, €) for money.</li>
+              <li><b>Percentage</b> (%) — turns 0.25 into 25%.</li>
+              <li><b>Comma style</b> adds thousands separators: 1,250,000.</li>
+              <li><b>Date</b> formats for consistent dates.</li>
+            </ul>
+            <p>Selecting the right number format is vital — it changes how a value <i>looks</i> without changing the actual number.</p>
+            <h4>Make it tidy</h4>
+            <ul>
+              <li><b>Bold</b> your heading row and give it a fill colour.</li>
+              <li><b>Borders</b> (Home tab) draw lines around your table.</li>
+              <li>Double-click the line between two column letters to <b>auto-fit</b> the width to the content.</li>
+              <li><b>Wrap Text</b> keeps long text inside one cell instead of spilling over.</li>
+              <li><b>Merge & Center</b> joins cells for a title across the top.</li>
+            </ul>
+            <h4>Freeze the headings</h4>
+            <p><b>View → Freeze Panes → Freeze Top Row</b> keeps your headings visible as you scroll down a long list. A must for any real data.</p>
+          `,
+          tips: [
+            "Conditional Formatting (Home tab) can auto-colour cells — e.g. turn negative numbers red, or highlight the top 10. It updates automatically as data changes.",
+            "Select a column, right-click → Format Cells for the full menu of number options.",
+            "Use Ctrl + 1 to open the Format Cells box for anything selected — the fastest formatting shortcut in Excel."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + 1", action: "Open Format Cells dialog" },
+            { keys: "Ctrl + Shift + $", action: "Apply currency format" },
+            { keys: "Ctrl + Shift + %", action: "Apply percentage format" },
+            { keys: "Alt + H + W", action: "Wrap text" }
+          ],
+          quiz: [
+            { q: "Which View feature keeps your heading row visible while scrolling?", choices: ["Wrap Text", "Freeze Panes", "Merge & Center", "Borders"], answer: 1 },
+            { q: "What does Percentage format turn the number 0.25 into?", choices: ["0.25%", "25%", "250%", "2.5%"], answer: 1 },
+            { q: "What's the fastest shortcut to open the full Format Cells box?", choices: ["Ctrl + 1", "Ctrl + P", "F7", "Ctrl + B"], answer: 0 }
+          ]
+        },
+        {
+          id: "e3",
+          title: "Your First Formulas: SUM, AVERAGE & Basic Math",
+          level: "Intermediate",
+          minutes: 9,
+          content: `
+            <p>This is the moment Excel becomes magic. A <b>formula</b> calculates for you and updates automatically when the numbers change.</p>
+            <h4>The golden rule</h4>
+            <p>Every formula starts with an <b>equals sign (=)</b>. That tells Excel "calculate this".</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=10+5  →  15<br>=A1+A2  →  adds the two cells together<br>=B2*0.1  →  10% of cell B2</p>
+            <p>Use cell addresses, not typed numbers, wherever you can. Then if a value changes, every formula updates instantly.</p>
+            <h4>The functions you'll use daily</h4>
+            <table class="lesson-table">
+              <tr><th>Function</th><th>What it does</th><th>Example</th></tr>
+              <tr><td>=SUM()</td><td>Adds a range of cells</td><td>=SUM(B2:B10)</td></tr>
+              <tr><td>=AVERAGE()</td><td>Finds the average</td><td>=AVERAGE(B2:B10)</td></tr>
+              <tr><td>=MAX() / =MIN()</td><td>Largest / smallest value</td><td>=MAX(B2:B10)</td></tr>
+              <tr><td>=COUNT()</td><td>Counts how many numbers</td><td>=COUNT(B2:B10)</td></tr>
+            </table>
+            <p>The <b>:</b> means "through" — <code>B2:B10</code> means cells B2 all the way to B10.</p>
+            <h4>AutoSum — the one-click total</h4>
+            <p>Click an empty cell just below a column of numbers and press <b>Alt + =</b> (or the Σ AutoSum button). Excel guesses the range and totals it. Press Enter.</p>
+          `,
+          tips: [
+            "Copy a formula down a whole column by grabbing the bottom-right corner and dragging — Excel adjusts the cell references automatically.",
+            "If you see #### in a cell, the column is just too narrow — widen it.",
+            "Click a cell to see its formula in the Formula Bar at the top, even though the cell shows the answer."
+          ],
+          shortcuts: [
+            { keys: "Alt + =", action: "AutoSum the column above" },
+            { keys: "Ctrl + `", action: "Show all formulas instead of results (great for checking)" },
+            { keys: "F4", action: "Lock a cell reference (adds $ signs) — see next lesson" }
+          ],
+          quiz: [
+            { q: "What must every Excel formula start with?", choices: ["A number", "An equals sign (=)", "A letter", "A dollar sign"], answer: 1 },
+            { q: "What does =SUM(B2:B10) do?", choices: ["Counts the cells", "Adds cells B2 through B10", "Averages them", "Finds the biggest"], answer: 1 },
+            { q: "Which shortcut instantly totals a column of numbers?", choices: ["Alt + =", "Ctrl + S", "F2", "Ctrl + B"], answer: 0 }
+          ]
+        },
+        {
+          id: "e4",
+          title: "Smart Formulas: IF, Absolute References & Sorting/Filtering",
+          level: "Intermediate",
+          minutes: 11,
+          content: `
+            <p>Now we make Excel think and organise.</p>
+            <h4>IF — make decisions</h4>
+            <p><b>=IF(test, "yes-answer", "no-answer")</b>. For example, flag who is over budget:</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=IF(B2>1000, "Over budget", "OK")</p>
+            <p>If B2 is more than 1000 it writes "Over budget", otherwise "OK".</p>
+            <h4>Absolute references ($) — lock a cell</h4>
+            <p>Normally when you copy a formula, the cells shift. Sometimes you want one cell to stay fixed — like a tax rate in cell E1. Put dollar signs to lock it: <b>$E$1</b>. Press <b>F4</b> on a reference to add them automatically.</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=B2*$E$1   ← E1 stays locked as you copy down</p>
+            <h4>Sort & Filter (Data tab) — the organiser's best friend</h4>
+            <ul>
+              <li><b>Sort</b> arranges rows A→Z, smallest→largest, or by date. Select your data first.</li>
+              <li><b>Filter</b> adds little dropdown arrows to your headings so you can show only what you want — e.g. only "Unpaid" invoices, or only one department. The other rows hide, they aren't deleted.</li>
+            </ul>
+          `,
+          tips: [
+            "Always sort using the Data → Sort button, never by cutting and pasting rows — it keeps each row's data together.",
+            "COUNTIF and SUMIF are the next step up: =SUMIF(C:C,\"Paid\",B:B) adds only the 'Paid' amounts.",
+            "Turn your data into a real Table (Ctrl + T) — it gets filter buttons, banded colours, and formulas that fill down automatically."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + T", action: "Turn a range into a smart Table" },
+            { keys: "Ctrl + Shift + L", action: "Turn Filters on/off" },
+            { keys: "F4", action: "Add/cycle $ locks on a reference" }
+          ],
+          quiz: [
+            { q: "What does =IF(B2>1000,\"Over\",\"OK\") write if B2 is 500?", choices: ["Over", "OK", "1000", "Error"], answer: 1 },
+            { q: "What do the dollar signs in $E$1 do?", choices: ["Format it as currency", "Lock the reference so it doesn't shift when copied", "Make it bold", "Delete it"], answer: 1 },
+            { q: "What does FILTER let you do?", choices: ["Delete rows permanently", "Temporarily show only the rows you want", "Add a chart", "Change fonts"], answer: 1 }
+          ]
+        },
+        {
+          id: "e5",
+          title: "Advanced: VLOOKUP/XLOOKUP, PivotTables & Charts",
+          level: "Advanced",
+          minutes: 14,
+          content: `
+            <p>These are the resume-worthy Excel skills. Learn them and you're genuinely advanced.</p>
+            <h4>XLOOKUP / VLOOKUP — look something up automatically</h4>
+            <p>Imagine a price list. You type a product code and Excel finds its price for you. That's a lookup.</p>
+            <p><b>Modern XLOOKUP</b> (easiest):</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=XLOOKUP(A2, ProductCodes, Prices)</p>
+            <p>"Find the value of A2 in the ProductCodes list, return the matching Price." Older Excel uses <b>VLOOKUP</b> which does the same job with a slightly fussier setup.</p>
+            <h4>PivotTables — summarise thousands of rows in seconds</h4>
+            <p>A PivotTable answers questions like "total sales per region" or "how many invoices per month" without a single formula.</p>
+            <ol>
+              <li>Click anywhere in your data → <b>Insert → PivotTable</b>.</li>
+              <li>Drag a field (e.g. Region) into <b>Rows</b>.</li>
+              <li>Drag a number (e.g. Sales) into <b>Values</b> — it totals automatically.</li>
+              <li>Drag another field into <b>Columns</b> or <b>Filters</b> to slice it further.</li>
+            </ol>
+            <p>Rearrange by dragging — it's the fastest way to explore data.</p>
+            <h4>Charts — turn numbers into a picture</h4>
+            <p>Select your data → <b>Insert → Recommended Charts</b>. Use a <b>column/bar</b> chart to compare, a <b>line</b> chart for trends over time, and a <b>pie</b> chart for parts of a whole. Give every chart a clear title.</p>
+          `,
+          tips: [
+            "A PivotTable doesn't change your data — it's a live summary. Right-click → Refresh after the data changes.",
+            "XLOOKUP can return 'Not found' instead of an ugly error: =XLOOKUP(A2,codes,prices,\"Not found\").",
+            "Keep charts simple: no 3-D, no clutter. The message should be readable in two seconds."
+          ],
+          shortcuts: [
+            { keys: "Alt + F1", action: "Instantly create a chart from selected data" },
+            { keys: "F11", action: "Create a chart on its own new sheet" }
+          ],
+          quiz: [
+            { q: "What is XLOOKUP used for?", choices: ["Printing", "Looking up a value and returning its match (e.g. a price)", "Spell check", "Changing colours"], answer: 1 },
+            { q: "What does a PivotTable do?", choices: ["Deletes duplicate rows", "Summarises large data (e.g. totals per region) with no formulas", "Prints labels", "Locks the file"], answer: 1 },
+            { q: "Which chart is best for showing a trend over time?", choices: ["Pie chart", "Line chart", "No chart", "Table"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 4 — POWERPOINT
+       ================================================================= */
+    {
+      id: "powerpoint",
+      title: "Microsoft PowerPoint",
+      icon: "📽️",
+      color: "#ea580c",
+      blurb: "Build clean, confident presentations that look professional — and deliver them smoothly.",
+      lessons: [
+        {
+          id: "p1",
+          title: "Slides, Layouts & Adding Content",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>PowerPoint is for showing ideas on a screen — meetings, training, pitches.</p>
+            <h4>The building blocks</h4>
+            <ul>
+              <li><b>Slide</b> — one screen. Your presentation is a stack of slides shown in order.</li>
+              <li><b>Layout</b> — a ready-made arrangement of placeholders (Title Slide, Title + Content, Two Content…). Choose via <b>Home → Layout</b>.</li>
+              <li><b>Placeholder</b> — the dotted boxes that say "Click to add title". Just click and type.</li>
+            </ul>
+            <h4>Adding & organising slides</h4>
+            <ul>
+              <li><b>New Slide</b> (Home tab) adds one; click the small arrow to pick its layout.</li>
+              <li>The strip on the left shows all slides — drag them to reorder.</li>
+              <li><b>Insert → Pictures / Icons / Shapes / Table / Chart</b> add visuals.</li>
+            </ul>
+            <h4>The #1 design rule for beginners</h4>
+            <p><b>One idea per slide. Few words. Big text.</b> Slides are a backdrop for <i>you</i> talking — not a document to read aloud. Aim for short phrases, not paragraphs.</p>
+          `,
+          tips: [
+            "Use the Outline View (View tab) to type all your headings quickly before worrying about design.",
+            "Pick a built-in Theme (Design tab) first — it sets matching colours and fonts across every slide instantly.",
+            "Reuse slides from another file via Home → New Slide → Reuse Slides."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + M", action: "Add a new slide" },
+            { keys: "Ctrl + D", action: "Duplicate the selected slide or object" }
+          ],
+          quiz: [
+            { q: "What is the golden design rule for slides?", choices: ["Fit as much text as possible", "One idea per slide, few words, big text", "Use five fonts", "Read every word aloud"], answer: 1 },
+            { q: "What is a 'placeholder'?", choices: ["A saved file", "The dotted box where you click to add title or content", "A keyboard shortcut", "A printed handout"], answer: 1 },
+            { q: "Where do you set matching colours and fonts for the whole deck at once?", choices: ["The Design tab (Themes)", "The File menu", "The status bar", "Track Changes"], answer: 0 }
+          ]
+        },
+        {
+          id: "p2",
+          title: "Design, Transitions & Animations (Without Overdoing It)",
+          level: "Intermediate",
+          minutes: 8,
+          content: `
+            <p>A little movement adds polish; too much looks amateur. Here's the tasteful way.</p>
+            <h4>Transitions — between slides</h4>
+            <p>The <b>Transitions tab</b> animates the change from one slide to the next. <b>Fade</b> or <b>Push</b> look professional. Apply one, then click <b>Apply To All</b> so the whole deck is consistent. Avoid spinning, bouncing transitions in business settings.</p>
+            <h4>Animations — for items on a slide</h4>
+            <p>The <b>Animations tab</b> makes an item appear, emphasise, or leave. The classic use: reveal bullet points one at a time so the audience focuses on each. Select the text box → Animations → <b>Appear</b> or <b>Fade</b> → set "Start: On Click".</p>
+            <h4>Designer — instant professional layouts</h4>
+            <p>In Microsoft 365, <b>Design → Designer</b> suggests beautiful arrangements of your content automatically. Add a picture and watch the ideas appear on the right — one click to apply.</p>
+            <h4>Slide Master — change everything at once</h4>
+            <p><b>View → Slide Master</b> edits the template behind every slide. Change the logo or heading font here once and it updates on every slide. Advanced but powerful for branded decks.</p>
+          `,
+          tips: [
+            "Consistency beats variety — one transition for the whole deck looks far more professional than a different one each time.",
+            "Keep animations to 'Fade' or 'Appear'. Skip the swooshy ones for serious audiences.",
+            "Put your company logo on the Slide Master so it appears on every slide automatically."
+          ],
+          shortcuts: [
+            { keys: "Alt + N then P", action: "Insert a picture (keyboard path)" },
+            { keys: "Ctrl + Shift + C / V", action: "Copy and paste formatting between objects" }
+          ],
+          quiz: [
+            { q: "What's the difference between a Transition and an Animation?", choices: ["No difference", "Transition is between slides; Animation is for items on a slide", "Animation prints; Transition saves", "Both delete slides"], answer: 1 },
+            { q: "What's the professional approach to transitions?", choices: ["A different flashy one per slide", "One subtle one (Fade/Push) applied to all", "No slides at all", "Only spinning ones"], answer: 1 },
+            { q: "Where do you change the logo so it shows on every slide?", choices: ["Slide Master", "The Review tab", "The status bar", "Filter"], answer: 0 }
+          ]
+        },
+        {
+          id: "p3",
+          title: "Delivering: Presenter View, Notes & Exporting",
+          level: "Advanced",
+          minutes: 8,
+          content: `
+            <p>Building the deck is half the job; delivering it smoothly is the other half — and a key office-assistant duty (you'll often run the slides for a manager).</p>
+            <h4>Start the show</h4>
+            <p>Press <b>F5</b> to start from the beginning, or <b>Shift + F5</b> from the current slide. Click or press the <b>spacebar / right arrow</b> to advance, <b>left arrow</b> to go back, and <b>Esc</b> to exit.</p>
+            <h4>Presenter View — your secret cockpit</h4>
+            <p>When connected to a projector, <b>Presenter View</b> shows the audience only the slide, while <i>you</i> see your speaker notes, a timer, the next slide, and tools — on your own screen. Turn it on in the <b>Slide Show</b> tab. Add notes in the box under each slide (View → Notes).</p>
+            <h4>Handy tricks during a show</h4>
+            <ul>
+              <li>Type a slide number then <b>Enter</b> to jump straight to it.</li>
+              <li>Press <b>B</b> to black the screen (and again to return) — great when discussion takes over.</li>
+              <li>Press <b>W</b> for a white screen.</li>
+            </ul>
+            <h4>Sharing the file</h4>
+            <p><b>File → Export → Create PDF</b> for a version anyone can open that can't be edited. <b>File → Export → Create Handouts</b> sends slides + notes to Word for printing.</p>
+          `,
+          tips: [
+            "Always test on the actual projector/screen before the meeting — resolution and colours can surprise you.",
+            "Save a PDF copy to email; it always looks the same on every device, unlike a .pptx.",
+            "Press B to black the screen when you want all eyes on the speaker, not the slide."
+          ],
+          shortcuts: [
+            { keys: "F5", action: "Start the slideshow from the beginning" },
+            { keys: "Shift + F5", action: "Start from the current slide" },
+            { keys: "B / W", action: "Black / white the screen during a show" },
+            { keys: "Esc", action: "End the slideshow" }
+          ],
+          quiz: [
+            { q: "Which key starts the slideshow from the beginning?", choices: ["F5", "Esc", "Ctrl + S", "F2"], answer: 0 },
+            { q: "What does Presenter View let the speaker see that the audience can't?", choices: ["Nothing extra", "Speaker notes, timer, and the next slide", "A different presentation", "The audience's screens"], answer: 1 },
+            { q: "Why export the deck as a PDF before emailing it?", choices: ["It's smaller and looks the same on every device", "It adds animations", "It can be edited more easily", "It prints in colour only"], answer: 0 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 5 — OUTLOOK & EMAIL
+       ================================================================= */
+    {
+      id: "outlook",
+      title: "Outlook, Email & Calendar",
+      icon: "📧",
+      color: "#0891b2",
+      blurb: "Manage email, calendars and meetings like a true coordinator — organised, prompt, and professional.",
+      lessons: [
+        {
+          id: "o1",
+          title: "Email That Looks Professional",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>Email is the front door of office work. How you write reflects on the whole organisation.</p>
+            <h4>Anatomy of a great email</h4>
+            <ul>
+              <li><b>Subject line</b> — short and specific: "Invoice #204 — due Friday", not "Hi". People decide whether to open based on this.</li>
+              <li><b>Greeting</b> — "Dear Ms Lee," or "Hi James,". Match the formality of the relationship.</li>
+              <li><b>One clear purpose</b> — say what you need and by when, early. Busy people skim.</li>
+              <li><b>Sign-off</b> — "Kind regards," then your name and a signature block (name, title, phone).</li>
+            </ul>
+            <h4>To, Cc, Bcc — get this right</h4>
+            <ul>
+              <li><b>To</b> — the people who must act or reply.</li>
+              <li><b>Cc</b> (carbon copy) — people who should be kept in the loop but needn't act.</li>
+              <li><b>Bcc</b> (blind copy) — recipients hidden from each other. Use it when emailing a large group so you don't expose everyone's address.</li>
+            </ul>
+            <h4>Attachments</h4>
+            <p>Mention the attachment in the text ("Please see the agenda attached"). <b>Attach the file before you write "attached"</b> — Outlook even warns you if you forget. Large files? Share a OneDrive link instead.</p>
+          `,
+          tips: [
+            "Write the recipient's address LAST — that way you can't send it half-finished by accident.",
+            "Re-read every email once before sending. Tone is easily misread; a quick 'thank you' softens a lot.",
+            "Set up a signature once: File → Options → Mail → Signatures. It auto-adds your details to every email."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + N", action: "New email" },
+            { keys: "Ctrl + Enter", action: "Send the email" },
+            { keys: "Ctrl + R", action: "Reply" },
+            { keys: "Ctrl + Shift + R", action: "Reply All (use with care!)" }
+          ],
+          quiz: [
+            { q: "When should you use Bcc?", choices: ["Never", "To hide recipients' addresses from each other when emailing a group", "Only for your boss", "To make text bold"], answer: 1 },
+            { q: "What makes a good subject line?", choices: ["Just 'Hi'", "Short and specific, like 'Invoice #204 — due Friday'", "Left blank", "The whole message"], answer: 1 },
+            { q: "What's a smart habit to avoid sending an email too early?", choices: ["Type the recipient's address last", "Never use a subject", "Always Reply All", "Write in all caps"], answer: 0 }
+          ]
+        },
+        {
+          id: "o2",
+          title: "Inbox Organisation: Folders, Rules, Flags & Search",
+          level: "Intermediate",
+          minutes: 8,
+          content: `
+            <p>A coordinator's inbox is mission control. Keeping it organised means nothing falls through the cracks.</p>
+            <h4>Folders & categories</h4>
+            <p>Create <b>folders</b> (right-click your mailbox → New Folder) to file emails by project or client. <b>Colour categories</b> tag emails across folders — e.g. red for Urgent, green for Done.</p>
+            <h4>Rules — automatic sorting</h4>
+            <p>A <b>Rule</b> tells Outlook to act automatically: "Move every email from the accounting system into the Invoices folder." Set them up via <b>Rules → Manage Rules</b>. This keeps the inbox clear without lifting a finger.</p>
+            <h4>Flags & follow-up</h4>
+            <p>Click the little <b>flag</b> on an email to mark it for follow-up; set a reminder date so it pops up when due. Flagged items appear in your To-Do list — a simple, reliable task system.</p>
+            <h4>Search like a detective</h4>
+            <p>The search box finds anything fast. Refine it: <code>from:james</code>, <code>subject:invoice</code>, <code>hasattachments:yes</code>. Combine them to pinpoint one email among thousands.</p>
+          `,
+          tips: [
+            "Aim for 'Inbox Zero' — file or flag each email, don't leave hundreds sitting read-but-undone.",
+            "Use a 'Waiting For' folder for emails where you're expecting a reply from someone.",
+            "Archive (not delete) old emails — you keep them searchable without cluttering the inbox."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + E", action: "Jump to the search box" },
+            { keys: "Ctrl + Shift + V", action: "Move the email to a folder" },
+            { keys: "Insert key", action: "Flag/unflag the selected email" }
+          ],
+          quiz: [
+            { q: "What does a Rule do in Outlook?", choices: ["Deletes your inbox", "Automatically sorts/handles incoming emails", "Changes the font", "Prints emails"], answer: 1 },
+            { q: "How do you search for emails that have attachments?", choices: ["hasattachments:yes", "find:files", "attach=true", "You can't"], answer: 0 },
+            { q: "What's the purpose of flagging an email?", choices: ["To delete it", "To mark it for follow-up with an optional reminder", "To make it bold", "To forward it automatically"], answer: 1 }
+          ]
+        },
+        {
+          id: "o3",
+          title: "Calendar & Scheduling Meetings",
+          level: "Intermediate",
+          minutes: 9,
+          content: `
+            <p>Managing calendars and booking meetings is the heartbeat of a coordinator's role.</p>
+            <h4>Appointments vs. Meetings</h4>
+            <ul>
+              <li><b>Appointment</b> — just for you (e.g. "Lunch", "Focus time"). No invitees.</li>
+              <li><b>Meeting</b> — you invite others; they get a request and can Accept/Decline.</li>
+            </ul>
+            <h4>Booking a meeting that works for everyone</h4>
+            <ol>
+              <li><b>New Meeting</b> → add people in the <b>To</b> / <b>Required</b> line.</li>
+              <li>Use <b>Scheduling Assistant</b> — it shows everyone's free/busy times side by side so you pick a slot that's open for all.</li>
+              <li>Add a <b>location</b> or a Teams link, a clear title, and an agenda in the body.</li>
+              <li>Set a <b>reminder</b> (15 min before is standard) and Send.</li>
+            </ol>
+            <h4>Other essentials</h4>
+            <ul>
+              <li><b>Recurring meetings</b> — tick "Make Recurring" for a weekly stand-up; it books every week at once.</li>
+              <li><b>Rooms</b> — book a meeting room as a resource so it can't be double-booked.</li>
+              <li><b>Time zones</b> — when inviting across regions, double-check the zone; Outlook shows the recipient's local time.</li>
+            </ul>
+          `,
+          tips: [
+            "Always add an agenda in the invite body — people arrive prepared and meetings run shorter.",
+            "Send a calendar invite rather than just emailing 'let's meet at 2' — it blocks everyone's time and reminds them.",
+            "When booking for your manager, add 'travel time' or buffer slots so back-to-back meetings don't collide."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + Shift + A", action: "New appointment" },
+            { keys: "Ctrl + Shift + Q", action: "New meeting request" },
+            { keys: "Ctrl + 2", action: "Switch to Calendar view" }
+          ],
+          quiz: [
+            { q: "What's the difference between an Appointment and a Meeting?", choices: ["Nothing", "A Meeting invites others; an Appointment is just for you", "Appointments are longer", "Meetings can't be recurring"], answer: 1 },
+            { q: "Which tool shows everyone's free/busy times to find a slot?", choices: ["The Scheduling Assistant", "Track Changes", "AutoSum", "The Slide Master"], answer: 0 },
+            { q: "What should you always include in a meeting invite body?", choices: ["Nothing", "An agenda", "A pie chart", "Your password"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 6 — OFFICE COORDINATOR / ASSISTANT SKILLS
+       ================================================================= */
+    {
+      id: "coordinator",
+      title: "Office Coordinator Skills",
+      icon: "🗂️",
+      color: "#9333ea",
+      blurb: "The human side of the job: communication, organisation, meetings, phones, filing and professionalism that make you indispensable.",
+      lessons: [
+        {
+          id: "c1",
+          title: "The Role: What Office Assistants & Coordinators Really Do",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>An office assistant/coordinator keeps the workplace running smoothly so everyone else can do their job. You are the organiser, the communicator, and the problem-solver.</p>
+            <h4>Your typical responsibilities</h4>
+            <ul>
+              <li><b>Communication hub</b> — answering phones and emails, greeting visitors, relaying messages.</li>
+              <li><b>Scheduling</b> — managing calendars, booking meetings and rooms, arranging travel.</li>
+              <li><b>Documents</b> — creating and formatting letters, reports, and spreadsheets; filing and record-keeping.</li>
+              <li><b>Office operations</b> — ordering supplies, liaising with vendors, handling mail and deliveries.</li>
+              <li><b>Support</b> — assisting managers, preparing for meetings, taking minutes, following up on tasks.</li>
+            </ul>
+            <h4>The qualities that matter most</h4>
+            <ul>
+              <li><b>Reliability</b> — if you say it's done, it's done. People build trust on this.</li>
+              <li><b>Attention to detail</b> — correct dates, names, and numbers prevent costly mistakes.</li>
+              <li><b>Discretion</b> — you'll see confidential information; keep it confidential.</li>
+              <li><b>Anticipation</b> — the best assistants solve problems before they're asked.</li>
+              <li><b>Calm under pressure</b> — when things go wrong, you're the steady one.</li>
+            </ul>
+          `,
+          tips: [
+            "Keep a running to-do list and review it first thing every morning and last thing before you leave.",
+            "When given a task, repeat it back or confirm the deadline — it prevents misunderstandings.",
+            "Become the person who 'knows where everything is and how everything works' — that makes you indispensable."
+          ],
+          shortcuts: [],
+          quiz: [
+            { q: "Which quality builds the most trust with colleagues?", choices: ["Typing fast", "Reliability — if you say it's done, it's done", "Knowing every shortcut", "Working late"], answer: 1 },
+            { q: "What does 'discretion' mean in this role?", choices: ["Working quietly", "Keeping confidential information confidential", "Decorating the office", "Avoiding meetings"], answer: 1 },
+            { q: "What do the BEST assistants do?", choices: ["Wait to be told everything", "Anticipate and solve problems before being asked", "Only answer emails", "Avoid the phone"], answer: 1 }
+          ]
+        },
+        {
+          id: "c2",
+          title: "Professional Communication: Phone, Email & In Person",
+          level: "Basic",
+          minutes: 9,
+          content: `
+            <p>You are often the first voice or face people meet. Professional communication shapes the whole impression of the company.</p>
+            <h4>Answering the phone</h4>
+            <ul>
+              <li>Answer within 3 rings, smile (it changes your voice), and greet: "Good morning, [Company], this is [Name], how can I help?"</li>
+              <li><b>Taking a message:</b> note the caller's name, company, number, time, and what they need. Read the number back to confirm.</li>
+              <li><b>Transferring:</b> tell the caller who you're connecting them to; if no answer, offer to take a message rather than leaving them stranded.</li>
+              <li><b>On hold:</b> always ask "May I put you on hold?" and check back every 30–45 seconds.</li>
+            </ul>
+            <h4>Email & written tone</h4>
+            <p>Be warm but concise. Use "please" and "thank you". Avoid ALL CAPS (it reads as shouting). When something's urgent, say so politely and give a deadline.</p>
+            <h4>In person & visitors</h4>
+            <p>Greet visitors promptly, offer a seat and water, notify the person they're meeting, and never leave a guest feeling ignored. A friendly, organised welcome sets the tone.</p>
+            <h4>Difficult situations</h4>
+            <p>Stay calm and listen. Don't take frustration personally. Acknowledge ("I understand, let me help"), focus on what you <i>can</i> do, and escalate to a manager when needed.</p>
+          `,
+          tips: [
+            "Keep a notepad and pen by every phone — never rely on memory for a message.",
+            "Mirror the caller's level of formality, but always stay polite and clear.",
+            "The phrase 'Let me find out for you' is far better than a flat 'I don't know'."
+          ],
+          shortcuts: [],
+          quiz: [
+            { q: "What details must a phone message always capture?", choices: ["Just the name", "Name, company, number, time, and the reason — and read the number back", "Only the time", "Nothing, just remember it"], answer: 1 },
+            { q: "Before putting someone on hold you should…", choices: ["Just do it silently", "Ask 'May I put you on hold?' and check back regularly", "Hang up", "Transfer without telling them"], answer: 1 },
+            { q: "How should you handle an upset caller?", choices: ["Argue back", "Stay calm, acknowledge, focus on what you can do, escalate if needed", "Hang up", "Put them on hold forever"], answer: 1 }
+          ]
+        },
+        {
+          id: "c3",
+          title: "Organisation: Filing, Records & Time Management",
+          level: "Intermediate",
+          minutes: 9,
+          content: `
+            <p>Organisation is the backbone of the role. A well-organised office runs itself; a disorganised one wastes everyone's time.</p>
+            <h4>Filing systems (digital & paper)</h4>
+            <ul>
+              <li><b>Consistent naming</b> — agree a format (e.g. <code>YYYY-MM-DD Client Topic</code>) and use it everywhere.</li>
+              <li><b>Logical folders</b> — by year, then category, then project. Don't go more than 3–4 levels deep.</li>
+              <li><b>One source of truth</b> — store shared files where the team can find them (SharePoint/OneDrive), not on your own desktop.</li>
+              <li><b>Retention</b> — know what must be kept (contracts, invoices) and for how long; archive the rest.</li>
+            </ul>
+            <h4>Managing your time</h4>
+            <ul>
+              <li><b>Prioritise</b> with urgent/important: do urgent+important first, schedule important-not-urgent, minimise the rest.</li>
+              <li><b>Time-block</b> your calendar for focused work, not just meetings.</li>
+              <li><b>Batch</b> similar tasks (all filing at once, all calls at once) to stay efficient.</li>
+              <li><b>Single source to-do list</b> — one place for every task, reviewed daily.</li>
+            </ul>
+            <h4>Supplies & office operations</h4>
+            <p>Keep a simple inventory; reorder before you run out, not after. Build relationships with reliable suppliers. Track recurring needs (paper, toner, kitchen) on a checklist.</p>
+          `,
+          tips: [
+            "Touch each piece of paper/email once: deal, delegate, file, or bin — don't shuffle it endlessly.",
+            "A 5-minute tidy at day's end means a calm start tomorrow.",
+            "Keep a 'how-to' document for recurring tasks so anyone can cover for you — and you look organised."
+          ],
+          shortcuts: [],
+          quiz: [
+            { q: "Where should shared team files live?", choices: ["On your personal desktop", "A shared location like SharePoint/OneDrive — one source of truth", "Printed only", "In your email drafts"], answer: 1 },
+            { q: "In the urgent/important method, what do you do FIRST?", choices: ["The easy tasks", "Tasks that are both urgent AND important", "Nothing", "Only important-not-urgent"], answer: 1 },
+            { q: "Why keep a 'how-to' document for recurring tasks?", choices: ["To fill time", "So anyone can cover for you and work stays consistent", "It's required by law", "To make the folder bigger"], answer: 1 }
+          ]
+        },
+        {
+          id: "c4",
+          title: "Meetings: Agendas, Minutes & Follow-up",
+          level: "Intermediate",
+          minutes: 10,
+          content: `
+            <p>Coordinators make meetings work — before, during, and after. Done well, this is one of the most visible parts of the job.</p>
+            <h4>Before: preparation</h4>
+            <ul>
+              <li>Confirm date, time, attendees, and room/link; send the invite with an <b>agenda</b>.</li>
+              <li>Circulate any documents in advance so people arrive ready.</li>
+              <li>Prepare the room: seating, projector, water, printed agendas if needed.</li>
+            </ul>
+            <h4>During: taking minutes</h4>
+            <p>Minutes are the official record. Capture:</p>
+            <ul>
+              <li><b>Attendees</b> (and apologies/absentees), date, time.</li>
+              <li><b>Decisions</b> made — clearly, not every word said.</li>
+              <li><b>Action items</b> — the gold. For each: <i>what</i>, <i>who</i> is responsible, and <i>by when</i>.</li>
+            </ul>
+            <p>Don't transcribe everything — summarise decisions and actions. Note the agenda item each point relates to.</p>
+            <h4>After: follow-up</h4>
+            <ul>
+              <li>Type up and circulate the minutes <b>within 24 hours</b> while it's fresh.</li>
+              <li>Track action items and gently remind owners as deadlines approach.</li>
+              <li>Carry unfinished actions to the next meeting's agenda.</li>
+            </ul>
+          `,
+          tips: [
+            "Build a minutes template (attendees, agenda items, decisions, action table) so you only fill in the blanks.",
+            "An 'Action: Sarah to send report by Fri 6 June' line is worth more than a paragraph of discussion.",
+            "Send minutes promptly — speed builds your reputation for reliability."
+          ],
+          shortcuts: [],
+          quiz: [
+            { q: "What's the most important thing to capture in minutes?", choices: ["Every single word", "Action items: what, who, and by when", "The weather", "Who arrived late"], answer: 1 },
+            { q: "When should minutes ideally be circulated?", choices: ["Within 24 hours, while fresh", "A month later", "Never", "Only if asked"], answer: 0 },
+            { q: "What should be sent out WITH the meeting invite?", choices: ["A pie chart", "An agenda (and any documents to read)", "Nothing", "The minutes from a future meeting"], answer: 1 }
+          ]
+        },
+        {
+          id: "c5",
+          title: "Advanced: Travel, Events, Confidentiality & Growing in the Role",
+          level: "Advanced",
+          minutes: 11,
+          content: `
+            <p>The skills that mark out a senior, trusted coordinator or executive assistant.</p>
+            <h4>Travel coordination</h4>
+            <ul>
+              <li>Build an <b>itinerary</b>: flights, hotels, ground transport, meeting times — all in one document, in the traveller's local time.</li>
+              <li>Keep confirmation numbers, addresses, and emergency contacts together.</li>
+              <li>Anticipate: visas, time-zone gaps, dietary needs, a buffer for delays.</li>
+            </ul>
+            <h4>Organising events & meetings (bigger scale)</h4>
+            <p>For a workshop or off-site: book the venue, manage the guest list and RSVPs, arrange catering and equipment, prepare materials, and keep a run-sheet (timed schedule). A checklist with deadlines is your best friend.</p>
+            <h4>Confidentiality & professionalism</h4>
+            <ul>
+              <li>You'll handle salaries, contracts, personal data — treat all of it as strictly confidential.</li>
+              <li>Lock your screen (Windows + L) when away; don't leave sensitive papers on the desk.</li>
+              <li>Be discreet in conversation; gossip destroys trust instantly.</li>
+            </ul>
+            <h4>Growing in the role</h4>
+            <ul>
+              <li><b>Learn the business</b> — understand what the organisation does and who's who.</li>
+              <li><b>Build relationships</b> across departments; your network gets things done.</li>
+              <li><b>Keep upskilling</b> — advanced Excel, project tools, and clear writing open doors to executive assistant and office manager roles.</li>
+              <li><b>Ask for feedback</b> and act on it; it accelerates your growth.</li>
+            </ul>
+          `,
+          tips: [
+            "For travel, always have a Plan B (alternate flight, backup contact) — managers remember who saved the day.",
+            "A single, well-formatted itinerary document beats ten scattered confirmation emails.",
+            "Confidentiality is a reputation you build once and can lose in a single careless moment — guard it."
+          ],
+          shortcuts: [
+            { keys: "Windows + L", action: "Lock your screen instantly when stepping away" }
+          ],
+          quiz: [
+            { q: "What's the best format for travel details?", choices: ["Ten separate emails", "One clear itinerary with flights, hotel, transport, and contacts together", "Memorising it", "A voicemail"], answer: 1 },
+            { q: "How should you treat salaries, contracts and personal data?", choices: ["Share with friends", "As strictly confidential", "Post on the noticeboard", "Email to everyone"], answer: 1 },
+            { q: "What helps you grow toward executive assistant or office manager roles?", choices: ["Avoiding new tasks", "Upskilling (advanced Excel, writing), building relationships, asking for feedback", "Staying silent", "Never learning the business"], answer: 1 }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+/* Make available to the app whether loaded via <script> or modules. */
+if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULUM; }
