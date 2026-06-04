@@ -158,6 +158,8 @@ a { color: var(--brand); }
 .box.short h4 { color: var(--brand-dark); }
 .box.practice { background: #ecfdf5; border: 1px solid #a7f3d0; }
 .box.practice h4 { color: #047857; }
+.box.tagalog { background: #eff6ff; border: 1px solid #bfdbfe; }
+.box.tagalog h4 { color: #1d4ed8; }
 .kbd-row { display: flex; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px dashed #c7d2fe; flex-wrap: wrap; }
 .kbd-row:last-child { border-bottom: none; }
 .kbd { font-family: monospace; background: #fff; border: 1px solid #c7d2fe; border-bottom-width: 2px; border-radius: 7px; padding: 4px 9px; font-size: 13px; font-weight: 700; color: var(--brand-dark); white-space: nowrap; }

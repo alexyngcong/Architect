@@ -51,7 +51,7 @@ const OFFICE_CURRICULUM = {
       { day: 5,  focus: "Word: advanced + business writing",        lessons: ["w5", "x2"] },
       { day: 6,  focus: "Excel: the grid & making it readable",     lessons: ["e1", "e2"] },
       { day: 7,  focus: "Excel: formulas that do the maths",        lessons: ["e3", "e4"] },
-      { day: 8,  focus: "Excel: lookups, PivotTables & charts",     lessons: ["e5"] },
+      { day: 8,  focus: "Excel: lookups, charts + shortcut drills", lessons: ["e5", "e6"] },
       { day: 9,  focus: "PowerPoint: build a clean presentation",   lessons: ["p1", "p2"] },
       { day: 10, focus: "Present well + professional email",        lessons: ["p3", "o1"] },
       { day: 11, focus: "Outlook: organise inbox & calendar",       lessons: ["o2", "o3"] },
@@ -121,6 +121,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Enter", action: "Confirm, or start a new line" }
           ],
           practice: "Open any program (try Notepad or Word). Type your full name, then your address. Use <b>Shift</b> for the capital letters. Press <b>Enter</b> to start a new line between them. Then use <b>Backspace</b> to delete a letter and retype it. Finally, right-click anywhere on the page and see what menu appears.",
+          summary_tl: "Sa lesson na ito, ang pinakabasic: paggamit ng mouse (left-click=pumili, double-click=magbukas, right-click=mga opsyon), ang mga window sa screen, at ang mahahalagang keys — Enter, Shift (para sa malalaking letra), Backspace (pang-delete), Tab, at Ctrl (ginagamit sa mga shortcut). Huwag mag-alala kung marami; matututunan mo habang ginagawa. Kapag hindi sigurado, i-right-click!",
           quiz: [
             { q: "What does a DOUBLE-click usually do?", choices: ["Deletes a file", "Opens a file, folder or program", "Closes the window", "Types a capital letter"], answer: 1 },
             { q: "You're unsure what options you have on an item. What's the best thing to try?", choices: ["Turn off the computer", "Right-click it to see a menu of options", "Press the spacebar repeatedly", "Unplug the mouse"], answer: 1 },
@@ -155,6 +156,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + F1", action: "Hide or show the Ribbon" }
           ],
           practice: "Open Word. Click each tab along the top (Home, Insert, Layout…) and watch the buttons change. Type a sentence, select it with your mouse, then make it bold using the Home tab.",
+          summary_tl: "Lahat ng Office programs (Word, Excel, PowerPoint, Outlook) ay magkakapareho ang itsura. Ang hanay ng mga button sa itaas ay tinatawag na Ribbon, na may mga Tab (Home, Insert, Layout...). Tandaan ang golden rule: PUMILI muna (i-highlight ang text o item) bago mag-click ng button. Ang File tab ang gamit sa Open, Save, at Print.",
           quiz: [
             { q: "What is the strip of buttons across the top of every Office program called?", choices: ["The Toolbar", "The Ribbon", "The Menu Bar", "The Header"], answer: 1 },
             { q: "What should you always do BEFORE clicking a formatting button?", choices: ["Save the file", "Print a copy", "Select the text or item you want to change", "Close other programs"], answer: 2 },
@@ -192,6 +194,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + N", action: "Create a new blank file" }
           ],
           practice: "Create a new folder on your Desktop called 'Practice'. Open Word, type a few words, and save the file into that folder using Ctrl+S. Give it a name with today's date, like '2026-06-04 Practice'.",
+          summary_tl: "Ang folder ay parang filing cabinet ng mga file. Mag-save lagi gamit ang Ctrl+S (gawing ugali!). Ang 'Save As' (F12) ay gumagawa ng bagong kopya. Pangalanan ang file nang malinaw na may petsa (Taon-Buwan-Araw) para maayos ang pagkakasunod. Kung naka-OneDrive, automatic itong nagse-save.",
           quiz: [
             { q: "Which shortcut saves your work instantly?", choices: ["Ctrl + P", "Ctrl + S", "Ctrl + O", "F1"], answer: 1 },
             { q: "What is the best way to name files so they sort in order?", choices: ["Use the word Final", "Start with the date as Year-Month-Day", "Use random numbers", "All capital letters"], answer: 1 },
@@ -231,6 +234,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Windows + V", action: "Clipboard history" }
           ],
           practice: "In Word, type three lines of text. Copy the first line (Ctrl+C) and paste it (Ctrl+V) at the bottom. Then press Ctrl+Z a few times and watch it undo. Finally press Windows+V to see your clipboard history.",
+          summary_tl: "Ito ang pinaka-gamit na aksyon: Copy (Ctrl+C)=kopya; Cut (Ctrl+X)=aalisin para ilipat; Paste (Ctrl+V)=ilalagay; Undo (Ctrl+Z)=ibabalik ang mali. Gamitin ang Ctrl+Shift+V para sa malinis na text (walang dalang format). Ang Windows+V ay nagpapakita ng mga nakopya mo dati.",
           quiz: [
             { q: "Which shortcut UNDOES your last mistake?", choices: ["Ctrl + U", "Ctrl + Z", "Ctrl + V", "Ctrl + D"], answer: 1 },
             { q: "You copied text from a website but it brought ugly colours. What pastes it as clean plain text?", choices: ["Ctrl + V", "Ctrl + Shift + V", "Ctrl + C", "Ctrl + B"], answer: 1 },
@@ -286,6 +290,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Spacebar", action: "Clear formatting" }
           ],
           practice: "Type a short 'thank you' note (3–4 lines). Make the greeting bold, the closing italic, and turn three points into a bulleted list. Then use the Format Painter to copy the greeting's look onto the closing.",
+          summary_tl: "Ang Word ay para sa mga dokumento tulad ng liham at report. Sa Home tab: font, laki, Bold/Italic/Underline, alignment, bullets. Pumili ng isang propesyonal na font (Calibri o Arial, laki 11-12). Mabilis pumili: double-click=salita, triple-click=talata, Ctrl+A=lahat. Ang Format Painter (brush) ay kinokopya ang itsura sa ibang text.",
           quiz: [
             { q: "How do you select a whole paragraph quickly?", choices: ["Single click", "Double-click", "Triple-click", "Right-click"], answer: 2 },
             { q: "What does the Format Painter (paintbrush) do?", choices: ["Changes the page colour", "Copies formatting from one place to another", "Draws pictures", "Deletes text"], answer: 1 },
@@ -322,6 +327,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Shift + Enter", action: "New line without starting a new paragraph" }
           ],
           practice: "Open a Word document and add a header with a made-up company name, a footer with your name, and automatic page numbers. Then press Ctrl+Enter to start a fresh second page.",
+          summary_tl: "Ang malinis na dokumento ay may tamang margins, page numbers, at header/footer. Sa Layout tab: margins at orientation (Portrait=patayo, Landscape=pahiga). Sa Insert tab: Header/Footer (paulit sa bawat pahina) at Page Number. Para magsimula ng bagong pahina, Ctrl+Enter (page break), hindi paulit-ulit na Enter.",
           quiz: [
             { q: "What is the correct way to start text on a brand-new page?", choices: ["Press Enter many times", "Ctrl + Enter (page break)", "Change the font size", "Add a header"], answer: 1 },
             { q: "Where does a repeating company name on every page go?", choices: ["In the header or footer", "In the margin settings", "In a text box only", "In the file name"], answer: 0 },
@@ -353,6 +359,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + Ctrl + M", action: "Insert a new comment" }
           ],
           practice: "Turn on Track Changes (Review tab) and edit a sentence — see the changes appear in colour. Add a Comment on one word. Then Accept all changes.",
+          summary_tl: "Gamitin ang Spelling check (F7) — pula=mali sa spelling. Ang Track Changes (Review tab) ay ipinapakita ang bawat edit sa kulay para puwedeng i-Accept o i-Reject ng may-akda. Ang Comment ay paalala sa gilid nang hindi binabago ang teksto. Bago ipadala, i-Accept All at tanggalin ang comments.",
           quiz: [
             { q: "What does Track Changes let the author do with each edit?", choices: ["Print it", "Accept or Reject it", "Email it", "Translate it"], answer: 1 },
             { q: "How do you leave a note for the author WITHOUT changing the text?", choices: ["Bold the text", "Insert a Comment", "Delete the sentence", "Change the font"], answer: 1 },
@@ -392,6 +399,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Shift + Tab", action: "Move to previous table cell" }
           ],
           practice: "Insert a 3-column, 4-row table and fill in a mini contacts list (Name, Email, Phone). Use Tab to move between cells. Then insert any picture and try the 'Square' text-wrap option.",
+          summary_tl: "Maglagay ng table gamit ang Insert -> Table. Sa loob: Tab=susunod na cell (sa huli, dagdag ng row). Larawan: Insert -> Pictures; importante ang Wrap Text (paano dadaloy ang text sa paligid). Gamitin ang SmartArt para sa diagram. Maglagay ng Alt Text sa larawan para accessible.",
           quiz: [
             { q: "In a table, what does pressing Tab in the very last cell do?", choices: ["Saves the file", "Deletes the row", "Adds a new row", "Nothing"], answer: 2 },
             { q: "Which feature lets text flow around a picture?", choices: ["Wrap Text / Layout Options", "Format Painter", "Track Changes", "Page Break"], answer: 0 },
@@ -429,6 +437,7 @@ const OFFICE_CURRICULUM = {
             { keys: "F9", action: "Update a selected field (like the Table of Contents)" }
           ],
           practice: "Write a 1-line letter, then apply Heading styles to two short headings and insert a Table of Contents (References tab). Add a line, then click 'Update Table' to watch it refresh.",
+          summary_tl: "Kapag gumamit ka ng Heading styles, awtomatikong makakagawa ng Table of Contents (References tab). Ang Mail Merge ang power-skill: isang template na liham + listahan (mula Excel) = daan-daang personalized na liham/label/email nang sabay. Hakbang: Mailings -> Start Mail Merge -> piliin ang recipients -> Insert Merge Fields -> Finish & Merge.",
           quiz: [
             { q: "What must you use on your headings so Word can build an automatic Table of Contents?", choices: ["Bold text", "Heading styles (Heading 1, 2…)", "Bigger font", "Underline"], answer: 1 },
             { q: "Mail Merge combines a template letter with what?", choices: ["A picture", "A list of recipients (e.g. from Excel)", "A page break", "A footer"], answer: 1 },
@@ -483,6 +492,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + Enter", action: "Start a new line inside the same cell" }
           ],
           practice: "In Excel, type headings in row 1 (Item, Qty, Price). Add three rows of data. Type 'Jan' in a cell and drag the corner down to auto-fill the months.",
+          summary_tl: "Ang Excel ay malaking grid. Cell=kahon (hal. A1); Column=patayo (letra); Row=pahiga (numero). I-type tapos Enter (pababa) o Tab (pakanan). AutoFill: i-type ang 'January', i-drag ang sulok, susunod ang Feb, Mar. Mabilis gumalaw: Ctrl+Arrow. Ilagay ang mga heading sa row 1.",
           quiz: [
             { q: "What is the address of the cell in column B, row 3?", choices: ["3B", "B3", "BB3", "B-3"], answer: 1 },
             { q: "What does AutoFill do when you type 'Monday' and drag the corner down?", choices: ["Deletes the cell", "Fills Tuesday, Wednesday…", "Changes the colour", "Prints the sheet"], answer: 1 },
@@ -527,6 +537,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + H + W", action: "Wrap text" }
           ],
           practice: "Using your small table, format the Price column as currency, bold the heading row with a fill colour, add borders, and use View → Freeze Top Row.",
+          summary_tl: "Para mabasa ang spreadsheet, i-format ang numbers: Currency (pera), Percentage, Comma (libo-libo). Bold ang heading row, lagyan ng kulay at borders. I-double-click ang gilid ng column para mag-auto-fit. View -> Freeze Top Row para manatiling nakikita ang heading. Ctrl+1 ang pinakamabilis sa Format Cells.",
           quiz: [
             { q: "Which View feature keeps your heading row visible while scrolling?", choices: ["Wrap Text", "Freeze Panes", "Merge & Center", "Borders"], answer: 1 },
             { q: "What does Percentage format turn the number 0.25 into?", choices: ["0.25%", "25%", "250%", "2.5%"], answer: 1 },
@@ -567,6 +578,7 @@ const OFFICE_CURRICULUM = {
             { keys: "F4", action: "Lock a cell reference (adds $ signs) — see next lesson" }
           ],
           practice: "Below your Qty column, click an empty cell and press Alt+= to total it. Do the same for Price. Then in a new cell type =AVERAGE() of the prices.",
+          summary_tl: "Dito makapangyarihan ang Excel. Lahat ng formula ay nagsisimula sa equals sign (=). Gamitin ang cell addresses (=A1+A2) para awtomatiko ang update. Pangunahing function: =SUM() (dagdag), =AVERAGE(), =MAX()/=MIN(), =COUNT(). Ang tutuldok (:) ay 'hanggang' (B2:B10). Ang AutoSum (Alt+=) ay agad na nagto-total.",
           quiz: [
             { q: "What must every Excel formula start with?", choices: ["A number", "An equals sign (=)", "A letter", "A dollar sign"], answer: 1 },
             { q: "What does =SUM(B2:B10) do?", choices: ["Counts the cells", "Adds cells B2 through B10", "Averages them", "Finds the biggest"], answer: 1 },
@@ -604,6 +616,7 @@ const OFFICE_CURRICULUM = {
             { keys: "F4", action: "Add/cycle $ locks on a reference" }
           ],
           practice: "Add a column called 'Status' and use =IF(C2>10,\"High\",\"Low\") to flag prices. Then turn on filters (Ctrl+Shift+L) and filter to show only 'High'.",
+          summary_tl: "Ang =IF(test,'oo','hindi') ay gumagawa ng desisyon. Ang dollar signs (hal. lock sa E1) ay pumipigil na magbago ang reference kapag kinopya — pindutin ang F4 para idagdag. Ang Sort (Data tab) ay nag-aayos ng rows; ang Filter ay nagpapakita lang ng gusto mong makita (itinatago ang iba, di binubura). Gamitin ang Data -> Sort, huwag mag-cut-paste ng rows.",
           quiz: [
             { q: "What does =IF(B2>1000,\"Over\",\"OK\") write if B2 is 500?", choices: ["Over", "OK", "1000", "Error"], answer: 1 },
             { q: "What do the dollar signs in $E$1 do?", choices: ["Format it as currency", "Lock the reference so it doesn't shift when copied", "Make it bold", "Delete it"], answer: 1 },
@@ -644,10 +657,61 @@ const OFFICE_CURRICULUM = {
             { keys: "F11", action: "Create a chart on its own new sheet" }
           ],
           practice: "Select your data and use Insert → Recommended Charts to make a column chart. Then try Insert → PivotTable and drag a field into Rows and a number into Values.",
+          summary_tl: "Ang XLOOKUP/VLOOKUP ay naghahanap ng halaga at ibinabalik ang katugma (hal. presyo ng product code). Ang PivotTable ay nagbubuod ng libong rows sa segundo (hal. total per region) nang walang formula — i-drag lang ang fields. Ang Charts: column=paghahambing, line=trend sa panahon, pie=bahagi ng kabuuan.",
           quiz: [
             { q: "What is XLOOKUP used for?", choices: ["Printing", "Looking up a value and returning its match (e.g. a price)", "Spell check", "Changing colours"], answer: 1 },
             { q: "What does a PivotTable do?", choices: ["Deletes duplicate rows", "Summarises large data (e.g. totals per region) with no formulas", "Prints labels", "Locks the file"], answer: 1 },
             { q: "Which chart is best for showing a trend over time?", choices: ["Pie chart", "Line chart", "No chart", "Table"], answer: 1 }
+          ]
+        },
+        {
+          id: "e6",
+          title: "Excel Drills: Essential Shortcuts & Formula Practice",
+          level: "Intermediate",
+          minutes: 12,
+          content: `
+            <p>This lesson is a hands-on workout. Knowing these shortcuts and core formulas by heart is what makes you <i>fast</i> in Excel — exactly what employers notice. Practise them until they're automatic.</p>
+            <h4>The must-know keyboard shortcuts</h4>
+            <table class="lesson-table">
+              <tr><th>Shortcut</th><th>What it does</th></tr>
+              <tr><td>Ctrl + Arrow</td><td>Jump to the edge of your data</td></tr>
+              <tr><td>Ctrl + Shift + Arrow</td><td>Select all the way to the edge of the data</td></tr>
+              <tr><td>Ctrl + Space / Shift + Space</td><td>Select the whole column / whole row</td></tr>
+              <tr><td>Alt + =</td><td>AutoSum (total the numbers above)</td></tr>
+              <tr><td>Ctrl + ;</td><td>Insert today's date</td></tr>
+              <tr><td>Ctrl + 1</td><td>Open Format Cells</td></tr>
+              <tr><td>F2</td><td>Edit the active cell</td></tr>
+              <tr><td>F4</td><td>Lock a reference / repeat last action</td></tr>
+              <tr><td>Ctrl + T</td><td>Turn data into a Table</td></tr>
+              <tr><td>Ctrl + Shift + L</td><td>Turn filters on/off</td></tr>
+              <tr><td>Alt + Enter</td><td>New line inside the same cell</td></tr>
+              <tr><td>Ctrl + Z / Ctrl + Y</td><td>Undo / Redo</td></tr>
+            </table>
+            <h4>The core formulas to memorise</h4>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=SUM(A1:A10) &nbsp; add a range<br>=AVERAGE(A1:A10) &nbsp; the average<br>=MIN() / =MAX() &nbsp; smallest / largest<br>=COUNT(A1:A10) &nbsp; how many numbers<br>=COUNTA(A1:A10) &nbsp; how many non-empty cells<br>=IF(A1&gt;10,"High","Low") &nbsp; make a decision<br>=ROUND(A1,2) &nbsp; round to 2 decimals<br>=TODAY() &nbsp; today's date</p>
+            <h4>How to get fast</h4>
+            <p>Don't try to learn all of these at once. Pick <b>3 shortcuts a day</b>, use them on purpose until they feel natural, then add 3 more. Within two weeks they'll be muscle memory. Do the practice below, then take the quiz to test yourself.</p>
+          `,
+          tips: [
+            "F4 is a hidden gem: in a formula it adds the dollar-sign locks; anywhere else it repeats your last action.",
+            "Select a range first, then Alt + = totals each column at once — a huge time-saver.",
+            "If a formula misbehaves, press Ctrl + ` (back-tick) to see all formulas at once and spot the problem."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + Shift + Arrow", action: "Select to the edge of your data" },
+            { keys: "Alt + =", action: "AutoSum" },
+            { keys: "F4", action: "Lock a reference / repeat last action" },
+            { keys: "Ctrl + 1", action: "Open Format Cells" },
+            { keys: "Ctrl + T", action: "Make a Table" }
+          ],
+          practice: "Build a mini scoreboard: A1='Name', B1='Score'. Fill A2:A6 with 5 names and B2:B6 with scores. Now PRACTISE: (1) press Alt+= under the scores to total them; (2) in another cell use =AVERAGE(B2:B6); (3) =MAX(B2:B6) and =MIN(B2:B6); (4) in C2 type =IF(B2>50,\"Pass\",\"Fail\") and copy it down; (5) use Ctrl+Shift+Down to select the scores quickly. Time yourself — try to finish in under 3 minutes!",
+          summary_tl: "Practice lesson ito! Kabisaduhin ang shortcuts: Alt+= (AutoSum), F4 (lock reference), Ctrl+1 (Format Cells), Ctrl+Shift+Arrow (pumili hanggang dulo), Ctrl+T (Table), F2 (edit cell). Core formulas: =SUM, =AVERAGE, =MAX/MIN, =COUNT, =IF, =ROUND, =TODAY. Tip: 3 shortcut kada araw hanggang maging automatic. Gawin ang practice at quiz para masubok ang sarili!",
+          quiz: [
+            { q: "Which shortcut totals the numbers above the cell?", choices: ["Ctrl + T", "Alt + =", "F4", "Ctrl + 1"], answer: 1 },
+            { q: "What does F4 do inside a formula?", choices: ["Deletes it", "Locks the cell reference (adds dollar signs)", "Prints it", "Makes it bold"], answer: 1 },
+            { q: "Which formula makes a decision (e.g. Pass/Fail)?", choices: ["=SUM()", "=IF()", "=COUNT()", "=TODAY()"], answer: 1 },
+            { q: "How do you quickly select all the data down to the edge?", choices: ["Ctrl + Shift + Arrow", "Ctrl + P", "F2", "Alt + Enter"], answer: 0 },
+            { q: "What's the smart way to learn these shortcuts?", choices: ["Memorise all 20 in one night", "Learn about 3 a day and use them until automatic", "Never use them", "Only read about them"], answer: 1 }
           ]
         }
       ]
@@ -695,6 +759,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + D", action: "Duplicate the selected slide or object" }
           ],
           practice: "Create a new presentation. Add a title slide with a title and subtitle, then add a second slide with a bulleted list of 3 points. Pick a Theme from the Design tab.",
+          summary_tl: "Ang PowerPoint ay para sa presentation sa screen. Slide=isang screen; Layout=handang ayos ng placeholders; Placeholder=ang 'Click to add title'. New Slide (Home), i-drag sa kaliwa para ayusin. Pinakaimportante: ISANG ideya kada slide, kaunting salita, malaking text. Pumili ng Theme (Design tab) para tumugma ang kulay at font.",
           quiz: [
             { q: "What is the golden design rule for slides?", choices: ["Fit as much text as possible", "One idea per slide, few words, big text", "Use five fonts", "Read every word aloud"], answer: 1 },
             { q: "What is a 'placeholder'?", choices: ["A saved file", "The dotted box where you click to add title or content", "A keyboard shortcut", "A printed handout"], answer: 1 },
@@ -727,6 +792,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + C / V", action: "Copy and paste formatting between objects" }
           ],
           practice: "Apply a 'Fade' transition and click 'Apply To All'. Then add a simple 'Appear' animation to your bullet points so they reveal one at a time.",
+          summary_tl: "Ang Transition (Transitions tab) ay galaw pag-lipat ng slide — Fade o Push, tapos Apply To All. Ang Animation (Animations tab) ay para sa item sa slide — hal. paisa-isang bullets. Iwasan ang sobrang galaw. Ang Slide Master ang gamit para baguhin ang lahat ng slide nang sabay (hal. logo).",
           quiz: [
             { q: "What's the difference between a Transition and an Animation?", choices: ["No difference", "Transition is between slides; Animation is for items on a slide", "Animation prints; Transition saves", "Both delete slides"], answer: 1 },
             { q: "What's the professional approach to transitions?", choices: ["A different flashy one per slide", "One subtle one (Fade/Push) applied to all", "No slides at all", "Only spinning ones"], answer: 1 },
@@ -765,6 +831,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Esc", action: "End the slideshow" }
           ],
           practice: "Press F5 to start your slideshow. Practise advancing with the spacebar and going back with the arrow. Press B to black the screen, then B again. Press Esc to exit.",
+          summary_tl: "F5 para simulan ang slideshow (Shift+F5 mula sa kasalukuyang slide). Spacebar/right arrow=sunod, left arrow=balik, Esc=labas. Ang Presenter View ay nagpapakita sa iyo ng notes, timer, at susunod na slide habang slide lang ang nakikita ng audience. Pindutin ang B para itim ang screen. I-export bilang PDF para pare-pareho ang itsura.",
           quiz: [
             { q: "Which key starts the slideshow from the beginning?", choices: ["F5", "Esc", "Ctrl + S", "F2"], answer: 0 },
             { q: "What does Presenter View let the speaker see that the audience can't?", choices: ["Nothing extra", "Speaker notes, timer, and the next slide", "A different presentation", "The audience's screens"], answer: 1 },
@@ -819,6 +886,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + R", action: "Reply All (use with care!)" }
           ],
           practice: "Draft a practice email to yourself: write a clear subject line, a greeting, one clear request with a deadline, and a sign-off. Attach any file, then send it and check it arrives.",
+          summary_tl: "Magandang email: malinaw na Subject (hal. 'Invoice #204 — due Friday'), greeting, isang malinaw na layunin agad, at sign-off na may pangalan. To=dapat sumagot; Cc=para malaman lang; Bcc=itinatago ang mga address. I-attach muna ang file bago isulat ang 'attached'. Tip: huling i-type ang address para di maaga ang send.",
           quiz: [
             { q: "When should you use Bcc?", choices: ["Never", "To hide recipients' addresses from each other when emailing a group", "Only for your boss", "To make text bold"], answer: 1 },
             { q: "What makes a good subject line?", choices: ["Just 'Hi'", "Short and specific, like 'Invoice #204 — due Friday'", "Left blank", "The whole message"], answer: 1 },
@@ -852,6 +920,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Insert key", action: "Flag/unflag the selected email" }
           ],
           practice: "Create a folder in your mailbox called 'Practice', then move an email into it. Flag one email for follow-up. Use the search box to find an email by typing a word from its subject.",
+          summary_tl: "Para organisado ang inbox: Folders at Categories (kulay). Ang Rules ay awtomatikong nag-aayos ng paparating na email. Ang Flag ay para sa follow-up na may reminder. Mahusay mag-search: from:james, subject:invoice, hasattachments:yes. Layunin: 'Inbox Zero' — i-file o i-flag ang bawat email.",
           quiz: [
             { q: "What does a Rule do in Outlook?", choices: ["Deletes your inbox", "Automatically sorts/handles incoming emails", "Changes the font", "Prints emails"], answer: 1 },
             { q: "How do you search for emails that have attachments?", choices: ["hasattachments:yes", "find:files", "attach=true", "You can't"], answer: 0 },
@@ -895,6 +964,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + 2", action: "Switch to Calendar view" }
           ],
           practice: "Open your Calendar and create a practice meeting for tomorrow. Add an agenda in the body, set a 15-minute reminder, and (if you can) invite yourself at another address.",
+          summary_tl: "Appointment=para sa iyo lang; Meeting=may iniimbitahan. Para sa meeting na bagay sa lahat: gamitin ang Scheduling Assistant (free/busy ng lahat). Magdagdag ng location/Teams link, agenda, reminder (15 min bago). Para sa lingguhan, gawing Recurring. Tiyakin ang time zone kapag iba't ibang lugar.",
           quiz: [
             { q: "What's the difference between an Appointment and a Meeting?", choices: ["Nothing", "A Meeting invites others; an Appointment is just for you", "Appointments are longer", "Meetings can't be recurring"], answer: 1 },
             { q: "Which tool shows everyone's free/busy times to find a slot?", choices: ["The Scheduling Assistant", "Track Changes", "AutoSum", "The Slide Master"], answer: 0 },
@@ -944,6 +1014,7 @@ const OFFICE_CURRICULUM = {
             "Become the person who 'knows where everything is and how everything works' — that makes you indispensable."
           ],
           shortcuts: [],
+          summary_tl: "Ang office assistant/coordinator ang nagpapatakbo ng opisina. Gawain: komunikasyon (telepono, email, bisita), scheduling, dokumento at filing, supplies, suporta sa manager. Mahalagang katangian: reliability (kapag sinabi mong tapos, tapos), atensyon sa detalye, discretion (kumpidensyal), at pag-asa sa problema bago pa itanong.",
           quiz: [
             { q: "Which quality builds the most trust with colleagues?", choices: ["Typing fast", "Reliability — if you say it's done, it's done", "Knowing every shortcut", "Working late"], answer: 1 },
             { q: "What does 'discretion' mean in this role?", choices: ["Working quietly", "Keeping confidential information confidential", "Decorating the office", "Avoiding meetings"], answer: 1 },
@@ -977,6 +1048,7 @@ const OFFICE_CURRICULUM = {
             "The phrase 'Let me find out for you' is far better than a flat 'I don't know'."
           ],
           shortcuts: [],
+          summary_tl: "Ikaw madalas ang unang boses/mukha ng kumpanya. Telepono: sagutin sa 3 ring, ngumiti, kumuha ng kumpletong message (pangalan, kumpanya, numero, oras, dahilan — ulitin ang numero). Email: magalang at maikli. Bisita: batiin agad, alukin ng upuan. Galit na tao: manatiling kalmado, makinig, kilalanin ang damdamin, tumulong.",
           quiz: [
             { q: "What details must a phone message always capture?", choices: ["Just the name", "Name, company, number, time, and the reason — and read the number back", "Only the time", "Nothing, just remember it"], answer: 1 },
             { q: "Before putting someone on hold you should…", choices: ["Just do it silently", "Ask 'May I put you on hold?' and check back regularly", "Hang up", "Transfer without telling them"], answer: 1 },
@@ -1013,6 +1085,7 @@ const OFFICE_CURRICULUM = {
             "Keep a 'how-to' document for recurring tasks so anyone can cover for you — and you look organised."
           ],
           shortcuts: [],
+          summary_tl: "Ang organisasyon ang gulugod ng trabaho. Filing: pare-parehong pangalan (YYYY-MM-DD), maayos na folders, isang shared na lugar (OneDrive/SharePoint). Time management: unahin ang urgent+important; i-schedule ang important; i-batch ang magkakatulad; isang to-do list na binabalikan araw-araw. Supplies: mag-order BAGO maubos.",
           quiz: [
             { q: "Where should shared team files live?", choices: ["On your personal desktop", "A shared location like SharePoint/OneDrive — one source of truth", "Printed only", "In your email drafts"], answer: 1 },
             { q: "In the urgent/important method, what do you do FIRST?", choices: ["The easy tasks", "Tasks that are both urgent AND important", "Nothing", "Only important-not-urgent"], answer: 1 },
@@ -1053,6 +1126,7 @@ const OFFICE_CURRICULUM = {
             "Send minutes promptly — speed builds your reputation for reliability."
           ],
           shortcuts: [],
+          summary_tl: "Bago ang meeting: kumpirmahin ang oras/lugar, magpadala ng agenda. Habang nagmi-meeting, kumuha ng MINUTES: attendees, desisyon, at lalo na ang ACTION ITEMS (ano, sino, kailan). Pagkatapos: ipamahagi ang minutes sa loob ng 24 oras, i-track ang actions, paalalahanan ang may hawak bago ang deadline.",
           quiz: [
             { q: "What's the most important thing to capture in minutes?", choices: ["Every single word", "Action items: what, who, and by when", "The weather", "Who arrived late"], answer: 1 },
             { q: "When should minutes ideally be circulated?", choices: ["Within 24 hours, while fresh", "A month later", "Never", "Only if asked"], answer: 0 },
@@ -1096,6 +1170,7 @@ const OFFICE_CURRICULUM = {
           shortcuts: [
             { keys: "Windows + L", action: "Lock your screen instantly when stepping away" }
           ],
+          summary_tl: "Senior skills: Travel — isang itinerary (flight, hotel, transport, contacts) sa local time. Events — venue, RSVP, catering, materials, run-sheet (naka-oras na schedule). Confidentiality — lihim ang sahod/kontrata/personal data; i-lock ang screen (Windows+L). Paglago: alamin ang negosyo, bumuo ng relasyon, mag-upskill, humingi ng feedback.",
           quiz: [
             { q: "What's the best format for travel details?", choices: ["Ten separate emails", "One clear itinerary with flights, hotel, transport, and contacts together", "Memorising it", "A voicemail"], answer: 1 },
             { q: "How should you treat salaries, contracts and personal data?", choices: ["Share with friends", "As strictly confidential", "Post on the noticeboard", "Email to everyone"], answer: 1 },
@@ -1149,6 +1224,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Num Lock", action: "Turn the number pad on for fast figure entry" }
           ],
           practice: "Open a free typing site (typing.com or keybr.com) and do one 5-minute lesson with your fingers on the home row (ASDF / JKL;). Don't look at the keys!",
+          summary_tl: "Ang mabilis at tamang pag-type ang pinakamalaking araw-araw na skill. Touch typing: ipatong ang daliri sa home row (ASDF / JKL;) — may bukol sa F at J na gabay. Accuracy muna bago bilis. Mag-practice 10-15 min kada araw (typing.com). Data entry: i-double-check ang numbers, gamitin ang Tab, maging consistent, gamitin ang number pad.",
           quiz: [
             { q: "Where do your fingers rest in touch typing (the 'home row')?", choices: ["Q W E R / U I O P", "A S D F / J K L ;", "Z X C V / M , . /", "The number row"], answer: 1 },
             { q: "What matters MOST when learning to type and doing data entry?", choices: ["Speed above all", "Accuracy first — speed follows", "Using only the mouse", "Looking at the keys"], answer: 1 },
@@ -1187,6 +1263,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + V", action: "Paste text in clean formatting" }
           ],
           practice: "Using the email template in this lesson, write a short, polite request to book a meeting room. Keep it to 4 lines. Read it out loud once, then fix anything that sounds clunky.",
+          summary_tl: "Business writing: dumiretso sa punto, maikling pangungusap, simpleng salita, magalang, at i-proofread (basahin nang malakas). Templates: email (malinaw na subject, greeting, layunin, sign-off), pormal na letter (Yours sincerely kung may pangalan; Yours faithfully kung Dear Sir/Madam), memo (To/From/Date/Re). I-save bilang template.",
           quiz: [
             { q: "What's the golden rule of business writing?", choices: ["Use big, impressive words", "Get to the point fast with short, plain sentences", "Write as much as possible", "Skip the greeting"], answer: 1 },
             { q: "If you opened a letter with 'Dear Sir/Madam', how should you close it?", choices: ["Yours sincerely", "Yours faithfully", "Cheers", "Love"], answer: 1 },
@@ -1229,6 +1306,7 @@ const OFFICE_CURRICULUM = {
             "Under-promise and over-deliver: say 'by end of day' and surprise them by lunchtime."
           ],
           shortcuts: [],
+          summary_tl: "Ikaw ang mukha ng kumpanya. Service mindset: mainit at handa, makinig nang buo, matulungin ('Hahanapin ko po' kaysa 'Ewan ko'), at tuparin ang pangako. Bisita: batiin agad, alamin ang pakay, ipaalam sa host, alukin ng upuan. Sa reklamo, LEAP: Listen, Empathise, Apologise, Provide solution. Manatiling kalmado, huwag personalin.",
           quiz: [
             { q: "What does the 'E' in the LEAP method for upset people stand for?", choices: ["Explain", "Empathise", "Exit", "Email"], answer: 1 },
             { q: "What's better than telling a visitor 'I don't know'?", choices: ["Ignoring them", "'Let me find out for you'", "'That's not my job'", "Walking away"], answer: 1 },
@@ -1273,6 +1351,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Win + Shift + S", action: "Screenshot part of the screen (great for quick help notes)" }
           ],
           practice: "Find a printer's Print Preview (Ctrl+P) for any document and look at the double-sided option. If you have a scanner, scan one page to PDF and email it to yourself.",
+          summary_tl: "Kagamitan: Printer — Print Preview (Ctrl+P), i-double-sided para makatipid; ayusin ang paper jam o maling printer. Scanner — gawing PDF ang papel para i-email. Video meeting (Teams/Zoom): i-test ang camera/mic, i-mute kung di nagsasalita, alamin ang screen share. Para magpadala ng tapos na dokumento, gamitin ang PDF.",
           quiz: [
             { q: "Which file format looks the same on every device and is best for sending finished documents?", choices: ["A Word file only", "PDF", "A screenshot", "A zip file"], answer: 1 },
             { q: "What should you do before printing a long document?", choices: ["Nothing", "Use Print Preview and consider double-sided to save paper", "Print 10 test copies", "Turn off the printer"], answer: 1 },
@@ -1317,6 +1396,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + ;", action: "Enter today's date in a cell" }
           ],
           practice: "In Excel, make a simple expense sheet: columns for Date, Description, Category, Amount. Add 4 rows and total the Amount column with =SUM. This is exactly how a real expense log works.",
+          summary_tl: "Madalas humahawak ng maliit na pera ang assistant. Invoice=hingi ng bayad; Receipt=patunay na nakabayad. Expenses: itago ang LAHAT ng resibo, gumawa ng sheet (Date, Description, Category, Amount), i-total gamit ang =SUM. Petty cash: natitirang cash + resibo = dapat tugma sa simulang halaga. Maging tapat at tama sa pera — iyon ang tiwala.",
           quiz: [
             { q: "What's the difference between an invoice and a receipt?", choices: ["They're the same", "An invoice requests payment; a receipt proves payment was made", "A receipt is bigger", "An invoice is only for cash"], answer: 1 },
             { q: "What must you keep to claim back work expenses?", choices: ["Nothing", "Every receipt", "Just a verbal note", "A screenshot of your bank app only"], answer: 1 },
@@ -1369,6 +1449,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + 2", action: "Open the Calendar in Outlook" },
             { keys: "Ctrl + Shift + Q", action: "New meeting request" }
           ],
+          summary_tl: "Ang executive assistant ang nag-iingat sa oras at atensyon ng lider. Kalendaryo: protektahan ang focus time, magdagdag ng buffer (travel/prep), unahin ang mas mahalaga, ihanda ang dokumento bago ang meeting. Inbox (may pahintulot): i-triage, folders/rules, mag-draft ng sagot. Mag-gatekeep nang magalang — magbigay ng alternatibo.",
           quiz: [
             { q: "What is an executive assistant primarily protecting?", choices: ["The office plants", "The executive's time and attention", "The printer", "The petty cash"], answer: 1 },
             { q: "Why add 'buffers' between meetings?", choices: ["To look busy", "So the day doesn't collapse when a meeting runs over (travel/prep/breaks)", "To waste time", "There's no reason"], answer: 1 },
@@ -1406,6 +1487,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + K", action: "Create a new task in Outlook" },
             { keys: "Insert", action: "Flag the selected email for follow-up" }
           ],
+          summary_tl: "Ang superpower: walang nakakalimutan — dahil sa SISTEMA, hindi memorya. Unahin gamit ang urgent/important grid. Isang trusted na task list, binabalikan araw-araw. I-track ang utang-gawa ng iba sa follow-up log (gawain, sino, deadline, status) at magpaalala nang magalang. Kapag tapos, kumpirmahin — iyon ang nagbibigay ng tiwala.",
           quiz: [
             { q: "In the urgent/important grid, what do you do with 'important but NOT urgent' tasks?", choices: ["Drop them", "Schedule them", "Ignore them", "Always do them last forever"], answer: 1 },
             { q: "What's the key to nothing falling through the cracks?", choices: ["A great memory", "One trusted task list reviewed daily", "Doing everything at once", "Avoiding tasks"], answer: 1 },
@@ -1448,6 +1530,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + T", action: "Make a tracking Table in Excel (filters + auto-fill)" },
             { keys: "Ctrl + Shift + L", action: "Toggle filters to sort your task list" }
           ],
+          summary_tl: "Sa project/event: hatiin sa tasks na may owner at deadline, i-track, mag-follow up. Malaking meeting/event: tukuyin ang layunin, i-book ang venue/catering/equipment, i-track ang RSVP, ihanda ang materials, gumawa ng RUN-SHEET (naka-oras na schedule). Lagi may Plan B. Kumpirmahin ang lahat 24-48 oras bago.",
           quiz: [
             { q: "What is a 'run-sheet'?", choices: ["A list of attendees", "A timed schedule of exactly what happens when, and who's responsible", "The catering bill", "A type of email"], answer: 1 },
             { q: "What two tools make events and projects run smoothly?", choices: ["A pen and paper only", "A checklist with deadlines and a run-sheet", "Luck and memory", "A bigger budget"], answer: 1 },
@@ -1494,6 +1577,7 @@ const OFFICE_CURRICULUM = {
           shortcuts: [
             { keys: "Windows + L", action: "Lock your screen to protect data when you step away" }
           ],
+          summary_tl: "Operasyong gawain: Onboarding — ihanda bago ang unang araw (desk, login, email, access, welcome pack), kolektahin ang papeles nang kumpidensyal. Records — pare-parehong filing, alam ang retention. Data protection — i-secure ang personal data, i-lock ang screen, mag-shred ng sensitibong papel. Procurement — i-track ang stock, mag-order bago maubos, i-match ang invoice sa PO.",
           quiz: [
             { q: "What should be ready BEFORE a new employee's first day?", choices: ["Nothing", "Desk, computer/login, email, access and a welcome pack", "Only a chair", "Their resignation letter"], answer: 1 },
             { q: "How must personal and HR data be handled?", choices: ["Shared freely", "Kept secure and strictly confidential, per data-protection rules", "Left on the desk", "Emailed to everyone"], answer: 1 },
@@ -1532,6 +1616,7 @@ const OFFICE_CURRICULUM = {
             "Confidentiality is built once and lost in a moment — guard it like your reputation, because it is."
           ],
           shortcuts: [],
+          summary_tl: "Sa senior level, judgment at tiwala ang laman. Mag-anticipate — gawin ang kakailanganin bago pa hingin. Mag-communicate paitaas nang maikli at may solusyon (hindi lang problema), at maging tapat. Pamahalaan ang relasyon sa lahat nang propesyonal. Ang discretion ang pundasyon — tahimik sa kumpidensyal. Patuloy na matuto para umangat ang karera.",
           quiz: [
             { q: "What single trait do leaders value most in a great assistant?", choices: ["Typing speed", "Anticipating needs before being asked", "Working late", "Knowing gossip"], answer: 1 },
             { q: "How should you raise a problem to a busy executive?", choices: ["Just dump the problem", "Bring the headline AND a suggested solution", "Hide it", "Tell everyone else first"], answer: 1 },

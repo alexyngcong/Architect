@@ -45,7 +45,9 @@ Exam** → earn your **Certificate** when everything's complete.
 | 8 | 👔 **Executive Assistant & Admin Pro** | Managing an exec's calendar/inbox, prioritising & follow-up, projects & events, operations (onboarding, records, compliance, procurement), being a trusted right hand |
 
 **Also included:**
+- 🌐 **Tagalog option** — a one-tap language toggle (🌐 Tagalog/English) in the top bar. It translates the whole interface and adds a **"📘 Paliwanag sa Tagalog"** plain-Tagalog explanation to every lesson, while keeping the Office terms/buttons in English (since the real software is in English).
 - 🧑‍💻 **True-beginner start** — the first lesson, *Computer & Keyboard Basics*, covers the mouse, keys and windows for someone brand new to computers.
+- 📊 **Excel shortcut & formula drills** — a dedicated timed practice lesson + test of the essential Excel keyboard shortcuts and core formulas.
 - ✍️ **"Try It Yourself" practice** — most lessons include a hands-on task so she learns by doing, not just reading.
 - 🚀 **Fast-Track Plan** — a guided ~2½-week, day-by-day schedule so she knows exactly what to do each day to get job-ready ASAP.
 - 🎓 **Module Final Exams** — pass at 80% to earn each module's badge.

@@ -21,9 +21,17 @@
     try { localStorage.setItem(STORE_KEY, JSON.stringify(p)); } catch (e) {}
   }
   let progress = loadProgress();
-  // shape: { done: { lessonId: true }, quiz: { lessonId: scorePercent } }
+  // shape: { done:{lessonId:true}, quiz:{lessonId:pct}, exam:{moduleId:pct}, name, lang }
   progress.done = progress.done || {};
   progress.quiz = progress.quiz || {};
+  progress.lang = progress.lang || "en";   // "en" | "tl" (Tagalog)
+
+  /* ---------- Language (Tagalog option) ----------
+     t(en, tl) returns the Tagalog string when the learner has chosen Tagalog,
+     otherwise the English one. Office terms stay English because the software
+     she uses is in English. */
+  function t(en, tl) { return (progress.lang === "tl" && tl) ? tl : en; }
+  function setLang(lang) { progress.lang = lang; saveProgress(progress); }
 
   function markDone(lessonId) {
     if (!progress.done[lessonId]) {
@@ -81,31 +89,31 @@
           <h3>${m.title}</h3>
           <div class="blurb">${m.blurb}</div>
           <div class="bar"><span style="width:${mp.pct}%"></span></div>
-          <div class="meta"><span>${mp.done} / ${mp.total} lessons</span><span>${mp.pct}%</span></div>
+          <div class="meta"><span>${mp.done} / ${mp.total} ${t("lessons","aralin")}</span><span>${mp.pct}%</span></div>
         </button>`;
     }).join("");
 
     app.innerHTML = `
       <div class="hero">
         <div class="ring"></div><div class="ring two"></div>
-        <h1>Welcome to Office Pro Academy 👋</h1>
-        <p>Your complete, step-by-step path from total beginner to a confident, skilled office assistant, coordinator, administrative staffer &amp; executive assistant. Learn at your own pace — your progress saves automatically.</p>
+        <h1>${t("Welcome to Office Pro Academy 👋","Maligayang pagdating sa Office Pro Academy 👋")}</h1>
+        <p>${t("Your complete, step-by-step path from total beginner to a confident, skilled office assistant, coordinator, administrative staffer &amp; executive assistant. Learn at your own pace — your progress saves automatically.","Ang kumpleto, hakbang-hakbang na gabay mula baguhan tungong tiwalang office assistant, coordinator, administrative staff at executive assistant. Mag-aral sa sariling bilis — awtomatikong naka-save ang iyong progreso.")}</p>
         <div class="btn-row" style="margin-top:18px">
-          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="OPA.go('plan')">🚀 Start the Fast-Track Plan</button>
+          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="OPA.go('plan')">🚀 ${t("Start the Fast-Track Plan","Simulan ang Fast-Track Plan")}</button>
         </div>
-        <p style="opacity:.9;font-size:13.5px;margin-top:12px">New here? It's simple: open a module → read the short lessons & try the practice → pass the quick quiz to tick it off. Totally new to computers? Begin with <b>“Computer &amp; Keyboard Basics”</b> in Office Foundations.</p>
+        <p style="opacity:.9;font-size:13.5px;margin-top:12px">${t("New here? It's simple: open a module → read the short lessons & try the practice → pass the quick quiz to tick it off. Totally new to computers? Begin with <b>“Computer &amp; Keyboard Basics”</b> in Office Foundations.","Bago ka rito? Simple lang: buksan ang module → basahin ang maikling aralin at subukan ang practice → pumasa sa quiz para ma-tsek ito. Bago sa kompyuter? Magsimula sa <b>“Computer &amp; Keyboard Basics”</b> sa Office Foundations.")}</p>
         <div class="progress-summary">
-          <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">Lessons done</div></div>
-          <div class="stat"><div class="num">${pct}%</div><div class="lbl">Course complete</div></div>
-          <div class="stat"><div class="num">${quizzesTaken}</div><div class="lbl">Quizzes taken</div></div>
-          <div class="stat"><div class="num">${avgScore}%</div><div class="lbl">Avg quiz score</div></div>
+          <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">${t("Lessons done","Tapos na aralin")}</div></div>
+          <div class="stat"><div class="num">${pct}%</div><div class="lbl">${t("Course complete","Bahagi ng kurso")}</div></div>
+          <div class="stat"><div class="num">${quizzesTaken}</div><div class="lbl">${t("Quizzes taken","Quiz na nakuha")}</div></div>
+          <div class="stat"><div class="num">${avgScore}%</div><div class="lbl">${t("Avg quiz score","Avg na iskor")}</div></div>
         </div>
       </div>
 
-      <div class="section-title">📚 Your Learning Path — work top to bottom</div>
+      <div class="section-title">📚 ${t("Your Learning Path — work top to bottom","Ang Iyong Learning Path — sunod-sunod mula itaas")}</div>
       <div class="grid">${moduleCards}</div>
 
-      <div class="section-title">🎁 Quick tip of the day</div>
+      <div class="section-title">🎁 ${t("Quick tip of the day","Mabilis na tip ngayong araw")}</div>
       <div class="reader" style="padding:22px">
         <p style="margin:0">${randomTip()}</p>
       </div>
@@ -128,7 +136,7 @@
             <div class="sub">
               <span class="level-tag level-${l.level}">${l.level}</span>
               <span>⏱ ${l.minutes} min</span>
-              ${score != null ? `<span>📝 Quiz: ${score}%</span>` : ""}
+              ${score != null ? `<span>📝 ${t("Quiz","Quiz")}: ${score}%</span>` : ""}
             </div>
           </div>
           <div class="arrow">›</div>
@@ -136,7 +144,7 @@
     }).join("");
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('')">‹ Back to all modules</a>
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to all modules","Balik sa lahat ng module")}</a>
       <div class="module-head">
         <div class="icon" style="background:${m.color}22;color:${m.color}">${m.icon}</div>
         <div>
@@ -146,7 +154,7 @@
       </div>
       <div class="bar" style="margin:14px 0 6px"><span style="width:${mp.pct}%"></span></div>
       <div class="meta" style="display:flex;justify-content:space-between;color:var(--ink-soft);font-size:13px;margin-bottom:24px">
-        <span>${mp.done} of ${mp.total} lessons complete</span><span>${mp.pct}%</span>
+        <span>${mp.done} ${t("of","sa")} ${mp.total} ${t("lessons complete","aralin tapos")}</span><span>${mp.pct}%</span>
       </div>
       ${rows}
       ${examCta(m, mp)}
@@ -162,13 +170,13 @@
     return `
       <div class="reader" style="margin-top:18px;padding:22px;text-align:center;${passed ? "border:1px solid #16a34a" : ""}">
         <div style="font-size:30px">${passed ? "🏆" : "🎓"}</div>
-        <h3 style="margin:6px 0">${escapeHtml(m.title)} — Final Exam</h3>
+        <h3 style="margin:6px 0">${escapeHtml(m.title)} — ${t("Final Exam","Huling Pagsusulit")}</h3>
         <p style="color:var(--ink-soft);margin-bottom:14px">
-          ${passed ? `You passed with <b>${score}%</b>. Great work! You can retake it any time.`
-                   : (ready ? "You've finished every lesson — time to prove it! Score 80% to earn this module's badge."
-                            : `Finish the lessons first, then take the exam. ${score ? "Best so far: " + score + "%." : ""}`)}
+          ${passed ? t(`You passed with <b>${score}%</b>. Great work! You can retake it any time.`, `Pumasa ka nang <b>${score}%</b>. Magaling! Puwede mong ulitin anumang oras.`)
+                   : (ready ? t("You've finished every lesson — time to prove it! Score 80% to earn this module's badge.","Tapos mo na lahat ng aralin — patunayan mo na! Makakuha ng 80% para sa badge ng module na ito.")
+                            : t(`Finish the lessons first, then take the exam. ${score ? "Best so far: " + score + "%." : ""}`, `Tapusin muna ang mga aralin, tapos kunin ang pagsusulit. ${score ? "Pinakamataas: " + score + "%." : ""}`))}
         </p>
-        <button class="btn" onclick="OPA.go('exam/${m.id}')">${passed ? "Retake exam" : "Take the Final Exam ›"}</button>
+        <button class="btn" onclick="OPA.go('exam/${m.id}')">${passed ? t("Retake exam","Ulitin ang pagsusulit") : t("Take the Final Exam ›","Kunin ang Huling Pagsusulit ›")}</button>
       </div>`;
   }
 
@@ -181,34 +189,42 @@
 
     const tips = (l.tips && l.tips.length) ? `
       <div class="box tips">
-        <h4>💡 Pro Tips &amp; Shortcuts to Remember</h4>
-        <ul>${l.tips.map(t => `<li>${t}</li>`).join("")}</ul>
+        <h4>💡 ${t("Pro Tips &amp; Shortcuts to Remember","Mga Tip at Shortcut na Tatandaan")}</h4>
+        <ul>${l.tips.map(tip => `<li>${tip}</li>`).join("")}</ul>
       </div>` : "";
 
     const shorts = (l.shortcuts && l.shortcuts.length) ? `
       <div class="box short">
-        <h4>⌨️ Keyboard Shortcuts in This Lesson</h4>
+        <h4>⌨️ ${t("Keyboard Shortcuts in This Lesson","Mga Keyboard Shortcut sa Araling Ito")}</h4>
         ${l.shortcuts.map(s => `<div class="kbd-row"><span class="kbd">${escapeHtml(s.keys)}</span><span class="desc">${s.action}</span></div>`).join("")}
       </div>` : "";
 
     const practice = l.practice ? `
       <div class="box practice">
-        <h4>✍️ Try It Yourself</h4>
+        <h4>✍️ ${t("Try It Yourself","Subukan Mo")}</h4>
         <p style="margin:0">${l.practice}</p>
+      </div>` : "";
+
+    // Tagalog explanation — shown when the learner has switched to Tagalog.
+    const tagalog = (progress.lang === "tl" && l.summary_tl) ? `
+      <div class="box tagalog">
+        <h4>📘 Paliwanag sa Tagalog</h4>
+        <p style="margin:0">${escapeHtml(l.summary_tl)}</p>
       </div>` : "";
 
     const prev = m.lessons[idx - 1];
     const next = m.lessons[idx + 1];
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ Back to ${escapeHtml(m.title)}</a>
+      <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
       <div class="reader">
         <h1>${l.title}</h1>
         <div class="reader-meta">
           <span class="level-tag level-${l.level}">${l.level}</span>
-          <span>⏱ ${l.minutes} min read</span>
+          <span>⏱ ${l.minutes} min</span>
           <span>${m.icon} ${escapeHtml(m.title)}</span>
         </div>
+        ${tagalog}
         <div class="content">${l.content}</div>
         ${tips}
         ${shorts}
@@ -217,13 +233,13 @@
 
       ${l.quiz && l.quiz.length ? `<div id="quizMount"></div>` : `
         <div class="btn-row">
-          <button class="btn" onclick="OPA.completeLesson('${m.id}','${l.id}')">Mark lesson complete ✓</button>
+          <button class="btn" onclick="OPA.completeLesson('${m.id}','${l.id}')">${t("Mark lesson complete ✓","Markahan tapos ✓")}</button>
         </div>`}
 
       <div class="btn-row" style="margin-top:28px;justify-content:space-between">
-        <div>${prev ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${prev.id}')">‹ Previous</button>` : ""}</div>
-        <div>${next ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${next.id}')">Next ›</button>`
-                     : `<button class="btn ghost" onclick="OPA.go('module/${m.id}')">Finish module ✓</button>`}</div>
+        <div>${prev ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${prev.id}')">‹ ${t("Previous","Nakaraan")}</button>` : ""}</div>
+        <div>${next ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${next.id}')">${t("Next","Susunod")} ›</button>`
+                     : `<button class="btn ghost" onclick="OPA.go('module/${m.id}')">${t("Finish module ✓","Tapusin ang module ✓")}</button>`}</div>
       </div>
     `;
 
@@ -253,17 +269,17 @@
         return `<div class="q-block"><div class="q-text">${qi + 1}. ${escapeHtml(item.q)}</div>${choices}</div>`;
       }).join("");
 
-      let header = `<h3>📝 Check Your Knowledge</h3><div class="qsub">Answer all ${l.quiz.length} questions to complete this lesson.</div>`;
+      let header = `<h3>📝 ${t("Check Your Knowledge","Subukin ang Iyong Natutunan")}</h3><div class="qsub">${t(`Answer all ${l.quiz.length} questions to complete this lesson.`, `Sagutin ang lahat ng ${l.quiz.length} tanong para matapos ang araling ito.`)}</div>`;
       let banner = "";
-      let footer = `<div class="btn-row"><button class="btn" id="quizSubmit" onclick="OPA._submitQuiz()" ${Object.keys(state.answers).length < l.quiz.length ? "disabled" : ""}>Submit answers</button></div>`;
+      let footer = `<div class="btn-row"><button class="btn" id="quizSubmit" onclick="OPA._submitQuiz()" ${Object.keys(state.answers).length < l.quiz.length ? "disabled" : ""}>${t("Submit answers","Isumite ang sagot")}</button></div>`;
 
       if (state.submitted) {
         const correct = l.quiz.filter((it, qi) => state.answers[qi] === it.answer).length;
         const pct = Math.round((correct / l.quiz.length) * 100);
         const pass = pct >= 70;
-        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🎉" : "💪"} You scored ${correct}/${l.quiz.length} (${pct}%). ${pass ? "Lesson complete — great work!" : "Almost! Review the lesson and try again."}</div>`;
+        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🎉" : "💪"} ${t(`You scored ${correct}/${l.quiz.length} (${pct}%).`, `Nakakuha ka ng ${correct}/${l.quiz.length} (${pct}%).`)} ${pass ? t("Lesson complete — great work!","Tapos na ang aralin — magaling!") : t("Almost! Review the lesson and try again.","Muntik na! Balikan ang aralin at subukang muli.")}</div>`;
         footer = `<div class="btn-row">
-          <button class="btn ghost" onclick="OPA._retryQuiz()">Try again</button>
+          <button class="btn ghost" onclick="OPA._retryQuiz()">${t("Try again","Subukang muli")}</button>
         </div>`;
       }
 
@@ -277,7 +293,7 @@
       const correct = l.quiz.filter((it, qi) => state.answers[qi] === it.answer).length;
       const pct = Math.round((correct / l.quiz.length) * 100);
       setQuizScore(l.id, pct);
-      if (pct >= 70) { markDone(l.id); celebrate(); toast("Lesson complete! Progress saved ✓"); }
+      if (pct >= 70) { markDone(l.id); celebrate(); toast(t("Lesson complete! Progress saved ✓","Tapos na ang aralin! Naka-save ang progreso ✓")); }
       draw();
     };
     window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; draw(); };
@@ -309,7 +325,7 @@
         <div class="reader" style="padding:18px;margin-bottom:14px;${dayDone ? "border:1px solid #16a34a" : ""}">
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
             <div style="background:${dayDone ? "#16a34a" : "var(--brand)"};color:#fff;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-weight:800">${dayDone ? "✓" : "D" + d.day}</div>
-            <div><div style="font-weight:800;font-size:16px">Day ${d.day}</div>
+            <div><div style="font-weight:800;font-size:16px">${t("Day","Araw")} ${d.day}</div>
             <div style="color:var(--ink-soft);font-size:13px">${d.focus}</div></div>
           </div>
           ${items}
@@ -317,7 +333,7 @@
     }).join("");
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('')">‹ Back to dashboard</a>
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to dashboard","Balik sa dashboard")}</a>
       <div class="module-head">
         <div class="icon" style="background:#4f46e522;color:#4f46e5">🚀</div>
         <div><h1>${ft.title}</h1>
@@ -359,25 +375,25 @@
       }).join("");
 
       let banner = "";
-      let footer = `<div class="btn-row"><button class="btn" onclick="OPA._examSubmit()" ${Object.keys(state.answers).length < questions.length ? "disabled" : ""}>Submit exam</button>
-                    <button class="btn ghost" onclick="OPA.go('module/${m.id}')">Back to module</button></div>`;
+      let footer = `<div class="btn-row"><button class="btn" onclick="OPA._examSubmit()" ${Object.keys(state.answers).length < questions.length ? "disabled" : ""}>${t("Submit exam","Isumite ang pagsusulit")}</button>
+                    <button class="btn ghost" onclick="OPA.go('module/${m.id}')">${t("Back to module","Balik sa module")}</button></div>`;
 
       if (state.submitted) {
         const correct = questions.filter((it, qi) => state.answers[qi] === it.answer).length;
         const pct = Math.round((correct / questions.length) * 100);
         const pass = pct >= 80;
-        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🏆" : "💪"} Exam score: ${correct}/${questions.length} (${pct}%). ${pass ? "PASSED — module mastered!" : "You need 80% to pass. Review the lessons and try again."}</div>`;
+        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🏆" : "💪"} ${t("Exam score","Iskor sa pagsusulit")}: ${correct}/${questions.length} (${pct}%). ${pass ? t("PASSED — module mastered!","PUMASA — bihasa na sa module!") : t("You need 80% to pass. Review the lessons and try again.","Kailangan ng 80% para pumasa. Balikan ang mga aralin at subukang muli.")}</div>`;
         footer = `<div class="btn-row">
-          <button class="btn ghost" onclick="OPA._examRetry()">Retake exam</button>
-          ${pass ? `<button class="btn" onclick="OPA.go('certificate')">View your progress / certificate ›</button>` : `<button class="btn" onclick="OPA.go('module/${m.id}')">Back to lessons</button>`}
+          <button class="btn ghost" onclick="OPA._examRetry()">${t("Retake exam","Ulitin ang pagsusulit")}</button>
+          ${pass ? `<button class="btn" onclick="OPA.go('certificate')">${t("View your progress / certificate ›","Tingnan ang progreso / certificate ›")}</button>` : `<button class="btn" onclick="OPA.go('module/${m.id}')">${t("Back to lessons","Balik sa mga aralin")}</button>`}
         </div>`;
       }
 
       app.innerHTML = `
-        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ Back to ${escapeHtml(m.title)}</a>
+        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
         <div class="quiz">
-          <h3>🎓 ${escapeHtml(m.title)} — Final Exam</h3>
-          <div class="qsub">${questions.length} questions drawn from the whole module. You need <b>80%</b> to pass and earn this module's badge.</div>
+          <h3>🎓 ${escapeHtml(m.title)} — ${t("Final Exam","Huling Pagsusulit")}</h3>
+          <div class="qsub">${t(`${questions.length} questions drawn from the whole module. You need <b>80%</b> to pass and earn this module's badge.`, `${questions.length} tanong mula sa buong module. Kailangan ng <b>80%</b> para pumasa at makuha ang badge ng module.`)}</div>
           ${banner}${blocks}${footer}
         </div>`;
     }
@@ -389,7 +405,7 @@
       const pct = Math.round((correct / questions.length) * 100);
       progress.exam = progress.exam || {};
       if (pct > (progress.exam[m.id] || 0)) { progress.exam[m.id] = pct; saveProgress(progress); }
-      if (pct >= 80) { celebrate(); toast(m.title + " exam passed! 🏆"); }
+      if (pct >= 80) { celebrate(); toast(m.title + t(" exam passed! 🏆"," — pumasa sa pagsusulit! 🏆")); }
       draw();
     };
     window.OPA._examRetry = () => { renderExam(m.id); }; // re-render directly (same-hash nav wouldn't fire)
@@ -412,22 +428,22 @@
       const passed = ex >= 80;
       return `<div class="short-card" style="margin-bottom:10px"><div class="row">
         <span style="font-size:22px">${m.icon}</span>
-        <span style="flex:1"><b>${m.title}</b><br><span style="color:var(--ink-soft);font-size:13px">${mp.done}/${mp.total} lessons · Exam: ${ex ? ex + "%" : "not taken"}</span></span>
-        <span class="level-tag ${passed ? "level-Basic" : "level-Advanced"}">${passed ? "✓ Passed" : (mp.pct === 100 ? "Take exam" : "In progress")}</span>
+        <span style="flex:1"><b>${m.title}</b><br><span style="color:var(--ink-soft);font-size:13px">${mp.done}/${mp.total} ${t("lessons","aralin")} · ${t("Exam","Pagsusulit")}: ${ex ? ex + "%" : t("not taken","di pa kinukuha")}</span></span>
+        <span class="level-tag ${passed ? "level-Basic" : "level-Advanced"}">${passed ? t("✓ Passed","✓ Pasado") : (mp.pct === 100 ? t("Take exam","Kunin") : t("In progress","Ginagawa"))}</span>
       </div></div>`;
     }).join("");
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('')">‹ Back to dashboard</a>
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to dashboard","Balik sa dashboard")}</a>
       <div class="module-head">
         <div class="icon" style="background:#f59e0b22;color:#f59e0b">🏆</div>
-        <div><h1>Your Certificate & Progress</h1>
-        <div style="color:var(--ink-soft)">Complete every lesson and pass all ${DATA.modules.length} module exams to earn your certificate.</div></div>
+        <div><h1>${t("Your Certificate & Progress","Iyong Certificate at Progreso")}</h1>
+        <div style="color:var(--ink-soft)">${t(`Complete every lesson and pass all ${DATA.modules.length} module exams to earn your certificate.`, `Tapusin ang lahat ng aralin at pumasa sa lahat ng ${DATA.modules.length} pagsusulit para makuha ang certificate.`)}</div></div>
       </div>
 
       <div style="margin:14px 0 22px">
-        <label style="font-weight:600;font-size:14px">Your name on the certificate:</label>
-        <input id="certName" type="text" value="${escapeHtml(name)}" placeholder="Type your name…"
+        <label style="font-weight:600;font-size:14px">${t("Your name on the certificate:","Pangalan mo sa certificate:")}</label>
+        <input id="certName" type="text" value="${escapeHtml(name)}" placeholder="${t("Type your name…","I-type ang pangalan mo…")}"
           oninput="OPA._setName(this.value)"
           style="display:block;width:100%;max-width:360px;margin-top:6px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
       </div>
@@ -435,18 +451,18 @@
       ${allDone ? `
         <div id="cert" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border:3px solid #f59e0b;border-radius:20px;padding:36px;text-align:center;margin-bottom:18px">
           <div style="font-size:42px">🎓</div>
-          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#b45309;font-weight:700;margin-top:8px">Certificate of Completion</div>
-          <div id="certNameDisplay" style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || "Your Name")}</div>
-          <div style="color:#475569">has successfully completed</div>
+          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#b45309;font-weight:700;margin-top:8px">${t("Certificate of Completion","Sertipiko ng Pagtatapos")}</div>
+          <div id="certNameDisplay" style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || t("Your Name","Pangalan Mo"))}</div>
+          <div style="color:#475569">${t("has successfully completed","ay matagumpay na natapos ang")}</div>
           <div style="font-size:18px;font-weight:700;margin:6px 0 14px;color:var(--brand-dark)">Office Pro Academy — Microsoft Office &amp; Office Administration</div>
-          <div style="color:#475569;font-size:14px">All ${total} lessons &amp; ${DATA.modules.length} module exams passed 🏆</div>
+          <div style="color:#475569;font-size:14px">${t(`All ${total} lessons &amp; ${DATA.modules.length} module exams passed 🏆`, `Lahat ng ${total} aralin at ${DATA.modules.length} pagsusulit ay pasado 🏆`)}</div>
         </div>
-        <div class="btn-row"><button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button></div>
+        <div class="btn-row"><button class="btn" onclick="window.print()">🖨️ ${t("Print / Save as PDF","I-print / I-save bilang PDF")}</button></div>
       ` : `
-        <div class="result-banner fail">📋 ${done}/${total} lessons done · ${examsPassed}/${DATA.modules.length} module exams passed. Keep going — your certificate unlocks when both are complete!</div>
+        <div class="result-banner fail">📋 ${t(`${done}/${total} lessons done · ${examsPassed}/${DATA.modules.length} module exams passed. Keep going — your certificate unlocks when both are complete!`, `${done}/${total} aralin tapos · ${examsPassed}/${DATA.modules.length} pagsusulit pasado. Tuloy lang — bubukas ang certificate kapag kumpleto na ang dalawa!`)}</div>
       `}
 
-      <div class="section-title">Module-by-module status</div>
+      <div class="section-title">${t("Module-by-module status","Status bawat module")}</div>
       ${moduleStatus}
     `;
     window.scrollTo(0, 0);
@@ -458,13 +474,13 @@
       `<div class="row"><span class="kbd">${escapeHtml(s.keys)}</span><span>${s.action}</span></div>`
     ).join("");
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('')">‹ Back to dashboard</a>
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to dashboard","Balik sa dashboard")}</a>
       <div class="module-head">
         <div class="icon" style="background:#4f46e522;color:#4f46e5">⌨️</div>
-        <div><h1>Master Shortcut Cheat-Sheet</h1>
-        <div style="color:var(--ink-soft)">The shortcuts that work almost everywhere. Learn 5 a week and you'll fly.</div></div>
+        <div><h1>${t("Master Shortcut Cheat-Sheet","Listahan ng mga Shortcut")}</h1>
+        <div style="color:var(--ink-soft)">${t("The shortcuts that work almost everywhere. Learn 5 a week and you'll fly.","Ang mga shortcut na gumagana halos kahit saan. Mag-aral ng 5 kada linggo.")}</div></div>
       </div>
-      <div style="margin:18px 0 10px;color:var(--ink-soft);font-size:13px">Tip: use the search box at the top to find any shortcut or lesson.</div>
+      <div style="margin:18px 0 10px;color:var(--ink-soft);font-size:13px">${t("Tip: use the search box at the top to find any shortcut or lesson.","Tip: gamitin ang search box sa itaas para hanapin ang shortcut o aralin.")}</div>
       <div class="short-card">${rows}</div>
     `;
   }
@@ -490,7 +506,7 @@
     }));
 
     if (!lessonHits.length && !shortcutHits.length && !lessonShortcutHits.length) {
-      app.innerHTML = `<div class="empty"><div class="big">🔍</div><h2>No results for "${escapeHtml(query)}"</h2><p>Try a different word, like "save", "Excel", "email" or "Ctrl".</p></div>`;
+      app.innerHTML = `<div class="empty"><div class="big">🔍</div><h2>${t("No results for","Walang nahanap para sa")} "${escapeHtml(query)}"</h2><p>${t('Try a different word, like "save", "Excel", "email" or "Ctrl".','Subukan ang ibang salita, tulad ng "save", "Excel", "email" o "Ctrl".')}</p></div>`;
       return;
     }
 
@@ -509,26 +525,26 @@
     ).join("");
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.clearSearch()">‹ Clear search</a>
-      <h1 style="font-size:22px;margin-bottom:18px">Results for "${escapeHtml(query)}"</h1>
-      ${lessonHits.length ? `<div class="section-title">📖 Lessons (${lessonHits.length})</div>${lessonList}` : ""}
-      ${allShorts.length ? `<div class="section-title">⌨️ Shortcuts (${allShorts.length})</div><div class="short-card">${shortList}</div>` : ""}
+      <a class="back-link" onclick="OPA.clearSearch()">‹ ${t("Clear search","I-clear ang paghahanap")}</a>
+      <h1 style="font-size:22px;margin-bottom:18px">${t("Results for","Resulta para sa")} "${escapeHtml(query)}"</h1>
+      ${lessonHits.length ? `<div class="section-title">📖 ${t("Lessons","Mga Aralin")} (${lessonHits.length})</div>${lessonList}` : ""}
+      ${allShorts.length ? `<div class="section-title">⌨️ ${t("Shortcuts","Mga Shortcut")} (${allShorts.length})</div><div class="short-card">${shortList}</div>` : ""}
     `;
   }
 
   function renderNotFound() {
-    app.innerHTML = `<div class="empty"><div class="big">🤔</div><h2>Page not found</h2><button class="btn" onclick="OPA.go('')">Back to dashboard</button></div>`;
+    app.innerHTML = `<div class="empty"><div class="big">🤔</div><h2>${t("Page not found","Hindi nahanap ang pahina")}</h2><button class="btn" onclick="OPA.go('')">${t("Back to dashboard","Balik sa dashboard")}</button></div>`;
   }
 
   /* ---------- Effects ---------- */
   let toastTimer;
   function toast(msg) {
-    let t = document.getElementById("toast");
-    if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; document.body.appendChild(t); }
-    t.innerHTML = "🎉 " + msg;
-    requestAnimationFrame(() => t.classList.add("show"));
+    let el = document.getElementById("toast");
+    if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; document.body.appendChild(el); }
+    el.innerHTML = "🎉 " + msg;
+    requestAnimationFrame(() => el.classList.add("show"));
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
   }
 
   function celebrate() {
@@ -566,9 +582,10 @@
   /* ---------- Public API & routing ---------- */
   window.OPA = {
     go,
-    completeLesson(mId, lId) { markDone(lId); celebrate(); toast("Lesson complete! Progress saved ✓"); setTimeout(() => go("module/" + mId), 700); },
+    completeLesson(mId, lId) { markDone(lId); celebrate(); toast(t("Lesson complete! Progress saved ✓","Tapos na ang aralin! Naka-save ✓")); setTimeout(() => go("module/" + mId), 700); },
     clearSearch() { searchInput.value = ""; go(""); },
-    _setName(v) { progress.name = v; saveProgress(progress); const el = document.getElementById("certNameDisplay"); if (el) el.textContent = v || "Your Name"; },
+    toggleLang() { setLang(progress.lang === "tl" ? "en" : "tl"); render(); },
+    _setName(v) { progress.name = v; saveProgress(progress); const el = document.getElementById("certNameDisplay"); if (el) el.textContent = v || t("Your Name","Pangalan Mo"); },
     _pick() {}, _submitQuiz() {}, _retryQuiz() {},       // replaced per-quiz
     _examPick() {}, _examSubmit() {}, _examRetry() {}      // replaced per-exam
   };
@@ -596,6 +613,16 @@
     document.querySelectorAll("[data-nav]").forEach(el => {
       el.classList.toggle("active", el.getAttribute("data-nav") === current && !searchInput.value.trim());
     });
+    // Keep the nav labels and the language toggle in the chosen language.
+    const setText = (id, str) => { const el = document.getElementById(id); if (el) el.textContent = str; };
+    setText("navHome", t("Home", "Home"));
+    setText("navPlan", t("Plan", "Plano"));
+    setText("navShortcuts", t("Shortcuts", "Shortcut"));
+    setText("navCert", t("Certificate", "Sertipiko"));
+    const lt = document.getElementById("langToggle");
+    if (lt) lt.textContent = progress.lang === "tl" ? "🌐 English" : "🌐 Tagalog";
+    const si = document.getElementById("search");
+    if (si) si.placeholder = t("Search lessons or shortcuts…", "Maghanap ng aralin o shortcut…");
   }
 
   /* ---------- Search input wiring ---------- */
