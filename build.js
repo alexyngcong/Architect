@@ -44,8 +44,11 @@ ${css}
       <span>Office Pro Academy</span>
     </div>
     <div class="spacer"></div>
-    <button class="nav-pill" data-nav="home" onclick="OPA.go('')">🏠 <span>Home</span></button>
-    <button class="nav-pill" data-nav="shortcuts" onclick="OPA.go('shortcuts')">⌨️ <span>Shortcuts</span></button>
+    <button class="nav-pill" data-nav="home" onclick="OPA.go('')">🏠 <span id="navHome">Home</span></button>
+    <button class="nav-pill" data-nav="plan" onclick="OPA.go('plan')">🚀 <span id="navPlan">Plan</span></button>
+    <button class="nav-pill" data-nav="shortcuts" onclick="OPA.go('shortcuts')">⌨️ <span id="navShortcuts">Shortcuts</span></button>
+    <button class="nav-pill" data-nav="certificate" onclick="OPA.go('certificate')">🏆 <span id="navCert">Certificate</span></button>
+    <button class="nav-pill" id="langToggle" onclick="OPA.toggleLang()" title="Switch language / Palitan ang wika">🌐 Tagalog</button>
     <label class="searchbox" title="Search lessons & shortcuts">
       🔍 <input id="search" type="text" placeholder="Search lessons or shortcuts…" autocomplete="off" />
     </label>

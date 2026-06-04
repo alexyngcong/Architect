@@ -114,7 +114,7 @@ a { color: var(--brand); }
 .module-card .meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-soft); }
 
 /* ---------- Module detail / lesson list ---------- */
-.back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-soft); font-weight: 600; font-size: 14px; margin-bottom: 18px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-soft); font-weight: 600; font-size: 14px; margin-bottom: 18px; cursor: pointer; }
 .back-link:hover { color: var(--brand); }
 .module-head { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
 .module-head .icon { font-size: 32px; width: 64px; height: 64px; border-radius: 16px; display: grid; place-items: center; }
@@ -165,6 +165,10 @@ a { color: var(--brand); }
 .box.tips li { margin-bottom: 8px; }
 .box.short { background: #eef2ff; border: 1px solid #c7d2fe; }
 .box.short h4 { color: var(--brand-dark); }
+.box.practice { background: #ecfdf5; border: 1px solid #a7f3d0; }
+.box.practice h4 { color: #047857; }
+.box.tagalog { background: #eff6ff; border: 1px solid #bfdbfe; }
+.box.tagalog h4 { color: #1d4ed8; }
 .kbd-row { display: flex; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px dashed #c7d2fe; flex-wrap: wrap; }
 .kbd-row:last-child { border-bottom: none; }
 .kbd { font-family: monospace; background: #fff; border: 1px solid #c7d2fe; border-bottom-width: 2px; border-radius: 7px; padding: 4px 9px; font-size: 13px; font-weight: 700; color: var(--brand-dark); white-space: nowrap; }
@@ -229,6 +233,14 @@ a { color: var(--brand); }
   .reader, .quiz { padding: 20px; }
 }
 
+/* When printing the certificate, show only the certificate itself. */
+@media print {
+  body { background: #fff; }
+  body * { visibility: hidden; }
+  #cert, #cert * { visibility: visible; }
+  #cert { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; }
+}
+
   </style>
 </head>
 <body>
@@ -239,8 +251,11 @@ a { color: var(--brand); }
       <span>Office Pro Academy</span>
     </div>
     <div class="spacer"></div>
-    <button class="nav-pill" data-nav="home" onclick="OPA.go('')">🏠 <span>Home</span></button>
-    <button class="nav-pill" data-nav="shortcuts" onclick="OPA.go('shortcuts')">⌨️ <span>Shortcuts</span></button>
+    <button class="nav-pill" data-nav="home" onclick="OPA.go('')">🏠 <span id="navHome">Home</span></button>
+    <button class="nav-pill" data-nav="plan" onclick="OPA.go('plan')">🚀 <span id="navPlan">Plan</span></button>
+    <button class="nav-pill" data-nav="shortcuts" onclick="OPA.go('shortcuts')">⌨️ <span id="navShortcuts">Shortcuts</span></button>
+    <button class="nav-pill" data-nav="certificate" onclick="OPA.go('certificate')">🏆 <span id="navCert">Certificate</span></button>
+    <button class="nav-pill" id="langToggle" onclick="OPA.toggleLang()" title="Switch language / Palitan ang wika">🌐 Tagalog</button>
     <label class="searchbox" title="Search lessons & shortcuts">
       🔍 <input id="search" type="text" placeholder="Search lessons or shortcuts…" autocomplete="off" />
     </label>
@@ -290,6 +305,32 @@ const OFFICE_CURRICULUM = {
     { keys: "Ctrl + Mouse Wheel", action: "Zoom in and out" }
   ],
 
+  /* A guided "learn ASAP" schedule. Each day points to the lessons to finish.
+     ~2 short lessons a day; the whole course in two weeks. */
+  fastTrack: {
+    title: "Fast-Track to Job-Ready (about 2½ weeks)",
+    intro: "Do these lessons in order — about 2 short lessons a day (20–30 minutes). Finish the quiz on each to tick it off. By the end you'll have covered everything an office assistant, coordinator, administrative staffer or executive assistant needs — basics to advanced.",
+    days: [
+      { day: 1,  focus: "Computer basics + get comfortable",       lessons: ["f0", "f1", "f2"] },
+      { day: 2,  focus: "Core moves, the cloud + start typing",      lessons: ["f3", "f4", "x1"] },
+      { day: 3,  focus: "Word: typing & formatting documents",      lessons: ["w1", "w2"] },
+      { day: 4,  focus: "Word: editing, tables & pictures",         lessons: ["w3", "w4"] },
+      { day: 5,  focus: "Word: advanced + business writing",        lessons: ["w5", "x2"] },
+      { day: 6,  focus: "Excel: the grid & making it readable",     lessons: ["e1", "e2"] },
+      { day: 7,  focus: "Excel: formulas that do the maths",        lessons: ["e3", "e4"] },
+      { day: 8,  focus: "Excel: lookups, charts, drills + clean data", lessons: ["e5", "e6", "e7"] },
+      { day: 9,  focus: "PowerPoint: build a clean presentation",   lessons: ["p1", "p2"] },
+      { day: 10, focus: "Present well + professional email",        lessons: ["p3", "o1"] },
+      { day: 11, focus: "Outlook: inbox, calendar & shared mailboxes", lessons: ["o2", "o3", "o4"] },
+      { day: 12, focus: "The role + professional communication",    lessons: ["c1", "c2"] },
+      { day: 13, focus: "Organising, meetings & customer service",  lessons: ["c3", "c4", "x3"] },
+      { day: 14, focus: "Advanced coordinator, equipment, money & safety", lessons: ["c5", "x4", "x5", "x6"] },
+      { day: 15, focus: "Exec support: calendar/inbox + priorities", lessons: ["ea1", "ea2"] },
+      { day: 16, focus: "Projects/events + operations & onboarding",  lessons: ["ea3", "ea4"] },
+      { day: 17, focus: "Being a trusted right hand (graduate!)",     lessons: ["ea5"] }
+    ]
+  },
+
   modules: [
 
     /* ====================================================================
@@ -302,6 +343,58 @@ const OFFICE_CURRICULUM = {
       color: "#6366f1",
       blurb: "Start here. The core skills every single office program shares — so everything after this feels easy.",
       lessons: [
+        {
+          id: "f0",
+          title: "Computer & Keyboard Basics (Start Here)",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>Brand new to computers? Perfect — let's cover the absolute basics first. Once these feel natural, everything else in this course is easy. 😊</p>
+            <h4>Using the mouse (or trackpad)</h4>
+            <ul>
+              <li><b>Left-click</b> (one tap) — selects a thing or presses a button.</li>
+              <li><b>Double-click</b> (two quick taps) — opens a file, program, or folder.</li>
+              <li><b>Right-click</b> — opens a little menu of extra options. Very useful: when stuck, right-click!</li>
+              <li><b>Scroll</b> — the wheel (or two fingers on a trackpad) moves the page up and down.</li>
+              <li><b>Drag</b> — hold the left button down while moving, then let go, to move things.</li>
+            </ul>
+            <h4>The screen &amp; windows</h4>
+            <ul>
+              <li>The <b>Desktop</b> is your home screen. The <b>Taskbar</b> (usually along the bottom) shows open programs and the Start button.</li>
+              <li>Each program opens in a <b>window</b>. Top-right corner: <b>–</b> minimises (hides it), <b>▢</b> resizes, <b>✕</b> closes it.</li>
+              <li>You can have many windows open at once and switch between them.</li>
+            </ul>
+            <h4>The most important keys</h4>
+            <ul>
+              <li><b>Enter</b> — confirms, or starts a new line.</li>
+              <li><b>Spacebar</b> — adds a space (the long key at the bottom).</li>
+              <li><b>Backspace</b> — deletes the character to the <i>left</i>; <b>Delete</b> deletes to the right.</li>
+              <li><b>Shift</b> — hold it to type a CAPITAL letter or the symbol on a key.</li>
+              <li><b>Caps Lock</b> — locks capitals on (press again to turn off).</li>
+              <li><b>Tab</b> — jumps forward (between boxes, or indents text).</li>
+              <li><b>Ctrl</b> (Control) — held with another key to do shortcuts, like Ctrl+S to save. You'll use these a lot!</li>
+              <li><b>Arrow keys</b> — move the cursor up, down, left, right.</li>
+            </ul>
+            <p>Don't worry about memorising everything — you'll learn by doing throughout this course.</p>
+          `,
+          tips: [
+            "When you're ever unsure what you can do with something, RIGHT-CLICK it — the menu shows your options.",
+            "The flashing line where you type is called the 'cursor'. Click where you want it before you type.",
+            "Take it slow at first. Speed and confidence come naturally with a little daily practice."
+          ],
+          shortcuts: [
+            { keys: "Shift", action: "Hold for a capital letter or the symbol on a key" },
+            { keys: "Backspace", action: "Delete the character to the left" },
+            { keys: "Enter", action: "Confirm, or start a new line" }
+          ],
+          practice: "Open any program (try Notepad or Word). Type your full name, then your address. Use <b>Shift</b> for the capital letters. Press <b>Enter</b> to start a new line between them. Then use <b>Backspace</b> to delete a letter and retype it. Finally, right-click anywhere on the page and see what menu appears.",
+          summary_tl: "Sa lesson na ito, ang pinakabasic: paggamit ng mouse (left-click=pumili, double-click=magbukas, right-click=mga opsyon), ang mga window sa screen, at ang mahahalagang keys — Enter, Shift (para sa malalaking letra), Backspace (pang-delete), Tab, at Ctrl (ginagamit sa mga shortcut). Huwag mag-alala kung marami; matututunan mo habang ginagawa. Kapag hindi sigurado, i-right-click!",
+          quiz: [
+            { q: "What does a DOUBLE-click usually do?", choices: ["Deletes a file", "Opens a file, folder or program", "Closes the window", "Types a capital letter"], answer: 1 },
+            { q: "You're unsure what options you have on an item. What's the best thing to try?", choices: ["Turn off the computer", "Right-click it to see a menu of options", "Press the spacebar repeatedly", "Unplug the mouse"], answer: 1 },
+            { q: "Which key do you HOLD to type a capital letter?", choices: ["Tab", "Enter", "Shift", "Backspace"], answer: 2 }
+          ]
+        },
         {
           id: "f1",
           title: "How the Office Ribbon Works",
@@ -329,6 +422,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt", action: "Press Alt alone to reveal letter shortcuts on the Ribbon" },
             { keys: "Ctrl + F1", action: "Hide or show the Ribbon" }
           ],
+          practice: "Open Word. Click each tab along the top (Home, Insert, Layout…) and watch the buttons change. Type a sentence, select it with your mouse, then make it bold using the Home tab.",
+          summary_tl: "Lahat ng Office programs (Word, Excel, PowerPoint, Outlook) ay magkakapareho ang itsura. Ang hanay ng mga button sa itaas ay tinatawag na Ribbon, na may mga Tab (Home, Insert, Layout...). Tandaan ang golden rule: PUMILI muna (i-highlight ang text o item) bago mag-click ng button. Ang File tab ang gamit sa Open, Save, at Print.",
           quiz: [
             { q: "What is the strip of buttons across the top of every Office program called?", choices: ["The Toolbar", "The Ribbon", "The Menu Bar", "The Header"], answer: 1 },
             { q: "What should you always do BEFORE clicking a formatting button?", choices: ["Save the file", "Print a copy", "Select the text or item you want to change", "Close other programs"], answer: 2 },
@@ -365,6 +460,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + O", action: "Open an existing file" },
             { keys: "Ctrl + N", action: "Create a new blank file" }
           ],
+          practice: "Create a new folder on your Desktop called 'Practice'. Open Word, type a few words, and save the file into that folder using Ctrl+S. Give it a name with today's date, like '2026-06-04 Practice'.",
+          summary_tl: "Ang folder ay parang filing cabinet ng mga file. Mag-save lagi gamit ang Ctrl+S (gawing ugali!). Ang 'Save As' (F12) ay gumagawa ng bagong kopya. Pangalanan ang file nang malinaw na may petsa (Taon-Buwan-Araw) para maayos ang pagkakasunod. Kung naka-OneDrive, automatic itong nagse-save.",
           quiz: [
             { q: "Which shortcut saves your work instantly?", choices: ["Ctrl + P", "Ctrl + S", "Ctrl + O", "F1"], answer: 1 },
             { q: "What is the best way to name files so they sort in order?", choices: ["Use the word Final", "Start with the date as Year-Month-Day", "Use random numbers", "All capital letters"], answer: 1 },
@@ -403,10 +500,49 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Z", action: "Undo" },
             { keys: "Windows + V", action: "Clipboard history" }
           ],
+          practice: "In Word, type three lines of text. Copy the first line (Ctrl+C) and paste it (Ctrl+V) at the bottom. Then press Ctrl+Z a few times and watch it undo. Finally press Windows+V to see your clipboard history.",
+          summary_tl: "Ito ang pinaka-gamit na aksyon: Copy (Ctrl+C)=kopya; Cut (Ctrl+X)=aalisin para ilipat; Paste (Ctrl+V)=ilalagay; Undo (Ctrl+Z)=ibabalik ang mali. Gamitin ang Ctrl+Shift+V para sa malinis na text (walang dalang format). Ang Windows+V ay nagpapakita ng mga nakopya mo dati.",
           quiz: [
             { q: "Which shortcut UNDOES your last mistake?", choices: ["Ctrl + U", "Ctrl + Z", "Ctrl + V", "Ctrl + D"], answer: 1 },
             { q: "You copied text from a website but it brought ugly colours. What pastes it as clean plain text?", choices: ["Ctrl + V", "Ctrl + Shift + V", "Ctrl + C", "Ctrl + B"], answer: 1 },
             { q: "What does Windows + V open?", choices: ["The volume control", "Clipboard history of recent copies", "A new document", "The print menu"], answer: 1 }
+          ]
+        },
+        {
+          id: "f4",
+          title: "Saving to the Cloud: OneDrive, AutoSave & Version History",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>Modern offices keep files in the <b>cloud</b> — usually OneDrive or SharePoint. This means your work is backed up, reachable from any device, and never lost when a computer breaks. Knowing how it works makes you the person who can always recover a file.</p>
+            <h4>What "the cloud" really means</h4>
+            <ul>
+              <li>Your file lives safely on Microsoft's servers, not only on one computer.</li>
+              <li>You can open it from the office PC, a laptop at home, or a phone — it's the same file.</li>
+              <li>If your computer dies, your work is safe.</li>
+            </ul>
+            <h4>AutoSave — never lose work again</h4>
+            <p>When a file is stored on OneDrive or SharePoint, the <b>AutoSave</b> toggle in the top-left turns green and your changes save <i>automatically every few seconds</i>. You'll rarely need Ctrl+S — though it's still a great habit.</p>
+            <h4>Version History — your time machine</h4>
+            <p>Made a mess, or need yesterday's wording back? Go to <b>File → Info → Version History</b> (or right-click the file in OneDrive → Version history). You'll see a list of earlier versions by date and time — open one to read it, or <b>Restore</b> it to roll the whole file back. This has saved countless office workers from disaster.</p>
+            <h4>Co-authoring — editing together</h4>
+            <p>Because the file is in the cloud, several people can open and edit it <b>at the same time</b>. You'll see their coloured cursors moving live. This is called <b>co-authoring</b> — perfect for a team finishing a report together without emailing copies back and forth.</p>
+          `,
+          tips: [
+            "If AutoSave is greyed out, the file isn't in the cloud yet — use File → Save As and choose OneDrive to switch it on.",
+            "Version History also works in Excel and PowerPoint — the same time machine across Office.",
+            "Sharing a OneDrive link instead of attaching a file means everyone always sees the latest version."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + S", action: "Save now (still useful even with AutoSave on)" },
+            { keys: "F12", action: "Save As — use it to move a file into OneDrive" }
+          ],
+          practice: "If you have OneDrive, save a Word file into it and watch the AutoSave toggle turn green. Make a few edits, then open File → Info → Version History and look at the earlier versions you could restore.",
+          summary_tl: "Sa cloud (OneDrive/SharePoint) nakaimbak ang mga file ngayon — naka-backup at mabubuksan kahit saang device. Ang AutoSave (berdeng toggle sa itaas) ay awtomatikong nagse-save kada ilang segundo. Ang Version History (File → Info) ay parang time machine — puwede mong ibalik ang lumang bersyon. Ang co-authoring ay sabay-sabay na pag-edit ng ilang tao sa iisang file.",
+          quiz: [
+            { q: "When a file is on OneDrive, what does AutoSave do?", choices: ["Nothing useful", "Saves your changes automatically every few seconds", "Prints the file", "Deletes older files"], answer: 1 },
+            { q: "You need yesterday's wording back. Where do you look?", choices: ["Version History — open or restore an earlier version", "It's gone forever once saved", "The recycle bin only", "Retype it from memory"], answer: 0 },
+            { q: "What is 'co-authoring'?", choices: ["Several people editing the same file at the same time", "Printing two copies", "Locking everyone else out", "Deleting all comments"], answer: 0 }
           ]
         }
       ]
@@ -457,6 +593,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + ] / [", action: "Make font bigger / smaller" },
             { keys: "Ctrl + Spacebar", action: "Clear formatting" }
           ],
+          practice: "Type a short 'thank you' note (3–4 lines). Make the greeting bold, the closing italic, and turn three points into a bulleted list. Then use the Format Painter to copy the greeting's look onto the closing.",
+          summary_tl: "Ang Word ay para sa mga dokumento tulad ng liham at report. Sa Home tab: font, laki, Bold/Italic/Underline, alignment, bullets. Pumili ng isang propesyonal na font (Calibri o Arial, laki 11-12). Mabilis pumili: double-click=salita, triple-click=talata, Ctrl+A=lahat. Ang Format Painter (brush) ay kinokopya ang itsura sa ibang text.",
           quiz: [
             { q: "How do you select a whole paragraph quickly?", choices: ["Single click", "Double-click", "Triple-click", "Right-click"], answer: 2 },
             { q: "What does the Format Painter (paintbrush) do?", choices: ["Changes the page colour", "Copies formatting from one place to another", "Draws pictures", "Deletes text"], answer: 1 },
@@ -492,6 +630,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Enter", action: "Insert a clean page break" },
             { keys: "Shift + Enter", action: "New line without starting a new paragraph" }
           ],
+          practice: "Open a Word document and add a header with a made-up company name, a footer with your name, and automatic page numbers. Then press Ctrl+Enter to start a fresh second page.",
+          summary_tl: "Ang malinis na dokumento ay may tamang margins, page numbers, at header/footer. Sa Layout tab: margins at orientation (Portrait=patayo, Landscape=pahiga). Sa Insert tab: Header/Footer (paulit sa bawat pahina) at Page Number. Para magsimula ng bagong pahina, Ctrl+Enter (page break), hindi paulit-ulit na Enter.",
           quiz: [
             { q: "What is the correct way to start text on a brand-new page?", choices: ["Press Enter many times", "Ctrl + Enter (page break)", "Change the font size", "Add a header"], answer: 1 },
             { q: "Where does a repeating company name on every page go?", choices: ["In the header or footer", "In the margin settings", "In a text box only", "In the file name"], answer: 0 },
@@ -522,6 +662,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + E", action: "Turn Track Changes on/off" },
             { keys: "Alt + Ctrl + M", action: "Insert a new comment" }
           ],
+          practice: "Turn on Track Changes (Review tab) and edit a sentence — see the changes appear in colour. Add a Comment on one word. Then Accept all changes.",
+          summary_tl: "Gamitin ang Spelling check (F7) — pula=mali sa spelling. Ang Track Changes (Review tab) ay ipinapakita ang bawat edit sa kulay para puwedeng i-Accept o i-Reject ng may-akda. Ang Comment ay paalala sa gilid nang hindi binabago ang teksto. Bago ipadala, i-Accept All at tanggalin ang comments.",
           quiz: [
             { q: "What does Track Changes let the author do with each edit?", choices: ["Print it", "Accept or Reject it", "Email it", "Translate it"], answer: 1 },
             { q: "How do you leave a note for the author WITHOUT changing the text?", choices: ["Bold the text", "Insert a Comment", "Delete the sentence", "Change the font"], answer: 1 },
@@ -560,6 +702,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Tab", action: "Move to next table cell (adds a row at the end)" },
             { keys: "Shift + Tab", action: "Move to previous table cell" }
           ],
+          practice: "Insert a 3-column, 4-row table and fill in a mini contacts list (Name, Email, Phone). Use Tab to move between cells. Then insert any picture and try the 'Square' text-wrap option.",
+          summary_tl: "Maglagay ng table gamit ang Insert -> Table. Sa loob: Tab=susunod na cell (sa huli, dagdag ng row). Larawan: Insert -> Pictures; importante ang Wrap Text (paano dadaloy ang text sa paligid). Gamitin ang SmartArt para sa diagram. Maglagay ng Alt Text sa larawan para accessible.",
           quiz: [
             { q: "In a table, what does pressing Tab in the very last cell do?", choices: ["Saves the file", "Deletes the row", "Adds a new row", "Nothing"], answer: 2 },
             { q: "Which feature lets text flow around a picture?", choices: ["Wrap Text / Layout Options", "Format Painter", "Track Changes", "Page Break"], answer: 0 },
@@ -596,6 +740,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + Ctrl + 1 / 2 / 3", action: "Apply Heading 1 / 2 / 3 styles instantly" },
             { keys: "F9", action: "Update a selected field (like the Table of Contents)" }
           ],
+          practice: "Write a 1-line letter, then apply Heading styles to two short headings and insert a Table of Contents (References tab). Add a line, then click 'Update Table' to watch it refresh.",
+          summary_tl: "Kapag gumamit ka ng Heading styles, awtomatikong makakagawa ng Table of Contents (References tab). Ang Mail Merge ang power-skill: isang template na liham + listahan (mula Excel) = daan-daang personalized na liham/label/email nang sabay. Hakbang: Mailings -> Start Mail Merge -> piliin ang recipients -> Insert Merge Fields -> Finish & Merge.",
           quiz: [
             { q: "What must you use on your headings so Word can build an automatic Table of Contents?", choices: ["Bold text", "Heading styles (Heading 1, 2…)", "Bigger font", "Underline"], answer: 1 },
             { q: "Mail Merge combines a template letter with what?", choices: ["A picture", "A list of recipients (e.g. from Excel)", "A page break", "A footer"], answer: 1 },
@@ -649,6 +795,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + ;", action: "Insert today's date" },
             { keys: "Alt + Enter", action: "Start a new line inside the same cell" }
           ],
+          practice: "In Excel, type headings in row 1 (Item, Qty, Price). Add three rows of data. Type 'Jan' in a cell and drag the corner down to auto-fill the months.",
+          summary_tl: "Ang Excel ay malaking grid. Cell=kahon (hal. A1); Column=patayo (letra); Row=pahiga (numero). I-type tapos Enter (pababa) o Tab (pakanan). AutoFill: i-type ang 'January', i-drag ang sulok, susunod ang Feb, Mar. Mabilis gumalaw: Ctrl+Arrow. Ilagay ang mga heading sa row 1.",
           quiz: [
             { q: "What is the address of the cell in column B, row 3?", choices: ["3B", "B3", "BB3", "B-3"], answer: 1 },
             { q: "What does AutoFill do when you type 'Monday' and drag the corner down?", choices: ["Deletes the cell", "Fills Tuesday, Wednesday…", "Changes the colour", "Prints the sheet"], answer: 1 },
@@ -692,6 +840,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + %", action: "Apply percentage format" },
             { keys: "Alt + H + W", action: "Wrap text" }
           ],
+          practice: "Using your small table, format the Price column as currency, bold the heading row with a fill colour, add borders, and use View → Freeze Top Row.",
+          summary_tl: "Para mabasa ang spreadsheet, i-format ang numbers: Currency (pera), Percentage, Comma (libo-libo). Bold ang heading row, lagyan ng kulay at borders. I-double-click ang gilid ng column para mag-auto-fit. View -> Freeze Top Row para manatiling nakikita ang heading. Ctrl+1 ang pinakamabilis sa Format Cells.",
           quiz: [
             { q: "Which View feature keeps your heading row visible while scrolling?", choices: ["Wrap Text", "Freeze Panes", "Merge & Center", "Borders"], answer: 1 },
             { q: "What does Percentage format turn the number 0.25 into?", choices: ["0.25%", "25%", "250%", "2.5%"], answer: 1 },
@@ -731,6 +881,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + `", action: "Show all formulas instead of results (great for checking)" },
             { keys: "F4", action: "Lock a cell reference (adds $ signs) — see next lesson" }
           ],
+          practice: "Below your Qty column, click an empty cell and press Alt+= to total it. Do the same for Price. Then in a new cell type =AVERAGE() of the prices.",
+          summary_tl: "Dito makapangyarihan ang Excel. Lahat ng formula ay nagsisimula sa equals sign (=). Gamitin ang cell addresses (=A1+A2) para awtomatiko ang update. Pangunahing function: =SUM() (dagdag), =AVERAGE(), =MAX()/=MIN(), =COUNT(). Ang tutuldok (:) ay 'hanggang' (B2:B10). Ang AutoSum (Alt+=) ay agad na nagto-total.",
           quiz: [
             { q: "What must every Excel formula start with?", choices: ["A number", "An equals sign (=)", "A letter", "A dollar sign"], answer: 1 },
             { q: "What does =SUM(B2:B10) do?", choices: ["Counts the cells", "Adds cells B2 through B10", "Averages them", "Finds the biggest"], answer: 1 },
@@ -767,6 +919,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + L", action: "Turn Filters on/off" },
             { keys: "F4", action: "Add/cycle $ locks on a reference" }
           ],
+          practice: "Add a column called 'Status' and use =IF(C2>10,\"High\",\"Low\") to flag prices. Then turn on filters (Ctrl+Shift+L) and filter to show only 'High'.",
+          summary_tl: "Ang =IF(test,'oo','hindi') ay gumagawa ng desisyon. Ang dollar signs (hal. lock sa E1) ay pumipigil na magbago ang reference kapag kinopya — pindutin ang F4 para idagdag. Ang Sort (Data tab) ay nag-aayos ng rows; ang Filter ay nagpapakita lang ng gusto mong makita (itinatago ang iba, di binubura). Gamitin ang Data -> Sort, huwag mag-cut-paste ng rows.",
           quiz: [
             { q: "What does =IF(B2>1000,\"Over\",\"OK\") write if B2 is 500?", choices: ["Over", "OK", "1000", "Error"], answer: 1 },
             { q: "What do the dollar signs in $E$1 do?", choices: ["Format it as currency", "Lock the reference so it doesn't shift when copied", "Make it bold", "Delete it"], answer: 1 },
@@ -806,10 +960,105 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + F1", action: "Instantly create a chart from selected data" },
             { keys: "F11", action: "Create a chart on its own new sheet" }
           ],
+          practice: "Select your data and use Insert → Recommended Charts to make a column chart. Then try Insert → PivotTable and drag a field into Rows and a number into Values.",
+          summary_tl: "Ang XLOOKUP/VLOOKUP ay naghahanap ng halaga at ibinabalik ang katugma (hal. presyo ng product code). Ang PivotTable ay nagbubuod ng libong rows sa segundo (hal. total per region) nang walang formula — i-drag lang ang fields. Ang Charts: column=paghahambing, line=trend sa panahon, pie=bahagi ng kabuuan.",
           quiz: [
             { q: "What is XLOOKUP used for?", choices: ["Printing", "Looking up a value and returning its match (e.g. a price)", "Spell check", "Changing colours"], answer: 1 },
             { q: "What does a PivotTable do?", choices: ["Deletes duplicate rows", "Summarises large data (e.g. totals per region) with no formulas", "Prints labels", "Locks the file"], answer: 1 },
             { q: "Which chart is best for showing a trend over time?", choices: ["Pie chart", "Line chart", "No chart", "Table"], answer: 1 }
+          ]
+        },
+        {
+          id: "e6",
+          title: "Excel Drills: Essential Shortcuts & Formula Practice",
+          level: "Intermediate",
+          minutes: 12,
+          content: `
+            <p>This lesson is a hands-on workout. Knowing these shortcuts and core formulas by heart is what makes you <i>fast</i> in Excel — exactly what employers notice. Practise them until they're automatic.</p>
+            <h4>The must-know keyboard shortcuts</h4>
+            <table class="lesson-table">
+              <tr><th>Shortcut</th><th>What it does</th></tr>
+              <tr><td>Ctrl + Arrow</td><td>Jump to the edge of your data</td></tr>
+              <tr><td>Ctrl + Shift + Arrow</td><td>Select all the way to the edge of the data</td></tr>
+              <tr><td>Ctrl + Space / Shift + Space</td><td>Select the whole column / whole row</td></tr>
+              <tr><td>Alt + =</td><td>AutoSum (total the numbers above)</td></tr>
+              <tr><td>Ctrl + ;</td><td>Insert today's date</td></tr>
+              <tr><td>Ctrl + 1</td><td>Open Format Cells</td></tr>
+              <tr><td>F2</td><td>Edit the active cell</td></tr>
+              <tr><td>F4</td><td>Lock a reference / repeat last action</td></tr>
+              <tr><td>Ctrl + T</td><td>Turn data into a Table</td></tr>
+              <tr><td>Ctrl + Shift + L</td><td>Turn filters on/off</td></tr>
+              <tr><td>Alt + Enter</td><td>New line inside the same cell</td></tr>
+              <tr><td>Ctrl + Z / Ctrl + Y</td><td>Undo / Redo</td></tr>
+            </table>
+            <h4>The core formulas to memorise</h4>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=SUM(A1:A10) &nbsp; add a range<br>=AVERAGE(A1:A10) &nbsp; the average<br>=MIN() / =MAX() &nbsp; smallest / largest<br>=COUNT(A1:A10) &nbsp; how many numbers<br>=COUNTA(A1:A10) &nbsp; how many non-empty cells<br>=IF(A1&gt;10,"High","Low") &nbsp; make a decision<br>=ROUND(A1,2) &nbsp; round to 2 decimals<br>=TODAY() &nbsp; today's date</p>
+            <h4>How to get fast</h4>
+            <p>Don't try to learn all of these at once. Pick <b>3 shortcuts a day</b>, use them on purpose until they feel natural, then add 3 more. Within two weeks they'll be muscle memory. Do the practice below, then take the quiz to test yourself.</p>
+          `,
+          tips: [
+            "F4 is a hidden gem: in a formula it adds the dollar-sign locks; anywhere else it repeats your last action.",
+            "Select a range first, then Alt + = totals each column at once — a huge time-saver.",
+            "If a formula misbehaves, press Ctrl + ` (back-tick) to see all formulas at once and spot the problem."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + Shift + Arrow", action: "Select to the edge of your data" },
+            { keys: "Alt + =", action: "AutoSum" },
+            { keys: "F4", action: "Lock a reference / repeat last action" },
+            { keys: "Ctrl + 1", action: "Open Format Cells" },
+            { keys: "Ctrl + T", action: "Make a Table" }
+          ],
+          practice: "Build a mini scoreboard: A1='Name', B1='Score'. Fill A2:A6 with 5 names and B2:B6 with scores. Now PRACTISE: (1) press Alt+= under the scores to total them; (2) in another cell use =AVERAGE(B2:B6); (3) =MAX(B2:B6) and =MIN(B2:B6); (4) in C2 type =IF(B2>50,\"Pass\",\"Fail\") and copy it down; (5) use Ctrl+Shift+Down to select the scores quickly. Time yourself — try to finish in under 3 minutes!",
+          summary_tl: "Practice lesson ito! Kabisaduhin ang shortcuts: Alt+= (AutoSum), F4 (lock reference), Ctrl+1 (Format Cells), Ctrl+Shift+Arrow (pumili hanggang dulo), Ctrl+T (Table), F2 (edit cell). Core formulas: =SUM, =AVERAGE, =MAX/MIN, =COUNT, =IF, =ROUND, =TODAY. Tip: 3 shortcut kada araw hanggang maging automatic. Gawin ang practice at quiz para masubok ang sarili!",
+          quiz: [
+            { q: "Which shortcut totals the numbers above the cell?", choices: ["Ctrl + T", "Alt + =", "F4", "Ctrl + 1"], answer: 1 },
+            { q: "What does F4 do inside a formula?", choices: ["Deletes it", "Locks the cell reference (adds dollar signs)", "Prints it", "Makes it bold"], answer: 1 },
+            { q: "Which formula makes a decision (e.g. Pass/Fail)?", choices: ["=SUM()", "=IF()", "=COUNT()", "=TODAY()"], answer: 1 },
+            { q: "How do you quickly select all the data down to the edge?", choices: ["Ctrl + Shift + Arrow", "Ctrl + P", "F2", "Alt + Enter"], answer: 0 },
+            { q: "What's the smart way to learn these shortcuts?", choices: ["Memorise all 20 in one night", "Learn about 3 a day and use them until automatic", "Never use them", "Only read about them"], answer: 1 }
+          ]
+        },
+        {
+          id: "e7",
+          title: "Cleaner Data: Data Validation, Conditional Formatting & IFERROR",
+          level: "Intermediate",
+          minutes: 11,
+          content: `
+            <p>These three features make your spreadsheets <b>tidier, error-proof, and self-checking</b> — exactly the polish that makes a report look professional.</p>
+            <h4>Data Validation — control what people can type</h4>
+            <p>Stop messy or wrong entries before they happen. Select the cells, then <b>Data → Data Validation</b>:</p>
+            <ul>
+              <li><b>List</b> — create a tidy <b>drop-down</b> of allowed choices (e.g. Paid / Unpaid / Overdue). No more typos or 10 spellings of one word.</li>
+              <li><b>Whole number / Decimal / Date</b> — only allow values in a sensible range (e.g. a date this year, or a number 1–100).</li>
+              <li>Add an <b>input message</b> (a hint) and an <b>error alert</b> to guide whoever fills it in.</li>
+            </ul>
+            <h4>Conditional Formatting — let the cells highlight themselves</h4>
+            <p><b>Home → Conditional Formatting</b> automatically changes a cell's colour based on its value, and updates live as data changes:</p>
+            <ul>
+              <li><b>Highlight Cells Rules</b> — e.g. turn overdue amounts red, or values over a target green.</li>
+              <li><b>Top/Bottom Rules</b> — instantly shade the top 10 or below-average figures.</li>
+              <li><b>Data Bars / Colour Scales / Icon Sets</b> — tiny in-cell bars or traffic-light colours that make a column readable at a glance.</li>
+            </ul>
+            <h4>IFERROR — hide ugly error messages</h4>
+            <p>When a formula can't work (e.g. dividing by an empty cell), Excel shows errors like <code>#DIV/0!</code> or <code>#N/A</code>. Wrap it in <b>IFERROR</b> to show something friendly instead:</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=IFERROR(A2/B2, "")        ← shows a blank instead of an error<br>=IFERROR(XLOOKUP(...), "Not found")</p>
+            <p>Your reports stay clean even when some data is missing.</p>
+          `,
+          tips: [
+            "A drop-down list (Data Validation) keeps a column perfectly consistent — vital before you sort, filter, or build a PivotTable.",
+            "To remove conditional formatting, use Home → Conditional Formatting → Clear Rules.",
+            "Don't hide REAL problems with IFERROR — use it for expected gaps (missing data), not to mask a broken formula you should fix."
+          ],
+          shortcuts: [
+            { keys: "Alt + A + V + V", action: "Open the Data Validation dialog" },
+            { keys: "Alt + H + L", action: "Open the Conditional Formatting menu" }
+          ],
+          practice: "In a 'Status' column, add a Data Validation drop-down list with Paid, Unpaid, Overdue (Data → Data Validation → List). Then use Conditional Formatting to turn any 'Overdue' cell red. Finally, in a calculation cell, wrap a division in =IFERROR(…, \"\") and see the error disappear.",
+          summary_tl: "Tatlong feature para malinis at walang-mali ang spreadsheet. Data Validation (Data → Data Validation): gumawa ng drop-down list ng pwedeng i-type (hal. Paid/Unpaid) o range ng numero/petsa — iwas typo. Conditional Formatting (Home): awtomatikong kinukulayan ang cell ayon sa halaga (hal. pula ang overdue), live na nag-a-update. IFERROR: itinatago ang pangit na error (tulad ng #DIV/0!) at pinapalitan ng blangko o teksto.",
+          quiz: [
+            { q: "What does a Data Validation 'List' add to a cell?", choices: ["A drop-down of allowed choices", "A new chart", "A page break", "A picture"], answer: 0 },
+            { q: "What does Conditional Formatting do?", choices: ["Automatically colours cells based on their value, and updates live", "Permanently deletes data", "Prints the sheet", "Locks the workbook"], answer: 0 },
+            { q: "What does =IFERROR(A2/B2,\"\") show if B2 is empty?", choices: ["A blank cell instead of a #DIV/0! error", "Always the number zero", "An error every time", "The text ERROR"], answer: 0 }
           ]
         }
       ]
@@ -856,6 +1105,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + M", action: "Add a new slide" },
             { keys: "Ctrl + D", action: "Duplicate the selected slide or object" }
           ],
+          practice: "Create a new presentation. Add a title slide with a title and subtitle, then add a second slide with a bulleted list of 3 points. Pick a Theme from the Design tab.",
+          summary_tl: "Ang PowerPoint ay para sa presentation sa screen. Slide=isang screen; Layout=handang ayos ng placeholders; Placeholder=ang 'Click to add title'. New Slide (Home), i-drag sa kaliwa para ayusin. Pinakaimportante: ISANG ideya kada slide, kaunting salita, malaking text. Pumili ng Theme (Design tab) para tumugma ang kulay at font.",
           quiz: [
             { q: "What is the golden design rule for slides?", choices: ["Fit as much text as possible", "One idea per slide, few words, big text", "Use five fonts", "Read every word aloud"], answer: 1 },
             { q: "What is a 'placeholder'?", choices: ["A saved file", "The dotted box where you click to add title or content", "A keyboard shortcut", "A printed handout"], answer: 1 },
@@ -887,6 +1138,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + N then P", action: "Insert a picture (keyboard path)" },
             { keys: "Ctrl + Shift + C / V", action: "Copy and paste formatting between objects" }
           ],
+          practice: "Apply a 'Fade' transition and click 'Apply To All'. Then add a simple 'Appear' animation to your bullet points so they reveal one at a time.",
+          summary_tl: "Ang Transition (Transitions tab) ay galaw pag-lipat ng slide — Fade o Push, tapos Apply To All. Ang Animation (Animations tab) ay para sa item sa slide — hal. paisa-isang bullets. Iwasan ang sobrang galaw. Ang Slide Master ang gamit para baguhin ang lahat ng slide nang sabay (hal. logo).",
           quiz: [
             { q: "What's the difference between a Transition and an Animation?", choices: ["No difference", "Transition is between slides; Animation is for items on a slide", "Animation prints; Transition saves", "Both delete slides"], answer: 1 },
             { q: "What's the professional approach to transitions?", choices: ["A different flashy one per slide", "One subtle one (Fade/Push) applied to all", "No slides at all", "Only spinning ones"], answer: 1 },
@@ -924,6 +1177,8 @@ const OFFICE_CURRICULUM = {
             { keys: "B / W", action: "Black / white the screen during a show" },
             { keys: "Esc", action: "End the slideshow" }
           ],
+          practice: "Press F5 to start your slideshow. Practise advancing with the spacebar and going back with the arrow. Press B to black the screen, then B again. Press Esc to exit.",
+          summary_tl: "F5 para simulan ang slideshow (Shift+F5 mula sa kasalukuyang slide). Spacebar/right arrow=sunod, left arrow=balik, Esc=labas. Ang Presenter View ay nagpapakita sa iyo ng notes, timer, at susunod na slide habang slide lang ang nakikita ng audience. Pindutin ang B para itim ang screen. I-export bilang PDF para pare-pareho ang itsura.",
           quiz: [
             { q: "Which key starts the slideshow from the beginning?", choices: ["F5", "Esc", "Ctrl + S", "F2"], answer: 0 },
             { q: "What does Presenter View let the speaker see that the audience can't?", choices: ["Nothing extra", "Speaker notes, timer, and the next slide", "A different presentation", "The audience's screens"], answer: 1 },
@@ -977,6 +1232,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + R", action: "Reply" },
             { keys: "Ctrl + Shift + R", action: "Reply All (use with care!)" }
           ],
+          practice: "Draft a practice email to yourself: write a clear subject line, a greeting, one clear request with a deadline, and a sign-off. Attach any file, then send it and check it arrives.",
+          summary_tl: "Magandang email: malinaw na Subject (hal. 'Invoice #204 — due Friday'), greeting, isang malinaw na layunin agad, at sign-off na may pangalan. To=dapat sumagot; Cc=para malaman lang; Bcc=itinatago ang mga address. I-attach muna ang file bago isulat ang 'attached'. Tip: huling i-type ang address para di maaga ang send.",
           quiz: [
             { q: "When should you use Bcc?", choices: ["Never", "To hide recipients' addresses from each other when emailing a group", "Only for your boss", "To make text bold"], answer: 1 },
             { q: "What makes a good subject line?", choices: ["Just 'Hi'", "Short and specific, like 'Invoice #204 — due Friday'", "Left blank", "The whole message"], answer: 1 },
@@ -1009,6 +1266,8 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + V", action: "Move the email to a folder" },
             { keys: "Insert key", action: "Flag/unflag the selected email" }
           ],
+          practice: "Create a folder in your mailbox called 'Practice', then move an email into it. Flag one email for follow-up. Use the search box to find an email by typing a word from its subject.",
+          summary_tl: "Para organisado ang inbox: Folders at Categories (kulay). Ang Rules ay awtomatikong nag-aayos ng paparating na email. Ang Flag ay para sa follow-up na may reminder. Mahusay mag-search: from:james, subject:invoice, hasattachments:yes. Layunin: 'Inbox Zero' — i-file o i-flag ang bawat email.",
           quiz: [
             { q: "What does a Rule do in Outlook?", choices: ["Deletes your inbox", "Automatically sorts/handles incoming emails", "Changes the font", "Prints emails"], answer: 1 },
             { q: "How do you search for emails that have attachments?", choices: ["hasattachments:yes", "find:files", "attach=true", "You can't"], answer: 0 },
@@ -1051,10 +1310,52 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + Q", action: "New meeting request" },
             { keys: "Ctrl + 2", action: "Switch to Calendar view" }
           ],
+          practice: "Open your Calendar and create a practice meeting for tomorrow. Add an agenda in the body, set a 15-minute reminder, and (if you can) invite yourself at another address.",
+          summary_tl: "Appointment=para sa iyo lang; Meeting=may iniimbitahan. Para sa meeting na bagay sa lahat: gamitin ang Scheduling Assistant (free/busy ng lahat). Magdagdag ng location/Teams link, agenda, reminder (15 min bago). Para sa lingguhan, gawing Recurring. Tiyakin ang time zone kapag iba't ibang lugar.",
           quiz: [
             { q: "What's the difference between an Appointment and a Meeting?", choices: ["Nothing", "A Meeting invites others; an Appointment is just for you", "Appointments are longer", "Meetings can't be recurring"], answer: 1 },
             { q: "Which tool shows everyone's free/busy times to find a slot?", choices: ["The Scheduling Assistant", "Track Changes", "AutoSum", "The Slide Master"], answer: 0 },
             { q: "What should you always include in a meeting invite body?", choices: ["Nothing", "An agenda", "A pie chart", "Your password"], answer: 1 }
+          ]
+        },
+        {
+          id: "o4",
+          title: "Shared Mailboxes, Delegate Access & Managing a Manager's Email",
+          level: "Advanced",
+          minutes: 9,
+          content: `
+            <p>A core coordinator/EA duty is handling email and calendars that aren't only your own — a team inbox, or a manager's mailbox. Doing this cleanly and professionally is a genuinely senior skill.</p>
+            <h4>Shared mailboxes — a team inbox</h4>
+            <p>A <b>shared mailbox</b> (e.g. <code>info@</code> or <code>reception@</code>) is one inbox several people monitor together. It usually appears automatically in your Outlook folder list below your own mailbox.</p>
+            <ul>
+              <li>When you reply, set the <b>From</b> field to the <b>shared address</b> so the answer comes from "Reception", not your personal account.</li>
+              <li>Agree a simple system — e.g. colour <b>categories</b> or a "Done" folder — so two people don't answer the same email.</li>
+            </ul>
+            <h4>Delegate access — acting for your manager</h4>
+            <p><b>Delegate access</b> lets you manage someone else's mail and calendar <b>on their behalf, with their permission</b>. The owner grants it via <b>File → Account Settings → Delegate Access</b>, choosing what you can do (read, create, respond).</p>
+            <ul>
+              <li><b>Calendar</b> — book, move and accept meetings for them; this is the heart of gatekeeping.</li>
+              <li><b>Send on Behalf</b> — recipients see "You on behalf of Manager". <b>Send As</b> looks fully like the manager — use only when expressly authorised.</li>
+              <li>Always act in the owner's voice and let them approve anything sensitive.</li>
+            </ul>
+            <h4>Categories & folders to stay on top of it all</h4>
+            <p>With several mailboxes flowing in, lean on colour <b>categories</b> (Urgent, Waiting, FYI) and folders/rules so nothing is missed across accounts. A tidy system is what makes managing multiple inboxes look effortless.</p>
+          `,
+          tips: [
+            "Always double-check the From field before sending from a shared or manager's mailbox — sending from the wrong account is an easy, awkward mistake.",
+            "Agree 'who handles what' for a shared inbox, and mark items done, so the team never double-replies.",
+            "'Send on Behalf' is the safe, transparent default; only use 'Send As' when your manager has explicitly asked for it."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + 2", action: "Switch to Calendar (including those shared with you)" },
+            { keys: "Ctrl + Shift + R", action: "Reply All — check the From address first!" }
+          ],
+          practice: "If you have access to a shared mailbox or a delegated calendar, open a new email and change the From field to the shared address. Then set up two colour categories (e.g. Urgent and Done) and tag a couple of emails to practise a tidy team system.",
+          summary_tl: "Mahalagang gawain ng coordinator/EA ang humawak ng email/kalendaryo na hindi sa kanila. Shared mailbox (hal. info@) = isang inbox na maraming tao ang nagba-bantay; itakda ang From sa shared address kapag sumasagot, at gumamit ng categories para iwas-dobleng sagot. Delegate access = pamahalaan ang mail/kalendaryo ng manager nang may pahintulot (book ng meetings, Send on Behalf). Tiyakin lagi ang From bago mag-send.",
+          quiz: [
+            { q: "What is a shared mailbox?", choices: ["A private inbox only you can open", "One mailbox several people monitor and reply from together", "The junk folder", "A printed contact list"], answer: 1 },
+            { q: "What does delegate access let you do?", choices: ["Manage someone else's mail/calendar on their behalf, with permission", "Reset the company servers", "Change Windows wallpaper", "Nothing at all"], answer: 0 },
+            { q: "When replying from a shared mailbox, the email should appear to come from…", choices: ["Your personal address", "The shared mailbox address, so it stays consistent", "A made-up address", "No one"], answer: 1 }
           ]
         }
       ]
@@ -1100,6 +1401,8 @@ const OFFICE_CURRICULUM = {
             "Become the person who 'knows where everything is and how everything works' — that makes you indispensable."
           ],
           shortcuts: [],
+          practice: "Write down your own one-line answers: name three things an office assistant is responsible for, and pick the <b>one quality</b> from this lesson you most want to be known for. Then start a simple to-do list for today and review it before you finish.",
+          summary_tl: "Ang office assistant/coordinator ang nagpapatakbo ng opisina. Gawain: komunikasyon (telepono, email, bisita), scheduling, dokumento at filing, supplies, suporta sa manager. Mahalagang katangian: reliability (kapag sinabi mong tapos, tapos), atensyon sa detalye, discretion (kumpidensyal), at pag-asa sa problema bago pa itanong.",
           quiz: [
             { q: "Which quality builds the most trust with colleagues?", choices: ["Typing fast", "Reliability — if you say it's done, it's done", "Knowing every shortcut", "Working late"], answer: 1 },
             { q: "What does 'discretion' mean in this role?", choices: ["Working quietly", "Keeping confidential information confidential", "Decorating the office", "Avoiding meetings"], answer: 1 },
@@ -1133,6 +1436,8 @@ const OFFICE_CURRICULUM = {
             "The phrase 'Let me find out for you' is far better than a flat 'I don't know'."
           ],
           shortcuts: [],
+          practice: "Role-play answering the phone out loud: say your greeting, then take a pretend message capturing <b>all five details</b> (name, company, number, time, reason) and read the number back. Write the message exactly as you'd leave it on a colleague's desk.",
+          summary_tl: "Ikaw madalas ang unang boses/mukha ng kumpanya. Telepono: sagutin sa 3 ring, ngumiti, kumuha ng kumpletong message (pangalan, kumpanya, numero, oras, dahilan — ulitin ang numero). Email: magalang at maikli. Bisita: batiin agad, alukin ng upuan. Galit na tao: manatiling kalmado, makinig, kilalanin ang damdamin, tumulong.",
           quiz: [
             { q: "What details must a phone message always capture?", choices: ["Just the name", "Name, company, number, time, and the reason — and read the number back", "Only the time", "Nothing, just remember it"], answer: 1 },
             { q: "Before putting someone on hold you should…", choices: ["Just do it silently", "Ask 'May I put you on hold?' and check back regularly", "Hang up", "Transfer without telling them"], answer: 1 },
@@ -1169,6 +1474,8 @@ const OFFICE_CURRICULUM = {
             "Keep a 'how-to' document for recurring tasks so anyone can cover for you — and you look organised."
           ],
           shortcuts: [],
+          practice: "Set up a tidy folder structure on your computer using the <code>Year → Category</code> idea (e.g. 2026 → Invoices, Minutes). Then write your three top priorities for tomorrow, sorting them with the <b>urgent/important</b> rule.",
+          summary_tl: "Ang organisasyon ang gulugod ng trabaho. Filing: pare-parehong pangalan (YYYY-MM-DD), maayos na folders, isang shared na lugar (OneDrive/SharePoint). Time management: unahin ang urgent+important; i-schedule ang important; i-batch ang magkakatulad; isang to-do list na binabalikan araw-araw. Supplies: mag-order BAGO maubos.",
           quiz: [
             { q: "Where should shared team files live?", choices: ["On your personal desktop", "A shared location like SharePoint/OneDrive — one source of truth", "Printed only", "In your email drafts"], answer: 1 },
             { q: "In the urgent/important method, what do you do FIRST?", choices: ["The easy tasks", "Tasks that are both urgent AND important", "Nothing", "Only important-not-urgent"], answer: 1 },
@@ -1209,6 +1516,8 @@ const OFFICE_CURRICULUM = {
             "Send minutes promptly — speed builds your reputation for reliability."
           ],
           shortcuts: [],
+          practice: "Write a short set of meeting minutes for an imaginary 10-minute team meeting. Include the attendees, one decision made, and two <b>action items</b> — each with <i>what</i>, <i>who</i> is responsible, and <i>by when</i>.",
+          summary_tl: "Bago ang meeting: kumpirmahin ang oras/lugar, magpadala ng agenda. Habang nagmi-meeting, kumuha ng MINUTES: attendees, desisyon, at lalo na ang ACTION ITEMS (ano, sino, kailan). Pagkatapos: ipamahagi ang minutes sa loob ng 24 oras, i-track ang actions, paalalahanan ang may hawak bago ang deadline.",
           quiz: [
             { q: "What's the most important thing to capture in minutes?", choices: ["Every single word", "Action items: what, who, and by when", "The weather", "Who arrived late"], answer: 1 },
             { q: "When should minutes ideally be circulated?", choices: ["Within 24 hours, while fresh", "A month later", "Never", "Only if asked"], answer: 0 },
@@ -1252,10 +1561,513 @@ const OFFICE_CURRICULUM = {
           shortcuts: [
             { keys: "Windows + L", action: "Lock your screen instantly when stepping away" }
           ],
+          practice: "Build a one-page practice <b>itinerary</b> for an imaginary day-trip: flight or train time, hotel, ground transport, one meeting time, and an emergency contact — all written in the traveller's local time, with confirmation numbers together.",
+          summary_tl: "Senior skills: Travel — isang itinerary (flight, hotel, transport, contacts) sa local time. Events — venue, RSVP, catering, materials, run-sheet (naka-oras na schedule). Confidentiality — lihim ang sahod/kontrata/personal data; i-lock ang screen (Windows+L). Paglago: alamin ang negosyo, bumuo ng relasyon, mag-upskill, humingi ng feedback.",
           quiz: [
             { q: "What's the best format for travel details?", choices: ["Ten separate emails", "One clear itinerary with flights, hotel, transport, and contacts together", "Memorising it", "A voicemail"], answer: 1 },
             { q: "How should you treat salaries, contracts and personal data?", choices: ["Share with friends", "As strictly confidential", "Post on the noticeboard", "Email to everyone"], answer: 1 },
             { q: "What helps you grow toward executive assistant or office manager roles?", choices: ["Avoiding new tasks", "Upskilling (advanced Excel, writing), building relationships, asking for feedback", "Staying silent", "Never learning the business"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 7 — PRACTICAL OFFICE WORK
+       ================================================================= */
+    {
+      id: "practical",
+      title: "Practical Office Work",
+      icon: "🧰",
+      color: "#0d9488",
+      blurb: "The hands-on daily skills: typing fast & accurately, business writing, customer service, office equipment, and handling money.",
+      lessons: [
+        {
+          id: "x1",
+          title: "Typing Speed, Accuracy & Data Entry",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>Fast, accurate typing is the single biggest day-to-day productivity skill in any office. A few weeks of practice pays off for your whole career.</p>
+            <h4>Touch typing — type without looking</h4>
+            <ul>
+              <li>Rest your fingers on the <b>home row</b>: left hand on <b>A S D F</b>, right hand on <b>J K L ;</b>. Feel the little bumps on F and J — they guide your fingers back without looking.</li>
+              <li>Each finger "owns" certain keys. Let the thumbs handle the spacebar.</li>
+              <li><b>Accuracy first, speed second.</b> Speed comes naturally once your fingers learn the positions — chasing speed just teaches mistakes.</li>
+            </ul>
+            <h4>Practise (free)</h4>
+            <p>Spend 10–15 minutes a day on a free typing trainer (e.g. typing.com, keybr.com, or Microsoft's own typing practice). Aim to build from ~20 words-per-minute to 50+ wpm over a few weeks.</p>
+            <h4>Data entry: accuracy is everything</h4>
+            <ul>
+              <li><b>Double-check numbers</b> — one wrong digit in an invoice or phone number causes real problems. Read it back.</li>
+              <li><b>Use Tab</b> to move neatly between fields/cells instead of the mouse — it's far faster.</li>
+              <li><b>Be consistent</b> — pick one date format, one way to write names, and stick to it across the whole sheet.</li>
+              <li><b>The number pad</b> (right side of a full keyboard) is fastest for typing lots of figures — practise it.</li>
+            </ul>
+          `,
+          tips: [
+            "Sit up, screen at eye level, wrists floating (not resting hard) — good posture lets you type longer without aching.",
+            "Don't look at the keys — covering your hands while practising forces your fingers to learn.",
+            "When entering data, verify totals add up; a quick =SUM check catches typos instantly."
+          ],
+          shortcuts: [
+            { keys: "Tab", action: "Jump to the next field or cell (faster than the mouse)" },
+            { keys: "Shift + Tab", action: "Jump back to the previous field" },
+            { keys: "Num Lock", action: "Turn the number pad on for fast figure entry" }
+          ],
+          practice: "Open a free typing site (typing.com or keybr.com) and do one 5-minute lesson with your fingers on the home row (ASDF / JKL;). Don't look at the keys!",
+          summary_tl: "Ang mabilis at tamang pag-type ang pinakamalaking araw-araw na skill. Touch typing: ipatong ang daliri sa home row (ASDF / JKL;) — may bukol sa F at J na gabay. Accuracy muna bago bilis. Mag-practice 10-15 min kada araw (typing.com). Data entry: i-double-check ang numbers, gamitin ang Tab, maging consistent, gamitin ang number pad.",
+          quiz: [
+            { q: "Where do your fingers rest in touch typing (the 'home row')?", choices: ["Q W E R / U I O P", "A S D F / J K L ;", "Z X C V / M , . /", "The number row"], answer: 1 },
+            { q: "What matters MOST when learning to type and doing data entry?", choices: ["Speed above all", "Accuracy first — speed follows", "Using only the mouse", "Looking at the keys"], answer: 1 },
+            { q: "What's the fastest way to move between cells/fields while entering data?", choices: ["The mouse", "The Tab key", "Scrolling", "Closing and reopening"], answer: 1 }
+          ]
+        },
+        {
+          id: "x2",
+          title: "Business Writing & Ready-to-Use Templates",
+          level: "Intermediate",
+          minutes: 10,
+          content: `
+            <p>Clear, correct writing makes you look professional and saves everyone time. Keep it simple, polite, and to the point.</p>
+            <h4>The rules of good business writing</h4>
+            <ul>
+              <li><b>Get to the point fast</b> — say what you need in the first sentence or two.</li>
+              <li><b>Short sentences, plain words.</b> "Use" not "utilise"; "before" not "prior to".</li>
+              <li><b>Be polite and positive</b> — "Could you please…", "Thank you for…".</li>
+              <li><b>Proofread</b> — read it once out loud; spellcheck won't catch "their/there" or a wrong name.</li>
+              <li><b>One topic per message</b>; use bullet points for anything with steps or lists.</li>
+            </ul>
+            <h4>Template: professional email</h4>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">Subject: [Clear topic — e.g. Invoice #204, due 12 June]<br><br>Dear [Name],<br><br>[One line of purpose.] [Any detail or request, with a deadline.]<br><br>Please let me know if you need anything further.<br><br>Kind regards,<br>[Your name] · [Title] · [Phone]</p>
+            <h4>Template: formal business letter</h4>
+            <p>Top: your company details, the date, then the recipient's name and address. Open with "Dear Mr/Ms [Surname],". State the purpose, give the details, finish with the action you'd like. Close "Yours sincerely," (if you named them) or "Yours faithfully," (if you wrote "Dear Sir/Madam"). Leave space for a signature, then your typed name and title.</p>
+            <h4>Template: internal memo</h4>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">MEMO<br>To: [team]   From: [you]   Date: [date]   Re: [subject]<br><br>[Purpose in one line, then the key points as bullets, then any action needed.]</p>
+          `,
+          tips: [
+            "Save your finished letter/memo/email layouts as Word templates so you never start from scratch.",
+            "Keep a 'snippets' note of polite phrases you reuse: greetings, sign-offs, 'please find attached', 'thank you for your patience'.",
+            "If an email feels emotional, write it, wait 10 minutes, re-read, THEN send."
+          ],
+          shortcuts: [
+            { keys: "F7", action: "Run the spelling & grammar check before sending" },
+            { keys: "Ctrl + Shift + V", action: "Paste text in clean formatting" }
+          ],
+          practice: "Using the email template in this lesson, write a short, polite request to book a meeting room. Keep it to 4 lines. Read it out loud once, then fix anything that sounds clunky.",
+          summary_tl: "Business writing: dumiretso sa punto, maikling pangungusap, simpleng salita, magalang, at i-proofread (basahin nang malakas). Templates: email (malinaw na subject, greeting, layunin, sign-off), pormal na letter (Yours sincerely kung may pangalan; Yours faithfully kung Dear Sir/Madam), memo (To/From/Date/Re). I-save bilang template.",
+          quiz: [
+            { q: "What's the golden rule of business writing?", choices: ["Use big, impressive words", "Get to the point fast with short, plain sentences", "Write as much as possible", "Skip the greeting"], answer: 1 },
+            { q: "If you opened a letter with 'Dear Sir/Madam', how should you close it?", choices: ["Yours sincerely", "Yours faithfully", "Cheers", "Love"], answer: 1 },
+            { q: "Why save your letter and memo layouts as templates?", choices: ["They print faster", "So you never start from scratch and stay consistent", "It uses less ink", "It's required by law"], answer: 1 }
+          ]
+        },
+        {
+          id: "x3",
+          title: "Customer Service & Front-Desk Excellence",
+          level: "Basic",
+          minutes: 9,
+          content: `
+            <p>As an assistant or coordinator you're often the face and voice of the organisation. Great service makes people feel looked after — and reflects well on everyone.</p>
+            <h4>The service mindset</h4>
+            <ul>
+              <li><b>Be warm and present</b> — make eye contact, smile, greet people promptly. Nobody should feel ignored.</li>
+              <li><b>Listen fully</b> before responding. Let them finish; don't interrupt.</li>
+              <li><b>Be helpful, not just polite</b> — "Let me find out for you" beats "I don't know".</li>
+              <li><b>Follow through</b> — if you promise to call back or send something, do it, on time.</li>
+            </ul>
+            <h4>Greeting visitors</h4>
+            <ol>
+              <li>Welcome them immediately: "Good morning, welcome to [Company]. How can I help?"</li>
+              <li>Find out who they're here to see and whether they have an appointment.</li>
+              <li>Notify the host; offer the guest a seat and water while they wait.</li>
+              <li>Sign them in if your office requires it (visitor log/badge).</li>
+            </ol>
+            <h4>Handling complaints or upset people — the LEAP method</h4>
+            <ul>
+              <li><b>L</b>isten without interrupting.</li>
+              <li><b>E</b>mpathise: "I understand why that's frustrating."</li>
+              <li><b>A</b>pologise for the trouble (even if it wasn't your fault).</li>
+              <li><b>P</b>rovide a solution or escalate to someone who can.</li>
+            </ul>
+            <p>Stay calm, never take it personally, and never argue. Your composure defuses almost everything.</p>
+          `,
+          tips: [
+            "A genuine smile changes your tone of voice — people can 'hear' it on the phone.",
+            "Use the person's name once or twice; it makes service feel personal.",
+            "Under-promise and over-deliver: say 'by end of day' and surprise them by lunchtime."
+          ],
+          shortcuts: [],
+          practice: "Practise the <b>LEAP method</b> out loud: imagine an upset visitor whose meeting was just cancelled. Say a Listen → Empathise → Apologise → Provide-a-solution response. Then write a warm two-line greeting you could use for any visitor arriving at the front desk.",
+          summary_tl: "Ikaw ang mukha ng kumpanya. Service mindset: mainit at handa, makinig nang buo, matulungin ('Hahanapin ko po' kaysa 'Ewan ko'), at tuparin ang pangako. Bisita: batiin agad, alamin ang pakay, ipaalam sa host, alukin ng upuan. Sa reklamo, LEAP: Listen, Empathise, Apologise, Provide solution. Manatiling kalmado, huwag personalin.",
+          quiz: [
+            { q: "What does the 'E' in the LEAP method for upset people stand for?", choices: ["Explain", "Empathise", "Exit", "Email"], answer: 1 },
+            { q: "What's better than telling a visitor 'I don't know'?", choices: ["Ignoring them", "'Let me find out for you'", "'That's not my job'", "Walking away"], answer: 1 },
+            { q: "How should you handle someone who is upset?", choices: ["Argue back", "Stay calm, listen, empathise, and provide/escalate a solution", "Take it personally", "Hang up"], answer: 1 }
+          ]
+        },
+        {
+          id: "x4",
+          title: "Office Equipment & Everyday Tech",
+          level: "Basic",
+          minutes: 8,
+          content: `
+            <p>Knowing the everyday machines makes you the reliable person who 'just sorts it out'.</p>
+            <h4>Printers</h4>
+            <ul>
+              <li><b>Before printing</b>, use <b>Print Preview</b> (Ctrl+P shows it) to avoid wasting paper.</li>
+              <li><b>Double-sided</b> (duplex) saves paper — set it in the print dialog.</li>
+              <li>Common fixes: paper jam (open the tray, gently remove paper in the direction it feeds), "out of toner", or the wrong printer selected. Check the queue if nothing comes out.</li>
+            </ul>
+            <h4>Scanners & copiers</h4>
+            <ul>
+              <li><b>Scanning</b> turns paper into a digital file (usually a PDF) you can email or store. Place the page face-down, line it up with the corner arrow.</li>
+              <li><b>Multi-page</b> documents: use the top feeder (ADF) and choose "PDF" so they save as one file.</li>
+              <li><b>Copying</b> just makes paper duplicates — choose number of copies, single/double-sided, and size.</li>
+            </ul>
+            <h4>Video meetings (Teams / Zoom)</h4>
+            <ul>
+              <li>Test your <b>camera, microphone and speakers</b> before the meeting starts.</li>
+              <li><b>Mute</b> yourself when not speaking to avoid background noise.</li>
+              <li>Know how to <b>share your screen</b> and to <b>record</b> if asked.</li>
+            </ul>
+            <h4>Saving & sharing files</h4>
+            <p><b>PDF</b> is the safe format for sending finished documents — it looks the same everywhere and can't be easily edited. For big files, share a <b>OneDrive/Drive link</b> rather than a huge attachment.</p>
+          `,
+          tips: [
+            "Keep a simple note of how to do recurring tasks on each machine (scan-to-email, double-sided) — and where supplies/toner are kept.",
+            "If a print job 'disappears', check you sent it to the right printer, then open the print queue to clear stuck jobs.",
+            "Always do a quick test scan/print of one page before running 200."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + P", action: "Print (and see the print preview)" },
+            { keys: "Win + Shift + S", action: "Screenshot part of the screen (great for quick help notes)" }
+          ],
+          practice: "Find a printer's Print Preview (Ctrl+P) for any document and look at the double-sided option. If you have a scanner, scan one page to PDF and email it to yourself.",
+          summary_tl: "Kagamitan: Printer — Print Preview (Ctrl+P), i-double-sided para makatipid; ayusin ang paper jam o maling printer. Scanner — gawing PDF ang papel para i-email. Video meeting (Teams/Zoom): i-test ang camera/mic, i-mute kung di nagsasalita, alamin ang screen share. Para magpadala ng tapos na dokumento, gamitin ang PDF.",
+          quiz: [
+            { q: "Which file format looks the same on every device and is best for sending finished documents?", choices: ["A Word file only", "PDF", "A screenshot", "A zip file"], answer: 1 },
+            { q: "What should you do before printing a long document?", choices: ["Nothing", "Use Print Preview and consider double-sided to save paper", "Print 10 test copies", "Turn off the printer"], answer: 1 },
+            { q: "In a video meeting, what's good etiquette when you're not speaking?", choices: ["Talk over others", "Mute your microphone", "Turn the lights off", "Leave the call"], answer: 1 }
+          ]
+        },
+        {
+          id: "x5",
+          title: "Money Basics: Invoices, Expenses & Petty Cash",
+          level: "Intermediate",
+          minutes: 10,
+          content: `
+            <p>Assistants and coordinators often handle small financial tasks. You don't need to be an accountant — just accurate, organised, and honest.</p>
+            <h4>Invoices</h4>
+            <ul>
+              <li>An <b>invoice</b> is a bill — a request for payment. A <b>receipt</b> is proof a payment was made.</li>
+              <li>A proper invoice shows: a unique <b>invoice number</b>, the date, who it's from and to, a description of goods/services, amounts, any tax, the <b>total due</b>, the <b>due date</b>, and how to pay.</li>
+              <li>When invoices arrive, log them, get them approved by the right person, and pay/file them before the due date so nothing is late.</li>
+            </ul>
+            <h4>Expenses</h4>
+            <ul>
+              <li>An <b>expense claim</b> reimburses someone for money they spent for work (travel, supplies).</li>
+              <li><b>Keep every receipt</b> — no receipt usually means no reimbursement. Photograph or scan them so they don't get lost.</li>
+              <li>A simple expense sheet: date, what it was for, category, amount, and the receipt attached. Total it with <b>=SUM</b> in Excel.</li>
+            </ul>
+            <h4>Petty cash</h4>
+            <ul>
+              <li>A small cash float for minor purchases (stamps, milk, taxi).</li>
+              <li><b>Golden rule:</b> cash out + receipts in should always equal the starting float. Record every transaction in a petty-cash log.</li>
+              <li>Count it regularly and report any shortfall immediately — accuracy here protects your reputation.</li>
+            </ul>
+            <h4>Purchase orders (PO)</h4>
+            <p>A <b>purchase order</b> is an official request to buy something, approved before the money is spent. Suppliers then match their invoice to the PO number. It keeps spending controlled and traceable.</p>
+          `,
+          tips: [
+            "Never throw away a receipt until it's logged and filed — photograph it the moment you get it.",
+            "Use an Excel table with =SUM to keep a running total of expenses or petty cash; it adds up automatically.",
+            "Be scrupulously honest and accurate with money — trust here is everything, and easy to lose."
+          ],
+          shortcuts: [
+            { keys: "Alt + =", action: "AutoSum a column of amounts in Excel" },
+            { keys: "Ctrl + ;", action: "Enter today's date in a cell" }
+          ],
+          practice: "In Excel, make a simple expense sheet: columns for Date, Description, Category, Amount. Add 4 rows and total the Amount column with =SUM. This is exactly how a real expense log works.",
+          summary_tl: "Madalas humahawak ng maliit na pera ang assistant. Invoice=hingi ng bayad; Receipt=patunay na nakabayad. Expenses: itago ang LAHAT ng resibo, gumawa ng sheet (Date, Description, Category, Amount), i-total gamit ang =SUM. Petty cash: natitirang cash + resibo = dapat tugma sa simulang halaga. Maging tapat at tama sa pera — iyon ang tiwala.",
+          quiz: [
+            { q: "What's the difference between an invoice and a receipt?", choices: ["They're the same", "An invoice requests payment; a receipt proves payment was made", "A receipt is bigger", "An invoice is only for cash"], answer: 1 },
+            { q: "What must you keep to claim back work expenses?", choices: ["Nothing", "Every receipt", "Just a verbal note", "A screenshot of your bank app only"], answer: 1 },
+            { q: "What's the golden rule of petty cash?", choices: ["Spend it fast", "Cash remaining + receipts should equal the starting float", "Never write anything down", "Keep it secret"], answer: 1 }
+          ]
+        },
+        {
+          id: "x6",
+          title: "Staying Safe: Passwords, Phishing & Confidentiality",
+          level: "Basic",
+          minutes: 9,
+          content: `
+            <p>An office assistant is trusted with confidential information and access to company systems. Good digital safety protects you, your colleagues, and the whole organisation — and it's a skill employers genuinely value.</p>
+            <h4>Strong passwords</h4>
+            <ul>
+              <li><b>Long beats complicated.</b> A <b>passphrase</b> like <code>Coffee-Rain-River-42</code> is both strong and easy to remember.</li>
+              <li><b>Never reuse</b> the same password across sites — if one leaks, they all do.</li>
+              <li><b>Never share</b> your password or write it on a sticky note. A <b>password manager</b> safely remembers them for you.</li>
+            </ul>
+            <h4>Two-factor authentication (2FA)</h4>
+            <p>2FA adds a second step after your password — usually a code from an app or text on your phone. Even if someone steals your password, they can't get in without your phone. Turn it on wherever it's offered.</p>
+            <h4>Spotting phishing — the #1 office threat</h4>
+            <p><b>Phishing</b> is a fake email or message tricking you into clicking a bad link, opening a virus, or handing over a password or payment. Warning signs:</p>
+            <ul>
+              <li><b>Urgency &amp; fear</b> — "Your account will be closed in 24 hours!"</li>
+              <li>A slightly wrong sender address, odd spelling, or a generic "Dear Customer".</li>
+              <li>An unexpected attachment, or a link whose address (hover to check) doesn't match the real site.</li>
+              <li>A request to change bank details or pay an "urgent" invoice — <b>always verify by phone</b> using a number you already trust.</li>
+            </ul>
+            <p>When in doubt: <b>don't click</b>. Verify another way and report it to IT.</p>
+            <h4>Everyday confidentiality</h4>
+            <ul>
+              <li><b>Lock your screen</b> (Windows + L) every time you step away.</li>
+              <li>Don't leave sensitive papers on the desk or in the printer tray; <b>shred</b> what you no longer need.</li>
+              <li>Be careful what's visible on your screen in public, and never discuss confidential matters where others can hear.</li>
+            </ul>
+          `,
+          tips: [
+            "If an email pressures you to act 'right now', slow down — urgency is the oldest trick in the phishing book.",
+            "Verify any change of bank details or payment request by calling a known, trusted number — never the number in the suspicious email.",
+            "Make Windows + L automatic every single time you leave your desk; it takes one second and prevents a lot of trouble."
+          ],
+          shortcuts: [
+            { keys: "Windows + L", action: "Lock your screen instantly when you step away" },
+            { keys: "Win + Shift + S", action: "Screenshot a suspicious email to report it to IT" }
+          ],
+          practice: "Turn a weak password into a strong passphrase of four random words plus a number. Then look at two recent emails in any inbox and, for each, list one thing that shows it's genuine — or one warning sign that it might be phishing.",
+          summary_tl: "Pinagkakatiwalaan ang office assistant ng kumpidensyal na impormasyon, kaya mahalaga ang digital safety. Password: mahaba (passphrase tulad ng 'Coffee-Rain-River-42'), huwag i-reuse, huwag i-share. 2FA: dagdag na code mula sa telepono. Phishing: pekeng email na nagmamadali o natatakot ka — huwag i-click, i-verify sa ibang paraan, i-report sa IT; tawagan ang dati nang pinagkakatiwalaang numero para sa bank/payment. I-lock ang screen (Windows+L), i-shred ang sensitibong papel.",
+          quiz: [
+            { q: "What makes a strong password?", choices: ["Your first name", "Long, unique, and not reused — a passphrase is ideal", "1234", "The word 'password'"], answer: 1 },
+            { q: "An email says 'Your account is locked — click here to verify your password NOW!' What is it most likely?", choices: ["A helpful reminder", "A phishing attempt — don't click; verify another way and report it", "A normal invoice", "A calendar invite"], answer: 1 },
+            { q: "What does two-factor authentication (2FA) add?", choices: ["A second step, like a code from your phone, after your password", "A nicer screensaver", "Faster AutoSave", "A pie chart"], answer: 0 },
+            { q: "What should you do every time you step away from your desk?", choices: ["Leave everything open", "Lock your screen with Windows + L", "Turn off the monitor only", "Email your manager"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ====================================================================
+       MODULE 8 — EXECUTIVE ASSISTANT & ADMIN PRO
+       ================================================================= */
+    {
+      id: "exec",
+      title: "Executive Assistant & Admin Pro",
+      icon: "👔",
+      color: "#be123c",
+      blurb: "The full scope of senior admin work: managing an executive's day, projects and events, operations, and being a trusted right hand.",
+      lessons: [
+        {
+          id: "ea1",
+          title: "Managing an Executive's Calendar & Inbox (Gatekeeping)",
+          level: "Advanced",
+          minutes: 11,
+          content: `
+            <p>An executive assistant protects the most valuable thing a leader has: their <b>time and attention</b>. You become the trusted gatekeeper.</p>
+            <h4>Owning the calendar</h4>
+            <ul>
+              <li><b>Protect focus time</b> — block periods for deep work; don't let the day fill with back-to-back meetings.</li>
+              <li><b>Add buffers</b> — travel time, prep time, and breaks between meetings so the day doesn't collapse when one runs over.</li>
+              <li><b>Prioritise</b> — when two things clash, know which matters more (and ask if unsure). Decline or rebook the lesser one politely.</li>
+              <li><b>Prepare ahead</b> — for each meeting, ensure your exec has the agenda, documents, and any background they need.</li>
+              <li><b>Time zones & travel</b> — always confirm the zone; never book a 7am call the morning after a long flight.</li>
+            </ul>
+            <h4>Managing the inbox (with permission)</h4>
+            <ul>
+              <li><b>Triage</b> — flag what's urgent, file what's reference, draft replies for routine messages.</li>
+              <li><b>Use folders/categories</b> and rules so important senders never get lost.</li>
+              <li><b>Draft on their behalf</b> in their voice; let them approve sensitive replies.</li>
+            </ul>
+            <h4>Gatekeeping with grace</h4>
+            <p>You'll say "no" or "not now" often — do it warmly. "He's fully booked this week; can I help, or shall I find time next week?" You shield your exec without making people feel shut out.</p>
+          `,
+          tips: [
+            "Start each day with a quick 'look-ahead' so your exec knows what's coming and you've spotted any clashes.",
+            "Keep a shared, colour-coded calendar so the whole team can see (appropriate) availability.",
+            "Learn your exec's preferences once — how they like meetings spaced, who gets priority — and apply them consistently."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + 2", action: "Open the Calendar in Outlook" },
+            { keys: "Ctrl + Shift + Q", action: "New meeting request" }
+          ],
+          practice: "Look at your own week as if it were an executive's calendar: block one <b>focus-time</b> slot, add a buffer before a busy period, and draft one warm 'gatekeeping' reply that politely turns down a request while offering an alternative.",
+          summary_tl: "Ang executive assistant ang nag-iingat sa oras at atensyon ng lider. Kalendaryo: protektahan ang focus time, magdagdag ng buffer (travel/prep), unahin ang mas mahalaga, ihanda ang dokumento bago ang meeting. Inbox (may pahintulot): i-triage, folders/rules, mag-draft ng sagot. Mag-gatekeep nang magalang — magbigay ng alternatibo.",
+          quiz: [
+            { q: "What is an executive assistant primarily protecting?", choices: ["The office plants", "The executive's time and attention", "The printer", "The petty cash"], answer: 1 },
+            { q: "Why add 'buffers' between meetings?", choices: ["To look busy", "So the day doesn't collapse when a meeting runs over (travel/prep/breaks)", "To waste time", "There's no reason"], answer: 1 },
+            { q: "What's the best way to 'gatekeep' someone you must turn away?", choices: ["Ignore them", "Say no warmly and offer an alternative or help", "Be rude so they go away", "Promise something you can't do"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea2",
+          title: "Prioritising, Task Tracking & Reliable Follow-Up",
+          level: "Intermediate",
+          minutes: 9,
+          content: `
+            <p>The admin superpower is that <b>nothing falls through the cracks</b>. That comes from a system, not a good memory.</p>
+            <h4>Prioritise with the urgent/important grid</h4>
+            <ul>
+              <li><b>Urgent + Important</b> → do now.</li>
+              <li><b>Important, not urgent</b> → schedule it (this is where good work lives).</li>
+              <li><b>Urgent, not important</b> → do quickly or delegate.</li>
+              <li><b>Neither</b> → drop it.</li>
+            </ul>
+            <h4>One trusted task list</h4>
+            <p>Keep <b>every</b> task in one place — a notebook, Outlook Tasks, Microsoft To Do, or a simple Excel tracker — and review it first thing each morning and last thing each day. A scattered system is no system.</p>
+            <h4>Tracking other people's actions</h4>
+            <p>You'll constantly chase things others owe (a signed form, a reply, a report). Keep a simple <b>follow-up log</b>: task · who · promised date · status. Send a friendly nudge as deadlines approach — politely persistent gets results.</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">Task            | Owner  | Due     | Status<br>Sign contract   | Sarah  | 10 Jun  | Reminded 6 Jun</p>
+            <h4>Close the loop</h4>
+            <p>When you finish a task, briefly confirm it's done ("Booked — confirmation attached"). That visible reliability is what makes people trust you with bigger things.</p>
+          `,
+          tips: [
+            "End each day by writing tomorrow's top 3 priorities — you'll start focused instead of reactive.",
+            "A gentle reminder isn't nagging; people are busy and usually grateful for it.",
+            "Use Outlook flags or Microsoft To Do so reminders pop up automatically — don't rely on memory."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + Shift + K", action: "Create a new task in Outlook" },
+            { keys: "Insert", action: "Flag the selected email for follow-up" }
+          ],
+          practice: "Make a simple <b>follow-up log</b> with columns Task · Owner · Due · Status (in Excel or on paper) and fill in three real or imagined items. Then write tomorrow's <b>top 3 priorities</b> so you start the day focused.",
+          summary_tl: "Ang superpower: walang nakakalimutan — dahil sa SISTEMA, hindi memorya. Unahin gamit ang urgent/important grid. Isang trusted na task list, binabalikan araw-araw. I-track ang utang-gawa ng iba sa follow-up log (gawain, sino, deadline, status) at magpaalala nang magalang. Kapag tapos, kumpirmahin — iyon ang nagbibigay ng tiwala.",
+          quiz: [
+            { q: "In the urgent/important grid, what do you do with 'important but NOT urgent' tasks?", choices: ["Drop them", "Schedule them", "Ignore them", "Always do them last forever"], answer: 1 },
+            { q: "What's the key to nothing falling through the cracks?", choices: ["A great memory", "One trusted task list reviewed daily", "Doing everything at once", "Avoiding tasks"], answer: 1 },
+            { q: "How should you handle following up on what others owe you?", choices: ["Never remind anyone", "Keep a follow-up log and send polite, timely nudges", "Do their work for them", "Complain to everyone"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea3",
+          title: "Coordinating Projects, Events & Big Meetings",
+          level: "Advanced",
+          minutes: 12,
+          content: `
+            <p>Coordinators and EAs often run the moving parts of projects and events. The tools: a checklist, a timeline, and clear ownership.</p>
+            <h4>Project coordination basics</h4>
+            <ul>
+              <li><b>Break it down</b> into tasks with an owner and a due date for each.</li>
+              <li><b>Track it</b> in a simple plan (Excel, Planner, or a to-do tool): task · owner · deadline · status.</li>
+              <li><b>Communicate</b> — short status updates keep everyone aligned; flag risks early, don't hide them.</li>
+              <li><b>Follow up</b> relentlessly so nothing slips.</li>
+            </ul>
+            <h4>Planning an event or big meeting (e.g. board meeting, off-site, AGM)</h4>
+            <ol>
+              <li><b>Define</b> the purpose, date, budget, and guest list.</li>
+              <li><b>Book</b> the venue/room, catering, equipment (AV, projector, video link).</li>
+              <li><b>Invite & track RSVPs</b>; chase non-responders.</li>
+              <li><b>Prepare materials</b> — agenda, packs, name cards, presentations.</li>
+              <li><b>Build a run-sheet</b> — a timed schedule of exactly what happens when, and who's responsible.</li>
+              <li><b>On the day</b> — arrive early, test everything, greet attendees, keep to time.</li>
+              <li><b>After</b> — circulate minutes/actions, settle invoices, note what to improve next time.</li>
+            </ol>
+            <h4>The two tools that never fail</h4>
+            <p>A <b>checklist with deadlines</b> (so nothing is forgotten) and a <b>run-sheet</b> (so the day runs to time). Master these and you can run anything from a team lunch to a conference.</p>
+          `,
+          tips: [
+            "Always have a Plan B — backup AV, a printed copy of the slides, extra chairs. Things go wrong; prepared people stay calm.",
+            "Confirm everything 24–48 hours before (venue, catering numbers, attendees) — confirmations prevent disasters.",
+            "Keep a reusable event checklist template; each event makes it better."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + T", action: "Make a tracking Table in Excel (filters + auto-fill)" },
+            { keys: "Ctrl + Shift + L", action: "Toggle filters to sort your task list" }
+          ],
+          practice: "Draft a <b>run-sheet</b> for a one-hour imaginary team meeting: list each segment with a start time and who's responsible. Then add a short <b>checklist</b> of three things you'd confirm 24–48 hours beforehand.",
+          summary_tl: "Sa project/event: hatiin sa tasks na may owner at deadline, i-track, mag-follow up. Malaking meeting/event: tukuyin ang layunin, i-book ang venue/catering/equipment, i-track ang RSVP, ihanda ang materials, gumawa ng RUN-SHEET (naka-oras na schedule). Lagi may Plan B. Kumpirmahin ang lahat 24-48 oras bago.",
+          quiz: [
+            { q: "What is a 'run-sheet'?", choices: ["A list of attendees", "A timed schedule of exactly what happens when, and who's responsible", "The catering bill", "A type of email"], answer: 1 },
+            { q: "What two tools make events and projects run smoothly?", choices: ["A pen and paper only", "A checklist with deadlines and a run-sheet", "Luck and memory", "A bigger budget"], answer: 1 },
+            { q: "When should you confirm venue, catering and attendees?", choices: ["Never", "24–48 hours before the event", "A year before only", "During the event"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea4",
+          title: "Admin Operations: Onboarding, Records, Compliance & Procurement",
+          level: "Intermediate",
+          minutes: 11,
+          content: `
+            <p>Administrative staff keep the office's behind-the-scenes machinery running. Here are the core operational duties.</p>
+            <h4>Onboarding new staff</h4>
+            <ul>
+              <li>Prepare before day one: desk, computer/login, email, building access, welcome pack.</li>
+              <li>Collect and file their paperwork (contract, ID, bank/tax details) — handle it confidentially.</li>
+              <li>Arrange their induction schedule and introduce them around. A warm start matters.</li>
+            </ul>
+            <h4>Records & document management</h4>
+            <ul>
+              <li><b>Consistent filing</b> — agreed names and folders, one shared source of truth.</li>
+              <li><b>Retention</b> — know how long to keep records (contracts, invoices, HR files) and archive or securely dispose of the rest.</li>
+              <li><b>Version control</b> — keep the latest version clearly marked; avoid duplicate "finals".</li>
+            </ul>
+            <h4>Data protection & compliance</h4>
+            <ul>
+              <li>Personal data (staff, customers) must be kept <b>secure and confidential</b> — lock screens, don't share logins, follow your organisation's data-protection rules (e.g. GDPR).</li>
+              <li>Only collect and keep what's needed; dispose of sensitive paper by shredding.</li>
+              <li>Follow basic <b>health & safety</b> admin too — fire exits, first-aid, incident logs.</li>
+            </ul>
+            <h4>Supplies & procurement</h4>
+            <ul>
+              <li>Track stock (stationery, kitchen, toner); reorder <b>before</b> running out.</li>
+              <li>Get quotes, raise purchase orders, and build good relationships with reliable suppliers.</li>
+              <li>Check deliveries against the order, and match invoices to the PO before paying.</li>
+            </ul>
+          `,
+          tips: [
+            "Build an onboarding checklist so every new starter gets a consistent, welcoming first day.",
+            "Treat all HR and personal data as strictly confidential — store it securely, share it with no one unauthorised.",
+            "Keep a supplier contact list with account numbers and lead times so reordering is instant."
+          ],
+          shortcuts: [
+            { keys: "Windows + L", action: "Lock your screen to protect data when you step away" }
+          ],
+          practice: "Write an <b>onboarding checklist</b> for a new starter's first day with at least six items (desk, computer/login, email, building access, welcome pack, induction). Mark which items involve confidential paperwork that must be filed securely.",
+          summary_tl: "Operasyong gawain: Onboarding — ihanda bago ang unang araw (desk, login, email, access, welcome pack), kolektahin ang papeles nang kumpidensyal. Records — pare-parehong filing, alam ang retention. Data protection — i-secure ang personal data, i-lock ang screen, mag-shred ng sensitibong papel. Procurement — i-track ang stock, mag-order bago maubos, i-match ang invoice sa PO.",
+          quiz: [
+            { q: "What should be ready BEFORE a new employee's first day?", choices: ["Nothing", "Desk, computer/login, email, access and a welcome pack", "Only a chair", "Their resignation letter"], answer: 1 },
+            { q: "How must personal and HR data be handled?", choices: ["Shared freely", "Kept secure and strictly confidential, per data-protection rules", "Left on the desk", "Emailed to everyone"], answer: 1 },
+            { q: "What's good practice with office supplies?", choices: ["Reorder after you run out", "Track stock and reorder before running out", "Never reorder", "Order ten years' worth"], answer: 1 }
+          ]
+        },
+        {
+          id: "ea5",
+          title: "Being a Trusted Right Hand: Executives, Stakeholders & Discretion",
+          level: "Advanced",
+          minutes: 10,
+          content: `
+            <p>At the senior end, the role is about judgement, trust, and relationships as much as tasks. This is what makes you indispensable.</p>
+            <h4>Anticipate, don't just react</h4>
+            <p>The best assistants see what's needed before being asked — prepping a document the exec will want, spotting a calendar clash next week, having the travel detail ready. Think one step ahead.</p>
+            <h4>Communicate 'upward' well</h4>
+            <ul>
+              <li><b>Be concise</b> — give leaders the headline first, detail only if needed.</li>
+              <li><b>Bring solutions, not just problems</b> — "X happened; I suggest Y — okay?"</li>
+              <li><b>Be honest</b> — flag issues early; never hide a mistake. Trust depends on it.</li>
+            </ul>
+            <h4>Managing relationships & stakeholders</h4>
+            <p>You're the link between your exec and everyone else — staff, clients, board members, vendors. Be professional, friendly and even-handed with all of them. A strong network across the organisation lets you get things done fast.</p>
+            <h4>Discretion & professionalism — the foundation</h4>
+            <ul>
+              <li>You'll know confidential things — salaries, strategy, personal matters. <b>Say nothing.</b> Discretion is your reputation.</li>
+              <li>Stay calm and composed under pressure; you set the tone.</li>
+              <li>Represent your exec and organisation well in every email, call and conversation.</li>
+            </ul>
+            <h4>Keep growing</h4>
+            <p>Learn the business, ask for feedback, and keep building skills (advanced Excel, project tools, clear writing). This is the path from assistant to office manager, chief of staff, or operations roles.</p>
+          `,
+          tips: [
+            "Anticipation is the #1 trait leaders praise — keep a 'what will they need next?' mindset.",
+            "Bring a recommendation with every problem you raise; it shows judgement and saves their time.",
+            "Confidentiality is built once and lost in a moment — guard it like your reputation, because it is."
+          ],
+          shortcuts: [],
+          practice: "Think of a recent or imagined problem at work and practise raising it <b>upward</b>: write one or two lines that give the headline first and include a <b>suggested solution</b> ('X happened; I suggest Y — okay?'), not just the problem.",
+          summary_tl: "Sa senior level, judgment at tiwala ang laman. Mag-anticipate — gawin ang kakailanganin bago pa hingin. Mag-communicate paitaas nang maikli at may solusyon (hindi lang problema), at maging tapat. Pamahalaan ang relasyon sa lahat nang propesyonal. Ang discretion ang pundasyon — tahimik sa kumpidensyal. Patuloy na matuto para umangat ang karera.",
+          quiz: [
+            { q: "What single trait do leaders value most in a great assistant?", choices: ["Typing speed", "Anticipating needs before being asked", "Working late", "Knowing gossip"], answer: 1 },
+            { q: "How should you raise a problem to a busy executive?", choices: ["Just dump the problem", "Bring the headline AND a suggested solution", "Hide it", "Tell everyone else first"], answer: 1 },
+            { q: "Why is discretion so important?", choices: ["It isn't", "You handle confidential information; trust is your reputation and easily lost", "To seem mysterious", "To avoid work"], answer: 1 }
           ]
         }
       ]
@@ -1291,9 +2103,17 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
     try { localStorage.setItem(STORE_KEY, JSON.stringify(p)); } catch (e) {}
   }
   let progress = loadProgress();
-  // shape: { done: { lessonId: true }, quiz: { lessonId: scorePercent } }
+  // shape: { done:{lessonId:true}, quiz:{lessonId:pct}, exam:{moduleId:pct}, name, lang }
   progress.done = progress.done || {};
   progress.quiz = progress.quiz || {};
+  progress.lang = progress.lang || "en";   // "en" | "tl" (Tagalog)
+
+  /* ---------- Language (Tagalog option) ----------
+     t(en, tl) returns the Tagalog string when the learner has chosen Tagalog,
+     otherwise the English one. Office terms stay English because the software
+     she uses is in English. */
+  function t(en, tl) { return (progress.lang === "tl" && tl) ? tl : en; }
+  function setLang(lang) { progress.lang = lang; saveProgress(progress); }
 
   function markDone(lessonId) {
     if (!progress.done[lessonId]) {
@@ -1317,7 +2137,14 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
   const escapeHtml = (s) => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   /* ---------- Router (hash based, works offline) ---------- */
-  function go(hash) { window.location.hash = hash; }
+  function go(hash) {
+    // Any deliberate navigation clears an active search, so clicking a search
+    // result actually opens it (instead of render() re-running the search).
+    if (searchInput) searchInput.value = "";
+    const current = window.location.hash.replace(/^#\/?/, "");
+    if (current === hash) render();            // same hash won't fire hashchange — render manually
+    else window.location.hash = hash;          // triggers hashchange -> render
+  }
   window.addEventListener("hashchange", render);
 
   function parseHash() {
@@ -1344,27 +2171,31 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
           <h3>${m.title}</h3>
           <div class="blurb">${m.blurb}</div>
           <div class="bar"><span style="width:${mp.pct}%"></span></div>
-          <div class="meta"><span>${mp.done} / ${mp.total} lessons</span><span>${mp.pct}%</span></div>
+          <div class="meta"><span>${mp.done} / ${mp.total} ${t("lessons","aralin")}</span><span>${mp.pct}%</span></div>
         </button>`;
     }).join("");
 
     app.innerHTML = `
       <div class="hero">
         <div class="ring"></div><div class="ring two"></div>
-        <h1>Welcome to Office Pro Academy 👋</h1>
-        <p>Your complete, step-by-step path from total beginner to a confident, skilled office assistant & coordinator. Learn at your own pace — your progress saves automatically.</p>
+        <h1>${t("Welcome to Office Pro Academy 👋","Maligayang pagdating sa Office Pro Academy 👋")}</h1>
+        <p>${t("Your complete, step-by-step path from total beginner to a confident, skilled office assistant, coordinator, administrative staffer &amp; executive assistant. Learn at your own pace — your progress saves automatically.","Ang kumpleto, hakbang-hakbang na gabay mula baguhan tungong tiwalang office assistant, coordinator, administrative staff at executive assistant. Mag-aral sa sariling bilis — awtomatikong naka-save ang iyong progreso.")}</p>
+        <div class="btn-row" style="margin-top:18px">
+          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="OPA.go('plan')">🚀 ${t("Start the Fast-Track Plan","Simulan ang Fast-Track Plan")}</button>
+        </div>
+        <p style="opacity:.9;font-size:13.5px;margin-top:12px">${t("New here? It's simple: open a module → read the short lessons & try the practice → pass the quick quiz to tick it off. Totally new to computers? Begin with <b>“Computer &amp; Keyboard Basics”</b> in Office Foundations.","Bago ka rito? Simple lang: buksan ang module → basahin ang maikling aralin at subukan ang practice → pumasa sa quiz para ma-tsek ito. Bago sa kompyuter? Magsimula sa <b>“Computer &amp; Keyboard Basics”</b> sa Office Foundations.")}</p>
         <div class="progress-summary">
-          <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">Lessons done</div></div>
-          <div class="stat"><div class="num">${pct}%</div><div class="lbl">Course complete</div></div>
-          <div class="stat"><div class="num">${quizzesTaken}</div><div class="lbl">Quizzes taken</div></div>
-          <div class="stat"><div class="num">${avgScore}%</div><div class="lbl">Avg quiz score</div></div>
+          <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">${t("Lessons done","Tapos na aralin")}</div></div>
+          <div class="stat"><div class="num">${pct}%</div><div class="lbl">${t("Course complete","Bahagi ng kurso")}</div></div>
+          <div class="stat"><div class="num">${quizzesTaken}</div><div class="lbl">${t("Quizzes taken","Quiz na nakuha")}</div></div>
+          <div class="stat"><div class="num">${avgScore}%</div><div class="lbl">${t("Avg quiz score","Avg na iskor")}</div></div>
         </div>
       </div>
 
-      <div class="section-title">📚 Your Learning Path — work top to bottom</div>
+      <div class="section-title">📚 ${t("Your Learning Path — work top to bottom","Ang Iyong Learning Path — sunod-sunod mula itaas")}</div>
       <div class="grid">${moduleCards}</div>
 
-      <div class="section-title">🎁 Quick tip of the day</div>
+      <div class="section-title">🎁 ${t("Quick tip of the day","Mabilis na tip ngayong araw")}</div>
       <div class="reader" style="padding:22px">
         <p style="margin:0">${randomTip()}</p>
       </div>
@@ -1387,7 +2218,7 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
             <div class="sub">
               <span class="level-tag level-${l.level}">${l.level}</span>
               <span>⏱ ${l.minutes} min</span>
-              ${score != null ? `<span>📝 Quiz: ${score}%</span>` : ""}
+              ${score != null ? `<span>📝 ${t("Quiz","Quiz")}: ${score}%</span>` : ""}
             </div>
           </div>
           <div class="arrow">›</div>
@@ -1395,7 +2226,7 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
     }).join("");
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('')">‹ Back to all modules</a>
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to all modules","Balik sa lahat ng module")}</a>
       <div class="module-head">
         <div class="icon" style="background:${m.color}22;color:${m.color}">${m.icon}</div>
         <div>
@@ -1405,10 +2236,30 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
       </div>
       <div class="bar" style="margin:14px 0 6px"><span style="width:${mp.pct}%"></span></div>
       <div class="meta" style="display:flex;justify-content:space-between;color:var(--ink-soft);font-size:13px;margin-bottom:24px">
-        <span>${mp.done} of ${mp.total} lessons complete</span><span>${mp.pct}%</span>
+        <span>${mp.done} ${t("of","sa")} ${mp.total} ${t("lessons complete","aralin tapos")}</span><span>${mp.pct}%</span>
       </div>
       ${rows}
+      ${examCta(m, mp)}
     `;
+  }
+
+  /* The "Final Exam" call-to-action shown at the bottom of each module. */
+  function examCta(m, mp) {
+    progress.exam = progress.exam || {};
+    const score = progress.exam[m.id] || 0;
+    const passed = score >= 80;
+    const ready = mp.pct === 100;
+    return `
+      <div class="reader" style="margin-top:18px;padding:22px;text-align:center;${passed ? "border:1px solid #16a34a" : ""}">
+        <div style="font-size:30px">${passed ? "🏆" : "🎓"}</div>
+        <h3 style="margin:6px 0">${escapeHtml(m.title)} — ${t("Final Exam","Huling Pagsusulit")}</h3>
+        <p style="color:var(--ink-soft);margin-bottom:14px">
+          ${passed ? t(`You passed with <b>${score}%</b>. Great work! You can retake it any time.`, `Pumasa ka nang <b>${score}%</b>. Magaling! Puwede mong ulitin anumang oras.`)
+                   : (ready ? t("You've finished every lesson — time to prove it! Score 80% to earn this module's badge.","Tapos mo na lahat ng aralin — patunayan mo na! Makakuha ng 80% para sa badge ng module na ito.")
+                            : t(`Finish the lessons first, then take the exam. ${score ? "Best so far: " + score + "%." : ""}`, `Tapusin muna ang mga aralin, tapos kunin ang pagsusulit. ${score ? "Pinakamataas: " + score + "%." : ""}`))}
+        </p>
+        <button class="btn" onclick="OPA.go('exam/${m.id}')">${passed ? t("Retake exam","Ulitin ang pagsusulit") : t("Take the Final Exam ›","Kunin ang Huling Pagsusulit ›")}</button>
+      </div>`;
   }
 
   function renderLesson(moduleId, lessonId) {
@@ -1420,42 +2271,57 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
 
     const tips = (l.tips && l.tips.length) ? `
       <div class="box tips">
-        <h4>💡 Pro Tips &amp; Shortcuts to Remember</h4>
-        <ul>${l.tips.map(t => `<li>${t}</li>`).join("")}</ul>
+        <h4>💡 ${t("Pro Tips &amp; Shortcuts to Remember","Mga Tip at Shortcut na Tatandaan")}</h4>
+        <ul>${l.tips.map(tip => `<li>${tip}</li>`).join("")}</ul>
       </div>` : "";
 
     const shorts = (l.shortcuts && l.shortcuts.length) ? `
       <div class="box short">
-        <h4>⌨️ Keyboard Shortcuts in This Lesson</h4>
+        <h4>⌨️ ${t("Keyboard Shortcuts in This Lesson","Mga Keyboard Shortcut sa Araling Ito")}</h4>
         ${l.shortcuts.map(s => `<div class="kbd-row"><span class="kbd">${escapeHtml(s.keys)}</span><span class="desc">${s.action}</span></div>`).join("")}
+      </div>` : "";
+
+    const practice = l.practice ? `
+      <div class="box practice">
+        <h4>✍️ ${t("Try It Yourself","Subukan Mo")}</h4>
+        <p style="margin:0">${l.practice}</p>
+      </div>` : "";
+
+    // Tagalog explanation — shown when the learner has switched to Tagalog.
+    const tagalog = (progress.lang === "tl" && l.summary_tl) ? `
+      <div class="box tagalog">
+        <h4>📘 Paliwanag sa Tagalog</h4>
+        <p style="margin:0">${escapeHtml(l.summary_tl)}</p>
       </div>` : "";
 
     const prev = m.lessons[idx - 1];
     const next = m.lessons[idx + 1];
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ Back to ${escapeHtml(m.title)}</a>
+      <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
       <div class="reader">
         <h1>${l.title}</h1>
         <div class="reader-meta">
           <span class="level-tag level-${l.level}">${l.level}</span>
-          <span>⏱ ${l.minutes} min read</span>
+          <span>⏱ ${l.minutes} min</span>
           <span>${m.icon} ${escapeHtml(m.title)}</span>
         </div>
+        ${tagalog}
         <div class="content">${l.content}</div>
         ${tips}
         ${shorts}
+        ${practice}
       </div>
 
       ${l.quiz && l.quiz.length ? `<div id="quizMount"></div>` : `
         <div class="btn-row">
-          <button class="btn" onclick="OPA.completeLesson('${m.id}','${l.id}')">Mark lesson complete ✓</button>
+          <button class="btn" onclick="OPA.completeLesson('${m.id}','${l.id}')">${t("Mark lesson complete ✓","Markahan tapos ✓")}</button>
         </div>`}
 
       <div class="btn-row" style="margin-top:28px;justify-content:space-between">
-        <div>${prev ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${prev.id}')">‹ Previous</button>` : ""}</div>
-        <div>${next ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${next.id}')">Next ›</button>`
-                     : `<button class="btn ghost" onclick="OPA.go('module/${m.id}')">Finish module ✓</button>`}</div>
+        <div>${prev ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${prev.id}')">‹ ${t("Previous","Nakaraan")}</button>` : ""}</div>
+        <div>${next ? `<button class="btn ghost" onclick="OPA.go('lesson/${m.id}/${next.id}')">${t("Next","Susunod")} ›</button>`
+                     : `<button class="btn ghost" onclick="OPA.go('module/${m.id}')">${t("Finish module ✓","Tapusin ang module ✓")}</button>`}</div>
       </div>
     `;
 
@@ -1466,12 +2332,16 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
   /* ---------- Quiz engine ---------- */
   function mountQuiz(m, l) {
     const mount = document.getElementById("quizMount");
-    const state = { answers: {}, submitted: false };
+    // order[qi] is a stable, shuffled list of the ORIGINAL choice indices, so the
+    // answer position changes every attempt (no "always pick #2" loophole) while
+    // scoring still compares against each question's original `answer` index.
+    const state = { answers: {}, submitted: false, order: l.quiz.map(it => shuffle(it.choices.map((_, i) => i))) };
 
     function draw() {
       const blocks = l.quiz.map((item, qi) => {
         const chosen = state.answers[qi];
-        const choices = item.choices.map((c, ci) => {
+        const choices = state.order[qi].map((ci) => {
+          const c = item.choices[ci];
           let cls = "choice";
           if (state.submitted) {
             if (ci === item.answer) cls += " correct";
@@ -1485,17 +2355,17 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
         return `<div class="q-block"><div class="q-text">${qi + 1}. ${escapeHtml(item.q)}</div>${choices}</div>`;
       }).join("");
 
-      let header = `<h3>📝 Check Your Knowledge</h3><div class="qsub">Answer all ${l.quiz.length} questions to complete this lesson.</div>`;
+      let header = `<h3>📝 ${t("Check Your Knowledge","Subukin ang Iyong Natutunan")}</h3><div class="qsub">${t(`Answer all ${l.quiz.length} questions to complete this lesson.`, `Sagutin ang lahat ng ${l.quiz.length} tanong para matapos ang araling ito.`)}</div>`;
       let banner = "";
-      let footer = `<div class="btn-row"><button class="btn" id="quizSubmit" onclick="OPA._submitQuiz()" ${Object.keys(state.answers).length < l.quiz.length ? "disabled" : ""}>Submit answers</button></div>`;
+      let footer = `<div class="btn-row"><button class="btn" id="quizSubmit" onclick="OPA._submitQuiz()" ${Object.keys(state.answers).length < l.quiz.length ? "disabled" : ""}>${t("Submit answers","Isumite ang sagot")}</button></div>`;
 
       if (state.submitted) {
         const correct = l.quiz.filter((it, qi) => state.answers[qi] === it.answer).length;
         const pct = Math.round((correct / l.quiz.length) * 100);
         const pass = pct >= 70;
-        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🎉" : "💪"} You scored ${correct}/${l.quiz.length} (${pct}%). ${pass ? "Lesson complete — great work!" : "Almost! Review the lesson and try again."}</div>`;
+        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🎉" : "💪"} ${t(`You scored ${correct}/${l.quiz.length} (${pct}%).`, `Nakakuha ka ng ${correct}/${l.quiz.length} (${pct}%).`)} ${pass ? t("Lesson complete — great work!","Tapos na ang aralin — magaling!") : t("Almost! Review the lesson and try again.","Muntik na! Balikan ang aralin at subukang muli.")}</div>`;
         footer = `<div class="btn-row">
-          <button class="btn ghost" onclick="OPA._retryQuiz()">Try again</button>
+          <button class="btn ghost" onclick="OPA._retryQuiz()">${t("Try again","Subukang muli")}</button>
         </div>`;
       }
 
@@ -1509,12 +2379,190 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
       const correct = l.quiz.filter((it, qi) => state.answers[qi] === it.answer).length;
       const pct = Math.round((correct / l.quiz.length) * 100);
       setQuizScore(l.id, pct);
-      if (pct >= 70) { markDone(l.id); celebrate(); toast("Lesson complete! Progress saved ✓"); }
+      if (pct >= 70) { markDone(l.id); celebrate(); toast(t("Lesson complete! Progress saved ✓","Tapos na ang aralin! Naka-save ang progreso ✓")); }
       draw();
     };
-    window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; draw(); };
+    window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; state.order = l.quiz.map(it => shuffle(it.choices.map((_, i) => i))); draw(); };
 
     draw();
+  }
+
+  /* ---------- Fast-Track Plan screen ---------- */
+  function renderPlan() {
+    const ft = DATA.fastTrack;
+    const lessonById = {};
+    allLessons().forEach(l => { lessonById[l.id] = l; });
+
+    const dayCards = ft.days.map(d => {
+      const items = d.lessons.map(id => {
+        const l = lessonById[id];
+        if (!l) return "";
+        const done = !!progress.done[id];
+        return `<button class="lesson-row ${done ? "done" : ""}" style="margin-bottom:8px"
+                  onclick="OPA.go('lesson/${l.moduleId}/${l.id}')">
+                  <div class="check">✓</div>
+                  <div class="info"><h4>${l.title}</h4>
+                    <div class="sub"><span class="level-tag level-${l.level}">${l.level}</span><span>⏱ ${l.minutes} min</span></div>
+                  </div><div class="arrow">›</div>
+                </button>`;
+      }).join("");
+      const dayDone = d.lessons.every(id => progress.done[id]);
+      return `
+        <div class="reader" style="padding:18px;margin-bottom:14px;${dayDone ? "border:1px solid #16a34a" : ""}">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="background:${dayDone ? "#16a34a" : "var(--brand)"};color:#fff;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-weight:800">${dayDone ? "✓" : "D" + d.day}</div>
+            <div><div style="font-weight:800;font-size:16px">${t("Day","Araw")} ${d.day}</div>
+            <div style="color:var(--ink-soft);font-size:13px">${d.focus}</div></div>
+          </div>
+          ${items}
+        </div>`;
+    }).join("");
+
+    app.innerHTML = `
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to dashboard","Balik sa dashboard")}</a>
+      <div class="module-head">
+        <div class="icon" style="background:#4f46e522;color:#4f46e5">🚀</div>
+        <div><h1>${ft.title}</h1>
+        <div style="color:var(--ink-soft)">${ft.intro}</div></div>
+      </div>
+      <div style="margin:18px 0">${dayCards}</div>
+    `;
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Module Final Exam ---------- */
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  }
+
+  function renderExam(moduleId) {
+    const m = DATA.modules.find(x => x.id === moduleId);
+    if (!m) return renderNotFound();
+    // Pool all quiz questions across the module's lessons.
+    const pool = m.lessons.flatMap(l => (l.quiz || []).map(q => ({ ...q })));
+    if (!pool.length) {
+      app.innerHTML = `
+        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
+        <div class="empty"><div class="big">📭</div><h2>${t("No exam questions yet","Wala pang tanong sa pagsusulit")}</h2>
+        <p>${t("This module doesn't have a quiz pool to build an exam from.","Walang quiz na pagkukunan ng pagsusulit ang module na ito.")}</p></div>`;
+      window.scrollTo(0, 0);
+      return;
+    }
+    const questions = shuffle(pool).slice(0, Math.min(10, pool.length)); // up to 10 Qs
+    // Stable shuffled display order of each question's ORIGINAL choice indices.
+    const order = questions.map(it => shuffle(it.choices.map((_, i) => i)));
+    const state = { answers: {}, submitted: false };
+
+    function draw() {
+      const blocks = questions.map((item, qi) => {
+        const chosen = state.answers[qi];
+        const choices = order[qi].map((ci) => {
+          const c = item.choices[ci];
+          let cls = "choice";
+          if (state.submitted) {
+            if (ci === item.answer) cls += " correct";
+            else if (chosen === ci) cls += " wrong";
+          } else if (chosen === ci) cls += " selected";
+          const mark = state.submitted ? (ci === item.answer ? '<span class="mark">✓</span>' : (chosen === ci ? '<span class="mark">✗</span>' : "")) : "";
+          return `<button class="${cls}" ${state.submitted ? "disabled" : ""} onclick="OPA._examPick(${qi},${ci})">${escapeHtml(c)}${mark}</button>`;
+        }).join("");
+        return `<div class="q-block"><div class="q-text">${qi + 1}. ${escapeHtml(item.q)}</div>${choices}</div>`;
+      }).join("");
+
+      let banner = "";
+      let footer = `<div class="btn-row"><button class="btn" onclick="OPA._examSubmit()" ${Object.keys(state.answers).length < questions.length ? "disabled" : ""}>${t("Submit exam","Isumite ang pagsusulit")}</button>
+                    <button class="btn ghost" onclick="OPA.go('module/${m.id}')">${t("Back to module","Balik sa module")}</button></div>`;
+
+      if (state.submitted) {
+        const correct = questions.filter((it, qi) => state.answers[qi] === it.answer).length;
+        const pct = Math.round((correct / questions.length) * 100);
+        const pass = pct >= 80;
+        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🏆" : "💪"} ${t("Exam score","Iskor sa pagsusulit")}: ${correct}/${questions.length} (${pct}%). ${pass ? t("PASSED — module mastered!","PUMASA — bihasa na sa module!") : t("You need 80% to pass. Review the lessons and try again.","Kailangan ng 80% para pumasa. Balikan ang mga aralin at subukang muli.")}</div>`;
+        footer = `<div class="btn-row">
+          <button class="btn ghost" onclick="OPA._examRetry()">${t("Retake exam","Ulitin ang pagsusulit")}</button>
+          ${pass ? `<button class="btn" onclick="OPA.go('certificate')">${t("View your progress / certificate ›","Tingnan ang progreso / certificate ›")}</button>` : `<button class="btn" onclick="OPA.go('module/${m.id}')">${t("Back to lessons","Balik sa mga aralin")}</button>`}
+        </div>`;
+      }
+
+      app.innerHTML = `
+        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
+        <div class="quiz">
+          <h3>🎓 ${escapeHtml(m.title)} — ${t("Final Exam","Huling Pagsusulit")}</h3>
+          <div class="qsub">${t(`${questions.length} questions drawn from the whole module. You need <b>80%</b> to pass and earn this module's badge.`, `${questions.length} tanong mula sa buong module. Kailangan ng <b>80%</b> para pumasa at makuha ang badge ng module.`)}</div>
+          ${banner}${blocks}${footer}
+        </div>`;
+    }
+
+    window.OPA._examPick = (qi, ci) => { if (!state.submitted) { state.answers[qi] = ci; draw(); } };
+    window.OPA._examSubmit = () => {
+      state.submitted = true;
+      const correct = questions.filter((it, qi) => state.answers[qi] === it.answer).length;
+      const pct = Math.round((correct / questions.length) * 100);
+      progress.exam = progress.exam || {};
+      if (pct > (progress.exam[m.id] || 0)) { progress.exam[m.id] = pct; saveProgress(progress); }
+      if (pct >= 80) { celebrate(); toast(m.title + t(" exam passed! 🏆"," — pumasa sa pagsusulit! 🏆")); }
+      draw();
+    };
+    window.OPA._examRetry = () => { renderExam(m.id); }; // re-render directly (same-hash nav wouldn't fire)
+
+    draw();
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Certificate ---------- */
+  function renderCertificate() {
+    progress.exam = progress.exam || {};
+    const done = doneCount(), total = totalLessons();
+    const examsPassed = DATA.modules.filter(m => (progress.exam[m.id] || 0) >= 80).length;
+    const allDone = done === total && examsPassed === DATA.modules.length;
+    const name = progress.name || "";
+
+    const moduleStatus = DATA.modules.map(m => {
+      const mp = moduleProgress(m);
+      const ex = progress.exam[m.id] || 0;
+      const passed = ex >= 80;
+      return `<div class="short-card" style="margin-bottom:10px"><div class="row">
+        <span style="font-size:22px">${m.icon}</span>
+        <span style="flex:1"><b>${m.title}</b><br><span style="color:var(--ink-soft);font-size:13px">${mp.done}/${mp.total} ${t("lessons","aralin")} · ${t("Exam","Pagsusulit")}: ${ex ? ex + "%" : t("not taken","di pa kinukuha")}</span></span>
+        <span class="level-tag ${passed ? "level-Basic" : "level-Advanced"}">${passed ? t("✓ Passed","✓ Pasado") : (mp.pct === 100 ? t("Take exam","Kunin") : t("In progress","Ginagawa"))}</span>
+      </div></div>`;
+    }).join("");
+
+    app.innerHTML = `
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to dashboard","Balik sa dashboard")}</a>
+      <div class="module-head">
+        <div class="icon" style="background:#f59e0b22;color:#f59e0b">🏆</div>
+        <div><h1>${t("Your Certificate & Progress","Iyong Certificate at Progreso")}</h1>
+        <div style="color:var(--ink-soft)">${t(`Complete every lesson and pass all ${DATA.modules.length} module exams to earn your certificate.`, `Tapusin ang lahat ng aralin at pumasa sa lahat ng ${DATA.modules.length} pagsusulit para makuha ang certificate.`)}</div></div>
+      </div>
+
+      <div style="margin:14px 0 22px">
+        <label style="font-weight:600;font-size:14px">${t("Your name on the certificate:","Pangalan mo sa certificate:")}</label>
+        <input id="certName" type="text" value="${escapeHtml(name)}" placeholder="${t("Type your name…","I-type ang pangalan mo…")}"
+          oninput="OPA._setName(this.value)"
+          style="display:block;width:100%;max-width:360px;margin-top:6px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
+      </div>
+
+      ${allDone ? `
+        <div id="cert" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border:3px solid #f59e0b;border-radius:20px;padding:36px;text-align:center;margin-bottom:18px">
+          <div style="font-size:42px">🎓</div>
+          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#b45309;font-weight:700;margin-top:8px">${t("Certificate of Completion","Sertipiko ng Pagtatapos")}</div>
+          <div id="certNameDisplay" style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || t("Your Name","Pangalan Mo"))}</div>
+          <div style="color:#475569">${t("has successfully completed","ay matagumpay na natapos ang")}</div>
+          <div style="font-size:18px;font-weight:700;margin:6px 0 14px;color:var(--brand-dark)">Office Pro Academy — Microsoft Office &amp; Office Administration</div>
+          <div style="color:#475569;font-size:14px">${t(`All ${total} lessons &amp; ${DATA.modules.length} module exams passed 🏆`, `Lahat ng ${total} aralin at ${DATA.modules.length} pagsusulit ay pasado 🏆`)}</div>
+        </div>
+        <div class="btn-row"><button class="btn" onclick="window.print()">🖨️ ${t("Print / Save as PDF","I-print / I-save bilang PDF")}</button></div>
+      ` : `
+        <div class="result-banner fail">📋 ${t(`${done}/${total} lessons done · ${examsPassed}/${DATA.modules.length} module exams passed. Keep going — your certificate unlocks when both are complete!`, `${done}/${total} aralin tapos · ${examsPassed}/${DATA.modules.length} pagsusulit pasado. Tuloy lang — bubukas ang certificate kapag kumpleto na ang dalawa!`)}</div>
+      `}
+
+      <div class="section-title">${t("Module-by-module status","Status bawat module")}</div>
+      ${moduleStatus}
+    `;
+    window.scrollTo(0, 0);
   }
 
   /* ---------- Shortcuts cheat-sheet ---------- */
@@ -1523,13 +2571,13 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
       `<div class="row"><span class="kbd">${escapeHtml(s.keys)}</span><span>${s.action}</span></div>`
     ).join("");
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.go('')">‹ Back to dashboard</a>
+      <a class="back-link" onclick="OPA.go('')">‹ ${t("Back to dashboard","Balik sa dashboard")}</a>
       <div class="module-head">
         <div class="icon" style="background:#4f46e522;color:#4f46e5">⌨️</div>
-        <div><h1>Master Shortcut Cheat-Sheet</h1>
-        <div style="color:var(--ink-soft)">The shortcuts that work almost everywhere. Learn 5 a week and you'll fly.</div></div>
+        <div><h1>${t("Master Shortcut Cheat-Sheet","Listahan ng mga Shortcut")}</h1>
+        <div style="color:var(--ink-soft)">${t("The shortcuts that work almost everywhere. Learn 5 a week and you'll fly.","Ang mga shortcut na gumagana halos kahit saan. Mag-aral ng 5 kada linggo.")}</div></div>
       </div>
-      <div style="margin:18px 0 10px;color:var(--ink-soft);font-size:13px">Tip: use the search box at the top to find any shortcut or lesson.</div>
+      <div style="margin:18px 0 10px;color:var(--ink-soft);font-size:13px">${t("Tip: use the search box at the top to find any shortcut or lesson.","Tip: gamitin ang search box sa itaas para hanapin ang shortcut o aralin.")}</div>
       <div class="short-card">${rows}</div>
     `;
   }
@@ -1555,7 +2603,7 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
     }));
 
     if (!lessonHits.length && !shortcutHits.length && !lessonShortcutHits.length) {
-      app.innerHTML = `<div class="empty"><div class="big">🔍</div><h2>No results for "${escapeHtml(query)}"</h2><p>Try a different word, like "save", "Excel", "email" or "Ctrl".</p></div>`;
+      app.innerHTML = `<div class="empty"><div class="big">🔍</div><h2>${t("No results for","Walang nahanap para sa")} "${escapeHtml(query)}"</h2><p>${t('Try a different word, like "save", "Excel", "email" or "Ctrl".','Subukan ang ibang salita, tulad ng "save", "Excel", "email" o "Ctrl".')}</p></div>`;
       return;
     }
 
@@ -1574,26 +2622,26 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
     ).join("");
 
     app.innerHTML = `
-      <a class="back-link" onclick="OPA.clearSearch()">‹ Clear search</a>
-      <h1 style="font-size:22px;margin-bottom:18px">Results for "${escapeHtml(query)}"</h1>
-      ${lessonHits.length ? `<div class="section-title">📖 Lessons (${lessonHits.length})</div>${lessonList}` : ""}
-      ${allShorts.length ? `<div class="section-title">⌨️ Shortcuts (${allShorts.length})</div><div class="short-card">${shortList}</div>` : ""}
+      <a class="back-link" onclick="OPA.clearSearch()">‹ ${t("Clear search","I-clear ang paghahanap")}</a>
+      <h1 style="font-size:22px;margin-bottom:18px">${t("Results for","Resulta para sa")} "${escapeHtml(query)}"</h1>
+      ${lessonHits.length ? `<div class="section-title">📖 ${t("Lessons","Mga Aralin")} (${lessonHits.length})</div>${lessonList}` : ""}
+      ${allShorts.length ? `<div class="section-title">⌨️ ${t("Shortcuts","Mga Shortcut")} (${allShorts.length})</div><div class="short-card">${shortList}</div>` : ""}
     `;
   }
 
   function renderNotFound() {
-    app.innerHTML = `<div class="empty"><div class="big">🤔</div><h2>Page not found</h2><button class="btn" onclick="OPA.go('')">Back to dashboard</button></div>`;
+    app.innerHTML = `<div class="empty"><div class="big">🤔</div><h2>${t("Page not found","Hindi nahanap ang pahina")}</h2><button class="btn" onclick="OPA.go('')">${t("Back to dashboard","Balik sa dashboard")}</button></div>`;
   }
 
   /* ---------- Effects ---------- */
   let toastTimer;
   function toast(msg) {
-    let t = document.getElementById("toast");
-    if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; document.body.appendChild(t); }
-    t.innerHTML = "🎉 " + msg;
-    requestAnimationFrame(() => t.classList.add("show"));
+    let el = document.getElementById("toast");
+    if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; document.body.appendChild(el); }
+    el.innerHTML = "🎉 " + msg;
+    requestAnimationFrame(() => el.classList.add("show"));
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
   }
 
   function celebrate() {
@@ -1631,9 +2679,12 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
   /* ---------- Public API & routing ---------- */
   window.OPA = {
     go,
-    completeLesson(mId, lId) { markDone(lId); celebrate(); toast("Lesson complete! Progress saved ✓"); setTimeout(() => go("module/" + mId), 700); },
+    completeLesson(mId, lId) { markDone(lId); celebrate(); toast(t("Lesson complete! Progress saved ✓","Tapos na ang aralin! Naka-save ✓")); setTimeout(() => go("module/" + mId), 700); },
     clearSearch() { searchInput.value = ""; go(""); },
-    _pick() {}, _submitQuiz() {}, _retryQuiz() {} // replaced per-quiz
+    toggleLang() { setLang(progress.lang === "tl" ? "en" : "tl"); render(); },
+    _setName(v) { progress.name = v; saveProgress(progress); const el = document.getElementById("certNameDisplay"); if (el) el.textContent = v || t("Your Name","Pangalan Mo"); },
+    _pick() {}, _submitQuiz() {}, _retryQuiz() {},       // replaced per-quiz
+    _examPick() {}, _examSubmit() {}, _examRetry() {}      // replaced per-exam
   };
 
   function render() {
@@ -1642,6 +2693,9 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
     if (!parts.length) renderDashboard();
     else if (parts[0] === "module") renderModule(parts[1]);
     else if (parts[0] === "lesson") renderLesson(parts[1], parts[2]);
+    else if (parts[0] === "exam") renderExam(parts[1]);
+    else if (parts[0] === "plan") renderPlan();
+    else if (parts[0] === "certificate") renderCertificate();
     else if (parts[0] === "shortcuts") renderShortcuts();
     else renderNotFound();
     updateNav();
@@ -1649,9 +2703,23 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
 
   function updateNav() {
     const h = window.location.hash;
+    let current = "home";
+    if (h.includes("shortcuts")) current = "shortcuts";
+    else if (h.includes("plan")) current = "plan";
+    else if (h.includes("certificate")) current = "certificate";
     document.querySelectorAll("[data-nav]").forEach(el => {
-      el.classList.toggle("active", el.getAttribute("data-nav") === (h.includes("shortcuts") ? "shortcuts" : "home") && !searchInput.value.trim());
+      el.classList.toggle("active", el.getAttribute("data-nav") === current && !searchInput.value.trim());
     });
+    // Keep the nav labels and the language toggle in the chosen language.
+    const setText = (id, str) => { const el = document.getElementById(id); if (el) el.textContent = str; };
+    setText("navHome", t("Home", "Home"));
+    setText("navPlan", t("Plan", "Plano"));
+    setText("navShortcuts", t("Shortcuts", "Shortcut"));
+    setText("navCert", t("Certificate", "Sertipiko"));
+    const lt = document.getElementById("langToggle");
+    if (lt) lt.textContent = progress.lang === "tl" ? "🌐 English" : "🌐 Tagalog";
+    const si = document.getElementById("search");
+    if (si) si.placeholder = t("Search lessons or shortcuts…", "Maghanap ng aralin o shortcut…");
   }
 
   /* ---------- Search input wiring ---------- */
