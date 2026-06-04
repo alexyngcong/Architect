@@ -105,7 +105,7 @@ a { color: var(--brand); }
 .module-card .meta { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-soft); }
 
 /* ---------- Module detail / lesson list ---------- */
-.back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-soft); font-weight: 600; font-size: 14px; margin-bottom: 18px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-soft); font-weight: 600; font-size: 14px; margin-bottom: 18px; cursor: pointer; }
 .back-link:hover { color: var(--brand); }
 .module-head { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
 .module-head .icon { font-size: 32px; width: 64px; height: 64px; border-radius: 16px; display: grid; place-items: center; }
@@ -156,6 +156,8 @@ a { color: var(--brand); }
 .box.tips li { margin-bottom: 8px; }
 .box.short { background: #eef2ff; border: 1px solid #c7d2fe; }
 .box.short h4 { color: var(--brand-dark); }
+.box.practice { background: #ecfdf5; border: 1px solid #a7f3d0; }
+.box.practice h4 { color: #047857; }
 .kbd-row { display: flex; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px dashed #c7d2fe; flex-wrap: wrap; }
 .kbd-row:last-child { border-bottom: none; }
 .kbd { font-family: monospace; background: #fff; border: 1px solid #c7d2fe; border-bottom-width: 2px; border-radius: 7px; padding: 4px 9px; font-size: 13px; font-weight: 700; color: var(--brand-dark); white-space: nowrap; }
@@ -218,4 +220,12 @@ a { color: var(--brand); }
   .searchbox { min-width: 44px; }
   .hero { padding: 26px; }
   .reader, .quiz { padding: 20px; }
+}
+
+/* When printing the certificate, show only the certificate itself. */
+@media print {
+  body { background: #fff; }
+  body * { visibility: hidden; }
+  #cert, #cert * { visibility: visible; }
+  #cert { position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; }
 }

@@ -45,6 +45,8 @@ Exam** → earn your **Certificate** when everything's complete.
 | 8 | 👔 **Executive Assistant & Admin Pro** | Managing an exec's calendar/inbox, prioritising & follow-up, projects & events, operations (onboarding, records, compliance, procurement), being a trusted right hand |
 
 **Also included:**
+- 🧑‍💻 **True-beginner start** — the first lesson, *Computer & Keyboard Basics*, covers the mouse, keys and windows for someone brand new to computers.
+- ✍️ **"Try It Yourself" practice** — most lessons include a hands-on task so she learns by doing, not just reading.
 - 🚀 **Fast-Track Plan** — a guided ~2½-week, day-by-day schedule so she knows exactly what to do each day to get job-ready ASAP.
 - 🎓 **Module Final Exams** — pass at 80% to earn each module's badge.
 - 🏆 **Certificate of Completion** — unlocks when every lesson is done and every exam passed; print it or save as PDF.

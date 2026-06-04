@@ -44,7 +44,7 @@ const OFFICE_CURRICULUM = {
     title: "Fast-Track to Job-Ready (about 2½ weeks)",
     intro: "Do these lessons in order — about 2 short lessons a day (20–30 minutes). Finish the quiz on each to tick it off. By the end you'll have covered everything an office assistant, coordinator, administrative staffer or executive assistant needs — basics to advanced.",
     days: [
-      { day: 1,  focus: "Get comfortable with any Office program", lessons: ["f1", "f2"] },
+      { day: 1,  focus: "Computer basics + get comfortable",       lessons: ["f0", "f1", "f2"] },
       { day: 2,  focus: "Core moves + start typing practice",       lessons: ["f3", "x1"] },
       { day: 3,  focus: "Word: typing & formatting documents",      lessons: ["w1", "w2"] },
       { day: 4,  focus: "Word: editing, tables & pictures",         lessons: ["w3", "w4"] },
@@ -77,6 +77,57 @@ const OFFICE_CURRICULUM = {
       blurb: "Start here. The core skills every single office program shares — so everything after this feels easy.",
       lessons: [
         {
+          id: "f0",
+          title: "Computer & Keyboard Basics (Start Here)",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>Brand new to computers? Perfect — let's cover the absolute basics first. Once these feel natural, everything else in this course is easy. 😊</p>
+            <h4>Using the mouse (or trackpad)</h4>
+            <ul>
+              <li><b>Left-click</b> (one tap) — selects a thing or presses a button.</li>
+              <li><b>Double-click</b> (two quick taps) — opens a file, program, or folder.</li>
+              <li><b>Right-click</b> — opens a little menu of extra options. Very useful: when stuck, right-click!</li>
+              <li><b>Scroll</b> — the wheel (or two fingers on a trackpad) moves the page up and down.</li>
+              <li><b>Drag</b> — hold the left button down while moving, then let go, to move things.</li>
+            </ul>
+            <h4>The screen &amp; windows</h4>
+            <ul>
+              <li>The <b>Desktop</b> is your home screen. The <b>Taskbar</b> (usually along the bottom) shows open programs and the Start button.</li>
+              <li>Each program opens in a <b>window</b>. Top-right corner: <b>–</b> minimises (hides it), <b>▢</b> resizes, <b>✕</b> closes it.</li>
+              <li>You can have many windows open at once and switch between them.</li>
+            </ul>
+            <h4>The most important keys</h4>
+            <ul>
+              <li><b>Enter</b> — confirms, or starts a new line.</li>
+              <li><b>Spacebar</b> — adds a space (the long key at the bottom).</li>
+              <li><b>Backspace</b> — deletes the character to the <i>left</i>; <b>Delete</b> deletes to the right.</li>
+              <li><b>Shift</b> — hold it to type a CAPITAL letter or the symbol on a key.</li>
+              <li><b>Caps Lock</b> — locks capitals on (press again to turn off).</li>
+              <li><b>Tab</b> — jumps forward (between boxes, or indents text).</li>
+              <li><b>Ctrl</b> (Control) — held with another key to do shortcuts, like Ctrl+S to save. You'll use these a lot!</li>
+              <li><b>Arrow keys</b> — move the cursor up, down, left, right.</li>
+            </ul>
+            <p>Don't worry about memorising everything — you'll learn by doing throughout this course.</p>
+          `,
+          tips: [
+            "When you're ever unsure what you can do with something, RIGHT-CLICK it — the menu shows your options.",
+            "The flashing line where you type is called the 'cursor'. Click where you want it before you type.",
+            "Take it slow at first. Speed and confidence come naturally with a little daily practice."
+          ],
+          shortcuts: [
+            { keys: "Shift", action: "Hold for a capital letter or the symbol on a key" },
+            { keys: "Backspace", action: "Delete the character to the left" },
+            { keys: "Enter", action: "Confirm, or start a new line" }
+          ],
+          practice: "Open any program (try Notepad or Word). Type your full name, then your address. Use <b>Shift</b> for the capital letters. Press <b>Enter</b> to start a new line between them. Then use <b>Backspace</b> to delete a letter and retype it. Finally, right-click anywhere on the page and see what menu appears.",
+          quiz: [
+            { q: "What does a DOUBLE-click usually do?", choices: ["Deletes a file", "Opens a file, folder or program", "Closes the window", "Types a capital letter"], answer: 1 },
+            { q: "You're unsure what options you have on an item. What's the best thing to try?", choices: ["Turn off the computer", "Right-click it to see a menu of options", "Press the spacebar repeatedly", "Unplug the mouse"], answer: 1 },
+            { q: "Which key do you HOLD to type a capital letter?", choices: ["Tab", "Enter", "Shift", "Backspace"], answer: 2 }
+          ]
+        },
+        {
           id: "f1",
           title: "How the Office Ribbon Works",
           level: "Basic",
@@ -103,6 +154,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt", action: "Press Alt alone to reveal letter shortcuts on the Ribbon" },
             { keys: "Ctrl + F1", action: "Hide or show the Ribbon" }
           ],
+          practice: "Open Word. Click each tab along the top (Home, Insert, Layout…) and watch the buttons change. Type a sentence, select it with your mouse, then make it bold using the Home tab.",
           quiz: [
             { q: "What is the strip of buttons across the top of every Office program called?", choices: ["The Toolbar", "The Ribbon", "The Menu Bar", "The Header"], answer: 1 },
             { q: "What should you always do BEFORE clicking a formatting button?", choices: ["Save the file", "Print a copy", "Select the text or item you want to change", "Close other programs"], answer: 2 },
@@ -139,6 +191,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + O", action: "Open an existing file" },
             { keys: "Ctrl + N", action: "Create a new blank file" }
           ],
+          practice: "Create a new folder on your Desktop called 'Practice'. Open Word, type a few words, and save the file into that folder using Ctrl+S. Give it a name with today's date, like '2026-06-04 Practice'.",
           quiz: [
             { q: "Which shortcut saves your work instantly?", choices: ["Ctrl + P", "Ctrl + S", "Ctrl + O", "F1"], answer: 1 },
             { q: "What is the best way to name files so they sort in order?", choices: ["Use the word Final", "Start with the date as Year-Month-Day", "Use random numbers", "All capital letters"], answer: 1 },
@@ -177,6 +230,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Z", action: "Undo" },
             { keys: "Windows + V", action: "Clipboard history" }
           ],
+          practice: "In Word, type three lines of text. Copy the first line (Ctrl+C) and paste it (Ctrl+V) at the bottom. Then press Ctrl+Z a few times and watch it undo. Finally press Windows+V to see your clipboard history.",
           quiz: [
             { q: "Which shortcut UNDOES your last mistake?", choices: ["Ctrl + U", "Ctrl + Z", "Ctrl + V", "Ctrl + D"], answer: 1 },
             { q: "You copied text from a website but it brought ugly colours. What pastes it as clean plain text?", choices: ["Ctrl + V", "Ctrl + Shift + V", "Ctrl + C", "Ctrl + B"], answer: 1 },
@@ -231,6 +285,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + ] / [", action: "Make font bigger / smaller" },
             { keys: "Ctrl + Spacebar", action: "Clear formatting" }
           ],
+          practice: "Type a short 'thank you' note (3–4 lines). Make the greeting bold, the closing italic, and turn three points into a bulleted list. Then use the Format Painter to copy the greeting's look onto the closing.",
           quiz: [
             { q: "How do you select a whole paragraph quickly?", choices: ["Single click", "Double-click", "Triple-click", "Right-click"], answer: 2 },
             { q: "What does the Format Painter (paintbrush) do?", choices: ["Changes the page colour", "Copies formatting from one place to another", "Draws pictures", "Deletes text"], answer: 1 },
@@ -266,6 +321,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Enter", action: "Insert a clean page break" },
             { keys: "Shift + Enter", action: "New line without starting a new paragraph" }
           ],
+          practice: "Open a Word document and add a header with a made-up company name, a footer with your name, and automatic page numbers. Then press Ctrl+Enter to start a fresh second page.",
           quiz: [
             { q: "What is the correct way to start text on a brand-new page?", choices: ["Press Enter many times", "Ctrl + Enter (page break)", "Change the font size", "Add a header"], answer: 1 },
             { q: "Where does a repeating company name on every page go?", choices: ["In the header or footer", "In the margin settings", "In a text box only", "In the file name"], answer: 0 },
@@ -296,6 +352,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + E", action: "Turn Track Changes on/off" },
             { keys: "Alt + Ctrl + M", action: "Insert a new comment" }
           ],
+          practice: "Turn on Track Changes (Review tab) and edit a sentence — see the changes appear in colour. Add a Comment on one word. Then Accept all changes.",
           quiz: [
             { q: "What does Track Changes let the author do with each edit?", choices: ["Print it", "Accept or Reject it", "Email it", "Translate it"], answer: 1 },
             { q: "How do you leave a note for the author WITHOUT changing the text?", choices: ["Bold the text", "Insert a Comment", "Delete the sentence", "Change the font"], answer: 1 },
@@ -334,6 +391,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Tab", action: "Move to next table cell (adds a row at the end)" },
             { keys: "Shift + Tab", action: "Move to previous table cell" }
           ],
+          practice: "Insert a 3-column, 4-row table and fill in a mini contacts list (Name, Email, Phone). Use Tab to move between cells. Then insert any picture and try the 'Square' text-wrap option.",
           quiz: [
             { q: "In a table, what does pressing Tab in the very last cell do?", choices: ["Saves the file", "Deletes the row", "Adds a new row", "Nothing"], answer: 2 },
             { q: "Which feature lets text flow around a picture?", choices: ["Wrap Text / Layout Options", "Format Painter", "Track Changes", "Page Break"], answer: 0 },
@@ -370,6 +428,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + Ctrl + 1 / 2 / 3", action: "Apply Heading 1 / 2 / 3 styles instantly" },
             { keys: "F9", action: "Update a selected field (like the Table of Contents)" }
           ],
+          practice: "Write a 1-line letter, then apply Heading styles to two short headings and insert a Table of Contents (References tab). Add a line, then click 'Update Table' to watch it refresh.",
           quiz: [
             { q: "What must you use on your headings so Word can build an automatic Table of Contents?", choices: ["Bold text", "Heading styles (Heading 1, 2…)", "Bigger font", "Underline"], answer: 1 },
             { q: "Mail Merge combines a template letter with what?", choices: ["A picture", "A list of recipients (e.g. from Excel)", "A page break", "A footer"], answer: 1 },
@@ -423,6 +482,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + ;", action: "Insert today's date" },
             { keys: "Alt + Enter", action: "Start a new line inside the same cell" }
           ],
+          practice: "In Excel, type headings in row 1 (Item, Qty, Price). Add three rows of data. Type 'Jan' in a cell and drag the corner down to auto-fill the months.",
           quiz: [
             { q: "What is the address of the cell in column B, row 3?", choices: ["3B", "B3", "BB3", "B-3"], answer: 1 },
             { q: "What does AutoFill do when you type 'Monday' and drag the corner down?", choices: ["Deletes the cell", "Fills Tuesday, Wednesday…", "Changes the colour", "Prints the sheet"], answer: 1 },
@@ -466,6 +526,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + %", action: "Apply percentage format" },
             { keys: "Alt + H + W", action: "Wrap text" }
           ],
+          practice: "Using your small table, format the Price column as currency, bold the heading row with a fill colour, add borders, and use View → Freeze Top Row.",
           quiz: [
             { q: "Which View feature keeps your heading row visible while scrolling?", choices: ["Wrap Text", "Freeze Panes", "Merge & Center", "Borders"], answer: 1 },
             { q: "What does Percentage format turn the number 0.25 into?", choices: ["0.25%", "25%", "250%", "2.5%"], answer: 1 },
@@ -505,6 +566,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + `", action: "Show all formulas instead of results (great for checking)" },
             { keys: "F4", action: "Lock a cell reference (adds $ signs) — see next lesson" }
           ],
+          practice: "Below your Qty column, click an empty cell and press Alt+= to total it. Do the same for Price. Then in a new cell type =AVERAGE() of the prices.",
           quiz: [
             { q: "What must every Excel formula start with?", choices: ["A number", "An equals sign (=)", "A letter", "A dollar sign"], answer: 1 },
             { q: "What does =SUM(B2:B10) do?", choices: ["Counts the cells", "Adds cells B2 through B10", "Averages them", "Finds the biggest"], answer: 1 },
@@ -541,6 +603,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + L", action: "Turn Filters on/off" },
             { keys: "F4", action: "Add/cycle $ locks on a reference" }
           ],
+          practice: "Add a column called 'Status' and use =IF(C2>10,\"High\",\"Low\") to flag prices. Then turn on filters (Ctrl+Shift+L) and filter to show only 'High'.",
           quiz: [
             { q: "What does =IF(B2>1000,\"Over\",\"OK\") write if B2 is 500?", choices: ["Over", "OK", "1000", "Error"], answer: 1 },
             { q: "What do the dollar signs in $E$1 do?", choices: ["Format it as currency", "Lock the reference so it doesn't shift when copied", "Make it bold", "Delete it"], answer: 1 },
@@ -580,6 +643,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + F1", action: "Instantly create a chart from selected data" },
             { keys: "F11", action: "Create a chart on its own new sheet" }
           ],
+          practice: "Select your data and use Insert → Recommended Charts to make a column chart. Then try Insert → PivotTable and drag a field into Rows and a number into Values.",
           quiz: [
             { q: "What is XLOOKUP used for?", choices: ["Printing", "Looking up a value and returning its match (e.g. a price)", "Spell check", "Changing colours"], answer: 1 },
             { q: "What does a PivotTable do?", choices: ["Deletes duplicate rows", "Summarises large data (e.g. totals per region) with no formulas", "Prints labels", "Locks the file"], answer: 1 },
@@ -630,6 +694,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + M", action: "Add a new slide" },
             { keys: "Ctrl + D", action: "Duplicate the selected slide or object" }
           ],
+          practice: "Create a new presentation. Add a title slide with a title and subtitle, then add a second slide with a bulleted list of 3 points. Pick a Theme from the Design tab.",
           quiz: [
             { q: "What is the golden design rule for slides?", choices: ["Fit as much text as possible", "One idea per slide, few words, big text", "Use five fonts", "Read every word aloud"], answer: 1 },
             { q: "What is a 'placeholder'?", choices: ["A saved file", "The dotted box where you click to add title or content", "A keyboard shortcut", "A printed handout"], answer: 1 },
@@ -661,6 +726,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + N then P", action: "Insert a picture (keyboard path)" },
             { keys: "Ctrl + Shift + C / V", action: "Copy and paste formatting between objects" }
           ],
+          practice: "Apply a 'Fade' transition and click 'Apply To All'. Then add a simple 'Appear' animation to your bullet points so they reveal one at a time.",
           quiz: [
             { q: "What's the difference between a Transition and an Animation?", choices: ["No difference", "Transition is between slides; Animation is for items on a slide", "Animation prints; Transition saves", "Both delete slides"], answer: 1 },
             { q: "What's the professional approach to transitions?", choices: ["A different flashy one per slide", "One subtle one (Fade/Push) applied to all", "No slides at all", "Only spinning ones"], answer: 1 },
@@ -698,6 +764,7 @@ const OFFICE_CURRICULUM = {
             { keys: "B / W", action: "Black / white the screen during a show" },
             { keys: "Esc", action: "End the slideshow" }
           ],
+          practice: "Press F5 to start your slideshow. Practise advancing with the spacebar and going back with the arrow. Press B to black the screen, then B again. Press Esc to exit.",
           quiz: [
             { q: "Which key starts the slideshow from the beginning?", choices: ["F5", "Esc", "Ctrl + S", "F2"], answer: 0 },
             { q: "What does Presenter View let the speaker see that the audience can't?", choices: ["Nothing extra", "Speaker notes, timer, and the next slide", "A different presentation", "The audience's screens"], answer: 1 },
@@ -751,6 +818,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + R", action: "Reply" },
             { keys: "Ctrl + Shift + R", action: "Reply All (use with care!)" }
           ],
+          practice: "Draft a practice email to yourself: write a clear subject line, a greeting, one clear request with a deadline, and a sign-off. Attach any file, then send it and check it arrives.",
           quiz: [
             { q: "When should you use Bcc?", choices: ["Never", "To hide recipients' addresses from each other when emailing a group", "Only for your boss", "To make text bold"], answer: 1 },
             { q: "What makes a good subject line?", choices: ["Just 'Hi'", "Short and specific, like 'Invoice #204 — due Friday'", "Left blank", "The whole message"], answer: 1 },
@@ -783,6 +851,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + V", action: "Move the email to a folder" },
             { keys: "Insert key", action: "Flag/unflag the selected email" }
           ],
+          practice: "Create a folder in your mailbox called 'Practice', then move an email into it. Flag one email for follow-up. Use the search box to find an email by typing a word from its subject.",
           quiz: [
             { q: "What does a Rule do in Outlook?", choices: ["Deletes your inbox", "Automatically sorts/handles incoming emails", "Changes the font", "Prints emails"], answer: 1 },
             { q: "How do you search for emails that have attachments?", choices: ["hasattachments:yes", "find:files", "attach=true", "You can't"], answer: 0 },
@@ -825,6 +894,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + Q", action: "New meeting request" },
             { keys: "Ctrl + 2", action: "Switch to Calendar view" }
           ],
+          practice: "Open your Calendar and create a practice meeting for tomorrow. Add an agenda in the body, set a 15-minute reminder, and (if you can) invite yourself at another address.",
           quiz: [
             { q: "What's the difference between an Appointment and a Meeting?", choices: ["Nothing", "A Meeting invites others; an Appointment is just for you", "Appointments are longer", "Meetings can't be recurring"], answer: 1 },
             { q: "Which tool shows everyone's free/busy times to find a slot?", choices: ["The Scheduling Assistant", "Track Changes", "AutoSum", "The Slide Master"], answer: 0 },
@@ -1078,6 +1148,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Shift + Tab", action: "Jump back to the previous field" },
             { keys: "Num Lock", action: "Turn the number pad on for fast figure entry" }
           ],
+          practice: "Open a free typing site (typing.com or keybr.com) and do one 5-minute lesson with your fingers on the home row (ASDF / JKL;). Don't look at the keys!",
           quiz: [
             { q: "Where do your fingers rest in touch typing (the 'home row')?", choices: ["Q W E R / U I O P", "A S D F / J K L ;", "Z X C V / M , . /", "The number row"], answer: 1 },
             { q: "What matters MOST when learning to type and doing data entry?", choices: ["Speed above all", "Accuracy first — speed follows", "Using only the mouse", "Looking at the keys"], answer: 1 },
@@ -1115,6 +1186,7 @@ const OFFICE_CURRICULUM = {
             { keys: "F7", action: "Run the spelling & grammar check before sending" },
             { keys: "Ctrl + Shift + V", action: "Paste text in clean formatting" }
           ],
+          practice: "Using the email template in this lesson, write a short, polite request to book a meeting room. Keep it to 4 lines. Read it out loud once, then fix anything that sounds clunky.",
           quiz: [
             { q: "What's the golden rule of business writing?", choices: ["Use big, impressive words", "Get to the point fast with short, plain sentences", "Write as much as possible", "Skip the greeting"], answer: 1 },
             { q: "If you opened a letter with 'Dear Sir/Madam', how should you close it?", choices: ["Yours sincerely", "Yours faithfully", "Cheers", "Love"], answer: 1 },
@@ -1200,6 +1272,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + P", action: "Print (and see the print preview)" },
             { keys: "Win + Shift + S", action: "Screenshot part of the screen (great for quick help notes)" }
           ],
+          practice: "Find a printer's Print Preview (Ctrl+P) for any document and look at the double-sided option. If you have a scanner, scan one page to PDF and email it to yourself.",
           quiz: [
             { q: "Which file format looks the same on every device and is best for sending finished documents?", choices: ["A Word file only", "PDF", "A screenshot", "A zip file"], answer: 1 },
             { q: "What should you do before printing a long document?", choices: ["Nothing", "Use Print Preview and consider double-sided to save paper", "Print 10 test copies", "Turn off the printer"], answer: 1 },
@@ -1243,6 +1316,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Alt + =", action: "AutoSum a column of amounts in Excel" },
             { keys: "Ctrl + ;", action: "Enter today's date in a cell" }
           ],
+          practice: "In Excel, make a simple expense sheet: columns for Date, Description, Category, Amount. Add 4 rows and total the Amount column with =SUM. This is exactly how a real expense log works.",
           quiz: [
             { q: "What's the difference between an invoice and a receipt?", choices: ["They're the same", "An invoice requests payment; a receipt proves payment was made", "A receipt is bigger", "An invoice is only for cash"], answer: 1 },
             { q: "What must you keep to claim back work expenses?", choices: ["Nothing", "Every receipt", "Just a verbal note", "A screenshot of your bank app only"], answer: 1 },

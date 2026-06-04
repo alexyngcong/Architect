@@ -47,7 +47,14 @@
   const escapeHtml = (s) => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   /* ---------- Router (hash based, works offline) ---------- */
-  function go(hash) { window.location.hash = hash; }
+  function go(hash) {
+    // Any deliberate navigation clears an active search, so clicking a search
+    // result actually opens it (instead of render() re-running the search).
+    if (searchInput) searchInput.value = "";
+    const current = window.location.hash.replace(/^#\/?/, "");
+    if (current === hash) render();            // same hash won't fire hashchange — render manually
+    else window.location.hash = hash;          // triggers hashchange -> render
+  }
   window.addEventListener("hashchange", render);
 
   function parseHash() {
@@ -86,6 +93,7 @@
         <div class="btn-row" style="margin-top:18px">
           <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="OPA.go('plan')">🚀 Start the Fast-Track Plan</button>
         </div>
+        <p style="opacity:.9;font-size:13.5px;margin-top:12px">New here? It's simple: open a module → read the short lessons & try the practice → pass the quick quiz to tick it off. Totally new to computers? Begin with <b>“Computer &amp; Keyboard Basics”</b> in Office Foundations.</p>
         <div class="progress-summary">
           <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">Lessons done</div></div>
           <div class="stat"><div class="num">${pct}%</div><div class="lbl">Course complete</div></div>
@@ -183,6 +191,12 @@
         ${l.shortcuts.map(s => `<div class="kbd-row"><span class="kbd">${escapeHtml(s.keys)}</span><span class="desc">${s.action}</span></div>`).join("")}
       </div>` : "";
 
+    const practice = l.practice ? `
+      <div class="box practice">
+        <h4>✍️ Try It Yourself</h4>
+        <p style="margin:0">${l.practice}</p>
+      </div>` : "";
+
     const prev = m.lessons[idx - 1];
     const next = m.lessons[idx + 1];
 
@@ -198,6 +212,7 @@
         <div class="content">${l.content}</div>
         ${tips}
         ${shorts}
+        ${practice}
       </div>
 
       ${l.quiz && l.quiz.length ? `<div id="quizMount"></div>` : `
@@ -377,7 +392,7 @@
       if (pct >= 80) { celebrate(); toast(m.title + " exam passed! 🏆"); }
       draw();
     };
-    window.OPA._examRetry = () => { go("exam/" + m.id); }; // regenerate a fresh question set
+    window.OPA._examRetry = () => { renderExam(m.id); }; // re-render directly (same-hash nav wouldn't fire)
 
     draw();
     window.scrollTo(0, 0);
@@ -421,7 +436,7 @@
         <div id="cert" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);border:3px solid #f59e0b;border-radius:20px;padding:36px;text-align:center;margin-bottom:18px">
           <div style="font-size:42px">🎓</div>
           <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#b45309;font-weight:700;margin-top:8px">Certificate of Completion</div>
-          <div style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || "Your Name")}</div>
+          <div id="certNameDisplay" style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || "Your Name")}</div>
           <div style="color:#475569">has successfully completed</div>
           <div style="font-size:18px;font-weight:700;margin:6px 0 14px;color:var(--brand-dark)">Office Pro Academy — Microsoft Office &amp; Office Administration</div>
           <div style="color:#475569;font-size:14px">All ${total} lessons &amp; ${DATA.modules.length} module exams passed 🏆</div>
@@ -553,7 +568,7 @@
     go,
     completeLesson(mId, lId) { markDone(lId); celebrate(); toast("Lesson complete! Progress saved ✓"); setTimeout(() => go("module/" + mId), 700); },
     clearSearch() { searchInput.value = ""; go(""); },
-    _setName(v) { progress.name = v; saveProgress(progress); },
+    _setName(v) { progress.name = v; saveProgress(progress); const el = document.getElementById("certNameDisplay"); if (el) el.textContent = v || "Your Name"; },
     _pick() {}, _submitQuiz() {}, _retryQuiz() {},       // replaced per-quiz
     _examPick() {}, _examSubmit() {}, _examRetry() {}      // replaced per-exam
   };
