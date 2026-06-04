@@ -250,12 +250,16 @@
   /* ---------- Quiz engine ---------- */
   function mountQuiz(m, l) {
     const mount = document.getElementById("quizMount");
-    const state = { answers: {}, submitted: false };
+    // order[qi] is a stable, shuffled list of the ORIGINAL choice indices, so the
+    // answer position changes every attempt (no "always pick #2" loophole) while
+    // scoring still compares against each question's original `answer` index.
+    const state = { answers: {}, submitted: false, order: l.quiz.map(it => shuffle(it.choices.map((_, i) => i))) };
 
     function draw() {
       const blocks = l.quiz.map((item, qi) => {
         const chosen = state.answers[qi];
-        const choices = item.choices.map((c, ci) => {
+        const choices = state.order[qi].map((ci) => {
+          const c = item.choices[ci];
           let cls = "choice";
           if (state.submitted) {
             if (ci === item.answer) cls += " correct";
@@ -296,7 +300,7 @@
       if (pct >= 70) { markDone(l.id); celebrate(); toast(t("Lesson complete! Progress saved ✓","Tapos na ang aralin! Naka-save ang progreso ✓")); }
       draw();
     };
-    window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; draw(); };
+    window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; state.order = l.quiz.map(it => shuffle(it.choices.map((_, i) => i))); draw(); };
 
     draw();
   }
@@ -356,13 +360,24 @@
     if (!m) return renderNotFound();
     // Pool all quiz questions across the module's lessons.
     const pool = m.lessons.flatMap(l => (l.quiz || []).map(q => ({ ...q })));
+    if (!pool.length) {
+      app.innerHTML = `
+        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
+        <div class="empty"><div class="big">📭</div><h2>${t("No exam questions yet","Wala pang tanong sa pagsusulit")}</h2>
+        <p>${t("This module doesn't have a quiz pool to build an exam from.","Walang quiz na pagkukunan ng pagsusulit ang module na ito.")}</p></div>`;
+      window.scrollTo(0, 0);
+      return;
+    }
     const questions = shuffle(pool).slice(0, Math.min(10, pool.length)); // up to 10 Qs
+    // Stable shuffled display order of each question's ORIGINAL choice indices.
+    const order = questions.map(it => shuffle(it.choices.map((_, i) => i)));
     const state = { answers: {}, submitted: false };
 
     function draw() {
       const blocks = questions.map((item, qi) => {
         const chosen = state.answers[qi];
-        const choices = item.choices.map((c, ci) => {
+        const choices = order[qi].map((ci) => {
+          const c = item.choices[ci];
           let cls = "choice";
           if (state.submitted) {
             if (ci === item.answer) cls += " correct";

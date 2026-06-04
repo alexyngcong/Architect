@@ -35,20 +35,22 @@ Exam** → earn your **Certificate** when everything's complete.
 
 | # | Module | What you'll learn |
 |---|--------|-------------------|
-| 1 | 🧭 **Office Foundations** | The Ribbon, saving & files, copy/cut/paste/undo — the basics every program shares |
+| 1 | 🧭 **Office Foundations** | The Ribbon, saving & files, copy/cut/paste/undo, plus the cloud (OneDrive, AutoSave & Version History) — the basics every program shares |
 | 2 | 📝 **Microsoft Word** | Formatting, layout, track changes, tables & images, Styles, Table of Contents, Mail Merge |
-| 3 | 📊 **Microsoft Excel** | Cells & data, formatting, formulas (SUM, IF…), sort/filter, VLOOKUP/XLOOKUP, PivotTables, charts |
+| 3 | 📊 **Microsoft Excel** | Cells & data, formatting, formulas (SUM, IF…), sort/filter, VLOOKUP/XLOOKUP, PivotTables, charts, plus data validation, conditional formatting & IFERROR |
 | 4 | 📽️ **PowerPoint** | Slides & design, tasteful animations, delivering with Presenter View |
-| 5 | 📧 **Outlook, Email & Calendar** | Professional email, inbox organisation, scheduling meetings |
+| 5 | 📧 **Outlook, Email & Calendar** | Professional email, inbox organisation, scheduling meetings, shared mailboxes & delegate access |
 | 6 | 🗂️ **Office Coordinator Skills** | The role, professional communication, organisation & filing, meeting minutes, travel & confidentiality |
-| 7 | 🧰 **Practical Office Work** | Typing & data-entry accuracy, business-writing templates, customer service, office equipment, money basics (invoices, expenses, petty cash) |
+| 7 | 🧰 **Practical Office Work** | Typing & data-entry accuracy, business-writing templates, customer service, office equipment, money basics, plus digital safety (passwords, phishing & confidentiality) |
 | 8 | 👔 **Executive Assistant & Admin Pro** | Managing an exec's calendar/inbox, prioritising & follow-up, projects & events, operations (onboarding, records, compliance, procurement), being a trusted right hand |
+
+> **40 lessons · 123 quiz questions · 8 module exams.** Quiz and exam answer choices are **shuffled every attempt**, so passing means actually knowing the material.
 
 **Also included:**
 - 🌐 **Tagalog option** — a one-tap language toggle (🌐 Tagalog/English) in the top bar. It translates the whole interface and adds a **"📘 Paliwanag sa Tagalog"** plain-Tagalog explanation to every lesson, while keeping the Office terms/buttons in English (since the real software is in English).
 - 🧑‍💻 **True-beginner start** — the first lesson, *Computer & Keyboard Basics*, covers the mouse, keys and windows for someone brand new to computers.
 - 📊 **Excel shortcut & formula drills** — a dedicated timed practice lesson + test of the essential Excel keyboard shortcuts and core formulas.
-- ✍️ **"Try It Yourself" practice** — most lessons include a hands-on task so she learns by doing, not just reading.
+- ✍️ **"Try It Yourself" practice** — **every** lesson includes a hands-on task so she learns by doing, not just reading.
 - 🚀 **Fast-Track Plan** — a guided ~2½-week, day-by-day schedule so she knows exactly what to do each day to get job-ready ASAP.
 - 🎓 **Module Final Exams** — pass at 80% to earn each module's badge.
 - 🏆 **Certificate of Completion** — unlocks when every lesson is done and every exam passed; print it or save as PDF.
@@ -59,7 +61,7 @@ Exam** → earn your **Certificate** when everything's complete.
 ## ✨ Features
 
 - **Progress tracking** — finished lessons get a green tick; progress bars fill up. Saved automatically in the browser.
-- **Interactive quizzes** — every lesson ends with a short quiz. Score 70%+ to complete it (with a little confetti 🎉).
+- **Interactive quizzes** — every lesson ends with a short quiz. Score 70%+ to complete it (with a little confetti 🎉). Answer choices are shuffled on every attempt.
 - **Pro Tips & Shortcuts** boxes in every lesson — the easy, smart, time-saving way to work.
 - **Search** — type any word ("save", "Excel", "Ctrl+C", "email") to jump straight to the lesson or shortcut.
 - **Works on phone, tablet or computer**, online or offline.

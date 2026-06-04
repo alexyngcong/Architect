@@ -312,19 +312,19 @@ const OFFICE_CURRICULUM = {
     intro: "Do these lessons in order — about 2 short lessons a day (20–30 minutes). Finish the quiz on each to tick it off. By the end you'll have covered everything an office assistant, coordinator, administrative staffer or executive assistant needs — basics to advanced.",
     days: [
       { day: 1,  focus: "Computer basics + get comfortable",       lessons: ["f0", "f1", "f2"] },
-      { day: 2,  focus: "Core moves + start typing practice",       lessons: ["f3", "x1"] },
+      { day: 2,  focus: "Core moves, the cloud + start typing",      lessons: ["f3", "f4", "x1"] },
       { day: 3,  focus: "Word: typing & formatting documents",      lessons: ["w1", "w2"] },
       { day: 4,  focus: "Word: editing, tables & pictures",         lessons: ["w3", "w4"] },
       { day: 5,  focus: "Word: advanced + business writing",        lessons: ["w5", "x2"] },
       { day: 6,  focus: "Excel: the grid & making it readable",     lessons: ["e1", "e2"] },
       { day: 7,  focus: "Excel: formulas that do the maths",        lessons: ["e3", "e4"] },
-      { day: 8,  focus: "Excel: lookups, charts + shortcut drills", lessons: ["e5", "e6"] },
+      { day: 8,  focus: "Excel: lookups, charts, drills + clean data", lessons: ["e5", "e6", "e7"] },
       { day: 9,  focus: "PowerPoint: build a clean presentation",   lessons: ["p1", "p2"] },
       { day: 10, focus: "Present well + professional email",        lessons: ["p3", "o1"] },
-      { day: 11, focus: "Outlook: organise inbox & calendar",       lessons: ["o2", "o3"] },
+      { day: 11, focus: "Outlook: inbox, calendar & shared mailboxes", lessons: ["o2", "o3", "o4"] },
       { day: 12, focus: "The role + professional communication",    lessons: ["c1", "c2"] },
       { day: 13, focus: "Organising, meetings & customer service",  lessons: ["c3", "c4", "x3"] },
-      { day: 14, focus: "Advanced coordinator + equipment & money", lessons: ["c5", "x4", "x5"] },
+      { day: 14, focus: "Advanced coordinator, equipment, money & safety", lessons: ["c5", "x4", "x5", "x6"] },
       { day: 15, focus: "Exec support: calendar/inbox + priorities", lessons: ["ea1", "ea2"] },
       { day: 16, focus: "Projects/events + operations & onboarding",  lessons: ["ea3", "ea4"] },
       { day: 17, focus: "Being a trusted right hand (graduate!)",     lessons: ["ea5"] }
@@ -506,6 +506,43 @@ const OFFICE_CURRICULUM = {
             { q: "Which shortcut UNDOES your last mistake?", choices: ["Ctrl + U", "Ctrl + Z", "Ctrl + V", "Ctrl + D"], answer: 1 },
             { q: "You copied text from a website but it brought ugly colours. What pastes it as clean plain text?", choices: ["Ctrl + V", "Ctrl + Shift + V", "Ctrl + C", "Ctrl + B"], answer: 1 },
             { q: "What does Windows + V open?", choices: ["The volume control", "Clipboard history of recent copies", "A new document", "The print menu"], answer: 1 }
+          ]
+        },
+        {
+          id: "f4",
+          title: "Saving to the Cloud: OneDrive, AutoSave & Version History",
+          level: "Basic",
+          minutes: 7,
+          content: `
+            <p>Modern offices keep files in the <b>cloud</b> — usually OneDrive or SharePoint. This means your work is backed up, reachable from any device, and never lost when a computer breaks. Knowing how it works makes you the person who can always recover a file.</p>
+            <h4>What "the cloud" really means</h4>
+            <ul>
+              <li>Your file lives safely on Microsoft's servers, not only on one computer.</li>
+              <li>You can open it from the office PC, a laptop at home, or a phone — it's the same file.</li>
+              <li>If your computer dies, your work is safe.</li>
+            </ul>
+            <h4>AutoSave — never lose work again</h4>
+            <p>When a file is stored on OneDrive or SharePoint, the <b>AutoSave</b> toggle in the top-left turns green and your changes save <i>automatically every few seconds</i>. You'll rarely need Ctrl+S — though it's still a great habit.</p>
+            <h4>Version History — your time machine</h4>
+            <p>Made a mess, or need yesterday's wording back? Go to <b>File → Info → Version History</b> (or right-click the file in OneDrive → Version history). You'll see a list of earlier versions by date and time — open one to read it, or <b>Restore</b> it to roll the whole file back. This has saved countless office workers from disaster.</p>
+            <h4>Co-authoring — editing together</h4>
+            <p>Because the file is in the cloud, several people can open and edit it <b>at the same time</b>. You'll see their coloured cursors moving live. This is called <b>co-authoring</b> — perfect for a team finishing a report together without emailing copies back and forth.</p>
+          `,
+          tips: [
+            "If AutoSave is greyed out, the file isn't in the cloud yet — use File → Save As and choose OneDrive to switch it on.",
+            "Version History also works in Excel and PowerPoint — the same time machine across Office.",
+            "Sharing a OneDrive link instead of attaching a file means everyone always sees the latest version."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + S", action: "Save now (still useful even with AutoSave on)" },
+            { keys: "F12", action: "Save As — use it to move a file into OneDrive" }
+          ],
+          practice: "If you have OneDrive, save a Word file into it and watch the AutoSave toggle turn green. Make a few edits, then open File → Info → Version History and look at the earlier versions you could restore.",
+          summary_tl: "Sa cloud (OneDrive/SharePoint) nakaimbak ang mga file ngayon — naka-backup at mabubuksan kahit saang device. Ang AutoSave (berdeng toggle sa itaas) ay awtomatikong nagse-save kada ilang segundo. Ang Version History (File → Info) ay parang time machine — puwede mong ibalik ang lumang bersyon. Ang co-authoring ay sabay-sabay na pag-edit ng ilang tao sa iisang file.",
+          quiz: [
+            { q: "When a file is on OneDrive, what does AutoSave do?", choices: ["Nothing useful", "Saves your changes automatically every few seconds", "Prints the file", "Deletes older files"], answer: 1 },
+            { q: "You need yesterday's wording back. Where do you look?", choices: ["Version History — open or restore an earlier version", "It's gone forever once saved", "The recycle bin only", "Retype it from memory"], answer: 0 },
+            { q: "What is 'co-authoring'?", choices: ["Several people editing the same file at the same time", "Printing two copies", "Locking everyone else out", "Deleting all comments"], answer: 0 }
           ]
         }
       ]
@@ -980,6 +1017,49 @@ const OFFICE_CURRICULUM = {
             { q: "How do you quickly select all the data down to the edge?", choices: ["Ctrl + Shift + Arrow", "Ctrl + P", "F2", "Alt + Enter"], answer: 0 },
             { q: "What's the smart way to learn these shortcuts?", choices: ["Memorise all 20 in one night", "Learn about 3 a day and use them until automatic", "Never use them", "Only read about them"], answer: 1 }
           ]
+        },
+        {
+          id: "e7",
+          title: "Cleaner Data: Data Validation, Conditional Formatting & IFERROR",
+          level: "Intermediate",
+          minutes: 11,
+          content: `
+            <p>These three features make your spreadsheets <b>tidier, error-proof, and self-checking</b> — exactly the polish that makes a report look professional.</p>
+            <h4>Data Validation — control what people can type</h4>
+            <p>Stop messy or wrong entries before they happen. Select the cells, then <b>Data → Data Validation</b>:</p>
+            <ul>
+              <li><b>List</b> — create a tidy <b>drop-down</b> of allowed choices (e.g. Paid / Unpaid / Overdue). No more typos or 10 spellings of one word.</li>
+              <li><b>Whole number / Decimal / Date</b> — only allow values in a sensible range (e.g. a date this year, or a number 1–100).</li>
+              <li>Add an <b>input message</b> (a hint) and an <b>error alert</b> to guide whoever fills it in.</li>
+            </ul>
+            <h4>Conditional Formatting — let the cells highlight themselves</h4>
+            <p><b>Home → Conditional Formatting</b> automatically changes a cell's colour based on its value, and updates live as data changes:</p>
+            <ul>
+              <li><b>Highlight Cells Rules</b> — e.g. turn overdue amounts red, or values over a target green.</li>
+              <li><b>Top/Bottom Rules</b> — instantly shade the top 10 or below-average figures.</li>
+              <li><b>Data Bars / Colour Scales / Icon Sets</b> — tiny in-cell bars or traffic-light colours that make a column readable at a glance.</li>
+            </ul>
+            <h4>IFERROR — hide ugly error messages</h4>
+            <p>When a formula can't work (e.g. dividing by an empty cell), Excel shows errors like <code>#DIV/0!</code> or <code>#N/A</code>. Wrap it in <b>IFERROR</b> to show something friendly instead:</p>
+            <p style="font-family:monospace;background:#f1f5f9;padding:10px;border-radius:8px">=IFERROR(A2/B2, "")        ← shows a blank instead of an error<br>=IFERROR(XLOOKUP(...), "Not found")</p>
+            <p>Your reports stay clean even when some data is missing.</p>
+          `,
+          tips: [
+            "A drop-down list (Data Validation) keeps a column perfectly consistent — vital before you sort, filter, or build a PivotTable.",
+            "To remove conditional formatting, use Home → Conditional Formatting → Clear Rules.",
+            "Don't hide REAL problems with IFERROR — use it for expected gaps (missing data), not to mask a broken formula you should fix."
+          ],
+          shortcuts: [
+            { keys: "Alt + A + V + V", action: "Open the Data Validation dialog" },
+            { keys: "Alt + H + L", action: "Open the Conditional Formatting menu" }
+          ],
+          practice: "In a 'Status' column, add a Data Validation drop-down list with Paid, Unpaid, Overdue (Data → Data Validation → List). Then use Conditional Formatting to turn any 'Overdue' cell red. Finally, in a calculation cell, wrap a division in =IFERROR(…, \"\") and see the error disappear.",
+          summary_tl: "Tatlong feature para malinis at walang-mali ang spreadsheet. Data Validation (Data → Data Validation): gumawa ng drop-down list ng pwedeng i-type (hal. Paid/Unpaid) o range ng numero/petsa — iwas typo. Conditional Formatting (Home): awtomatikong kinukulayan ang cell ayon sa halaga (hal. pula ang overdue), live na nag-a-update. IFERROR: itinatago ang pangit na error (tulad ng #DIV/0!) at pinapalitan ng blangko o teksto.",
+          quiz: [
+            { q: "What does a Data Validation 'List' add to a cell?", choices: ["A drop-down of allowed choices", "A new chart", "A page break", "A picture"], answer: 0 },
+            { q: "What does Conditional Formatting do?", choices: ["Automatically colours cells based on their value, and updates live", "Permanently deletes data", "Prints the sheet", "Locks the workbook"], answer: 0 },
+            { q: "What does =IFERROR(A2/B2,\"\") show if B2 is empty?", choices: ["A blank cell instead of a #DIV/0! error", "Always the number zero", "An error every time", "The text ERROR"], answer: 0 }
+          ]
         }
       ]
     },
@@ -1237,6 +1317,46 @@ const OFFICE_CURRICULUM = {
             { q: "Which tool shows everyone's free/busy times to find a slot?", choices: ["The Scheduling Assistant", "Track Changes", "AutoSum", "The Slide Master"], answer: 0 },
             { q: "What should you always include in a meeting invite body?", choices: ["Nothing", "An agenda", "A pie chart", "Your password"], answer: 1 }
           ]
+        },
+        {
+          id: "o4",
+          title: "Shared Mailboxes, Delegate Access & Managing a Manager's Email",
+          level: "Advanced",
+          minutes: 9,
+          content: `
+            <p>A core coordinator/EA duty is handling email and calendars that aren't only your own — a team inbox, or a manager's mailbox. Doing this cleanly and professionally is a genuinely senior skill.</p>
+            <h4>Shared mailboxes — a team inbox</h4>
+            <p>A <b>shared mailbox</b> (e.g. <code>info@</code> or <code>reception@</code>) is one inbox several people monitor together. It usually appears automatically in your Outlook folder list below your own mailbox.</p>
+            <ul>
+              <li>When you reply, set the <b>From</b> field to the <b>shared address</b> so the answer comes from "Reception", not your personal account.</li>
+              <li>Agree a simple system — e.g. colour <b>categories</b> or a "Done" folder — so two people don't answer the same email.</li>
+            </ul>
+            <h4>Delegate access — acting for your manager</h4>
+            <p><b>Delegate access</b> lets you manage someone else's mail and calendar <b>on their behalf, with their permission</b>. The owner grants it via <b>File → Account Settings → Delegate Access</b>, choosing what you can do (read, create, respond).</p>
+            <ul>
+              <li><b>Calendar</b> — book, move and accept meetings for them; this is the heart of gatekeeping.</li>
+              <li><b>Send on Behalf</b> — recipients see "You on behalf of Manager". <b>Send As</b> looks fully like the manager — use only when expressly authorised.</li>
+              <li>Always act in the owner's voice and let them approve anything sensitive.</li>
+            </ul>
+            <h4>Categories & folders to stay on top of it all</h4>
+            <p>With several mailboxes flowing in, lean on colour <b>categories</b> (Urgent, Waiting, FYI) and folders/rules so nothing is missed across accounts. A tidy system is what makes managing multiple inboxes look effortless.</p>
+          `,
+          tips: [
+            "Always double-check the From field before sending from a shared or manager's mailbox — sending from the wrong account is an easy, awkward mistake.",
+            "Agree 'who handles what' for a shared inbox, and mark items done, so the team never double-replies.",
+            "'Send on Behalf' is the safe, transparent default; only use 'Send As' when your manager has explicitly asked for it."
+          ],
+          shortcuts: [
+            { keys: "Ctrl + 2", action: "Switch to Calendar (including those shared with you)" },
+            { keys: "Ctrl + Shift + R", action: "Reply All — check the From address first!" }
+          ],
+          practice: "If you have access to a shared mailbox or a delegated calendar, open a new email and change the From field to the shared address. Then set up two colour categories (e.g. Urgent and Done) and tag a couple of emails to practise a tidy team system.",
+          summary_tl: "Mahalagang gawain ng coordinator/EA ang humawak ng email/kalendaryo na hindi sa kanila. Shared mailbox (hal. info@) = isang inbox na maraming tao ang nagba-bantay; itakda ang From sa shared address kapag sumasagot, at gumamit ng categories para iwas-dobleng sagot. Delegate access = pamahalaan ang mail/kalendaryo ng manager nang may pahintulot (book ng meetings, Send on Behalf). Tiyakin lagi ang From bago mag-send.",
+          quiz: [
+            { q: "What is a shared mailbox?", choices: ["A private inbox only you can open", "One mailbox several people monitor and reply from together", "The junk folder", "A printed contact list"], answer: 1 },
+            { q: "What does delegate access let you do?", choices: ["Manage someone else's mail/calendar on their behalf, with permission", "Reset the company servers", "Change Windows wallpaper", "Nothing at all"], answer: 0 },
+            { q: "When replying from a shared mailbox, the email should appear to come from…", choices: ["Your personal address", "The shared mailbox address, so it stays consistent", "A made-up address", "No one"], answer: 1 }
+          ]
         }
       ]
     },
@@ -1281,6 +1401,7 @@ const OFFICE_CURRICULUM = {
             "Become the person who 'knows where everything is and how everything works' — that makes you indispensable."
           ],
           shortcuts: [],
+          practice: "Write down your own one-line answers: name three things an office assistant is responsible for, and pick the <b>one quality</b> from this lesson you most want to be known for. Then start a simple to-do list for today and review it before you finish.",
           summary_tl: "Ang office assistant/coordinator ang nagpapatakbo ng opisina. Gawain: komunikasyon (telepono, email, bisita), scheduling, dokumento at filing, supplies, suporta sa manager. Mahalagang katangian: reliability (kapag sinabi mong tapos, tapos), atensyon sa detalye, discretion (kumpidensyal), at pag-asa sa problema bago pa itanong.",
           quiz: [
             { q: "Which quality builds the most trust with colleagues?", choices: ["Typing fast", "Reliability — if you say it's done, it's done", "Knowing every shortcut", "Working late"], answer: 1 },
@@ -1315,6 +1436,7 @@ const OFFICE_CURRICULUM = {
             "The phrase 'Let me find out for you' is far better than a flat 'I don't know'."
           ],
           shortcuts: [],
+          practice: "Role-play answering the phone out loud: say your greeting, then take a pretend message capturing <b>all five details</b> (name, company, number, time, reason) and read the number back. Write the message exactly as you'd leave it on a colleague's desk.",
           summary_tl: "Ikaw madalas ang unang boses/mukha ng kumpanya. Telepono: sagutin sa 3 ring, ngumiti, kumuha ng kumpletong message (pangalan, kumpanya, numero, oras, dahilan — ulitin ang numero). Email: magalang at maikli. Bisita: batiin agad, alukin ng upuan. Galit na tao: manatiling kalmado, makinig, kilalanin ang damdamin, tumulong.",
           quiz: [
             { q: "What details must a phone message always capture?", choices: ["Just the name", "Name, company, number, time, and the reason — and read the number back", "Only the time", "Nothing, just remember it"], answer: 1 },
@@ -1352,6 +1474,7 @@ const OFFICE_CURRICULUM = {
             "Keep a 'how-to' document for recurring tasks so anyone can cover for you — and you look organised."
           ],
           shortcuts: [],
+          practice: "Set up a tidy folder structure on your computer using the <code>Year → Category</code> idea (e.g. 2026 → Invoices, Minutes). Then write your three top priorities for tomorrow, sorting them with the <b>urgent/important</b> rule.",
           summary_tl: "Ang organisasyon ang gulugod ng trabaho. Filing: pare-parehong pangalan (YYYY-MM-DD), maayos na folders, isang shared na lugar (OneDrive/SharePoint). Time management: unahin ang urgent+important; i-schedule ang important; i-batch ang magkakatulad; isang to-do list na binabalikan araw-araw. Supplies: mag-order BAGO maubos.",
           quiz: [
             { q: "Where should shared team files live?", choices: ["On your personal desktop", "A shared location like SharePoint/OneDrive — one source of truth", "Printed only", "In your email drafts"], answer: 1 },
@@ -1393,6 +1516,7 @@ const OFFICE_CURRICULUM = {
             "Send minutes promptly — speed builds your reputation for reliability."
           ],
           shortcuts: [],
+          practice: "Write a short set of meeting minutes for an imaginary 10-minute team meeting. Include the attendees, one decision made, and two <b>action items</b> — each with <i>what</i>, <i>who</i> is responsible, and <i>by when</i>.",
           summary_tl: "Bago ang meeting: kumpirmahin ang oras/lugar, magpadala ng agenda. Habang nagmi-meeting, kumuha ng MINUTES: attendees, desisyon, at lalo na ang ACTION ITEMS (ano, sino, kailan). Pagkatapos: ipamahagi ang minutes sa loob ng 24 oras, i-track ang actions, paalalahanan ang may hawak bago ang deadline.",
           quiz: [
             { q: "What's the most important thing to capture in minutes?", choices: ["Every single word", "Action items: what, who, and by when", "The weather", "Who arrived late"], answer: 1 },
@@ -1437,6 +1561,7 @@ const OFFICE_CURRICULUM = {
           shortcuts: [
             { keys: "Windows + L", action: "Lock your screen instantly when stepping away" }
           ],
+          practice: "Build a one-page practice <b>itinerary</b> for an imaginary day-trip: flight or train time, hotel, ground transport, one meeting time, and an emergency contact — all written in the traveller's local time, with confirmation numbers together.",
           summary_tl: "Senior skills: Travel — isang itinerary (flight, hotel, transport, contacts) sa local time. Events — venue, RSVP, catering, materials, run-sheet (naka-oras na schedule). Confidentiality — lihim ang sahod/kontrata/personal data; i-lock ang screen (Windows+L). Paglago: alamin ang negosyo, bumuo ng relasyon, mag-upskill, humingi ng feedback.",
           quiz: [
             { q: "What's the best format for travel details?", choices: ["Ten separate emails", "One clear itinerary with flights, hotel, transport, and contacts together", "Memorising it", "A voicemail"], answer: 1 },
@@ -1573,6 +1698,7 @@ const OFFICE_CURRICULUM = {
             "Under-promise and over-deliver: say 'by end of day' and surprise them by lunchtime."
           ],
           shortcuts: [],
+          practice: "Practise the <b>LEAP method</b> out loud: imagine an upset visitor whose meeting was just cancelled. Say a Listen → Empathise → Apologise → Provide-a-solution response. Then write a warm two-line greeting you could use for any visitor arriving at the front desk.",
           summary_tl: "Ikaw ang mukha ng kumpanya. Service mindset: mainit at handa, makinig nang buo, matulungin ('Hahanapin ko po' kaysa 'Ewan ko'), at tuparin ang pangako. Bisita: batiin agad, alamin ang pakay, ipaalam sa host, alukin ng upuan. Sa reklamo, LEAP: Listen, Empathise, Apologise, Provide solution. Manatiling kalmado, huwag personalin.",
           quiz: [
             { q: "What does the 'E' in the LEAP method for upset people stand for?", choices: ["Explain", "Empathise", "Exit", "Email"], answer: 1 },
@@ -1669,6 +1795,55 @@ const OFFICE_CURRICULUM = {
             { q: "What must you keep to claim back work expenses?", choices: ["Nothing", "Every receipt", "Just a verbal note", "A screenshot of your bank app only"], answer: 1 },
             { q: "What's the golden rule of petty cash?", choices: ["Spend it fast", "Cash remaining + receipts should equal the starting float", "Never write anything down", "Keep it secret"], answer: 1 }
           ]
+        },
+        {
+          id: "x6",
+          title: "Staying Safe: Passwords, Phishing & Confidentiality",
+          level: "Basic",
+          minutes: 9,
+          content: `
+            <p>An office assistant is trusted with confidential information and access to company systems. Good digital safety protects you, your colleagues, and the whole organisation — and it's a skill employers genuinely value.</p>
+            <h4>Strong passwords</h4>
+            <ul>
+              <li><b>Long beats complicated.</b> A <b>passphrase</b> like <code>Coffee-Rain-River-42</code> is both strong and easy to remember.</li>
+              <li><b>Never reuse</b> the same password across sites — if one leaks, they all do.</li>
+              <li><b>Never share</b> your password or write it on a sticky note. A <b>password manager</b> safely remembers them for you.</li>
+            </ul>
+            <h4>Two-factor authentication (2FA)</h4>
+            <p>2FA adds a second step after your password — usually a code from an app or text on your phone. Even if someone steals your password, they can't get in without your phone. Turn it on wherever it's offered.</p>
+            <h4>Spotting phishing — the #1 office threat</h4>
+            <p><b>Phishing</b> is a fake email or message tricking you into clicking a bad link, opening a virus, or handing over a password or payment. Warning signs:</p>
+            <ul>
+              <li><b>Urgency &amp; fear</b> — "Your account will be closed in 24 hours!"</li>
+              <li>A slightly wrong sender address, odd spelling, or a generic "Dear Customer".</li>
+              <li>An unexpected attachment, or a link whose address (hover to check) doesn't match the real site.</li>
+              <li>A request to change bank details or pay an "urgent" invoice — <b>always verify by phone</b> using a number you already trust.</li>
+            </ul>
+            <p>When in doubt: <b>don't click</b>. Verify another way and report it to IT.</p>
+            <h4>Everyday confidentiality</h4>
+            <ul>
+              <li><b>Lock your screen</b> (Windows + L) every time you step away.</li>
+              <li>Don't leave sensitive papers on the desk or in the printer tray; <b>shred</b> what you no longer need.</li>
+              <li>Be careful what's visible on your screen in public, and never discuss confidential matters where others can hear.</li>
+            </ul>
+          `,
+          tips: [
+            "If an email pressures you to act 'right now', slow down — urgency is the oldest trick in the phishing book.",
+            "Verify any change of bank details or payment request by calling a known, trusted number — never the number in the suspicious email.",
+            "Make Windows + L automatic every single time you leave your desk; it takes one second and prevents a lot of trouble."
+          ],
+          shortcuts: [
+            { keys: "Windows + L", action: "Lock your screen instantly when you step away" },
+            { keys: "Win + Shift + S", action: "Screenshot a suspicious email to report it to IT" }
+          ],
+          practice: "Turn a weak password into a strong passphrase of four random words plus a number. Then look at two recent emails in any inbox and, for each, list one thing that shows it's genuine — or one warning sign that it might be phishing.",
+          summary_tl: "Pinagkakatiwalaan ang office assistant ng kumpidensyal na impormasyon, kaya mahalaga ang digital safety. Password: mahaba (passphrase tulad ng 'Coffee-Rain-River-42'), huwag i-reuse, huwag i-share. 2FA: dagdag na code mula sa telepono. Phishing: pekeng email na nagmamadali o natatakot ka — huwag i-click, i-verify sa ibang paraan, i-report sa IT; tawagan ang dati nang pinagkakatiwalaang numero para sa bank/payment. I-lock ang screen (Windows+L), i-shred ang sensitibong papel.",
+          quiz: [
+            { q: "What makes a strong password?", choices: ["Your first name", "Long, unique, and not reused — a passphrase is ideal", "1234", "The word 'password'"], answer: 1 },
+            { q: "An email says 'Your account is locked — click here to verify your password NOW!' What is it most likely?", choices: ["A helpful reminder", "A phishing attempt — don't click; verify another way and report it", "A normal invoice", "A calendar invite"], answer: 1 },
+            { q: "What does two-factor authentication (2FA) add?", choices: ["A second step, like a code from your phone, after your password", "A nicer screensaver", "Faster AutoSave", "A pie chart"], answer: 0 },
+            { q: "What should you do every time you step away from your desk?", choices: ["Leave everything open", "Lock your screen with Windows + L", "Turn off the monitor only", "Email your manager"], answer: 1 }
+          ]
         }
       ]
     },
@@ -1716,6 +1891,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + 2", action: "Open the Calendar in Outlook" },
             { keys: "Ctrl + Shift + Q", action: "New meeting request" }
           ],
+          practice: "Look at your own week as if it were an executive's calendar: block one <b>focus-time</b> slot, add a buffer before a busy period, and draft one warm 'gatekeeping' reply that politely turns down a request while offering an alternative.",
           summary_tl: "Ang executive assistant ang nag-iingat sa oras at atensyon ng lider. Kalendaryo: protektahan ang focus time, magdagdag ng buffer (travel/prep), unahin ang mas mahalaga, ihanda ang dokumento bago ang meeting. Inbox (may pahintulot): i-triage, folders/rules, mag-draft ng sagot. Mag-gatekeep nang magalang — magbigay ng alternatibo.",
           quiz: [
             { q: "What is an executive assistant primarily protecting?", choices: ["The office plants", "The executive's time and attention", "The printer", "The petty cash"], answer: 1 },
@@ -1754,6 +1930,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + Shift + K", action: "Create a new task in Outlook" },
             { keys: "Insert", action: "Flag the selected email for follow-up" }
           ],
+          practice: "Make a simple <b>follow-up log</b> with columns Task · Owner · Due · Status (in Excel or on paper) and fill in three real or imagined items. Then write tomorrow's <b>top 3 priorities</b> so you start the day focused.",
           summary_tl: "Ang superpower: walang nakakalimutan — dahil sa SISTEMA, hindi memorya. Unahin gamit ang urgent/important grid. Isang trusted na task list, binabalikan araw-araw. I-track ang utang-gawa ng iba sa follow-up log (gawain, sino, deadline, status) at magpaalala nang magalang. Kapag tapos, kumpirmahin — iyon ang nagbibigay ng tiwala.",
           quiz: [
             { q: "In the urgent/important grid, what do you do with 'important but NOT urgent' tasks?", choices: ["Drop them", "Schedule them", "Ignore them", "Always do them last forever"], answer: 1 },
@@ -1797,6 +1974,7 @@ const OFFICE_CURRICULUM = {
             { keys: "Ctrl + T", action: "Make a tracking Table in Excel (filters + auto-fill)" },
             { keys: "Ctrl + Shift + L", action: "Toggle filters to sort your task list" }
           ],
+          practice: "Draft a <b>run-sheet</b> for a one-hour imaginary team meeting: list each segment with a start time and who's responsible. Then add a short <b>checklist</b> of three things you'd confirm 24–48 hours beforehand.",
           summary_tl: "Sa project/event: hatiin sa tasks na may owner at deadline, i-track, mag-follow up. Malaking meeting/event: tukuyin ang layunin, i-book ang venue/catering/equipment, i-track ang RSVP, ihanda ang materials, gumawa ng RUN-SHEET (naka-oras na schedule). Lagi may Plan B. Kumpirmahin ang lahat 24-48 oras bago.",
           quiz: [
             { q: "What is a 'run-sheet'?", choices: ["A list of attendees", "A timed schedule of exactly what happens when, and who's responsible", "The catering bill", "A type of email"], answer: 1 },
@@ -1844,6 +2022,7 @@ const OFFICE_CURRICULUM = {
           shortcuts: [
             { keys: "Windows + L", action: "Lock your screen to protect data when you step away" }
           ],
+          practice: "Write an <b>onboarding checklist</b> for a new starter's first day with at least six items (desk, computer/login, email, building access, welcome pack, induction). Mark which items involve confidential paperwork that must be filed securely.",
           summary_tl: "Operasyong gawain: Onboarding — ihanda bago ang unang araw (desk, login, email, access, welcome pack), kolektahin ang papeles nang kumpidensyal. Records — pare-parehong filing, alam ang retention. Data protection — i-secure ang personal data, i-lock ang screen, mag-shred ng sensitibong papel. Procurement — i-track ang stock, mag-order bago maubos, i-match ang invoice sa PO.",
           quiz: [
             { q: "What should be ready BEFORE a new employee's first day?", choices: ["Nothing", "Desk, computer/login, email, access and a welcome pack", "Only a chair", "Their resignation letter"], answer: 1 },
@@ -1883,6 +2062,7 @@ const OFFICE_CURRICULUM = {
             "Confidentiality is built once and lost in a moment — guard it like your reputation, because it is."
           ],
           shortcuts: [],
+          practice: "Think of a recent or imagined problem at work and practise raising it <b>upward</b>: write one or two lines that give the headline first and include a <b>suggested solution</b> ('X happened; I suggest Y — okay?'), not just the problem.",
           summary_tl: "Sa senior level, judgment at tiwala ang laman. Mag-anticipate — gawin ang kakailanganin bago pa hingin. Mag-communicate paitaas nang maikli at may solusyon (hindi lang problema), at maging tapat. Pamahalaan ang relasyon sa lahat nang propesyonal. Ang discretion ang pundasyon — tahimik sa kumpidensyal. Patuloy na matuto para umangat ang karera.",
           quiz: [
             { q: "What single trait do leaders value most in a great assistant?", choices: ["Typing speed", "Anticipating needs before being asked", "Working late", "Knowing gossip"], answer: 1 },
@@ -2152,12 +2332,16 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
   /* ---------- Quiz engine ---------- */
   function mountQuiz(m, l) {
     const mount = document.getElementById("quizMount");
-    const state = { answers: {}, submitted: false };
+    // order[qi] is a stable, shuffled list of the ORIGINAL choice indices, so the
+    // answer position changes every attempt (no "always pick #2" loophole) while
+    // scoring still compares against each question's original `answer` index.
+    const state = { answers: {}, submitted: false, order: l.quiz.map(it => shuffle(it.choices.map((_, i) => i))) };
 
     function draw() {
       const blocks = l.quiz.map((item, qi) => {
         const chosen = state.answers[qi];
-        const choices = item.choices.map((c, ci) => {
+        const choices = state.order[qi].map((ci) => {
+          const c = item.choices[ci];
           let cls = "choice";
           if (state.submitted) {
             if (ci === item.answer) cls += " correct";
@@ -2198,7 +2382,7 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
       if (pct >= 70) { markDone(l.id); celebrate(); toast(t("Lesson complete! Progress saved ✓","Tapos na ang aralin! Naka-save ang progreso ✓")); }
       draw();
     };
-    window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; draw(); };
+    window.OPA._retryQuiz = () => { state.answers = {}; state.submitted = false; state.order = l.quiz.map(it => shuffle(it.choices.map((_, i) => i))); draw(); };
 
     draw();
   }
@@ -2258,13 +2442,24 @@ if (typeof window !== "undefined") { window.OFFICE_CURRICULUM = OFFICE_CURRICULU
     if (!m) return renderNotFound();
     // Pool all quiz questions across the module's lessons.
     const pool = m.lessons.flatMap(l => (l.quiz || []).map(q => ({ ...q })));
+    if (!pool.length) {
+      app.innerHTML = `
+        <a class="back-link" onclick="OPA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
+        <div class="empty"><div class="big">📭</div><h2>${t("No exam questions yet","Wala pang tanong sa pagsusulit")}</h2>
+        <p>${t("This module doesn't have a quiz pool to build an exam from.","Walang quiz na pagkukunan ng pagsusulit ang module na ito.")}</p></div>`;
+      window.scrollTo(0, 0);
+      return;
+    }
     const questions = shuffle(pool).slice(0, Math.min(10, pool.length)); // up to 10 Qs
+    // Stable shuffled display order of each question's ORIGINAL choice indices.
+    const order = questions.map(it => shuffle(it.choices.map((_, i) => i)));
     const state = { answers: {}, submitted: false };
 
     function draw() {
       const blocks = questions.map((item, qi) => {
         const chosen = state.answers[qi];
-        const choices = item.choices.map((c, ci) => {
+        const choices = order[qi].map((ci) => {
+          const c = item.choices[ci];
           let cls = "choice";
           if (state.submitted) {
             if (ci === item.answer) cls += " correct";
