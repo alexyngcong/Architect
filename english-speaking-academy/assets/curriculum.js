@@ -18,19 +18,20 @@ const SPEAK_CURRICULUM = {
      STUDY PLAN — a guided, week-by-week path from basic to advanced.
      ====================================================================== */
   studyPlan: {
-    title: "10-Week Speaking Plan (Basic → Advanced)",
-    intro: "Do a little every day. Aim for ~20 minutes: read a short lesson, say every example out loud (tap 🔊 first, then copy it), pass the quiz, and finish each week in the Speaking Lab. By week 10 you'll handle interviews, exams and public speaking with a confident British tone.",
+    title: "11-Week Speaking Plan (Basic → Advanced)",
+    intro: "Do a little every day. Aim for ~20 minutes: read a short lesson, say every example out loud (tap 🔊 first, then copy it), pass the quiz, and finish each week in the Speaking Lab. You'll start with the everyday words and the classic mix-ups (their/there/they're), then build all the way up — by week 11 you'll handle interviews, exams and public speaking with a confident British tone.",
     days: [
-      { day: 1,  focus: "Get started: sounds, greetings & introducing yourself", lessons: ["f1", "f2", "f3"] },
-      { day: 2,  focus: "Everyday basics + start British pronunciation",          lessons: ["f4", "p1", "p2"] },
-      { day: 3,  focus: "British sounds: vowels, consonants & the silent R",       lessons: ["p3", "p4"] },
-      { day: 4,  focus: "Tone & music of English: stress and rhythm",              lessons: ["t1", "t2"] },
-      { day: 5,  focus: "Intonation, connected speech & sounding natural",         lessons: ["t3", "t4", "t5"] },
-      { day: 6,  focus: "Everyday British conversation & small talk",              lessons: ["c1", "c2", "c3"] },
-      { day: 7,  focus: "On the phone + grammar you actually speak",               lessons: ["c4", "g1", "g2"] },
-      { day: 8,  focus: "Questions, conditionals & linking your ideas",            lessons: ["g3", "g4", "x1"] },
-      { day: 9,  focus: "Fluency tools, idioms & telling a good story",            lessons: ["x2", "x3", "x4"] },
-      { day: 10, focus: "Exams & the working world: IELTS, interviews, presenting", lessons: ["i1", "i2", "j1", "s1"] }
+      { day: 1,  focus: "Get started: sounds, greetings & your first everyday words", lessons: ["f1", "f2", "f3", "v1"] },
+      { day: 2,  focus: "Everyday basics + the famous their/there/they're",          lessons: ["f4", "w1", "w2"] },
+      { day: 3,  focus: "More word mix-ups + describing things",                     lessons: ["w3", "w4", "v2"] },
+      { day: 4,  focus: "Start British pronunciation: vowels & the long /ɑː/",       lessons: ["p1", "p2", "p3"] },
+      { day: 5,  focus: "British sounds & confusing meaning twins",                  lessons: ["p4", "w5", "w6"] },
+      { day: 6,  focus: "Tone & music of English + words that go together",          lessons: ["t1", "t2", "v3"] },
+      { day: 7,  focus: "Intonation, connected speech & phrasal verbs",              lessons: ["t3", "t4", "t5", "v4"] },
+      { day: 8,  focus: "Everyday British conversation & small talk",                lessons: ["c1", "c2", "c3", "c4"] },
+      { day: 9,  focus: "Grammar you speak + precise, advanced vocabulary",          lessons: ["g1", "g2", "g3", "g4", "v5"] },
+      { day: 10, focus: "Fluency, idioms & storytelling",                            lessons: ["x1", "x2", "x3", "x4"] },
+      { day: 11, focus: "Exams & the working world: IELTS, interviews, presenting",  lessons: ["i1", "i2", "j1", "s1"] }
     ]
   },
 
@@ -372,6 +373,455 @@ const SPEAK_CURRICULUM = {
             { q: "9:45 in the British style is…", choices: ["nine forty-five only", "quarter to ten", "three quarters nine", "ten to nine"], answer: 1 },
             { q: "Which makes a request politest?", choices: ["Give me water.", "Water.", "Could I have some water, please?", "I want water now."], answer: 2 },
             { q: "In Britain, saying 'sorry' to a stranger usually means…", choices: ["You did something terrible", "Excuse me / a polite softener", "You're sad", "Goodbye"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ----- 1b. CONFUSING WORDS & CORRECT USAGE ----------------------------- */
+    {
+      id: "words", icon: "🧩", color: "#6366f1",
+      title: "Confusing Words & Correct Usage",
+      blurb: "The words everyone mixes up — their/there/they're, your/you're, its/it's, to/too/two and many more. Learn the meaning of each and exactly when to use it.",
+      lessons: [
+        {
+          id: "w1", level: "Basic", minutes: 9,
+          title: "there · their · they're (the famous three)",
+          content: `
+            <p>These three sound <b>exactly the same</b> when spoken, but they mean completely different things. Getting them right is one of the clearest signs of a careful English user. Let's make it simple.</p>
+            <h3>1. <span style="color:#6366f1">there</span> — a place, or "it exists"</h3>
+            <p>Think of the word <b>here</b> hiding inside <b>t-here</b>. It points to a place, or starts a sentence about something existing.</p>
+            <ul>
+              <li><button class="say" data-say="The cafe is over there, next to the bank.">🔊</button> "The cafe is over <b>there</b>, next to the bank." (a place)</li>
+              <li><button class="say" data-say="There is a problem with my order.">🔊</button> "<b>There</b> is a problem with my order." (it exists)</li>
+            </ul>
+            <h3>2. <span style="color:#6366f1">their</span> — belonging to them</h3>
+            <p>It shows possession (like <i>my, your, our</i>). Tip: it has the word <b>heir</b> inside (an heir owns things).</p>
+            <ul>
+              <li><button class="say" data-say="The students forgot their books.">🔊</button> "The students forgot <b>their</b> books." (the books belong to them)</li>
+              <li><button class="say" data-say="My neighbours painted their front door blue.">🔊</button> "My neighbours painted <b>their</b> front door blue."</li>
+            </ul>
+            <h3>3. <span style="color:#6366f1">they're</span> — short for "they are"</h3>
+            <p>The apostrophe means letters are missing. If you can replace it with <b>"they are"</b>, this is the one.</p>
+            <ul>
+              <li><button class="say" data-say="They're going to be late.">🔊</button> "<b>They're</b> going to be late." (= they are going)</li>
+              <li><button class="say" data-say="I like them because they're so friendly.">🔊</button> "I like them because <b>they're</b> so friendly." (= they are)</li>
+            </ul>
+            <h3>The quick test</h3>
+            <blockquote>Try saying <b>"they are"</b> in the sentence. If it fits → <b>they're</b>. If not, ask: is it a <b>place / exists</b> (there) or does something <b>belong to them</b> (their)?</blockquote>
+            <h3>Say all three correctly</h3>
+            <div class="speakcheck" data-target="They're putting their bags over there."></div>`,
+          tips: [
+            "they're = they are. Always. If 'they are' doesn't fit, it's not this one.",
+            "there has 'here' in it — both are about place.",
+            "their = belonging to them (their car, their idea, their fault)."
+          ],
+          practice: "Say this sentence aloud three times and notice how all three sound identical but mean different things: <button class=\"say\" data-say=\"They're sure their keys are over there.\">🔊 Listen</button> “They're sure their keys are over there.”",
+          quiz: [
+            { q: "Choose the correct sentence:", choices: ["Their going to the park.", "They're going to the park.", "There going to the park.", "Theyre going to the park."], answer: 1 },
+            { q: "“___ house is the green one.” (belongs to them)", choices: ["There", "They're", "Their", "Theyr"], answer: 2 },
+            { q: "“Is ___ any milk left?” (it exists)", choices: ["their", "they're", "there", "thair"], answer: 2 },
+            { q: "Which is the quick test for 'they're'?", choices: ["Does it name a place?", "Can you replace it with 'they are'?", "Does it own something?", "Is it plural?"], answer: 1 }
+          ]
+        },
+        {
+          id: "w2", level: "Basic", minutes: 8,
+          title: "your · you're  and  its · it's",
+          content: `
+            <p>Two more pairs that trip up even native speakers. The rule is the same each time: <b>the apostrophe means two words squashed together.</b></p>
+            <h3>your vs you're</h3>
+            <ul>
+              <li><b>your</b> = belonging to you. <button class="say" data-say="Is this your coat?">🔊</button> "Is this <b>your</b> coat?"</li>
+              <li><b>you're</b> = you are. <button class="say" data-say="You're very kind.">🔊</button> "<b>You're</b> very kind." (= you are very kind)</li>
+            </ul>
+            <p><b>Test:</b> say "you are". Fits? Use <b>you're</b>. Doesn't fit? Use <b>your</b>.</p>
+            <div class="ex">"<b>You're</b> going to love <b>your</b> new job." <button class="say" data-say="You're going to love your new job.">🔊</button></div>
+            <h3>its vs it's</h3>
+            <p>This one feels backwards, so learn it carefully:</p>
+            <ul>
+              <li><b>it's</b> = it is / it has. <button class="say" data-say="It's raining again.">🔊</button> "<b>It's</b> raining." (= it is raining)</li>
+              <li><b>its</b> = belonging to it. <button class="say" data-say="The dog wagged its tail.">🔊</button> "The dog wagged <b>its</b> tail." (the tail belongs to it)</li>
+            </ul>
+            <blockquote>Remember: <b>it's</b> ALWAYS means "it is" or "it has". If you can't say "it is", drop the apostrophe → <b>its</b>.</blockquote>
+            <h3>Your turn</h3>
+            <div class="speakcheck" data-target="You're sure it's going to rain, so bring your umbrella."></div>`,
+          tips: [
+            "Apostrophe = missing letters. you're = you (a)re. it's = it (i)s.",
+            "No apostrophe for possession here: your, its (like his, hers — none of those have apostrophes).",
+            "When unsure, say the full words 'you are' / 'it is' in your head."
+          ],
+          practice: "Read aloud, choosing in your head why each word is right: <button class=\"say\" data-say=\"You're right that your phone is great, but its battery is weak and it's getting old.\">🔊 Listen</button> “You're right that your phone is great, but its battery is weak and it's getting old.”",
+          quiz: [
+            { q: "“___ welcome to stay for dinner.”", choices: ["Your", "You're", "Yor", "Youre"], answer: 1 },
+            { q: "“The company changed ___ logo.” (belongs to it)", choices: ["it's", "its", "its'", "it is"], answer: 1 },
+            { q: "“___ been a long day.” (= it has)", choices: ["Its", "It's", "Its'", "It"], answer: 1 },
+            { q: "Which never takes an apostrophe?", choices: ["it's meaning 'it is'", "you're meaning 'you are'", "its / your meaning belonging", "none of them"], answer: 2 }
+          ]
+        },
+        {
+          id: "w3", level: "Basic", minutes: 8,
+          title: "to · too · two  and  then · than",
+          content: `
+            <p>Tiny words, big difference. Once you see the pattern, you'll never mix them up.</p>
+            <h3>to · too · two</h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td><b>to</b></td><td>direction, or before a verb</td><td>I'm going <b>to</b> work. / I want <b>to</b> sleep.</td></tr>
+              <tr><td><b>too</b></td><td>also, or "more than enough"</td><td>I'm coming <b>too</b>. / It's <b>too</b> hot.</td></tr>
+              <tr><td><b>two</b></td><td>the number 2</td><td>I have <b>two</b> sisters.</td></tr>
+            </table>
+            <p><button class="say" data-say="I want to buy two coffees, and a cake too.">🔊</button> "I want <b>to</b> buy <b>two</b> coffees, and a cake <b>too</b>."</p>
+            <p><b>Tip:</b> <b>too</b> has an extra 'o' — think "too much", an extra o for extra meaning (also / excessively).</p>
+            <h3>then vs than</h3>
+            <ul>
+              <li><b>then</b> = time / next (it has an 'e' like <b>tim<u>e</u></b>... or like "and th<b>e</b>n"). <button class="say" data-say="We had dinner, then we watched a film.">🔊</button> "We had dinner, <b>then</b> we watched a film."</li>
+              <li><b>than</b> = comparison. <button class="say" data-say="She is taller than her brother.">🔊</button> "She is taller <b>than</b> her brother."</li>
+            </ul>
+            <blockquote>If you're <b>comparing</b> two things (bigger, better, more, less) → <b>than</b>. If it's about <b>time / order</b> → <b>then</b>.</blockquote>
+            <div class="speakcheck" data-target="It's too cold to go out, so first we'll eat, then we'll decide."></div>`,
+          tips: [
+            "too = also / excessively (the extra 'o' = extra).",
+            "two is the number — it has a 'w' like twin, twice, twelve.",
+            "than = comparison (bigger than); then = time (and then)."
+          ],
+          practice: "Say it aloud and explain to yourself why each is correct: <button class=\"say\" data-say=\"Two of us were too tired to talk, so we ate, then slept better than before.\">🔊 Listen</button> “Two of us were too tired to talk, so we ate, then slept better than before.”",
+          quiz: [
+            { q: "“This bag is ___ heavy to lift.”", choices: ["to", "two", "too", "tow"], answer: 2 },
+            { q: "“I'd love ___ join you.”", choices: ["to", "too", "two", "tu"], answer: 0 },
+            { q: "“He's older ___ me.”", choices: ["then", "than", "thane", "thn"], answer: 1 },
+            { q: "“Finish your work, ___ relax.”", choices: ["than", "then", "thn", "thane"], answer: 1 }
+          ]
+        },
+        {
+          id: "w4", level: "Intermediate", minutes: 10,
+          title: "More sound-alikes: where/wear/we're, here/hear, buy/by/bye & friends",
+          content: `
+            <p>English is full of <b>homophones</b> — words that sound the same but are spelled and used differently. Here are the most useful ones to master for clear speaking and writing.</p>
+            <h3>where · wear · we're</h3>
+            <ul>
+              <li><b>where</b> = which place? <button class="say" data-say="Where are you going?">🔊</button> "<b>Where</b> are you going?"</li>
+              <li><b>wear</b> = to have clothes on. <button class="say" data-say="What will you wear tonight?">🔊</button> "What will you <b>wear</b> tonight?"</li>
+              <li><b>we're</b> = we are. <button class="say" data-say="We're almost ready.">🔊</button> "<b>We're</b> almost ready." (= we are)</li>
+            </ul>
+            <h3>here · hear</h3>
+            <ul>
+              <li><b>here</b> = this place (opposite of there). <button class="say" data-say="Come and sit here.">🔊</button> "Come and sit <b>here</b>."</li>
+              <li><b>hear</b> = to listen with your ears (it has <b>ear</b> in it!). <button class="say" data-say="I can't hear you.">🔊</button> "I can't <b>hear</b> you."</li>
+            </ul>
+            <h3>A handy homophone table</h3>
+            <table>
+              <tr><th>Sounds like</th><th>Words & meanings</th></tr>
+              <tr><td>buy / by / bye</td><td>buy (purchase) · by (next to / via) · bye (goodbye)</td></tr>
+              <tr><td>new / knew</td><td>new (not old) · knew (past of know)</td></tr>
+              <tr><td>no / know</td><td>no (opposite of yes) · know (have knowledge)</td></tr>
+              <tr><td>write / right</td><td>write (with a pen) · right (correct / direction)</td></tr>
+              <tr><td>flour / flower</td><td>flour (for baking) · flower (a plant)</td></tr>
+              <tr><td>break / brake</td><td>break (smash / a rest) · brake (to stop a car)</td></tr>
+            </table>
+            <p><button class="say" data-say="I knew you would buy a new flower by the shop on the right.">🔊</button> "I <b>knew</b> you would <b>buy</b> a <b>new flower by</b> the shop on the <b>right</b>."</p>
+            <div class="speakcheck" data-target="We're not sure where to wear these, but we can hear the music from here."></div>`,
+          tips: [
+            "hear has 'ear' in it — you hear with your ears.",
+            "we're = we are; wear = clothing; where = place.",
+            "Read tricky sentences slowly and picture the meaning of each word."
+          ],
+          practice: "Make one sentence using buy, by AND bye, then say it aloud — e.g. “Bye! I'll buy the bread on my way by the shop.”",
+          quiz: [
+            { q: "“I can't ___ the TV — turn it up.”", choices: ["here", "hear", "heir", "hair"], answer: 1 },
+            { q: "“___ meeting them at noon.” (= we are)", choices: ["Where", "Wear", "We're", "Were"], answer: 2 },
+            { q: "“She ___ the answer straight away.” (past of know)", choices: ["new", "knew", "gnu", "new"], answer: 1 },
+            { q: "Which means 'to stop a car'?", choices: ["break", "brake", "bray", "brace"], answer: 1 }
+          ]
+        },
+        {
+          id: "w5", level: "Intermediate", minutes: 11,
+          title: "Meaning twins: affect/effect, accept/except, advice/advise, practise/practice",
+          content: `
+            <p>These pairs aren't always homophones, but their meanings get mixed up constantly. Learn the difference and you'll sound noticeably more precise.</p>
+            <h3>affect vs effect</h3>
+            <p><b>affect</b> is usually a <b>verb</b> (an action); <b>effect</b> is usually a <b>noun</b> (a result). Memory trick: <b>A</b>ffect = <b>A</b>ction, <b>E</b>ffect = <b>E</b>nd result.</p>
+            <ul>
+              <li><button class="say" data-say="The weather affects my mood.">🔊</button> "The weather <b>affects</b> my mood." (verb)</li>
+              <li><button class="say" data-say="The weather has an effect on my mood.">🔊</button> "The weather has an <b>effect</b> on my mood." (noun)</li>
+            </ul>
+            <h3>accept vs except</h3>
+            <ul>
+              <li><b>accept</b> = to receive / say yes. <button class="say" data-say="I accept your offer.">🔊</button> "I <b>accept</b> your offer."</li>
+              <li><b>except</b> = apart from. <button class="say" data-say="Everyone came except Tom.">🔊</button> "Everyone came <b>except</b> Tom."</li>
+            </ul>
+            <h3>advice vs advise</h3>
+            <ul>
+              <li><b>advice</b> (noun, sounds like "ice") = the guidance itself. <button class="say" data-say="Can I give you some advice?">🔊</button> "Can I give you some <b>advice</b>?"</li>
+              <li><b>advise</b> (verb, sounds like "ize") = the action of giving it. <button class="say" data-say="I advise you to rest.">🔊</button> "I <b>advise</b> you to rest."</li>
+            </ul>
+            <h3>practise vs practice (British English)</h3>
+            <p>In British English, <b>practise</b> is the <b>verb</b> and <b>practice</b> is the <b>noun</b> (like advise/advice).</p>
+            <ul>
+              <li><button class="say" data-say="I practise speaking every day.">🔊</button> "I <b>practise</b> speaking every day." (verb)</li>
+              <li><button class="say" data-say="Daily practice makes a big difference.">🔊</button> "Daily <b>practice</b> makes a big difference." (noun)</li>
+            </ul>
+            <blockquote>The "-ice" version is the thing (noun); the "-ise" version is the doing (verb). Same pattern for advice/advise and practice/practise.</blockquote>
+            <div class="speakcheck" data-target="My advice is to accept the offer, because it will affect your future."></div>`,
+          tips: [
+            "Affect = Action (verb); Effect = End result (noun).",
+            "except = excluding (think 'exit' — it leaves something out).",
+            "-ice = noun (advice, practice); -ise = verb (advise, practise)."
+          ],
+          practice: "Say two sentences aloud: one using 'affect' as a verb, one using 'effect' as a noun — e.g. “Noise affects my sleep; the effect is tiredness.”",
+          quiz: [
+            { q: "“How will this decision ___ the team?”", choices: ["effect", "affect", "effekt", "afect"], answer: 1 },
+            { q: "“I'll eat anything ___ mushrooms.”", choices: ["accept", "except", "exept", "acept"], answer: 1 },
+            { q: "“Let me ___ you to be careful.” (the action)", choices: ["advice", "advise", "advize", "advis"], answer: 1 },
+            { q: "British English: “I ___ the piano daily.” (verb)", choices: ["practice", "practise", "practize", "practis"], answer: 1 }
+          ]
+        },
+        {
+          id: "w6", level: "Advanced", minutes: 11,
+          title: "Advanced mix-ups: lose/loose, who's/whose, fewer/less & more",
+          content: `
+            <p>Master these and you'll write and speak with the precision of an advanced user. These are the ones that even confident speakers slip on.</p>
+            <h3>lose vs loose</h3>
+            <ul>
+              <li><b>lose</b> (rhymes with "news") = to not win, or misplace. <button class="say" data-say="Don't lose your ticket.">🔊</button> "Don't <b>lose</b> your ticket."</li>
+              <li><b>loose</b> (rhymes with "goose") = not tight. <button class="say" data-say="This shirt is too loose.">🔊</button> "This shirt is too <b>loose</b>."</li>
+            </ul>
+            <h3>who's vs whose</h3>
+            <ul>
+              <li><b>who's</b> = who is / who has. <button class="say" data-say="Who's coming tonight?">🔊</button> "<b>Who's</b> coming tonight?" (= who is)</li>
+              <li><b>whose</b> = belonging to whom. <button class="say" data-say="Whose jacket is this?">🔊</button> "<b>Whose</b> jacket is this?"</li>
+            </ul>
+            <h3>fewer vs less</h3>
+            <p>Use <b>fewer</b> for things you can <b>count</b>; use <b>less</b> for things you <b>can't count</b> (amounts).</p>
+            <ul>
+              <li><button class="say" data-say="Fewer cars, less traffic.">🔊</button> "<b>Fewer</b> cars, <b>less</b> traffic." (cars = countable; traffic = uncountable)</li>
+              <li>fewer mistakes, fewer people · less time, less money, less water</li>
+            </ul>
+            <h3>A few more advanced pairs</h3>
+            <table>
+              <tr><th>Pair</th><th>Quick rule</th></tr>
+              <tr><td>complement / compliment</td><td>complement = completes/goes well with · compliment = praise</td></tr>
+              <tr><td>stationary / stationery</td><td>stationary = not moving · stationery = paper & pens (e for envelope)</td></tr>
+              <tr><td>principal / principle</td><td>principal = main / head of school · principle = a rule or belief</td></tr>
+              <tr><td>i.e. / e.g.</td><td>i.e. = "that is" (clarify) · e.g. = "for example" (give an example)</td></tr>
+            </table>
+            <p><button class="say" data-say="Whose idea was it to wear loose clothes so we wouldn't lose the race?">🔊</button> "<b>Whose</b> idea was it to wear <b>loose</b> clothes so we wouldn't <b>lose</b> the race?"</p>
+            <div class="speakcheck" data-target="Who's the person who made fewer mistakes and lost less time?"></div>`,
+          tips: [
+            "lose = misplace (one 'o'); loose = not tight (two 'o's, like goose).",
+            "who's = who is; whose = belonging (no apostrophe for possession, like its/your).",
+            "Countable → fewer; uncountable → less (fewer items, less time)."
+          ],
+          practice: "Say aloud, explaining each choice: <button class=\"say\" data-say=\"Whose loose tooth is it? Try not to lose it, and eat fewer sweets and less sugar.\">🔊 Listen</button> “Whose loose tooth is it? Try not to lose it, and eat fewer sweets and less sugar.”",
+          quiz: [
+            { q: "“I might ___ my keys.” (misplace)", choices: ["loose", "lose", "loos", "luse"], answer: 1 },
+            { q: "“___ turn is it?” (belonging to whom)", choices: ["Who's", "Whose", "Whos", "Whose'"], answer: 1 },
+            { q: "“There were ___ people than last year.” (countable)", choices: ["less", "fewer", "lesser", "few"], answer: 1 },
+            { q: "“e.g.” means…", choices: ["that is", "for example", "and so on", "in other words"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ----- 1c. VOCABULARY BUILDER & WORD POWER ----------------------------- */
+    {
+      id: "vocab", icon: "📚", color: "#f59e0b",
+      title: "Vocabulary Builder & Word Power",
+      blurb: "From your first everyday words to rich, precise vocabulary. Learn the words AND exactly how and when to use them.",
+      lessons: [
+        {
+          id: "v1", level: "Basic", minutes: 10,
+          title: "Your everyday core words (and how to use them)",
+          content: `
+            <p>You don't need thousands of words to start speaking — you need the <b>right few hundred</b>, used confidently. These are the everyday words that appear in almost every conversation.</p>
+            <h3>The most useful verbs (doing words)</h3>
+            <p>Master these and you can describe most daily actions:</p>
+            <div class="ex">be, have, do, go, get, make, take, come, see, want, need, like, know, think, say, give, find, use, work, help, feel <button class="say" data-say="be, have, do, go, get, make, take, come, see, want">🔊</button></div>
+            <ul>
+              <li><button class="say" data-say="I need to go to work.">🔊</button> "I <b>need</b> to <b>go</b> to <b>work</b>."</li>
+              <li><button class="say" data-say="Can you help me, please?">🔊</button> "Can you <b>help</b> me, please?"</li>
+              <li><button class="say" data-say="I'd like to get a coffee.">🔊</button> "I'd <b>like</b> to <b>get</b> a coffee."</li>
+            </ul>
+            <h3>Everyday nouns (things)</h3>
+            <div class="ex">time, day, people, way, man, woman, child, home, work, school, food, water, money, house, friend, family, phone, car, job <button class="say" data-say="time, day, people, home, work, food, money, friend, family">🔊</button></div>
+            <h3>Small words that connect everything</h3>
+            <p>These "glue" words are tiny but used constantly: <b>and, but, or, so, because, with, for, in, on, at, to, from</b>.</p>
+            <div class="ex">"I stayed home <b>because</b> I was tired, <b>so</b> I rested <b>and</b> watched TV." <button class="say" data-say="I stayed home because I was tired, so I rested and watched TV.">🔊</button></div>
+            <h3>Build a sentence right now</h3>
+            <p>Pattern: <b>I + verb + thing</b>. Try: "I want water." → "I need help." → "I like my job."</p>
+            <div class="speakcheck" data-target="I want to get some food because I am hungry."></div>`,
+          tips: [
+            "Learn words in short sentences, never alone — your brain remembers them in use.",
+            "A few hundred common words cover most everyday conversation. Quality over quantity.",
+            "Say new words out loud the moment you meet them."
+          ],
+          practice: "Pick five verbs from the list and make a tiny sentence with each (e.g. “I take the bus.”). Say each one aloud twice.",
+          quiz: [
+            { q: "What's the best way to learn a new word?", choices: ["Memorise it alone", "Learn it inside a short sentence", "Only read it silently", "Translate it once"], answer: 1 },
+            { q: "Which group are 'connecting' words?", choices: ["time, day, food", "and, but, because, so", "go, get, make", "house, car, job"], answer: 1 },
+            { q: "A simple sentence pattern to start with is…", choices: ["thing + thing + thing", "I + verb + thing", "verb only", "no pattern"], answer: 1 }
+          ]
+        },
+        {
+          id: "v2", level: "Basic", minutes: 10,
+          title: "Describing things: adjectives & the order they go in",
+          content: `
+            <p>Adjectives are describing words — they bring your speech to life. Instead of "a car", you can say "a lovely old red car". Let's build that skill.</p>
+            <h3>Everyday adjectives by type</h3>
+            <table>
+              <tr><th>Type</th><th>Examples</th></tr>
+              <tr><td>Opinion</td><td>lovely, nice, great, terrible, beautiful</td></tr>
+              <tr><td>Size</td><td>big, small, tall, tiny, huge</td></tr>
+              <tr><td>Age</td><td>old, new, young, ancient</td></tr>
+              <tr><td>Colour</td><td>red, blue, green, dark, bright</td></tr>
+            </table>
+            <h3>The natural order of adjectives</h3>
+            <p>English has a "secret" order native speakers feel without thinking: <b>Opinion → Size → Age → Colour → Material → Noun</b>.</p>
+            <div class="ex">"a <b>lovely little old brown leather</b> bag" <button class="say" data-say="a lovely little old brown leather bag">🔊</button></div>
+            <p>"a red big ball" sounds wrong; "a <b>big red</b> ball" sounds right. <button class="say" data-say="a big red ball">🔊</button></p>
+            <h3>Make descriptions stronger</h3>
+            <p>Add small "intensifiers": <b>very, really, quite, absolutely</b>. <button class="say" data-say="It was a really delicious meal.">🔊</button> "It was a <b>really</b> delicious meal."</p>
+            <p>Tip: with strong adjectives (delicious, enormous, freezing) use <b>absolutely</b>, not "very": <button class="say" data-say="It was absolutely delicious.">🔊</button> "absolutely delicious".</p>
+            <h3>Describe something near you</h3>
+            <div class="speakcheck" data-target="It's a beautiful small wooden table." data-hint="Try describing a real object around you."></div>`,
+          tips: [
+            "Order: Opinion-Size-Age-Colour-Material (a nice big old blue cotton shirt).",
+            "Use 'absolutely' with strong adjectives, 'very' with normal ones.",
+            "One or two good adjectives is plenty — don't overload."
+          ],
+          practice: "Look at three objects around you and describe each in one sentence using two adjectives in the right order. Say them aloud.",
+          quiz: [
+            { q: "Which order sounds natural?", choices: ["a red big book", "a big red book", "a book red big", "big a red book"], answer: 1 },
+            { q: "The usual adjective order is…", choices: ["Colour-Size-Opinion", "Opinion-Size-Age-Colour", "Age-Colour-Opinion", "random"], answer: 1 },
+            { q: "Which fits 'absolutely'?", choices: ["absolutely nice", "absolutely big", "absolutely freezing", "absolutely okay"], answer: 2 }
+          ]
+        },
+        {
+          id: "v3", level: "Intermediate", minutes: 11,
+          title: "Words that go together: collocations & word families",
+          content: `
+            <p>Fluent English isn't single words — it's <b>words that naturally go together</b>. These pairings are called <b>collocations</b>. Using them makes you sound natural; breaking them sounds "off", even if every word is correct.</p>
+            <h3>We say… not…</h3>
+            <table>
+              <tr><th>Natural ✅</th><th>Sounds wrong ❌</th></tr>
+              <tr><td>make a mistake</td><td>do a mistake</td></tr>
+              <tr><td>do your homework</td><td>make your homework</td></tr>
+              <tr><td>take a photo</td><td>make a photo</td></tr>
+              <tr><td>heavy rain</td><td>strong rain</td></tr>
+              <tr><td>fast food</td><td>quick food</td></tr>
+            </table>
+            <p><button class="say" data-say="I made a mistake, so I had to do the work again.">🔊</button> "I <b>made a mistake</b>, so I had to <b>do the work</b> again."</p>
+            <h3>Common verb partners: make vs do</h3>
+            <ul>
+              <li><b>make</b>: make a decision, make a plan, make dinner, make friends, make money</li>
+              <li><b>do</b>: do business, do the washing, do exercise, do your best, do a favour</li>
+            </ul>
+            <h3>Word families — one root, many forms</h3>
+            <p>Learn one word and you often get four. This multiplies your vocabulary fast:</p>
+            <table>
+              <tr><th>Noun</th><th>Verb</th><th>Adjective</th><th>Adverb</th></tr>
+              <tr><td>success</td><td>succeed</td><td>successful</td><td>successfully</td></tr>
+              <tr><td>decision</td><td>decide</td><td>decisive</td><td>decisively</td></tr>
+              <tr><td>care</td><td>care</td><td>careful</td><td>carefully</td></tr>
+            </table>
+            <p><button class="say" data-say="She made a careful decision and handled it successfully.">🔊</button> "She made a <b>careful decision</b> and handled it <b>successfully</b>."</p>
+            <div class="speakcheck" data-target="I need to make a plan and do my best to succeed."></div>`,
+          tips: [
+            "When you learn a noun, ask: what's the verb, adjective and adverb?",
+            "Note the verb that 'partners' a noun (make/do/take/have a…).",
+            "Collect collocations from things you read — they're gold for sounding natural."
+          ],
+          practice: "Say five 'make/do' collocations aloud from the lesson, then make one full sentence using two of them.",
+          quiz: [
+            { q: "Which is the natural collocation?", choices: ["do a mistake", "make a mistake", "have a mistake", "take a mistake"], answer: 1 },
+            { q: "We usually say…", choices: ["strong rain", "heavy rain", "big rain", "hard rain"], answer: 1 },
+            { q: "The adjective from 'success' is…", choices: ["succeed", "successfully", "successful", "succession"], answer: 2 },
+            { q: "Which pairs correctly?", choices: ["make the washing", "do a decision", "make a decision", "do dinner"], answer: 2 }
+          ]
+        },
+        {
+          id: "v4", level: "Intermediate", minutes: 11,
+          title: "Phrasal verbs you'll actually use",
+          content: `
+            <p><b>Phrasal verbs</b> are a verb + a small word (up, out, on, off, in) that together get a new meaning. They're everywhere in spoken English — using them makes you sound natural and relaxed.</p>
+            <h3>Everyday phrasal verbs</h3>
+            <table>
+              <tr><th>Phrasal verb</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td>get up</td><td>leave bed</td><td>I <b>get up</b> at seven.</td></tr>
+              <tr><td>turn on / off</td><td>start/stop a device</td><td>Please <b>turn off</b> the lights.</td></tr>
+              <tr><td>look for</td><td>search</td><td>I'm <b>looking for</b> my keys.</td></tr>
+              <tr><td>give up</td><td>quit / stop trying</td><td>Don't <b>give up</b>!</td></tr>
+              <tr><td>find out</td><td>discover</td><td>I'll <b>find out</b> the time.</td></tr>
+              <tr><td>get on with</td><td>have a good relationship</td><td>I <b>get on with</b> my colleagues.</td></tr>
+            </table>
+            <p><button class="say" data-say="I get up early, turn on the radio, and look for my shoes.">🔊</button> "I <b>get up</b> early, <b>turn on</b> the radio, and <b>look for</b> my shoes."</p>
+            <h3>Same verb, different meanings</h3>
+            <p>One phrasal verb can shift meaning with context — let context guide you:</p>
+            <ul>
+              <li><b>take off</b> — a plane leaves the ground / remove clothing. <button class="say" data-say="The plane took off. Please take off your coat.">🔊</button></li>
+              <li><b>pick up</b> — lift something / collect someone / learn casually. <button class="say" data-say="I'll pick you up at eight.">🔊</button></li>
+            </ul>
+            <blockquote>Don't try to learn 500 at once. Learn a handful, use them daily, and add more slowly. Real use makes them stick.</blockquote>
+            <div class="speakcheck" data-target="Don't give up — I'll find out what went wrong."></div>`,
+          tips: [
+            "Learn phrasal verbs in a full example sentence, not as a list.",
+            "Many have a one-word formal twin (find out = discover) — handy for exams.",
+            "Start with 10–15 everyday ones and actually use them."
+          ],
+          practice: "Choose three phrasal verbs from the table and describe your morning routine aloud using each one.",
+          quiz: [
+            { q: "“Please ___ the TV, I'm trying to sleep.” (stop the device)", choices: ["turn on", "turn off", "look for", "get up"], answer: 1 },
+            { q: "'Find out' means…", choices: ["lose", "discover", "exit", "search forever"], answer: 1 },
+            { q: "'Get on with someone' means…", choices: ["argue", "ignore them", "have a good relationship", "leave"], answer: 2 },
+            { q: "Best way to learn phrasal verbs?", choices: ["Memorise 200 in a day", "In example sentences, a few at a time", "Never use them", "Only read them"], answer: 1 }
+          ]
+        },
+        {
+          id: "v5", level: "Advanced", minutes: 12,
+          title: "Precise word choice, synonyms & register (formal vs informal)",
+          content: `
+            <p>At advanced level, it's not about <i>more</i> words — it's about the <b>exact right word</b> for the meaning and the situation. This is what makes a speaker sound truly fluent and educated.</p>
+            <h3>Choosing the precise word</h3>
+            <p>"Good", "nice" and "very" are fine, but precise words say more in less space:</p>
+            <table>
+              <tr><th>Instead of…</th><th>Try…</th></tr>
+              <tr><td>very good</td><td>excellent, outstanding, superb</td></tr>
+              <tr><td>very bad</td><td>terrible, awful, dreadful</td></tr>
+              <tr><td>very big</td><td>enormous, huge, vast</td></tr>
+              <tr><td>very happy</td><td>delighted, thrilled, overjoyed</td></tr>
+              <tr><td>very tired</td><td>exhausted, worn out</td></tr>
+            </table>
+            <p><button class="say" data-say="The view was absolutely stunning, and I was thrilled.">🔊</button> "The view was absolutely <b>stunning</b>, and I was <b>thrilled</b>."</p>
+            <h3>Synonyms aren't always identical</h3>
+            <p>Words can share a meaning but carry a different feeling (connotation). <b>slim</b> (positive) vs <b>skinny</b> (negative) vs <b>thin</b> (neutral). Choose the shade you mean.</p>
+            <h3>Register: match your words to the situation</h3>
+            <table>
+              <tr><th>Informal (friends)</th><th>Formal (work / exam)</th></tr>
+              <tr><td>get</td><td>receive / obtain</td></tr>
+              <tr><td>kids</td><td>children</td></tr>
+              <tr><td>a lot of</td><td>a great deal of / numerous</td></tr>
+              <tr><td>find out</td><td>discover / determine</td></tr>
+              <tr><td>buy</td><td>purchase</td></tr>
+            </table>
+            <p>Informal: <button class="say" data-say="I need to find out more about the job.">🔊</button> "I need to <b>find out</b> more about the job."<br>
+            Formal: <button class="say" data-say="I would like to obtain further information about the position.">🔊</button> "I would like to <b>obtain</b> further information about the <b>position</b>."</p>
+            <h3>How to keep growing your vocabulary for life</h3>
+            <ul>
+              <li>Read widely and note new words <b>in context</b>.</li>
+              <li>Keep a small list of words + one example sentence each; review and <b>use them in speech</b>.</li>
+              <li>Learn one strong synonym for each "tired" word (good, bad, big, nice).</li>
+            </ul>
+            <div class="speakcheck" data-target="I was delighted with the outstanding service and the enormous portions."></div>`,
+          tips: [
+            "Precise beats fancy — pick the word that means exactly what you mean.",
+            "Mind connotation: slim vs skinny vs thin all differ in feeling.",
+            "Match register to the moment: 'get' with friends, 'obtain' in formal writing."
+          ],
+          practice: "Take a dull sentence (“It was a very good, very big meal and I was very happy”) and say a vivid version aloud using precise words (e.g. “It was a superb, enormous meal and I was delighted”).",
+          quiz: [
+            { q: "A precise replacement for 'very tired' is…", choices: ["sleepy-ish", "exhausted", "a bit tired", "very very tired"], answer: 1 },
+            { q: "Which is the most formal?", choices: ["get", "grab", "obtain", "pick up"], answer: 2 },
+            { q: "'slim', 'skinny' and 'thin' show that synonyms can differ in…", choices: ["spelling only", "feeling/connotation", "number of letters", "nothing"], answer: 1 },
+            { q: "Best lifelong vocabulary habit?", choices: ["Memorise the dictionary", "Note new words in context and use them", "Avoid new words", "Only learn long words"], answer: 1 }
           ]
         }
       ]
