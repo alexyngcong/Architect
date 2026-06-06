@@ -110,13 +110,19 @@
       <div class="sc-target">“${escapeHtml(target)}”</div>
       <div class="sc-hint">${escapeHtml(hint)}</div>
       <div class="sc-controls">
-        <button class="say" data-say="${escapeHtml(target)}">🔊 Listen</button>
+        <button class="say sc-listen">🔊 Listen</button>
+        <button class="say sc-slow">🐢 Slow</button>
         <button class="mic-btn">🎤 Speak &amp; check</button>
       </div>
       <div class="sc-out"></div>
-      ${speechRecognitionSupported ? "" : `<div class="unsupported">🎙️ Live mic scoring needs Chrome or Edge. You can still tap <b>Listen</b> and practise out loud — compare yourself to the model.</div>`}
+      ${speechRecognitionSupported ? "" : `<div class="unsupported">🎙️ Live mic scoring needs Chrome or Edge. You can still tap <b>Listen</b> / <b>Slow</b> and practise out loud — compare yourself to the model.</div>`}
     `;
-    el.querySelector(".say").onclick = (e) => speak(target, 0.92, e.currentTarget);
+    // Wire directly (and mark wired) so the generic enhancer never double-binds these.
+    const listenBtn = el.querySelector(".sc-listen");
+    const slowBtn = el.querySelector(".sc-slow");
+    listenBtn.dataset.wired = slowBtn.dataset.wired = "1";
+    listenBtn.onclick = (e) => speak(target, 0.92, e.currentTarget);
+    slowBtn.onclick = (e) => speak(target, 0.6, e.currentTarget);
     const micBtn = el.querySelector(".mic-btn");
     const out = el.querySelector(".sc-out");
     if (!speechRecognitionSupported) { micBtn.disabled = true; micBtn.style.opacity = .5; return; }
@@ -124,6 +130,7 @@
     let rec = null, listening = false;
     micBtn.onclick = () => {
       if (listening && rec) { rec.stop(); return; }
+      if (TTS) TTS.cancel();   // never let the mic pick up the model voice
       rec = new SR();
       rec.lang = "en-GB"; rec.interimResults = false; rec.maxAlternatives = 1;
       listening = true; micBtn.classList.add("listening"); micBtn.textContent = "● Listening… (tap to stop)";
@@ -576,15 +583,15 @@
           cleanup(); return;
         }
         if (!navigator.mediaDevices || !window.MediaRecorder) {
-          playback.innerHTML = `<div class="unsupported">Recording needs Chrome/Edge with microphone permission. You can still use the on-screen timer: tap “Hear the question”, then practise speaking aloud.</div>`;
-          // fall back to a plain timer
-          recordBtn.innerHTML = "▶️ Start timer";
+          playback.innerHTML = `<div class="unsupported">Recording isn't available in this browser. Use the on-screen timer instead: tap “Hear the question”, then practise speaking aloud against the clock.</div>`;
+          // fall back to a plain timer — and start it straight away on this click
           recordBtn.onclick = () => {
             if (tick) { clearInterval(tick); tick = null; recordBtn.innerHTML = "▶️ Start timer"; return; }
-            seconds = 0; timerEl.textContent = "0:00";
+            seconds = 0; timerEl.textContent = "0:00"; timerEl.classList.remove("warn");
             tick = setInterval(() => { seconds++; timerEl.textContent = fmt(seconds); if (p.speak && seconds >= p.speak) timerEl.classList.add("warn"); }, 1000);
             recordBtn.innerHTML = "⏹ Stop timer";
           };
+          recordBtn.onclick();
           return;
         }
         try {
@@ -647,7 +654,9 @@
 
     window.SUA._mtNext = () => { cleanup(); if (step < test.prompts.length - 1) { step++; drawPrompt(); } else { step = test.prompts.length; drawRubric(); } };
     window.SUA._mtPrev = () => { cleanup(); if (step > 0) { step--; drawPrompt(); } };
-    window.addEventListener("hashchange", cleanup, { once: true });
+    // On leaving the mock entirely: stop the mic AND free the recorded audio blobs.
+    function disposeAll() { cleanup(); recordings.forEach(r => { if (r && r.url) { try { URL.revokeObjectURL(r.url); } catch (e) {} } }); }
+    window.addEventListener("hashchange", disposeAll, { once: true });
 
     drawPrompt();
     window.scrollTo(0, 0);
@@ -699,6 +708,11 @@
 
       <div class="section-title">Module-by-module status</div>
       ${moduleStatus}
+
+      <div style="margin-top:26px;text-align:center">
+        <button class="btn ghost" onclick="SUA._resetProgress()" style="color:var(--bad)">↺ Reset all progress</button>
+        <div style="color:var(--ink-soft);font-size:12.5px;margin-top:6px">Clears every lesson, quiz, exam and your certificate on this device. This can't be undone.</div>
+      </div>
     `;
     window.scrollTo(0, 0);
   }
@@ -782,6 +796,13 @@
     completeLesson(mId, lId) { markDone(lId); celebrate(); toast("Lesson complete! Progress saved ✓"); setTimeout(() => go("module/" + mId), 700); },
     clearSearch() { searchInput.value = ""; go(""); },
     speak,
+    _resetProgress() {
+      if (!window.confirm("Reset ALL progress on this device? Lessons, quizzes, exams and your certificate will be cleared. This cannot be undone.")) return;
+      progress = { done: {}, quiz: {}, exam: {}, lab: {}, best: {}, name: progress.name || "" };
+      saveProgress(progress);
+      toast("Progress reset — fresh start! ✨");
+      go("");
+    },
     _setName(v) { progress.name = v; saveProgress(progress); const el = document.getElementById("certNameDisplay"); if (el) el.textContent = v || "Your Name"; },
     _pick() {}, _submitQuiz() {}, _retryQuiz() {},
     _examPick() {}, _examSubmit() {}, _examRetry() {},
