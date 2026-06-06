@@ -58,8 +58,11 @@ earn your **Certificate**.
 - **Speaking Phrasebook** — ready-made British phrases for every situation; tap any line to hear it.
 
 ### Also included
-- 🔊 **British model voice** on every example (text-to-speech).
-- 🎯 **"Speak & check" boxes** that listen to you and score how close you were (Chrome/Edge).
+- 🔊 **British model voice** on every example (text-to-speech), with a **🐢 Slow** button for rhythm practice.
+- 🎯 **"Speak & check" boxes** that listen to you and score how close you were, word by word (Chrome/Edge).
+- 🔴 **Record & compare** — record yourself, play it back, and A/B against the British model. Works in **all** modern browsers (Chrome, Edge, Safari, Firefox), so you can train your tone everywhere.
+- ⚙️ **Settings** — pick the **British voice** on your device and set a comfortable **speaking speed** (used everywhere).
+- 🔥 **Daily practice streak** to keep you coming back.
 - 🗓️ **10-Week Study Plan** — a guided, day-by-day path from basic to advanced.
 - 🏆 **Certificate of Completion** — unlocks when every lesson is done and every exam passed; print it or save as PDF.
 - 🔍 **Search** — jump to any lesson or phrase.
@@ -101,8 +104,14 @@ english-speaking-academy/
 ### Browser support for speaking features
 | Feature | Chrome | Edge | Safari | Firefox |
 |---|---|---|---|---|
-| Listen (text-to-speech) | ✅ | ✅ | ✅ | ✅ |
-| Speak & check (mic scoring) | ✅ | ✅ | ⚠️ partial | ❌ |
+| Listen / Slow (text-to-speech) | ✅ | ✅ | ✅ | ✅ |
+| Choose British voice & speed | ✅ | ✅ | ✅ | ✅ |
+| Speak & check (instant mic scoring) | ✅ | ✅ | ⚠️ partial | ❌ |
+| Record & compare yourself | ✅ | ✅ | ✅ | ✅ |
 | Record mock exams | ✅ | ✅ | ✅ | ✅ |
+
+> The number of British voices available depends on your device/OS. On Windows and
+> Android you can install an extra “English (United Kingdom)” voice in your system's
+> speech settings for the most authentic accent; the app will then offer it in **Settings**.
 
 Made with care so learning to **speak English with confidence** feels easy. 💜

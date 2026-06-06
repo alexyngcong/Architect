@@ -23,15 +23,28 @@
     try { localStorage.setItem(STORE_KEY, JSON.stringify(p)); } catch (e) {}
   }
   let progress = loadProgress();
-  // shape: { done:{lessonId}, quiz:{lessonId:pct}, exam:{moduleId:pct}, lab:{key:true}, best:{key:pct}, name }
+  // shape: { done, quiz, exam, lab, best, name, rate, voiceURI, streak, daysPracticed, lastDay }
   progress.done = progress.done || {};
   progress.quiz = progress.quiz || {};
   progress.exam = progress.exam || {};
   progress.lab  = progress.lab  || {};
   progress.best = progress.best || {};
+  progress.rate = progress.rate || 0.92;          // comfortable default speaking speed
+  progress.voiceURI = progress.voiceURI || null;  // chosen British voice (if any)
+
+  /* Daily practice streak — called whenever the learner completes something. */
+  function touchPractice() {
+    const today = new Date().toDateString();
+    if (progress.lastDay === today) return;
+    const yesterday = new Date(Date.now() - 86400000).toDateString();
+    progress.streak = (progress.lastDay === yesterday) ? (progress.streak || 0) + 1 : 1;
+    progress.daysPracticed = (progress.daysPracticed || 0) + 1;
+    progress.lastDay = today;
+    saveProgress(progress);
+  }
 
   function markDone(lessonId) {
-    if (!progress.done[lessonId]) { progress.done[lessonId] = true; saveProgress(progress); }
+    if (!progress.done[lessonId]) { progress.done[lessonId] = true; touchPractice(); saveProgress(progress); }
   }
   function setQuizScore(lessonId, pct) { progress.quiz[lessonId] = pct; saveProgress(progress); }
   function setBest(key, pct) { if (pct > (progress.best[key] || 0)) { progress.best[key] = pct; saveProgress(progress); } }
@@ -55,20 +68,25 @@
      SPEECH — text-to-speech (model pronunciation) + recognition (mic scoring)
      ========================================================================= */
   const TTS = window.speechSynthesis;
+  function englishVoices() {
+    const vs = (TTS && TTS.getVoices && TTS.getVoices()) || [];
+    return vs.filter(v => /^en/i.test(v.lang));
+  }
   function pickVoice() {
     if (!TTS) return null;
     const vs = TTS.getVoices() || [];
+    if (progress.voiceURI) { const saved = vs.find(v => v.voiceURI === progress.voiceURI); if (saved) return saved; }
     return vs.find(v => /en[-_]GB/i.test(v.lang)) || vs.find(v => /en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
   }
   if (TTS && typeof TTS.onvoiceschanged !== "undefined") { TTS.onvoiceschanged = pickVoice; }
 
   function speak(text, rate, btn) {
-    if (!TTS) { toast("🔇 Your browser can't read text aloud. Try Chrome or Edge."); return; }
+    if (!TTS) { toast("🔇 This browser can't read text aloud. Try Chrome, Edge or Safari."); return; }
     TTS.cancel();
     const u = new SpeechSynthesisUtterance(text);
     const v = pickVoice(); if (v) u.voice = v;
     u.lang = (v && v.lang) || "en-GB";
-    u.rate = rate || 0.95;
+    u.rate = rate || progress.rate || 0.92;
     if (btn) {
       btn.classList.add("speaking");
       u.onend = u.onerror = () => btn.classList.remove("speaking");
@@ -78,6 +96,13 @@
 
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   const speechRecognitionSupported = !!SR;
+
+  // Audio recording (works in Chrome, Edge, Safari & Firefox) — for record-and-compare.
+  const recordSupported = !!(window.navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  let activeRecorder = null;   // only one microphone recording at a time, app-wide
+  function stopActiveRecorder() {
+    if (activeRecorder && activeRecorder.state === "recording") { try { activeRecorder.stop(); } catch (e) {} }
+  }
 
   function normalizeWords(s) {
     return String(s).toLowerCase().replace(/[^a-z0-9'\s]/g, " ").split(/\s+/).filter(Boolean);
@@ -102,34 +127,70 @@
     return { pct, target: t, heardSet: new Set(h) };
   }
 
-  /* Speak & Check widget — learner reads a target sentence; we score it. */
+  /* Speak & Check widget — learner reads a target sentence; we score it and/or
+     let them record themselves and compare with the model. */
   function mountSpeakCheck(el) {
     const target = el.getAttribute("data-target") || "";
-    const hint = el.getAttribute("data-hint") || "Tap the mic, then say the sentence clearly.";
+    const hint = el.getAttribute("data-hint") || "Listen, then say it — tap the mic to be scored, or record yourself to compare.";
     el.innerHTML = `
       <div class="sc-target">“${escapeHtml(target)}”</div>
       <div class="sc-hint">${escapeHtml(hint)}</div>
       <div class="sc-controls">
         <button class="say sc-listen">🔊 Listen</button>
         <button class="say sc-slow">🐢 Slow</button>
-        <button class="mic-btn">🎤 Speak &amp; check</button>
+        ${speechRecognitionSupported ? `<button class="mic-btn sc-mic">🎤 Speak &amp; check</button>` : ""}
+        ${recordSupported ? `<button class="rec-btn sc-record">🔴 Record &amp; compare</button>` : ""}
       </div>
       <div class="sc-out"></div>
-      ${speechRecognitionSupported ? "" : `<div class="unsupported">🎙️ Live mic scoring needs Chrome or Edge. You can still tap <b>Listen</b> / <b>Slow</b> and practise out loud — compare yourself to the model.</div>`}
+      <div class="sc-rec"></div>
+      ${(!speechRecognitionSupported && !recordSupported) ? `<div class="unsupported">🎙️ Speaking practice with the microphone needs a modern browser (Chrome, Edge or Safari). You can still tap <b>Listen</b> / <b>Slow</b> and practise out loud.</div>`
+        : (!speechRecognitionSupported ? `<div class="unsupported">💡 Instant scoring works best in Chrome or Edge. Here you can <b>record &amp; compare</b> yourself against the model — listen to both and match the rhythm.</div>` : "")}
     `;
     // Wire directly (and mark wired) so the generic enhancer never double-binds these.
     const listenBtn = el.querySelector(".sc-listen");
     const slowBtn = el.querySelector(".sc-slow");
     listenBtn.dataset.wired = slowBtn.dataset.wired = "1";
-    listenBtn.onclick = (e) => speak(target, 0.92, e.currentTarget);
-    slowBtn.onclick = (e) => speak(target, 0.6, e.currentTarget);
-    const micBtn = el.querySelector(".mic-btn");
+    listenBtn.onclick = (e) => speak(target, null, e.currentTarget);
+    slowBtn.onclick = (e) => speak(target, 0.55, e.currentTarget);
     const out = el.querySelector(".sc-out");
-    if (!speechRecognitionSupported) { micBtn.disabled = true; micBtn.style.opacity = .5; return; }
+
+    // ---- Record & compare (all modern browsers) ----
+    const recBtn = el.querySelector(".sc-record");
+    if (recBtn) {
+      const recArea = el.querySelector(".sc-rec");
+      let myRecorder = null, myUrl = null;
+      recBtn.onclick = async () => {
+        if (myRecorder && myRecorder.state === "recording") { myRecorder.stop(); return; }
+        stopActiveRecorder();
+        if (TTS) TTS.cancel();
+        let stream;
+        try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+        catch (e) { recArea.innerHTML = `<div class="unsupported">Microphone blocked. Allow mic access in your browser to record.</div>`; return; }
+        const chunks = [];
+        myRecorder = new MediaRecorder(stream); activeRecorder = myRecorder;
+        myRecorder.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+        myRecorder.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          if (myUrl) { try { URL.revokeObjectURL(myUrl); } catch (e) {} }
+          const blob = new Blob(chunks, { type: chunks[0] ? chunks[0].type : "audio/webm" });
+          myUrl = URL.createObjectURL(blob);
+          recArea.innerHTML = `<div style="font-size:13px;color:var(--ink-soft);margin:8px 0 2px">▶️ Your recording — play it, then tap <b>🔊 Listen</b> to compare your rhythm with the model:</div><audio controls src="${myUrl}"></audio>`;
+          recBtn.classList.remove("recording"); recBtn.innerHTML = "🔴 Record again";
+          if (activeRecorder === myRecorder) activeRecorder = null;
+        };
+        myRecorder.start();
+        recBtn.classList.add("recording"); recBtn.innerHTML = `<span class="rec-dot"></span> Stop`;
+      };
+    }
+
+    // ---- Speak & check (instant scoring; Chrome/Edge) ----
+    const micBtn = el.querySelector(".sc-mic");
+    if (!micBtn) return;
 
     let rec = null, listening = false;
     micBtn.onclick = () => {
       if (listening && rec) { rec.stop(); return; }
+      stopActiveRecorder();    // don't run scoring and recording at once
       if (TTS) TTS.cancel();   // never let the mic pick up the model voice
       rec = new SR();
       rec.lang = "en-GB"; rec.interimResults = false; rec.maxAlternatives = 1;
@@ -159,7 +220,7 @@
   function enhanceSpeaking(root) {
     (root || app).querySelectorAll(".say").forEach(btn => {
       if (btn.dataset.wired) return; btn.dataset.wired = "1";
-      btn.onclick = (e) => speak(btn.getAttribute("data-say"), 0.95, e.currentTarget);
+      btn.onclick = (e) => speak(btn.getAttribute("data-say"), null, e.currentTarget);
     });
     (root || app).querySelectorAll(".speakcheck").forEach(el => {
       if (el.dataset.wired) return; el.dataset.wired = "1"; mountSpeakCheck(el);
@@ -214,6 +275,7 @@
         </div>
         <p style="opacity:.92;font-size:13.5px;margin-top:12px">New here? It's simple: open a module → read the short lesson &amp; <b>say the examples out loud</b> → pass the quick quiz to tick it off → take each module's exam. Brand new to speaking? Begin with <b>“Speaking Foundations.”</b></p>
         <div class="progress-summary">
+          <div class="stat"><div class="num">🔥 ${progress.streak || 0}</div><div class="lbl">Day streak</div></div>
           <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">Lessons done</div></div>
           <div class="stat"><div class="num">${pct}%</div><div class="lbl">Course complete</div></div>
           <div class="stat"><div class="num">${quizzesTaken}</div><div class="lbl">Quizzes taken</div></div>
@@ -642,7 +704,7 @@
         const got = checks.filter(c => c.checked).length;
         const pctv = Math.round((got / checks.length) * 100);
         setBest("mock_" + key, pctv);
-        progress.lab["mock_" + key] = true; saveProgress(progress);
+        progress.lab["mock_" + key] = true; touchPractice(); saveProgress(progress);
         const band = test.band ? test.band(pctv) : "";
         const cls = pctv >= 80 ? "pass" : "fail";
         document.getElementById("mt-score").innerHTML =
@@ -714,6 +776,57 @@
         <div style="color:var(--ink-soft);font-size:12.5px;margin-top:6px">Clears every lesson, quiz, exam and your certificate on this device. This can't be undone.</div>
       </div>
     `;
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Settings (British voice + speaking speed) ---------- */
+  function renderSettings() {
+    const voices = englishVoices();
+    const gb = voices.filter(v => /en[-_]GB/i.test(v.lang));
+    const others = voices.filter(v => !/en[-_]GB/i.test(v.lang));
+    const opt = (v) => `<option value="${escapeHtml(v.voiceURI)}" ${progress.voiceURI === v.voiceURI ? "selected" : ""}>${escapeHtml(v.name)} (${escapeHtml(v.lang)})</option>`;
+    const voiceSelect = !TTS ? `<div class="unsupported">This browser can't speak text aloud. Try Chrome, Edge or Safari to use the model voice.</div>`
+      : !voices.length ? `<div class="unsupported">No English voices found yet — they sometimes load a moment after the page. Reopen Settings if the list is empty.</div>`
+      : `<select id="voiceSel" onchange="SUA._setVoice(this.value)" style="width:100%;max-width:460px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px">
+            <option value="">Auto — best British voice available</option>
+            ${gb.length ? `<optgroup label="British English (recommended)">${gb.map(opt).join("")}</optgroup>` : ""}
+            ${others.length ? `<optgroup label="Other English voices">${others.map(opt).join("")}</optgroup>` : ""}
+         </select>
+         ${gb.length ? "" : `<div class="sc-hint" style="margin-top:8px">💡 No dedicated British voice is installed on this device. On Windows/Android you can add an “English (United Kingdom)” voice in your system speech settings for the most authentic accent.</div>`}`;
+
+    const rates = [["🐢 Slower", 0.72], ["💬 Comfortable", 0.92], ["🗣️ Native pace", 1.0]];
+    const rateBtns = rates.map(([label, r]) =>
+      `<button class="btn ${Math.abs((progress.rate || 0.92) - r) < 0.001 ? "" : "ghost"}" onclick="SUA._setRate(${r})">${label}</button>`).join(" ");
+
+    app.innerHTML = `
+      <a class="back-link" onclick="SUA.go('')">‹ Back to dashboard</a>
+      <div class="module-head"><div class="icon" style="background:#6366f122;color:#6366f1">⚙️</div>
+        <div><h1>Settings</h1><div style="color:var(--ink-soft)">Tune the model voice and speed to train your British accent and tone.</div></div></div>
+
+      <div class="reader" style="margin-top:16px">
+        <h3 style="margin-top:0">🔊 Model voice</h3>
+        <p style="color:var(--ink-soft);font-size:14px">Choose the British voice you'd like to learn from. It's used for every 🔊 Listen button across the app.</p>
+        ${voiceSelect}
+        <div class="btn-row" style="margin-top:14px"><button class="btn ghost" onclick="SUA._testVoice()">▶️ Test the voice</button></div>
+
+        <h3>⏱️ Speaking speed</h3>
+        <p style="color:var(--ink-soft);font-size:14px">How fast the model voice talks. Start slower to catch every sound, then build up to native pace. (The 🐢 Slow button on practice cards is always extra-slow.)</p>
+        <div class="btn-row">${rateBtns}</div>
+
+        <h3>🎯 Try it</h3>
+        <div class="speakcheck" data-target="Lovely weather we're having, isn't it?"></div>
+      </div>
+
+      <div class="reader" style="margin-top:16px">
+        <h3 style="margin-top:0">📈 Your practice</h3>
+        <p style="margin:0;color:var(--ink-soft)">🔥 Current streak: <b>${progress.streak || 0}</b> day(s) · Total days practised: <b>${progress.daysPracticed || 0}</b></p>
+        <div class="btn-row" style="margin-top:14px">
+          <button class="btn ghost" onclick="SUA.go('certificate')">View certificate &amp; progress ›</button>
+          <button class="btn ghost" style="color:var(--bad)" onclick="SUA._resetProgress()">↺ Reset all progress</button>
+        </div>
+      </div>
+    `;
+    enhanceSpeaking(app);
     window.scrollTo(0, 0);
   }
 
@@ -804,6 +917,9 @@
       go("");
     },
     _setName(v) { progress.name = v; saveProgress(progress); const el = document.getElementById("certNameDisplay"); if (el) el.textContent = v || "Your Name"; },
+    _setVoice(uri) { progress.voiceURI = uri || null; saveProgress(progress); speak("Hello, this is the voice you'll learn with."); },
+    _setRate(r) { progress.rate = parseFloat(r) || 0.92; saveProgress(progress); renderSettings(); speak("This is how fast I'll speak."); },
+    _testVoice() { speak("Lovely weather we're having, isn't it? Let's practise speaking English together."); },
     _pick() {}, _submitQuiz() {}, _retryQuiz() {},
     _examPick() {}, _examSubmit() {}, _examRetry() {},
     _mtNext() {}, _mtPrev() {}, _mtScore() {}
@@ -820,6 +936,7 @@
     else if (parts[0] === "plan") renderPlan();
     else if (parts[0] === "lab") renderLab(parts[1]);
     else if (parts[0] === "certificate") renderCertificate();
+    else if (parts[0] === "settings") renderSettings();
     else renderNotFound();
     updateNav();
   }
@@ -830,6 +947,7 @@
     if (h.includes("lab")) current = "lab";
     else if (h.includes("plan")) current = "plan";
     else if (h.includes("certificate")) current = "certificate";
+    else if (h.includes("settings")) current = "settings";
     document.querySelectorAll("[data-nav]").forEach(el => {
       el.classList.toggle("active", el.getAttribute("data-nav") === current && !searchInput.value.trim());
     });
