@@ -1,77 +1,92 @@
 # 🎓 MBA Mastery Academy
 
-An executive-grade, **self-paced Master of Business Management** program built for
-**managers and senior leaders in 2026 and beyond**. It covers the **full department
-structure of an accredited MBA** — across 17 disciplines — in short, case-based
-lessons with rigorous quizzes, department exams, and a cumulative comprehensive final.
+A **complete, self-paced Business Administration course** — from the **very basics all
+the way to MBA level**. It assumes **zero prior knowledge**: you start with what a
+business even *is*, build up through the everyday skills (math, communication,
+bookkeeping, admin, sales), and climb all the way to MBA-depth strategy, finance,
+analytics, AI, law and governance — finishing with a capstone and a degree-level
+comprehensive exam.
 
-It runs **100% locally** in any web browser, works **offline**, and
-**remembers your progress automatically**. No installation, no internet, no account,
-no server.
+Every lesson opens with an **"In Plain English"** explainer (a friendly, jargon-free
+intro with everyday analogies), then the full lesson, an exercise, and a quiz.
 
-`index.html` is a **single self-contained file** — every lesson, style and line of
-logic is bundled inside it. Copy that one file anywhere (USB stick, email, phone) and
-it just works.
+It runs **100% locally** in any web browser, works **offline**, and **remembers your
+progress automatically**. No installation, no internet, no account, no server.
+`index.html` is a **single self-contained file** — copy that one file anywhere and it
+just works.
 
 ---
 
 ## ▶️ How to start
 
 1. Copy **`index.html`** onto any computer (that one file is all you need).
-2. **Double-click `index.html`.** It opens in your browser (Chrome, Edge, Safari…).
-3. Start with **Strategic Management**, or open the **🗓️ 17-Week Study Plan**.
-
-> 💡 Tip: bookmark the page (`Ctrl + D`) so it's one click away.
+2. **Double-click `index.html`** — it opens in your browser.
+3. Brand new? Start with **🌱 Business Foundations**, or open the **🗓️ Study Plan**.
 
 ---
 
-## 🎓 The path to the degree certificate
+## 🪜 The learning ladder
 
-Pick a **department** → study the **lessons** (Core → Applied → Executive) → pass each
-**quiz (70%)** → sit the **department Final Exam (80%)**. After all 17 departments,
-pass the **Comprehensive Final Exam** (drawn from every department, 80%) to unlock your
-**Certificate of Completion**.
+Every lesson is tagged by difficulty so you can climb at your own pace:
 
-| # | Department | Focus |
-|---|-----------|-------|
-| 1 | 🧠 **Strategic Management** | Competitive advantage, Five Forces/PESTEL, corporate & growth strategy, OKRs & Balanced Scorecard, disruption & Blue Ocean |
-| 2 | 🌟 **Leadership & Org Behavior** | Leadership styles, motivation, high-performing teams, culture & change, EQ & executive presence |
-| 3 | 📣 **Marketing Management** | STP, marketing mix & brand, digital/growth/performance marketing, pricing & customer lifetime value |
-| 4 | 📒 **Accounting for Leaders** | The three statements, profitability, balance sheet & cash flow, cost/managerial accounting, ratio analysis |
-| 5 | 💰 **Corporate Finance & Valuation** | Time value of money, NPV/IRR, WACC & CAPM, capital structure, DCF & multiples valuation |
-| 6 | 📈 **Managerial Economics** | Demand & elasticity, market structure & pricing power, game theory, macro for decision-makers |
-| 7 | 🌍 **International Business & Global Strategy** | Trade & globalization, market-entry modes & CAGE, cross-cultural management, FX & global risk |
-| 8 | ⚙️ **Operations & Supply Chain** | Processes & bottlenecks, Lean/Six Sigma, inventory & supply chains, project management & agile |
-| 9 | 💻 **Information Systems & Tech Management** | MIS & enterprise systems, IT strategy & architecture, cybersecurity, data governance & IT value |
-| 10 | 🔢 **Data, Analytics & Decisions** | Data-driven decisions, statistics, A/B testing, KPIs & dashboards that matter |
-| 11 | 👥 **People, Talent & Culture** | Structured hiring, performance & feedback, rewards & retention, talent development & succession |
-| 12 | 🚀 **Entrepreneurship & Innovation** | Lean startup & MVP, business models & unit economics, fundraising, corporate innovation |
-| 13 | 🤖 **AI & Digital Leadership (2026+)** | AI literacy, AI strategy & ROI, AI governance/risk/ethics, leading AI-augmented teams, digital transformation |
-| 14 | 📜 **Business Law & Compliance** | Contracts, business structures & corporate law, IP & tech law, employment law, compliance & data privacy |
-| 15 | ⚖️ **Ethics, Governance, ESG & Risk** | Ethical frameworks, the board, ESG & sustainability, enterprise risk & resilience |
-| 16 | 🤝 **Negotiation, Communication & Influence** | Principled negotiation & BATNA, executive storytelling, persuasion & stakeholders, difficult conversations |
-| 17 | 🎯 **Capstone: Integrative Management** | Thinking like a GM, the business & strategic plan, board-ready case analysis, leading the whole enterprise |
+**🔵 Beginner → 🟢 Core → 🟡 Applied → 🟣 Executive**
 
-**17 departments · 74 lessons · 294 quiz questions · 17 department exams · 1 comprehensive final.**
+Flow for each module: read the **In Plain English** intro → study the lesson → try the
+exercise → pass the **quiz (70%)** → pass the **module Final Exam (80%)**. After every
+module, pass the **Comprehensive Final Exam** (drawn from the whole course, 80%) to
+unlock your **Certificate of Completion**.
+
+### Part 1 — Foundations (start from zero)
+| # | Module | You'll learn |
+|---|--------|--------------|
+| 1 | 🌱 **Business Foundations** | What a business is, how companies are structured, types of ownership, how a business makes money, who does what, stakeholders |
+| 2 | ➗ **Business Math & Numeracy** | Percentages & ratios, markups vs margins, simple & compound interest, reading charts, budgets & break-even |
+| 3 | ✍️ **Communication & Professional Skills** | Professional email & writing, meetings, presentations, time management, teamwork & etiquette |
+| 4 | 🧾 **Bookkeeping & Everyday Finance** | What bookkeeping is, debits & credits, invoices & expenses, reading a simple P&L and balance sheet, budgeting |
+| 5 | 🗂️ **Office Administration & Operations** | The admin role, records & files, scheduling, business processes & SOPs, health & safety |
+| 6 | 🛎️ **Sales & Customer Service** | Sales fundamentals & the funnel, customer service excellence, CRM basics, handling complaints |
+
+### Part 2 — The MBA core (intermediate → advanced)
+| # | Module |
+|---|--------|
+| 7 | 🧠 **Strategic Management** |
+| 8 | 🌟 **Leadership & Org Behavior** |
+| 9 | 📣 **Marketing Management** |
+| 10 | 📒 **Accounting for Leaders** |
+| 11 | 💰 **Corporate Finance & Valuation** |
+| 12 | 📈 **Managerial Economics** |
+| 13 | 🌍 **International Business & Global Strategy** |
+| 14 | ⚙️ **Operations & Supply Chain** |
+| 15 | 💻 **Information Systems & Tech Management** |
+| 16 | 🔢 **Data, Analytics & Decisions** |
+| 17 | 👥 **People, Talent & Culture** |
+| 18 | 🚀 **Entrepreneurship & Innovation** |
+| 19 | 🤖 **AI & Digital Leadership (2026+)** |
+| 20 | 📜 **Business Law & Compliance** |
+| 21 | ⚖️ **Ethics, Governance, ESG & Risk** |
+| 22 | 🤝 **Negotiation, Communication & Influence** |
+| 23 | 🎯 **Capstone: Integrative Management** |
+
+**23 modules · 104 lessons · 414 quiz questions · 23 module exams · 1 comprehensive final.**
 Quiz and exam answer choices are **shuffled every attempt**, so passing means actually
 knowing the material.
 
 **Also included:**
-- 🗓️ **17-Week Study Plan** — one department per week, a guided path through the whole program.
-- 🎓 **Comprehensive Final Exam** — a degree-level, 25-question cumulative exam drawn from every department; 80% to pass and the final requirement for your certificate.
-- 🧰 **Executive Toolkit** — a searchable reference of 45 frameworks, formulas and concepts (SWOT, NPV, WACC, BATNA, OKRs, DuPont, CAGE, CIA Triad…).
-- ✍️ **Executive Challenges** — every lesson ends with a realistic decision or exercise to apply the idea.
-- 🏆 **Certificate of Completion** — unlocks when every lesson is done, every department exam is passed, and the comprehensive final is cleared; print it or save as PDF.
+- 🙂 **In Plain English** intro on every one of the 104 lessons — no jargon, real analogies.
+- 🗓️ **23-Week Study Plan** — one subject per week, beginner foundations first.
+- 🎓 **Comprehensive Final Exam** — degree-level, 25 questions drawn from the whole course; the final requirement for your certificate.
+- 🧰 **Toolkit** — a searchable reference of 50+ frameworks, formulas and concepts.
+- ✍️ **Exercises** — every lesson ends with a practical task to apply the idea.
+- 🏆 **Certificate of Completion** — unlocks when every lesson, every module exam, and the comprehensive final are done; print it or save as PDF.
 
 ---
 
 ## ✨ Features
 
-- **Progress tracking** — completed lessons get a green tick; progress bars fill up. Saved automatically in the browser.
-- **Rigorous quizzes** — every lesson ends with a quiz. Score 70%+ to complete it. Answer choices are shuffled on every attempt.
-- **Department & comprehensive exams** — department exams (80%) pull from the whole department; the comprehensive final pulls from all 17 departments.
-- **Key Takeaways** boxes in every lesson — the senior-level point to remember.
-- **Search** — type any term ("strategy", "cash flow", "NPV", "GDPR", "AI") to jump straight to a lesson or framework.
+- **Progress tracking** — completed lessons get a green tick; saved automatically in the browser.
+- **Rigorous quizzes** — 70% to complete a lesson; choices shuffled every attempt.
+- **Module & comprehensive exams** — 80% to pass; the final pulls from all 23 modules.
+- **Search** — type any term ("profit", "margin", "NPV", "GDPR", "AI") to jump to a lesson or framework.
 - **Works on phone, tablet or computer**, online or offline.
 
 ---
@@ -79,17 +94,14 @@ knowing the material.
 ## 🛠️ For whoever maintains this
 
 - Plain HTML/CSS/JavaScript — **no frameworks, no dependencies**.
-- `index.html` is the **built, self-contained** file learners open. It's generated by
-  inlining the source files in `/assets`.
-- To **add or edit lessons**, open `assets/curriculum.js`. Each lesson is a block with a
-  title, level, content, tips, an executive challenge and a quiz. Copy an existing block
-  and change the text.
-- After editing anything in `/assets`, **rebuild the single file**:
+- `index.html` is the **built, self-contained** file. It's generated by inlining the
+  source files in `/assets`.
+- To **add or edit lessons**, open `assets/curriculum.js`. Each lesson has a title,
+  level, content, a plain-English `simple` explainer, tips, an exercise and a quiz.
+- After editing anything in `/assets`, rebuild the single file:
   ```
   node build.js
   ```
-  This regenerates `index.html`. (The build refuses to inline anything containing a
-  literal closing `script` tag, which would break the single-file HTML.)
 
 ---
 

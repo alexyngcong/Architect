@@ -140,6 +140,7 @@ a { color: var(--brand); }
 .level-Intermediate { background: #fef3c7; color: #b45309; }
 .level-Advanced { background: #fee2e2; color: #b91c1c; }
 /* Executive-program difficulty tiers */
+.level-Beginner { background: #e0f2fe; color: #0369a1; }
 .level-Core { background: #dcfce7; color: #15803d; }
 .level-Applied { background: #fef3c7; color: #b45309; }
 .level-Executive { background: #ede9fe; color: #6d28d9; }
@@ -274,9 +275,9 @@ a { color: var(--brand); }
 /* ============================================================================
    MBA MASTERY ACADEMY — Curriculum Data
    ----------------------------------------------------------------------------
-   Every department, lesson, framework and quiz for the Master of Business
-   Management program. Each lesson also has a plain-English "simple" explainer
-   so a complete beginner can follow along. Plain data (JSON-shaped).
+   A full Business Administration program: from absolute-beginner Foundations
+   up to MBA-level departments and a Capstone. Every lesson has a plain-English
+   "simple" explainer, tips, an exercise and a quiz. Plain data (JSON-shaped).
    ========================================================================= */
 
 const MBA_CURRICULUM = {
@@ -460,14 +461,108 @@ const MBA_CURRICULUM = {
     {
       "keys": "IP Types",
       "action": "Patent (inventions), Trademark (brand), Copyright (works), Trade Secret (confidential know-how)"
+    },
+    {
+      "keys": "Profit = Revenue − Costs",
+      "action": "The most basic business equation — what you earn minus what you spend"
+    },
+    {
+      "keys": "Markup vs Margin",
+      "action": "Markup is added on top of cost; margin is the profit slice of the selling price"
+    },
+    {
+      "keys": "Fixed vs Variable Costs",
+      "action": "Fixed costs stay the same (rent); variable costs rise with output (materials)"
+    },
+    {
+      "keys": "Sales Funnel",
+      "action": "Awareness → Interest → Consideration → Purchase — the journey to a sale"
+    },
+    {
+      "keys": "SOP",
+      "action": "Standard Operating Procedure — the agreed step-by-step way to do a task"
+    },
+    {
+      "keys": "Org Chart",
+      "action": "A map of who reports to whom — the company's chain of command"
+    },
+    {
+      "keys": "Stakeholder",
+      "action": "Anyone affected by the business: customers, staff, owners, suppliers, community"
     }
   ],
   "fastTrack": {
-    "title": "17-Week MBA Study Plan",
-    "intro": "A complete path through all 17 departments — one per week. Aim for 3-4 lessons a week (about 2-3 hours), pass each quiz at 70%, then sit the department's Final Exam (80% to earn the badge). After all 17 weeks, pass the Comprehensive Final Exam (drawn from every department) to complete your degree certificate. Pressed for time? The Core lessons in each department are the essential spine.",
+    "title": "23-Week Business Administration Study Plan",
+    "intro": "A complete path from the very basics to MBA level — one subject per week. Brand new? The first six weeks (Foundations, Math, Communication, Bookkeeping, Admin, Sales) build your base with no prior knowledge needed. Each week: read the plain-English intros and lessons, pass each quiz at 70%, then the module's Final Exam at 80%. Finish all weeks, then pass the Comprehensive Final Exam to earn your certificate.",
     "days": [
       {
         "day": 1,
+        "focus": "Business Foundations — what business is and how it works",
+        "lessons": [
+          "fn1",
+          "fn2",
+          "fn3",
+          "fn4",
+          "fn5",
+          "fn6"
+        ]
+      },
+      {
+        "day": 2,
+        "focus": "Business Math & Numeracy — the everyday numbers, made painless",
+        "lessons": [
+          "bm1",
+          "bm2",
+          "bm3",
+          "bm4",
+          "bm5"
+        ]
+      },
+      {
+        "day": 3,
+        "focus": "Communication & Professional Skills — the day-one workplace skills",
+        "lessons": [
+          "cs1",
+          "cs2",
+          "cs3",
+          "cs4",
+          "cs5"
+        ]
+      },
+      {
+        "day": 4,
+        "focus": "Bookkeeping & Everyday Finance — recording and reading the money",
+        "lessons": [
+          "bk1",
+          "bk2",
+          "bk3",
+          "bk4",
+          "bk5"
+        ]
+      },
+      {
+        "day": 5,
+        "focus": "Office Administration & Operations — keeping things running",
+        "lessons": [
+          "ao1",
+          "ao2",
+          "ao3",
+          "ao4",
+          "ao5"
+        ]
+      },
+      {
+        "day": 6,
+        "focus": "Sales & Customer Service — winning and keeping customers",
+        "lessons": [
+          "sc1",
+          "sc2",
+          "sc3",
+          "sc4"
+        ]
+      },
+      {
+        "day": 7,
         "focus": "Strategic Management — where to play and how to win",
         "lessons": [
           "s1",
@@ -478,7 +573,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 2,
+        "day": 8,
         "focus": "Leadership & Org Behavior — leading people and change",
         "lessons": [
           "l1",
@@ -489,7 +584,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 3,
+        "day": 9,
         "focus": "Marketing Management — creating and capturing value",
         "lessons": [
           "m1",
@@ -499,7 +594,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 4,
+        "day": 10,
         "focus": "Accounting for Leaders — reading the numbers",
         "lessons": [
           "a1",
@@ -510,7 +605,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 5,
+        "day": 11,
         "focus": "Corporate Finance & Valuation — allocating capital",
         "lessons": [
           "cf1",
@@ -521,7 +616,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 6,
+        "day": 12,
         "focus": "Managerial Economics — the forces behind decisions",
         "lessons": [
           "ec1",
@@ -531,7 +626,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 7,
+        "day": 13,
         "focus": "International Business — competing across borders",
         "lessons": [
           "gb1",
@@ -541,7 +636,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 8,
+        "day": 14,
         "focus": "Operations & Supply Chain — delivering value reliably",
         "lessons": [
           "op1",
@@ -551,7 +646,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 9,
+        "day": 15,
         "focus": "Information Systems & Tech — the technology that runs the business",
         "lessons": [
           "is1",
@@ -561,7 +656,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 10,
+        "day": 16,
         "focus": "Data, Analytics & Decisions — deciding with evidence",
         "lessons": [
           "an1",
@@ -571,7 +666,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 11,
+        "day": 17,
         "focus": "People, Talent & Culture — winning with talent",
         "lessons": [
           "hr1",
@@ -581,7 +676,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 12,
+        "day": 18,
         "focus": "Entrepreneurship & Innovation — building the new",
         "lessons": [
           "en1",
@@ -591,7 +686,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 13,
+        "day": 19,
         "focus": "AI & Digital Leadership — leading in the age of AI",
         "lessons": [
           "ai1",
@@ -602,7 +697,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 14,
+        "day": 20,
         "focus": "Business Law & Compliance — the legal landscape",
         "lessons": [
           "bl1",
@@ -613,7 +708,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 15,
+        "day": 21,
         "focus": "Ethics, Governance, ESG & Risk — leading responsibly",
         "lessons": [
           "g1",
@@ -623,7 +718,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 16,
+        "day": 22,
         "focus": "Negotiation, Communication & Influence — getting things done",
         "lessons": [
           "n1",
@@ -633,7 +728,7 @@ const MBA_CURRICULUM = {
         ]
       },
       {
-        "day": 17,
+        "day": 23,
         "focus": "Capstone — integrate every discipline and lead the enterprise",
         "lessons": [
           "cap1",
@@ -645,6 +740,1740 @@ const MBA_CURRICULUM = {
     ]
   },
   "modules": [
+    {
+      "id": "foundations",
+      "title": "Business Foundations (Start Here)",
+      "icon": "🌱",
+      "color": "#22c55e",
+      "blurb": "Brand new to business? Start here. What a business is, how it works, and the words everyone uses — explained simply.",
+      "lessons": [
+        {
+          "id": "fn1",
+          "title": "What Is a Business?",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>What Is a Business?</h4>\n<p>A <b>business</b> is any organisation that provides something of value to other people in exchange for money. That 'something of value' can be a <b>product</b> (a physical item you can hold) or a <b>service</b> (something someone does for you).</p>\n<h4>Goods vs Services</h4>\n<ul>\n  <li><b>Goods</b> are physical things — a sandwich, a pair of trainers, a smartphone.</li>\n  <li><b>Services</b> are actions or experiences — a haircut, a taxi ride, a dentist appointment.</li>\n</ul>\n<p>Many businesses offer both. A coffee shop sells you a drink (good) <b>and</b> a comfortable place to sit (service).</p>\n<h4>Needs, Wants &amp; Customers</h4>\n<p>A <b>need</b> is something essential — food, shelter, clothing. A <b>want</b> is something we desire but could survive without — a luxury handbag, a gaming console. Businesses serve both.</p>\n<p>The people who buy from a business are called <b>customers</b>. Understanding what customers need or want is the starting point of every successful business.</p>\n<h4>The Idea of Profit</h4>\n<p><b>Profit</b> is the money left over after a business has paid all its costs. If a baker sells cakes for $500 a week and spends $300 on ingredients and rent, the profit is $200. Profit is the reward for taking the risk of running a business — and it is what keeps the business alive and growing.</p>",
+          "simple": "A business is simply someone offering something useful to other people and getting paid for it. Think of a lemonade stand: you buy lemons, make lemonade, and sell it for more than it cost you to make — that gap is profit. Businesses exist because people have needs and wants they cannot always meet on their own.",
+          "tips": [
+            "Every business — from a street food cart to a global bank — follows the same basic idea: provide value, get paid.",
+            "When you walk into any shop, ask yourself: is this selling goods, services, or both?",
+            "Profit is not the same as revenue (total sales). Revenue is the whole cake; profit is your slice after costs."
+          ],
+          "practice": "Look around your home and list three products you own and three services you use regularly. For each one, guess what it might cost the business to provide it and what they charge you — notice the gap.",
+          "quiz": [
+            {
+              "q": "Which of the following is the best definition of a business?",
+              "choices": [
+                "An organisation that only sells physical products",
+                "Any organisation that provides value to others in exchange for money",
+                "A company that is listed on the stock market",
+                "A group of people who work in the same building"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "A plumber fixing your pipes is an example of a:",
+              "choices": [
+                "Good",
+                "Want",
+                "Service",
+                "Profit"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "If a business earns $1,000 in sales but spends $700 on costs, what is its profit?",
+              "choices": [
+                "$1,700",
+                "$700",
+                "$1,000",
+                "$300"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "Which of these is a 'need' rather than a 'want'?",
+              "choices": [
+                "A designer watch",
+                "Drinking water",
+                "A games console",
+                "A holiday abroad"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "fn2",
+          "title": "How a Company Is Structured",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>Why Structure Matters</h4>\n<p>Imagine a football team where nobody knew their position and everyone tried to score at once. Chaos! A business works the same way — it needs clear roles so that everyone knows who does what and who reports to whom. This is called <b>organisational structure</b>.</p>\n<h4>The Key Roles</h4>\n<ul>\n  <li><b>Owners / Shareholders</b> — People who own a piece of the company. They invest money and share in the profits. They have the final say on the big picture.</li>\n  <li><b>Board of Directors</b> — A small group chosen by the shareholders to set overall strategy and make sure the business is run well. Think of them as the 'governors'.</li>\n  <li><b>CEO (Chief Executive Officer)</b> — The top manager. Responsible for running the business day to day, within the strategy set by the board.</li>\n  <li><b>Managers</b> — Lead specific teams or departments (e.g. the Marketing Manager, the Finance Manager).</li>\n  <li><b>Employees</b> — The people who carry out the actual work of the business.</li>\n</ul>\n<h4>The Org Chart &amp; Chain of Command</h4>\n<p>An <b>org chart</b> (organisation chart) is a diagram that shows all the roles in a business and how they connect. Roles near the top have more authority; roles lower down carry out instructions from above. This line of authority from top to bottom is called the <b>chain of command</b>. Instructions flow down; reports and feedback flow back up.</p>",
+          "simple": "A company is like a school: the school governors (board) set the rules, the headteacher (CEO) runs the place every day, department heads (managers) look after their teams, and teachers and support staff (employees) do the hands-on work. An org chart is just a map of who is in charge of whom.",
+          "tips": [
+            "Smaller businesses often have flatter structures — fewer layers between the owner and the employees.",
+            "The CEO is accountable to the board, not the other way around.",
+            "Understanding the chain of command helps you know who to approach when you need a decision made."
+          ],
+          "practice": "Draw a simple org chart for a business you know well (a local shop, a restaurant, or even your school). Put the owner at the top and work downward. How many layers does it have?",
+          "quiz": [
+            {
+              "q": "Who owns a piece of a company and shares in its profits?",
+              "choices": [
+                "The CEO",
+                "The Board of Directors",
+                "Shareholders",
+                "Managers"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What is the main role of a Board of Directors?",
+              "choices": [
+                "To carry out day-to-day tasks",
+                "To set overall strategy and oversee the company on behalf of shareholders",
+                "To manage individual departments",
+                "To serve customers directly"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What does an org chart show?",
+              "choices": [
+                "The company's financial performance over time",
+                "The products a company sells",
+                "The roles in a business and how they are connected",
+                "The location of the company's offices"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What is the 'chain of command'?",
+              "choices": [
+                "A legal document signed by all employees",
+                "The line of authority from the top of an organisation to the bottom",
+                "The process for ordering supplies",
+                "The company's list of rules and regulations"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "fn3",
+          "title": "Types of Business Ownership",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>Who Owns the Business?</h4>\n<p>Before starting a business, one of the first decisions is: what <b>legal structure</b> should it have? The structure affects who owns it, who is responsible for its debts, and how it pays tax. Here are the three most common types.</p>\n<h4>Sole Trader (Sole Proprietor)</h4>\n<p>One person owns and runs the entire business. Simple to set up, and the owner keeps all the profits. The downside: the owner is personally responsible for <b>all</b> debts. If the business owes money it cannot pay, creditors can come after the owner's personal savings or home. This is called <b>unlimited liability</b>.</p>\n<h4>Partnership</h4>\n<p>Two or more people own and run the business together, sharing profits and responsibilities. Still simple to set up, but like a sole trader, partners usually have unlimited liability — they are all personally responsible for the business's debts.</p>\n<h4>Limited Company (Corporation)</h4>\n<p>This is a business that is legally separate from the people who own it. Owners are called <b>shareholders</b>. The key benefit is <b>limited liability</b>: if the company runs into debt, shareholders can only lose the money they invested — their personal savings and home are protected. This is why so many growing businesses choose this structure.</p>\n<table class=\"lesson-table\">\n  <tr><th>Type</th><th>Owners</th><th>Liability</th></tr>\n  <tr><td>Sole Trader</td><td>1 person</td><td>Unlimited</td></tr>\n  <tr><td>Partnership</td><td>2+ people</td><td>Unlimited</td></tr>\n  <tr><td>Limited Company</td><td>Shareholders</td><td>Limited</td></tr>\n</table>",
+          "simple": "Think of a sole trader as a one-person lemonade stand — easy to start but you are on the hook for everything. A partnership is like running that stand with a friend. A limited company is like putting a protective glass box around your business: if it fails, the box takes the hit, not your personal piggy bank. That glass box is called 'limited liability'.",
+          "tips": [
+            "Most freelancers and tradespeople start as sole traders because it is the simplest option.",
+            "'Ltd' at the end of a UK company name (or 'Inc.' / 'LLC' in the US) signals limited liability.",
+            "Limited liability encourages people to invest and take risks — which is good for economic growth."
+          ],
+          "practice": "Think of three businesses in your local area. Try to guess which legal structure each one is likely to use, and jot down your reason. Check their websites — many will say 'Ltd' or 'LLC' in their name.",
+          "quiz": [
+            {
+              "q": "What does 'unlimited liability' mean for a sole trader?",
+              "choices": [
+                "They can borrow as much money as they like",
+                "They are personally responsible for all the business's debts",
+                "They do not need to pay tax",
+                "They can have as many employees as they want"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which business structure gives owners 'limited liability'?",
+              "choices": [
+                "Sole Trader",
+                "General Partnership",
+                "Limited Company",
+                "Freelance Contractor"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "In a limited company, what are the owners called?",
+              "choices": [
+                "Partners",
+                "Sole Traders",
+                "Directors",
+                "Shareholders"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "A sole trader's business fails with $10,000 in unpaid debts. What can creditors do?",
+              "choices": [
+                "Nothing — the business owes the debt, not the person",
+                "Only take business assets, not personal ones",
+                "Pursue the owner's personal assets to recover the debt",
+                "Sue the government for the money"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "fn4",
+          "title": "How a Business Makes Money",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>Revenue: The Money Coming In</h4>\n<p><b>Revenue</b> (also called <b>sales</b> or <b>turnover</b>) is the total amount of money a business earns from selling its products or services. If a bookshop sells 200 books at $10 each, its revenue is $2,000. Revenue is the 'top line' — it does not yet account for any costs.</p>\n<h4>Costs: The Money Going Out</h4>\n<p><b>Costs</b> are everything the business has to pay to operate. These include:</p>\n<ul>\n  <li><b>Cost of goods sold</b> — the direct cost of making or buying what you sell (e.g. paper and ink for a printer).</li>\n  <li><b>Operating costs</b> — rent, salaries, electricity, marketing, insurance.</li>\n</ul>\n<h4>Profit: What Is Left Over</h4>\n<p><b>Profit = Revenue minus Costs.</b> If the bookshop earned $2,000 but paid $1,400 in costs, the profit is $600. Profit is the reward for the business's effort and risk.</p>\n<h4>Profit vs Cash — An Important Difference</h4>\n<p>A business can be <b>profitable on paper</b> but still run out of <b>cash</b>. Why? Because customers sometimes pay weeks later (you have earned the revenue but not yet received the money), while your bills are due now. This is why businesses must manage both profit <b>and</b> cash flow carefully.</p>\n<h4>The Value Exchange</h4>\n<p>At the heart of every sale is a <b>value exchange</b>: the customer hands over money, and the business hands over something worth at least that much to the customer. Both sides win — that is the foundation of commerce.</p>",
+          "simple": "Revenue is all the money you bring in from sales. Costs are everything you spend to run the business. What is left after paying costs is profit. Imagine running a hot-dog stall: if you take in $300 on Saturday but spend $180 on sausages, bread, and a pitch fee, your profit is $120. Profit and cash are not always the same — you might earn a profit but still be waiting for a customer to pay you.",
+          "tips": [
+            "High revenue does not guarantee profit. A shop selling $1 million worth of goods could still lose money if costs are $1.1 million.",
+            "'Gross profit' deducts only the cost of goods sold. 'Net profit' deducts all expenses. Net profit is the true bottom line.",
+            "Cash flow problems — not lack of profit — are the most common reason small businesses fail."
+          ],
+          "practice": "Imagine you open a small cake-selling business at a weekend market. Write down five costs you would have (ingredients, stall fee, packaging, etc.) and estimate them. Then decide how many cakes you would need to sell at $3 each just to break even.",
+          "quiz": [
+            {
+              "q": "A business earns $5,000 in sales and has $3,200 in costs. What is its profit?",
+              "choices": [
+                "$8,200",
+                "$3,200",
+                "$1,800",
+                "$5,000"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What is 'revenue'?",
+              "choices": [
+                "The profit left after all expenses are paid",
+                "The total money earned from selling products or services",
+                "The money borrowed from a bank",
+                "The wages paid to employees"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Why can a profitable business still run out of cash?",
+              "choices": [
+                "Profitable businesses never run out of cash",
+                "Because profits are immediately paid to shareholders",
+                "Because customers may owe money that has not yet been received while bills are due now",
+                "Because the government takes all the profit in tax"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "In a value exchange, what does the customer give the business?",
+              "choices": [
+                "Loyalty points",
+                "Raw materials",
+                "Free advertising",
+                "Money"
+              ],
+              "answer": 3
+            }
+          ]
+        },
+        {
+          "id": "fn5",
+          "title": "The Main Areas of a Business (Who Does What)",
+          "level": "Beginner",
+          "minutes": 9,
+          "content": "<h4>The Key Business Functions</h4>\n<p>Every medium or large business is divided into <b>functional areas</b> — specialist departments that each focus on a particular part of running the company. Think of them as the organs of a body: each has its own job, but they all work together to keep things alive.</p>\n<h4>Marketing</h4>\n<p><b>Marketing</b> identifies what customers want and works out how to reach them. It covers research, advertising, branding, social media, and pricing strategy. Marketing creates awareness and interest.</p>\n<h4>Sales</h4>\n<p><b>Sales</b> converts that interest into actual purchases. Salespeople talk to potential customers, handle enquiries, and close deals. While marketing casts a wide net, sales reels in the fish.</p>\n<h4>Operations</h4>\n<p><b>Operations</b> (also called Production or Supply Chain) is responsible for making or delivering the product or service. It keeps quality high and costs under control. A restaurant's kitchen team is an operations function.</p>\n<h4>Finance &amp; Accounting</h4>\n<p><b>Finance</b> manages the company's money — budgeting, forecasting, managing cash, and securing funding. <b>Accounting</b> records every transaction and produces reports that show whether the business is profitable.</p>\n<h4>Human Resources (HR)</h4>\n<p><b>HR</b> looks after the people. Recruiting new staff, training, pay, wellbeing, and making sure the company follows employment law — that is all HR.</p>\n<h4>IT (Information Technology)</h4>\n<p><b>IT</b> keeps the technology running — the computers, software, data security, and digital tools that every other department relies on.</p>\n<p>These six functions set up everything else you will study in this course. Each has its own modules — so this lesson is your map of the journey ahead.</p>",
+          "simple": "A business is like a house with different rooms: Marketing shouts about the house from the street, Sales invites people in, Operations builds and maintains the rooms, Finance pays the bills, HR looks after everyone who lives there, and IT keeps the lights on. Each room matters, and they all depend on each other.",
+          "tips": [
+            "In a tiny business, one person might handle all six functions. In a large corporation, each has hundreds of staff.",
+            "Conflicts between departments are common — for example, Sales wants to offer big discounts, but Finance wants to protect margins.",
+            "Understanding all six areas makes you a much more well-rounded business professional, whatever your specialism."
+          ],
+          "practice": "Pick a well-known company (a supermarket, a tech firm, a fast-food chain). For each of the six functions, write one specific task that team would be doing this week. For example, HR at a supermarket might be recruiting seasonal staff for the holidays.",
+          "quiz": [
+            {
+              "q": "Which function is primarily responsible for recruiting and training staff?",
+              "choices": [
+                "Marketing",
+                "Operations",
+                "Human Resources",
+                "IT"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What is the main difference between Marketing and Sales?",
+              "choices": [
+                "Marketing handles money; Sales handles people",
+                "Marketing creates awareness and interest; Sales converts that interest into purchases",
+                "They are exactly the same function",
+                "Sales is more important than Marketing"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which function manages budgeting, cash flow, and financial reporting?",
+              "choices": [
+                "Operations",
+                "HR",
+                "IT",
+                "Finance &amp; Accounting"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "A company's kitchen team preparing meals in a restaurant is an example of which function?",
+              "choices": [
+                "Operations",
+                "Sales",
+                "HR",
+                "Marketing"
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "fn6",
+          "title": "Stakeholders &amp; the Business Environment",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>What Is a Stakeholder?</h4>\n<p>A <b>stakeholder</b> is any person or group that has an interest in a business — either because they are affected by what it does, or because they can affect what it does. Stakeholders are not just the owners; they include anyone with a 'stake' in the outcome.</p>\n<h4>Key Stakeholders</h4>\n<ul>\n  <li><b>Customers</b> — want good products at fair prices.</li>\n  <li><b>Employees</b> — want fair pay, job security, and good working conditions.</li>\n  <li><b>Owners / Shareholders</b> — want the business to grow and generate profit.</li>\n  <li><b>Suppliers</b> — want to be paid on time and have a reliable, ongoing relationship.</li>\n  <li><b>The Local Community</b> — wants the business to create jobs and avoid causing harm (noise, pollution, traffic).</li>\n  <li><b>Government</b> — wants businesses to pay tax, follow the law, and contribute to the economy.</li>\n</ul>\n<h4>Internal vs External Stakeholders</h4>\n<p><b>Internal stakeholders</b> are inside the business — employees and owners. <b>External stakeholders</b> are outside — customers, suppliers, the community, and government. A good business tries to balance the interests of all of them, even though those interests sometimes conflict (for example, shareholders want higher profits while employees want higher wages).</p>\n<h4>The Business Environment</h4>\n<p>No business operates in a vacuum. It is surrounded by forces it cannot fully control:</p>\n<ul>\n  <li><b>Economic conditions</b> — a recession can slash customer spending overnight.</li>\n  <li><b>Technology</b> — new inventions can make old products obsolete.</li>\n  <li><b>Competition</b> — rivals trying to win your customers.</li>\n  <li><b>Laws &amp; regulations</b> — rules the business must follow.</li>\n  <li><b>Social trends</b> — changing tastes and values (e.g. demand for eco-friendly products).</li>\n</ul>\n<p>Later in this course you will use tools like <b>PESTLE</b> and <b>SWOT</b> to analyse these forces systematically. For now, the key insight is: smart businesses watch their environment constantly and adapt.</p>",
+          "simple": "A stakeholder is anyone who cares about what a business does — think of them as people sitting around a campfire that the business has lit. Some are close to the fire (employees, owners), others are further away (the community, government), but they all feel the heat. The business environment is everything outside the campfire that can affect how it burns — the weather, the wind, and what other campfires are nearby.",
+          "tips": [
+            "Stakeholder interests often conflict. A key management skill is balancing these competing demands.",
+            "Ignoring external stakeholders (like the local community) can damage a company's reputation badly.",
+            "Businesses that monitor their environment and adapt quickly are far more likely to survive long term."
+          ],
+          "practice": "Choose a business that recently made the news — perhaps one that opened a new factory, changed its prices, or launched a new product. List at least four stakeholders affected by that news and describe, in one sentence each, how they might feel about it.",
+          "quiz": [
+            {
+              "q": "Which of the following is an EXTERNAL stakeholder of a business?",
+              "choices": [
+                "The CEO",
+                "A factory worker",
+                "A supplier",
+                "A shareholder who works in the office"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Why do stakeholder interests sometimes conflict?",
+              "choices": [
+                "They never conflict — all stakeholders want the same things",
+                "Because different groups have different priorities, such as profit vs higher wages",
+                "Because stakeholders are not allowed to communicate with each other",
+                "Because the government forces them to disagree"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which of the following is part of a business's EXTERNAL environment?",
+              "choices": [
+                "The skills of its employees",
+                "Its internal culture",
+                "Its financial reserves",
+                "Changes in government regulations"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "What is the best description of a stakeholder?",
+              "choices": [
+                "Only the people who own shares in a company",
+                "Any person or group with an interest in — or affected by — a business",
+                "Only the employees of a company",
+                "The government departments that regulate a company"
+              ],
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bizmath",
+      "title": "Business Math & Numeracy",
+      "icon": "➗",
+      "color": "#14b8a6",
+      "blurb": "The everyday numbers of business made painless — percentages, margins, markups, interest and simple budgets.",
+      "lessons": [
+        {
+          "id": "bm1",
+          "title": "Percentages, Fractions & Ratios",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>What Is a Percentage?</h4>\n<p>A percentage is simply a fraction out of 100. When we say 25%, we mean 25 out of every 100 — or one quarter of the whole.</p>\n<h4>Finding X% of a Number</h4>\n<p>To find a percentage of a number, convert the percentage to a decimal and multiply.</p>\n<ul>\n  <li><b>Example:</b> What is 20% of 80?</li>\n  <li>Step 1 — convert: 20% = <code>20 / 100 = 0.20</code></li>\n  <li>Step 2 — multiply: <code>0.20 x 80 = 16</code></li>\n  <li>Answer: <b>16</b></li>\n</ul>\n<h4>Percentage Increase &amp; Decrease</h4>\n<p>To find the percentage change between two numbers:</p>\n<ul>\n  <li><b>Formula:</b> <code>(New - Old) / Old x 100</code></li>\n  <li><b>Example:</b> Sales rose from 200 to 250.</li>\n  <li><code>(250 - 200) / 200 x 100 = 50 / 200 x 100 = 25%</code> increase</li>\n</ul>\n<p>If the result is negative, it is a decrease. Sales dropping from 200 to 150 gives <code>(150 - 200) / 200 x 100 = -25%</code>.</p>\n<h4>Ratios</h4>\n<p>A ratio compares two quantities. A ratio of 2:3 means for every 2 of one thing there are 3 of another.</p>\n<ul>\n  <li><b>Example:</b> A business spends 40 dollars on staff and 60 dollars on supplies. The ratio is 40:60, which simplifies to 2:3.</li>\n  <li>To simplify, divide both sides by their greatest common factor (here, 20).</li>\n</ul>\n<p>Ratios can also be written as fractions: 2:3 is the same as 2/3 or about 67%.</p>",
+          "simple": "A percentage is just a number out of 100 — like a slice of a pie cut into 100 equal pieces. To find 20% of something, multiply it by 0.20, the same way a store clerk multiplies a price by 0.20 to work out a one-fifth discount. A ratio compares two amounts to each other, like saying there are twice as many chairs as tables.",
+          "tips": [
+            "To convert any percentage to a decimal, move the decimal point two places to the left (25% becomes 0.25).",
+            "When checking a percentage change, always divide by the OLD number, not the new one.",
+            "Simplify ratios by dividing both sides by the same number until you cannot go any further."
+          ],
+          "practice": "A product sold 120 units last month and 150 units this month. Calculate the percentage increase. Then find 15% of 200.",
+          "quiz": [
+            {
+              "q": "What is 30% of 200?",
+              "choices": [
+                "30",
+                "60",
+                "90",
+                "600"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Sales go from 400 to 500. What is the percentage increase?",
+              "choices": [
+                "20%",
+                "25%",
+                "10%",
+                "15%"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "A ratio of 6:9 simplified is:",
+              "choices": [
+                "3:4",
+                "2:3",
+                "1:2",
+                "6:9"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "To turn a percentage into a decimal you:",
+              "choices": [
+                "Multiply by 100",
+                "Add 100",
+                "Divide by 100",
+                "Subtract 100"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "bm2",
+          "title": "Markups, Margins & Discounts",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>Cost vs Selling Price</h4>\n<p>Every product has a <b>cost</b> (what you pay to make or buy it) and a <b>selling price</b> (what the customer pays). The difference is your <b>profit</b>.</p>\n<ul>\n  <li><b>Example:</b> You buy a mug for 4 dollars and sell it for 10 dollars. Profit = <code>10 - 4 = 6 dollars</code>.</li>\n</ul>\n<h4>Markup</h4>\n<p>Markup is profit expressed as a percentage of <b>cost</b>.</p>\n<ul>\n  <li><b>Formula:</b> <code>Markup % = (Profit / Cost) x 100</code></li>\n  <li><b>Example:</b> Mug costs 4 dollars, sells for 10 dollars.</li>\n  <li><code>(6 / 4) x 100 = 150% markup</code></li>\n</ul>\n<h4>Margin</h4>\n<p>Margin is profit expressed as a percentage of <b>selling price</b>.</p>\n<ul>\n  <li><b>Formula:</b> <code>Margin % = (Profit / Selling Price) x 100</code></li>\n  <li><b>Example:</b> Same mug.</li>\n  <li><code>(6 / 10) x 100 = 60% margin</code></li>\n</ul>\n<p><b>Key insight:</b> Markup and margin use the same profit figure but different denominators, so they always give different numbers. Margin is always lower than markup for the same product.</p>\n<h4>Discounts</h4>\n<p>A discount reduces the selling price. To apply a 20% discount to a 50-dollar item:</p>\n<ul>\n  <li>Discount amount: <code>0.20 x 50 = 10 dollars</code></li>\n  <li>New price: <code>50 - 10 = 40 dollars</code></li>\n  <li>Shortcut: multiply by <code>(1 - 0.20) = 0.80</code>, so <code>50 x 0.80 = 40 dollars</code></li>\n</ul>",
+          "simple": "Think of markup as asking 'how much extra did I charge on top of what I paid?' — it is measured against your cost. Margin instead asks 'of every dollar the customer gave me, how many cents were profit?' — it is measured against the selling price. A discount just lowers the price by a chosen percentage, like a shop knocking 20% off a price tag.",
+          "tips": [
+            "Markup is always calculated on cost; margin is always calculated on selling price — mixing them up is one of the most common business math errors.",
+            "A quick discount shortcut: multiply the original price by (1 minus the discount rate) to get the final price in one step.",
+            "High markup does not always mean high margin — a large cost base can shrink your margin even with a big markup percentage."
+          ],
+          "practice": "You buy a book for 5 dollars and sell it for 15 dollars. Calculate both the markup percentage and the margin percentage. Then apply a 10% discount to a 30-dollar item.",
+          "quiz": [
+            {
+              "q": "You buy a pen for 2 dollars and sell it for 5 dollars. What is the markup percentage?",
+              "choices": [
+                "40%",
+                "60%",
+                "150%",
+                "250%"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Using the same pen (cost 2 dollars, price 5 dollars), what is the margin percentage?",
+              "choices": [
+                "40%",
+                "60%",
+                "150%",
+                "250%"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "A 25% discount on a 80-dollar item gives a new price of:",
+              "choices": [
+                "55 dollars",
+                "60 dollars",
+                "65 dollars",
+                "70 dollars"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which statement is true?",
+              "choices": [
+                "Markup and margin are always equal",
+                "Margin is always higher than markup",
+                "Markup is always higher than margin",
+                "Markup uses selling price as the base"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "bm3",
+          "title": "Simple & Compound Interest",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>What Is Interest?</h4>\n<p>Interest is the cost of borrowing money — or the reward for lending it. If you put money in a savings account, the bank pays you interest. If you take a loan, you pay the bank interest.</p>\n<h4>Simple Interest</h4>\n<p>Simple interest is calculated only on the original amount (called the <b>principal</b>).</p>\n<ul>\n  <li><b>Formula:</b> <code>Interest = Principal x Rate x Time</code></li>\n  <li>Rate is the annual percentage as a decimal. Time is in years.</li>\n  <li><b>Example:</b> You lend 1,000 dollars at 5% per year for 3 years.</li>\n  <li><code>Interest = 1000 x 0.05 x 3 = 150 dollars</code></li>\n  <li>Total repaid: <code>1000 + 150 = 1,150 dollars</code></li>\n</ul>\n<h4>Compound Interest</h4>\n<p>Compound interest is calculated on the principal <b>plus</b> any interest already earned. Your interest earns interest — that is the key difference.</p>\n<ul>\n  <li><b>Formula:</b> <code>Total = Principal x (1 + Rate) raised to the power of Years</code></li>\n  <li><b>Example:</b> 1,000 dollars at 10% per year, compounded annually for 3 years.</li>\n  <li>Year 1: <code>1000 x 1.10 = 1,100 dollars</code></li>\n  <li>Year 2: <code>1100 x 1.10 = 1,210 dollars</code></li>\n  <li>Year 3: <code>1210 x 1.10 = 1,331 dollars</code></li>\n  <li>Compare to simple interest: <code>1000 + (1000 x 0.10 x 3) = 1,300 dollars</code></li>\n</ul>\n<p>Compound interest produced <b>31 dollars more</b> over just 3 years — the gap grows much larger over time. This is why starting a savings plan early matters, and also why carrying debt for a long time is costly.</p>",
+          "simple": "Simple interest is like earning a flat 5 dollars a year on a 100-dollar deposit — the same amount every year. Compound interest is like a snowball rolling downhill: each year the snowball gets bigger, so the new snow that sticks to it increases too. Over many years, compounding creates a dramatic difference compared to simple interest.",
+          "tips": [
+            "Always convert the interest rate from a percentage to a decimal before calculating (5% becomes 0.05).",
+            "Compound interest works against you on debt — paying off loans early can save a surprising amount of money.",
+            "Even a small difference in interest rate, compounded over 20 or 30 years, produces a huge difference in final value."
+          ],
+          "practice": "You deposit 2,000 dollars at a simple interest rate of 4% per year for 5 years. Calculate total interest earned. Then estimate the Year 2 balance if the same deposit earned 10% compound interest per year.",
+          "quiz": [
+            {
+              "q": "Simple interest on 500 dollars at 6% for 2 years is:",
+              "choices": [
+                "30 dollars",
+                "60 dollars",
+                "66 dollars",
+                "120 dollars"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What makes compound interest different from simple interest?",
+              "choices": [
+                "It uses a higher rate",
+                "Interest is earned on both the principal and previous interest",
+                "It only applies to savings accounts",
+                "It is calculated monthly, never annually"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "1,000 dollars at 10% compound interest for 2 years gives a total of:",
+              "choices": [
+                "1,100 dollars",
+                "1,200 dollars",
+                "1,210 dollars",
+                "1,220 dollars"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which scenario benefits MOST from compound interest?",
+              "choices": [
+                "A 1-year savings account",
+                "A 30-year retirement fund",
+                "A one-week loan",
+                "A fixed price contract"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "bm4",
+          "title": "Reading Charts, Tables & Big Numbers",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>Bar Charts &amp; Line Charts</h4>\n<p>A <b>bar chart</b> compares amounts across categories. A <b>line chart</b> shows how a value changes over time. Both have a horizontal axis (x) and a vertical axis (y).</p>\n<ul>\n  <li>Always read the axis labels first — they tell you the units and scale.</li>\n  <li>Check whether the vertical axis starts at zero. A chart starting at 90 instead of 0 can make a tiny change look huge.</li>\n</ul>\n<h4>Reading a Simple Table</h4>\n<table class=\"lesson-table\">\n  <tr><th>Month</th><th>Sales (units)</th><th>Revenue (dollars)</th></tr>\n  <tr><td>Jan</td><td>100</td><td>500</td></tr>\n  <tr><td>Feb</td><td>120</td><td>600</td></tr>\n  <tr><td>Mar</td><td>80</td><td>400</td></tr>\n</table>\n<p>Total sales: <code>100 + 120 + 80 = 300 units</code>. Average monthly sales: <code>300 / 3 = 100 units</code>.</p>\n<h4>Thousands, Millions &amp; Abbreviations</h4>\n<ul>\n  <li><b>K</b> = thousand (5K = 5,000)</li>\n  <li><b>M</b> = million (3M = 3,000,000)</li>\n  <li><b>B</b> or <b>bn</b> = billion (2B = 2,000,000,000)</li>\n</ul>\n<h4>Averages</h4>\n<p>The most common average is the <b>mean</b>: add all values and divide by how many there are.</p>\n<ul>\n  <li>Sales figures: 10, 20, 30. Mean = <code>(10 + 20 + 30) / 3 = 20</code></li>\n</ul>\n<h4>Spotting a Trend</h4>\n<p>A trend is the general direction of data over time — rising, falling, or flat. Look past individual ups and downs and ask: is the overall line going up or down?</p>",
+          "simple": "Charts are just pictures of numbers — a bar chart is like placing stacks of coins side by side to compare them, and a line chart is like tracing the path of a ball as it moves through time. The most important rule is to always check what the axes actually say before drawing any conclusion. A chart can be technically accurate but visually misleading if the scale is chosen to exaggerate small differences.",
+          "tips": [
+            "Always check whether the y-axis starts at zero before deciding whether a change looks large or small.",
+            "When a report says 'average,' ask whether they mean the mean, median, or mode — they can tell very different stories.",
+            "Get comfortable translating K, M, and B so large numbers do not feel abstract when you read financial reports."
+          ],
+          "practice": "A company reports quarterly revenues of 200K, 250K, 180K, and 270K. Calculate the mean quarterly revenue. Identify whether the trend from Q1 to Q4 is broadly rising or broadly falling.",
+          "quiz": [
+            {
+              "q": "A bar chart's y-axis starts at 95 instead of 0. This means:",
+              "choices": [
+                "The data is wrong",
+                "Small differences appear larger than they really are",
+                "The bars represent percentages",
+                "The chart is definitely misleading and illegal"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Sales figures are 10, 30, and 20. What is the mean?",
+              "choices": [
+                "10",
+                "20",
+                "25",
+                "30"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What does 4.5M mean?",
+              "choices": [
+                "4,500",
+                "45,000",
+                "4,500,000",
+                "4,500,000,000"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "A line chart is best suited to showing:",
+              "choices": [
+                "A single snapshot comparison across departments",
+                "How a value changes over time",
+                "The proportion of a whole",
+                "Geographic distribution of sales"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "bm5",
+          "title": "Budgets & Break-Even (the simple way)",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>What Is a Budget?</h4>\n<p>A budget is simply a plan for money — it lists expected income and expected spending so you can see whether you will end up with a surplus (more in than out) or a deficit (more out than in).</p>\n<h4>Fixed vs Variable Costs</h4>\n<ul>\n  <li><b>Fixed costs</b> stay the same no matter how much you sell — for example, rent is 500 dollars a month whether you sell 1 item or 1,000 items.</li>\n  <li><b>Variable costs</b> change with the number of units produced or sold — for example, each item costs 2 dollars in materials, so 10 items = 20 dollars, 50 items = 100 dollars.</li>\n</ul>\n<h4>A Simple Budget Example</h4>\n<table class=\"lesson-table\">\n  <tr><th>Item</th><th>Monthly Amount (dollars)</th></tr>\n  <tr><td>Revenue (50 units at 10 each)</td><td>500</td></tr>\n  <tr><td>Fixed costs (rent)</td><td>-200</td></tr>\n  <tr><td>Variable costs (50 units at 2 each)</td><td>-100</td></tr>\n  <tr><td><b>Profit</b></td><td><b>200</b></td></tr>\n</table>\n<h4>Break-Even Point</h4>\n<p>Break-even is the number of units you must sell to cover all costs — no profit, no loss. Below break-even you lose money; above it you make money.</p>\n<ul>\n  <li><b>Formula:</b> <code>Break-Even Units = Fixed Costs / (Selling Price - Variable Cost per Unit)</code></li>\n  <li>The bottom part <code>(Price - Variable Cost)</code> is called the <b>contribution per unit</b>.</li>\n  <li><b>Example:</b> Fixed costs = 300 dollars. Selling price = 10 dollars. Variable cost = 4 dollars.</li>\n  <li>Contribution per unit: <code>10 - 4 = 6 dollars</code></li>\n  <li>Break-even: <code>300 / 6 = 50 units</code></li>\n  <li>Sell fewer than 50 and you lose money; sell more than 50 and you make a profit.</li>\n</ul>",
+          "simple": "A budget is like mapping out a road trip before you leave — you write down the fuel, food, and hotel costs so you know whether your spending money will stretch far enough. Fixed costs are like the hotel booking you already paid for, which stays the same regardless of how far you drive. Break-even is the exact number of sales you need to make before the business starts putting money in your pocket rather than just covering its bills.",
+          "tips": [
+            "Always separate fixed and variable costs before doing any break-even analysis — mixing them up gives a useless answer.",
+            "A higher selling price and a lower variable cost both improve your contribution per unit, pushing the break-even point down.",
+            "Budgets are not just for businesses — the same fixed/variable framework works for personal finance and project planning."
+          ],
+          "practice": "A food stall has fixed costs of 240 dollars per week. Each meal sells for 8 dollars and costs 3 dollars in ingredients. Calculate the break-even number of meals per week. Then build a simple budget showing profit if 60 meals are sold.",
+          "quiz": [
+            {
+              "q": "Which of these is a FIXED cost?",
+              "choices": [
+                "Cost of raw materials per unit",
+                "Delivery charges per order",
+                "Monthly office rent",
+                "Sales commission per sale"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Fixed costs are 200 dollars. Selling price is 10 dollars, variable cost is 6 dollars. What is the break-even quantity?",
+              "choices": [
+                "20 units",
+                "50 units",
+                "33 units",
+                "100 units"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Contribution per unit is defined as:",
+              "choices": [
+                "Selling price minus fixed cost",
+                "Selling price minus variable cost",
+                "Revenue minus total costs",
+                "Fixed cost divided by units sold"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "A business sells 10 units below its break-even point. This means it is:",
+              "choices": [
+                "Making a small profit",
+                "Exactly covering its costs",
+                "Running at a loss",
+                "Doubling its fixed costs"
+              ],
+              "answer": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "commskills",
+      "title": "Communication & Professional Skills",
+      "icon": "✍️",
+      "color": "#8b5cf6",
+      "blurb": "The day-one skills every workplace needs — clear writing, professional email, meetings, presenting, and managing your time.",
+      "lessons": [
+        {
+          "id": "cs1",
+          "title": "Professional Email & Business Writing",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>Why Email Matters</h4>\n<p>Every email you send is a reflection of your professionalism. A clear, well-structured email saves time and builds trust with colleagues and clients.</p>\n<h4>Anatomy of a Great Email</h4>\n<ul>\n  <li><b>Subject line:</b> Be specific. 'Follow-up on Budget Report' beats 'Hi' every time.</li>\n  <li><b>Greeting:</b> Use 'Hi [Name],' for colleagues; 'Dear Mr/Ms [Last Name],' for formal contexts.</li>\n  <li><b>Opening line:</b> State your purpose immediately. Don't bury the point.</li>\n  <li><b>Body:</b> Keep it short. Use bullet points for lists or steps.</li>\n  <li><b>Call to action:</b> Tell the reader exactly what you need. 'Please reply by Friday' is better than 'let me know.'</li>\n  <li><b>Sign-off:</b> 'Best regards,' or 'Thanks,' work for most situations.</li>\n</ul>\n<h4>Tone Tips</h4>\n<table class=\"lesson-table\">\n  <tr><th>Do</th><th>Don't</th></tr>\n  <tr><td>'Could you please review this?'</td><td>'You need to check this.'</td></tr>\n  <tr><td>'I wanted to follow up on...'</td><td>'As per my last email...'</td></tr>\n  <tr><td>Proofread before sending</td><td>Send from a phone without re-reading</td></tr>\n</table>\n<h4>Quick Proofreading Checklist</h4>\n<ul>\n  <li>Is the subject line clear and specific?</li>\n  <li>Did you state your purpose in the first two sentences?</li>\n  <li>Are there typos or autocorrect errors?</li>\n  <li>Is the tone polite and professional?</li>\n</ul>\n<p>A two-minute proofread prevents misunderstandings that take hours to fix.</p>",
+          "simple": "Writing a professional email is like sending a letter on behalf of your future self — first impressions stick. Keep your subject clear, get to the point fast, and always re-read before hitting send. Think of each email as a handshake: you want it to feel warm, confident, and respectful. Short and clear always beats long and confusing.",
+          "tips": [
+            "Write your subject line last — once you know what you actually said.",
+            "If you need more than three paragraphs, consider a call or meeting instead.",
+            "Always re-read your email out loud before sending to catch awkward phrasing."
+          ],
+          "practice": "Draft a short email to a colleague asking them to review a report by end of week. Include a clear subject line, a polite greeting, one paragraph explaining the request, and a professional sign-off.",
+          "quiz": [
+            {
+              "q": "What is the most important purpose of an email subject line?",
+              "choices": [
+                "To tell the recipient exactly what the email is about",
+                "To make the email look more formal",
+                "To fill in the required field before sending",
+                "To include the date the email was sent"
+              ],
+              "answer": 0
+            },
+            {
+              "q": "Which sign-off is most appropriate for a formal client email?",
+              "choices": [
+                "Cheers,",
+                "Later,",
+                "Best regards,",
+                "TTYL,"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "When should you use bullet points in an email?",
+              "choices": [
+                "Never — emails should always be written in paragraphs",
+                "Only when writing to senior management",
+                "When listing multiple items or steps to make them easier to read",
+                "Only in marketing emails"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What does a strong 'call to action' in an email do?",
+              "choices": [
+                "Adds a phone number at the bottom",
+                "Tells the reader exactly what you need them to do and by when",
+                "Encourages the reader to forward the email",
+                "Reminds the reader to check their calendar"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "cs2",
+          "title": "Running & Joining Meetings",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>The Purpose of a Meeting</h4>\n<p>A meeting should accomplish something that an email or document cannot. Before scheduling one, ask: 'Could this be a quick message instead?'</p>\n<h4>Before the Meeting</h4>\n<ul>\n  <li><b>Send an agenda:</b> List the topics, time allowed for each, and any pre-reading needed.</li>\n  <li><b>Invite only the people who are essential</b> — every extra person is extra cost.</li>\n  <li><b>Prepare your contributions:</b> Review any documents or data in advance.</li>\n</ul>\n<h4>During the Meeting</h4>\n<ul>\n  <li>Start and end on time — this shows respect for everyone's schedule.</li>\n  <li><b>Take notes:</b> Record decisions made, not just topics discussed.</li>\n  <li><b>Capture action items:</b> Who does what, by when? Write it down.</li>\n  <li>Stay on topic. A good chair gently redirects off-topic tangents.</li>\n</ul>\n<h4>Virtual Meeting Etiquette</h4>\n<table class=\"lesson-table\">\n  <tr><th>Do</th><th>Don't</th></tr>\n  <tr><td>Mute when not speaking</td><td>Leave background noise on</td></tr>\n  <tr><td>Use a tidy, professional background</td><td>Join from a noisy cafe</td></tr>\n  <tr><td>Look at the camera when speaking</td><td>Multitask visibly on screen</td></tr>\n</table>\n<h4>After the Meeting</h4>\n<p>Send a brief summary email within 24 hours. Include: decisions made, action items (owner + deadline), and the next meeting date if applicable. This simple habit prevents confusion and keeps everyone accountable.</p>",
+          "simple": "A meeting without an agenda is like a road trip without a map — everyone ends up lost and frustrated. Prepare in advance, listen actively, write down who agreed to do what, and follow up afterward. Think of meeting notes as the team's shared memory. Good meeting habits make you stand out as someone who respects other people's time.",
+          "tips": [
+            "Send the agenda at least 24 hours before the meeting so people can prepare.",
+            "End every meeting by reading the action items aloud to confirm ownership.",
+            "For virtual calls, do a quick tech check (camera, mic, internet) five minutes early."
+          ],
+          "practice": "Write a one-page meeting agenda for a 30-minute team check-in. Include three topics, a time budget for each, and one pre-reading item. Then write three example action items with owners and due dates.",
+          "quiz": [
+            {
+              "q": "What should always be captured during a meeting?",
+              "choices": [
+                "A full word-for-word transcript",
+                "Decisions made and action items with owners and deadlines",
+                "A list of every person who spoke",
+                "The topics that were not discussed"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is the main purpose of sending a meeting agenda in advance?",
+              "choices": [
+                "To show that you are organised and in charge",
+                "To allow participants to prepare and use time efficiently",
+                "To give people a chance to cancel the meeting",
+                "To comply with company policy"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which virtual meeting behaviour is considered professional?",
+              "choices": [
+                "Checking emails while someone else is presenting",
+                "Keeping your microphone on at all times so people can hear you",
+                "Muting yourself when you are not speaking",
+                "Using your phone camera instead of your laptop camera"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "When is a meeting NOT the best option?",
+              "choices": [
+                "When a decision requires input from multiple people",
+                "When a simple update or answer could be sent by email",
+                "When brainstorming new ideas as a group",
+                "When resolving a conflict between team members"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "cs3",
+          "title": "Presentations &amp; Public Speaking Basics",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>Why Presenting Matters</h4>\n<p>Your ability to communicate ideas clearly in front of others is one of the highest-value skills in any organisation. Even small, well-delivered presentations build your reputation fast.</p>\n<h4>Structure: The Classic Three-Part Framework</h4>\n<ul>\n  <li><b>Tell them what you'll tell them</b> — a brief intro with your main point.</li>\n  <li><b>Tell them</b> — your two or three key arguments or findings.</li>\n  <li><b>Tell them what you told them</b> — a short recap and a clear call to action.</li>\n</ul>\n<h4>Slide Design: Less Is More</h4>\n<ul>\n  <li>One idea per slide — if you need to cram, split the slide.</li>\n  <li>Use big fonts (24pt minimum) and high contrast.</li>\n  <li>Images and charts beat long paragraphs every time.</li>\n  <li>Never read your slides word-for-word to the audience.</li>\n</ul>\n<h4>Knowing Your Audience</h4>\n<p>Before you build a single slide, ask: 'What does this audience already know? What do they care about? What do I want them to do after?' Tailor your language and examples accordingly.</p>\n<h4>Handling Nerves</h4>\n<table class=\"lesson-table\">\n  <tr><th>Technique</th><th>Why It Works</th></tr>\n  <tr><td>Slow, deep breaths before you start</td><td>Calms your nervous system physically</td></tr>\n  <tr><td>Practice out loud, not just in your head</td><td>Builds muscle memory for words</td></tr>\n  <tr><td>Focus on the message, not yourself</td><td>Shifts attention away from self-consciousness</td></tr>\n</table>\n<p>Nerves are normal — even experienced speakers feel them. The goal is not to eliminate nerves but to channel that energy into enthusiasm.</p>",
+          "simple": "Giving a presentation is like telling a story around a campfire — you need a clear beginning, a compelling middle, and a memorable end. Keep your slides simple, know your audience, and practice out loud at least twice. Think of nerves as your body giving you extra energy for the moment. The more you present, the less frightening it becomes.",
+          "tips": [
+            "Rehearse your opening line until you can say it without thinking — a confident start sets the tone.",
+            "Use the 'five-second test': if someone can't grasp a slide in five seconds, simplify it.",
+            "Make eye contact with different people in the room, not just the friendliest face."
+          ],
+          "practice": "Prepare a three-minute presentation on any topic you know well (a hobby, a sport, a skill). Structure it with an intro, two key points, and a conclusion. Practise it out loud and time yourself.",
+          "quiz": [
+            {
+              "q": "What does the 'tell them, tell them, tell them' framework refer to?",
+              "choices": [
+                "Repeating your main point three times on every slide",
+                "Introducing your topic, presenting your key points, then summarising",
+                "Telling your audience the same story in three different ways",
+                "Sending three follow-up emails after the presentation"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is the most important question to answer before building your slides?",
+              "choices": [
+                "How many slides should I use?",
+                "What colour scheme should I choose?",
+                "What does my audience already know, care about, and need to do?",
+                "Should I use bullet points or paragraphs?"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which slide design principle is most effective for keeping audiences engaged?",
+              "choices": [
+                "Pack as much information as possible so the audience has reference material",
+                "Use one idea per slide with visuals instead of dense text",
+                "Use a consistent dark background with small white text",
+                "Include at least five bullet points per slide"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is the best way to manage presentation nerves?",
+              "choices": [
+                "Avoid making eye contact so you are less distracted",
+                "Read directly from your slides so you don't forget anything",
+                "Practise out loud and focus on delivering value to the audience",
+                "Speak as fast as possible to get it over with quickly"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "cs4",
+          "title": "Time Management &amp; Productivity",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>Why Time Management Is a Skill</h4>\n<p>Nobody has more than 24 hours in a day. The difference between overwhelmed employees and effective ones is how they choose to spend those hours — especially at work.</p>\n<h4>Urgent vs Important: The Eisenhower Matrix</h4>\n<table class=\"lesson-table\">\n  <tr><th></th><th>Urgent</th><th>Not Urgent</th></tr>\n  <tr><td><b>Important</b></td><td>Do now</td><td>Schedule it</td></tr>\n  <tr><td><b>Not Important</b></td><td>Delegate it</td><td>Eliminate it</td></tr>\n</table>\n<p>Most people spend too much time on urgent-but-not-important tasks. Learn to say no politely, and protect time for work that actually matters.</p>\n<h4>Building a Simple To-Do System</h4>\n<ul>\n  <li>Write tasks down — your brain is not a reliable storage device.</li>\n  <li>Limit your daily list to 3-5 priority items; extras go on a backlog.</li>\n  <li>Break big tasks into small, concrete steps ('draft intro paragraph' not 'write report').</li>\n</ul>\n<h4>The Multitasking Myth</h4>\n<p>Research consistently shows that multitasking reduces quality and increases errors. Instead, try <b>time-blocking</b>: dedicate focused 25-50 minute blocks to a single task, then take a short break.</p>\n<h4>Beating Procrastination</h4>\n<ul>\n  <li>Start with the smallest possible step — just open the document.</li>\n  <li>Remove distractions: phone on silent, notifications off.</li>\n  <li>Use deadlines, even self-imposed ones. Tell a colleague your deadline — accountability helps.</li>\n</ul>",
+          "simple": "Managing your time is like packing a suitcase — if you try to fit everything in at once, nothing fits well. Focus on the most important tasks first, write things down so your brain can relax, and work in focused bursts instead of juggling ten things at once. Procrastination usually shrinks the moment you take the first tiny step. Small consistent habits beat occasional heroic all-nighters every time.",
+          "tips": [
+            "Plan tomorrow before you leave work today — even five minutes of planning saves 30 minutes of confusion.",
+            "Block 'deep work' time in your calendar and treat it like an important meeting.",
+            "When you feel stuck, use the 'two-minute rule': if a task takes less than two minutes, do it now."
+          ],
+          "practice": "Write out tomorrow's task list. Categorise each item using the urgent/important matrix. Then time-block your day in 30-minute slots, protecting at least one 90-minute block for your most important task.",
+          "quiz": [
+            {
+              "q": "In the Eisenhower Matrix, what should you do with tasks that are urgent but not important?",
+              "choices": [
+                "Do them immediately before anything else",
+                "Schedule them for next week",
+                "Delegate them to someone else if possible",
+                "Eliminate them from your list entirely"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Why is multitasking considered less effective than focused work?",
+              "choices": [
+                "It makes you look unprofessional to colleagues",
+                "It reduces quality and increases errors because your brain switches context repeatedly",
+                "It is only effective for creative tasks",
+                "It uses too much computer memory"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is a key benefit of breaking large tasks into small, concrete steps?",
+              "choices": [
+                "It makes the task look more impressive on a to-do list",
+                "It allows you to delegate more easily",
+                "It reduces overwhelm and makes it easier to start and track progress",
+                "It guarantees the task will be completed faster"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What is the 'two-minute rule' in productivity?",
+              "choices": [
+                "Take a two-minute break every hour",
+                "Spend two minutes planning before every meeting",
+                "If a task takes less than two minutes, do it immediately rather than adding it to a list",
+                "Limit every email response to two minutes of writing time"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "cs5",
+          "title": "Teamwork &amp; Workplace Etiquette",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>Why Teamwork Skills Matter</h4>\n<p>Technical skills get you hired; people skills get you promoted. Your ability to collaborate, communicate respectfully, and support your colleagues shapes your reputation every single day.</p>\n<h4>Being a Good Teammate</h4>\n<ul>\n  <li><b>Follow through:</b> Do what you said you'd do, by when you said you'd do it.</li>\n  <li><b>Communicate early:</b> If you're going to miss a deadline, tell your team before it happens — not after.</li>\n  <li><b>Pull your weight:</b> Volunteer for tasks, not just the exciting ones.</li>\n  <li><b>Celebrate others:</b> Give credit publicly; raise concerns privately.</li>\n</ul>\n<h4>Active Listening</h4>\n<p>Listening is not just waiting for your turn to speak. Good listening means making eye contact, not interrupting, and paraphrasing back: 'So what you're saying is...' This prevents misunderstandings and makes people feel valued.</p>\n<h4>Giving &amp; Receiving Feedback</h4>\n<table class=\"lesson-table\">\n  <tr><th>Giving Feedback</th><th>Receiving Feedback</th></tr>\n  <tr><td>Be specific, not personal</td><td>Listen without defending immediately</td></tr>\n  <tr><td>Focus on behaviour, not character</td><td>Ask questions to understand</td></tr>\n  <tr><td>Choose the right moment and place</td><td>Say thank you, even if it stings</td></tr>\n</table>\n<h4>General Workplace Professionalism</h4>\n<ul>\n  <li>Be on time — or early. Every time.</li>\n  <li>Respect shared spaces: tidy up after yourself, keep common areas clean.</li>\n  <li>Keep personal calls and conversations brief if others are nearby.</li>\n  <li>When in doubt about appropriateness, ask yourself: 'Would I be comfortable if my manager saw this?'</li>\n</ul>",
+          "simple": "Being a great teammate is like being a reliable gear in a machine — when you do your part consistently and well, the whole team runs smoothly. Listen more than you talk, follow through on your promises, and give feedback the way you'd want to receive it. Professionalism is mostly about respect: for other people's time, space, and feelings. These habits are simple, but the people who practise them every day are the ones everyone wants to work with.",
+          "tips": [
+            "When you receive feedback, wait 24 hours before reacting — your first instinct is often defensiveness, not clarity.",
+            "A quick 'thanks for your help today' goes further than you think — gratitude builds trust over time.",
+            "If conflict arises, address it directly and privately with the person involved before escalating."
+          ],
+          "practice": "Think of a recent team situation (at school, work, or a group project). Write three things you did well as a teammate and one thing you could improve. Then write out how you would give constructive feedback to a teammate who consistently misses deadlines.",
+          "quiz": [
+            {
+              "q": "What is the most professional way to handle a missed deadline?",
+              "choices": [
+                "Say nothing and hope nobody notices",
+                "Blame the missed deadline on unclear instructions",
+                "Communicate early that you will miss it and propose a new date",
+                "Ask a colleague to cover for you without telling your manager"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What does 'active listening' mean in a workplace context?",
+              "choices": [
+                "Taking notes on everything everyone says in a meeting",
+                "Nodding frequently to show you are paying attention",
+                "Fully focusing on the speaker, not interrupting, and confirming understanding",
+                "Listening only to the parts of the conversation that affect your work"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "When giving feedback to a colleague, which approach is most effective?",
+              "choices": [
+                "Tell them in front of the team so everyone learns from it",
+                "Be specific about the behaviour and its impact, not about their personality",
+                "Wait until their annual review to raise concerns",
+                "Send a detailed critical email with a list of all issues"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which habit most consistently builds a strong professional reputation?",
+              "choices": [
+                "Always having the best ideas in team meetings",
+                "Arriving early to every meeting and event",
+                "Following through on commitments and communicating proactively",
+                "Volunteering for every project regardless of workload"
+              ],
+              "answer": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bookkeeping",
+      "title": "Bookkeeping & Everyday Finance",
+      "icon": "🧾",
+      "color": "#0ea5e9",
+      "blurb": "Where the money actually gets recorded — invoices, expenses, debits and credits, and reading a simple set of books.",
+      "lessons": [
+        {
+          "id": "bk1",
+          "title": "What Bookkeeping Is & Why It Matters",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>What Is Bookkeeping?</h4>\n<p>Bookkeeping is the daily habit of <b>writing down every financial event</b> that happens in a business — money coming in, money going out, and everything in between. Think of it as keeping a very tidy diary, but for dollars instead of feelings.</p>\n<h4>Bookkeeping vs Accounting</h4>\n<p>People often use these words interchangeably, but they are different jobs:</p>\n<ul>\n  <li><b>Bookkeeper</b> — records the transactions day to day (the data entry role).</li>\n  <li><b>Accountant</b> — takes that data, interprets it, files taxes, and advises on big decisions.</li>\n</ul>\n<p>Good bookkeeping is the raw material that makes good accounting possible.</p>\n<h4>Why Bother?</h4>\n<ul>\n  <li><b>Legal:</b> Most governments require accurate financial records for tax purposes.</li>\n  <li><b>Cash flow:</b> You can only know if you are running out of money if you are tracking it.</li>\n  <li><b>Decision-making:</b> \"Can I hire someone?\" is impossible to answer without the numbers.</li>\n  <li><b>Confidence:</b> Knowing your numbers reduces stress and surprises.</li>\n</ul>\n<h4>A Tiny Example</h4>\n<p>Maria runs a small cake shop. On Monday she sells $120 worth of cakes and spends $30 on flour. A bookkeeper records two things: <b>income $120</b> and <b>expense $30</b>. At the end of the week, Maria can see her net position at a glance. Without those records, she is flying blind.</p>\n<h4>What Gets Recorded?</h4>\n<ul>\n  <li>Sales and payments received</li>\n  <li>Bills and expenses paid</li>\n  <li>Bank deposits and withdrawals</li>\n  <li>Loans taken on or repaid</li>\n</ul>",
+          "simple": "Bookkeeping is the habit of writing down every money event in a business — like a very tidy diary for dollars. It keeps you legal, shows where cash is going, and lets you make smart decisions. Think of the bookkeeper as the person who collects all the scorecards; the accountant is the coach who uses them to plan the next game.",
+          "tips": [
+            "Record transactions the same day they happen — memory fades fast.",
+            "Keep a separate bank account for business money from day one.",
+            "Even a simple spreadsheet beats trying to reconstruct records from memory at tax time."
+          ],
+          "practice": "List every money event that happened to you personally in the last 24 hours (coffee, fuel, income, etc.). You just did a day of personal bookkeeping.",
+          "quiz": [
+            {
+              "q": "What is the main difference between a bookkeeper and an accountant?",
+              "choices": [
+                "Bookkeepers record daily transactions; accountants interpret and advise on the data.",
+                "Accountants record daily transactions; bookkeepers file taxes.",
+                "They are exactly the same job with different titles.",
+                "Bookkeepers only work for large corporations."
+              ],
+              "answer": 0
+            },
+            {
+              "q": "Which of the following is NOT a reason to keep good books?",
+              "choices": [
+                "To satisfy legal and tax requirements",
+                "To track cash flow",
+                "To impress competitors with colourful spreadsheets",
+                "To make informed hiring decisions"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Maria sells $200 of goods and pays $50 for supplies. What does a bookkeeper record?",
+              "choices": [
+                "Only the $200 sale",
+                "Only the $50 expense",
+                "Both the $200 income and the $50 expense",
+                "The net profit of $150 only"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Why is separating personal and business bank accounts important?",
+              "choices": [
+                "Banks require it by law in all countries",
+                "It keeps records clean and makes it easy to see true business performance",
+                "It increases the interest rate on savings",
+                "It is only relevant for companies with employees"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "bk2",
+          "title": "Debits, Credits & the Ledger (made simple)",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>The Golden Rule of Double-Entry</h4>\n<p>Every financial transaction has <b>two sides</b>. When money moves, something goes up and something else goes down — or two things go up together. This is called <b>double-entry bookkeeping</b> and it has been used since the 1400s because it is extremely hard to make a mistake that goes undetected.</p>\n<h4>What Is a Ledger?</h4>\n<p>A <b>ledger</b> is just a collection of <b>accounts</b>. An account is a named bucket that tracks one thing — cash, rent expense, sales revenue, etc. Every account has two columns: <b>Debit (Dr)</b> on the left and <b>Credit (Cr)</b> on the right.</p>\n<h4>Debit and Credit — Plain English</h4>\n<ul>\n  <li><b>Debit</b> means \"record on the left side.\" For asset accounts (things you own), a debit increases the balance. For liability accounts (things you owe), a debit decreases the balance.</li>\n  <li><b>Credit</b> is the opposite — the right side. Credits increase liabilities and revenue; they decrease assets.</li>\n</ul>\n<p>The shortcut most beginners use: <b>assets and expenses go up with debits; liabilities, equity, and revenue go up with credits.</b></p>\n<h4>Tiny Worked Example</h4>\n<p>Tom pays $500 cash to buy a laptop for his business.</p>\n<table class=\"lesson-table\">\n  <tr><th>Account</th><th>Debit</th><th>Credit</th></tr>\n  <tr><td>Equipment (asset)</td><td>$500</td><td></td></tr>\n  <tr><td>Cash (asset)</td><td></td><td>$500</td></tr>\n</table>\n<p>Equipment goes up by $500 (debit). Cash goes down by $500 (credit). Both sides balance — total debits equal total credits. That balance check is the superpower of double-entry.</p>\n<h4>Why This Matters</h4>\n<p>If your debits never equal your credits, you know an error exists somewhere. It acts as a built-in spell-checker for money.</p>",
+          "simple": "Every money transaction has two sides — like a seesaw that always stays level. When you record both sides (called a debit and a credit), they must balance, which acts as a built-in error checker. A ledger is just a folder of named buckets (accounts) where each bucket keeps its own running score. Think of it like a scorecard where every point given to one team is taken from another.",
+          "tips": [
+            "Memorise one rule first: assets and expenses increase with debits. Everything else follows.",
+            "Always check that your debits equal your credits before saving a transaction.",
+            "Modern software like Wave or QuickBooks does the debit/credit maths for you — understanding the concept is enough to spot errors."
+          ],
+          "practice": "Write out the two sides of this transaction: your business receives $300 cash from a customer for a service. Which account is debited, which is credited?",
+          "quiz": [
+            {
+              "q": "In double-entry bookkeeping, what must always be true?",
+              "choices": [
+                "Revenue must exceed expenses",
+                "Total debits must equal total credits",
+                "Assets must exceed liabilities",
+                "Cash must always have a debit balance"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Tom buys equipment for $500 cash. How is cash recorded?",
+              "choices": [
+                "Debit $500 — because cash is going up",
+                "Credit $500 — because cash is going down",
+                "No entry needed for cash transactions",
+                "Debit and credit $500 at the same time in the cash account"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is a ledger?",
+              "choices": [
+                "A legal document filed with the government",
+                "A collection of accounts that tracks all financial transactions",
+                "Another word for a bank statement",
+                "A report showing only profit and loss"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which type of account increases when you DEBIT it?",
+              "choices": [
+                "Revenue",
+                "Liabilities",
+                "Assets",
+                "Equity"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "bk3",
+          "title": "Invoices, Receipts & Expenses",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>What Is an Invoice?</h4>\n<p>An <b>invoice</b> is a formal request for payment. When your business completes a job or sells a product, you send an invoice to the customer saying: \"Here is what you owe us, when it is due, and how to pay.\" It is a promise of money coming in.</p>\n<h4>Key Parts of an Invoice</h4>\n<ul>\n  <li>Your business name &amp; contact details</li>\n  <li>Customer name &amp; address</li>\n  <li>Invoice number (for tracking)</li>\n  <li>Date issued &amp; payment due date</li>\n  <li>Line items: description, quantity, price</li>\n  <li>Total amount due</li>\n</ul>\n<h4>Receipts</h4>\n<p>A <b>receipt</b> is proof that payment was made. When your customer pays your invoice, they get a receipt. When you buy supplies, the shop gives you a receipt. Receipts are your evidence at tax time — keep every one.</p>\n<h4>Tracking Expenses</h4>\n<p>An <b>expense</b> is money your business spends to operate: rent, software subscriptions, advertising, office supplies, travel. Tracking them carefully means you can:</p>\n<ul>\n  <li>Deduct them from taxable income (legally reduce your tax bill)</li>\n  <li>Spot wasteful spending</li>\n  <li>Plan future budgets accurately</li>\n</ul>\n<h4>Petty Cash</h4>\n<p><b>Petty cash</b> is a small amount of physical cash kept on hand for tiny purchases — parking, a box of pens, a small delivery. Keep a petty cash log: write the date, amount, and reason for every spend. Top it up from the bank when it runs low, and record that transfer too.</p>\n<h4>Tiny Example</h4>\n<p>Sarah runs a design studio. She sends a $400 invoice to a client on Monday. She also buys $15 of printer ink (receipt kept). On Friday the client pays — she marks the invoice as paid and issues a receipt. Both events go into her books.</p>",
+          "simple": "An invoice is your formal bill to a customer — it is a request for money you have earned. A receipt is proof that money changed hands. Expenses are the running costs of your business, and tracking them is like keeping the score of what you spend so you can cut waste and lower your tax bill. Petty cash is just a small emergency fund for tiny day-to-day purchases.",
+          "tips": [
+            "Number every invoice sequentially — it makes chasing unpaid bills much easier.",
+            "Photograph paper receipts with your phone immediately; paper fades and gets lost.",
+            "Separate expense categories (travel, software, supplies) from the start so tax season is painless."
+          ],
+          "practice": "Draft a simple invoice for an imaginary service: choose a business name, a client, one line item, a price, and a due date. You now know the anatomy of every invoice.",
+          "quiz": [
+            {
+              "q": "What is the main purpose of an invoice?",
+              "choices": [
+                "To prove that payment has already been received",
+                "To formally request payment from a customer",
+                "To record an expense in the ledger",
+                "To apply for a business loan"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Why should you keep every receipt for business expenses?",
+              "choices": [
+                "Receipts are legally required to open a bank account",
+                "They serve as evidence of expenses, which can reduce your taxable income",
+                "They automatically update your bookkeeping software",
+                "Receipts are only needed for purchases over $1,000"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is petty cash used for?",
+              "choices": [
+                "Paying employee salaries",
+                "Large one-off equipment purchases",
+                "Small day-to-day purchases where a card is impractical",
+                "Refunding customers who return products"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which of these is an example of a business expense?",
+              "choices": [
+                "A loan repayment from a customer",
+                "A monthly software subscription for your design tools",
+                "Revenue from a completed project",
+                "Owner equity contributed to the business"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "bk4",
+          "title": "Reading a Simple Profit &amp; Loss and Balance Sheet",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>Two Essential Reports</h4>\n<p>Every business produces two core financial statements. Once you can read them at a basic level, you can assess the health of almost any business.</p>\n<h4>1. Profit &amp; Loss Statement (P&amp;L)</h4>\n<p>The P&amp;L — also called the <b>Income Statement</b> — shows how much money the business made <b>over a period of time</b> (a month, a quarter, a year). The formula is simple:</p>\n<p><b>Revenue &minus; Expenses = Net Profit (or Loss)</b></p>\n<table class=\"lesson-table\">\n  <tr><th>Item</th><th>Amount</th></tr>\n  <tr><td>Sales Revenue</td><td>$5,000</td></tr>\n  <tr><td>Cost of Goods Sold</td><td>($1,500)</td></tr>\n  <tr><td><b>Gross Profit</b></td><td><b>$3,500</b></td></tr>\n  <tr><td>Rent</td><td>($800)</td></tr>\n  <tr><td>Software</td><td>($100)</td></tr>\n  <tr><td><b>Net Profit</b></td><td><b>$2,600</b></td></tr>\n</table>\n<h4>2. Balance Sheet</h4>\n<p>The balance sheet is a <b>snapshot at one moment in time</b> — it shows what the business owns (assets), what it owes (liabilities), and what is left for the owner (equity). The equation is:</p>\n<p><b>Assets = Liabilities + Equity</b></p>\n<table class=\"lesson-table\">\n  <tr><th>Assets</th><th></th><th>Liabilities &amp; Equity</th><th></th></tr>\n  <tr><td>Cash</td><td>$2,000</td><td>Bank Loan</td><td>$1,000</td></tr>\n  <tr><td>Equipment</td><td>$3,000</td><td>Owner Equity</td><td>$4,000</td></tr>\n  <tr><td><b>Total</b></td><td><b>$5,000</b></td><td><b>Total</b></td><td><b>$5,000</b></td></tr>\n</table>\n<h4>Key Difference</h4>\n<p>P&amp;L covers a <b>period</b> (like a film). Balance sheet covers a <b>moment</b> (like a photograph). Together they tell the full financial story.</p>",
+          "simple": "The Profit &amp; Loss statement is like a scoreboard for a whole season — it adds up all income and subtracts all costs to show whether you won (profit) or lost. The balance sheet is like a photograph taken on one specific day — it shows everything the business owns versus everything it owes. Together they answer the two big questions: 'Did we make money?' and 'Are we financially strong right now?'",
+          "tips": [
+            "If your net profit is positive but your cash is low, check whether customers owe you money (accounts receivable).",
+            "A balance sheet always balances — if it does not, an entry is missing or wrong.",
+            "Review your P&amp;L monthly; waiting until year-end means you cannot fix problems early."
+          ],
+          "practice": "Sketch a one-minute P&amp;L for a lemonade stand: $80 revenue, $20 lemons &amp; cups, $10 table rental. What is the net profit? Now list one asset and one liability for the same stand.",
+          "quiz": [
+            {
+              "q": "What does a Profit &amp; Loss statement show?",
+              "choices": [
+                "A snapshot of assets and liabilities at one point in time",
+                "Revenue minus expenses over a period of time",
+                "The total cash held in the business bank account",
+                "A list of all outstanding invoices"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "The accounting equation for a balance sheet is:",
+              "choices": [
+                "Revenue minus Expenses equals Net Profit",
+                "Cash plus Inventory equals Sales",
+                "Assets equals Liabilities plus Equity",
+                "Income minus Tax equals Take-home Pay"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "A business has revenue of $10,000, cost of goods of $4,000, and other expenses of $2,000. What is net profit?",
+              "choices": [
+                "$4,000",
+                "$6,000",
+                "$8,000",
+                "$10,000"
+              ],
+              "answer": 0
+            },
+            {
+              "q": "How are the P&amp;L and balance sheet different?",
+              "choices": [
+                "The P&amp;L covers a period of time; the balance sheet is a snapshot at one moment.",
+                "The P&amp;L shows assets; the balance sheet shows profit.",
+                "They are identical reports with different names.",
+                "The balance sheet is only used by large public companies."
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "bk5",
+          "title": "Personal & Business Budgeting",
+          "level": "Beginner",
+          "minutes": 6,
+          "content": "<h4>What Is a Budget?</h4>\n<p>A <b>budget</b> is simply a plan for your money — written down before you spend it. It forces you to make decisions deliberately instead of reacting to whatever the month throws at you.</p>\n<h4>Making a Simple Budget</h4>\n<p>List your expected income, then list your expected expenses. The gap is your planned surplus (or deficit).</p>\n<table class=\"lesson-table\">\n  <tr><th>Category</th><th>Planned</th><th>Actual</th><th>Variance</th></tr>\n  <tr><td>Client revenue</td><td>$3,000</td><td>$2,700</td><td>-$300</td></tr>\n  <tr><td>Rent</td><td>$800</td><td>$800</td><td>$0</td></tr>\n  <tr><td>Software</td><td>$50</td><td>$65</td><td>-$15</td></tr>\n  <tr><td>Marketing</td><td>$200</td><td>$180</td><td>+$20</td></tr>\n  <tr><td><b>Net</b></td><td><b>$1,950</b></td><td><b>$1,655</b></td><td><b>-$295</b></td></tr>\n</table>\n<h4>Planned vs Actual</h4>\n<p>The real power of a budget comes from comparing planned numbers to <b>actual</b> numbers at the end of the period. A negative variance means you spent more or earned less than planned — a signal to investigate and adjust.</p>\n<h4>Separate Personal and Business Money</h4>\n<p>Mixing personal and business finances is one of the most common beginner mistakes. Open a dedicated business bank account and pay yourself a set \"salary\" from it. This makes bookkeeping clean and protects you if you are ever audited.</p>\n<h4>Building a Cushion</h4>\n<p>Aim to keep <b>one to three months</b> of operating expenses in a reserve account. This cash cushion absorbs slow months, unexpected bills, or a big equipment repair without forcing you to scramble for a loan.</p>",
+          "simple": "A budget is a written plan for your money — you decide where it goes before it arrives, instead of wondering where it went afterwards. Comparing your plan to what actually happened (variance) is the feedback loop that makes you smarter each month. Keeping business and personal money in separate accounts is like not mixing your laundry with your neighbour's — it prevents messy confusion.",
+          "tips": [
+            "Budget every month — a January budget cannot predict a July price rise.",
+            "Pay yourself a fixed amount from the business account rather than dipping in randomly.",
+            "Save your cash cushion first, then budget the rest — treat the reserve like a non-negotiable expense."
+          ],
+          "practice": "Write a one-month budget for a freelance photographer: list three income sources and four expense categories with realistic numbers. Then imagine actual income came in 20% lower — how does that change your plan?",
+          "quiz": [
+            {
+              "q": "What is the main purpose of a budget?",
+              "choices": [
+                "To impress your bank manager with detailed spreadsheets",
+                "To plan how money will be spent before it is spent",
+                "To replace the need for a Profit &amp; Loss statement",
+                "To calculate tax owed to the government"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "A variance of -$300 on revenue means:",
+              "choices": [
+                "You earned $300 more than planned",
+                "You spent $300 less than planned",
+                "You earned $300 less than planned",
+                "Your budget is perfectly balanced"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Why should business and personal money be kept separate?",
+              "choices": [
+                "It is required by all banks before opening any account",
+                "It keeps records clean, shows true business performance, and protects you in an audit",
+                "It doubles the interest earned on both accounts",
+                "It is only necessary once a business has more than five employees"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "How large a cash cushion is generally recommended for a small business?",
+              "choices": [
+                "One day of expenses",
+                "One to three months of operating expenses",
+                "Exactly one year of expenses",
+                "No cushion is needed if you have a business credit card"
+              ],
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adminops",
+      "title": "Office Administration & Operations",
+      "icon": "🗂️",
+      "color": "#f97316",
+      "blurb": "Keeping a business running day to day — admin, records, scheduling, processes and getting work done smoothly.",
+      "lessons": [
+        {
+          "id": "ao1",
+          "title": "The Role of Business Administration",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<p>Business administration is the engine room of any organisation. While salespeople close deals and engineers build products, administrators keep everything else moving — ordering supplies, managing information, supporting staff and making sure the business can actually function day to day.</p>\n<h4>What Do Administrators and Operations Teams Do?</h4>\n<ul>\n  <li><b>Coordinate people and resources</b> — making sure the right people have what they need, when they need it.</li>\n  <li><b>Handle communications</b> — emails, phone calls, letters, meeting notes and internal messages.</li>\n  <li><b>Manage information</b> — keeping records accurate, organised and accessible.</li>\n  <li><b>Support decision-makers</b> — preparing reports, gathering data and arranging logistics.</li>\n  <li><b>Maintain the workplace</b> — supplies, equipment, facilities and relationships with vendors.</li>\n</ul>\n<h4>Why Smooth Admin Matters</h4>\n<p>When administration works well, nobody notices — and that is the point. A well-run office means meetings start on time, invoices are paid, files can be found and staff feel supported. When admin breaks down, the whole business slows down: missed deadlines, lost documents and frustrated employees.</p>\n<h4>Key Skills for Administrators</h4>\n<ul>\n  <li>Organisation and attention to detail</li>\n  <li>Clear written and verbal communication</li>\n  <li>Prioritisation — knowing what is urgent versus important</li>\n  <li>Discretion — handling sensitive information responsibly</li>\n  <li>Adaptability — no two days are the same</li>\n</ul>\n<p>Administrators are often the first point of contact for clients and the glue that holds a team together. Respecting and investing in good administration pays dividends across every department.</p>",
+          "simple": "Business administrators are the behind-the-scenes support crew that keeps an office working — think of them like the pit crew in a Formula 1 race. Without a skilled pit crew, even the best driver cannot win. They handle communications, organise information, support colleagues and make sure supplies and logistics are in place. When admin is done well, everything else runs smoothly.",
+          "tips": [
+            "Write down every task as it comes in — even small ones — so nothing slips through the cracks.",
+            "Learn your organisation's tools (email, calendar, filing systems) inside out before trying to change them.",
+            "Build good relationships with people in every department; administrators who are trusted get things done faster."
+          ],
+          "practice": "List five things that would go wrong in a typical office this week if there were no administrator. For each one, describe which specific admin task prevents that problem.",
+          "quiz": [
+            {
+              "q": "Which of the following best describes the primary role of business administration?",
+              "choices": [
+                "Selling products and services to customers",
+                "Supporting the organisation so all other functions can operate effectively",
+                "Designing the company's products",
+                "Setting long-term company strategy"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Why is it said that 'when admin works well, nobody notices'?",
+              "choices": [
+                "Because administrators are invisible to management",
+                "Because good admin creates problems that go unnoticed",
+                "Because smooth admin removes friction so work flows without disruption",
+                "Because admin tasks are completed after hours"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which skill is most critical for an administrator handling confidential staff information?",
+              "choices": [
+                "Sales technique",
+                "Discretion",
+                "Product knowledge",
+                "Financial modelling"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Administrators are sometimes called 'the glue of a team' because they:",
+              "choices": [
+                "Repair broken office furniture",
+                "Connect and coordinate people, information and resources across the organisation",
+                "Control the budget for all departments",
+                "Write the company's marketing materials"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "ao2",
+          "title": "Records, Files &amp; Documentation",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<p>Every business generates information — contracts, invoices, staff records, emails, meeting notes and more. Managing this information properly is one of the most important admin responsibilities. Good records mean you can find what you need quickly, prove what was agreed and stay on the right side of the law.</p>\n<h4>Digital vs. Paper Records</h4>\n<ul>\n  <li><b>Digital records</b> — stored on computers, cloud drives or shared systems. Easy to search and back up, but need careful folder structures and access controls.</li>\n  <li><b>Paper records</b> — physical documents filed in cabinets. Still required for some legal documents, signatures and archiving.</li>\n</ul>\n<p>Most modern offices use a mix. The key is consistency — everyone should know where things are stored and how they are named.</p>\n<h4>Naming and Filing Conventions</h4>\n<p>A naming convention is a standard format for file names. A good one includes the date, document type and subject, for example: <b>2024-06-15_Invoice_SupplierABC</b>. This makes files sortable and searchable without opening them.</p>\n<ul>\n  <li>Use dates in YYYY-MM-DD format so files sort chronologically</li>\n  <li>Avoid spaces — use hyphens or underscores</li>\n  <li>Keep folder structures shallow (2-3 levels deep) to avoid getting lost</li>\n</ul>\n<h4>Why Documentation Matters</h4>\n<p>Documentation creates a reliable record of decisions, agreements and actions. If a dispute arises, good documentation protects the business. It also helps new staff get up to speed quickly.</p>\n<h4>Confidentiality Basics</h4>\n<ul>\n  <li>Only share personal or sensitive data with people who need it</li>\n  <li>Lock screens when away from your desk</li>\n  <li>Shred or securely delete confidential documents when no longer needed</li>\n  <li>Follow your organisation's data protection policy</li>\n</ul>",
+          "simple": "Think of your business records like a library — if books are shelved randomly, you can never find what you need. Good filing means every document has a consistent name and a logical home, so anyone on the team can locate it in seconds. Keeping records also protects the business legally, like having receipts in case you need to return a purchase. Confidentiality means treating sensitive information the way you would want your own personal details handled.",
+          "tips": [
+            "Agree on a naming convention with your whole team and write it down — consistency only works if everyone follows the same rules.",
+            "Back up digital files regularly and test that backups actually work; finding out a backup failed when you need it is too late.",
+            "Review and purge outdated records on a schedule — keeping everything forever creates clutter and can even be a legal risk."
+          ],
+          "practice": "Create a folder structure and naming convention for a small marketing agency that handles client projects, invoices, contracts and meeting notes. Draw the folder tree and write three example file names using your convention.",
+          "quiz": [
+            {
+              "q": "What is a 'naming convention' in file management?",
+              "choices": [
+                "A legal requirement to name all documents after their author",
+                "A standard format applied consistently to file names so they are easy to find and sort",
+                "The process of renaming files when they are archived",
+                "A software tool that names files automatically"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which date format is best for file names because it makes files sort chronologically?",
+              "choices": [
+                "06/15/2024",
+                "15-Jun-24",
+                "2024-06-15",
+                "June 2024"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Why is confidentiality important in records management?",
+              "choices": [
+                "To make files harder for employees to access",
+                "To protect personal and sensitive information from those who do not need it",
+                "To reduce the number of documents the business keeps",
+                "To avoid paying for cloud storage"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Good documentation primarily helps a business by:",
+              "choices": [
+                "Replacing the need for staff training",
+                "Providing a reliable record of decisions, agreements and actions for future reference",
+                "Eliminating the need for meetings",
+                "Automatically backing up digital files"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "ao3",
+          "title": "Scheduling, Calendars &amp; Coordination",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<p>Time is one of the most limited resources in any business. Managing calendars and coordinating schedules is a core admin skill that directly affects how productive a team can be. Poor scheduling leads to double-bookings, missed meetings and wasted time.</p>\n<h4>Managing Calendars</h4>\n<ul>\n  <li>Use a shared digital calendar (such as Google Calendar or Microsoft Outlook) so the whole team can see availability</li>\n  <li>Block time for focused work, not just meetings — protecting uninterrupted time is just as important as scheduling collaboration</li>\n  <li>Keep entries accurate: include location, dial-in links, agenda and any prep materials in the calendar invite</li>\n</ul>\n<h4>Booking Meetings and Rooms</h4>\n<p>Before booking a meeting, check that all required attendees are available. When booking a room or video call:</p>\n<ul>\n  <li>Confirm the room capacity and equipment (projector, whiteboard, video conferencing)</li>\n  <li>Send invites with enough notice — at least 24 hours for routine meetings, more for senior stakeholders</li>\n  <li>Include a clear agenda so attendees can prepare</li>\n</ul>\n<h4>Coordinating People and Avoiding Clashes</h4>\n<p>When coordinating multiple people, use tools like Doodle polls or the 'scheduling assistant' in your calendar app to find a time that works for everyone. Keep a list of recurring meetings so you can plan around them.</p>\n<h4>Reminders and Follow-ups</h4>\n<ul>\n  <li>Set calendar reminders 15 minutes before meetings</li>\n  <li>Send action-item follow-up emails within 24 hours of a meeting</li>\n  <li>Chase outstanding tasks politely but promptly — a short, friendly reminder prevents things falling through the cracks</li>\n</ul>\n<p>Good schedulers are proactive: they anticipate conflicts before they happen rather than scrambling to fix them at the last minute.</p>",
+          "simple": "Think of a calendar like air traffic control — without it, planes (meetings and people) would collide or never land at all. Scheduling means making sure the right people are in the right place at the right time, with enough information to be prepared. Following up after meetings is like sending a flight summary: it confirms what happened and what comes next. The goal is to make coordination invisible so everyone can focus on their actual work.",
+          "tips": [
+            "Always send a meeting agenda at least a day in advance — meetings with no agenda tend to drift and overrun.",
+            "When coordinating across time zones, state times in both local and a reference time zone (such as UTC) to avoid confusion.",
+            "After every meeting, send a brief follow-up email listing decisions made and who is responsible for each action item."
+          ],
+          "practice": "You need to schedule a 60-minute project kick-off meeting for five people, book a conference room and send the invite. Write out the step-by-step process you would follow, including what to include in the calendar invite and the follow-up email.",
+          "quiz": [
+            {
+              "q": "What should a good calendar invite include beyond just the date and time?",
+              "choices": [
+                "The personal phone numbers of all attendees",
+                "Location or dial-in link, agenda and any prep materials",
+                "A list of topics that will not be discussed",
+                "The attendees' holiday schedules"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Why is it important to protect 'focus time' on a calendar, not just schedule meetings?",
+              "choices": [
+                "So the calendar looks less empty",
+                "To prevent colleagues from interrupting concentrated, deep work time",
+                "Because meetings do not count as productive work",
+                "To avoid having to attend any meetings at all"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "A 'scheduling assistant' in calendar software helps you:",
+              "choices": [
+                "Write meeting agendas automatically",
+                "Find a meeting time when all required attendees are available",
+                "Book flights for business travel",
+                "Record and transcribe meetings"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Within what timeframe should action-item follow-up emails typically be sent after a meeting?",
+              "choices": [
+                "Within one week",
+                "Only if someone requests them",
+                "Within 24 hours",
+                "At the end of the month"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "ao4",
+          "title": "Understanding Business Processes",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<p>A business process is simply a series of steps carried out to achieve a goal — like handling a customer complaint, onboarding a new employee or processing an invoice. Understanding and improving processes is one of the most valuable skills in operations management.</p>\n<h4>What Is a Process?</h4>\n<p>Every repeatable task in a business is a process, whether it is written down or not. Documenting processes makes them consistent, trainable and improvable. A process typically has:</p>\n<ul>\n  <li><b>A trigger</b> — what starts it (a customer order, a staff request)</li>\n  <li><b>Steps</b> — the actions taken in sequence</li>\n  <li><b>Roles</b> — who is responsible for each step</li>\n  <li><b>An output</b> — the result (a shipped product, a completed onboarding)</li>\n</ul>\n<h4>Checklists and Process Maps</h4>\n<p>A simple checklist is often the most practical process tool. For more complex processes, a flow diagram (or flowchart) shows decision points and parallel steps visually. You do not need specialist software — even a hand-drawn diagram on paper works.</p>\n<h4>Standard Operating Procedures (SOPs)</h4>\n<p>An SOP is a written document that describes exactly how a process should be carried out, step by step. Good SOPs:</p>\n<ul>\n  <li>Are written in plain language anyone can follow</li>\n  <li>Include screenshots or examples where helpful</li>\n  <li>Are reviewed and updated regularly</li>\n  <li>Have a clear owner responsible for keeping them current</li>\n</ul>\n<h4>Finding and Fixing Bottlenecks</h4>\n<p>A bottleneck is a step in a process that slows everything else down — like a narrow bridge on a busy road. To find bottlenecks, look for steps where work piles up, where people wait for approval or where errors most often occur. Fixes include: simplifying the step, automating it, adding capacity or changing the sequence of steps.</p>",
+          "simple": "Think of a business process like a recipe: without clear instructions, two people making the same dish will produce very different results. A Standard Operating Procedure (SOP) is just a written recipe for a business task, so anyone can follow it consistently. A bottleneck is like a traffic jam on a motorway — one pinch point that holds up everyone behind it. Finding and widening that pinch point speeds up the whole operation.",
+          "tips": [
+            "Write SOPs while doing the task for the first time, not from memory later — you will capture detail you would otherwise forget.",
+            "When mapping a process, walk through it with the person who actually does it daily, not just with managers — they know the real steps.",
+            "Review processes whenever something goes wrong; problems are often symptoms of a broken or missing process step."
+          ],
+          "practice": "Choose a simple office process (such as ordering office supplies or onboarding a new team member). Write a step-by-step SOP with at least six steps, noting who is responsible for each step and what the final output is.",
+          "quiz": [
+            {
+              "q": "What is a 'Standard Operating Procedure' (SOP)?",
+              "choices": [
+                "A legal contract between a business and its suppliers",
+                "A written document describing exactly how a process should be carried out, step by step",
+                "A financial report summarising operating costs",
+                "A performance review template for employees"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "In a business process, what is a 'bottleneck'?",
+              "choices": [
+                "A type of storage container for office supplies",
+                "The final output of a completed process",
+                "A step where work piles up and slows everything that follows it",
+                "A tool used to measure process efficiency"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which of the following is the 'trigger' in a process?",
+              "choices": [
+                "The person who writes the SOP",
+                "The event or condition that starts the process",
+                "The document produced at the end of the process",
+                "The software tool used to carry out the process"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Why is it better to write an SOP while doing the task rather than from memory afterwards?",
+              "choices": [
+                "Because memory is unreliable and you will capture more accurate detail in the moment",
+                "Because SOPs can only be written by the person doing the task",
+                "Because writing from memory is not allowed under data protection rules",
+                "Because software tools require real-time input"
+              ],
+              "answer": 0
+            }
+          ]
+        },
+        {
+          "id": "ao5",
+          "title": "Health, Safety &amp; the Workplace",
+          "level": "Beginner",
+          "minutes": 6,
+          "content": "<p>Every employer has a legal and moral responsibility to provide a safe, healthy and inclusive workplace. As an administrator or operations team member, you play a practical role in making this happen — from keeping walkways clear to knowing who to contact in an emergency.</p>\n<h4>Basic Workplace Health and Safety</h4>\n<ul>\n  <li><b>Know the exits</b> — familiarise yourself with fire exits, muster points and emergency procedures on your first day</li>\n  <li><b>Report hazards</b> — a wet floor, a broken chair or a trailing cable should be reported and fixed immediately, not ignored</li>\n  <li><b>Ergonomics</b> — a correctly set up workstation (screen height, chair adjustment, keyboard position) prevents long-term injury</li>\n  <li><b>First aid</b> — know where the first aid kit is and who the trained first aiders in your team are</li>\n</ul>\n<h4>A Safe and Inclusive Environment</h4>\n<p>Safety includes psychological safety — people should feel safe to speak up, raise concerns and be themselves at work without fear of bullying, harassment or discrimination. An inclusive workplace respects and values people regardless of background, disability or identity.</p>\n<h4>Simple Risk Awareness</h4>\n<p>A risk assessment identifies potential hazards and how to reduce them. You do not need to be an expert — ask yourself: what could go wrong here, how likely is it, and what can we do to prevent or reduce harm? Many hazards are simple to fix once spotted.</p>\n<h4>Where to Find Help and Policies</h4>\n<ul>\n  <li>Your organisation's Health &amp; Safety policy (usually in the staff handbook or intranet)</li>\n  <li>HR or People team for concerns about wellbeing, harassment or discrimination</li>\n  <li>Your line manager for day-to-day safety questions</li>\n  <li>In an emergency: call the relevant emergency services first, then follow your organisation's emergency procedures</li>\n</ul>",
+          "simple": "Think of workplace health and safety like the rules of the road — they exist not to slow you down but to make sure everyone gets home safely. Spotting and reporting a hazard is like calling out a pothole before someone's tyre blows: a small action that prevents a big problem. An inclusive environment means everyone can do their best work without fear, just like a sports team performs best when all players feel respected and valued. Your employer's policies and HR team are there to support you — use them.",
+          "tips": [
+            "On your first day in any new workplace, walk the whole office and locate fire exits, first aid kits and the nearest first aider — before you need them.",
+            "If you spot a hazard and cannot fix it yourself, report it in writing (email or online form) so there is a record that you raised it.",
+            "Encourage a culture where people feel safe raising concerns early — small issues reported promptly are far easier to fix than big ones that have been ignored."
+          ],
+          "practice": "Walk around your current workspace (home office, classroom or workplace) and identify three potential hazards. For each one, note: what the hazard is, who might be harmed and how, and one practical step to reduce the risk.",
+          "quiz": [
+            {
+              "q": "What is the first thing you should do when you notice a wet floor hazard in the office?",
+              "choices": [
+                "Wait for the cleaning team to arrive at the end of the day",
+                "Report and address it immediately to prevent someone slipping",
+                "Put a note in the monthly health and safety report",
+                "Inform the CEO at the next all-hands meeting"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which of the following best describes 'psychological safety' in the workplace?",
+              "choices": [
+                "Having a psychologist on staff",
+                "Locking the office at night to prevent intruders",
+                "An environment where people feel safe to speak up, raise concerns and be themselves without fear",
+                "Providing stress balls and mindfulness apps to staff"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "A simple risk assessment asks you to consider:",
+              "choices": [
+                "The company's profit margin and share price",
+                "What could go wrong, how likely it is and how harm can be prevented or reduced",
+                "Which employees are most likely to cause accidents",
+                "How much it would cost to replace all office furniture"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "If an employee experiences harassment at work, who is the most appropriate first point of contact within the organisation?",
+              "choices": [
+                "The company's external accountant",
+                "HR or the People team",
+                "The office supply vendor",
+                "The marketing department"
+              ],
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salescs",
+      "title": "Sales & Customer Service",
+      "icon": "🛎️",
+      "color": "#e11d48",
+      "blurb": "How businesses win and keep customers — the basics of selling, the sales funnel, and great customer service.",
+      "lessons": [
+        {
+          "id": "sc1",
+          "title": "Sales Fundamentals & the Sales Funnel",
+          "level": "Beginner",
+          "minutes": 8,
+          "content": "<h4>What Is Selling, Really?</h4>\n<p>Selling is not about tricking people — it is about <b>helping someone solve a problem</b> with a product or service. A great salesperson listens first, then matches the right solution to the right person.</p>\n<h4>The Sales Funnel</h4>\n<p>Think of a funnel: wide at the top, narrow at the bottom. Many people hear about you, fewer get interested, fewer still buy. The four main stages are:</p>\n<ul>\n  <li><b>Awareness</b> — the customer learns your product exists (ad, word of mouth, Google search).</li>\n  <li><b>Interest</b> — they want to know more. They visit your website or ask a question.</li>\n  <li><b>Decision</b> — they compare options and weigh up the pros and cons.</li>\n  <li><b>Purchase</b> — they buy. Your job is to make this step easy and confident.</li>\n</ul>\n<h4>Leads vs Prospects</h4>\n<p>A <b>lead</b> is anyone who might be interested — a name on a list, a trade-show visitor. A <b>prospect</b> is a lead you have qualified: they have the need, the budget, and the authority to buy. Focus your energy on prospects.</p>\n<h4>Basic Sales Steps</h4>\n<ul>\n  <li><b>Greet &amp; build rapport</b> — people buy from people they like.</li>\n  <li><b>Discover needs</b> — ask open questions: \"What is your biggest challenge right now?\"</li>\n  <li><b>Present a solution</b> — show how your product solves their specific problem.</li>\n  <li><b>Handle objections</b> — acknowledge concerns honestly and answer them calmly.</li>\n  <li><b>Close</b> — ask for the sale clearly: \"Shall we get started?\"</li>\n  <li><b>Follow up</b> — check they are happy. This builds loyalty and referrals.</li>\n</ul>",
+          "simple": "Selling means helping someone fix a problem — not pushing unwanted things on them. Picture a funnel: lots of people hear about you at the top, and the ones who are a good fit flow down and become buyers. You move people through by listening, matching your solution to their need, and making it easy to say yes. Think of it like a doctor: diagnose first, then prescribe.",
+          "tips": [
+            "Ask twice as many questions as you make statements — listening beats talking every time.",
+            "Qualify early: if someone cannot afford your product or does not actually need it, move on kindly and save both of you time.",
+            "Write down your follow-up tasks immediately after every sales call — most deals are won in the follow-up, not the first conversation."
+          ],
+          "practice": "Map a simple sales funnel for a made-up business (for example, a local dog-grooming service). List two actions you would take at each funnel stage to move a customer closer to buying.",
+          "quiz": [
+            {
+              "q": "What is the primary goal of a salesperson?",
+              "choices": [
+                "To convince anyone to buy, regardless of their need",
+                "To help customers solve a problem with the right product",
+                "To hit targets by any means necessary",
+                "To describe every feature of the product in detail"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is the difference between a lead and a prospect?",
+              "choices": [
+                "Leads have already purchased; prospects have not",
+                "There is no practical difference",
+                "A prospect is a qualified lead with the need, budget, and authority to buy",
+                "Prospects are found online; leads are found offline"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which stage of the sales funnel comes immediately after 'Interest'?",
+              "choices": [
+                "Awareness",
+                "Purchase",
+                "Referral",
+                "Decision"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "Why is following up after a sale important?",
+              "choices": [
+                "It gives you a chance to upsell immediately",
+                "It builds customer happiness, loyalty, and referrals",
+                "It is required by consumer law in most countries",
+                "It fills slow periods in the sales calendar"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "sc2",
+          "title": "Customer Service Excellence",
+          "level": "Beginner",
+          "minutes": 7,
+          "content": "<h4>Why Customer Service Matters</h4>\n<p>Winning a new customer costs <b>five to seven times more</b> than keeping an existing one. Great service turns a one-time buyer into a loyal fan who also tells their friends about you. Poor service does the opposite — fast.</p>\n<h4>The Pillars of Great Service</h4>\n<ul>\n  <li><b>Active listening</b> — give the customer your full attention. Do not interrupt. Repeat back what you heard to confirm you understood.</li>\n  <li><b>Empathy</b> — put yourself in their position. Say \"I understand how frustrating that must be\" and mean it.</li>\n  <li><b>Responsiveness</b> — reply quickly. Even if you do not have the answer yet, acknowledge the question and give a timeframe.</li>\n  <li><b>Accuracy</b> — give correct information. If you are unsure, say so and find out rather than guessing.</li>\n  <li><b>Going the extra mile</b> — do one small unexpected thing: a handwritten thank-you note, a follow-up call, a discount on the next order.</li>\n</ul>\n<h4>The Cost of Bad Service</h4>\n<p>Research shows that an unhappy customer tells <b>9 to 15 people</b> about a bad experience. Online reviews can multiply that to thousands. One rude interaction can undo months of marketing spend.</p>\n<h4>A Simple Service Framework</h4>\n<table class=\"lesson-table\">\n  <tr><th>Step</th><th>Action</th><th>Example phrase</th></tr>\n  <tr><td>1. Welcome</td><td>Greet warmly</td><td>\"Hi, how can I help you today?\"</td></tr>\n  <tr><td>2. Listen</td><td>Let them finish</td><td>(nod, take notes)</td></tr>\n  <tr><td>3. Confirm</td><td>Reflect back</td><td>\"So the issue is... — is that right?\"</td></tr>\n  <tr><td>4. Solve</td><td>Act or explain</td><td>\"Here is what I can do for you...\"</td></tr>\n  <tr><td>5. Close</td><td>Check satisfaction</td><td>\"Does that fully resolve it for you?\"</td></tr>\n</table>",
+          "simple": "Customer service is the experience a person has every time they interact with your business — from their first enquiry to long after they buy. Think of it like hospitality at a restaurant: the food might be great, but if the waiter is rude you never go back. Listening carefully and responding quickly are the two things that matter most. Happy customers are your cheapest marketing team.",
+          "tips": [
+            "Use the customer's name during the conversation — it signals that you see them as an individual, not a ticket number.",
+            "Never say 'that is not my department' without immediately connecting them to someone who can help.",
+            "Set realistic expectations and then beat them — promise two days, deliver in one."
+          ],
+          "practice": "Write a short script (8-10 lines) for a customer service call where a customer is upset that their online order arrived late. Use the five-step framework from this lesson.",
+          "quiz": [
+            {
+              "q": "Roughly how much more does it cost to acquire a new customer compared to retaining an existing one?",
+              "choices": [
+                "About the same",
+                "Twice as much",
+                "Five to seven times more",
+                "Ten times more"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which behaviour best demonstrates active listening?",
+              "choices": [
+                "Preparing your reply while the customer is still speaking",
+                "Repeating back what you heard to confirm understanding",
+                "Keeping the conversation as short as possible",
+                "Offering a solution before the customer finishes explaining"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "What is the fifth step in the simple service framework presented in this lesson?",
+              "choices": [
+                "Confirm",
+                "Welcome",
+                "Solve",
+                "Close — check satisfaction"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "An unhappy customer typically shares their bad experience with how many people?",
+              "choices": [
+                "1 to 2 people",
+                "3 to 4 people",
+                "9 to 15 people",
+                "Only on review sites, not in person"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "sc3",
+          "title": "Building Customer Relationships (CRM basics)",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>One-Time Buyer vs Loyal Customer</h4>\n<p>A one-time buyer spends once and leaves. A <b>loyal customer</b> comes back repeatedly, spends more over time, and refers others. Businesses that focus on repeat customers are far more profitable — loyal customers typically spend <b>67% more</b> than new ones.</p>\n<h4>What Is a CRM?</h4>\n<p>CRM stands for <b>Customer Relationship Management</b>. In plain terms, it is a system (often software) that helps you remember everything important about your customers so you can serve them better.</p>\n<p>Think of it as a super-organised contacts book that also tracks every conversation, purchase, and preference. Instead of relying on memory, your whole team can see a customer's history in seconds.</p>\n<h4>What a CRM Stores</h4>\n<ul>\n  <li>Contact details (name, email, phone, company)</li>\n  <li>Purchase history — what they bought and when</li>\n  <li>Notes from past conversations and support tickets</li>\n  <li>Upcoming follow-up reminders</li>\n  <li>Preferences and special requirements</li>\n</ul>\n<h4>Following Up Builds Loyalty</h4>\n<p>Most businesses never follow up after a sale. Simply checking in — \"How are you getting on with the product?\" — sets you apart. A CRM lets you schedule these touchpoints so nothing slips through the cracks.</p>\n<h4>Simple Loyalty Tactics</h4>\n<ul>\n  <li><b>Loyalty programmes</b> — points, stamps, or tiered rewards for repeat purchases.</li>\n  <li><b>Personalised offers</b> — use purchase history to suggest relevant products.</li>\n  <li><b>Exclusive access</b> — give long-term customers early access to new products or events.</li>\n  <li><b>Thank-you moments</b> — a birthday discount or a handwritten note on a big anniversary order.</li>\n</ul>",
+          "simple": "A CRM is like a smart notebook that remembers every customer's name, what they bought, and what they told you — so you can treat them like a regular at their favourite coffee shop instead of a stranger every time. Keeping track of customers and following up with them turns one-off sales into long-term relationships. Loyal customers cost less to serve and spend more, so nurturing them is one of the highest-return activities a business can do.",
+          "tips": [
+            "Even a well-maintained spreadsheet beats no system at all — start simple and upgrade to proper CRM software when you need it.",
+            "Schedule a 'follow-up Friday' each week to check in with customers you have not heard from in 30 or 60 days.",
+            "Personalisation does not have to be high-tech — noting that a client prefers email over phone calls is enough to make them feel valued."
+          ],
+          "practice": "Design a simple CRM record for a fictional customer of a small bakery. List five fields you would track and write one follow-up message you would send them 30 days after their first large order.",
+          "quiz": [
+            {
+              "q": "What does CRM stand for?",
+              "choices": [
+                "Customer Revenue Management",
+                "Client Retention Model",
+                "Customer Relationship Management",
+                "Commercial Resource Mapping"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Why are loyal customers generally more valuable than new customers?",
+              "choices": [
+                "They require less legal paperwork",
+                "They spend around 67% more and refer others, making them more profitable over time",
+                "They are easier to find through advertising",
+                "They always leave positive online reviews"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Which of the following would a CRM system typically store?",
+              "choices": [
+                "A customer's social media passwords",
+                "Your company's internal payroll data",
+                "Purchase history, contact details, and notes from past conversations",
+                "Competitor pricing information"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "What is the main benefit of scheduling follow-up reminders in a CRM?",
+              "choices": [
+                "It automatically sends discounts to every customer",
+                "It ensures no customer touchpoint slips through the cracks",
+                "It replaces the need for a sales team",
+                "It tracks competitor activity automatically"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "sc4",
+          "title": "Handling Complaints &amp; Difficult Customers",
+          "level": "Core",
+          "minutes": 9,
+          "content": "<h4>Why Complaints Are Opportunities</h4>\n<p>Most unhappy customers never complain — they just leave and tell others. The customer who does complain is giving you a <b>second chance</b>. Handle it well and you can turn an angry customer into one of your most loyal advocates.</p>\n<h4>Staying Calm Under Pressure</h4>\n<p>When someone is upset, your own tone sets the temperature of the conversation. Speak slowly and calmly. Do not match their anger. Remember: they are frustrated at the situation, not at you personally.</p>\n<h4>The LAST Framework</h4>\n<p>A reliable four-step approach to resolving complaints:</p>\n<ul>\n  <li><b>L — Listen</b>: Let the customer speak without interrupting. Take notes. Show you are paying attention.</li>\n  <li><b>A — Apologise</b>: Offer a sincere apology for the experience, even if the fault is unclear. \"I am sorry you had this experience\" is always appropriate.</li>\n  <li><b>S — Solve</b>: Ask what would make it right, then do it — or offer a clear alternative. Act quickly.</li>\n  <li><b>T — Thank</b>: Thank them genuinely for bringing it to your attention. \"This helps us improve\" and you mean it.</li>\n</ul>\n<h4>Turning Complaints into Loyalty</h4>\n<p>Studies show that a customer whose complaint is resolved quickly and fairly is often <b>more loyal</b> than one who never had a problem at all. The recovery experience can exceed their original expectations.</p>\n<h4>When to Escalate</h4>\n<p>Some situations require a manager or specialist. Escalate when:</p>\n<ul>\n  <li>You do not have the authority to offer the required solution.</li>\n  <li>The customer asks for a manager specifically.</li>\n  <li>There is a legal or safety issue involved.</li>\n  <li>The conversation has become abusive — you do not have to accept abuse.</li>\n</ul>",
+          "simple": "A complaint is like a warning light on a car dashboard — it tells you something needs fixing before it gets worse. The LAST method (Listen, Apologise, Solve, Thank) gives you a clear script so you do not freeze when a customer is upset. Staying calm and fixing the problem quickly can actually make that customer more loyal than if nothing had gone wrong. Know when to hand the situation to someone with more authority — there is no shame in escalating.",
+          "tips": [
+            "Never argue about who is at fault while the customer is still upset — solve first, review internally after.",
+            "If you promise a follow-up call or a refund, set a specific time and stick to it. Broken promises after a complaint do irreversible damage.",
+            "Keep a log of complaints: patterns reveal product or process problems that need fixing at the root, not just case by case."
+          ],
+          "practice": "A customer calls furious because a service they paid for was delayed by three days with no communication from your company. Write out exactly what you would say at each step of the LAST framework to resolve the complaint.",
+          "quiz": [
+            {
+              "q": "What does the 'A' in the LAST complaint framework stand for?",
+              "choices": [
+                "Analyse the situation before responding",
+                "Apologise sincerely for the experience",
+                "Ask the customer to call back later",
+                "Avoid admitting any fault"
+              ],
+              "answer": 1
+            },
+            {
+              "q": "Why is a customer who complains considered an opportunity?",
+              "choices": [
+                "They are easier to upsell to than satisfied customers",
+                "Complaints rarely affect online reputation",
+                "They are giving the business a second chance and a resolved complaint can create strong loyalty",
+                "They signal that a product should be discontinued"
+              ],
+              "answer": 2
+            },
+            {
+              "q": "Which of the following is a valid reason to escalate a complaint to a manager?",
+              "choices": [
+                "The customer speaks loudly",
+                "The conversation is taking more than five minutes",
+                "You disagree with the customer's version of events",
+                "The customer requests a manager or there is a legal issue involved"
+              ],
+              "answer": 3
+            },
+            {
+              "q": "According to the lesson, what does research suggest about customers whose complaints are resolved well?",
+              "choices": [
+                "They tend to demand further discounts in future",
+                "They are often more loyal than customers who never had a problem",
+                "They rarely return regardless of the outcome",
+                "They are likely to complain again within 90 days"
+              ],
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "strategy",
       "title": "Strategic Management",
@@ -5029,11 +6858,11 @@ if (typeof window !== "undefined") { window.MBA_CURRICULUM = MBA_CURRICULUM; }
       <div class="hero">
         <div class="ring"></div><div class="ring two"></div>
         <h1>${t("Master of Business Management 🎓","Master of Business Management 🎓")}</h1>
-        <p>${t("An executive-grade, self-paced program for managers and senior leaders — strategy, finance, marketing, operations, people, analytics, AI and governance. Built for the way business is run in 2026 and beyond. Learn at your own pace; your progress saves automatically.","")}</p>
+        <p>${t("A complete, self-paced Business Administration program — from the very basics all the way to MBA level. Foundations, math, communication, bookkeeping, admin & sales, then strategy, finance, marketing, operations, people, analytics, AI, law and governance. No prior knowledge needed; your progress saves automatically.","")}</p>
         <div class="btn-row" style="margin-top:18px">
-          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="MBA.go('plan')">🚀 ${t("Open the 13-Week Study Plan","")}</button>
+          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="MBA.go('plan')">🚀 ${t("Open the Study Plan","")}</button>
         </div>
-        <p style="opacity:.9;font-size:13.5px;margin-top:12px">${t("How it works: open a module → study the case-based lessons & apply the executive challenge → pass the quiz (70%) to complete it → pass each module's Final Exam (80%) to earn your certificate. New to the discipline? Begin with <b>Strategic Management</b>.","")}</p>
+        <p style="opacity:.9;font-size:13.5px;margin-top:12px">${t("How it works: open a module → read the simple <b>In Plain English</b> intro, then the lesson & try the challenge → pass the quiz (70%) to complete it → pass each module's Final Exam (80%), then the Comprehensive Final, to earn your certificate. Brand new? Begin with <b>Business Foundations</b>.","")}</p>
         <div class="progress-summary">
           <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">${t("Lessons done","Tapos na aralin")}</div></div>
           <div class="stat"><div class="num">${pct}%</div><div class="lbl">${t("Course complete","Bahagi ng kurso")}</div></div>

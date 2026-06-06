@@ -97,11 +97,11 @@
       <div class="hero">
         <div class="ring"></div><div class="ring two"></div>
         <h1>${t("Master of Business Management 🎓","Master of Business Management 🎓")}</h1>
-        <p>${t("An executive-grade, self-paced program for managers and senior leaders — strategy, finance, marketing, operations, people, analytics, AI and governance. Built for the way business is run in 2026 and beyond. Learn at your own pace; your progress saves automatically.","")}</p>
+        <p>${t("A complete, self-paced Business Administration program — from the very basics all the way to MBA level. Foundations, math, communication, bookkeeping, admin & sales, then strategy, finance, marketing, operations, people, analytics, AI, law and governance. No prior knowledge needed; your progress saves automatically.","")}</p>
         <div class="btn-row" style="margin-top:18px">
-          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="MBA.go('plan')">🚀 ${t("Open the 13-Week Study Plan","")}</button>
+          <button class="btn" style="background:#fff;color:var(--brand-dark)" onclick="MBA.go('plan')">🚀 ${t("Open the Study Plan","")}</button>
         </div>
-        <p style="opacity:.9;font-size:13.5px;margin-top:12px">${t("How it works: open a module → study the case-based lessons & apply the executive challenge → pass the quiz (70%) to complete it → pass each module's Final Exam (80%) to earn your certificate. New to the discipline? Begin with <b>Strategic Management</b>.","")}</p>
+        <p style="opacity:.9;font-size:13.5px;margin-top:12px">${t("How it works: open a module → read the simple <b>In Plain English</b> intro, then the lesson & try the challenge → pass the quiz (70%) to complete it → pass each module's Final Exam (80%), then the Comprehensive Final, to earn your certificate. Brand new? Begin with <b>Business Foundations</b>.","")}</p>
         <div class="progress-summary">
           <div class="stat"><div class="num">${done}/${total}</div><div class="lbl">${t("Lessons done","Tapos na aralin")}</div></div>
           <div class="stat"><div class="num">${pct}%</div><div class="lbl">${t("Course complete","Bahagi ng kurso")}</div></div>

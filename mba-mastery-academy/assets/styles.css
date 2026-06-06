@@ -131,6 +131,7 @@ a { color: var(--brand); }
 .level-Intermediate { background: #fef3c7; color: #b45309; }
 .level-Advanced { background: #fee2e2; color: #b91c1c; }
 /* Executive-program difficulty tiers */
+.level-Beginner { background: #e0f2fe; color: #0369a1; }
 .level-Core { background: #dcfce7; color: #15803d; }
 .level-Applied { background: #fef3c7; color: #b45309; }
 .level-Executive { background: #ede9fe; color: #6d28d9; }
