@@ -212,6 +212,14 @@
         <p style="margin:0">${escapeHtml(l.summary_tl)}</p>
       </div>` : "";
 
+    // Plain-English explainer — shown first so a complete beginner gets the idea
+    // in simple, everyday words before the detailed lesson.
+    const simple = l.simple ? `
+      <div class="box plain">
+        <h4>🙂 ${t("In Plain English (start here)","")}</h4>
+        <p style="margin:0">${l.simple}</p>
+      </div>` : "";
+
     const prev = m.lessons[idx - 1];
     const next = m.lessons[idx + 1];
 
@@ -225,6 +233,7 @@
           <span>${m.icon} ${escapeHtml(m.title)}</span>
         </div>
         ${tagalog}
+        ${simple}
         <div class="content">${l.content}</div>
         ${tips}
         ${shorts}

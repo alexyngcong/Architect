@@ -173,6 +173,9 @@ a { color: var(--brand); }
 .box.practice h4 { color: #047857; }
 .box.tagalog { background: #eff6ff; border: 1px solid #bfdbfe; }
 .box.tagalog h4 { color: #1d4ed8; }
+.box.plain { background: #f0fdfa; border: 1px solid #99f6e4; }
+.box.plain h4 { color: #0f766e; }
+.box.plain p { font-size: 15.5px; }
 .kbd-row { display: flex; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px dashed #c7d2fe; flex-wrap: wrap; }
 .kbd-row:last-child { border-bottom: none; }
 .kbd { font-family: monospace; background: #fff; border: 1px solid #c7d2fe; border-bottom-width: 2px; border-radius: 7px; padding: 4px 9px; font-size: 13px; font-weight: 700; color: var(--brand-dark); white-space: nowrap; }
@@ -272,7 +275,8 @@ a { color: var(--brand); }
    MBA MASTERY ACADEMY — Curriculum Data
    ----------------------------------------------------------------------------
    Every department, lesson, framework and quiz for the Master of Business
-   Management program. Plain data (JSON-shaped) so it is easy to read and extend.
+   Management program. Each lesson also has a plain-English "simple" explainer
+   so a complete beginner can follow along. Plain data (JSON-shaped).
    ========================================================================= */
 
 const MBA_CURRICULUM = {
@@ -701,7 +705,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Strategy is your company's game plan for winning — deciding <b>what you'll do and what you won't do</b> so you stand out from rivals. A competitive advantage is the special reason customers pick you over everyone else, like how a local bakery wins by being the friendliest spot on the block with the best sourdough. Managers care because without a clear reason to choose you, customers will just go with whoever is cheapest. Strategy keeps everyone on the same team rowing in the same direction."
         },
         {
           "id": "s2",
@@ -756,7 +761,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Before starting a business or launching a product, smart managers look at the world around them — like checking the weather before a road trip. <b>Porter's Five Forces</b> is a simple checklist that sizes up five threats: rival competitors, new companies that could enter your market, substitute products, powerful suppliers, and powerful buyers. <b>PESTEL</b> zooms even wider, scanning Political, Economic, Social, Technological, Environmental, and Legal trends that could shake up your plans. Together they help you spot dangers and opportunities before they sneak up on you."
         },
         {
           "id": "s3",
@@ -811,7 +817,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Corporate strategy is about deciding <b>which businesses or markets to be in</b>, not just how to compete in one. The <b>Ansoff Matrix</b> gives you four growth moves: sell more of the same thing to current customers, enter new markets, launch new products, or do both at once. The <b>BCG Matrix</b> helps you sort your products like a sports roster — stars worth investing in, cash cows that fund the team, question marks that need a decision, and dogs that may need to be cut. Mergers and acquisitions (M&amp;A) are when companies buy or join other companies to grow faster than building from scratch."
         },
         {
           "id": "s4",
@@ -866,7 +873,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Having a great strategy is only half the job — you also have to <b>make it actually happen</b> day to day. <b>OKRs</b> (Objectives and Key Results) are like setting a destination and milestones for a road trip: the objective is 'reach the beach,' and key results are checkpoints like 'drive 200 miles by noon.' The <b>Balanced Scorecard</b> is a dashboard that checks progress from four angles — financial results, customer happiness, internal processes, and employee learning — so no important area gets ignored. Together these tools turn big ambitions into clear, trackable actions for every team."
         },
         {
           "id": "s5",
@@ -921,7 +929,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Disruption happens when a simpler, cheaper newcomer flips an industry upside down — think how streaming services replaced DVD rental stores almost overnight. A <b>business model</b> is just the story of how a company creates something people want and gets paid for it. <b>Blue Ocean Strategy</b> is the idea of sailing away from crowded, competitive markets ('red oceans') and creating a brand-new space where you have no rivals — like when budget airlines invented a whole new category of travel. Managers study these ideas so they can spot threats early and, better yet, be the disruptor instead of the disrupted."
         }
       ]
     },
@@ -985,7 +994,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Leadership style is simply <b>how you guide and influence the people around you</b>. Some leaders give detailed instructions; others step back and let their team figure things out. <b>Situational Leadership</b> teaches that there is no single best style — a good leader adjusts, the way a great coach gives a nervous rookie more guidance but lets an experienced player work independently. Knowing when to direct, coach, support, or delegate is what separates good managers from great ones."
         },
         {
           "id": "l2",
@@ -1040,7 +1050,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Motivation is <b>what makes people want to try</b>, and engagement is whether they actually care about the work they're doing. Research shows people aren't only driven by money — they also crave a sense of progress, recognition, autonomy, and meaning, like knowing their work truly matters. Think of it like a video game: players push through hard levels not just for prizes but because the game feels meaningful and the wins feel real. Managers who understand motivation build teams that show up energized, not just on time."
         },
         {
           "id": "l3",
@@ -1095,7 +1106,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "A high-performing team isn't just a group of talented people — it's a group that <b>trusts each other, communicates well, and pulls in the same direction</b>. Think of a championship sports team: individual stars matter, but clear roles, open feedback, and shared goals are what actually win championships. Building such a team means hiring thoughtfully, setting clear expectations, handling conflict honestly, and celebrating wins together. Managers invest in team dynamics because even the smartest individuals underperform when the team chemistry is broken."
         },
         {
           "id": "l4",
@@ -1150,7 +1162,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Culture is <b>the unwritten rules of how things are done</b> at a company — what gets celebrated, what gets ignored, and how people treat each other when no one is watching. Change management is the skill of guiding people through big shifts (a new system, a merger, a new strategy) without losing their trust or motivation. People naturally resist change the way they resist skipping a comfortable routine, so good leaders explain the 'why,' involve people early, and acknowledge the discomfort. A strong culture makes change easier because people already share values and trust each other."
         },
         {
           "id": "l5",
@@ -1205,7 +1218,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Emotional intelligence (EI) is the ability to <b>understand and manage your own emotions</b> — and to read and respond well to the emotions of others. A manager with high EI stays calm under pressure, listens before reacting, and can sense when a team member is struggling even before they say anything. <b>Executive presence</b> is the package of confidence, clarity, and composure that makes people trust your leadership when it matters most — like how a calm pilot's voice over the intercom settles a worried plane full of passengers. These 'soft' skills often make the biggest difference between a technically capable manager and a truly inspiring leader."
         }
       ]
     },
@@ -1269,7 +1283,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "You can't sell something to everyone at once, so smart marketers start by <b>dividing the market into groups</b> — that's segmentation. Then they pick the group most worth pursuing (targeting), and decide how they want that group to think of their product compared to rivals (positioning). Imagine you sell sneakers: your segments might be runners, fashion fans, and kids; you target fashion fans; and you position your brand as 'the coolest sneaker on the block.' This <b>STP process</b> makes sure your message and product feel perfectly made for the people most likely to buy."
         },
         {
           "id": "m2",
@@ -1324,7 +1339,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "The <b>Marketing Mix</b> — often called the 4 Ps — is the set of levers a marketer can pull: <b>Product</b> (what you're selling), <b>Price</b> (what you charge), <b>Place</b> (where and how you sell it), and <b>Promotion</b> (how you spread the word). <b>Brand equity</b> is the extra value a brand name adds on its own — why people willingly pay more for a branded cereal than the identical store-brand box next to it. Together, the 4 Ps and brand equity explain why marketing is far more than just advertising; it's every decision that shapes how customers experience and value your product. Managers who get these levers right can charge higher prices and win loyal customers who keep coming back."
         },
         {
           "id": "m3",
@@ -1379,7 +1395,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Digital marketing is using the internet — social media, search engines, email, apps — to <b>reach and influence customers</b>. Growth marketing focuses on experimenting fast: try an idea, measure the results, drop what doesn't work, and double down on what does — like A/B testing two versions of a sign to see which one gets more people into a store. Performance marketing means you pay only when something works, like paying for an ad only when someone actually clicks it. These approaches let even small businesses reach huge audiences and measure exactly what's delivering results, in a way traditional TV or newspaper ads never could."
         },
         {
           "id": "m4",
@@ -1434,7 +1451,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Pricing strategy is deciding <b>how much to charge and why</b> — not just picking a number that feels right. Charge too little and you leave money on the table; charge too much and customers walk away. <b>Customer Lifetime Value (CLV)</b> is the total profit a single customer brings you over all the years they keep buying — understanding this helps you decide how much it's worth spending to win a new customer in the first place. A gym might lose money on a first month's discount because they know a loyal member will pay dues for five years."
         }
       ]
     },
@@ -1498,7 +1516,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Every company tells its financial story through <b>three core reports</b> that any manager needs to be able to read. The <b>Income Statement</b> shows whether the business made or lost money over a period of time. The <b>Balance Sheet</b> is a snapshot of what the company owns (assets), what it owes (liabilities), and what's left for the owners (equity) on a single date. The <b>Cash Flow Statement</b> tracks actual cash coming in and going out, because a business can look profitable on paper but still run out of cash — like earning a big paycheck but having all your bills due tomorrow."
         },
         {
           "id": "a2",
@@ -1553,7 +1572,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "The income statement is like a <b>scoreboard for the business over a set period</b> — it shows all the money earned (revenue) and all the costs subtracted from it to reveal profit or loss. Key stops on the way down include <b>gross profit</b> (revenue minus the direct cost of making your product) and <b>operating profit</b> (after paying for overhead like rent and salaries). A <b>profit margin</b> — the slice of each dollar of sales you actually keep as profit — tells you how efficiently a business turns sales into real money. Managers track these numbers closely because even healthy-looking sales can hide a business that's quietly bleeding money."
         },
         {
           "id": "a3",
@@ -1608,7 +1628,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "The <b>balance sheet</b> is a financial photograph taken on one specific day, showing everything the company owns versus everything it owes. <b>Working capital</b> is the short-term cushion — current assets (like cash and inventory) minus current bills due soon — and running low on it is like your household checking account hitting zero before the rent is due. The <b>cash flow statement</b> fills in the movie between those photographs, showing where cash actually came from and where it went. Together these two statements reveal whether a business is financially sturdy or quietly fragile even if the income statement looks rosy."
         },
         {
           "id": "a4",
@@ -1663,7 +1684,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Managerial accounting is <b>financial information made for insiders</b> — the numbers managers use to make everyday decisions, not the reports sent to banks or investors. <b>Break-even analysis</b> answers the simple question: how many units do I need to sell before I stop losing money? Think of it like figuring out how many lemonade cups you must sell to cover the cost of lemons, sugar, and the stand before you earn a single dollar of profit. <b>Budgeting</b> is setting a spending plan in advance so the team knows the guardrails, and then checking actual results against that plan to learn and adjust."
         },
         {
           "id": "a5",
@@ -1718,7 +1740,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Financial ratios are <b>quick math shortcuts that turn raw numbers into meaningful comparisons</b>. Instead of staring at millions of dollars in revenue, a ratio like the profit margin tells you in one number whether the business keeps 5 cents or 30 cents from every dollar sold. Ratios let you compare a company against itself over time ('are we getting better?') or against rivals ('are we above or below industry average?'). Common groups cover profitability, liquidity (can we pay our bills?), and efficiency (how well do we use our assets?) — giving managers a fast health checkup without reading every line of every financial report."
         }
       ]
     },
@@ -1782,7 +1805,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "A dollar in your hand today is worth more than a dollar promised to you next year, because you could invest that dollar right now and watch it grow. Think of it like this: if a friend offers to pay you back $100 now or $100 in two years, taking it now is smarter because you can put it in a savings account and earn extra. Managers use this idea to compare money received at different points in time, so they can make fair comparisons and smarter decisions."
         },
         {
           "id": "cf2",
@@ -1837,7 +1861,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Capital budgeting is how a business decides whether a big purchase — like buying new equipment — is actually worth the money. <b>NPV (Net Present Value)</b> adds up all the future cash the investment will bring in, converts those amounts to today's dollars, and subtracts the upfront cost; if the result is positive, the deal is good. <b>IRR</b> is the expected annual return rate of the project, and <b>Payback</b> simply asks: how many years until we get our money back? Together, these tools help managers avoid expensive mistakes."
         },
         {
           "id": "cf3",
@@ -1892,7 +1917,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Before a company spends money on a project, it needs to know the minimum return that makes the investment worthwhile — that minimum is called the <b>cost of capital</b>. <b>WACC (Weighted Average Cost of Capital)</b> blends the cost of borrowing money (loans and bonds) with the cost of using investor money (equity), weighted by how much of each the company uses. Think of it as the 'bar' a project must clear: if a project earns more than the WACC, it adds value; if it earns less, it destroys value."
         },
         {
           "id": "cf4",
@@ -1947,7 +1973,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Every company needs to decide how to fund itself: borrow money (debt) or sell ownership shares (equity). <b>Capital structure</b> is just the mix the company chooses, like deciding whether to buy a house with a big mortgage or a small one and more of your own savings. Debt is usually cheaper but risky if business slows down and you can't make payments; equity is safer but you give up some ownership. Managers hunt for the right balance that keeps costs low without taking on too much risk."
         },
         {
           "id": "cf5",
@@ -2002,7 +2029,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Valuing a company means figuring out what it is truly worth — not just what its stock price says right now. <b>DCF (Discounted Cash Flow)</b> estimates all the cash the company will earn in the future and converts those amounts to today's dollars, like calculating how much a goose that lays golden eggs is worth based on all the eggs it will ever lay. <b>Multiples</b> take a shortcut by comparing the company to similar businesses that have recently been sold. Both methods together give managers and investors a realistic price tag."
         }
       ]
     },
@@ -2066,7 +2094,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 3
             }
-          ]
+          ],
+          "simple": "<b>Demand</b> is how much of something people want to buy; <b>supply</b> is how much sellers are willing to offer. When lots of people want something and little is available, the price goes up — think of tickets to a sold-out concert. <b>Elasticity</b> measures how sensitive buyers are to a price change: if raising the price of gas by 10% barely changes how much people buy, demand is 'inelastic'; if people immediately switch brands, demand is 'elastic.' Managers use this to predict what happens to sales when they raise or lower prices."
         },
         {
           "id": "ec2",
@@ -2121,7 +2150,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Every business has costs, and those costs shape what price it must charge just to survive. <b>Market structure</b> describes how many competitors are in the game — a single seller (monopoly) can charge almost anything, while dozens of identical sellers (perfect competition) must accept whatever price the market sets. <b>Pricing power</b> is a company's ability to raise prices without losing customers, usually because their product is unique or switching is inconvenient. Understanding this helps managers decide where to compete and how to stand out."
         },
         {
           "id": "ec3",
@@ -2176,7 +2206,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Game theory studies situations where your best decision depends on what someone else decides — like a chess match or a bidding war. Imagine two competing coffee shops deciding whether to run a promotion: if one discounts and the other does not, the discounting shop wins big; but if both discount, they both earn less. Managers use game theory to predict rival moves, avoid price wars, and find strategies that hold up even when competitors react. It turns business competition into something you can actually reason through."
         },
         {
           "id": "ec4",
@@ -2231,7 +2262,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Macroeconomics looks at the big picture of an entire country's economy — things like <b>GDP</b> (the total value of everything a country produces), inflation (prices rising over time), and unemployment. These forces are outside any one manager's control, but they powerfully shape whether customers are spending freely or tightening their belts. A manager who tracks interest rate changes, recession signals, and government policy can adjust plans before trouble hits, rather than being caught off guard."
         }
       ]
     },
@@ -2295,7 +2327,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Globalization</b> means the world's economies are increasingly connected — goods, money, people, and ideas flow across borders more easily than ever before. <b>Trade</b> happens because countries are better at making different things; it's cheaper for everyone when each country focuses on what it does best and trades for the rest. For a manager, this means access to bigger markets and cheaper inputs, but also more competition from abroad and risks like political instability or shifting trade rules."
         },
         {
           "id": "gb2",
@@ -2350,7 +2383,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "When a company wants to sell in a foreign country, it has to choose how to get in. Options range from simply exporting products, to licensing a local company to sell them, to forming a partnership (<b>joint venture</b>), to opening your own offices and factories. Each option trades off control against cost and risk: exporting is easy but gives you less market presence, while building your own operation gives full control but costs far more. Managers pick the entry strategy that fits the company's resources and how important the market is."
         },
         {
           "id": "gb3",
@@ -2405,7 +2439,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "When people from different countries work together, invisible rules about communication, authority, and time can cause serious misunderstandings. For example, in some cultures disagreeing openly with a boss is perfectly normal; in others it would be seen as deeply disrespectful. <b>Cross-cultural management</b> means learning to recognize these differences and adapting your leadership style so that diverse teams work well together. A manager who ignores culture risks losing talented people and damaging key relationships."
         },
         {
           "id": "gb4",
@@ -2460,7 +2495,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Foreign exchange</b> is the rate at which one currency trades for another — like how many euros you get for a dollar. These rates change every day, and that creates risk: a company that sells products in euros but pays its workers in dollars could suddenly earn less in dollar terms if the euro weakens. Managers use tools like <b>hedging</b> (locking in an exchange rate in advance) to protect profits from currency swings. Understanding this risk is essential for any business that buys or sells across borders."
         }
       ]
     },
@@ -2524,7 +2560,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "A <b>process</b> is just a series of steps that turns inputs into outputs — like an assembly line or a checkout lane at a grocery store. <b>Capacity</b> is how much output a process can handle; a <b>bottleneck</b> is the one slow step that limits the whole system, the way one slow cashier can back up an entire store. Managers focus on finding and fixing bottlenecks because speeding up any other step does not actually increase overall output. Fix the bottleneck first, and everything flows faster."
         },
         {
           "id": "op2",
@@ -2579,7 +2616,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Lean</b> is a philosophy that focuses on cutting out waste — any step, material, or wait time that does not add value for the customer. <b>Six Sigma</b> is a method that uses data to hunt down defects and reduce errors until a process is nearly perfect. Together, they help businesses produce more with less, deliver consistent quality, and keep customers happy. A manager trained in these ideas can spot hidden inefficiencies that quietly drain money every single day."
         },
         {
           "id": "op3",
@@ -2634,7 +2672,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Inventory</b> is the stock of goods a company holds — raw materials waiting to be used, products being made, and finished items waiting to be sold. Holding too much inventory ties up cash and wastes storage space; holding too little means you run out and disappoint customers. <b>Supply chain management</b> coordinates all the suppliers, manufacturers, and shippers so the right amount of the right thing arrives at the right time. Getting this balance right is one of the biggest levers a manager has for cutting costs and improving service."
         },
         {
           "id": "op4",
@@ -2689,7 +2728,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Project management</b> is the art of planning and guiding a one-time effort — like launching a new product or building an app — so it finishes on time and on budget. Traditional project management maps out every step in advance like a detailed road-trip itinerary; <b>Agile</b> works in short bursts called 'sprints,' checking progress frequently and adjusting the plan as you learn. Managers choose the approach based on how predictable the work is: well-understood projects suit traditional planning, while fast-changing, creative work suits Agile."
         }
       ]
     },
@@ -2753,7 +2793,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "A <b>Management Information System (MIS)</b> is software that collects data from every corner of a business and turns it into useful reports for managers. Think of an <b>ERP</b> (Enterprise Resource Planning) system like the operating system of a company — it links accounting, inventory, HR, and sales into one place so nothing falls through the cracks. A <b>CRM</b> (Customer Relationship Management) system does the same thing but focuses on tracking every interaction with customers. Managers care because having all the information in one place means faster, smarter decisions instead of hunting through spreadsheets."
         },
         {
           "id": "is2",
@@ -2808,7 +2849,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>IT Strategy</b> is the long-term plan a company makes for how technology will help it reach its goals — just like a coach deciding which plays the team will run this season. <b>Digital architecture</b> is the blueprint showing how all the software, servers — powerful computers that store and share data — and networks fit together. Without a clear plan, companies end up with a messy tangle of systems that don't talk to each other and cost a fortune to fix. Managers who understand IT strategy can make sure technology investments actually move the business forward."
         },
         {
           "id": "is3",
@@ -2863,7 +2905,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Cybersecurity</b> is the practice of protecting a company's computers, data, and systems from thieves and attackers — think of it as locking the doors and windows of a digital building. <b>Risk</b> means understanding what could go wrong and deciding how much of that danger the company is willing to accept. Leaders don't need to be tech experts, but they do need to know that a single data breach can cost millions of dollars and destroy customer trust overnight. Managers set the culture and budget that determine whether the company is well-protected or dangerously exposed."
         },
         {
           "id": "is4",
@@ -2918,7 +2961,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Data governance</b> is the set of rules about who owns data, who can use it, and how it must be kept accurate and safe — like a library's rules for checking out books and making sure they come back in good condition. <b>Managing tech investment</b> means deciding which technology projects are worth spending money on and making sure those projects deliver real value. Without governance, companies end up with messy, unreliable data that leads to bad decisions. Managers care because good data is only useful if people trust it and know how to use it responsibly."
         }
       ]
     },
@@ -2982,7 +3026,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Data-driven decision making</b> means using real numbers and facts to choose a course of action, rather than just going with your gut feeling. Imagine you're deciding which flavor of ice cream to stock — instead of guessing, you look at last month's sales data and let the numbers guide you. This doesn't mean ignoring experience or common sense; it means combining both to make stronger choices. Managers who use data well spot problems earlier, waste less money, and can explain their decisions clearly to others."
         },
         {
           "id": "an2",
@@ -3037,7 +3082,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Statistics</b> is the science of collecting and making sense of numbers, and <b>probability</b> is about understanding how likely something is to happen. Think of flipping a coin — probability tells you there's a 50% chance of heads, and statistics helps you figure out if the coin is actually fair after many flips. Managers use these tools to read survey results, evaluate risks, and tell whether a change in sales is a real trend or just random noise. You don't need to be a math expert — you just need enough to ask the right questions and not be fooled by misleading numbers."
         },
         {
           "id": "an3",
@@ -3092,7 +3138,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>A/B testing</b> is a way of running a controlled experiment where you show version A to one group and version B to another group, then measure which one works better. It's like a bake-off: two chefs make the same cake with different recipes, and the crowd votes on which tastes better. Companies use this all the time to test website designs, email subject lines, or product features before rolling them out to everyone. Managers care because it replaces guesswork with real evidence, so you only invest in changes that actually improve results."
         },
         {
           "id": "an4",
@@ -3147,7 +3194,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>KPIs</b> (Key Performance Indicators) are the small number of most important measurements that tell you whether your business is healthy and on track — like a car's dashboard showing speed, fuel, and engine warnings. A <b>dashboard</b> is a visual screen that puts all those key numbers in one place so managers can see them at a glance. The trick is choosing metrics that actually matter, not just ones that are easy to measure. A manager who tracks the right KPIs can spot trouble early and steer the team toward the right goals."
         }
       ]
     },
@@ -3211,7 +3259,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Talent acquisition</b> is the process of finding and hiring the right people for a company, and <b>structured hiring</b> means using the same set of questions and scoring methods for every candidate so the process is fair and consistent. Think of it like a school club tryout where every student performs the same routine and is scored on the same criteria, rather than the coach just picking their friends. Without structure, hiring becomes biased and companies often pick the wrong person. Managers care because the people you hire determine almost everything about how well a team performs."
         },
         {
           "id": "hr2",
@@ -3266,7 +3315,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Performance management</b> is the ongoing process of setting clear goals with employees, checking in regularly, and giving honest feedback so people know how they're doing and can improve. Think of a coach who reviews game footage with players after every match — not just once a year at review time. <b>Feedback</b> is only useful when it's specific, timely, and delivered in a way the person can actually act on. Managers who do this well build stronger teams, catch problems early, and help people grow instead of just judging them at the end of the year."
         },
         {
           "id": "hr3",
@@ -3321,7 +3371,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Compensation</b> is everything a company pays an employee — salary, bonuses, and benefits like health insurance or vacation days — and <b>total rewards</b> is the full picture including things like flexible hours, training, and a good work culture. Think of it as the whole package a new student gets when joining a club: not just the cool jacket, but also the friendships, skills, and experiences. <b>Retention</b> means keeping great employees from leaving for a competitor. Managers care because replacing a skilled employee is expensive and disruptive, so getting compensation and rewards right saves money and keeps the team stable."
         },
         {
           "id": "hr4",
@@ -3376,7 +3427,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Developing talent</b> means investing in your employees' skills through training, mentoring, and new challenges so they keep growing inside the company. <b>Succession planning</b> is making sure you always have someone ready to step into important roles when a leader leaves or retires — like a sports team always developing players in the minor leagues who are ready to move up. Without this planning, companies are caught off guard when key people leave and the whole team suffers. Managers who develop their people build a stronger, more resilient organization that doesn't fall apart when one person walks out the door."
         }
       ]
     },
@@ -3440,7 +3492,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Entrepreneurship starts with spotting an <b>opportunity</b> — a real problem that enough people have and are willing to pay to solve. The <b>Lean Startup</b> approach says: don't spend years building the perfect product in secret; instead, build a quick, simple version first and test it with real customers. That quick first version is called an <b>MVP</b> (Minimum Viable Product) — like baking one cupcake to see if people like the flavor before opening a whole bakery. This saves enormous amounts of time and money by finding out early what customers actually want."
         },
         {
           "id": "en2",
@@ -3495,7 +3548,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "A <b>business model</b> is the plan for how a company creates value for customers and makes money — like a lemonade stand deciding whether to charge per cup, sell a monthly subscription, or give it away free and charge for advertising. <b>Unit economics</b> zooms in on the math of a single sale: how much does it cost to get one customer, and how much money does that customer bring in over time. If you spend more getting a customer than they ever pay you, the business is losing money no matter how fast it grows. Managers use unit economics to figure out whether a business idea can actually be profitable before scaling it up."
         },
         {
           "id": "en3",
@@ -3550,7 +3604,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "<b>Fundraising</b> for a startup means finding investors — people or firms willing to give money in exchange for a small ownership stake in the company. <b>Venture finance</b> is the specialized world of these investments, where funds called <b>venture capital (VC) firms</b> bet on risky young companies hoping one will become huge. Think of it like a talent scout signing ten new bands knowing only one might become famous, but that one pays for all the rest. Founders need to understand this process — including terms like valuation (what the company is worth) and equity (ownership percentage) — so they don't give away too much of their company too cheaply."
         },
         {
           "id": "en4",
@@ -3605,7 +3660,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "<b>Innovation inside an established company</b> — sometimes called <b>intrapreneurship</b> — means acting like an entrepreneur even when you already work for a big organization. Large companies face a constant tension: the systems that make them run smoothly today can also make it hard to experiment and change. Managers can fight this by creating small, protected teams with the freedom to test new ideas, almost like a startup inside the bigger business. Leaders who foster this culture help their companies stay competitive and avoid being overtaken by smaller, faster rivals."
         }
       ]
     },
@@ -3669,7 +3725,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Generative AI — tools like chatbots that can write, summarize, and answer questions — work by learning patterns from huge amounts of text, not by actually 'thinking.' Think of it like a very well-read assistant who can draft a memo in seconds but still needs you to check the facts. As a manager, understanding what these tools can and <b>cannot</b> do helps you use them wisely and avoid embarrassing mistakes. You don't need to know the math behind it — you just need to know when to trust it and when to double-check."
         },
         {
           "id": "ai2",
@@ -3714,7 +3771,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 3
             }
-          ]
+          ],
+          "simple": "An AI strategy is simply your organization's plan for where and how to use AI tools to get real work done better. Just like a new restaurant decides which dishes to put on the menu based on what customers want and what the kitchen can handle, your company needs to pick AI projects that match your goals and your team's abilities. A roadmap breaks that plan into steps so you're not trying to do everything at once. Managers care because jumping into AI without a plan wastes money and creates confusion."
         },
         {
           "id": "ai3",
@@ -3769,7 +3827,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "AI governance is the set of rules and checks your organization puts in place so that AI tools are used fairly, safely, and legally. Think of it like a referee in a game — without one, things can get messy fast, with biased decisions, privacy breaches, or outputs nobody can explain. Ethics here means asking hard questions: Could this AI treat some people unfairly? Who is responsible if it goes wrong? Managers need to care because regulators, employees, and customers are all watching how companies use AI."
         },
         {
           "id": "ai4",
@@ -3824,7 +3883,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Leading an AI-augmented team means managing people who work alongside AI tools every day, not replacing them with robots. Think of AI as a smart autocomplete — it handles the routine parts so your team can focus on judgment calls, creativity, and relationships. Your job as a leader is to help people feel confident using these tools, not threatened by them. That means training, clear expectations, and honest conversations about how roles are changing."
         },
         {
           "id": "ai5",
@@ -3879,7 +3939,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Digital transformation is the process of updating how your whole organization works by using technology and data more effectively — not just buying new software, but changing habits and processes too. Think of it like upgrading from paper maps to a GPS: the destination is the same, but how you get there is faster and smarter. A data strategy is the plan for what information you collect, how you store it, and how you use it to make better decisions. Managers who ignore this risk falling behind competitors who already make data-driven moves every day."
         }
       ]
     },
@@ -3943,7 +4004,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "A contract is a legally binding promise between two or more parties — when a supplier agrees to deliver goods and you agree to pay, that agreement is a contract. Think of it like a very serious pinky promise that a court will actually enforce. Knowing the basics of contract law helps you spot risky terms before you sign, and understand what you can do if someone breaks their promise. Managers who skip reading contracts carefully often end up stuck with bad deals."
         },
         {
           "id": "bl2",
@@ -3998,7 +4060,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Business structures are the different legal 'shapes' a company can take — like a sole proprietorship (just you), a partnership (you and others), or a corporation (a separate legal entity). Choosing the right structure affects how much personal risk you carry, how you pay taxes, and how easy it is to bring in investors. Think of it like choosing between renting a bike, co-owning one with a friend, or joining a bike-sharing company — each has different rules and responsibilities. Corporate law sets the rules for how corporations are run, including who has power and who is accountable."
         },
         {
           "id": "bl3",
@@ -4053,7 +4116,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Intellectual property — or IP — covers the legal rights you have over things your mind creates, like inventions (patents), brand names (trademarks), creative works (copyrights), and secret business know-how (trade secrets). Think of it as a fence around your ideas so competitors can't just copy them. Technology law extends this into digital territory: software, data ownership, and online terms of service. Managers need to protect what makes their product or brand unique, or risk losing it."
         },
         {
           "id": "bl4",
@@ -4108,7 +4172,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 3
             }
-          ]
+          ],
+          "simple": "Employment law is the rulebook that governs the relationship between employers and employees — covering everything from hiring and pay to firing and workplace safety. Think of it like the rules of a game both sides agreed to before the game started. Labor law specifically covers workers organizing together, like forming a union to negotiate better conditions. Managers who understand these rules avoid costly lawsuits and build workplaces where people feel treated fairly."
         },
         {
           "id": "bl5",
@@ -4163,7 +4228,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Regulatory compliance means following the laws and rules that apply to your industry — whether that's food safety standards, financial reporting rules, or data privacy laws. Data privacy law, like GDPR in Europe or CCPA in California, controls how companies collect, store, and use personal information about customers. Think of compliance like following traffic laws: boring until you don't, and then suddenly very expensive. Managers are often personally responsible for making sure their teams stay within the rules."
         }
       ]
     },
@@ -4227,7 +4293,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Business ethics is about deciding what's right and wrong in a work context — not just what's legal, but what's fair and honest. Decision frameworks are simple tools to help you think through tough choices in a structured way, like asking 'Would I be comfortable if this was on the front page of a newspaper?' Think of it as having a checklist before making a hard call, so you're not just going with your gut in a stressful moment. Managers who skip ethics often save time short-term but pay a much bigger price later in trust, reputation, and legal trouble."
         },
         {
           "id": "g2",
@@ -4282,7 +4349,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Corporate governance is the system of rules and relationships that controls how a company is directed and held accountable. A <b>board of directors</b> — the group of people elected by shareholders to oversee the senior leaders — sits at the center of this system. Think of the board as the landlord who hired a property manager (the CEO): they don't run the property day-to-day, but they set the standards and can fire the manager if things go wrong. Good governance protects investors and gives everyone confidence the company is being run responsibly."
         },
         {
           "id": "g3",
@@ -4337,7 +4405,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "ESG stands for <b>Environmental, Social, and Governance</b> — three lenses for measuring whether a company is operating responsibly beyond just making money. Environmental covers things like carbon emissions and waste; social covers how a company treats workers, customers, and communities; governance covers fairness and accountability in leadership. Think of it like a report card that grades your company as a citizen, not just as a profit-maker. Managers care because investors, regulators, and job candidates increasingly pick companies with strong ESG scores."
         },
         {
           "id": "g4",
@@ -4392,7 +4461,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Enterprise risk is anything that could seriously hurt your organization — from a cyberattack to a hurricane to a key supplier going out of business. Resilience is your ability to bounce back when things go wrong, and it's built before the crisis, not during it. Think of it like having smoke detectors and a fire escape plan: you hope you never need them, but you'd be in serious trouble without them. Managers who plan for risk protect their people, their reputation, and their company's survival."
         }
       ]
     },
@@ -4456,7 +4526,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Principled negotiation means working toward a deal that's genuinely good for both sides, instead of just trying to 'win.' <b>BATNA</b> stands for 'Best Alternative To a Negotiated Agreement' — basically, what you'll do if the deal falls through, which is your real source of power at the table. Think of it like knowing you have another job offer before you negotiate your salary: it lets you walk away if the deal isn't good enough. Understanding your BATNA — and theirs — helps you negotiate confidently without desperation."
         },
         {
           "id": "n2",
@@ -4501,7 +4572,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Executive communication is the skill of sharing ideas clearly and persuasively with people who are busy and often skeptical. Storytelling in business means framing information as a narrative — a problem, a turning point, and a resolution — instead of just a list of facts, because stories are easier to remember and more convincing. Think of it like the difference between reading a dry ingredients list versus watching a cooking show: same information, but one actually holds your attention. Managers who communicate well get buy-in faster and waste far less time in meetings."
         },
         {
           "id": "n3",
@@ -4556,7 +4628,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Influence is the ability to shape how people think and act without using authority or force — it's persuasion, not power. Managing stakeholders means identifying the people who care about or are affected by your work (bosses, customers, partners, regulators) and keeping them informed and on your side. Think of it like tending a garden: you can't force the plants to grow, but the right attention at the right time makes a big difference. Leaders who master influence get things done even when they have no direct control."
         },
         {
           "id": "n4",
@@ -4611,7 +4684,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Difficult conversations are the ones most people avoid — telling someone their work isn't good enough, disagreeing with your boss, or addressing conflict in the team. Avoiding them usually makes things worse, like ignoring a small crack in a wall until it becomes a structural problem. The skill here is learning to be honest and direct while still being respectful and caring — think of it as 'a tough chat with a good friend' rather than an attack or a lecture. Managers who handle these conversations well build more trust, not less, because people know they'll always get the truth."
         }
       ]
     },
@@ -4675,7 +4749,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "Thinking like a general manager means zooming out from your own department and seeing the whole business — finance, operations, customers, people — as one connected system. Most specialists get good at one thing; general managers have to see how all the pieces affect each other, like a coach who has to manage the whole team, not just their favorite players. This mindset shift is critical when you move into senior leadership where decisions in one area ripple through everything else. It's less about knowing all the answers and more about asking the right questions across the whole organization."
         },
         {
           "id": "cap2",
@@ -4730,7 +4805,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 2
             }
-          ]
+          ],
+          "simple": "A business plan is a written document that explains what your company (or project) is trying to achieve, how it will do that, and why it will work financially. A strategic plan zooms out further to map the long-term direction — where are you going over the next three to five years, and what's your path to get there? Think of a business plan as the blueprint for building a house, and the strategic plan as the decision of which neighborhood to build in and why. Managers use these documents to align their teams, attract investment, and make sure everyone is rowing in the same direction."
         },
         {
           "id": "cap3",
@@ -4785,7 +4861,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "Case analysis is the skill of looking at a messy, real-world business situation, figuring out the core problem, and recommending a clear action — just like a doctor diagnosing a patient and prescribing treatment. 'Board-ready' means your recommendation is concise, supported by evidence, and considers the risks, so busy senior leaders can make a confident decision quickly. Think of it as the difference between dumping a pile of puzzle pieces on the table versus handing someone the finished puzzle with a brief explanation. This skill is what separates managers who get listened to from those who just generate reports."
         },
         {
           "id": "cap4",
@@ -4840,7 +4917,8 @@ const MBA_CURRICULUM = {
               ],
               "answer": 1
             }
-          ]
+          ],
+          "simple": "This capstone lesson brings everything together — strategy, finance, people, ethics, law, and communication — and asks you to lead as if you're responsible for the whole enterprise, not just one corner of it. Real leadership at the top means making trade-offs where there's no perfect answer and being accountable for the outcome either way. Think of it like being the conductor of an orchestra: your job isn't to play every instrument, it's to make sure they all work together to create something great. The goal is to leave this course thinking like someone who owns the big picture, not just manages a piece of it."
         }
       ]
     }
@@ -5066,6 +5144,14 @@ if (typeof window !== "undefined") { window.MBA_CURRICULUM = MBA_CURRICULUM; }
         <p style="margin:0">${escapeHtml(l.summary_tl)}</p>
       </div>` : "";
 
+    // Plain-English explainer — shown first so a complete beginner gets the idea
+    // in simple, everyday words before the detailed lesson.
+    const simple = l.simple ? `
+      <div class="box plain">
+        <h4>🙂 ${t("In Plain English (start here)","")}</h4>
+        <p style="margin:0">${l.simple}</p>
+      </div>` : "";
+
     const prev = m.lessons[idx - 1];
     const next = m.lessons[idx + 1];
 
@@ -5079,6 +5165,7 @@ if (typeof window !== "undefined") { window.MBA_CURRICULUM = MBA_CURRICULUM; }
           <span>${m.icon} ${escapeHtml(m.title)}</span>
         </div>
         ${tagalog}
+        ${simple}
         <div class="content">${l.content}</div>
         ${tips}
         ${shorts}
