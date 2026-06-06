@@ -356,19 +356,25 @@
   }
 
   function renderExam(moduleId) {
-    const m = DATA.modules.find(x => x.id === moduleId);
+    const isFinal = moduleId === "final";
+    // For the comprehensive final, build a virtual "module" that pools every lesson.
+    const m = isFinal
+      ? { id: "final", title: "Comprehensive Final Exam", icon: "🎓", color: "var(--brand)", lessons: DATA.modules.flatMap(x => x.lessons) }
+      : DATA.modules.find(x => x.id === moduleId);
     if (!m) return renderNotFound();
-    // Pool all quiz questions across the module's lessons.
+    const backHash = isFinal ? "certificate" : ("module/" + m.id);
+    const maxQ = isFinal ? 25 : 10;
+    // Pool all quiz questions across the (real or virtual) module's lessons.
     const pool = m.lessons.flatMap(l => (l.quiz || []).map(q => ({ ...q })));
     if (!pool.length) {
       app.innerHTML = `
-        <a class="back-link" onclick="MBA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
+        <a class="back-link" onclick="MBA.go('${backHash}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
         <div class="empty"><div class="big">📭</div><h2>${t("No exam questions yet","Wala pang tanong sa pagsusulit")}</h2>
         <p>${t("This module doesn't have a quiz pool to build an exam from.","Walang quiz na pagkukunan ng pagsusulit ang module na ito.")}</p></div>`;
       window.scrollTo(0, 0);
       return;
     }
-    const questions = shuffle(pool).slice(0, Math.min(10, pool.length)); // up to 10 Qs
+    const questions = shuffle(pool).slice(0, Math.min(maxQ, pool.length)); // up to maxQ Qs
     // Stable shuffled display order of each question's ORIGINAL choice indices.
     const order = questions.map(it => shuffle(it.choices.map((_, i) => i)));
     const state = { answers: {}, submitted: false };
@@ -391,24 +397,28 @@
 
       let banner = "";
       let footer = `<div class="btn-row"><button class="btn" onclick="MBA._examSubmit()" ${Object.keys(state.answers).length < questions.length ? "disabled" : ""}>${t("Submit exam","Isumite ang pagsusulit")}</button>
-                    <button class="btn ghost" onclick="MBA.go('module/${m.id}')">${t("Back to module","Balik sa module")}</button></div>`;
+                    <button class="btn ghost" onclick="MBA.go('${backHash}')">${isFinal ? t("Back to certificate","") : t("Back to module","Balik sa module")}</button></div>`;
 
       if (state.submitted) {
         const correct = questions.filter((it, qi) => state.answers[qi] === it.answer).length;
         const pct = Math.round((correct / questions.length) * 100);
         const pass = pct >= 80;
-        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🏆" : "💪"} ${t("Exam score","Iskor sa pagsusulit")}: ${correct}/${questions.length} (${pct}%). ${pass ? t("PASSED — module mastered!","PUMASA — bihasa na sa module!") : t("You need 80% to pass. Review the lessons and try again.","Kailangan ng 80% para pumasa. Balikan ang mga aralin at subukang muli.")}</div>`;
+        const passMsg = isFinal ? t("PASSED — you've conquered the comprehensive final! 🎓","") : t("PASSED — module mastered!","PUMASA — bihasa na sa module!");
+        banner = `<div class="result-banner ${pass ? "pass" : "fail"}">${pass ? "🏆" : "💪"} ${t("Exam score","Iskor sa pagsusulit")}: ${correct}/${questions.length} (${pct}%). ${pass ? passMsg : t("You need 80% to pass. Review the lessons and try again.","Kailangan ng 80% para pumasa. Balikan ang mga aralin at subukang muli.")}</div>`;
         footer = `<div class="btn-row">
           <button class="btn ghost" onclick="MBA._examRetry()">${t("Retake exam","Ulitin ang pagsusulit")}</button>
-          ${pass ? `<button class="btn" onclick="MBA.go('certificate')">${t("View your progress / certificate ›","Tingnan ang progreso / certificate ›")}</button>` : `<button class="btn" onclick="MBA.go('module/${m.id}')">${t("Back to lessons","Balik sa mga aralin")}</button>`}
+          <button class="btn" onclick="MBA.go('certificate')">${t("View your progress / certificate ›","Tingnan ang progreso / certificate ›")}</button>
         </div>`;
       }
 
+      const subText = isFinal
+        ? t(`<b>${questions.length}</b> questions drawn from across <b>all ${DATA.modules.length} departments</b>. You need <b>80%</b> to pass this degree-level comprehensive exam — the final requirement for your certificate.`, "")
+        : t(`${questions.length} questions drawn from the whole module. You need <b>80%</b> to pass and earn this module's badge.`, `${questions.length} tanong mula sa buong module. Kailangan ng <b>80%</b> para pumasa at makuha ang badge ng module.`);
       app.innerHTML = `
-        <a class="back-link" onclick="MBA.go('module/${m.id}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(m.title)}</a>
+        <a class="back-link" onclick="MBA.go('${backHash}')">‹ ${t("Back to","Balik sa")} ${escapeHtml(isFinal ? t("certificate","") : m.title)}</a>
         <div class="quiz">
-          <h3>🎓 ${escapeHtml(m.title)} — ${t("Final Exam","Huling Pagsusulit")}</h3>
-          <div class="qsub">${t(`${questions.length} questions drawn from the whole module. You need <b>80%</b> to pass and earn this module's badge.`, `${questions.length} tanong mula sa buong module. Kailangan ng <b>80%</b> para pumasa at makuha ang badge ng module.`)}</div>
+          <h3>🎓 ${escapeHtml(m.title)}${isFinal ? "" : " — " + t("Final Exam","Huling Pagsusulit")}</h3>
+          <div class="qsub">${subText}</div>
           ${banner}${blocks}${footer}
         </div>`;
     }
@@ -434,8 +444,26 @@
     progress.exam = progress.exam || {};
     const done = doneCount(), total = totalLessons();
     const examsPassed = DATA.modules.filter(m => (progress.exam[m.id] || 0) >= 80).length;
-    const allDone = done === total && examsPassed === DATA.modules.length;
+    const finalScore = progress.exam.final || 0;
+    const finalPassed = finalScore >= 80;
+    const modulesReady = done === total && examsPassed === DATA.modules.length;
+    const allDone = modulesReady && finalPassed;
     const name = progress.name || "";
+
+    // Degree-level final exam: status card + call to action.
+    const finalCard = `
+      <div class="reader" style="margin:10px 0 22px;padding:22px;text-align:center;${finalPassed ? "border:1px solid #16a34a" : ""}">
+        <div style="font-size:30px">${finalPassed ? "🎓" : "📚"}</div>
+        <h3 style="margin:6px 0">${t("Comprehensive Final Exam","")}</h3>
+        <p style="color:var(--ink-soft);margin-bottom:14px">
+          ${finalPassed
+            ? t(`Passed with <b>${finalScore}%</b>. The final degree requirement is complete!`, "")
+            : (modulesReady
+                ? t("You've finished every module — sit the 25-question comprehensive exam (drawn from all departments) to complete your degree. 80% to pass.", "")
+                : t(`Unlocks after you finish all modules &amp; module exams. ${finalScore ? "Best so far: " + finalScore + "%." : ""}`, ""))}
+        </p>
+        <button class="btn" onclick="MBA.go('exam/final')" ${modulesReady ? "" : "disabled"}>${finalPassed ? t("Retake final exam","") : t("Take the Comprehensive Final ›","")}</button>
+      </div>`;
 
     const moduleStatus = DATA.modules.map(m => {
       const mp = moduleProgress(m);
@@ -453,7 +481,7 @@
       <div class="module-head">
         <div class="icon" style="background:#f59e0b22;color:#f59e0b">🏆</div>
         <div><h1>${t("Your Certificate & Progress","Iyong Certificate at Progreso")}</h1>
-        <div style="color:var(--ink-soft)">${t(`Complete every lesson and pass all ${DATA.modules.length} module exams to earn your certificate.`, `Tapusin ang lahat ng aralin at pumasa sa lahat ng ${DATA.modules.length} pagsusulit para makuha ang certificate.`)}</div></div>
+        <div style="color:var(--ink-soft)">${t(`Complete every lesson, pass all ${DATA.modules.length} module exams, then pass the Comprehensive Final Exam to earn your degree certificate.`, "")}</div></div>
       </div>
 
       <div style="margin:14px 0 22px">
@@ -470,14 +498,16 @@
           <div id="certNameDisplay" style="font-size:28px;font-weight:800;margin:14px 0;color:#1e293b">${escapeHtml(name || t("Your Name","Pangalan Mo"))}</div>
           <div style="color:#475569">${t("has successfully completed","ay matagumpay na natapos ang")}</div>
           <div style="font-size:18px;font-weight:700;margin:6px 0 14px;color:var(--brand-dark)">MBA Mastery Academy — Master of Business Management</div>
-          <div style="color:#475569;font-size:14px">${t(`All ${total} lessons &amp; ${DATA.modules.length} module exams passed 🏆`, `Lahat ng ${total} aralin at ${DATA.modules.length} pagsusulit ay pasado 🏆`)}</div>
+          <div style="color:#475569;font-size:14px">${t(`All ${total} lessons &amp; ${DATA.modules.length} department exams passed, plus the Comprehensive Final (${finalScore}%) 🏆`, "")}</div>
         </div>
         <div class="btn-row"><button class="btn" onclick="window.print()">🖨️ ${t("Print / Save as PDF","I-print / I-save bilang PDF")}</button></div>
       ` : `
-        <div class="result-banner fail">📋 ${t(`${done}/${total} lessons done · ${examsPassed}/${DATA.modules.length} module exams passed. Keep going — your certificate unlocks when both are complete!`, `${done}/${total} aralin tapos · ${examsPassed}/${DATA.modules.length} pagsusulit pasado. Tuloy lang — bubukas ang certificate kapag kumpleto na ang dalawa!`)}</div>
+        <div class="result-banner fail">📋 ${t(`${done}/${total} lessons done · ${examsPassed}/${DATA.modules.length} module exams passed · final exam ${finalPassed ? "passed" : "pending"}. Keep going — your certificate unlocks when all three are complete!`, "")}</div>
       `}
 
-      <div class="section-title">${t("Module-by-module status","Status bawat module")}</div>
+      ${finalCard}
+
+      <div class="section-title">${t("Department-by-department status","Status bawat module")}</div>
       ${moduleStatus}
     `;
     window.scrollTo(0, 0);
