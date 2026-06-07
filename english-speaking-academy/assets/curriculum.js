@@ -18,19 +18,31 @@ const SPEAK_CURRICULUM = {
      STUDY PLAN — a guided, week-by-week path from basic to advanced.
      ====================================================================== */
   studyPlan: {
-    title: "10-Week Speaking Plan (Basic → Advanced)",
-    intro: "Do a little every day. Aim for ~20 minutes: read a short lesson, say every example out loud (tap 🔊 first, then copy it), pass the quiz, and finish each week in the Speaking Lab. By week 10 you'll handle interviews, exams and public speaking with a confident British tone.",
+    title: "22-Week Complete Speaking Plan (Basic → Advanced)",
+    intro: "A complete, guided path through every single lesson — start as a total beginner and finish ready for exams, interviews and public speaking. Do a little every day: aim for ~20 minutes, read a short lesson, say every example out loud (tap 🔊 first, then copy it), and pass the quiz to tick it off. Each module is split into two weeks so you build steadily from everyday basics to confident, advanced British English. Finish each module exam, then sit the Final Mastery Exam to earn your certificate.",
     days: [
-      { day: 1,  focus: "Get started: sounds, greetings & introducing yourself", lessons: ["f1", "f2", "f3"] },
-      { day: 2,  focus: "Everyday basics + start British pronunciation",          lessons: ["f4", "p1", "p2"] },
-      { day: 3,  focus: "British sounds: vowels, consonants & the silent R",       lessons: ["p3", "p4"] },
-      { day: 4,  focus: "Tone & music of English: stress and rhythm",              lessons: ["t1", "t2"] },
-      { day: 5,  focus: "Intonation, connected speech & sounding natural",         lessons: ["t3", "t4", "t5"] },
-      { day: 6,  focus: "Everyday British conversation & small talk",              lessons: ["c1", "c2", "c3"] },
-      { day: 7,  focus: "On the phone + grammar you actually speak",               lessons: ["c4", "g1", "g2"] },
-      { day: 8,  focus: "Questions, conditionals & linking your ideas",            lessons: ["g3", "g4", "x1"] },
-      { day: 9,  focus: "Fluency tools, idioms & telling a good story",            lessons: ["x2", "x3", "x4"] },
-      { day: 10, focus: "Exams & the working world: IELTS, interviews, presenting", lessons: ["i1", "i2", "j1", "s1"] }
+      { day: 1, focus: "Speaking Foundations — Part 1", lessons: ["f1", "f2", "f3", "f4", "f5"] },
+      { day: 2, focus: "Speaking Foundations — Part 2", lessons: ["f6", "f7", "f8", "f9", "f10"] },
+      { day: 3, focus: "Confusing Words & Correct Usage — Part 1", lessons: ["w1", "w2", "w3", "w4", "w5"] },
+      { day: 4, focus: "Confusing Words & Correct Usage — Part 2", lessons: ["w6", "w7", "w8", "w9", "w10"] },
+      { day: 5, focus: "Vocabulary Builder & Word Power — Part 1", lessons: ["v1", "v2", "v3", "v4", "v5"] },
+      { day: 6, focus: "Vocabulary Builder & Word Power — Part 2", lessons: ["v6", "v7", "v8", "v9", "v10"] },
+      { day: 7, focus: "British Pronunciation Lab — Part 1", lessons: ["p1", "p2", "p3", "p4", "p5"] },
+      { day: 8, focus: "British Pronunciation Lab — Part 2", lessons: ["p6", "p7", "p8", "p9", "p10"] },
+      { day: 9, focus: "Tone, Intonation & Sounding Fluent — Part 1", lessons: ["t1", "t2", "t3", "t4", "t5"] },
+      { day: 10, focus: "Tone, Intonation & Sounding Fluent — Part 2", lessons: ["t6", "t7", "t8", "t9", "t10"] },
+      { day: 11, focus: "Everyday British Conversation — Part 1", lessons: ["c1", "c2", "c3", "c4", "c5"] },
+      { day: 12, focus: "Everyday British Conversation — Part 2", lessons: ["c6", "c7", "c8", "c9", "c10"] },
+      { day: 13, focus: "Grammar for Speaking — Part 1", lessons: ["g1", "g2", "g3", "g4", "g5"] },
+      { day: 14, focus: "Grammar for Speaking — Part 2", lessons: ["g6", "g7", "g8", "g9", "g10"] },
+      { day: 15, focus: "Fluency, Vocabulary & Idioms — Part 1", lessons: ["x1", "x2", "x3", "x4", "x5"] },
+      { day: 16, focus: "Fluency, Vocabulary & Idioms — Part 2", lessons: ["x6", "x7", "x8", "x9", "x10"] },
+      { day: 17, focus: "Exam Speaking: IELTS & Cambridge — Part 1", lessons: ["i1", "i2", "i3", "i4", "i5"] },
+      { day: 18, focus: "Exam Speaking: IELTS & Cambridge — Part 2", lessons: ["i6", "i7", "i8", "i9", "i10"] },
+      { day: 19, focus: "Job Interviews in English — Part 1", lessons: ["j1", "j2", "j3", "j4", "j5"] },
+      { day: 20, focus: "Job Interviews in English — Part 2", lessons: ["j6", "j7", "j8", "j9", "j10"] },
+      { day: 21, focus: "Public Speaking & Presentations — Part 1", lessons: ["s1", "s2", "s3", "s4", "s5"] },
+      { day: 22, focus: "Public Speaking & Presentations — Part 2", lessons: ["s6", "s7", "s8", "s9", "s10"] }
     ]
   },
 
@@ -373,6 +385,1293 @@ const SPEAK_CURRICULUM = {
             { q: "Which makes a request politest?", choices: ["Give me water.", "Water.", "Could I have some water, please?", "I want water now."], answer: 2 },
             { q: "In Britain, saying 'sorry' to a stranger usually means…", choices: ["You did something terrible", "Excuse me / a polite softener", "You're sad", "Goodbye"], answer: 1 }
           ]
+        },
+        {
+          id: "f5", level: "Basic", minutes: 9,
+          title: "The English alphabet and spelling out loud",
+          content: `
+            <p>Knowing the alphabet sounds obvious — but <b>saying letters clearly</b> when spelling your name, email address or postcode is a real skill that trips many learners up. This lesson gives you everything you need to spell confidently out loud in British English.</p>
+            <h3>The 26 letters and how they sound</h3>
+            <p>Listen to the whole alphabet at natural speed, then copy each group aloud.</p>
+            <p><button class="say" data-say="A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z">🔊 Full alphabet</button></p>
+            <h3>Danger groups — letters that sound alike</h3>
+            <p>These clusters cause the most confusion when spelling out loud. Practise each group until the differences are crystal clear to your ear.</p>
+            <table>
+              <tr><th>Group</th><th>Letters</th><th>Tip</th><th>Listen</th></tr>
+              <tr><td>The /iː/ group</td><td>B, C, D, E, G, P, T, V</td><td>All rhyme with "ee" — but the consonant before changes</td><td><button class="say" data-say="B as in Bravo, C as in Charlie, D as in Delta, E as in Echo, G as in Golf, P as in Papa, T as in Tango, V as in Victor">🔊</button></td></tr>
+              <tr><td>The /ɛ/ group</td><td>F, L, M, N, S, X</td><td>All rhyme with "ell" or "en" — go slowly</td><td><button class="say" data-say="F as in Foxtrot, L as in Lima, M as in Mike, N as in November, S as in Sierra, X as in X-ray">🔊</button></td></tr>
+              <tr><td>The /eɪ/ group</td><td>A, H, J, K</td><td>All rhyme with "ay"</td><td><button class="say" data-say="A as in Alpha, H as in Hotel, J as in Juliet, K as in Kilo">🔊</button></td></tr>
+              <tr><td>Unique ones</td><td>I, O, Q, R, U, W, Y, Z</td><td>Each has its own sound — learn individually</td><td><button class="say" data-say="I, O, Q, R, U, W, Y, Zed">🔊</button></td></tr>
+            </table>
+            <blockquote>Key rule: In British English, the last letter of the alphabet is <b>Zed</b>, not Zee. Say "Zed" every time.</blockquote>
+            <h3>Spelling your name, email and postcode</h3>
+            <p>When you spell something out loud in English, say one letter at a time, clearly and at a steady pace. If two letters might be confused, add "for" plus a common word: <b>"B for Bravo"</b> or <b>"D for Delta"</b>.</p>
+            <div class="ex">"My name is Kamil — that's K-A-M-I-L. K for Kilo, A for Alpha, M for Mike, I, L for Lima." <button class="say" data-say="My name is Kamil. That's K for Kilo, A for Alpha, M for Mike, I, L for Lima.">🔊 Listen</button></div>
+            <p>For email addresses, know these key words:</p>
+            <ul>
+              <li><b>@</b> = "at" <button class="say" data-say="at">🔊</button></li>
+              <li><b>.</b> = "dot" <button class="say" data-say="dot">🔊</button></li>
+              <li><b>_</b> = "underscore" <button class="say" data-say="underscore">🔊</button></li>
+              <li><b>-</b> = "hyphen" or "dash" <button class="say" data-say="hyphen, dash">🔊</button></li>
+            </ul>
+            <div class="ex">"My email is maria dot silva at gmail dot com." <button class="say" data-say="My email is maria dot silva at gmail dot com.">🔊 Listen</button></div>
+            <p>British postcodes mix letters and numbers: say each character one at a time.</p>
+            <div class="ex">"My postcode is SW1A 2AA — that's S, W, one, A, two, A, A." <button class="say" data-say="My postcode is SW1A 2AA. That's S, W, one, A, space, two, A, A.">🔊 Listen</button></div>
+            <h3>Practise spelling out loud</h3>
+            <p>Say your own full name, letter by letter, using "for" where helpful. Then try your email address. Go slowly — clarity matters more than speed.</p>
+            <div class="speakcheck" data-target="My name is spelled E-M-M-A. E for Echo, M for Mike, M for Mike, A for Alpha." data-hint="Spell clearly, one letter at a time. Use 'for' to clarify each letter."></div>
+            <div class="speakcheck" data-target="My email is emma dot jones at hotmail dot com." data-hint="Say 'dot' for full stops and 'at' for the @ symbol."></div>`,
+          tips: [
+            "In British English always say 'Zed' for the last letter, never 'Zee'.",
+            "When spelling over the phone, always add 'for': 'B for Bravo' removes all doubt.",
+            "Slow down when spelling — one clear letter per second is better than a rushed blur."
+          ],
+          practice: "Spell your full name out loud using the 'for' technique (e.g. 'S for Sierra'), then say your email address using 'dot' and 'at'. <button class=\"say\" data-say=\"My name is spelled A-N-N-A. A for Alpha, N for November, N for November, A for Alpha. My email is anna at english dot com.\">🔊 Listen to an example</button>",
+          quiz: [
+            { q: "In British English, the last letter of the alphabet is called…", choices: ["Zee", "Zed", "Zig", "Zak"], answer: 1 },
+            { q: "When spelling an email address, how do you say the '.' symbol?", choices: ["Point", "Stop", "Dot", "Period"], answer: 2 },
+            { q: "Which letters belong to the 'ee' sound group (rhyming with the letter E)?", choices: ["A, H, J, K", "F, L, M, N", "B, C, D, G, P, T", "I, O, U, W"], answer: 2 }
+          ]
+        },
+        {
+          id: "f6", level: "Basic", minutes: 10,
+          title: "Asking questions: question words and word order",
+          content: `
+            <p>Questions are the engine of conversation — they keep things moving and show the other person you're genuinely interested. In this lesson you'll learn <b>the seven question words</b>, the two main question types, and how to make any question sound polite and natural in British English.</p>
+            <h3>The seven question words (Wh- words plus How)</h3>
+            <table>
+              <tr><th>Word</th><th>Asks about</th><th>Example</th><th>Listen</th></tr>
+              <tr><td><b>Who</b></td><td>A person</td><td>Who is your teacher?</td><td><button class="say" data-say="Who is your teacher?">🔊</button></td></tr>
+              <tr><td><b>What</b></td><td>A thing or idea</td><td>What do you do?</td><td><button class="say" data-say="What do you do?">🔊</button></td></tr>
+              <tr><td><b>Where</b></td><td>A place</td><td>Where do you live?</td><td><button class="say" data-say="Where do you live?">🔊</button></td></tr>
+              <tr><td><b>When</b></td><td>A time</td><td>When does the class start?</td><td><button class="say" data-say="When does the class start?">🔊</button></td></tr>
+              <tr><td><b>Why</b></td><td>A reason</td><td>Why are you learning English?</td><td><button class="say" data-say="Why are you learning English?">🔊</button></td></tr>
+              <tr><td><b>How</b></td><td>A manner or degree</td><td>How are you getting on?</td><td><button class="say" data-say="How are you getting on?">🔊</button></td></tr>
+              <tr><td><b>Which</b></td><td>A choice between options</td><td>Which course did you choose?</td><td><button class="say" data-say="Which course did you choose?">🔊</button></td></tr>
+            </table>
+            <h3>Yes/No questions — flipping the word order</h3>
+            <p>For a yes/no question, you <b>move the auxiliary verb in front of the subject</b>. The pattern is: <b>Auxiliary + Subject + Main verb?</b></p>
+            <ul>
+              <li>Statement: <em>You are ready.</em> → Question: <em>Are you ready?</em> <button class="say" data-say="Are you ready?">🔊</button></li>
+              <li>Statement: <em>She has finished.</em> → Question: <em>Has she finished?</em> <button class="say" data-say="Has she finished?">🔊</button></li>
+              <li>Statement: <em>They can help.</em> → Question: <em>Can they help?</em> <button class="say" data-say="Can they help?">🔊</button></li>
+            </ul>
+            <p>When there is no auxiliary verb in the statement, use <b>do/does/did</b>:</p>
+            <ul>
+              <li><em>You like tea.</em> → <em>Do you like tea?</em> <button class="say" data-say="Do you like tea?">🔊</button></li>
+              <li><em>She works here.</em> → <em>Does she work here?</em> <button class="say" data-say="Does she work here?">🔊</button></li>
+            </ul>
+            <blockquote>Key rule: In English, the verb moves — <b>never the subject</b>. "Like you tea?" is wrong; "Do you like tea?" is right.</blockquote>
+            <h3>Wh- questions — same idea, question word first</h3>
+            <p>Put the question word at the front, then follow the yes/no pattern: <b>Wh- word + Auxiliary + Subject + Main verb?</b></p>
+            <div class="ex">What do you do at the weekend? <button class="say" data-say="What do you do at the weekend?">🔊 Listen</button></div>
+            <div class="ex">Where does she work? <button class="say" data-say="Where does she work?">🔊 Listen</button></div>
+            <div class="ex">How long have you lived here? <button class="say" data-say="How long have you lived here?">🔊 Listen</button></div>
+            <h3>Polite question openers</h3>
+            <p>In British English, a direct question is fine — but adding a polite opener makes you sound warm and considerate. Here are the most useful ones:</p>
+            <ul>
+              <li><b>Could you tell me…?</b> <button class="say" data-say="Could you tell me where the station is?">🔊</button></li>
+              <li><b>Do you happen to know…?</b> <button class="say" data-say="Do you happen to know what time it opens?">🔊</button></li>
+              <li><b>I was wondering…</b> <button class="say" data-say="I was wondering if you could help me.">🔊</button></li>
+              <li><b>Would you mind…?</b> <button class="say" data-say="Would you mind repeating that?">🔊</button></li>
+            </ul>
+            <div class="speakcheck" data-target="Where do you come from and what do you do?" data-hint="Two wh- questions joined with 'and'. Keep your voice up on 'from' and 'do'."></div>
+            <div class="speakcheck" data-target="Could you tell me when the next train leaves, please?" data-hint="Polite opener, then indirect question. Rise gently at the end."></div>`,
+          tips: [
+            "The auxiliary verb always jumps to the front in a question — get this habit automatic.",
+            "Rising intonation at the end of a yes/no question sounds natural and friendly.",
+            "Polite openers like 'Could you tell me...' make you sound brilliant, not just correct."
+          ],
+          practice: "Ask three questions about a partner (real or imagined): where they are from, what they do, and how long they have lived in their city. Use the polite opener 'Could you tell me...' for at least one of them. <button class=\"say\" data-say=\"Could you tell me where you're from? What do you do for work? How long have you lived there?\">🔊 Listen to an example</button>",
+          quiz: [
+            { q: "Which question word asks about a reason?", choices: ["Where", "When", "Who", "Why"], answer: 3 },
+            { q: "Which word order is correct for a yes/no question?", choices: ["Subject + Auxiliary + verb?", "Auxiliary + Subject + verb?", "Verb + Subject + auxiliary?", "Subject + verb only?"], answer: 1 },
+            { q: "How do you make 'She works here' into a question?", choices: ["She works here?", "Works she here?", "Does she work here?", "Is she work here?"], answer: 2 }
+          ]
+        },
+        {
+          id: "f7", level: "Basic", minutes: 10,
+          title: "Talking about yourself: family, home and daily routine",
+          content: `
+            <p>One of the most common conversations in English — whether at work, at a class, or on a first meeting — is simply talking about your life. This lesson gives you the language to describe your <b>family, where you live</b>, and <b>what a typical day looks like</b>.</p>
+            <h3>Family vocabulary</h3>
+            <table>
+              <tr><th>Person</th><th>Word</th><th>Listen</th></tr>
+              <tr><td>Mother / Father</td><td>mum / dad (informal); mother / father (formal)</td><td><button class="say" data-say="my mum, my dad, my mother, my father">🔊</button></td></tr>
+              <tr><td>Brother / Sister</td><td>brother / sister; sibling (either)</td><td><button class="say" data-say="my brother, my sister">🔊</button></td></tr>
+              <tr><td>Husband / Wife</td><td>husband / wife; partner (neutral)</td><td><button class="say" data-say="my husband, my wife, my partner">🔊</button></td></tr>
+              <tr><td>Son / Daughter</td><td>son / daughter; child / children</td><td><button class="say" data-say="my son, my daughter, my children">🔊</button></td></tr>
+              <tr><td>Grandparents</td><td>grandma / grandad; grandmother / grandfather</td><td><button class="say" data-say="my grandma, my grandad">🔊</button></td></tr>
+            </table>
+            <div class="ex">"I live with my partner and our two children. My mum lives nearby, which is lovely." <button class="say" data-say="I live with my partner and our two children. My mum lives nearby, which is lovely.">🔊 Listen</button></div>
+            <h3>Describing where you live</h3>
+            <p>Use simple present tense with <em>live in / near / outside</em>:</p>
+            <ul>
+              <li><button class="say" data-say="I live in a small flat in the city centre.">🔊</button> "I live in a small <b>flat</b> in the city centre." (British: flat = apartment)</li>
+              <li><button class="say" data-say="We have a house in a quiet suburb, about twenty minutes from the centre.">🔊</button> "We have a house in a quiet suburb, about twenty minutes from the centre."</li>
+              <li><button class="say" data-say="I'm from Poland originally, but I've been living in Manchester for three years.">🔊</button> "I'm from Poland originally, but I've been living in Manchester for three years."</li>
+            </ul>
+            <blockquote>Key rule: Use <b>present simple</b> for permanent routines ("I work at…") and <b>present continuous</b> for temporary situations ("I'm currently staying at…").</blockquote>
+            <h3>Daily routine — the present simple</h3>
+            <p>The present simple describes habits and routines. Use time expressions to make it vivid:</p>
+            <table>
+              <tr><th>Time expression</th><th>Example</th><th>Listen</th></tr>
+              <tr><td>in the morning</td><td>I get up at seven in the morning.</td><td><button class="say" data-say="I get up at seven in the morning.">🔊</button></td></tr>
+              <tr><td>at lunchtime</td><td>I usually have lunch at my desk.</td><td><button class="say" data-say="I usually have lunch at my desk.">🔊</button></td></tr>
+              <tr><td>in the evening</td><td>In the evening I cook dinner and watch a bit of telly.</td><td><button class="say" data-say="In the evening I cook dinner and watch a bit of telly.">🔊</button></td></tr>
+              <tr><td>at weekends</td><td>At weekends I take the kids to the park.</td><td><button class="say" data-say="At weekends I take the kids to the park.">🔊</button></td></tr>
+            </table>
+            <p><b>Note:</b> "telly" is a lovely informal British word for television.</p>
+            <h3>Putting it together — a full mini-paragraph</h3>
+            <div class="ex">"I live in a flat in Leeds with my partner. I have one sister who lives in Bristol. During the week I start work at nine, have lunch around one, and finish at five. In the evenings I usually cook something simple and then read or watch telly. At weekends we try to get out for a walk." <button class="say" data-say="I live in a flat in Leeds with my partner. I have one sister who lives in Bristol. During the week I start work at nine, have lunch around one, and finish at five. In the evenings I usually cook something simple and then read or watch telly. At weekends we try to get out for a walk.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="I live in a flat with my family. I usually get up at seven and start work at nine." data-hint="Speak naturally — present simple, two clear sentences."></div>
+            <div class="speakcheck" data-target="At weekends I like to go for a walk and spend time with my family." data-hint="Use 'at weekends' to start — a very British phrase."></div>`,
+          tips: [
+            "British English uses 'flat' (not apartment), 'mum' (not mom), and 'at weekends' (not on weekends).",
+            "Time expressions at the start of a sentence (In the morning…, At weekends…) make your speech sound fluent.",
+            "Keep your routine description in a logical time order: morning → afternoon → evening → weekend."
+          ],
+          practice: "Describe your typical weekday in four or five sentences: when you get up, what you do during the day, and what you do in the evening. Use at least three different time expressions. <button class=\"say\" data-say=\"I get up at half past six. I go to work at eight and finish at five. In the evening I have dinner with my family and then watch a bit of telly.\">🔊 Listen to an example</button>",
+          quiz: [
+            { q: "What is the British English word for 'apartment'?", choices: ["Condo", "Studio", "Flat", "Unit"], answer: 2 },
+            { q: "Which sentence uses the correct British expression?", choices: ["On weekends I rest.", "At weekends I rest.", "In weekends I rest.", "By weekends I rest."], answer: 1 },
+            { q: "Which tense describes permanent daily routines?", choices: ["Past simple", "Future simple", "Present continuous", "Present simple"], answer: 3 }
+          ]
+        },
+        {
+          id: "f8", level: "Basic", minutes: 9,
+          title: "Likes, dislikes and simple opinions",
+          content: `
+            <p>Being able to say what you like and what you think is fundamental to real conversation. This lesson covers the key verbs and phrases for expressing preferences — from strong enthusiasm to polite British understatement.</p>
+            <h3>The main verbs: strong to weak</h3>
+            <p>These verbs go from strongest positive to strongest negative. They all take <b>-ing</b> after them (the gerund form).</p>
+            <table>
+              <tr><th>Feeling</th><th>Phrase</th><th>Listen</th></tr>
+              <tr><td>Very strong positive</td><td>I absolutely love cooking.</td><td><button class="say" data-say="I absolutely love cooking.">🔊</button></td></tr>
+              <tr><td>Strong positive</td><td>I really enjoy walking in the countryside.</td><td><button class="say" data-say="I really enjoy walking in the countryside.">🔊</button></td></tr>
+              <tr><td>Mild positive</td><td>I quite like watching films.</td><td><button class="say" data-say="I quite like watching films.">🔊</button></td></tr>
+              <tr><td>Neutral</td><td>I don't mind travelling by bus.</td><td><button class="say" data-say="I don't mind travelling by bus.">🔊</button></td></tr>
+              <tr><td>Mild negative</td><td>I'm not really keen on ironing.</td><td><button class="say" data-say="I'm not really keen on ironing.">🔊</button></td></tr>
+              <tr><td>Strong negative</td><td>I can't stand queuing in the cold.</td><td><button class="say" data-say="I can't stand queuing in the cold.">🔊</button></td></tr>
+            </table>
+            <blockquote>Key rule: After like / love / enjoy / hate / can't stand, always use the <b>-ing</b> form: "I enjoy swimming" — NOT "I enjoy swim".</blockquote>
+            <h3>British phrases for mild opinions</h3>
+            <p>British people often express opinions gently, leaving room for politeness. Learn these — they will make you sound naturally British rather than overly blunt:</p>
+            <ul>
+              <li><b>"I'm quite fond of it."</b> (I like it quite a lot) <button class="say" data-say="I'm quite fond of it.">🔊</button></li>
+              <li><b>"It's not really my thing."</b> (I don't like it, said politely) <button class="say" data-say="It's not really my thing.">🔊</button></li>
+              <li><b>"I'm rather partial to a nice cup of tea."</b> (I'm quite fond of tea — a very British sentence!) <button class="say" data-say="I'm rather partial to a nice cup of tea.">🔊</button></li>
+              <li><b>"It's all right, I suppose."</b> (It's OK, nothing special) <button class="say" data-say="It's all right, I suppose.">🔊</button></li>
+              <li><b>"I'm not fussed either way."</b> (I don't have a strong preference) <button class="say" data-say="I'm not fussed either way.">🔊</button></li>
+            </ul>
+            <h3>Giving a reason with 'because'</h3>
+            <p>A simple opinion becomes much richer when you add a reason. Use <b>because</b> to explain:</p>
+            <div class="ex">"I really enjoy going to the theatre because the atmosphere is brilliant and it's so much better than watching something on a screen." <button class="say" data-say="I really enjoy going to the theatre because the atmosphere is brilliant and it's so much better than watching something on a screen.">🔊 Listen</button></div>
+            <div class="ex">"I can't stand commuting by tube because it's so crowded and hot in the summer." <button class="say" data-say="I can't stand commuting by tube because it's so crowded and hot in the summer.">🔊 Listen</button></div>
+            <h3>Asking for opinions</h3>
+            <p>Don't forget to ask others too — conversation is a two-way street:</p>
+            <ul>
+              <li><button class="say" data-say="What do you think of it?">🔊</button> "What do you think of it?"</li>
+              <li><button class="say" data-say="Are you keen on cooking?">🔊</button> "Are you keen on cooking?"</li>
+              <li><button class="say" data-say="Do you fancy going for a walk?">🔊</button> "Do you fancy going for a walk?" (British: 'fancy' = would you like)</li>
+            </ul>
+            <div class="speakcheck" data-target="I really enjoy reading because it helps me relax and learn new things." data-hint="Use 'enjoy' plus -ing, then 'because' with two reasons."></div>
+            <div class="speakcheck" data-target="I'm not really keen on loud music — it's not my thing at all." data-hint="Mild negative opinion — keep it polite and natural."></div>`,
+          tips: [
+            "Always use -ing after like, love, enjoy, hate, and can't stand — never the infinitive alone.",
+            "'Fancy' as a verb means 'would you like' in British English: 'Do you fancy a biscuit?' is perfectly natural.",
+            "Adding 'because' with a genuine reason makes even short opinions sound fluent and interesting."
+          ],
+          practice: "Tell a partner (or record yourself) about three things you like and one thing you dislike, each with a reason using 'because'. Use at least one mild British phrase such as 'I'm quite fond of' or 'It's not really my thing'. <button class=\"say\" data-say=\"I'm quite fond of cycling because it keeps me fit and I love being outdoors. I can't stand doing the washing-up because it's so tedious. It's not really my thing at all.\">🔊 Listen to an example</button>",
+          quiz: [
+            { q: "Which sentence is grammatically correct?", choices: ["I enjoy to swim.", "I enjoy swim.", "I enjoy swimming.", "I enjoying swim."], answer: 2 },
+            { q: "What does 'Do you fancy a biscuit?' mean in British English?", choices: ["Do you find a biscuit attractive?", "Would you like a biscuit?", "Can you make a biscuit?", "Is a biscuit your favourite?"], answer: 1 },
+            { q: "Which phrase expresses a mild negative opinion in a polite British way?", choices: ["I hate it.", "I love it, not.", "It's not really my thing.", "I absolutely can't stand it."], answer: 2 }
+          ]
+        },
+        {
+          id: "f9", level: "Basic", minutes: 10,
+          title: "Getting around: directions, shops and ordering food",
+          content: `
+            <p>Whether you're navigating a British high street, buying something in a shop, or ordering lunch in a café, a handful of key phrases will carry you a very long way. This lesson teaches you the polite language the British actually use in these everyday situations.</p>
+            <h3>Asking for and giving directions</h3>
+            <p>Start with a polite apology opener — the British always do:</p>
+            <div class="ex">"Excuse me, could you tell me how to get to the train station, please?" <button class="say" data-say="Excuse me, could you tell me how to get to the train station, please?">🔊 Listen</button></div>
+            <p>Useful direction vocabulary:</p>
+            <table>
+              <tr><th>Phrase</th><th>Meaning</th><th>Listen</th></tr>
+              <tr><td>Turn left / right</td><td>Change direction at a corner</td><td><button class="say" data-say="Turn left at the traffic lights. Turn right at the roundabout.">🔊</button></td></tr>
+              <tr><td>Go straight on</td><td>Continue in the same direction</td><td><button class="say" data-say="Go straight on past the park.">🔊</button></td></tr>
+              <tr><td>Take the first/second left</td><td>Turn at the first or second road on the left</td><td><button class="say" data-say="Take the second left after the post office.">🔊</button></td></tr>
+              <tr><td>It's on your left/right</td><td>The destination is on that side</td><td><button class="say" data-say="It's on your left, just past the bank.">🔊</button></td></tr>
+              <tr><td>About five minutes' walk</td><td>Rough walking distance</td><td><button class="say" data-say="It's about five minutes' walk from here.">🔊</button></td></tr>
+            </table>
+            <blockquote>Key rule: Always start a request for directions with "Excuse me" — it's considered rude to launch straight into a question without it.</blockquote>
+            <h3>In a shop: polite requests</h3>
+            <p>Three golden phrases for any British shop:</p>
+            <ul>
+              <li><b>"Could I have…, please?"</b> — the all-purpose polite request <button class="say" data-say="Could I have a bag, please?">🔊</button></li>
+              <li><b>"How much is this?"</b> — asking the price <button class="say" data-say="Excuse me, how much is this?">🔊</button></li>
+              <li><b>"Do you have this in a different size?"</b> — asking for an alternative <button class="say" data-say="Do you have this in a different size, please?">🔊</button></li>
+            </ul>
+            <div class="ex">"Excuse me, how much is this jacket? Do you have it in blue?" <button class="say" data-say="Excuse me, how much is this jacket? Do you have it in blue?">🔊 Listen</button></div>
+            <h3>Ordering in a café or restaurant</h3>
+            <p>British café ordering is relaxed and friendly. These are the phrases you actually hear:</p>
+            <ul>
+              <li><b>"I'll have…, please."</b> — the most natural way to order <button class="say" data-say="I'll have a flat white and a slice of carrot cake, please.">🔊</button></li>
+              <li><b>"Could I get…?"</b> — also common, slightly more casual <button class="say" data-say="Could I get a table for two, please?">🔊</button></li>
+              <li><b>"Could I have the bill, please?"</b> — asking to pay (British: 'bill', not 'check') <button class="say" data-say="Could I have the bill, please?">🔊</button></li>
+              <li><b>"What do you recommend?"</b> — a lovely way to start a friendly exchange <button class="say" data-say="What do you recommend?">🔊</button></li>
+            </ul>
+            <div class="ex">"Hi there! I'll have a pot of tea and the soup of the day, please. Oh, and could I have some bread with that?" <button class="say" data-say="Hi there! I'll have a pot of tea and the soup of the day, please. Oh, and could I have some bread with that?">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="Excuse me, could you tell me how to get to the high street, please?" data-hint="Start with 'Excuse me' and use the polite 'could you' form."></div>
+            <div class="speakcheck" data-target="I'll have a coffee and a sandwich, please. Could I have the bill when you're ready?" data-hint="Two polite requests. Natural café English."></div>`,
+          tips: [
+            "Always start a direction question with 'Excuse me' — it's not optional in British culture.",
+            "In British cafés and restaurants, say 'bill' not 'check' when you want to pay.",
+            "'I'll have..., please' is the most natural way to order — more fluent than 'I want'."
+          ],
+          practice: "Role-play two short scenes out loud: (1) ask a stranger for directions to the nearest supermarket, and (2) order a drink and a snack in a café and then ask for the bill. <button class=\"say\" data-say=\"Excuse me, could you tell me where the nearest supermarket is, please? Thank you so much! ... Hi there, I'll have a tea and a scone, please. Could I have the bill when you're ready? Cheers!\">🔊 Listen to an example</button>",
+          quiz: [
+            { q: "What should you always say before asking a stranger for directions in Britain?", choices: ["Hey!", "Right, so…", "Excuse me", "Listen here"], answer: 2 },
+            { q: "How do you ask for the bill in a British restaurant?", choices: ["Can I have the check?", "Could I have the bill, please?", "I need to pay now.", "Bill me."], answer: 1 },
+            { q: "Which is the most natural way to order in a British café?", choices: ["Give me a coffee.", "I want coffee.", "I'll have a coffee, please.", "Coffee, me, now."], answer: 2 }
+          ]
+        },
+        {
+          id: "f10", level: "Basic", minutes: 9,
+          title: "Survival speaking: when you don't understand",
+          content: `
+            <p>Even advanced speakers sometimes miss a word, lose the thread, or simply need a moment to think. Knowing what to <b>say when you don't understand</b> is one of the most powerful tools in a language learner's kit. Use these phrases freely — they don't make you seem less intelligent; they make you seem polite and engaged.</p>
+            <h3>Asking someone to repeat themselves</h3>
+            <p>The single most useful skill. Learn several versions so you can vary them naturally:</p>
+            <table>
+              <tr><th>Phrase</th><th>Style</th><th>Listen</th></tr>
+              <tr><td>Sorry, could you say that again, please?</td><td>Polite, everyday</td><td><button class="say" data-say="Sorry, could you say that again, please?">🔊</button></td></tr>
+              <tr><td>I beg your pardon?</td><td>Formal / older British</td><td><button class="say" data-say="I beg your pardon?">🔊</button></td></tr>
+              <tr><td>Sorry, I didn't quite catch that.</td><td>Natural, friendly</td><td><button class="say" data-say="Sorry, I didn't quite catch that.">🔊</button></td></tr>
+              <tr><td>Pardon?</td><td>Very short, casual</td><td><button class="say" data-say="Pardon?">🔊</button></td></tr>
+            </table>
+            <blockquote>Key rule: In British English, "Pardon?" is perfectly polite — far better than a blank stare or "What?" (which can sound rude). "I beg your pardon?" is very formal but never rude.</blockquote>
+            <h3>Asking someone to slow down</h3>
+            <p>Native speakers often talk quickly. It is perfectly fine to ask them to slow down — most will be happy to help:</p>
+            <ul>
+              <li><button class="say" data-say="Could you speak a little more slowly, please?">🔊</button> <b>"Could you speak a little more slowly, please?"</b></li>
+              <li><button class="say" data-say="I'm still learning English — could you slow down a little?">🔊</button> <b>"I'm still learning English — could you slow down a little?"</b></li>
+              <li><button class="say" data-say="Sorry, could you repeat that more slowly?">🔊</button> <b>"Sorry, could you repeat that more slowly?"</b></li>
+            </ul>
+            <div class="ex">"I'm so sorry, my English is still improving — could you speak a bit more slowly, please? That's really kind of you." <button class="say" data-say="I'm so sorry, my English is still improving — could you speak a bit more slowly, please? That's really kind of you.">🔊 Listen</button></div>
+            <h3>Checking meaning</h3>
+            <p>When you hear a word you don't know, ask about it directly — it shows curiosity, not weakness:</p>
+            <ul>
+              <li><button class="say" data-say="Sorry, what does that word mean?">🔊</button> <b>"Sorry, what does that word mean?"</b></li>
+              <li><button class="say" data-say="Could you explain what you mean by that?">🔊</button> <b>"Could you explain what you mean by that?"</b></li>
+              <li><button class="say" data-say="So, just to check — do you mean that we need to arrive early?">🔊</button> <b>"So, just to check — do you mean that we need to arrive early?"</b> (checking your understanding)</li>
+            </ul>
+            <h3>Buying thinking time</h3>
+            <p>Sometimes you understand but need a few seconds to compose your answer. These phrases are absolutely normal in native English conversation:</p>
+            <ul>
+              <li><button class="say" data-say="That's a good question. Let me think for a moment.">🔊</button> <b>"That's a good question. Let me think for a moment."</b></li>
+              <li><button class="say" data-say="Right, so…">🔊</button> <b>"Right, so…"</b> — a very British filler while you think</li>
+              <li><button class="say" data-say="Well, I suppose…">🔊</button> <b>"Well, I suppose…"</b></li>
+              <li><button class="say" data-say="How shall I put it…">🔊</button> <b>"How shall I put it…"</b> — sounds natural and educated</li>
+            </ul>
+            <div class="ex">"That's a good question — how shall I put it… I suppose I'd say it depends on the situation, really." <button class="say" data-say="That's a good question — how shall I put it… I suppose I'd say it depends on the situation, really.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="Sorry, could you say that again, please? I didn't quite catch it." data-hint="Polite, natural, two phrases combined."></div>
+            <div class="speakcheck" data-target="Could you speak a little more slowly, please? My English is still improving." data-hint="Polite and honest — native speakers will always respect this."></div>`,
+          tips: [
+            "Never stay silent when you don't understand — a polite 'Sorry, could you repeat that?' is always welcome.",
+            "Buying thinking time with 'Well, I suppose...' or 'How shall I put it...' sounds fluent, not hesitant.",
+            "Telling someone you're still learning English ('I'm still learning — could you slow down?') usually brings out the best in people."
+          ],
+          practice: "Practise these three scenarios out loud: (1) ask someone to repeat something you missed, (2) ask them to slow down, (3) use a thinking-time phrase before answering a question. <button class=\"say\" data-say=\"Sorry, I didn't quite catch that — could you say it again, please? And could you speak a little more slowly? I'm still learning. Right, so… let me think about that for a moment.\">🔊 Listen to an example</button>",
+          quiz: [
+            { q: "Which phrase is the most polite way to ask someone to repeat in British English?", choices: ["What?", "Huh?", "Say again.", "Sorry, could you say that again, please?"], answer: 3 },
+            { q: "What does 'I beg your pardon?' signal?", choices: ["You are angry", "You did not hear or understand and want it repeated", "You are leaving", "You agree completely"], answer: 1 },
+            { q: "Which phrase helps you buy thinking time in a conversation?", choices: ["I don't know.", "Silence.", "How shall I put it…", "Never mind."], answer: 2 }
+          ]
+        }
+      ]
+    },
+
+    /* ----- 1b. CONFUSING WORDS & CORRECT USAGE ----------------------------- */
+    {
+      id: "words", icon: "🧩", color: "#6366f1",
+      title: "Confusing Words & Correct Usage",
+      blurb: "The words everyone mixes up — their/there/they're, your/you're, its/it's, to/too/two and many more. Learn the meaning of each and exactly when to use it.",
+      lessons: [
+        {
+          id: "w1", level: "Basic", minutes: 9,
+          title: "there · their · they're (the famous three)",
+          content: `
+            <p>These three sound <b>exactly the same</b> when spoken, but they mean completely different things. Getting them right is one of the clearest signs of a careful English user. Let's make it simple.</p>
+            <h3>1. <span style="color:#6366f1">there</span> — a place, or "it exists"</h3>
+            <p>Think of the word <b>here</b> hiding inside <b>t-here</b>. It points to a place, or starts a sentence about something existing.</p>
+            <ul>
+              <li><button class="say" data-say="The cafe is over there, next to the bank.">🔊</button> "The cafe is over <b>there</b>, next to the bank." (a place)</li>
+              <li><button class="say" data-say="There is a problem with my order.">🔊</button> "<b>There</b> is a problem with my order." (it exists)</li>
+            </ul>
+            <h3>2. <span style="color:#6366f1">their</span> — belonging to them</h3>
+            <p>It shows possession (like <i>my, your, our</i>). Tip: it has the word <b>heir</b> inside (an heir owns things).</p>
+            <ul>
+              <li><button class="say" data-say="The students forgot their books.">🔊</button> "The students forgot <b>their</b> books." (the books belong to them)</li>
+              <li><button class="say" data-say="My neighbours painted their front door blue.">🔊</button> "My neighbours painted <b>their</b> front door blue."</li>
+            </ul>
+            <h3>3. <span style="color:#6366f1">they're</span> — short for "they are"</h3>
+            <p>The apostrophe means letters are missing. If you can replace it with <b>"they are"</b>, this is the one.</p>
+            <ul>
+              <li><button class="say" data-say="They're going to be late.">🔊</button> "<b>They're</b> going to be late." (= they are going)</li>
+              <li><button class="say" data-say="I like them because they're so friendly.">🔊</button> "I like them because <b>they're</b> so friendly." (= they are)</li>
+            </ul>
+            <h3>The quick test</h3>
+            <blockquote>Try saying <b>"they are"</b> in the sentence. If it fits → <b>they're</b>. If not, ask: is it a <b>place / exists</b> (there) or does something <b>belong to them</b> (their)?</blockquote>
+            <h3>Say all three correctly</h3>
+            <div class="speakcheck" data-target="They're putting their bags over there."></div>`,
+          tips: [
+            "they're = they are. Always. If 'they are' doesn't fit, it's not this one.",
+            "there has 'here' in it — both are about place.",
+            "their = belonging to them (their car, their idea, their fault)."
+          ],
+          practice: "Say this sentence aloud three times and notice how all three sound identical but mean different things: <button class=\"say\" data-say=\"They're sure their keys are over there.\">🔊 Listen</button> “They're sure their keys are over there.”",
+          quiz: [
+            { q: "Choose the correct sentence:", choices: ["Their going to the park.", "They're going to the park.", "There going to the park.", "Theyre going to the park."], answer: 1 },
+            { q: "“___ house is the green one.” (belongs to them)", choices: ["There", "They're", "Their", "Theyr"], answer: 2 },
+            { q: "“Is ___ any milk left?” (it exists)", choices: ["their", "they're", "there", "thair"], answer: 2 },
+            { q: "Which is the quick test for 'they're'?", choices: ["Does it name a place?", "Can you replace it with 'they are'?", "Does it own something?", "Is it plural?"], answer: 1 }
+          ]
+        },
+        {
+          id: "w2", level: "Basic", minutes: 8,
+          title: "your · you're  and  its · it's",
+          content: `
+            <p>Two more pairs that trip up even native speakers. The rule is the same each time: <b>the apostrophe means two words squashed together.</b></p>
+            <h3>your vs you're</h3>
+            <ul>
+              <li><b>your</b> = belonging to you. <button class="say" data-say="Is this your coat?">🔊</button> "Is this <b>your</b> coat?"</li>
+              <li><b>you're</b> = you are. <button class="say" data-say="You're very kind.">🔊</button> "<b>You're</b> very kind." (= you are very kind)</li>
+            </ul>
+            <p><b>Test:</b> say "you are". Fits? Use <b>you're</b>. Doesn't fit? Use <b>your</b>.</p>
+            <div class="ex">"<b>You're</b> going to love <b>your</b> new job." <button class="say" data-say="You're going to love your new job.">🔊</button></div>
+            <h3>its vs it's</h3>
+            <p>This one feels backwards, so learn it carefully:</p>
+            <ul>
+              <li><b>it's</b> = it is / it has. <button class="say" data-say="It's raining again.">🔊</button> "<b>It's</b> raining." (= it is raining)</li>
+              <li><b>its</b> = belonging to it. <button class="say" data-say="The dog wagged its tail.">🔊</button> "The dog wagged <b>its</b> tail." (the tail belongs to it)</li>
+            </ul>
+            <blockquote>Remember: <b>it's</b> ALWAYS means "it is" or "it has". If you can't say "it is", drop the apostrophe → <b>its</b>.</blockquote>
+            <h3>Your turn</h3>
+            <div class="speakcheck" data-target="You're sure it's going to rain, so bring your umbrella."></div>`,
+          tips: [
+            "Apostrophe = missing letters. you're = you (a)re. it's = it (i)s.",
+            "No apostrophe for possession here: your, its (like his, hers — none of those have apostrophes).",
+            "When unsure, say the full words 'you are' / 'it is' in your head."
+          ],
+          practice: "Read aloud, choosing in your head why each word is right: <button class=\"say\" data-say=\"You're right that your phone is great, but its battery is weak and it's getting old.\">🔊 Listen</button> “You're right that your phone is great, but its battery is weak and it's getting old.”",
+          quiz: [
+            { q: "“___ welcome to stay for dinner.”", choices: ["Your", "You're", "Yor", "Youre"], answer: 1 },
+            { q: "“The company changed ___ logo.” (belongs to it)", choices: ["it's", "its", "its'", "it is"], answer: 1 },
+            { q: "“___ been a long day.” (= it has)", choices: ["Its", "It's", "Its'", "It"], answer: 1 },
+            { q: "Which never takes an apostrophe?", choices: ["it's meaning 'it is'", "you're meaning 'you are'", "its / your meaning belonging", "none of them"], answer: 2 }
+          ]
+        },
+        {
+          id: "w3", level: "Basic", minutes: 8,
+          title: "to · too · two  and  then · than",
+          content: `
+            <p>Tiny words, big difference. Once you see the pattern, you'll never mix them up.</p>
+            <h3>to · too · two</h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td><b>to</b></td><td>direction, or before a verb</td><td>I'm going <b>to</b> work. / I want <b>to</b> sleep.</td></tr>
+              <tr><td><b>too</b></td><td>also, or "more than enough"</td><td>I'm coming <b>too</b>. / It's <b>too</b> hot.</td></tr>
+              <tr><td><b>two</b></td><td>the number 2</td><td>I have <b>two</b> sisters.</td></tr>
+            </table>
+            <p><button class="say" data-say="I want to buy two coffees, and a cake too.">🔊</button> "I want <b>to</b> buy <b>two</b> coffees, and a cake <b>too</b>."</p>
+            <p><b>Tip:</b> <b>too</b> has an extra 'o' — think "too much", an extra o for extra meaning (also / excessively).</p>
+            <h3>then vs than</h3>
+            <ul>
+              <li><b>then</b> = time / next (it has an 'e' like <b>tim<u>e</u></b>... or like "and th<b>e</b>n"). <button class="say" data-say="We had dinner, then we watched a film.">🔊</button> "We had dinner, <b>then</b> we watched a film."</li>
+              <li><b>than</b> = comparison. <button class="say" data-say="She is taller than her brother.">🔊</button> "She is taller <b>than</b> her brother."</li>
+            </ul>
+            <blockquote>If you're <b>comparing</b> two things (bigger, better, more, less) → <b>than</b>. If it's about <b>time / order</b> → <b>then</b>.</blockquote>
+            <div class="speakcheck" data-target="It's too cold to go out, so first we'll eat, then we'll decide."></div>`,
+          tips: [
+            "too = also / excessively (the extra 'o' = extra).",
+            "two is the number — it has a 'w' like twin, twice, twelve.",
+            "than = comparison (bigger than); then = time (and then)."
+          ],
+          practice: "Say it aloud and explain to yourself why each is correct: <button class=\"say\" data-say=\"Two of us were too tired to talk, so we ate, then slept better than before.\">🔊 Listen</button> “Two of us were too tired to talk, so we ate, then slept better than before.”",
+          quiz: [
+            { q: "“This bag is ___ heavy to lift.”", choices: ["to", "two", "too", "tow"], answer: 2 },
+            { q: "“I'd love ___ join you.”", choices: ["to", "too", "two", "tu"], answer: 0 },
+            { q: "“He's older ___ me.”", choices: ["then", "than", "thane", "thn"], answer: 1 },
+            { q: "“Finish your work, ___ relax.”", choices: ["than", "then", "thn", "thane"], answer: 1 }
+          ]
+        },
+        {
+          id: "w4", level: "Intermediate", minutes: 10,
+          title: "More sound-alikes: where/wear/we're, here/hear, buy/by/bye & friends",
+          content: `
+            <p>English is full of <b>homophones</b> — words that sound the same but are spelled and used differently. Here are the most useful ones to master for clear speaking and writing.</p>
+            <h3>where · wear · we're</h3>
+            <ul>
+              <li><b>where</b> = which place? <button class="say" data-say="Where are you going?">🔊</button> "<b>Where</b> are you going?"</li>
+              <li><b>wear</b> = to have clothes on. <button class="say" data-say="What will you wear tonight?">🔊</button> "What will you <b>wear</b> tonight?"</li>
+              <li><b>we're</b> = we are. <button class="say" data-say="We're almost ready.">🔊</button> "<b>We're</b> almost ready." (= we are)</li>
+            </ul>
+            <h3>here · hear</h3>
+            <ul>
+              <li><b>here</b> = this place (opposite of there). <button class="say" data-say="Come and sit here.">🔊</button> "Come and sit <b>here</b>."</li>
+              <li><b>hear</b> = to listen with your ears (it has <b>ear</b> in it!). <button class="say" data-say="I can't hear you.">🔊</button> "I can't <b>hear</b> you."</li>
+            </ul>
+            <h3>A handy homophone table</h3>
+            <table>
+              <tr><th>Sounds like</th><th>Words & meanings</th></tr>
+              <tr><td>buy / by / bye</td><td>buy (purchase) · by (next to / via) · bye (goodbye)</td></tr>
+              <tr><td>new / knew</td><td>new (not old) · knew (past of know)</td></tr>
+              <tr><td>no / know</td><td>no (opposite of yes) · know (have knowledge)</td></tr>
+              <tr><td>write / right</td><td>write (with a pen) · right (correct / direction)</td></tr>
+              <tr><td>flour / flower</td><td>flour (for baking) · flower (a plant)</td></tr>
+              <tr><td>break / brake</td><td>break (smash / a rest) · brake (to stop a car)</td></tr>
+            </table>
+            <p><button class="say" data-say="I knew you would buy a new flower by the shop on the right.">🔊</button> "I <b>knew</b> you would <b>buy</b> a <b>new flower by</b> the shop on the <b>right</b>."</p>
+            <div class="speakcheck" data-target="We're not sure where to wear these, but we can hear the music from here."></div>`,
+          tips: [
+            "hear has 'ear' in it — you hear with your ears.",
+            "we're = we are; wear = clothing; where = place.",
+            "Read tricky sentences slowly and picture the meaning of each word."
+          ],
+          practice: "Make one sentence using buy, by AND bye, then say it aloud — e.g. “Bye! I'll buy the bread on my way by the shop.”",
+          quiz: [
+            { q: "“I can't ___ the TV — turn it up.”", choices: ["here", "hear", "heir", "hair"], answer: 1 },
+            { q: "“___ meeting them at noon.” (= we are)", choices: ["Where", "Wear", "We're", "Were"], answer: 2 },
+            { q: "“She ___ the answer straight away.” (past of know)", choices: ["new", "knew", "gnu", "new"], answer: 1 },
+            { q: "Which means 'to stop a car'?", choices: ["break", "brake", "bray", "brace"], answer: 1 }
+          ]
+        },
+        {
+          id: "w5", level: "Intermediate", minutes: 11,
+          title: "Meaning twins: affect/effect, accept/except, advice/advise, practise/practice",
+          content: `
+            <p>These pairs aren't always homophones, but their meanings get mixed up constantly. Learn the difference and you'll sound noticeably more precise.</p>
+            <h3>affect vs effect</h3>
+            <p><b>affect</b> is usually a <b>verb</b> (an action); <b>effect</b> is usually a <b>noun</b> (a result). Memory trick: <b>A</b>ffect = <b>A</b>ction, <b>E</b>ffect = <b>E</b>nd result.</p>
+            <ul>
+              <li><button class="say" data-say="The weather affects my mood.">🔊</button> "The weather <b>affects</b> my mood." (verb)</li>
+              <li><button class="say" data-say="The weather has an effect on my mood.">🔊</button> "The weather has an <b>effect</b> on my mood." (noun)</li>
+            </ul>
+            <h3>accept vs except</h3>
+            <ul>
+              <li><b>accept</b> = to receive / say yes. <button class="say" data-say="I accept your offer.">🔊</button> "I <b>accept</b> your offer."</li>
+              <li><b>except</b> = apart from. <button class="say" data-say="Everyone came except Tom.">🔊</button> "Everyone came <b>except</b> Tom."</li>
+            </ul>
+            <h3>advice vs advise</h3>
+            <ul>
+              <li><b>advice</b> (noun, sounds like "ice") = the guidance itself. <button class="say" data-say="Can I give you some advice?">🔊</button> "Can I give you some <b>advice</b>?"</li>
+              <li><b>advise</b> (verb, sounds like "ize") = the action of giving it. <button class="say" data-say="I advise you to rest.">🔊</button> "I <b>advise</b> you to rest."</li>
+            </ul>
+            <h3>practise vs practice (British English)</h3>
+            <p>In British English, <b>practise</b> is the <b>verb</b> and <b>practice</b> is the <b>noun</b> (like advise/advice).</p>
+            <ul>
+              <li><button class="say" data-say="I practise speaking every day.">🔊</button> "I <b>practise</b> speaking every day." (verb)</li>
+              <li><button class="say" data-say="Daily practice makes a big difference.">🔊</button> "Daily <b>practice</b> makes a big difference." (noun)</li>
+            </ul>
+            <blockquote>The "-ice" version is the thing (noun); the "-ise" version is the doing (verb). Same pattern for advice/advise and practice/practise.</blockquote>
+            <div class="speakcheck" data-target="My advice is to accept the offer, because it will affect your future."></div>`,
+          tips: [
+            "Affect = Action (verb); Effect = End result (noun).",
+            "except = excluding (think 'exit' — it leaves something out).",
+            "-ice = noun (advice, practice); -ise = verb (advise, practise)."
+          ],
+          practice: "Say two sentences aloud: one using 'affect' as a verb, one using 'effect' as a noun — e.g. “Noise affects my sleep; the effect is tiredness.”",
+          quiz: [
+            { q: "“How will this decision ___ the team?”", choices: ["effect", "affect", "effekt", "afect"], answer: 1 },
+            { q: "“I'll eat anything ___ mushrooms.”", choices: ["accept", "except", "exept", "acept"], answer: 1 },
+            { q: "“Let me ___ you to be careful.” (the action)", choices: ["advice", "advise", "advize", "advis"], answer: 1 },
+            { q: "British English: “I ___ the piano daily.” (verb)", choices: ["practice", "practise", "practize", "practis"], answer: 1 }
+          ]
+        },
+        {
+          id: "w6", level: "Advanced", minutes: 11,
+          title: "Advanced mix-ups: lose/loose, who's/whose, fewer/less & more",
+          content: `
+            <p>Master these and you'll write and speak with the precision of an advanced user. These are the ones that even confident speakers slip on.</p>
+            <h3>lose vs loose</h3>
+            <ul>
+              <li><b>lose</b> (rhymes with "news") = to not win, or misplace. <button class="say" data-say="Don't lose your ticket.">🔊</button> "Don't <b>lose</b> your ticket."</li>
+              <li><b>loose</b> (rhymes with "goose") = not tight. <button class="say" data-say="This shirt is too loose.">🔊</button> "This shirt is too <b>loose</b>."</li>
+            </ul>
+            <h3>who's vs whose</h3>
+            <ul>
+              <li><b>who's</b> = who is / who has. <button class="say" data-say="Who's coming tonight?">🔊</button> "<b>Who's</b> coming tonight?" (= who is)</li>
+              <li><b>whose</b> = belonging to whom. <button class="say" data-say="Whose jacket is this?">🔊</button> "<b>Whose</b> jacket is this?"</li>
+            </ul>
+            <h3>fewer vs less</h3>
+            <p>Use <b>fewer</b> for things you can <b>count</b>; use <b>less</b> for things you <b>can't count</b> (amounts).</p>
+            <ul>
+              <li><button class="say" data-say="Fewer cars, less traffic.">🔊</button> "<b>Fewer</b> cars, <b>less</b> traffic." (cars = countable; traffic = uncountable)</li>
+              <li>fewer mistakes, fewer people · less time, less money, less water</li>
+            </ul>
+            <h3>A few more advanced pairs</h3>
+            <table>
+              <tr><th>Pair</th><th>Quick rule</th></tr>
+              <tr><td>complement / compliment</td><td>complement = completes/goes well with · compliment = praise</td></tr>
+              <tr><td>stationary / stationery</td><td>stationary = not moving · stationery = paper & pens (e for envelope)</td></tr>
+              <tr><td>principal / principle</td><td>principal = main / head of school · principle = a rule or belief</td></tr>
+              <tr><td>i.e. / e.g.</td><td>i.e. = "that is" (clarify) · e.g. = "for example" (give an example)</td></tr>
+            </table>
+            <p><button class="say" data-say="Whose idea was it to wear loose clothes so we wouldn't lose the race?">🔊</button> "<b>Whose</b> idea was it to wear <b>loose</b> clothes so we wouldn't <b>lose</b> the race?"</p>
+            <div class="speakcheck" data-target="Who's the person who made fewer mistakes and lost less time?"></div>`,
+          tips: [
+            "lose = misplace (one 'o'); loose = not tight (two 'o's, like goose).",
+            "who's = who is; whose = belonging (no apostrophe for possession, like its/your).",
+            "Countable → fewer; uncountable → less (fewer items, less time)."
+          ],
+          practice: "Say aloud, explaining each choice: <button class=\"say\" data-say=\"Whose loose tooth is it? Try not to lose it, and eat fewer sweets and less sugar.\">🔊 Listen</button> “Whose loose tooth is it? Try not to lose it, and eat fewer sweets and less sugar.”",
+          quiz: [
+            { q: "“I might ___ my keys.” (misplace)", choices: ["loose", "lose", "loos", "luse"], answer: 1 },
+            { q: "“___ turn is it?” (belonging to whom)", choices: ["Who's", "Whose", "Whos", "Whose'"], answer: 1 },
+            { q: "“There were ___ people than last year.” (countable)", choices: ["less", "fewer", "lesser", "few"], answer: 1 },
+            { q: "“e.g.” means…", choices: ["that is", "for example", "and so on", "in other words"], answer: 1 }
+          ]
+        },
+        {
+          id: "w7", level: "Intermediate", minutes: 10,
+          title: "Borrow vs lend, bring vs take, say vs tell",
+          content: `
+            <p>Three pairs of verbs that learners mix up every day. The key is always the <b>direction of the action</b> and <b>who is involved</b>. Master these and your English will feel noticeably more natural.</p>
+            <h3>1. <span style="color:#6366f1">borrow</span> vs <span style="color:#6366f1">lend</span></h3>
+            <p><b>Borrow</b> moves something <b>towards you</b>; <b>lend</b> moves something <b>away from you</b> to another person. Think of it as the difference between receiving and giving.</p>
+            <table>
+              <tr><th>Verb</th><th>Direction</th><th>Pattern</th><th>Example</th></tr>
+              <tr><td><b>borrow</b></td><td>towards the speaker</td><td>borrow something from someone</td><td>Can I borrow a pen from you?</td></tr>
+              <tr><td><b>lend</b></td><td>away from the speaker</td><td>lend someone something / lend something to someone</td><td>Could you lend me your pen?</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="Can I borrow your umbrella? I forgot mine.">🔊</button> "Can I <b>borrow</b> your umbrella? I forgot mine." (you receive it)</li>
+              <li><button class="say" data-say="I'll lend you my umbrella. Bring it back tomorrow.">🔊</button> "I'll <b>lend</b> you my umbrella. Bring it back tomorrow." (you give it)</li>
+            </ul>
+            <blockquote>A common mistake: "Can you borrow me a pen?" is wrong. You cannot borrow something <em>to</em> someone — you <b>lend</b> to them and they <b>borrow</b> from you.</blockquote>
+            <h3>2. <span style="color:#6366f1">bring</span> vs <span style="color:#6366f1">take</span></h3>
+            <p><b>Bring</b> means to carry something <b>towards here</b> (the speaker's location); <b>take</b> means to carry something <b>away from here</b>. Imagine where the speaker is standing.</p>
+            <table>
+              <tr><th>Verb</th><th>Direction</th><th>Example</th></tr>
+              <tr><td><b>bring</b></td><td>towards here / towards me</td><td>Please bring a bottle of wine when you come.</td></tr>
+              <tr><td><b>take</b></td><td>away from here / away from me</td><td>Don't forget to take your coat when you leave.</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="Can you bring some biscuits when you visit tomorrow?">🔊</button> "Can you <b>bring</b> some biscuits when you visit tomorrow?" (come here, towards me)</li>
+              <li><button class="say" data-say="Take an umbrella — it looks like rain.">🔊</button> "<b>Take</b> an umbrella — it looks like rain." (leave here, move away)</li>
+            </ul>
+            <div class="ex"><button class="say" data-say="Bring your notes to class tomorrow and take the handout home.">🔊</button> "Bring your notes to class tomorrow and take the handout home." — the speaker is at school (bring = coming here; take = going home)</div>
+            <h3>3. <span style="color:#6366f1">say</span> vs <span style="color:#6366f1">tell</span></h3>
+            <p>Both mean to communicate, but they follow <b>different grammatical patterns</b> and have different focuses.</p>
+            <table>
+              <tr><th>Verb</th><th>Pattern</th><th>Focus</th><th>Example</th></tr>
+              <tr><td><b>say</b></td><td>say something (to someone)</td><td>the words spoken</td><td>She said "hello" to me.</td></tr>
+              <tr><td><b>tell</b></td><td>tell someone something</td><td>the person receiving the message</td><td>She told me the news.</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="He said he was tired.">🔊</button> "He <b>said</b> he was tired." (we report words) ✓</li>
+              <li><button class="say" data-say="He told me he was tired.">🔊</button> "He <b>told</b> me he was tired." (we name the person told) ✓</li>
+              <li><button class="say" data-say="He told that he was tired.">🔊</button> "He <b>told</b> that he was tired." — this is <b>wrong</b>; tell always needs a person object first.</li>
+            </ul>
+            <p><b>Common 'tell' patterns:</b> tell the truth, tell a lie, tell a story, tell the time, tell someone off, tell someone to do something.</p>
+            <p><b>Common 'say' patterns:</b> say a word, say a prayer, say goodbye, say something, it says (in a text).</p>
+            <blockquote>Quick check: if you name a person right after the verb, use <b>tell</b> ("tell me", "tell her", "tell us"). If you quote words directly or use "that", use <b>say</b> ("said 'hello'", "said that").</blockquote>
+            <div class="speakcheck" data-target="Could you lend me that book and bring it to class? Tell me what it says."></div>
+            <h3>Put it all together</h3>
+            <div class="speakcheck" data-target="She said she would borrow my car, but I told her to take the bus instead."></div>`,
+          tips: [
+            "Borrow = take from; lend = give to. You cannot borrow something TO someone.",
+            "Bring = towards here; take = away from here. Picture where you are standing.",
+            "Tell always needs a person first (tell me, tell her); say does not (say goodbye, say that)."
+          ],
+          practice: "Say these two sentences aloud: <button class=\"say\" data-say=\"Can you lend me a pen? I forgot to bring one.\">🔊 Listen</button> \"Can you lend me a pen? I forgot to bring one.\" Then make your own sentence using say and tell.",
+          quiz: [
+            { q: "\"Could you ___ me your dictionary for the weekend?\"", choices: ["borrow", "lend", "take", "bring"], answer: 1 },
+            { q: "\"Don't forget to ___ your passport when you go to the airport.\"", choices: ["bring", "take", "lend", "say"], answer: 1 },
+            { q: "Which sentence is correct?", choices: ["She told that she was busy.", "She said me she was busy.", "She told me she was busy.", "She said to me that me was busy."], answer: 2 },
+            { q: "\"I ___ goodbye and left the room.\"", choices: ["told", "said", "telled", "speaked"], answer: 1 }
+          ]
+        },
+        {
+          id: "w8", level: "Intermediate", minutes: 10,
+          title: "Make vs do (and the collocations that matter)",
+          content: `
+            <p><b>Make</b> and <b>do</b> are two of the most common verbs in English, and choosing the wrong one is a very frequent mistake. There is a general rule, but — as always — you also need to know the key collocations.</p>
+            <h3>1. The general rule</h3>
+            <table>
+              <tr><th>Verb</th><th>General meaning</th><th>Clue</th></tr>
+              <tr><td><b>make</b></td><td>create, produce, or cause something — there is an output or result</td><td>You can often see or hold the result</td></tr>
+              <tr><td><b>do</b></td><td>perform an activity or task — there may be no physical product</td><td>It is often a duty, routine, or effort</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="I'm going to make a cake for her birthday.">🔊</button> "I'm going to <b>make</b> a cake." (you produce something)</li>
+              <li><button class="say" data-say="I need to do my homework before dinner.">🔊</button> "I need to <b>do</b> my homework before dinner." (a task, no physical product)</li>
+            </ul>
+            <blockquote>Ask yourself: is there a clear product or result being created? If yes, lean towards <b>make</b>. If it is more of an activity or duty, lean towards <b>do</b>. But learn the fixed collocations — they override the rule!</blockquote>
+            <h3>2. Key "make" collocations</h3>
+            <p>These must be learnt as fixed phrases. <button class="say" data-say="I need to make a decision, make an effort, and make a phone call.">🔊</button></p>
+            <ul>
+              <li>make a <b>decision</b> / make a <b>choice</b></li>
+              <li>make an <b>effort</b> / make an <b>attempt</b></li>
+              <li>make a <b>mistake</b></li>
+              <li>make a <b>phone call</b> / make a <b>reservation</b> / make an <b>appointment</b></li>
+              <li>make a <b>suggestion</b> / make a <b>comment</b> / make a <b>speech</b></li>
+              <li>make <b>progress</b> / make a <b>difference</b> / make <b>money</b></li>
+              <li>make a <b>noise</b> / make a <b>mess</b></li>
+              <li>make <b>friends</b> / make <b>love</b> / make <b>peace</b></li>
+            </ul>
+            <div class="ex"><button class="say" data-say="She made a reservation at the restaurant and made sure not to make any mistakes with the booking.">🔊</button> "She <b>made</b> a reservation at the restaurant and <b>made</b> sure not to <b>make</b> any mistakes with the booking."</div>
+            <h3>3. Key "do" collocations</h3>
+            <p>These are equally fixed. <button class="say" data-say="I'll do the washing-up, then do some exercise.">🔊</button></p>
+            <ul>
+              <li>do your <b>homework</b> / do your <b>work</b></li>
+              <li>do the <b>washing-up</b> / do the <b>housework</b> / do the <b>washing</b> / do the <b>ironing</b></li>
+              <li>do <b>exercise</b> / do <b>sport</b> / do <b>yoga</b></li>
+              <li>do someone a <b>favour</b> / do your <b>best</b></li>
+              <li>do <b>research</b> / do a <b>course</b> / do an <b>exam</b></li>
+              <li>do <b>business</b> / do a <b>deal</b></li>
+              <li>do <b>damage</b> / do <b>harm</b> / do <b>good</b></li>
+            </ul>
+            <div class="ex"><button class="say" data-say="Could you do me a favour and do the washing-up while I do my homework?">🔊</button> "Could you <b>do</b> me a favour and <b>do</b> the washing-up while I <b>do</b> my homework?"</div>
+            <h3>4. Quick-reference table: common confusions</h3>
+            <table>
+              <tr><th>Say this...</th><th>NOT this</th></tr>
+              <tr><td>make a decision</td><td>do a decision</td></tr>
+              <tr><td>do homework</td><td>make homework</td></tr>
+              <tr><td>make an effort</td><td>do an effort</td></tr>
+              <tr><td>do exercise</td><td>make exercise</td></tr>
+              <tr><td>make a mistake</td><td>do a mistake</td></tr>
+              <tr><td>do the washing-up</td><td>make the washing-up</td></tr>
+              <tr><td>make a suggestion</td><td>do a suggestion</td></tr>
+              <tr><td>do your best</td><td>make your best</td></tr>
+            </table>
+            <div class="speakcheck" data-target="I made a decision to do more exercise and make fewer mistakes at work."></div>
+            <div class="speakcheck" data-target="Could you do me a favour and make a quick phone call while I do the washing-up?" data-hint="Notice: do a favour, make a call, do the washing-up."></div>`,
+          tips: [
+            "Make = create or produce something with a result; do = perform an activity or duty.",
+            "Learn collocations as whole phrases: make a mistake, do homework, make an effort, do your best.",
+            "When in doubt about a new collocation, check — but the make/do distinction is a useful first guess."
+          ],
+          practice: "Say four sentences aloud — one for each: make a decision, do a favour, make progress, do research. For example: <button class=\"say\" data-say=\"I made a decision to do more research before I made any progress on the report.\">🔊 Listen</button> \"I made a decision to do more research before I made any progress on the report.\"",
+          quiz: [
+            { q: "\"She ___ a lot of mistakes in the test.\"", choices: ["did", "made", "had", "done"], answer: 1 },
+            { q: "\"Can you ___ me a favour and post this letter?\"", choices: ["make", "do", "give", "take"], answer: 1 },
+            { q: "\"I need to ___ the washing-up before we go out.\"", choices: ["make", "do", "have", "take"], answer: 1 },
+            { q: "Which phrase is correct?", choices: ["do a suggestion", "make exercise", "make a noise", "do a mistake"], answer: 2 }
+          ]
+        },
+        {
+          id: "w9", level: "Advanced", minutes: 11,
+          title: "Been vs gone, been vs being, lie vs lay",
+          content: `
+            <p>These three confusions trip up even advanced learners. They involve the subtleties of tense, participles, and irregular verbs — but once you see the logic, each makes perfect sense.</p>
+            <h3>1. <span style="color:#6366f1">has been</span> vs <span style="color:#6366f1">has gone</span></h3>
+            <p>Both are present perfect forms of movement, but they tell a completely different story about <b>where the person is now</b>.</p>
+            <table>
+              <tr><th>Form</th><th>Meaning</th><th>Where are they now?</th></tr>
+              <tr><td><b>has been</b> (to)</td><td>visited and returned</td><td>Back here with us</td></tr>
+              <tr><td><b>has gone</b> (to)</td><td>went and is still there</td><td>Still there, not back yet</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="She has been to Paris three times. She loves it there.">🔊</button> "She <b>has been</b> to Paris three times. She loves it there." (she is back home now)</li>
+              <li><button class="say" data-say="She has gone to Paris. She'll be back on Friday.">🔊</button> "She <b>has gone</b> to Paris. She'll be back on Friday." (she is in Paris right now)</li>
+            </ul>
+            <blockquote>Ask: is the person <b>here</b> right now? If yes → <b>has been</b>. If they are <b>still away</b> → <b>has gone</b>. You cannot say "I have gone to Paris" because if you are speaking, you are back!</blockquote>
+            <div class="ex"><button class="say" data-say="Where is James? He has gone to the shops. He has been there before and knows the way.">🔊</button> "Where is James? He <b>has gone</b> to the shops. He <b>has been</b> there before and knows the way."</div>
+            <h3>2. <span style="color:#6366f1">been</span> vs <span style="color:#6366f1">being</span></h3>
+            <p>Both come from the verb <em>to be</em>, but they have very different grammatical roles.</p>
+            <table>
+              <tr><th>Form</th><th>Grammatical role</th><th>Used with</th></tr>
+              <tr><td><b>been</b></td><td>past participle</td><td>have/has/had + been (perfect tenses and passives)</td></tr>
+              <tr><td><b>being</b></td><td>present participle / gerund</td><td>am/is/are/was/were + being (continuous tenses and passives)</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="She has been very patient all morning.">🔊</button> "She <b>has been</b> very patient all morning." (present perfect)</li>
+              <li><button class="say" data-say="She is being very patient right now.">🔊</button> "She <b>is being</b> very patient right now." (present continuous — describing current behaviour)</li>
+              <li><button class="say" data-say="The report has been finished.">🔊</button> "The report <b>has been</b> finished." (present perfect passive)</li>
+              <li><button class="say" data-say="The report is being written at the moment.">🔊</button> "The report <b>is being</b> written at the moment." (present continuous passive)</li>
+            </ul>
+            <p>A common error is writing "it is been done" — this is wrong. You need either <b>"it has been done"</b> (perfect) or <b>"it is being done"</b> (continuous).</p>
+            <h3>3. <span style="color:#6366f1">lie</span> vs <span style="color:#6366f1">lay</span> — the trickiest verb pair in English</h3>
+            <p>The confusion happens because the past tense of <em>lie</em> (<b>lay</b>) looks exactly like the present tense of <em>lay</em>.</p>
+            <table>
+              <tr><th>Infinitive</th><th>Meaning</th><th>Past simple</th><th>Past participle</th></tr>
+              <tr><td><b>lie</b></td><td>to be in a horizontal position (no object)</td><td>lay</td><td>lain</td></tr>
+              <tr><td><b>lay</b></td><td>to put something down (needs an object)</td><td>laid</td><td>laid</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="I'm going to lie down for an hour.">🔊</button> "I'm going to <b>lie</b> down for an hour." (no object — just my body)</li>
+              <li><button class="say" data-say="Please lay the book on the table.">🔊</button> "Please <b>lay</b> the book on the table." (object = the book)</li>
+              <li><button class="say" data-say="Yesterday she lay in the garden all afternoon.">🔊</button> "Yesterday she <b>lay</b> in the garden all afternoon." (past simple of lie)</li>
+              <li><button class="say" data-say="He laid the tray carefully on the bed.">🔊</button> "He <b>laid</b> the tray carefully on the bed." (past simple of lay)</li>
+            </ul>
+            <blockquote>The key question: is there an object? "Lay the table" — yes, object = the table. "Lie down" — no object, just yourself. If there is an object, the verb is <b>lay</b>.</blockquote>
+            <div class="speakcheck" data-target="She has been lying on the sofa since the cleaner laid the cushions out this morning."></div>
+            <h3>All together</h3>
+            <div class="speakcheck" data-target="Tom has gone to the doctor. He has been feeling ill since he lay down yesterday."></div>`,
+          tips: [
+            "Has been = went and came back; has gone = went and is still there.",
+            "Been follows have/has/had; being follows am/is/are/was/were.",
+            "Lie (no object) past = lay; lay (with object) past = laid. Ask: is there an object?"
+          ],
+          practice: "Say these aloud and decide: gone or been? <button class=\"say\" data-say=\"Have you ever been to Scotland? My sister has gone to Edinburgh and won't be back till Sunday.\">🔊 Listen</button> \"Have you ever been to Scotland? My sister has gone to Edinburgh and won't be back till Sunday.\" Then make one sentence using lie and one using lay.",
+          quiz: [
+            { q: "\"James isn't here — he ___ to the dentist.\" (still there)", choices: ["has been", "has gone", "is being", "was"], answer: 1 },
+            { q: "\"This bridge ___ built in 1890.\" (passive, completed fact)", choices: ["is being", "has being", "was been", "was"], answer: 3 },
+            { q: "\"Could you ___ the map on the desk?\" (put it down — needs an object)", choices: ["lie", "lay", "lain", "lied"], answer: 1 },
+            { q: "\"She ___ in bed all day yesterday.\" (past simple of lie)", choices: ["lied", "laid", "lay", "lain"], answer: 2 }
+          ]
+        },
+        {
+          id: "w10", level: "Advanced", minutes: 11,
+          title: "Spelling traps and homophones round-up",
+          content: `
+            <p>Some words look or sound so similar that even careful writers pause. This lesson gives you clear meanings, memory tricks, and listening practice so you can choose the right word every time — in writing <em>and</em> in speech.</p>
+            <h3>1. <span style="color:#6366f1">compliment</span> vs <span style="color:#6366f1">complement</span></h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td><b>compliment</b> (i)</td><td>praise or admiration</td><td>She paid him a lovely compliment.</td></tr>
+              <tr><td><b>complement</b> (e)</td><td>something that completes or goes perfectly with another</td><td>The sauce complements the fish beautifully.</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="What a lovely compliment — thank you so much!">🔊</button> "<b>Compliment</b> — praise. <em>What a lovely compliment!</em>"</li>
+              <li><button class="say" data-say="The wine complements the cheese perfectly.">🔊</button> "<b>Complement</b> — completes. <em>The wine complements the cheese perfectly.</em>"</li>
+            </ul>
+            <blockquote>Memory trick: <b>compli</b>ment — <b>I</b> like giving compliments (the <b>i</b> stands for praise). <b>comple</b>ment — <b>e</b> for <b>e</b>nhance or com<b>ple</b>te.</blockquote>
+            <h3>2. <span style="color:#6366f1">principal</span> vs <span style="color:#6366f1">principle</span></h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td><b>principal</b> (al)</td><td>main / most important; the head of a school</td><td>The principal reason is cost.</td></tr>
+              <tr><td><b>principle</b> (le)</td><td>a rule, belief, or moral standard</td><td>She refused on principle.</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="The principal concern is safety.">🔊</button> "<b>Principal</b> — main. <em>The principal concern is safety.</em>"</li>
+              <li><button class="say" data-say="He is a man of strong principles.">🔊</button> "<b>Principle</b> — rule or belief. <em>He is a man of strong principles.</em>"</li>
+            </ul>
+            <blockquote>Memory trick: your <b>princip-al</b> is your pal (the head teacher is your pal). A <b>princip-le</b> is a rul<b>e</b> (both end in <b>-le</b> / have an <b>e</b>).</blockquote>
+            <h3>3. <span style="color:#6366f1">stationary</span> vs <span style="color:#6366f1">stationery</span></h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td><b>stationary</b> (a)</td><td>not moving, still</td><td>The bus was stationary at the lights.</td></tr>
+              <tr><td><b>stationery</b> (e)</td><td>paper, pens, envelopes and writing supplies</td><td>I need to buy some stationery.</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="The train was stationary for twenty minutes.">🔊</button> "<b>Stationary</b> — not moving. <em>The train was stationary for twenty minutes.</em>"</li>
+              <li><button class="say" data-say="Do you sell stationery here? I need some envelopes.">🔊</button> "<b>Stationery</b> — writing supplies. <em>Do you sell stationery? I need some envelopes.</em>"</li>
+            </ul>
+            <blockquote>Memory trick: station<b>e</b>ry — <b>e</b> for <b>e</b>nvelope. Stationery is what you put in an envelope. Station<b>a</b>ry — <b>a</b> for <b>a</b>nchored (not moving).</blockquote>
+            <h3>4. <span style="color:#6366f1">desert</span> vs <span style="color:#6366f1">dessert</span></h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Pronunciation</th></tr>
+              <tr><td><b>desert</b> (one s)</td><td>a hot, dry, sandy place; also to abandon</td><td>DEZ-ert (noun) / deh-ZERT (verb)</td></tr>
+              <tr><td><b>dessert</b> (two s's)</td><td>the sweet course at the end of a meal</td><td>deh-ZERT</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="The Sahara is the world's largest hot desert.">🔊</button> "<b>Desert</b> — sandy place. <em>The Sahara is the world's largest hot desert.</em>"</li>
+              <li><button class="say" data-say="Would you like a dessert? The chocolate mousse is delicious.">🔊</button> "<b>Dessert</b> — sweet course. <em>Would you like a dessert?</em>"</li>
+            </ul>
+            <blockquote>Memory trick: <b>dess</b>ert has two s's because you always want a <b>second s</b>erving of something sweet.</blockquote>
+            <h3>5. <span style="color:#6366f1">weather</span> vs <span style="color:#6366f1">whether</span></h3>
+            <table>
+              <tr><th>Word</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td><b>weather</b></td><td>the state of the atmosphere (sun, rain, wind)</td><td>The weather is lovely today.</td></tr>
+              <tr><td><b>whether</b></td><td>used to introduce alternatives or doubt (= if)</td><td>I don't know whether to stay or go.</td></tr>
+            </table>
+            <ul>
+              <li><button class="say" data-say="The weather forecast says it will rain this afternoon.">🔊</button> "<b>Weather</b> — atmosphere. <em>The weather forecast says it will rain this afternoon.</em>"</li>
+              <li><button class="say" data-say="I wasn't sure whether to bring a coat or not.">🔊</button> "<b>Whether</b> — introducing alternatives. <em>I wasn't sure whether to bring a coat or not.</em>"</li>
+            </ul>
+            <blockquote>Memory trick: <b>weath</b>er contains the word <b>heat</b> (scrambled) — think of temperature and climate. <b>Whether</b> sounds like "wether" and introduces a choice, like "which or which".</blockquote>
+            <div class="speakcheck" data-target="The principal rule is to check the weather and decide whether to take a coat."></div>
+            <h3>All five in one sentence</h3>
+            <div class="speakcheck" data-target="Whether the weather is good or bad, the stationary train staff will compliment your choice of dessert."></div>`,
+          tips: [
+            "compliMent = praise (I like it); complEment = completes (Enhance).",
+            "principAL = your pAL the head teacher; principlE = a rulE.",
+            "stationEry = Envelopes; desserT = you want Two servings; wheaTher = heaT."
+          ],
+          practice: "Choose two of today's pairs and make a sentence using both words. Say it aloud, explaining the difference. For example: <button class=\"say\" data-say=\"The principal said it was against school principles to use the stationery while stationary on the bus.\">🔊 Listen</button> \"The principal said it was against school principles to use the stationery while stationary on the bus.\"",
+          quiz: [
+            { q: "\"The red shoes ___ the dress perfectly.\" (go well with)", choices: ["compliment", "complement", "complete", "complements"], answer: 1 },
+            { q: "\"What is the ___ reason for the delay?\" (main / most important)", choices: ["principle", "principal", "primciple", "principel"], answer: 1 },
+            { q: "\"I couldn't decide ___ to order a ___.\" (if / sweet course)", choices: ["weather / dessert", "whether / desert", "whether / dessert", "weather / desert"], answer: 2 },
+            { q: "Which has the memory trick 'e for envelope'?", choices: ["stationary", "stationery", "complementary", "stationer"], answer: 1 }
+          ]
+        }
+      ]
+    },
+
+    /* ----- 1c. VOCABULARY BUILDER & WORD POWER ----------------------------- */
+    {
+      id: "vocab", icon: "📚", color: "#f59e0b",
+      title: "Vocabulary Builder & Word Power",
+      blurb: "From your first everyday words to rich, precise vocabulary. Learn the words AND exactly how and when to use them.",
+      lessons: [
+        {
+          id: "v1", level: "Basic", minutes: 10,
+          title: "Your everyday core words (and how to use them)",
+          content: `
+            <p>You don't need thousands of words to start speaking — you need the <b>right few hundred</b>, used confidently. These are the everyday words that appear in almost every conversation.</p>
+            <h3>The most useful verbs (doing words)</h3>
+            <p>Master these and you can describe most daily actions:</p>
+            <div class="ex">be, have, do, go, get, make, take, come, see, want, need, like, know, think, say, give, find, use, work, help, feel <button class="say" data-say="be, have, do, go, get, make, take, come, see, want">🔊</button></div>
+            <ul>
+              <li><button class="say" data-say="I need to go to work.">🔊</button> "I <b>need</b> to <b>go</b> to <b>work</b>."</li>
+              <li><button class="say" data-say="Can you help me, please?">🔊</button> "Can you <b>help</b> me, please?"</li>
+              <li><button class="say" data-say="I'd like to get a coffee.">🔊</button> "I'd <b>like</b> to <b>get</b> a coffee."</li>
+            </ul>
+            <h3>Everyday nouns (things)</h3>
+            <div class="ex">time, day, people, way, man, woman, child, home, work, school, food, water, money, house, friend, family, phone, car, job <button class="say" data-say="time, day, people, home, work, food, money, friend, family">🔊</button></div>
+            <h3>Small words that connect everything</h3>
+            <p>These "glue" words are tiny but used constantly: <b>and, but, or, so, because, with, for, in, on, at, to, from</b>.</p>
+            <div class="ex">"I stayed home <b>because</b> I was tired, <b>so</b> I rested <b>and</b> watched TV." <button class="say" data-say="I stayed home because I was tired, so I rested and watched TV.">🔊</button></div>
+            <h3>Build a sentence right now</h3>
+            <p>Pattern: <b>I + verb + thing</b>. Try: "I want water." → "I need help." → "I like my job."</p>
+            <div class="speakcheck" data-target="I want to get some food because I am hungry."></div>`,
+          tips: [
+            "Learn words in short sentences, never alone — your brain remembers them in use.",
+            "A few hundred common words cover most everyday conversation. Quality over quantity.",
+            "Say new words out loud the moment you meet them."
+          ],
+          practice: "Pick five verbs from the list and make a tiny sentence with each (e.g. “I take the bus.”). Say each one aloud twice.",
+          quiz: [
+            { q: "What's the best way to learn a new word?", choices: ["Memorise it alone", "Learn it inside a short sentence", "Only read it silently", "Translate it once"], answer: 1 },
+            { q: "Which group are 'connecting' words?", choices: ["time, day, food", "and, but, because, so", "go, get, make", "house, car, job"], answer: 1 },
+            { q: "A simple sentence pattern to start with is…", choices: ["thing + thing + thing", "I + verb + thing", "verb only", "no pattern"], answer: 1 }
+          ]
+        },
+        {
+          id: "v2", level: "Basic", minutes: 10,
+          title: "Describing things: adjectives & the order they go in",
+          content: `
+            <p>Adjectives are describing words — they bring your speech to life. Instead of "a car", you can say "a lovely old red car". Let's build that skill.</p>
+            <h3>Everyday adjectives by type</h3>
+            <table>
+              <tr><th>Type</th><th>Examples</th></tr>
+              <tr><td>Opinion</td><td>lovely, nice, great, terrible, beautiful</td></tr>
+              <tr><td>Size</td><td>big, small, tall, tiny, huge</td></tr>
+              <tr><td>Age</td><td>old, new, young, ancient</td></tr>
+              <tr><td>Colour</td><td>red, blue, green, dark, bright</td></tr>
+            </table>
+            <h3>The natural order of adjectives</h3>
+            <p>English has a "secret" order native speakers feel without thinking: <b>Opinion → Size → Age → Colour → Material → Noun</b>.</p>
+            <div class="ex">"a <b>lovely little old brown leather</b> bag" <button class="say" data-say="a lovely little old brown leather bag">🔊</button></div>
+            <p>"a red big ball" sounds wrong; "a <b>big red</b> ball" sounds right. <button class="say" data-say="a big red ball">🔊</button></p>
+            <h3>Make descriptions stronger</h3>
+            <p>Add small "intensifiers": <b>very, really, quite, absolutely</b>. <button class="say" data-say="It was a really delicious meal.">🔊</button> "It was a <b>really</b> delicious meal."</p>
+            <p>Tip: with strong adjectives (delicious, enormous, freezing) use <b>absolutely</b>, not "very": <button class="say" data-say="It was absolutely delicious.">🔊</button> "absolutely delicious".</p>
+            <h3>Describe something near you</h3>
+            <div class="speakcheck" data-target="It's a beautiful small wooden table." data-hint="Try describing a real object around you."></div>`,
+          tips: [
+            "Order: Opinion-Size-Age-Colour-Material (a nice big old blue cotton shirt).",
+            "Use 'absolutely' with strong adjectives, 'very' with normal ones.",
+            "One or two good adjectives is plenty — don't overload."
+          ],
+          practice: "Look at three objects around you and describe each in one sentence using two adjectives in the right order. Say them aloud.",
+          quiz: [
+            { q: "Which order sounds natural?", choices: ["a red big book", "a big red book", "a book red big", "big a red book"], answer: 1 },
+            { q: "The usual adjective order is…", choices: ["Colour-Size-Opinion", "Opinion-Size-Age-Colour", "Age-Colour-Opinion", "random"], answer: 1 },
+            { q: "Which fits 'absolutely'?", choices: ["absolutely nice", "absolutely big", "absolutely freezing", "absolutely okay"], answer: 2 }
+          ]
+        },
+        {
+          id: "v3", level: "Intermediate", minutes: 11,
+          title: "Words that go together: collocations & word families",
+          content: `
+            <p>Fluent English isn't single words — it's <b>words that naturally go together</b>. These pairings are called <b>collocations</b>. Using them makes you sound natural; breaking them sounds "off", even if every word is correct.</p>
+            <h3>We say… not…</h3>
+            <table>
+              <tr><th>Natural ✅</th><th>Sounds wrong ❌</th></tr>
+              <tr><td>make a mistake</td><td>do a mistake</td></tr>
+              <tr><td>do your homework</td><td>make your homework</td></tr>
+              <tr><td>take a photo</td><td>make a photo</td></tr>
+              <tr><td>heavy rain</td><td>strong rain</td></tr>
+              <tr><td>fast food</td><td>quick food</td></tr>
+            </table>
+            <p><button class="say" data-say="I made a mistake, so I had to do the work again.">🔊</button> "I <b>made a mistake</b>, so I had to <b>do the work</b> again."</p>
+            <h3>Common verb partners: make vs do</h3>
+            <ul>
+              <li><b>make</b>: make a decision, make a plan, make dinner, make friends, make money</li>
+              <li><b>do</b>: do business, do the washing, do exercise, do your best, do a favour</li>
+            </ul>
+            <h3>Word families — one root, many forms</h3>
+            <p>Learn one word and you often get four. This multiplies your vocabulary fast:</p>
+            <table>
+              <tr><th>Noun</th><th>Verb</th><th>Adjective</th><th>Adverb</th></tr>
+              <tr><td>success</td><td>succeed</td><td>successful</td><td>successfully</td></tr>
+              <tr><td>decision</td><td>decide</td><td>decisive</td><td>decisively</td></tr>
+              <tr><td>care</td><td>care</td><td>careful</td><td>carefully</td></tr>
+            </table>
+            <p><button class="say" data-say="She made a careful decision and handled it successfully.">🔊</button> "She made a <b>careful decision</b> and handled it <b>successfully</b>."</p>
+            <div class="speakcheck" data-target="I need to make a plan and do my best to succeed."></div>`,
+          tips: [
+            "When you learn a noun, ask: what's the verb, adjective and adverb?",
+            "Note the verb that 'partners' a noun (make/do/take/have a…).",
+            "Collect collocations from things you read — they're gold for sounding natural."
+          ],
+          practice: "Say five 'make/do' collocations aloud from the lesson, then make one full sentence using two of them.",
+          quiz: [
+            { q: "Which is the natural collocation?", choices: ["do a mistake", "make a mistake", "have a mistake", "take a mistake"], answer: 1 },
+            { q: "We usually say…", choices: ["strong rain", "heavy rain", "big rain", "hard rain"], answer: 1 },
+            { q: "The adjective from 'success' is…", choices: ["succeed", "successfully", "successful", "succession"], answer: 2 },
+            { q: "Which pairs correctly?", choices: ["make the washing", "do a decision", "make a decision", "do dinner"], answer: 2 }
+          ]
+        },
+        {
+          id: "v4", level: "Intermediate", minutes: 11,
+          title: "Phrasal verbs you'll actually use",
+          content: `
+            <p><b>Phrasal verbs</b> are a verb + a small word (up, out, on, off, in) that together get a new meaning. They're everywhere in spoken English — using them makes you sound natural and relaxed.</p>
+            <h3>Everyday phrasal verbs</h3>
+            <table>
+              <tr><th>Phrasal verb</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td>get up</td><td>leave bed</td><td>I <b>get up</b> at seven.</td></tr>
+              <tr><td>turn on / off</td><td>start/stop a device</td><td>Please <b>turn off</b> the lights.</td></tr>
+              <tr><td>look for</td><td>search</td><td>I'm <b>looking for</b> my keys.</td></tr>
+              <tr><td>give up</td><td>quit / stop trying</td><td>Don't <b>give up</b>!</td></tr>
+              <tr><td>find out</td><td>discover</td><td>I'll <b>find out</b> the time.</td></tr>
+              <tr><td>get on with</td><td>have a good relationship</td><td>I <b>get on with</b> my colleagues.</td></tr>
+            </table>
+            <p><button class="say" data-say="I get up early, turn on the radio, and look for my shoes.">🔊</button> "I <b>get up</b> early, <b>turn on</b> the radio, and <b>look for</b> my shoes."</p>
+            <h3>Same verb, different meanings</h3>
+            <p>One phrasal verb can shift meaning with context — let context guide you:</p>
+            <ul>
+              <li><b>take off</b> — a plane leaves the ground / remove clothing. <button class="say" data-say="The plane took off. Please take off your coat.">🔊</button></li>
+              <li><b>pick up</b> — lift something / collect someone / learn casually. <button class="say" data-say="I'll pick you up at eight.">🔊</button></li>
+            </ul>
+            <blockquote>Don't try to learn 500 at once. Learn a handful, use them daily, and add more slowly. Real use makes them stick.</blockquote>
+            <div class="speakcheck" data-target="Don't give up — I'll find out what went wrong."></div>`,
+          tips: [
+            "Learn phrasal verbs in a full example sentence, not as a list.",
+            "Many have a one-word formal twin (find out = discover) — handy for exams.",
+            "Start with 10–15 everyday ones and actually use them."
+          ],
+          practice: "Choose three phrasal verbs from the table and describe your morning routine aloud using each one.",
+          quiz: [
+            { q: "“Please ___ the TV, I'm trying to sleep.” (stop the device)", choices: ["turn on", "turn off", "look for", "get up"], answer: 1 },
+            { q: "'Find out' means…", choices: ["lose", "discover", "exit", "search forever"], answer: 1 },
+            { q: "'Get on with someone' means…", choices: ["argue", "ignore them", "have a good relationship", "leave"], answer: 2 },
+            { q: "Best way to learn phrasal verbs?", choices: ["Memorise 200 in a day", "In example sentences, a few at a time", "Never use them", "Only read them"], answer: 1 }
+          ]
+        },
+        {
+          id: "v5", level: "Advanced", minutes: 12,
+          title: "Precise word choice, synonyms & register (formal vs informal)",
+          content: `
+            <p>At advanced level, it's not about <i>more</i> words — it's about the <b>exact right word</b> for the meaning and the situation. This is what makes a speaker sound truly fluent and educated.</p>
+            <h3>Choosing the precise word</h3>
+            <p>"Good", "nice" and "very" are fine, but precise words say more in less space:</p>
+            <table>
+              <tr><th>Instead of…</th><th>Try…</th></tr>
+              <tr><td>very good</td><td>excellent, outstanding, superb</td></tr>
+              <tr><td>very bad</td><td>terrible, awful, dreadful</td></tr>
+              <tr><td>very big</td><td>enormous, huge, vast</td></tr>
+              <tr><td>very happy</td><td>delighted, thrilled, overjoyed</td></tr>
+              <tr><td>very tired</td><td>exhausted, worn out</td></tr>
+            </table>
+            <p><button class="say" data-say="The view was absolutely stunning, and I was thrilled.">🔊</button> "The view was absolutely <b>stunning</b>, and I was <b>thrilled</b>."</p>
+            <h3>Synonyms aren't always identical</h3>
+            <p>Words can share a meaning but carry a different feeling (connotation). <b>slim</b> (positive) vs <b>skinny</b> (negative) vs <b>thin</b> (neutral). Choose the shade you mean.</p>
+            <h3>Register: match your words to the situation</h3>
+            <table>
+              <tr><th>Informal (friends)</th><th>Formal (work / exam)</th></tr>
+              <tr><td>get</td><td>receive / obtain</td></tr>
+              <tr><td>kids</td><td>children</td></tr>
+              <tr><td>a lot of</td><td>a great deal of / numerous</td></tr>
+              <tr><td>find out</td><td>discover / determine</td></tr>
+              <tr><td>buy</td><td>purchase</td></tr>
+            </table>
+            <p>Informal: <button class="say" data-say="I need to find out more about the job.">🔊</button> "I need to <b>find out</b> more about the job."<br>
+            Formal: <button class="say" data-say="I would like to obtain further information about the position.">🔊</button> "I would like to <b>obtain</b> further information about the <b>position</b>."</p>
+            <h3>How to keep growing your vocabulary for life</h3>
+            <ul>
+              <li>Read widely and note new words <b>in context</b>.</li>
+              <li>Keep a small list of words + one example sentence each; review and <b>use them in speech</b>.</li>
+              <li>Learn one strong synonym for each "tired" word (good, bad, big, nice).</li>
+            </ul>
+            <div class="speakcheck" data-target="I was delighted with the outstanding service and the enormous portions."></div>`,
+          tips: [
+            "Precise beats fancy — pick the word that means exactly what you mean.",
+            "Mind connotation: slim vs skinny vs thin all differ in feeling.",
+            "Match register to the moment: 'get' with friends, 'obtain' in formal writing."
+          ],
+          practice: "Take a dull sentence (“It was a very good, very big meal and I was very happy”) and say a vivid version aloud using precise words (e.g. “It was a superb, enormous meal and I was delighted”).",
+          quiz: [
+            { q: "A precise replacement for 'very tired' is…", choices: ["sleepy-ish", "exhausted", "a bit tired", "very very tired"], answer: 1 },
+            { q: "Which is the most formal?", choices: ["get", "grab", "obtain", "pick up"], answer: 2 },
+            { q: "'slim', 'skinny' and 'thin' show that synonyms can differ in…", choices: ["spelling only", "feeling/connotation", "number of letters", "nothing"], answer: 1 },
+            { q: "Best lifelong vocabulary habit?", choices: ["Memorise the dictionary", "Note new words in context and use them", "Avoid new words", "Only learn long words"], answer: 1 }
+          ]
+        },
+        {
+          id: "v6", level: "Intermediate", minutes: 11,
+          title: "Word formation: prefixes and suffixes",
+          content: `
+            <p>One of the quickest ways to <b>multiply your vocabulary</b> is to learn how words are built. Add a <b>prefix</b> (to the front) or a <b>suffix</b> (to the end) and you can create whole families of new words from a single root you already know.</p>
+            <h3>Common prefixes and what they mean</h3>
+            <table>
+              <tr><th>Prefix</th><th>Meaning</th><th>Examples</th></tr>
+              <tr><td>un-</td><td>not / reverse</td><td>unhappy, unkind, unpack, unclear</td></tr>
+              <tr><td>in- / im-</td><td>not</td><td>informal, impossible, impatient, incorrect</td></tr>
+              <tr><td>dis-</td><td>not / opposite</td><td>disagree, dishonest, disconnect, disappear</td></tr>
+              <tr><td>re-</td><td>again / back</td><td>rewrite, return, rebuild, reconsider</td></tr>
+              <tr><td>over-</td><td>too much</td><td>overwork, overreact, overcook, overwhelm</td></tr>
+            </table>
+            <p><button class="say" data-say="I think that is incorrect. Please do not overreact.">🔊 Listen</button> "I think that is <b>incorrect</b>. Please do not <b>overreact</b>."</p>
+            <p><button class="say" data-say="She was unhappy with the decision and asked them to reconsider.">🔊 Listen</button> "She was <b>unhappy</b> with the decision and asked them to <b>reconsider</b>."</p>
+            <h3>Common suffixes and what they do</h3>
+            <table>
+              <tr><th>Suffix</th><th>Creates</th><th>Examples</th></tr>
+              <tr><td>-tion / -sion</td><td>noun</td><td>education, decision, celebration, discussion</td></tr>
+              <tr><td>-ment</td><td>noun</td><td>enjoyment, improvement, development, agreement</td></tr>
+              <tr><td>-able / -ible</td><td>adjective (can be done)</td><td>comfortable, reliable, flexible, visible</td></tr>
+              <tr><td>-ful</td><td>adjective (full of)</td><td>helpful, beautiful, powerful, successful</td></tr>
+              <tr><td>-less</td><td>adjective (without)</td><td>helpless, careless, useless, hopeless</td></tr>
+              <tr><td>-ly</td><td>adverb</td><td>quickly, clearly, happily, carefully</td></tr>
+            </table>
+            <p><button class="say" data-say="The development team made a reliable and flexible solution.">🔊 Listen</button> "The <b>development</b> team made a <b>reliable</b> and <b>flexible</b> solution."</p>
+            <h3>Building a whole word family from one root</h3>
+            <p>Watch how far one root word can reach. Learn the root, and you get the whole family for free:</p>
+            <table>
+              <tr><th>Root</th><th>Noun</th><th>Adjective</th><th>Adverb</th><th>Opposite adjective</th></tr>
+              <tr><td>happy</td><td>happiness</td><td>happy</td><td>happily</td><td>unhappy</td></tr>
+              <tr><td>use</td><td>use / usefulness</td><td>useful</td><td>usefully</td><td>useless</td></tr>
+              <tr><td>care</td><td>care / carelessness</td><td>careful</td><td>carefully</td><td>careless</td></tr>
+              <tr><td>enjoy</td><td>enjoyment</td><td>enjoyable</td><td>enjoyably</td><td>unenjoyable</td></tr>
+            </table>
+            <p><button class="say" data-say="She spoke happily about her enjoyment of the course. It was truly useful.">🔊 Listen</button> "She spoke <b>happily</b> about her <b>enjoyment</b> of the course. It was truly <b>useful</b>."</p>
+            <h3>Spelling notes to watch</h3>
+            <ul>
+              <li>Drop the final <b>e</b> before <b>-tion</b>: create → cre<b>ation</b>; educate → educ<b>ation</b>.</li>
+              <li>Happy → happi<b>ly</b> (change y to i before -ly).</li>
+              <li><b>im-</b> is used before words starting with m or p: impossible, immature.</li>
+            </ul>
+            <blockquote>When you meet a new word, ask yourself: can I add a prefix or suffix to it? Can I think of a related noun, verb, adjective and adverb? This habit grows your vocabulary four times faster.</blockquote>
+            <div class="speakcheck" data-target="It was an enjoyable and useful discussion about the development of the project."></div>
+            <div class="speakcheck" data-target="She was unhappy because the work was careless and the result was useless."></div>`,
+          tips: [
+            "Learn one root and immediately think of its full family: noun, verb, adjective, adverb.",
+            "Prefixes un-, dis-, in- all mean 'not' but attach to different words — check a dictionary when unsure.",
+            "Saying word-family sets aloud (happy, happily, happiness, unhappy) locks them into memory fast."
+          ],
+          practice: "Choose three roots from the table (e.g. care, enjoy, use) and say a full sentence for each form aloud — noun, adjective and adverb in turn.",
+          quiz: [
+            { q: "What does the prefix 're-' add to a word's meaning?", choices: ["not / opposite", "too much", "again / back", "without"], answer: 2 },
+            { q: "Which suffix turns a verb into a noun meaning 'the act of'?", choices: ["-ful", "-less", "-tion / -ment", "-ly"], answer: 2 },
+            { q: "What is the adverb form of 'careful'?", choices: ["carefulness", "careless", "carefully", "uncare"], answer: 2 },
+            { q: "Which word uses the prefix 'im-' correctly?", choices: ["imhappy", "impossible", "imunfair", "imuse"], answer: 1 }
+          ]
+        },
+        {
+          id: "v7", level: "Intermediate", minutes: 11,
+          title: "Linking words and connectors for smooth speech",
+          content: `
+            <p>What separates a speaker who sounds <b>organised and fluent</b> from one who sounds hesitant and jumpy? Very often it comes down to <b>linking words</b> — the signposts that connect your ideas so your listener can follow you easily.</p>
+            <h3>Why connectors matter in speech</h3>
+            <p>Without connectors, speech sounds like a list: "I was late. The traffic was bad. I called my boss. She understood." With connectors, it flows: <button class="say" data-say="I was late because the traffic was bad. However, I called my boss in advance and she understood.">🔊 Listen</button> "I was late <b>because</b> the traffic was bad. <b>However</b>, I called my boss in advance and she understood."</p>
+            <h3>Adding information</h3>
+            <table>
+              <tr><th>Connector</th><th>Use</th><th>Example</th></tr>
+              <tr><td>in addition</td><td>add a further point</td><td>The course is free. In addition, it comes with a certificate.</td></tr>
+              <tr><td>furthermore</td><td>add a stronger point</td><td>The plan is costly; furthermore, it takes too long.</td></tr>
+              <tr><td>as well as</td><td>join two ideas smoothly</td><td>She speaks French as well as Spanish.</td></tr>
+            </table>
+            <p><button class="say" data-say="The flat is spacious. In addition, it is close to the city centre.">🔊 Listen</button> "The flat is spacious. <b>In addition</b>, it is close to the city centre."</p>
+            <h3>Showing contrast</h3>
+            <table>
+              <tr><th>Connector</th><th>Use</th><th>Example</th></tr>
+              <tr><td>however</td><td>contrast two ideas (new sentence)</td><td>The price is high. However, the quality is excellent.</td></tr>
+              <tr><td>although</td><td>contrast in one sentence</td><td>Although it rained, we enjoyed the trip.</td></tr>
+              <tr><td>on the other hand</td><td>present the opposing side</td><td>City life is exciting. On the other hand, it can be very stressful.</td></tr>
+              <tr><td>despite / in spite of</td><td>contrast + noun/gerund</td><td>Despite the rain, we stayed outside.</td></tr>
+            </table>
+            <p><button class="say" data-say="Although I was tired, I finished the report.">🔊 Listen</button> "Although I was tired, I <b>finished</b> the report."</p>
+            <p><button class="say" data-say="City life is exciting. On the other hand, it can be very stressful.">🔊 Listen</button> "City life is exciting. <b>On the other hand</b>, it can be very stressful."</p>
+            <h3>Showing cause and result</h3>
+            <table>
+              <tr><th>Connector</th><th>Direction</th><th>Example</th></tr>
+              <tr><td>because / as / since</td><td>gives reason</td><td>I left early because I was tired.</td></tr>
+              <tr><td>therefore / as a result</td><td>gives consequence</td><td>It rained heavily; as a result, the match was cancelled.</td></tr>
+              <tr><td>so</td><td>informal result</td><td>I missed the bus, so I took a taxi.</td></tr>
+            </table>
+            <p><button class="say" data-say="The road was closed. Therefore, we took a different route.">🔊 Listen</button> "The road was closed. <b>Therefore</b>, we took a different route."</p>
+            <h3>Ordering and concluding</h3>
+            <ul>
+              <li>To begin: <b>First of all, To start with, Firstly</b></li>
+              <li>In the middle: <b>Then, After that, Subsequently</b></li>
+              <li>To conclude: <b>Finally, In conclusion, To sum up, Overall</b></li>
+            </ul>
+            <blockquote>In spoken English, 'however' and 'although' are your most powerful contrast tools. Practise placing them at the start of a sentence until it feels natural. This alone lifts your spoken English noticeably.</blockquote>
+            <div class="speakcheck" data-target="Although the weather was cold, we had a wonderful time. As a result, we decided to go again."></div>
+            <div class="speakcheck" data-target="First of all, I checked my notes. Then I answered the question. Finally, I asked if they needed more information."></div>`,
+          tips: [
+            "Use 'however' at the start of a new sentence and 'although' inside one sentence — they are not interchangeable.",
+            "Do not stack connectors: do not say 'But however...' — pick one.",
+            "Practise with two-sentence answers: make a point, then add 'however' or 'in addition' for the next idea."
+          ],
+          practice: "Describe your journey to work or school today in five sentences. Use at least three different connectors from the lesson, including one contrast and one result word.",
+          quiz: [
+            { q: "Which connector best introduces a contrasting point in a new sentence?", choices: ["In addition", "Therefore", "However", "Furthermore"], answer: 2 },
+            { q: "'Although it was expensive, ____ it.'", choices: ["however I bought", "I bought", "therefore I bought", "on the other hand I bought"], answer: 1 },
+            { q: "Which pair shows cause and result?", choices: ["however / although", "because / therefore", "in addition / furthermore", "firstly / finally"], answer: 1 },
+            { q: "You want to add a second supporting point. Which connector fits best?", choices: ["On the other hand", "In addition", "Despite", "Although"], answer: 1 }
+          ]
+        },
+        {
+          id: "v8", level: "Intermediate", minutes: 11,
+          title: "Talking about feelings and emotions precisely",
+          content: `
+            <p>Being able to talk about how you <b>feel</b> — and how situations make you feel — is one of the most important speaking skills. Moving beyond "happy" and "sad" to precise emotion words makes your English richer, more natural, and more human.</p>
+            <h3>A spectrum of positive emotions</h3>
+            <p>Think of emotions on a scale of intensity. Here is the positive side:</p>
+            <table>
+              <tr><th>Word</th><th>Meaning / intensity</th><th>Example</th></tr>
+              <tr><td>pleased</td><td>mildly happy</td><td>I was pleased with the result.</td></tr>
+              <tr><td>glad</td><td>quietly happy, often relieved</td><td>I was glad to hear the news.</td></tr>
+              <tr><td>delighted</td><td>very happy</td><td>She was absolutely delighted.</td></tr>
+              <tr><td>thrilled</td><td>very excited and happy</td><td>He was thrilled about the promotion.</td></tr>
+              <tr><td>overjoyed</td><td>extremely, intensely happy</td><td>We were overjoyed when the baby arrived.</td></tr>
+            </table>
+            <p><button class="say" data-say="She was absolutely delighted with the news and her colleagues were thrilled for her.">🔊 Listen</button> "She was absolutely <b>delighted</b> with the news and her colleagues were <b>thrilled</b> for her."</p>
+            <h3>A spectrum of negative emotions</h3>
+            <table>
+              <tr><th>Word</th><th>Meaning / intensity</th><th>Example</th></tr>
+              <tr><td>disappointed</td><td>sad because expectations were not met</td><td>I was disappointed with the service.</td></tr>
+              <tr><td>frustrated</td><td>annoyed because something is blocking you</td><td>She felt frustrated with the delays.</td></tr>
+              <tr><td>anxious</td><td>worried, slightly fearful</td><td>He was anxious about the interview.</td></tr>
+              <tr><td>overwhelmed</td><td>unable to cope with too much</td><td>I felt overwhelmed with all the work.</td></tr>
+              <tr><td>devastated</td><td>extremely sad or shocked</td><td>She was devastated by the news.</td></tr>
+            </table>
+            <p><button class="say" data-say="I was anxious before the exam and felt overwhelmed during it.">🔊 Listen</button> "I was <b>anxious</b> before the exam and felt <b>overwhelmed</b> during it."</p>
+            <h3>Describing relief and mixed feelings</h3>
+            <ul>
+              <li><b>relieved</b> — happy that something bad did NOT happen: <button class="say" data-say="I was so relieved when the results came back clear.">🔊 Listen</button> "I was so <b>relieved</b> when the results came back clear."</li>
+              <li><b>mixed feelings</b> — happy and sad at the same time: <button class="say" data-say="I had mixed feelings about leaving — I was excited but also sad to say goodbye.">🔊 Listen</button> "I had <b>mixed feelings</b> about leaving."</li>
+              <li><b>nostalgic</b> — a warm, slightly sad feeling about the past: <button class="say" data-say="Looking at old photos always makes me feel nostalgic.">🔊 Listen</button> "Old photos always make me feel <b>nostalgic</b>."</li>
+            </ul>
+            <h3>How to describe what caused a feeling</h3>
+            <p>English uses two patterns. Choose carefully:</p>
+            <table>
+              <tr><th>Pattern</th><th>Example</th></tr>
+              <tr><td>I felt [emotion] about [situation]</td><td>I felt anxious about the journey.</td></tr>
+              <tr><td>[Situation] made me feel [emotion]</td><td>The long wait made me feel frustrated.</td></tr>
+            </table>
+            <p><button class="say" data-say="The long delay made me feel frustrated, but the apology made me feel a little better.">🔊 Listen</button> "The long delay <b>made me feel frustrated</b>, but the apology made me feel a little better."</p>
+            <blockquote>Avoid overusing 'upset' — it is vague. Ask yourself: is this person disappointed, frustrated, anxious, devastated, or something else? Picking the right word shows real fluency.</blockquote>
+            <div class="speakcheck" data-target="I was anxious before the interview, but I felt relieved and quite pleased once it was over."></div>
+            <div class="speakcheck" data-target="The unexpected delay made me feel frustrated, although I tried to stay calm."></div>`,
+          tips: [
+            "Match intensity to the situation — saying you were 'devastated' by cold coffee sounds strange.",
+            "Learn the pattern 'it made me feel...' — it is one of the most natural ways to describe emotions in spoken English.",
+            "Pair emotion words with physical descriptions for impact: 'my heart was racing' (anxious), 'I could not stop smiling' (delighted)."
+          ],
+          practice: "Think of three recent situations — something that went well, something that was difficult, and something you were unsure about. Describe how each one made you feel, using precise emotion words from this lesson.",
+          quiz: [
+            { q: "Which word means 'very happy because something worrying did NOT happen'?", choices: ["thrilled", "nostalgic", "relieved", "overjoyed"], answer: 2 },
+            { q: "Place these in order from least to most intense happiness: delighted, pleased, overjoyed.", choices: ["overjoyed, pleased, delighted", "pleased, delighted, overjoyed", "delighted, overjoyed, pleased", "pleased, overjoyed, delighted"], answer: 1 },
+            { q: "Which pattern is correct?", choices: ["The news made me felt happy.", "I feeling anxious about it.", "The delay made me feel frustrated.", "I was anxiety."], answer: 2 },
+            { q: "'Overwhelmed' means…", choices: ["mildly worried", "feeling too much to cope with", "a little disappointed", "extremely cheerful"], answer: 1 }
+          ]
+        },
+        {
+          id: "v9", level: "Advanced", minutes: 12,
+          title: "Describing trends, numbers and change",
+          content: `
+            <p>In professional life, job interviews, IELTS speaking tests, and academic discussions, you will regularly need to <b>describe data, trends and changes</b>. The right vocabulary makes you sound precise, credible and confident.</p>
+            <h3>Verbs for movement: up and down</h3>
+            <p>Use strong, precise verbs rather than repeating "go up" and "go down":</p>
+            <table>
+              <tr><th>Movement</th><th>Neutral</th><th>Strong / fast</th><th>Gradual / gentle</th></tr>
+              <tr><td>upward</td><td>increase, rise, grow</td><td>soar, surge, rocket, jump</td><td>climb, edge up, creep up</td></tr>
+              <tr><td>downward</td><td>decrease, fall, drop</td><td>plummet, collapse, plunge, crash</td><td>dip, ease off, slip, decline</td></tr>
+              <tr><td>no change</td><td>remain stable, stay the same, level off, plateau</td><td>—</td><td>—</td></tr>
+            </table>
+            <p><button class="say" data-say="Sales soared in the first quarter and then plateaued over the summer.">🔊 Listen</button> "Sales <b>soared</b> in the first quarter and then <b>plateaued</b> over the summer."</p>
+            <p><button class="say" data-say="After a sharp rise, prices plummeted in the final three months.">🔊 Listen</button> "After a sharp rise, prices <b>plummeted</b> in the final three months."</p>
+            <h3>Adverbs and adjectives for the shape of change</h3>
+            <p>Combine a verb with an adverb, or a noun with an adjective, to describe <b>how</b> the change happened:</p>
+            <table>
+              <tr><th>Speed / size</th><th>Adjective (a ___ rise)</th><th>Adverb (rose ___)</th></tr>
+              <tr><td>very fast, large</td><td>sharp, steep, dramatic, significant</td><td>sharply, steeply, dramatically</td></tr>
+              <tr><td>slow, small</td><td>gradual, slight, modest, marginal</td><td>gradually, slightly, modestly</td></tr>
+            </table>
+            <p><button class="say" data-say="There was a sharp increase in demand, followed by a gradual decline.">🔊 Listen</button> "There was a <b>sharp increase</b> in demand, followed by a <b>gradual decline</b>."</p>
+            <p><button class="say" data-say="Temperatures rose dramatically over the decade, then levelled off.">🔊 Listen</button> "Temperatures rose <b>dramatically</b> over the decade, then <b>levelled off</b>."</p>
+            <h3>Approximation language for numbers</h3>
+            <p>You rarely need to say an exact number. These phrases let you be naturally imprecise:</p>
+            <table>
+              <tr><th>Phrase</th><th>Meaning</th><th>Example</th></tr>
+              <tr><td>roughly / approximately</td><td>about, not exact</td><td>roughly 200 people attended</td></tr>
+              <tr><td>around / about</td><td>informal approximation</td><td>it costs around fifty pounds</td></tr>
+              <tr><td>just over / just under</td><td>slightly more or less</td><td>just over half of the group agreed</td></tr>
+              <tr><td>nearly / almost</td><td>very close to but not quite</td><td>almost three quarters of respondents</td></tr>
+              <tr><td>well over</td><td>significantly more than</td><td>well over a thousand applications</td></tr>
+            </table>
+            <p><button class="say" data-say="Just over half of those surveyed said they were satisfied, while roughly a third were undecided.">🔊 Listen</button> "Just over half of those surveyed said they were satisfied, while <b>roughly a third</b> were undecided."</p>
+            <h3>Putting it all together: a model answer</h3>
+            <div class="ex">"The graph shows that sales <b>rose gradually</b> for the first two years, reaching <b>just over</b> four million units. They then <b>soared dramatically</b> in the third year — <b>well over</b> double the previous figure — before <b>declining slightly</b> towards the end of the period." <button class="say" data-say="The graph shows that sales rose gradually for the first two years, reaching just over four million units. They then soared dramatically in the third year — well over double the previous figure — before declining slightly towards the end of the period.">🔊 Listen</button></div>
+            <blockquote>A strong trend description uses three elements: a precise verb (soared), a modifier (dramatically), and a time reference (in the third year). Aim for all three.</blockquote>
+            <div class="speakcheck" data-target="Prices rose sharply in January and then declined gradually over the following months."></div>
+            <div class="speakcheck" data-target="Roughly three quarters of respondents agreed, while just under a fifth were undecided."></div>`,
+          tips: [
+            "Pair your verb with a modifier: do not just say 'it increased' — say 'it increased sharply' or 'it rose gradually'.",
+            "Approximate numbers sound more natural than fake precision — 'roughly two hundred' is often better than a made-up exact figure.",
+            "Vary your verbs: if you use 'increase' once, use 'soar' or 'climb' for the next upward movement."
+          ],
+          practice: "Look at any chart or set of figures you can find — a news article, a weather report, even a shopping receipt. Describe two or three changes aloud using the vocabulary from this lesson, including at least one approximation phrase.",
+          quiz: [
+            { q: "Which verb suggests a very fast, dramatic increase?", choices: ["climb", "edge up", "soar", "level off"], answer: 2 },
+            { q: "A 'gradual decline' means prices fell…", choices: ["suddenly and steeply", "slowly and steadily", "sharply then recovered", "and stayed low"], answer: 1 },
+            { q: "Which phrase correctly approximates a number?", choices: ["exact over fifty", "just over fifty", "barely fifty exact", "fifty immediately"], answer: 1 },
+            { q: "What does 'plateaued' mean in the context of a trend?", choices: ["fell sharply", "rose gradually", "remained at roughly the same level", "doubled in size"], answer: 2 }
+          ]
+        },
+        {
+          id: "v10", level: "Intermediate", minutes: 11,
+          title: "Everyday idioms and natural expressions (Part 1)",
+          content: `
+            <p><b>Idioms</b> are fixed phrases whose meaning cannot be guessed word by word. They are everywhere in natural British English — in conversation, on TV, in the workplace. Understanding and using a handful of them will make you sound genuinely fluent.</p>
+            <h3>What makes an idiom?</h3>
+            <p>An idiom means something different from its literal words. "It's raining cats and dogs" does not involve any animals — it means it is raining very heavily. <button class="say" data-say="It is raining cats and dogs out there — you will need an umbrella.">🔊 Listen</button> "It is <b>raining cats and dogs</b> out there — you will need an umbrella."</p>
+            <h3>Eight useful British idioms</h3>
+            <table>
+              <tr><th>Idiom</th><th>Meaning</th><th>Example sentence</th></tr>
+              <tr><td>a piece of cake</td><td>very easy</td><td>The test was a piece of cake.</td></tr>
+              <tr><td>under the weather</td><td>feeling slightly unwell</td><td>I am a bit under the weather today.</td></tr>
+              <tr><td>the ball is in your court</td><td>it is your turn / your decision now</td><td>I have said my piece — the ball is in your court.</td></tr>
+              <tr><td>once in a blue moon</td><td>very rarely</td><td>We see each other once in a blue moon.</td></tr>
+              <tr><td>hit the nail on the head</td><td>say exactly the right thing</td><td>You have really hit the nail on the head.</td></tr>
+              <tr><td>break the ice</td><td>do something to ease awkwardness</td><td>A small joke can break the ice.</td></tr>
+              <tr><td>bite off more than you can chew</td><td>take on more than you can handle</td><td>I think I have bitten off more than I can chew.</td></tr>
+              <tr><td>on the fence</td><td>undecided, not taking a side</td><td>She is still on the fence about the new job.</td></tr>
+            </table>
+            <p><button class="say" data-say="The exam was a piece of cake. I had been worried, but I hit the nail on the head with all my answers.">🔊 Listen</button> "The exam was a <b>piece of cake</b>. I had been worried, but I <b>hit the nail on the head</b> with all my answers."</p>
+            <p><button class="say" data-say="I am a bit under the weather today, so I only go out once in a blue moon when I feel like this.">🔊 Listen</button> "I am a bit <b>under the weather</b> today, so I only go out <b>once in a blue moon</b> when I feel like this."</p>
+            <h3>How to use idioms naturally — and when NOT to</h3>
+            <ul>
+              <li>Use idioms in <b>informal</b> or semi-formal speech, not in formal writing or official presentations.</li>
+              <li>Use one or two per conversation — not five. Overusing idioms sounds unnatural and can be hard to follow.</li>
+              <li>Only use an idiom when you are confident of its meaning. Getting it wrong stands out.</li>
+              <li>Listen for idioms in British TV programmes, podcasts and everyday conversations to see them used naturally in context.</li>
+            </ul>
+            <blockquote>You do not need to know hundreds of idioms. Learn ten to fifteen well, understand them completely, and use them at the right moment. That is far more impressive than scattering unfamiliar ones through your speech.</blockquote>
+            <div class="speakcheck" data-target="The task was a piece of cake, although I had to break the ice with a few of the new team members."></div>
+            <div class="speakcheck" data-target="I am on the fence about whether to apply, but the ball is in my court now."></div>`,
+          tips: [
+            "Learn idioms with the full example sentence — the context tells you when and how to use them.",
+            "Use idioms sparingly: one well-placed idiom is impressive; five in one minute sounds forced.",
+            "If you are unsure whether an idiom fits the situation, leave it out — clarity is always better."
+          ],
+          practice: "Choose four idioms from the table and use each one in a sentence about your own life — your work, your family, your hobbies or a recent experience. Say them aloud.",
+          quiz: [
+            { q: "What does 'under the weather' mean?", choices: ["outside in the rain", "feeling slightly unwell", "very happy", "confused about the forecast"], answer: 1 },
+            { q: "'The ball is in your court' means…", choices: ["let us play tennis", "it is your responsibility / decision now", "you are wrong", "the situation is unfair"], answer: 1 },
+            { q: "When is the BEST time to use idioms?", choices: ["In a formal written report", "In casual conversation or semi-formal speech", "As many times as possible in every sentence", "Only in academic essays"], answer: 1 },
+            { q: "'Once in a blue moon' means something happens…", choices: ["every day", "on a specific date", "very rarely", "at night only"], answer: 2 }
+          ]
         }
       ]
     },
@@ -505,6 +1804,319 @@ const SPEAK_CURRICULUM = {
             { q: "Which syllable is stressed in 'important'?", choices: ["IM-portant", "im-POR-tant", "impor-TANT", "none"], answer: 1 },
             { q: "Why does word stress matter so much?", choices: ["It looks nice", "Wrong stress can make a word hard to understand", "It's only for songs", "It doesn't"], answer: 1 },
             { q: "'a PREsent' vs 'to preSENT' shows that…", choices: ["Spelling changes", "Stress can change the meaning/word class", "They're unrelated", "British people don't stress words"], answer: 1 }
+          ]
+        },
+        {
+          id: "p5", level: "Intermediate", minutes: 10,
+          title: "Silent letters & tricky spellings",
+          content: `
+            <p>English spelling often preserves letters that were once pronounced but have since gone silent over centuries. Knowing which letters to ignore — and which patterns to remember — will stop you from mispronouncing dozens of common words.</p>
+            <h3>Silent K and G — before N</h3>
+            <p>When <b>K</b> or <b>G</b> comes directly before <b>N</b> at the start of a word, both letters are reduced to a single /n/ sound in modern British RP.</p>
+            <table>
+              <tr><th>Spelling</th><th>Sounds like</th><th>Listen</th></tr>
+              <tr><td>knife</td><td>/naɪf/</td><td><button class="say" data-say="knife">🔊</button></td></tr>
+              <tr><td>knee</td><td>/niː/</td><td><button class="say" data-say="knee">🔊</button></td></tr>
+              <tr><td>knock</td><td>/nɒk/</td><td><button class="say" data-say="knock">🔊</button></td></tr>
+              <tr><td>gnaw</td><td>/nɔː/</td><td><button class="say" data-say="gnaw">🔊</button></td></tr>
+              <tr><td>gnat</td><td>/næt/</td><td><button class="say" data-say="gnat">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Rule:</b> KN– and GN– at the start of a word = say only the N. The K and G are completely silent.</blockquote>
+            <h3>Silent B — after M or before T</h3>
+            <p>A final <b>B</b> after <b>M</b> is always silent, a quirk frozen in from Old English. Similarly, <b>BT</b> in the middle of a word loses its B.</p>
+            <table>
+              <tr><th>Spelling</th><th>Sounds like</th><th>Listen</th></tr>
+              <tr><td>comb</td><td>/kəʊm/</td><td><button class="say" data-say="comb">🔊</button></td></tr>
+              <tr><td>bomb</td><td>/bɒm/</td><td><button class="say" data-say="bomb">🔊</button></td></tr>
+              <tr><td>thumb</td><td>/θʌm/</td><td><button class="say" data-say="thumb">🔊</button></td></tr>
+              <tr><td>debt</td><td>/dɛt/</td><td><button class="say" data-say="debt">🔊</button></td></tr>
+              <tr><td>doubt</td><td>/daʊt/</td><td><button class="say" data-say="doubt">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Rule:</b> –MB at the end of a word = say only the M. The B vanishes entirely.</blockquote>
+            <h3>Silent letters in whole words</h3>
+            <p>Some words have silent letters that must simply be memorised because the pattern is isolated. Here are the most important ones:</p>
+            <table>
+              <tr><th>Word</th><th>Silent letter(s)</th><th>Sounds like</th><th>Listen</th></tr>
+              <tr><td>Wednesday</td><td>silent D, silent first E</td><td>/ˈwɛnzdeɪ/</td><td><button class="say" data-say="Wednesday">🔊</button></td></tr>
+              <tr><td>island</td><td>silent S</td><td>/ˈaɪlənd/</td><td><button class="say" data-say="island">🔊</button></td></tr>
+              <tr><td>hour</td><td>silent H</td><td>/aʊə/</td><td><button class="say" data-say="hour">🔊</button></td></tr>
+              <tr><td>castle</td><td>silent T</td><td>/ˈkɑːsl/</td><td><button class="say" data-say="castle">🔊</button></td></tr>
+              <tr><td>listen</td><td>silent T</td><td>/ˈlɪsn/</td><td><button class="say" data-say="listen">🔊</button></td></tr>
+              <tr><td>psychology</td><td>silent P</td><td>/saɪˈkɒlədʒi/</td><td><button class="say" data-say="psychology">🔊</button></td></tr>
+            </table>
+            <p>Notice <b>castle</b> and <b>listen</b>: the –<b>TLE</b> and –<b>STEN</b> patterns nearly always hide a silent T in British English. The same applies to <b>fasten, hasten, whistle, thistle</b>. <button class="say" data-say="fasten, whistle, thistle, nestle">🔊 fasten, whistle, thistle, nestle</button></p>
+            <h3>A memory trick: say it in syllables first</h3>
+            <p>Learners often mispronounce these words because they read every letter. Train yourself by speaking the <em>sound spelling</em> in your head:</p>
+            <ul>
+              <li><b>Wednesday</b> → think "WENZ-day" — only two syllables, not three</li>
+              <li><b>island</b> → think "EYE-lund" — the S is completely absent</li>
+              <li><b>hour</b> → think "OW-uh" — starts with a vowel sound, so say "an hour" not "a hour"</li>
+              <li><b>castle</b> → think "KAA-sul" — with the British long /ɑː/, no T</li>
+            </ul>
+            <div class="ex">She spent an hour in the castle on the island last Wednesday.</div>
+            <div class="speakcheck" data-target="She spent an hour in the castle on the island last Wednesday."></div>
+            <div class="speakcheck" data-target="I used a knife to comb the knots out."></div>`,
+          tips: [
+            "KN– and GN– at the start: only say the N. Knife = 'nyfe', knee = 'nee'.",
+            "–MB at the end: only say the M. Comb = 'kome', thumb = 'thum'.",
+            "Castle, listen, fasten: the T in –TLE and –STEN is always silent in British RP."
+          ],
+          practice: "Read this sentence aloud, making every silent letter truly disappear: \"On Wednesday the knight used his knife to climb the castle and gnaw a lamb's bone.\"",
+          quiz: [
+            { q: "How many syllables does 'Wednesday' have in British RP?", choices: ["Three: Wed-nes-day", "Two: Wenz-day", "Four: Wed-en-es-day", "One"], answer: 1 },
+            { q: "In the word 'comb', which letter is silent?", choices: ["C", "O", "B", "M"], answer: 2 },
+            { q: "The word 'island' has a silent…", choices: ["L", "A", "S", "D"], answer: 2 }
+          ]
+        },
+        {
+          id: "p6", level: "Intermediate", minutes: 10,
+          title: "Word endings: -ed and -s/-es pronunciation",
+          content: `
+            <p>The past tense ending <b>–ed</b> and the plural/third-person ending <b>–s/–es</b> each have <b>three different pronunciations</b>. Using the wrong one makes you sound unnatural — but the rules are beautifully logical and based on a single principle: <em>the voicing of the sound just before the ending</em>.</p>
+            <h3>The –ed endings: /t/, /d/, or /ɪd/?</h3>
+            <p>Say the base verb, then feel whether the final sound is <b>voiced</b> (your throat vibrates), <b>voiceless</b> (only air), or <b>a T or D sound itself</b>.</p>
+            <table>
+              <tr><th>Rule</th><th>When?</th><th>Examples</th><th>Listen</th></tr>
+              <tr><td>/t/</td><td>After a voiceless consonant (p, k, f, s, sh, ch, th)</td><td>walked, stopped, laughed, kissed, watched</td><td><button class="say" data-say="walked, stopped, laughed, kissed, watched">🔊</button></td></tr>
+              <tr><td>/d/</td><td>After a voiced consonant or any vowel</td><td>played, called, moved, loved, showed</td><td><button class="say" data-say="played, called, moved, loved, showed">🔊</button></td></tr>
+              <tr><td>/ɪd/</td><td>After T or D — an extra syllable is needed</td><td>wanted, needed, landed, started, loaded</td><td><button class="say" data-say="wanted, needed, landed, started, loaded">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Quick test:</b> Does the verb end in a T or D sound? → use /ɪd/. Is the final sound voiceless? → use /t/. Is it voiced? → use /d/.</blockquote>
+            <p>Listen carefully to the syllable count: "walked" is ONE syllable, "wanted" is TWO. <button class="say" data-say="walked — one syllable. wanted — two syllables.">🔊 walked vs wanted</button></p>
+            <h3>The –s / –es endings: /s/, /z/, or /ɪz/?</h3>
+            <p>The exact same voicing principle governs plurals and third-person present tense verbs.</p>
+            <table>
+              <tr><th>Rule</th><th>When?</th><th>Examples</th><th>Listen</th></tr>
+              <tr><td>/s/</td><td>After a voiceless consonant (p, t, k, f, th)</td><td>cats, books, tops, months, laughs</td><td><button class="say" data-say="cats, books, tops, months, laughs">🔊</button></td></tr>
+              <tr><td>/z/</td><td>After a voiced consonant or any vowel</td><td>dogs, runs, cars, boys, trees</td><td><button class="say" data-say="dogs, runs, cars, boys, trees">🔊</button></td></tr>
+              <tr><td>/ɪz/</td><td>After a sibilant (s, z, sh, ch, j, x)</td><td>buses, boxes, churches, judges, wishes</td><td><button class="say" data-say="buses, boxes, churches, judges, wishes">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Quick test:</b> Does the word end in a hissing or buzzing sound (s, z, sh, ch, j)? → use /ɪz/. Is the final sound voiceless? → use /s/. Is it voiced? → use /z/.</blockquote>
+            <h3>Voicing: a quick reminder</h3>
+            <p>Put two fingers gently on your throat and say these sounds. You will feel a buzz for voiced sounds and nothing for voiceless:</p>
+            <ul>
+              <li><b>Voiceless:</b> p, t, k, f, s, sh, ch, th (as in thin) — <button class="say" data-say="p, t, k, f, s">🔊</button></li>
+              <li><b>Voiced:</b> b, d, g, v, z, zh, j, th (as in this), m, n, l, r, and all vowels — <button class="say" data-say="b, d, g, v, z">🔊</button></li>
+            </ul>
+            <h3>Putting it together in sentences</h3>
+            <div class="ex">She walked (t) the dogs (z) and watched (t) the buses (ɪz) pass.</div>
+            <div class="ex">He needed (ɪd) to fix the books (s) before the judges (ɪz) arrived (d).</div>
+            <div class="speakcheck" data-target="She walked the dogs and watched the buses pass."></div>
+            <div class="speakcheck" data-target="He needed to fix the books before the judges arrived."></div>`,
+          tips: [
+            "–ed after T or D adds a syllable /ɪd/: 'want' = 1 syllable, 'wanted' = 2 syllables.",
+            "–ed after voiceless sounds (p, k, f, s) is a quiet /t/, never an extra syllable.",
+            "–s after a hissing sound (s, z, sh, ch) always needs the /ɪz/ extra syllable: 'buses', 'churches'."
+          ],
+          practice: "Sort these verbs: started / laughed / played / needed / kissed / moved. Say each aloud and decide: /t/, /d/, or /ɪd/? Then check by listening to them. <button class=\"say\" data-say=\"started, laughed, played, needed, kissed, moved\">🔊 Check your answers</button>",
+          quiz: [
+            { q: "How is the –ed in 'walked' pronounced?", choices: ["/ɪd/ — an extra syllable", "/d/ — voiced ending", "/t/ — after a voiceless K sound", "The E and D are both pronounced fully"], answer: 2 },
+            { q: "The plural of 'bus' is 'buses'. The –es sounds like…", choices: ["/s/", "/z/", "/ɪz/ — an extra syllable after a sibilant", "Silent"], answer: 2 },
+            { q: "Which group uses the /d/ ending for –ed?", choices: ["Words ending in T or D (wanted)", "Words ending in voiceless consonants (walked)", "Words ending in voiced sounds (played, called)", "All past tense verbs"], answer: 2 }
+          ]
+        },
+        {
+          id: "p7", level: "Intermediate", minutes: 11,
+          title: "The schwa /ə/ — the most common sound in English",
+          content: `
+            <p>The schwa is the small, neutral, unstressed vowel that sounds like a quick <b>"uh"</b>. It is written as /ə/ in phonetics and it is <b>the single most common sound in spoken British English</b>. Learning to use it will instantly make your speech sound more natural and fluid.</p>
+            <h3>What does a schwa feel like?</h3>
+            <p>To make a schwa, completely <em>relax</em> your mouth. No rounding, no spreading. Your jaw drops slightly, your tongue rests flat and central. It is the sound of total muscular ease — a quick, lazy "uh". <button class="say" data-say="uh... uh... uh">🔊 Schwa sound</button></p>
+            <p>Compare the full vowel in the <em>stressed</em> syllable with the schwa in the <em>unstressed</em> one:</p>
+            <table>
+              <tr><th>Word</th><th>Stressed syllable</th><th>Schwa syllables</th><th>Listen</th></tr>
+              <tr><td>about</td><td>–BOUT /aʊt/</td><td>a– /ə/</td><td><button class="say" data-say="about">🔊</button></td></tr>
+              <tr><td>banana</td><td>–NA– /nɑː/</td><td>ba– and –na</td><td><button class="say" data-say="banana">🔊</button></td></tr>
+              <tr><td>teacher</td><td>TEA– /tiː/</td><td>–cher /tʃə/</td><td><button class="say" data-say="teacher">🔊</button></td></tr>
+              <tr><td>photograph</td><td>PHO– /fəʊ/</td><td>–to– and –graph</td><td><button class="say" data-say="photograph">🔊</button></td></tr>
+              <tr><td>comfortable</td><td>COM– /kʌm/</td><td>–for– –ta– –ble</td><td><button class="say" data-say="comfortable">🔊</button></td></tr>
+            </table>
+            <h3>The schwa in function words</h3>
+            <p>Short grammar words — articles, prepositions, conjunctions, pronouns — almost always use a schwa in natural, connected speech. Their <em>strong forms</em> exist but are only used for emphasis or contrast.</p>
+            <table>
+              <tr><th>Word</th><th>Weak (normal) form</th><th>Strong (emphasis only)</th><th>Listen</th></tr>
+              <tr><td>the</td><td>/ðə/ before consonants</td><td>/ðiː/</td><td><button class="say" data-say="the cat, the dog">🔊</button></td></tr>
+              <tr><td>a / an</td><td>/ə/, /ən/</td><td>/eɪ/</td><td><button class="say" data-say="a book, an apple">🔊</button></td></tr>
+              <tr><td>to</td><td>/tə/</td><td>/tuː/</td><td><button class="say" data-say="I want to go">🔊</button></td></tr>
+              <tr><td>for</td><td>/fə/</td><td>/fɔː/</td><td><button class="say" data-say="waiting for a bus">🔊</button></td></tr>
+              <tr><td>and</td><td>/ən/</td><td>/ænd/</td><td><button class="say" data-say="fish and chips">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Key insight:</b> Over 50% of all vowel sounds in everyday British English are schwas. If you give every vowel its full, dictionary value you will sound slow, robotic, and unnatural — even if every sound is technically correct.</blockquote>
+            <h3>Why this matters: syllable reduction</h3>
+            <p>Many words have fewer clearly-pronounced syllables in fast speech than their spelling suggests. The unstressed syllables collapse to schwas or disappear altogether:</p>
+            <ul>
+              <li><b>comfortable</b> → not "com-FOR-ta-ble" (4 syllables) but "CUMF-ta-bul" (3 syllables) — the /r/ syllable reduces and nearly vanishes <button class="say" data-say="comfortable">🔊</button></li>
+              <li><b>camera</b> → not "ca-ME-ra" but "CAM-ra" in quick speech <button class="say" data-say="camera">🔊</button></li>
+              <li><b>interesting</b> → not "in-te-RES-ting" but "INT-res-ting" <button class="say" data-say="interesting">🔊</button></li>
+              <li><b>every</b> → not "EV-e-ry" but "EV-ry" <button class="say" data-say="every">🔊</button></li>
+            </ul>
+            <h3>Practise feeling the weak syllables</h3>
+            <p>In the sentences below, clap only on the <em>stressed</em> syllables and let the weak syllables blur into schwas:</p>
+            <div class="ex">The TEACH-er said a-BOUT a BA-na-na. (3 claps)</div>
+            <div class="ex">I want to go to the cin-e-ma to-mor-row. (4 content-word claps)</div>
+            <div class="speakcheck" data-target="The teacher talked about a comfortable sofa."></div>
+            <div class="speakcheck" data-target="I want to go to the cinema tomorrow."></div>`,
+          tips: [
+            "Relax unstressed syllables to a quick 'uh' schwa — don't over-pronounce every vowel.",
+            "Function words (the, a, to, for, and) almost always reduce to their weak schwa form in normal speech.",
+            "Comfortable is 3 syllables in RP: 'CUMF-ta-bul' — the middle vowel is swallowed."
+          ],
+          practice: "Say this sentence naturally, counting only three clear beats: \"I want to have a cup of tea.\" — the words 'to', 'a', 'of' should all be schwas, not their full vowel forms.",
+          quiz: [
+            { q: "The schwa /ə/ is used in…", choices: ["Only stressed syllables", "Only the letter A", "Unstressed syllables across many different spellings", "Only at the start of words"], answer: 2 },
+            { q: "How many syllables does 'comfortable' have in natural British RP?", choices: ["Four: com-for-ta-ble", "Three: cumf-ta-bul", "Two: cumf-bul", "Five"], answer: 1 },
+            { q: "Why should you use weak/schwa forms for words like 'the' and 'to'?", choices: ["They are incorrect otherwise", "Weak forms make connected speech sound natural and fluent", "British people cannot say the strong forms", "It saves time in writing"], answer: 1 }
+          ]
+        },
+        {
+          id: "p8", level: "Advanced", minutes: 11,
+          title: "Consonant clusters & linking sounds",
+          content: `
+            <p>Advanced British fluency requires two connected skills: confidently pronouncing <b>consonant clusters</b> (several consonants in a row) and <b>linking words together</b> smoothly so that speech flows as one continuous stream rather than a series of separate words.</p>
+            <h3>What is a consonant cluster?</h3>
+            <p>A cluster is two or more consecutive consonant sounds with no vowel between them. English tolerates very long ones, both at the start and end of words. The trick is to <em>not insert a phantom vowel</em> between them.</p>
+            <table>
+              <tr><th>Cluster</th><th>Example word</th><th>Common mistake</th><th>Listen</th></tr>
+              <tr><td>str–</td><td>street, strong, strange</td><td>adding "uh": "suh-treet"</td><td><button class="say" data-say="street, strong, strange">🔊</button></td></tr>
+              <tr><td>–sks</td><td>asks, tasks, risks, desks</td><td>dropping the K: "assez"</td><td><button class="say" data-say="asks, tasks, risks, desks">🔊</button></td></tr>
+              <tr><td>–sps</td><td>wasps, clasps, lisps</td><td>dropping the P</td><td><button class="say" data-say="wasps, clasps, lisps">🔊</button></td></tr>
+              <tr><td>–ksts</td><td>texts, next</td><td>simplifying to "tex"</td><td><button class="say" data-say="texts, next">🔊</button></td></tr>
+              <tr><td>–ksθs</td><td>sixths</td><td>almost anything!</td><td><button class="say" data-say="sixths">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Technique:</b> Practise clusters backwards. For "sixths" (/sɪksθs/), start with just –ths, then –xths, then –ixths, then add the S. Building up slowly trains your mouth without panic.</blockquote>
+            <h3>Linking: consonant to vowel</h3>
+            <p>When a word ends in a consonant and the next word starts with a vowel, British speakers join them seamlessly. The final consonant becomes the onset of the next syllable:</p>
+            <ul>
+              <li><b>an apple</b> → sounds like "a-nap-ple" <button class="say" data-say="an apple">🔊</button></li>
+              <li><b>pick it up</b> → sounds like "pi-ki-tup" <button class="say" data-say="pick it up">🔊</button></li>
+              <li><b>not at all</b> → sounds like "no-ta-tall" <button class="say" data-say="not at all">🔊</button></li>
+              <li><b>turn it off</b> → sounds like "tur-ni-toff" <button class="say" data-say="turn it off">🔊</button></li>
+            </ul>
+            <h3>The linking R</h3>
+            <p>In non-rhotic British RP, an R at the end of a word that is normally silent comes back to life when the next word starts with a vowel. This is called the <b>linking R</b>:</p>
+            <ul>
+              <li><b>far away</b> → "fah-r-away" <button class="say" data-say="far away">🔊</button></li>
+              <li><b>better off</b> → "bett-er-off" <button class="say" data-say="better off">🔊</button></li>
+              <li><b>more and more</b> → "more-r-and-more" <button class="say" data-say="more and more">🔊</button></li>
+              <li><b>there is</b> → "there-r-is" <button class="say" data-say="there is">🔊</button></li>
+            </ul>
+            <blockquote><b>Key rule:</b> Linking R only works when R is in the spelling. If the word ends in a vowel but has no R in spelling (e.g. "the idea of"), some speakers add an intrusive R — this is common but considered non-standard in careful RP.</blockquote>
+            <h3>Vowel-to-vowel linking: the glide</h3>
+            <p>When two vowel sounds meet across a word boundary, English automatically inserts a very short glide to bridge them smoothly. No pause, no glottal stop — just a tiny connecting sound:</p>
+            <ul>
+              <li>After a high front vowel /iː/ or /ɪ/ → a /j/ glide: "he asked" → "he-j-asked" <button class="say" data-say="he asked, see it, my opinion">🔊</button></li>
+              <li>After a rounded vowel /uː/ or /ʊ/ → a /w/ glide: "who else" → "who-w-else" <button class="say" data-say="who else, do it, go on">🔊</button></li>
+            </ul>
+            <div class="ex">An apple a day — not at all — pick it up — far away — better off.</div>
+            <div class="speakcheck" data-target="Not at all — it was an easy ask."></div>
+            <div class="speakcheck" data-target="Far away the streets are strong and straight."></div>`,
+          tips: [
+            "Never insert a phantom vowel inside a cluster: 'street' not 'suh-treet', 'asks' not 'askez'.",
+            "Consonant-to-vowel linking: treat the final consonant as the start of the next syllable ('an apple' = 'a-nap-ple').",
+            "The linking R reactivates a silent final R when the next word starts with a vowel: 'better off' = 'bett-er-off'."
+          ],
+          practice: "Say this passage at a natural pace with full linking — don't pause between words: \"Turn it off. Pick it up. Not at all. Far away. Better off. An easy idea.\" Aim for smooth, unbroken flow.",
+          quiz: [
+            { q: "In the phrase 'an apple', how does a fluent British speaker link the words?", choices: ["With a brief pause between them", "The N sound joins to 'apple', sounding like 'a-nap-ple'", "The N is dropped", "A glottal stop separates them"], answer: 1 },
+            { q: "The linking R (as in 'far away') is used because…", choices: ["All final R sounds are always pronounced", "A normally-silent final R is reactivated before a vowel sound", "The following word starts with R", "It is an American habit"], answer: 1 },
+            { q: "When practising a difficult cluster like 'sixths', the best technique is…", choices: ["Say it very fast repeatedly", "Build it up backwards, adding one sound at a time", "Remove the difficult consonants", "Replace it with a simpler word"], answer: 1 }
+          ]
+        },
+        {
+          id: "p9", level: "Advanced", minutes: 10,
+          title: "Stress shift: REcord vs reCORD",
+          content: `
+            <p>English has a remarkable feature: the <b>same word, spelled identically, carries different stress depending on whether it is a noun or a verb</b> — and that shift in stress completely changes how listeners categorise the word. Master these pairs and you will sound both precise and sophisticated.</p>
+            <h3>The noun/verb stress shift pattern</h3>
+            <p>The general pattern for two-syllable noun/verb pairs in British RP is:</p>
+            <ul>
+              <li><b>Noun</b> → stress falls on the <b>first</b> syllable: <b>REcord, PREsent, OBject</b></li>
+              <li><b>Verb</b> → stress falls on the <b>second</b> syllable: <b>reCORD, preSENT, obJECT</b></li>
+            </ul>
+            <blockquote><b>Key principle:</b> Nouns front-stress; verbs back-stress. The vowels in the unstressed syllable also change — they reduce to a schwa /ə/ — so both stress AND vowel quality shift together.</blockquote>
+            <h3>The essential pairs</h3>
+            <table>
+              <tr><th>Word</th><th>As a NOUN</th><th>As a VERB</th><th>Listen</th></tr>
+              <tr><td>record</td><td>REcord (a vinyl record)</td><td>reCORD (to record a song)</td><td><button class="say" data-say="a record, to record">🔊</button></td></tr>
+              <tr><td>present</td><td>PREsent (a birthday present)</td><td>preSENT (to present the award)</td><td><button class="say" data-say="a present, to present">🔊</button></td></tr>
+              <tr><td>object</td><td>OBject (a solid object)</td><td>obJECT (I object, your honour)</td><td><button class="say" data-say="an object, to object">🔊</button></td></tr>
+              <tr><td>increase</td><td>INcrease (a pay increase)</td><td>inCREASE (prices increase)</td><td><button class="say" data-say="an increase, to increase">🔊</button></td></tr>
+              <tr><td>contrast</td><td>CONtrast (a stark contrast)</td><td>conTRAST (to contrast two things)</td><td><button class="say" data-say="a contrast, to contrast">🔊</button></td></tr>
+              <tr><td>permit</td><td>PERmit (a parking permit)</td><td>perMIT (I do not permit this)</td><td><button class="say" data-say="a permit, to permit">🔊</button></td></tr>
+              <tr><td>protest</td><td>PROtest (a public protest)</td><td>proTEST (to protest against)</td><td><button class="say" data-say="a protest, to protest">🔊</button></td></tr>
+            </table>
+            <h3>How the vowels change too</h3>
+            <p>This is what makes the shift sound so dramatic. When a syllable loses its stress, its vowel often reduces to a schwa. Take <b>record</b>:</p>
+            <ul>
+              <li>Noun <b>REcord</b>: first syllable is /rɛ/, stressed and clear. Second syllable: /kəd/ — a schwa. <button class="say" data-say="REcord — noun">🔊</button></li>
+              <li>Verb <b>reCORD</b>: first syllable reduces to /rɪ/ (near-schwa). Second syllable: /kɔːd/ — now fully open. <button class="say" data-say="reCORD — verb">🔊</button></li>
+            </ul>
+            <h3>Adjective/noun pairs — a bonus pattern</h3>
+            <p>Some words also shift between adjective and noun use:</p>
+            <ul>
+              <li><b>PERfect</b> (adjective) vs <b>perFECT</b> (verb: to perfect a skill) <button class="say" data-say="perfect condition, to perfect your accent">🔊</button></li>
+              <li><b>SUSpect</b> (noun) vs <b>susPECT</b> (verb) <button class="say" data-say="the suspect, to suspect someone">🔊</button></li>
+            </ul>
+            <div class="ex">They will present the present at the record-breaking concert — if we can record it.</div>
+            <div class="speakcheck" data-target="They will present the present to the suspect."></div>
+            <div class="speakcheck" data-target="The increase in permits means prices will increase."></div>`,
+          tips: [
+            "Two-syllable nouns: stress the FIRST syllable. Two-syllable verbs: stress the SECOND.",
+            "When stress shifts, the vowel in the newly-unstressed syllable reduces to a schwa — both stress and vowel change.",
+            "Context is your guide: 'I need a PERmit' (noun) vs 'I don't perMIT this' (verb)."
+          ],
+          practice: "Create a sentence using each word twice — once as a noun, once as a verb — and exaggerate the stress difference until you can hear it clearly: record, present, object, permit.",
+          quiz: [
+            { q: "In the phrase 'a pay increase', 'increase' is a noun. How is it stressed?", choices: ["inCREASE — second syllable", "INcrease — first syllable", "IN-CREASE — both syllables equally", "The stress depends on the sentence speed"], answer: 1 },
+            { q: "What ELSE changes when stress shifts from noun to verb form?", choices: ["The spelling changes", "The number of syllables doubles", "The unstressed vowel often reduces to a schwa /ə/", "Nothing else changes"], answer: 2 },
+            { q: "Which sentence uses 'object' correctly as a verb?", choices: ["Hand me that object.", "I obJECT to this decision.", "The OBject is on the shelf.", "Objects are everywhere."], answer: 1 }
+          ]
+        },
+        {
+          id: "p10", level: "Intermediate", minutes: 10,
+          title: "Words learners often mispronounce",
+          content: `
+            <p>Some English words are notorious traps — the spelling bears very little resemblance to the pronunciation, or the stress falls where you least expect it. This lesson gives you the British RP pronunciation of the most commonly mispronounced words, with clear guidance on exactly what to do.</p>
+            <h3>The notorious nine</h3>
+            <table>
+              <tr><th>Word</th><th>Common wrong version</th><th>British RP correct form</th><th>Listen</th></tr>
+              <tr><td>comfortable</td><td>"com-FOR-ta-ble" (4 syllables)</td><td>CUMF-ta-bul (3 syllables)</td><td><button class="say" data-say="comfortable">🔊</button></td></tr>
+              <tr><td>vegetable</td><td>"veg-e-TAY-ble"</td><td>VEJ-ta-bul (3 syllables — the middle E is swallowed)</td><td><button class="say" data-say="vegetable">🔊</button></td></tr>
+              <tr><td>Wednesday</td><td>"Wed-nes-day" (3 syllables)</td><td>WENZ-day (2 syllables — silent D)</td><td><button class="say" data-say="Wednesday">🔊</button></td></tr>
+              <tr><td>clothes</td><td>"clo-thes" (2 syllables) or with a clear TH</td><td>rhymes with "close" /kləʊðz/ — one syllable, the TH is very light</td><td><button class="say" data-say="clothes">🔊</button></td></tr>
+              <tr><td>thorough</td><td>"tho-ROUGH" (rhyming with rough)</td><td>THUH-ruh — two syllables, both with schwas, rhymes with "borough"</td><td><button class="say" data-say="thorough">🔊</button></td></tr>
+              <tr><td>recipe</td><td>"re-SEEP" or "re-SIPE"</td><td>RESS-i-pee — three syllables, stress on first <button class="say" data-say="recipe">🔊</button></td></tr>
+              <tr><td>colonel</td><td>"col-O-nel" (as spelled)</td><td>KUR-nel — two syllables, sounds exactly like "kernel"</td><td><button class="say" data-say="colonel">🔊</button></td></tr>
+              <tr><td>queue</td><td>"kew-ay" or "kweh-oo"</td><td>/kjuː/ — simply "kyoo", rhymes perfectly with "few" and "view"</td><td><button class="say" data-say="queue">🔊</button></td></tr>
+              <tr><td>often</td><td>"off-TEN" (sounding the T)</td><td>OF-fn — the T is silent in standard British RP; 2 syllables</td><td><button class="say" data-say="often">🔊</button></td></tr>
+            </table>
+            <blockquote><b>Note on 'often':</b> Pronouncing the T in 'often' is increasingly heard in British English and is not wrong — but the traditional RP and most formal British pronunciation keeps it silent. In careful speech, aim for "OF-fn".</blockquote>
+            <h3>Memory hooks for the trickiest ones</h3>
+            <ul>
+              <li><b>comfortable</b> → say "CUMFY" (comfortable) — link it to the adjective "comfy" and you have the right vowel and syllable reduction.</li>
+              <li><b>vegetable</b> → say "VEG + table" — a veg on a table. Three syllables: VEJ-ta-bul.</li>
+              <li><b>colonel</b> → this word was borrowed from Italian via French where it was pronounced with an R sound — the spelling never caught up. Just memorise: colonel = "KERNEL".</li>
+              <li><b>queue</b> → it is literally just the letter Q followed by four silent letters. Say the letter Q: that is the whole word. <button class="say" data-say="queue — just say the letter Q">🔊</button></li>
+              <li><b>thorough</b> → think of "borough" (a district of London): bor-ruh. Then swap B for TH: THUH-ruh.</li>
+            </ul>
+            <h3>Hear the difference</h3>
+            <p>Listen to these contrasting pairs — the wrong version first, then the British RP version:</p>
+            <div class="ex">comfortable: wrong = "com-FOR-ta-ble" / right = "CUMF-ta-bul"</div>
+            <button class="say" data-say="comfortable, vegetable, Wednesday, clothes, thorough, recipe, colonel, queue, often">🔊 All nine words — British RP</button>
+            <h3>Practise in context</h3>
+            <div class="ex">On Wednesday the colonel often queues for vegetables at the comfortable old market.</div>
+            <div class="speakcheck" data-target="On Wednesday the colonel often queues for vegetables."></div>
+            <div class="speakcheck" data-target="The recipe for a thorough job is comfortable clothes and often a queue."></div>`,
+          tips: [
+            "comfortable = CUMF-ta-bul (3 syllables); vegetable = VEJ-ta-bul (3 syllables) — both reduce the middle vowel.",
+            "colonel = KERNEL, queue = just the letter Q, Wednesday = WENZ-day. These must be memorised.",
+            "often: the T is silent in traditional British RP — say OF-fn, not off-TEN."
+          ],
+          practice: "Record yourself saying all nine words slowly, then play it back. Compare to the lesson audio. Focus on syllable count: comfortable (3), vegetable (3), Wednesday (2), recipe (3), colonel (2), often (2).",
+          quiz: [
+            { q: "How many syllables does 'vegetable' have in British RP?", choices: ["Four: veg-e-ta-ble", "Three: vej-ta-bul", "Two: veg-ble", "Five"], answer: 1 },
+            { q: "The word 'colonel' is pronounced…", choices: ["col-O-nel (as spelled)", "col-nel", "KUR-nel (like 'kernel')", "kol-o-NEL"], answer: 2 },
+            { q: "In standard British RP, the T in 'often' is…", choices: ["Always clearly pronounced", "Silent — the word sounds like OF-fn", "Replaced by a D sound", "Pronounced only in formal speech"], answer: 1 }
           ]
         }
       ]
@@ -668,6 +2280,279 @@ const SPEAK_CURRICULUM = {
             { q: "A British person saying 'not bad at all' usually means…", choices: ["It was terrible", "It was actually very good", "They didn't notice", "They're angry"], answer: 1 },
             { q: "The polite British way to refuse is often to start with…", choices: ["No.", "I'm afraid…", "You can't.", "Never."], answer: 1 }
           ]
+        },
+        {
+          id: "t6", level: "Intermediate", minutes: 10,
+          title: "Rising vs falling intonation — the signals that shape meaning",
+          content: `
+            <p>Every sentence you say ends with your voice going <b>up</b> or <b>down</b> — and that movement is not decoration. It is a <b>signal</b>. Get it wrong and listeners misread your meaning, your attitude, even your grammar.</p>
+            <h3>Falling tone ↘ — finished, certain, direct</h3>
+            <p>Use a <b>falling tone</b> when you are making a clear statement or asking a wh-question (who, what, where, when, why, how). Your voice starts mid-high and drops at the last stressed word.</p>
+            <table>
+              <tr><th>Sentence</th><th>Tone</th><th>Signal</th></tr>
+              <tr><td>I work in Manchester. <button class="say" data-say="I work in Manchester.">🔊 Listen</button></td><td>↘ Fall</td><td>Fact, finished</td></tr>
+              <tr><td>Where are you going? <button class="say" data-say="Where are you going?">🔊 Listen</button></td><td>↘ Fall</td><td>Wh-question, expects info</td></tr>
+              <tr><td>That was brilliant. <button class="say" data-say="That was brilliant.">🔊 Listen</button></td><td>↘ Fall</td><td>Genuine, complete opinion</td></tr>
+            </table>
+            <h3>Rising tone ↗ — open, asking, friendly</h3>
+            <p>Use a <b>rising tone</b> on yes/no questions and when you want to sound warm, encouraging or check that a listener is following. It signals: <em>I expect a response</em> or <em>I am not finished</em>.</p>
+            <table>
+              <tr><th>Sentence</th><th>Tone</th><th>Signal</th></tr>
+              <tr><td>Are you coming? <button class="say" data-say="Are you coming?">🔊 Listen</button></td><td>↗ Rise</td><td>Yes/no question</td></tr>
+              <tr><td>You do understand, don't you? <button class="say" data-say="You do understand, don't you?">🔊 Listen</button></td><td>↗ Rise</td><td>Checking, seeking agreement</td></tr>
+              <tr><td>Right? <button class="say" data-say="Right?">🔊 Listen</button></td><td>↗ Rise</td><td>Friendly, inviting a reply</td></tr>
+            </table>
+            <h3>Fall-rise ↘↗ — lists, choices, and 'polite but…'</h3>
+            <p>The <b>fall-rise</b> is the most characteristically British tone. The voice dips, then lifts slightly. It carries the flavour of <em>yes, but…</em> — politeness layered over a reservation. It also appears inside lists on every item except the last, which falls.</p>
+            <div class="ex">
+              "I'd like <b>tea</b> ↘↗, <b>biscuits</b> ↘↗, and some <b>cake</b>. ↘" <button class="say" data-say="I'd like tea, biscuits, and some cake.">🔊 Listen</button>
+            </div>
+            <div class="ex">
+              "It's <b>fine</b>…" ↘↗ (= fine, but I have doubts) vs "It's <b>fine</b>." ↘ (= genuinely fine) <button class="say" data-say="It's fine. It's fine...">🔊 Listen</button>
+            </div>
+            <h3>Same words, opposite meaning</h3>
+            <p>Listen to how the very same word changes meaning entirely through tone. This is the power of intonation.</p>
+            <table>
+              <tr><th>Word / phrase</th><th>Tone</th><th>Meaning</th></tr>
+              <tr><td><button class="say" data-say="Really.">🔊 Really.</button></td><td>↘ Fall</td><td>I believe you / I see.</td></tr>
+              <tr><td><button class="say" data-say="Really?">🔊 Really?</button></td><td>↗ Rise</td><td>I'm surprised!</td></tr>
+              <tr><td><button class="say" data-say="Oh, really...">🔊 Oh, really…</button></td><td>↘↗ Fall-rise</td><td>Hmm, I'm not convinced.</td></tr>
+              <tr><td><button class="say" data-say="That's interesting.">🔊 That's interesting.</button></td><td>↘ Fall</td><td>Genuine interest.</td></tr>
+              <tr><td><button class="say" data-say="That's interesting...">🔊 That's interesting…</button></td><td>↘↗ Fall-rise</td><td>Polite but sceptical.</td></tr>
+            </table>
+            <blockquote>Rule: A falling tone closes; a rising tone opens. A fall-rise hedges. Train your ear on these three movements and your intonation will sound natural.</blockquote>
+            <div class="speakcheck" data-target="Where did you put my keys?"></div>
+            <div class="speakcheck" data-target="Have you finished the report yet?"></div>`,
+          tips: [
+            "Statements and wh-questions fall ↘ — let your voice drop at the end.",
+            "Yes/no questions rise ↗ — your voice should lift on the last stressed syllable.",
+            "The fall-rise ↘↗ is the British signal for 'polite but not entirely convinced'."
+          ],
+          practice: "Say the word 'right' three ways: as a firm statement (↘), as a genuine question (↗), and as a polite but doubtful reply (↘↗). Then try the same with the phrase 'that works for me'. Record yourself and compare. <button class='say' data-say=\"Right. Right? Right...\">🔊 Hear the three tones</button>",
+          quiz: [
+            { q: "Which tone do you use at the end of a wh-question?", choices: ["Rising ↗", "Falling ↘", "Fall-rise ↘↗", "Flat and even"], answer: 1 },
+            { q: "A yes/no question such as 'Are you free on Friday?' usually ends with…", choices: ["A falling tone", "A rising tone", "A fall-rise tone", "No intonation at all"], answer: 1 },
+            { q: "The fall-rise tone on 'It's fine…' most likely signals…", choices: ["Complete certainty", "A polite reservation or doubt", "Excitement", "A wh-question"], answer: 1 }
+          ]
+        },
+        {
+          id: "t7", level: "Intermediate", minutes: 11,
+          title: "Sentence rhythm and weak forms — the heartbeat of English",
+          content: `
+            <p>English is a <b>stress-timed</b> language. That means the <b>beats</b> — the stressed syllables — land at roughly equal intervals regardless of how many unstressed syllables fall between them. To make room for those beats, small grammar words shrink into <b>weak forms</b>. Mastering this rhythm is the single biggest leap towards sounding natural.</p>
+            <h3>Stress-timed rhythm — feel the beat</h3>
+            <p>Say these two sentences. Even though one is much longer, both take roughly the same time to say — because the number of <em>stressed beats</em> is the same.</p>
+            <div class="ex">
+              "<b>DOGS</b> <b>BARK</b>." (2 beats) <button class="say" data-say="Dogs bark.">🔊 Listen</button>
+            </div>
+            <div class="ex">
+              "The <b>DOGS</b> at the <b>END</b> of the <b>STREET</b> were <b>BARK</b>ing." (4 beats, more syllables but not proportionally slower) <button class="say" data-say="The dogs at the end of the street were barking.">🔊 Listen</button>
+            </div>
+            <p>Tap the table on each stressed word as you listen. Notice the even drumbeat underneath the melody.</p>
+            <h3>Content words vs function words</h3>
+            <p><b>Content words</b> (nouns, main verbs, adjectives, adverbs) carry the meaning — they get the beat. <b>Function words</b> (prepositions, articles, conjunctions, auxiliary verbs, pronouns) do the grammar — they shrink.</p>
+            <table>
+              <tr><th>Type</th><th>Examples</th><th>Stressed or weak?</th></tr>
+              <tr><td>Content</td><td>coffee, running, beautiful, always</td><td>Stressed — say them clearly</td></tr>
+              <tr><td>Function</td><td>to, of, and, the, a, can, was, were, for, from, at, be</td><td>Weak — reduce to a quick schwa</td></tr>
+            </table>
+            <h3>The most common weak forms — learn these first</h3>
+            <table>
+              <tr><th>Full form</th><th>Weak form</th><th>Example in speech</th></tr>
+              <tr><td>to</td><td>/tə/</td><td>"I want <em>tə</em> go." <button class="say" data-say="I want to go.">🔊 Listen</button></td></tr>
+              <tr><td>of</td><td>/əv/ or /ə/</td><td>"a cup <em>ə</em> tea" <button class="say" data-say="a cup of tea">🔊 Listen</button></td></tr>
+              <tr><td>and</td><td>/ən/ or /n/</td><td>"fish <em>ən</em> chips" <button class="say" data-say="fish and chips">🔊 Listen</button></td></tr>
+              <tr><td>the</td><td>/ðə/</td><td>"<em>ðə</em> shops" <button class="say" data-say="the shops">🔊 Listen</button></td></tr>
+              <tr><td>can</td><td>/kən/</td><td>"I <em>kən</em> do it." <button class="say" data-say="I can do it.">🔊 Listen</button></td></tr>
+              <tr><td>was</td><td>/wəz/</td><td>"She <em>wəz</em> there." <button class="say" data-say="She was there.">🔊 Listen</button></td></tr>
+              <tr><td>for</td><td>/fə/</td><td>"<em>fə</em> me" <button class="say" data-say="for me">🔊 Listen</button></td></tr>
+              <tr><td>him</td><td>/ɪm/</td><td>"I told <em>'im</em>." <button class="say" data-say="I told him.">🔊 Listen</button></td></tr>
+            </table>
+            <h3>When do we use the strong form?</h3>
+            <p>Function words get their full, stressed form only when they are:</p>
+            <ul>
+              <li><b>At the end</b> of a sentence: "Who is it <em>for</em>?" (stressed) <button class="say" data-say="Who is it for?">🔊 Listen</button></li>
+              <li><b>Contrastive</b>: "I said 'of', not 'off'." (stressed for contrast) <button class="say" data-say="I said of, not off.">🔊 Listen</button></li>
+              <li><b>For emphasis</b>: "You <em>can</em> do this!" <button class="say" data-say="You can do this!">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Rule: Give strong beats to meaning; give weak, brief sounds to grammar. The listener only needs the content words to understand you — everything else is rhythmic glue.</blockquote>
+            <div class="speakcheck" data-target="I can have a cup of tea and a piece of cake."></div>
+            <div class="speakcheck" data-target="She was waiting for him at the end of the road."></div>`,
+          tips: [
+            "Tap the table on stressed syllables as you practise — feel the even beat.",
+            "Reduce 'to', 'of', 'and', 'for', 'the', 'can', 'was' to a quick, quiet schwa /ə/.",
+            "If a function word falls at the end of a sentence or is emphasised, use the full strong form."
+          ],
+          practice: "Read this sentence aloud, tapping on every stressed beat: 'She can give the package to her friend at the office.' Squeeze 'can', 'the', 'to', 'her', 'at', 'the' to a quick murmur. <button class='say' data-say=\"She can give the package to her friend at the office.\">🔊 Hear the rhythm</button> Then record yourself and check whether your beat feels even.",
+          quiz: [
+            { q: "English is described as 'stress-timed'. This means…", choices: ["Every syllable takes equal time", "Stressed beats land at roughly equal intervals", "Only long words are stressed", "Grammar words are stressed more"], answer: 1 },
+            { q: "Which of these is a function word that typically takes a weak form?", choices: ["Beautiful", "Running", "Of", "Carefully"], answer: 2 },
+            { q: "When does a function word like 'for' use its strong (full) form?", choices: ["Always", "Never — it is always weak", "When it appears at the end of a sentence or is used for emphasis", "Only in writing"], answer: 2 }
+          ]
+        },
+        {
+          id: "t8", level: "Intermediate", minutes: 10,
+          title: "Contractions and casual reductions — sounding naturally fluent",
+          content: `
+            <p>One of the clearest signs of fluency is using <b>contractions</b> and <b>casual reductions</b> confidently. Saying every word in its full form — I am, I will, do not, going to — sounds stiff and unnatural in ordinary speech. But there is a time for full forms too, so let's get the balance right.</p>
+            <h3>Core contractions — always use these in everyday speech</h3>
+            <p>These are completely standard in spoken and informal written English:</p>
+            <table>
+              <tr><th>Full form</th><th>Contraction</th><th>Example</th></tr>
+              <tr><td>I am</td><td>I'm</td><td>"I'm really tired." <button class="say" data-say="I'm really tired.">🔊 Listen</button></td></tr>
+              <tr><td>you are / they are</td><td>you're / they're</td><td>"You're right, they're coming." <button class="say" data-say="You're right, they're coming.">🔊 Listen</button></td></tr>
+              <tr><td>we will / I will</td><td>we'll / I'll</td><td>"I'll call you later." <button class="say" data-say="I'll call you later.">🔊 Listen</button></td></tr>
+              <tr><td>do not / does not</td><td>don't / doesn't</td><td>"She doesn't know." <button class="say" data-say="She doesn't know.">🔊 Listen</button></td></tr>
+              <tr><td>could not / would not</td><td>couldn't / wouldn't</td><td>"I wouldn't do that." <button class="say" data-say="I wouldn't do that.">🔊 Listen</button></td></tr>
+              <tr><td>I have / they have</td><td>I've / they've</td><td>"I've finished." <button class="say" data-say="I've finished.">🔊 Listen</button></td></tr>
+              <tr><td>it is / there is</td><td>it's / there's</td><td>"There's a problem." <button class="say" data-say="There's a problem.">🔊 Listen</button></td></tr>
+            </table>
+            <h3>Casual reductions — relaxed informal speech</h3>
+            <p>In casual conversation, British and American speakers go further, blending words into smooth, reduced forms. These are <b>not slang</b> — they are phonological features of fast, natural speech.</p>
+            <table>
+              <tr><th>Full form</th><th>Reduction</th><th>Example</th></tr>
+              <tr><td>going to</td><td>gonna</td><td>"I'm gonna head off now." <button class="say" data-say="I'm gonna head off now.">🔊 Listen</button></td></tr>
+              <tr><td>want to</td><td>wanna</td><td>"Do you wanna grab a coffee?" <button class="say" data-say="Do you wanna grab a coffee?">🔊 Listen</button></td></tr>
+              <tr><td>got to / have got to</td><td>gotta</td><td>"I've gotta run — see you!" <button class="say" data-say="I've gotta run — see you!">🔊 Listen</button></td></tr>
+              <tr><td>kind of</td><td>kinda</td><td>"It's kinda hard to explain." <button class="say" data-say="It's kinda hard to explain.">🔊 Listen</button></td></tr>
+              <tr><td>out of</td><td>outta</td><td>"Let's get outta here." <button class="say" data-say="Let's get outta here.">🔊 Listen</button></td></tr>
+              <tr><td>don't you</td><td>doncha</td><td>"Doncha think so?" <button class="say" data-say="Don't you think so?">🔊 Listen</button></td></tr>
+            </table>
+            <h3>When to use full forms — know the register</h3>
+            <p>Full forms belong in formal, high-stakes situations. Use them when the context demands clarity, weight or professionalism:</p>
+            <ul>
+              <li><b>Formal meetings or presentations:</b> "We are going to review the figures." (not "We're gonna…")</li>
+              <li><b>Written communication</b> — emails, reports, essays: avoid casual reductions entirely.</li>
+              <li><b>Emphasis or contrast:</b> "I <em>will not</em> accept that." (full form stresses the refusal)</li>
+              <li><b>Exams</b> (IELTS, TOEFL speaking): contractions are fine; reductions like 'gonna' in formal-task responses can lose marks.</li>
+            </ul>
+            <blockquote>Rule: Use contractions freely in conversation. Use casual reductions (gonna, wanna, gotta) with friends and in informal settings. Switch back to full forms in formal contexts, writing, and whenever you want to add weight to a word.</blockquote>
+            <div class="ex">"I'm gonna wanna talk to you about it later, but right now I've gotta finish this." <button class="say" data-say="I'm gonna wanna talk to you about it later, but right now I've gotta finish this.">🔊 Listen — relaxed speech</button></div>
+            <div class="ex">"I am going to need to talk to you about this. I will not accept a late submission." <button class="say" data-say="I am going to need to talk to you about this. I will not accept a late submission.">🔊 Listen — formal speech</button></div>
+            <div class="speakcheck" data-target="I'm gonna grab a coffee — do you wanna come?"></div>
+            <div class="speakcheck" data-target="I wouldn't worry about it — you've done really well."></div>`,
+          tips: [
+            "Contractions (I'm, don't, we'll) are standard and expected in all normal spoken English.",
+            "Casual reductions (gonna, wanna, gotta) sound natural with friends but drop them in formal contexts.",
+            "Use the full form deliberately when you want to add stress or gravity: 'I will not.'"
+          ],
+          practice: "Say these two versions aloud and feel the difference: 'I'm gonna tell him he's gotta do it.' vs 'I am going to tell him he has to do it.' Then write a casual text message in your head and say it out loud using natural contractions. <button class='say' data-say=\"I'm gonna tell him he's gotta do it.\">🔊 Casual</button> <button class='say' data-say=\"I am going to tell him he has to do it.\">🔊 Formal</button>",
+          quiz: [
+            { q: "Which sentence uses the most appropriate register for a job interview?", choices: ["I'm gonna give it my best shot.", "I am going to give this my full effort.", "I wanna do really well.", "Gotta say, I'm pretty keen."], answer: 1 },
+            { q: "'Gonna' is best described as…", choices: ["Incorrect English that should be avoided", "A casual phonological reduction of 'going to'", "A formal alternative to 'will'", "Only used in American English"], answer: 1 },
+            { q: "When is using the full form 'I will not' more effective than 'I won't'?", choices: ["In a casual text message", "When you want to add emphasis or express strong refusal", "In fast, relaxed conversation", "It is never more effective"], answer: 1 }
+          ]
+        },
+        {
+          id: "t9", level: "Advanced", minutes: 11,
+          title: "Expressing emotion with your voice — pitch, range and stress",
+          content: `
+            <p>Fluent speakers don't just <b>say</b> words — they <b>perform</b> them. The same sentence can express warmth, shock, sympathy or disappointment purely through how the voice moves. This is where English truly comes alive, and it is what separates a competent speaker from a <em>compelling</em> one.</p>
+            <h3>The building blocks of vocal emotion</h3>
+            <ul>
+              <li><b>Pitch range:</b> A wide pitch range (voice going very high or very low) signals energy, surprise, enthusiasm. A narrow range can signal boredom, seriousness or calm.</li>
+              <li><b>Key word stress:</b> Placing extra stress on different words shifts the emotional colour entirely.</li>
+              <li><b>Speed:</b> Faster = excitement or urgency. Slower, deliberate = sympathy, gravity, sincerity.</li>
+              <li><b>Volume:</b> Quieter can be more powerful than louder for serious moments; louder carries energy and enthusiasm.</li>
+            </ul>
+            <h3>Surprise — wide pitch jump, rise at end</h3>
+            <p>For genuine surprise, let your pitch leap upward on the stressed word. The jump itself is the surprise signal.</p>
+            <div class="ex">"You <b>WHAT</b>?!" <button class="say" data-say="You what?!">🔊 Listen — surprised</button></div>
+            <div class="ex">"That's <b>INCREDIBLE</b>!" <button class="say" data-say="That's incredible!">🔊 Listen — delighted surprise</button></div>
+            <h3>Sympathy — lower pitch, slower pace, softer volume</h3>
+            <p>Sympathy calls for warmth without energy. Lower your pitch, slow down, and let the stressed word be gentle, not punched.</p>
+            <div class="ex">"Oh, I'm <b>so</b> sorry to hear that." <button class="say" data-say="Oh, I'm so sorry to hear that.">🔊 Listen — sympathetic</button></div>
+            <div class="ex">"That must have been <b>really</b> difficult for you." <button class="say" data-say="That must have been really difficult for you.">🔊 Listen — warm and genuine</button></div>
+            <h3>Enthusiasm — high pitch, wide range, faster</h3>
+            <p>Enthusiasm uses the highest part of your range. Key adjectives and verbs get an extra boost.</p>
+            <div class="ex">"I <b>love</b> it — it's <b>absolutely</b> brilliant!" <button class="say" data-say="I love it — it's absolutely brilliant!">🔊 Listen — enthusiastic</button></div>
+            <div class="ex">"What a <b>fantastic</b> idea!" <button class="say" data-say="What a fantastic idea!">🔊 Listen — enthusiastic</button></div>
+            <h3>Disappointment — falling tone, slowed, flatter range</h3>
+            <p>Disappointment sits low. The voice often falls on the stressed word and then trails away. A slight lengthening of the stressed vowel adds weight.</p>
+            <div class="ex">"Oh… that's <b>such</b> a shame." <button class="say" data-say="Oh, that's such a shame.">🔊 Listen — disappointed</button></div>
+            <div class="ex">"I was really <b>hoping</b> it would work out." <button class="say" data-say="I was really hoping it would work out.">🔊 Listen — disappointed</button></div>
+            <h3>Same sentence, five feelings</h3>
+            <p>Listen to "That's interesting" said five different ways and notice only the voice changes, not the words:</p>
+            <table>
+              <tr><th>Feeling</th><th>Voice shape</th><th>Listen</th></tr>
+              <tr><td>Genuine interest</td><td>Mid pitch, steady fall</td><td><button class="say" data-say="That's interesting.">🔊 Listen</button></td></tr>
+              <tr><td>Excited surprise</td><td>High pitch leap, wide range</td><td><button class="say" data-say="That's INTERESTING!">🔊 Listen</button></td></tr>
+              <tr><td>Polite scepticism</td><td>Fall-rise, narrow range</td><td><button class="say" data-say="That's... interesting.">🔊 Listen</button></td></tr>
+              <tr><td>Sympathy</td><td>Low, slow, gentle fall</td><td><button class="say" data-say="That's really interesting, thank you for sharing.">🔊 Listen</button></td></tr>
+              <tr><td>Boredom / sarcasm</td><td>Flat, monotone</td><td><button class="say" data-say="That is... very interesting indeed.">🔊 Listen</button></td></tr>
+            </table>
+            <blockquote>Rule: The words tell people what you mean; the voice tells them how you feel about it. If your voice is flat, even wonderful words will fall flat. Let the pitch move — it is not overdramatic, it is communicative.</blockquote>
+            <div class="speakcheck" data-target="Oh, I'm so sorry to hear that — that must have been awful."></div>
+            <div class="speakcheck" data-target="That's absolutely brilliant — well done!"></div>`,
+          tips: [
+            "For surprise or enthusiasm, let your pitch jump high on the key word — don't hold back.",
+            "For sympathy, slow down and lower your pitch; rushing sounds insincere.",
+            "A flat, narrow pitch range signals boredom — even if your words are warm, the voice must move."
+          ],
+          practice: "Say 'Oh, really?' five times: once genuinely curious (↗ rise), once very surprised (big pitch leap), once sympathetically (low, slow), once enthusiastically (high, bright) and once sceptically (fall-rise ↘↗). Record each one and notice how different they sound. <button class='say' data-say=\"Oh, really?\">🔊 Hear a neutral version first</button>",
+          quiz: [
+            { q: "To express genuine sympathy, you should use…", choices: ["A high pitch and fast speed", "A lower pitch, slower pace and softer volume", "A loud, punchy tone", "A flat, even monotone"], answer: 1 },
+            { q: "Which vocal feature most strongly signals surprise?", choices: ["A slow, low, flat delivery", "A sudden upward pitch jump on the stressed word", "Speaking more quietly", "Using formal full forms"], answer: 1 },
+            { q: "If someone says 'That's interesting' in a flat, narrow pitch range, the listener will most likely interpret it as…", choices: ["Great enthusiasm", "Warm sympathy", "Boredom or sarcasm", "Polite agreement"], answer: 2 }
+          ]
+        },
+        {
+          id: "t10", level: "Intermediate", minutes: 10,
+          title: "Pausing, pacing and not rushing — the confidence of space",
+          content: `
+            <p>Most learners rush. The faster they speak, the more fluent they feel — but listeners often experience the opposite. Controlled <b>pausing</b> and deliberate <b>pacing</b> are signs of confidence, not hesitation. They give your listener time to absorb ideas, and they give <em>you</em> time to think.</p>
+            <h3>Why pauses are powerful</h3>
+            <ul>
+              <li><b>Clarity:</b> A pause separates one idea from the next so listeners can process each thought.</li>
+              <li><b>Emphasis:</b> A pause before or after a key point frames it and makes it memorable.</li>
+              <li><b>Authority:</b> Speakers who pause calmly sound confident. Speakers who never pause sound anxious.</li>
+              <li><b>Breathing:</b> Regular pauses let you breathe properly, which steadies your voice.</li>
+            </ul>
+            <h3>Thought groups — chunking speech naturally</h3>
+            <p>Fluent speakers do not pause randomly. They divide speech into <b>thought groups</b> — small clusters of words that belong together — and breathe between them. Punctuation is a rough guide, but thought groups exist in speech even without a comma on the page.</p>
+            <div class="ex">
+              "If you want to improve your English / you need to listen carefully / and practise every day." <button class="say" data-say="If you want to improve your English, you need to listen carefully, and practise every day.">🔊 Listen — notice the natural breaks</button>
+            </div>
+            <div class="ex">
+              "The report / which I sent yesterday / covers all the main points." <button class="say" data-say="The report, which I sent yesterday, covers all the main points.">🔊 Listen — short clause set off by pauses</button>
+            </div>
+            <h3>Pausing for impact — the dramatic pause</h3>
+            <p>In presentations, interviews and storytelling, a deliberate pause <em>before</em> a key word makes it land harder. The listener leans in.</p>
+            <div class="ex">
+              "And the answer is… [pause] …absolutely nothing." <button class="say" data-say="And the answer is... absolutely nothing.">🔊 Listen — feel the pause</button>
+            </div>
+            <div class="ex">
+              "There is one thing that makes the difference… [pause] …consistency." <button class="say" data-say="There is one thing that makes the difference... consistency.">🔊 Listen</button>
+            </div>
+            <h3>Slowing down at key moments</h3>
+            <p>It is not about speaking slowly all the time — it is about knowing <em>when</em> to slow down. Slow down to:</p>
+            <ul>
+              <li>Introduce a new, important idea: <button class="say" data-say="The key point is this.">🔊 "The key point is this."</button></li>
+              <li>Signal a conclusion: <button class="say" data-say="So, to summarise...">🔊 "So, to summarise…"</button></li>
+              <li>Help a listener understand something complex: <button class="say" data-say="Let me say that again more clearly.">🔊 "Let me say that again more clearly."</button></li>
+            </ul>
+            <h3>Breathing — the foundation of pace</h3>
+            <p>Running out of breath mid-sentence forces you to rush to the end. Breathe at natural pause points — clause boundaries, between thought groups. A breath is not a weakness; it is a full stop.</p>
+            <table>
+              <tr><th>Habit to break</th><th>Habit to build</th></tr>
+              <tr><td>Racing through sentences to 'get them out'</td><td>Pausing at clause boundaries to breathe and reset</td></tr>
+              <tr><td>Filling every silence with 'um', 'er', 'like'</td><td>Accepting a half-second of silence — it signals thought, not failure</td></tr>
+              <tr><td>Speaking faster when nervous</td><td>Consciously slowing the first sentence — it settles the pace</td></tr>
+            </table>
+            <blockquote>Rule: Silence is not empty — it is meaningful. A well-placed pause can be louder than any word. Practise stopping on purpose, breathing, and continuing. That is what confident speakers do.</blockquote>
+            <div class="speakcheck" data-target="If you want to sound more fluent, you need to pause on purpose and breathe."></div>
+            <div class="speakcheck" data-target="The most important thing — and I really mean this — is to keep practising."></div>`,
+          tips: [
+            "Pause at clause boundaries and between thought groups — not randomly, but purposefully.",
+            "A pause before a key word makes it land with more impact; the listener leans in.",
+            "If you feel the urge to rush, take a breath at the next natural pause point and reset your pace."
+          ],
+          practice: "Read this sentence aloud with clear pauses marked by /: 'Every morning / I remind myself / that one small step / is still progress.' <button class='say' data-say=\"Every morning, I remind myself, that one small step, is still progress.\">🔊 Hear the thought groups</button> Then try it without looking — from memory — pausing wherever it feels natural. Notice whether your breath supports the pauses.",
+          quiz: [
+            { q: "A 'thought group' in speech is…", choices: ["A single word spoken loudly", "A cluster of words that belong together, separated by natural pauses", "A type of grammar rule", "A formal presentation technique only"], answer: 1 },
+            { q: "What is the main reason confident speakers pause deliberately?", choices: ["Because they have forgotten what to say", "To give listeners time to absorb ideas and to add emphasis", "To speak more words per minute", "Because pausing is required by grammar"], answer: 1 },
+            { q: "When feeling nervous, the best strategy for pace is…", choices: ["Speak faster to get through it quickly", "Slow down your first sentence deliberately to set a calm pace", "Raise your volume to compensate", "Use more filler words to fill the silence"], answer: 1 }
+          ]
         }
       ]
     },
@@ -807,6 +2692,317 @@ const SPEAK_CURRICULUM = {
             { q: "'This is Alex speaking' is used to…", choices: ["Ask a question", "Say who you are when answering", "End the call", "Complain"], answer: 1 },
             { q: "To confirm a detail, you say…", choices: ["Whatever", "Let me just check I've got that right", "Goodbye", "No"], answer: 1 }
           ]
+        },
+        {
+          id: "c5", level: "Intermediate", minutes: 10,
+          title: "Small talk that actually works",
+          content: `
+            <p>Small talk is not shallow — it is the <b>doorway to real connection</b>. The secret is knowing how to open, how to keep the chat alive with follow-up questions, and how to leave gracefully without it feeling rude.</p>
+            <h3>Opening lines that go beyond the weather</h3>
+            <p>You already know weather openers. Now try these for work, the weekend and shared situations:</p>
+            <ul>
+              <li><button class="say" data-say="Have you had a busy week?">🔊 Listen</button> "Have you had a busy week?"</li>
+              <li><button class="say" data-say="Did you get up to much at the weekend?">🔊 Listen</button> "Did you get up to much at the weekend?"</li>
+              <li><button class="say" data-say="Are you heading home after this?">🔊 Listen</button> "Are you heading home after this?"</li>
+              <li><button class="say" data-say="How are you finding things here?">🔊 Listen</button> "How are you finding things here?" (great for someone new)</li>
+            </ul>
+            <p>Notice they are <b>open questions</b> — they cannot be answered with just "yes" or "no", so they naturally keep the conversation going.</p>
+            <h3>Keeping the chat going — follow-up questions</h3>
+            <p>The key move is <b>Comment + Question</b>. When someone tells you something, react genuinely and then ask a small follow-up:</p>
+            <table>
+              <tr><th>They say</th><th>Your reply (comment + follow-up)</th></tr>
+              <tr><td>"I went to the Lake District."</td><td>"Oh, lovely! Did you get decent weather?"</td></tr>
+              <tr><td>"Work's been mad this week."</td><td>"Oh no, that sounds exhausting. Is it always like this?"</td></tr>
+              <tr><td>"I've just started a pottery class."</td><td>"Brilliant! How are you getting on with it?"</td></tr>
+            </table>
+            <p><button class="say" data-say="Oh, lovely! Did you get decent weather up there?">🔊 Listen</button></p>
+            <p><button class="say" data-say="That sounds exhausting. Is it always this hectic?">🔊 Listen</button></p>
+            <h3>Full example dialogue</h3>
+            <div class="ex">A: "Did you get up to much at the weekend?" <button class="say" data-say="Did you get up to much at the weekend?">🔊 Listen</button><br>B: "Yeah, we went to a farmers' market on Saturday, actually." <button class="say" data-say="Yeah, we went to a farmers market on Saturday, actually.">🔊 Listen</button><br>A: "Oh, lovely! Were there good stalls?" <button class="say" data-say="Oh, lovely! Were there good stalls?">🔊 Listen</button><br>B: "Brilliant ones — we came back with far too much cheese." <button class="say" data-say="Brilliant ones — we came back with far too much cheese.">🔊 Listen</button><br>A: "Ha, that's the sign of a great market! I must look it up." <button class="say" data-say="Ha, that's the sign of a great market! I must look it up.">🔊 Listen</button></div>
+            <h3>The graceful exit</h3>
+            <p>Leaving a chat can feel awkward. Use a <b>signal phrase</b> first, then a warm close:</p>
+            <ul>
+              <li><button class="say" data-say="Anyway, I'd better let you get on. Lovely chatting!">🔊 Listen</button> "Anyway, I'd better let you get on. Lovely chatting!"</li>
+              <li><button class="say" data-say="Right, I should get back to it. Have a good one!">🔊 Listen</button> "Right, I should get back to it. Have a good one!"</li>
+              <li><button class="say" data-say="It was great catching up — we must do it again soon!">🔊 Listen</button> "It was great catching up — we must do it again soon!"</li>
+            </ul>
+            <blockquote>Tip: the word "Anyway…" or "Right…" at the start of a sentence is a gentle British signal that the conversation is wrapping up. The other person will not be offended — they'll appreciate the clarity.</blockquote>
+            <div class="speakcheck" data-target="Did you get up to much at the weekend?"></div>
+            <div class="speakcheck" data-target="Anyway, I'd better let you get on. Lovely chatting!"></div>`,
+          tips: [
+            "Open questions (who, what, how, did you...) keep the chat flowing — avoid yes/no questions.",
+            "The Comment + Question formula: react to what they say, then ask one follow-up.",
+            "Signal phrases like 'Anyway...' or 'Right...' let you exit a chat without seeming rude."
+          ],
+          practice: "Start a one-minute chat with someone (or practise aloud alone): open with a weekend question, use Comment + Question twice, then exit gracefully with 'I'd better let you get on.'",
+          quiz: [
+            { q: "Which question is 'open' and best for keeping small talk alive?", choices: ["Did you have a good weekend?", "Do you work here?", "Is it raining?", "Are you cold?"], answer: 0 },
+            { q: "The 'Comment + Question' technique means…", choices: ["Asking two questions in a row", "Reacting to what they said and then asking a follow-up", "Commenting on the weather only", "Repeating what they said back to them"], answer: 1 },
+            { q: "A polite way to end a casual chat is…", choices: ["Just walking away", "Saying 'I don't want to talk any more'", "Anyway, I'd better let you get on!", "Changing the subject abruptly"], answer: 2 }
+          ]
+        },
+        {
+          id: "c6", level: "Intermediate", minutes: 11,
+          title: "On the phone",
+          content: `
+            <p>Phone calls feel more difficult than face-to-face conversations because you cannot see the other person's face. A handful of reliable phrases will make you sound calm, clear and professional every time.</p>
+            <h3>Answering and starting a call</h3>
+            <p>When you <b>answer</b>, state who you are straight away:</p>
+            <ul>
+              <li><button class="say" data-say="Hello, this is Sarah speaking.">🔊 Listen</button> "Hello, this is Sarah speaking."</li>
+              <li><button class="say" data-say="Good morning, City Dental Practice — how can I help you?">🔊 Listen</button> "Good morning, City Dental Practice — how can I help you?"</li>
+            </ul>
+            <p>When you <b>make</b> a call, open with who you are and why you are calling:</p>
+            <ul>
+              <li><button class="say" data-say="Hi, my name's James. I'm calling about my reservation on Friday.">🔊 Listen</button> "Hi, my name's James. I'm calling about my reservation on Friday."</li>
+              <li><button class="say" data-say="Hello, I'm ringing to enquire about the advertised flat.">🔊 Listen</button> "Hello, I'm ringing to enquire about the advertised flat."</li>
+            </ul>
+            <h3>Asking for someone</h3>
+            <p>If the person you need is not available, use these polite phrases:</p>
+            <ul>
+              <li><button class="say" data-say="Could I speak to the manager, please?">🔊 Listen</button> "Could I speak to the manager, please?"</li>
+              <li><button class="say" data-say="Is Emma available at the moment?">🔊 Listen</button> "Is Emma available at the moment?"</li>
+              <li><button class="say" data-say="Would it be possible to speak to someone in accounts?">🔊 Listen</button> "Would it be possible to speak to someone in accounts?"</li>
+            </ul>
+            <h3>Leaving and taking a message</h3>
+            <div class="ex">A: "I'm afraid she's not available right now — can I take a message?" <button class="say" data-say="I'm afraid she's not available right now — can I take a message?">🔊 Listen</button><br>B: "Yes, please. Could you tell her that Tom called and ask her to ring me back on 07700 900 123?" <button class="say" data-say="Yes, please. Could you tell her that Tom called and ask her to ring me back on 07700 900 123?">🔊 Listen</button><br>A: "Of course — Tom, calling to ask her to ring you on 07700 900 123. I'll let her know." <button class="say" data-say="Of course — Tom, calling to ask her to ring you on 07700 900 123. I'll let her know.">🔊 Listen</button></div>
+            <p>Always <b>repeat the message back</b> to confirm you have it right.</p>
+            <h3>Spelling names — the phonetic habit</h3>
+            <p>When your name or address might be unclear, spell it out using familiar words:</p>
+            <p><button class="say" data-say="That's P for Peter, A for Alpha, T for Tango, E for Echo, L for Lima.">🔊 Listen</button> "P for Peter, A for Alpha, T for Tango, E for Echo, L for Lima."</p>
+            <table>
+              <tr><th>Letter</th><th>Common British word</th></tr>
+              <tr><td>A</td><td>Alpha / Apple</td></tr>
+              <tr><td>B</td><td>Bravo / Baker</td></tr>
+              <tr><td>S</td><td>Sierra / Sugar</td></tr>
+              <tr><td>T</td><td>Tango / Tommy</td></tr>
+              <tr><td>Z</td><td>Zulu / Zebra</td></tr>
+            </table>
+            <h3>Ending the call politely</h3>
+            <ul>
+              <li><button class="say" data-say="Right, thanks ever so much for your help. Bye for now!">🔊 Listen</button> "Right, thanks ever so much for your help. Bye for now!"</li>
+              <li><button class="say" data-say="Brilliant, that's really helpful. I'll leave it with you. Cheers, bye!">🔊 Listen</button> "Brilliant, that's really helpful. I'll leave it with you. Cheers, bye!"</li>
+              <li><button class="say" data-say="Lovely, thank you so much. Goodbye!">🔊 Listen</button> "Lovely, thank you so much. Goodbye!"</li>
+            </ul>
+            <blockquote>Tip: "I'll leave it with you" is a lovely British phrase meaning you are trusting them to handle the matter. It signals the end of the call without sounding abrupt.</blockquote>
+            <div class="speakcheck" data-target="Could I speak to the manager, please?"></div>
+            <div class="speakcheck" data-target="Could you tell her that Tom called and ask her to ring me back?"></div>`,
+          tips: [
+            "Always state your name and reason for calling at the very start — it puts the other person at ease.",
+            "Repeat messages and numbers back to confirm them: 'Let me just check I've got that right.'",
+            "Spell names using 'P for Peter' style — it avoids costly misunderstandings."
+          ],
+          practice: "Practise a full phone call aloud: ring a hotel to change a booking, ask for the right person, leave your name spelled out, and close politely.",
+          quiz: [
+            { q: "When you answer a phone call, you should first…", choices: ["Ask who is calling before saying anything", "State who you are straight away", "Stay silent and wait", "Ask for a call-back number"], answer: 1 },
+            { q: "To spell your name clearly on the phone, you should…", choices: ["Spell very fast", "Use words like 'P for Peter'", "Just say each letter once", "Ask them to guess"], answer: 1 },
+            { q: "A polite way to close a phone call is…", choices: ["Just hanging up", "Saying 'I'm done now'", "Thanks ever so much for your help. Bye for now!", "Leaving them on hold"], answer: 2 }
+          ]
+        },
+        {
+          id: "c7", level: "Basic", minutes: 10,
+          title: "Shops, cafes and restaurants",
+          content: `
+            <p>Whether you are ordering a coffee, asking about the menu or settling the bill, a few polite, confident phrases will make every transaction smooth and enjoyable.</p>
+            <h3>Ordering drinks and food</h3>
+            <p>Use these natural structures — avoid starting with just the name of the item:</p>
+            <ul>
+              <li><button class="say" data-say="Could I get a flat white and a slice of carrot cake, please?">🔊 Listen</button> "Could I get a flat white and a slice of carrot cake, please?"</li>
+              <li><button class="say" data-say="I'll have the chicken pie, please.">🔊 Listen</button> "I'll have the chicken pie, please."</li>
+              <li><button class="say" data-say="We'd like the set menu, if that's alright.">🔊 Listen</button> "We'd like the set menu, if that's alright."</li>
+            </ul>
+            <div class="ex">Server: "Are you ready to order?" <button class="say" data-say="Are you ready to order?">🔊 Listen</button><br>You: "Yes, could I have the tomato soup to start and then the grilled salmon, please?" <button class="say" data-say="Yes, could I have the tomato soup to start and then the grilled salmon, please?">🔊 Listen</button><br>Server: "Lovely. And to drink?" <button class="say" data-say="Lovely. And to drink?">🔊 Listen</button><br>You: "Still water for the table, please." <button class="say" data-say="Still water for the table, please.">🔊 Listen</button></div>
+            <h3>Asking about the menu</h3>
+            <p>Do not be afraid to ask — staff are always happy to help:</p>
+            <ul>
+              <li><button class="say" data-say="Sorry, what does the tagine come with?">🔊 Listen</button> "Sorry, what does the tagine come with?"</li>
+              <li><button class="say" data-say="Could you tell me if this dish contains nuts?">🔊 Listen</button> "Could you tell me if this dish contains nuts?"</li>
+              <li><button class="say" data-say="Is the fish today's special?">🔊 Listen</button> "Is the fish today's special?"</li>
+              <li><button class="say" data-say="What do you recommend?">🔊 Listen</button> "What do you recommend?" — always a good question!</li>
+            </ul>
+            <h3>At the table — useful phrases</h3>
+            <table>
+              <tr><th>Situation</th><th>What to say</th></tr>
+              <tr><td>You need a moment</td><td>"Could we have a few more minutes, please?"</td></tr>
+              <tr><td>Something is missing</td><td>"Sorry, I think we're still waiting for our drinks."</td></tr>
+              <tr><td>Something is wrong</td><td>"Excuse me, I ordered the pasta — I think this might be the wrong dish."</td></tr>
+              <tr><td>Complimenting the food</td><td>"This is absolutely lovely, thank you."</td></tr>
+            </table>
+            <p><button class="say" data-say="Could we have a few more minutes, please?">🔊 Listen</button></p>
+            <p><button class="say" data-say="Excuse me, I ordered the pasta — I think this might be the wrong dish.">🔊 Listen</button></p>
+            <h3>Asking for the bill and paying</h3>
+            <ul>
+              <li><button class="say" data-say="Could we get the bill, please?">🔊 Listen</button> "Could we get the bill, please?"</li>
+              <li><button class="say" data-say="Can I pay by card?">🔊 Listen</button> "Can I pay by card?"</li>
+              <li><button class="say" data-say="Could we pay separately, please?">🔊 Listen</button> "Could we pay separately, please?"</li>
+              <li><button class="say" data-say="Please keep the change.">🔊 Listen</button> "Please keep the change."</li>
+            </ul>
+            <blockquote>Tip: In Britain, "the bill" is the correct word — Americans say "the check", but in a British restaurant always ask for "the bill". Staff will appreciate it!</blockquote>
+            <div class="speakcheck" data-target="Could I have the tomato soup to start, please?"></div>
+            <div class="speakcheck" data-target="Could we get the bill, please?"></div>`,
+          tips: [
+            "'Could I get...' and 'I'll have..., please' are the two most natural ways to order.",
+            "In British restaurants, ask for 'the bill' — not 'the check'.",
+            "Always start a question to staff with 'Excuse me' or 'Sorry' — it sounds polite, not apologetic."
+          ],
+          practice: "Practise a full restaurant visit aloud: greet the server, order a starter and main, ask about an ingredient, then ask for the bill and pay by card.",
+          quiz: [
+            { q: "The most natural British way to order food is…", choices: ["Soup!", "I want soup.", "I'll have the soup, please.", "Give me soup, please."], answer: 2 },
+            { q: "In a British restaurant, you ask for…", choices: ["The check", "The tab", "The bill", "The receipt"], answer: 2 },
+            { q: "To find out if a dish contains allergens, you say…", choices: ["What's in this?", "Could you tell me if this dish contains nuts?", "Tell me the ingredients now.", "Is this healthy?"], answer: 1 }
+          ]
+        },
+        {
+          id: "c8", level: "Intermediate", minutes: 10,
+          title: "Making plans, inviting and politely declining",
+          content: `
+            <p>Inviting someone somewhere — and handling their response gracefully — is one of the most important social skills in English. British invitations often sound like gentle suggestions rather than commands, and a thoughtful refusal is just as valued as a warm acceptance.</p>
+            <h3>Suggesting and inviting</h3>
+            <p>Use these natural, friendly structures:</p>
+            <ul>
+              <li><button class="say" data-say="Fancy grabbing a coffee sometime?">🔊 Listen</button> "Fancy grabbing a coffee sometime?" (very British — 'fancy' means 'would you like to')</li>
+              <li><button class="say" data-say="How about going for a walk on Sunday?">🔊 Listen</button> "How about going for a walk on Sunday?"</li>
+              <li><button class="say" data-say="Do you want to come to the cinema on Friday?">🔊 Listen</button> "Do you want to come to the cinema on Friday?"</li>
+              <li><button class="say" data-say="We're having a few people over on Saturday — you're very welcome to join us.">🔊 Listen</button> "We're having a few people over on Saturday — you're very welcome to join us."</li>
+            </ul>
+            <h3>Accepting warmly</h3>
+            <p>Say yes with enthusiasm — it means a lot to the person who invited you:</p>
+            <ul>
+              <li><button class="say" data-say="Oh, that sounds brilliant — I'd love to!">🔊 Listen</button> "Oh, that sounds brilliant — I'd love to!"</li>
+              <li><button class="say" data-say="Yes, definitely! What time were you thinking?">🔊 Listen</button> "Yes, definitely! What time were you thinking?"</li>
+              <li><button class="say" data-say="Count me in! That'll be great fun.">🔊 Listen</button> "Count me in! That'll be great fun."</li>
+            </ul>
+            <h3>Declining kindly</h3>
+            <p>A good refusal has three parts: <b>regret → reason → alternative or warmth</b>.</p>
+            <table>
+              <tr><th>Regret</th><th>Reason</th><th>Warmth / Alternative</th></tr>
+              <tr><td>"I'd love to, but…"</td><td>"…I've already got something on."</td><td>"Another time, hopefully?"</td></tr>
+              <tr><td>"That's really kind of you, but…"</td><td>"…I'm not going to be around that weekend."</td><td>"Have a brilliant time, though!"</td></tr>
+              <tr><td>"What a shame, I can't make it…"</td><td>"…I've got an early start the next day."</td><td>"Let's catch up soon?"</td></tr>
+            </table>
+            <p><button class="say" data-say="I'd love to, but I've already got something on. Another time, hopefully?">🔊 Listen</button></p>
+            <p><button class="say" data-say="That's really kind of you, but I'm not going to be around that weekend. Have a brilliant time, though!">🔊 Listen</button></p>
+            <h3>Arranging the details</h3>
+            <div class="ex">A: "Fancy going for a run on Saturday morning?" <button class="say" data-say="Fancy going for a run on Saturday morning?">🔊 Listen</button><br>B: "Oh yes, I'd love that! What time were you thinking?" <button class="say" data-say="Oh yes, I'd love that! What time were you thinking?">🔊 Listen</button><br>A: "How about half eight? We could meet at the park gates." <button class="say" data-say="How about half eight? We could meet at the park gates.">🔊 Listen</button><br>B: "Perfect — shall I bring water?" <button class="say" data-say="Perfect — shall I bring water?">🔊 Listen</button><br>A: "No worries, I'll sort that. See you Saturday!" <button class="say" data-say="No worries, I'll sort that. See you Saturday!">🔊 Listen</button></div>
+            <blockquote>Tip: "No worries" and "I'll sort that" are wonderfully relaxed British phrases meaning you will take care of something. They make arrangements feel easy and friendly.</blockquote>
+            <div class="speakcheck" data-target="Fancy grabbing a coffee sometime?"></div>
+            <div class="speakcheck" data-target="I'd love to, but I've already got something on. Another time, hopefully?"></div>`,
+          tips: [
+            "'Fancy + -ing' is a very British way to invite someone: 'Fancy coming along?'",
+            "A kind refusal always has regret + reason + warmth — never just 'no'.",
+            "When accepting, show enthusiasm: 'I'd love to!' sounds far warmer than just 'OK'."
+          ],
+          practice: "Practise three scenarios aloud: (1) invite a friend to lunch using 'fancy', (2) accept an invitation with enthusiasm, (3) decline a dinner invite kindly using regret + reason + warmth.",
+          quiz: [
+            { q: "'Fancy grabbing a coffee?' is best described as…", choices: ["A rude demand", "A very British informal invitation", "A question about taste", "A complaint"], answer: 1 },
+            { q: "A kind way to decline an invitation includes…", choices: ["Just 'No thanks'", "Regret, a reason, and some warmth", "Ignoring the invitation", "A long excuse"], answer: 1 },
+            { q: "Which phrase warmly accepts an invitation?", choices: ["Maybe", "If I have to", "I'd love to — that sounds brilliant!", "I'll think about it"], answer: 2 }
+          ]
+        },
+        {
+          id: "c9", level: "Intermediate", minutes: 11,
+          title: "Agreeing, disagreeing and giving opinions politely",
+          content: `
+            <p>Sharing your views clearly while keeping the conversation friendly is a true art. In Britain, direct bluntness is rare — the skill is learning to <b>cushion</b> what you say so the other person feels heard, not attacked.</p>
+            <h3>Giving your opinion</h3>
+            <p>Introduce opinions with phrases that signal "this is my view, not a fact":</p>
+            <ul>
+              <li><button class="say" data-say="Personally, I think remote working is far more productive.">🔊 Listen</button> "Personally, I think remote working is far more productive."</li>
+              <li><button class="say" data-say="If you ask me, the real issue is communication.">🔊 Listen</button> "If you ask me, the real issue is communication."</li>
+              <li><button class="say" data-say="I'd say it depends on the situation, really.">🔊 Listen</button> "I'd say it depends on the situation, really."</li>
+              <li><button class="say" data-say="In my view, they should have acted sooner.">🔊 Listen</button> "In my view, they should have acted sooner."</li>
+            </ul>
+            <h3>Agreeing — mild to strong</h3>
+            <p>Match the strength of your agreement to how you really feel:</p>
+            <table>
+              <tr><th>Mild</th><th>Moderate</th><th>Strong</th></tr>
+              <tr><td>"Yes, I think you're right."</td><td>"Absolutely, that's a good point."</td><td>"I couldn't agree more!"</td></tr>
+              <tr><td>"That makes sense."</td><td>"Exactly — that's what I was thinking."</td><td>"You've hit the nail on the head."</td></tr>
+            </table>
+            <p><button class="say" data-say="I couldn't agree more — you've hit the nail on the head.">🔊 Listen</button></p>
+            <h3>Disagreeing gently — the British way</h3>
+            <p>Never say "You're wrong." Instead, use a <b>soft opener</b> to acknowledge their view before offering yours:</p>
+            <ul>
+              <li><button class="say" data-say="I see what you mean, but I'm not sure I entirely agree.">🔊 Listen</button> "I see what you mean, but I'm not sure I entirely agree."</li>
+              <li><button class="say" data-say="That's a fair point. I'd look at it slightly differently, though.">🔊 Listen</button> "That's a fair point. I'd look at it slightly differently, though."</li>
+              <li><button class="say" data-say="I take your point, but have you considered the other side?">🔊 Listen</button> "I take your point, but have you considered the other side?"</li>
+              <li><button class="say" data-say="I'm not sure I'd go that far, personally.">🔊 Listen</button> "I'm not sure I'd go that far, personally."</li>
+            </ul>
+            <h3>Hedging — keeping things open</h3>
+            <p><b>Hedging</b> means softening a statement so it does not sound too certain. It is very common in polite British speech:</p>
+            <ul>
+              <li>"It's <b>sort of</b> like that, yes…" — reduces a strong claim</li>
+              <li>"I <b>tend to</b> think…" — sounds considered, not dogmatic</li>
+              <li>"It might <b>perhaps</b> be worth…" — makes suggestions gentle</li>
+              <li>"I'm <b>not entirely</b> sure, but…" — shows you are thinking, not just reacting</li>
+            </ul>
+            <p><button class="say" data-say="I tend to think it's a bit more complicated than that, to be honest.">🔊 Listen</button></p>
+            <h3>A full discussion exchange</h3>
+            <div class="ex">A: "I think working from home makes people less productive." <button class="say" data-say="I think working from home makes people less productive.">🔊 Listen</button><br>B: "I see what you mean — distractions can be an issue. But personally, I'd say it depends on the person." <button class="say" data-say="I see what you mean — distractions can be an issue. But personally, I'd say it depends on the person.">🔊 Listen</button><br>A: "That's a fair point, actually." <button class="say" data-say="That's a fair point, actually.">🔊 Listen</button><br>B: "Some people are far more focused at home — I couldn't agree more that it doesn't suit everyone, though." <button class="say" data-say="Some people are far more focused at home — I couldn't agree more that it doesn't suit everyone, though.">🔊 Listen</button></div>
+            <blockquote>Tip: Adding "to be honest" or "actually" to a sentence makes it sound more natural and genuine — two very British conversational habits.</blockquote>
+            <div class="speakcheck" data-target="I see what you mean, but I'd look at it slightly differently."></div>
+            <div class="speakcheck" data-target="Personally, I think it depends on the situation, really."></div>`,
+          tips: [
+            "Start opinions with 'Personally...' or 'If you ask me...' to show it is your view, not a fact.",
+            "Cushion disagreement: acknowledge first ('I see what you mean'), then offer your view.",
+            "Hedging words like 'sort of', 'tend to' and 'perhaps' make speech sound polite and thoughtful."
+          ],
+          practice: "Pick a topic (e.g. 'Social media is mostly harmful'). State your opinion, then practise disagreeing with yourself politely using at least two soft openers.",
+          quiz: [
+            { q: "Which phrase is a soft opener for disagreement?", choices: ["You're wrong!", "Nonsense!", "I see what you mean, but...", "Absolutely not!"], answer: 2 },
+            { q: "'I couldn't agree more' is an example of…", choices: ["Mild agreement", "Strong agreement", "Polite disagreement", "A question"], answer: 1 },
+            { q: "Hedging in conversation means…", choices: ["Refusing to speak", "Changing the subject", "Softening statements so they don't sound too certain", "Correcting someone's grammar"], answer: 2 }
+          ]
+        },
+        {
+          id: "c10", level: "Intermediate", minutes: 10,
+          title: "Apologising, thanking and awkward moments",
+          content: `
+            <p>British culture places enormous value on politeness, and nowhere is that clearer than in <b>apologies</b> and <b>thanks</b>. Knowing the right phrase for each situation — from a minor bump in the corridor to a genuine mistake — will make you sound fluent and considerate.</p>
+            <h3>Degrees of apology</h3>
+            <p>Not every apology is equal. Match the weight of your words to the situation:</p>
+            <table>
+              <tr><th>Situation</th><th>Phrase</th></tr>
+              <tr><td>Tiny, everyday thing</td><td>"Sorry!" / "Oops, sorry about that!"</td></tr>
+              <tr><td>Moderate inconvenience</td><td>"I'm really sorry about that — my fault entirely."</td></tr>
+              <tr><td>More serious mistake</td><td>"I do apologise — that was completely unacceptable."</td></tr>
+              <tr><td>Formal written apology</td><td>"Please accept my sincere apologies for the inconvenience."</td></tr>
+            </table>
+            <p><button class="say" data-say="I'm really sorry about that — my fault entirely.">🔊 Listen</button></p>
+            <p><button class="say" data-say="I do apologise — that was completely unacceptable.">🔊 Listen</button></p>
+            <h3>Thanking warmly</h3>
+            <p>British thanks range from casual to heartfelt:</p>
+            <ul>
+              <li><button class="say" data-say="Cheers!">🔊 Listen</button> "Cheers!" — casual, everyday (also used as a toast)</li>
+              <li><button class="say" data-say="Thanks so much — that's really kind.">🔊 Listen</button> "Thanks so much — that's really kind."</li>
+              <li><button class="say" data-say="I really appreciate it — you've been incredibly helpful.">🔊 Listen</button> "I really appreciate it — you've been incredibly helpful."</li>
+              <li><button class="say" data-say="That means a lot, honestly. Thank you.">🔊 Listen</button> "That means a lot, honestly. Thank you." — warm and sincere</li>
+            </ul>
+            <h3>Interrupting politely</h3>
+            <p>Sometimes you need to speak when someone else is talking. Do it gently:</p>
+            <ul>
+              <li><button class="say" data-say="Sorry to jump in, but I just wanted to add...">🔊 Listen</button> "Sorry to jump in, but I just wanted to add…"</li>
+              <li><button class="say" data-say="Could I just say something quickly?">🔊 Listen</button> "Could I just say something quickly?"</li>
+              <li><button class="say" data-say="Sorry to interrupt — just to clarify one point...">🔊 Listen</button> "Sorry to interrupt — just to clarify one point…"</li>
+            </ul>
+            <h3>Recovering from misunderstandings</h3>
+            <p>Misunderstandings happen. Handle them calmly:</p>
+            <div class="ex">A: "I think you said the meeting was at two?" <button class="say" data-say="I think you said the meeting was at two?">🔊 Listen</button><br>B: "Oh, no — sorry, I think there might have been a mix-up. I said three o'clock." <button class="say" data-say="Oh, no — sorry, I think there might have been a mix-up. I said three o'clock.">🔊 Listen</button><br>A: "My mistake entirely — sorry about that. I'll update my calendar." <button class="say" data-say="My mistake entirely — sorry about that. I'll update my calendar.">🔊 Listen</button><br>B: "No worries at all! Easily done." <button class="say" data-say="No worries at all! Easily done.">🔊 Listen</button></div>
+            <p><button class="say" data-say="I think there might have been a mix-up — my apologies.">🔊 Listen</button></p>
+            <blockquote>Tip: "No worries" and "Not at all" are warm British ways to accept an apology. "It's fine" can sometimes sound a little cold — try "No worries at all!" instead to keep things friendly.</blockquote>
+            <div class="speakcheck" data-target="I'm really sorry about that — my fault entirely."></div>
+            <div class="speakcheck" data-target="Sorry to jump in, but I just wanted to add something."></div>`,
+          tips: [
+            "Match the weight of your apology to the situation — 'I do apologise' is far stronger than 'sorry!'.",
+            "'Cheers!' is a casual everyday thank you — fine with friends but use 'thank you' in formal settings.",
+            "When interrupting, always lead with 'Sorry' or 'Excuse me' to soften the interruption."
+          ],
+          practice: "Practise three short scenes aloud: (1) apologise for being late to a meeting, (2) thank a colleague warmly for covering for you, (3) politely interrupt to correct a misunderstanding.",
+          quiz: [
+            { q: "Which apology suits a serious professional mistake?", choices: ["Oops!", "No worries!", "I do apologise — that was completely unacceptable.", "Whatever!"], answer: 2 },
+            { q: "'Cheers!' in British English can mean…", choices: ["Goodbye only", "A toast or a casual thank you", "A formal apology", "An invitation"], answer: 1 },
+            { q: "A polite way to interrupt someone is…", choices: ["Talking over them loudly", "Sorry to jump in, but I just wanted to add...", "Ignoring them and carrying on", "Clapping to get attention"], answer: 1 }
+          ]
         }
       ]
     },
@@ -937,6 +3133,378 @@ const SPEAK_CURRICULUM = {
             { q: "Which linker shows contrast?", choices: ["What's more", "On the other hand", "Because", "Finally"], answer: 1 },
             { q: "Linking words help your speech by…", choices: ["Making it longer", "Connecting ideas so listeners follow you", "Hiding mistakes", "Adding volume"], answer: 1 },
             { q: "Best sequence to tell a story?", choices: ["Finally, then, first", "First of all, then, after that, finally", "So, but, and", "However, because"], answer: 1 }
+          ]
+        },
+        {
+          id: "g5", level: "Basic", minutes: 10,
+          title: "Present tenses for speaking",
+          content: `
+            <p>Two present tenses do most of the work in everyday English speech: the <b>present simple</b> and the <b>present continuous</b>. Knowing when to use each one will make you sound natural immediately.</p>
+
+            <h3>Present simple — habits, facts and routines</h3>
+            <p>Use the present simple for things that are <b>generally true</b> or happen <b>regularly</b>. This is not about right now — it is about your life pattern.</p>
+            <ul>
+              <li>Habit: <button class="say" data-say="I take the bus to work every day.">🔊 Listen</button></li>
+              <li>Fact: <button class="say" data-say="Water boils at one hundred degrees.">🔊 Listen</button></li>
+              <li>Opinion/preference: <button class="say" data-say="She loves spicy food. He doesn't like crowds.">🔊 Listen</button></li>
+            </ul>
+            <p><b>Key time words:</b> always, usually, often, sometimes, rarely, never, every day, on Mondays, at weekends.</p>
+            <blockquote>Rule: present simple = what is <em>regularly</em> true, not what is happening at this moment.</blockquote>
+
+            <h3>Present continuous — now and temporary situations</h3>
+            <p>Use <b>am/is/are + -ing</b> when something is happening <b>right now</b> or is a <b>temporary situation</b> around the present time.</p>
+            <ul>
+              <li>Right now: <button class="say" data-say="I'm learning English and I'm really enjoying it.">🔊 Listen</button></li>
+              <li>Temporary: <button class="say" data-say="She's staying with her parents this month while her flat is being renovated.">🔊 Listen</button></li>
+              <li>Changing situation: <button class="say" data-say="Prices are rising quickly these days.">🔊 Listen</button></li>
+            </ul>
+            <p><b>Key time words:</b> now, at the moment, currently, today, this week, these days, still.</p>
+            <blockquote>Rule: present continuous = something <em>in progress</em> or <em>temporary</em> around now.</blockquote>
+
+            <h3>Side by side — spot the difference</h3>
+            <table>
+              <tr><th>Present simple</th><th>Present continuous</th></tr>
+              <tr><td>I <b>work</b> in an office. (always)</td><td>I <b>am working</b> from home this week. (temporary)</td></tr>
+              <tr><td>She <b>reads</b> every night. (habit)</td><td>She <b>is reading</b> right now. (at this moment)</td></tr>
+              <tr><td>He <b>lives</b> in Bristol. (fact)</td><td>He <b>is living</b> with friends for the summer. (temporary)</td></tr>
+              <tr><td>They <b>speak</b> Spanish. (ability/fact)</td><td>They <b>are speaking</b> quietly. (right now)</td></tr>
+            </table>
+
+            <h3>Common mistakes to avoid</h3>
+            <p>These are the errors British listeners notice most:</p>
+            <ul>
+              <li><span style="color:red">✗</span> "I am knowing the answer." — <b>Know</b> is a <em>stative verb</em>; it cannot be continuous. Say: <button class="say" data-say="I know the answer.">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "She is loving chocolate." — Say: <button class="say" data-say="She loves chocolate.">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "I work now." — Add the -ing: <button class="say" data-say="I'm working now.">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "He don't like it." — Say: <button class="say" data-say="He doesn't like it.">🔊 Listen</button></li>
+            </ul>
+            <p><b>Stative verbs</b> (NOT normally used in continuous): know, believe, understand, want, need, like, love, hate, own, seem, mean.</p>
+
+            <h3>Putting it together in real speech</h3>
+            <div class="ex">"I usually <b>work</b> from the office, but this week I <b>am working</b> from home because my commute <b>takes</b> too long. I <b>enjoy</b> it — I <b>am getting</b> a lot more done." <button class="say" data-say="I usually work from the office, but this week I am working from home because my commute takes too long. I enjoy it — I am getting a lot more done.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="I usually take the bus but this week I'm cycling to work."></div>
+            <div class="speakcheck" data-target="She loves cooking and she's making dinner right now."></div>`,
+          tips: [
+            "If you can replace 'now' with 'every day', use present simple. If 'every day' sounds wrong, try present continuous.",
+            "Stative verbs (know, want, love, believe) almost never use -ing — say 'I know', not 'I am knowing'.",
+            "The phrase 'these days' signals present continuous because it describes a current, changing trend."
+          ],
+          practice: "Record yourself for 45 seconds: describe your typical daily routine (present simple) AND what is different or temporary this week (present continuous). Aim for at least three sentences of each.",
+          quiz: [
+            { q: "Which sentence is correct?", choices: ["I am knowing the answer.", "I know the answer.", "I am know the answer.", "I knowing the answer."], answer: 1 },
+            { q: "Which time word signals present continuous?", choices: ["Every Monday", "Usually", "At the moment", "Always"], answer: 2 },
+            { q: "'She is staying with friends this month' means…", choices: ["She always stays there.", "It is a temporary situation.", "She stayed there last month.", "She will stay there."], answer: 1 }
+          ]
+        },
+        {
+          id: "g6", level: "Intermediate", minutes: 11,
+          title: "Talking about the past",
+          content: `
+            <p>Two past tenses cause more confusion than any others: the <b>past simple</b> and the <b>present perfect</b>. British English relies on the present perfect far more than American English, so mastering it will make you sound genuinely fluent.</p>
+
+            <h3>Past simple — finished time, finished action</h3>
+            <p>Use the past simple when the action is <b>completely finished</b> AND you are <b>thinking about a specific time in the past</b>.</p>
+            <ul>
+              <li><button class="say" data-say="I visited Edinburgh last summer.">🔊 Listen</button></li>
+              <li><button class="say" data-say="She left the office at six o'clock yesterday.">🔊 Listen</button></li>
+              <li><button class="say" data-say="We met in 2018 and got married two years later.">🔊 Listen</button></li>
+            </ul>
+            <p><b>Typical past-simple time words:</b> yesterday, last week, in 2010, two days ago, when I was young, in the morning.</p>
+            <blockquote>Rule: if you can point to a <em>specific finished moment</em>, use past simple.</blockquote>
+
+            <h3>Present perfect — the connection to now</h3>
+            <p>Use <b>have/has + past participle</b> when the past action has a <b>connection to the present</b>: a life experience, a recent result, or a period of time that is <b>not yet over</b>.</p>
+            <table>
+              <tr><th>Use</th><th>Example</th><th>Listen</th></tr>
+              <tr><td>Life experience (ever/never)</td><td>Have you ever been to Wales?</td><td><button class="say" data-say="Have you ever been to Wales?">🔊</button></td></tr>
+              <tr><td>Recent result (just/already/yet)</td><td>I've just finished the report.</td><td><button class="say" data-say="I've just finished the report.">🔊</button></td></tr>
+              <tr><td>Unfinished time (today/this week)</td><td>I haven't seen her today.</td><td><button class="say" data-say="I haven't seen her today.">🔊</button></td></tr>
+              <tr><td>Change up to now</td><td>Prices have risen a lot recently.</td><td><button class="say" data-say="Prices have risen a lot recently.">🔊</button></td></tr>
+            </table>
+            <blockquote>Rule: if the <em>time period is still open</em> or the <em>result matters now</em>, use present perfect.</blockquote>
+
+            <h3>For and since</h3>
+            <p>Both are used with the present perfect (and past perfect) to talk about duration.</p>
+            <ul>
+              <li><b>For</b> + a length of time: <button class="say" data-say="I've lived here for three years.">🔊 Listen</button> ("for three years", "for a long time")</li>
+              <li><b>Since</b> + a starting point: <button class="say" data-say="I've lived here since 2021.">🔊 Listen</button> ("since 2021", "since Monday", "since I was a child")</li>
+            </ul>
+
+            <h3>Classic learner errors</h3>
+            <p>These mistakes will make a British listener wince — practise the corrections:</p>
+            <ul>
+              <li><span style="color:red">✗</span> "I have been to Paris last year." — 'last year' is finished time, so: <button class="say" data-say="I went to Paris last year.">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "Did you ever try sushi?" — This is an open experience, so: <button class="say" data-say="Have you ever tried sushi?">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "I know him since five years." — Correct: <button class="say" data-say="I've known him for five years.">🔊 Listen</button></li>
+            </ul>
+
+            <h3>Hearing the difference in conversation</h3>
+            <div class="ex">"A: <b>Have you ever been</b> to Cornwall? B: Yes, I <b>went</b> there last Easter. It was beautiful. I <b>have always wanted</b> to go back." <button class="say" data-say="Have you ever been to Cornwall? Yes, I went there last Easter. It was beautiful. I have always wanted to go back.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="I've known her for ten years. We met at university."></div>
+            <div class="speakcheck" data-target="Have you ever tried Indian food? I went to a great restaurant last week."></div>`,
+          tips: [
+            "If you hear 'last', 'ago', 'yesterday', or a year like '2019', your brain should fire: past simple.",
+            "If you hear 'ever', 'never', 'just', 'already', 'yet', 'recently', or 'today', use present perfect.",
+            "British speakers almost always say 'I've just eaten' rather than 'I just ate' — that extra 've sounds natural here."
+          ],
+          practice: "Tell a partner (or record yourself) about a place you have visited. Use present perfect to introduce it ('I've been to…') then switch to past simple for the story ('We arrived… It was… I saw…'). Aim for at least five sentences.",
+          quiz: [
+            { q: "Which sentence is correct British English?", choices: ["I have seen her yesterday.", "I saw her yesterday.", "I have saw her yesterday.", "I did see her yesterday."], answer: 1 },
+            { q: "'I've lived here since 2020.' — 'Since' is followed by…", choices: ["A length of time", "A starting point", "A future plan", "A habit"], answer: 1 },
+            { q: "Which key word signals present perfect?", choices: ["Yesterday", "Last year", "In 2010", "Already"], answer: 3 }
+          ]
+        },
+        {
+          id: "g7", level: "Intermediate", minutes: 11,
+          title: "Talking about the future",
+          content: `
+            <p>English has several ways to talk about the future, and choosing the right one shows a speaker's real fluency. The three main forms you will actually use in conversation are <b>will</b>, <b>going to</b>, and the <b>present continuous</b>.</p>
+
+            <h3>Will — instant decisions and predictions</h3>
+            <p>Use <b>will + infinitive</b> for:</p>
+            <ul>
+              <li>A decision made <b>at the moment of speaking</b>: <button class="say" data-say="The phone's ringing — I'll get it.">🔊 Listen</button></li>
+              <li>An offer or promise made now: <button class="say" data-say="Don't worry, I'll help you with that.">🔊 Listen</button></li>
+              <li>A prediction with no current evidence: <button class="say" data-say="I think it'll rain tomorrow. Technology will change everything.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Rule: if the decision or prediction is <em>formed at this very moment</em>, use 'will'.</blockquote>
+
+            <h3>Going to — plans and evidence-based predictions</h3>
+            <p>Use <b>am/is/are going to + infinitive</b> for:</p>
+            <ul>
+              <li>A plan or intention already formed: <button class="say" data-say="I'm going to start a new course next month. I've already enrolled.">🔊 Listen</button></li>
+              <li>A prediction based on <b>evidence you can see right now</b>: <button class="say" data-say="Look at those clouds — it's going to pour.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Rule: if you made the plan <em>before this conversation</em>, or if you can <em>see the evidence</em> right now, use 'going to'.</blockquote>
+
+            <h3>Present continuous — fixed arrangements</h3>
+            <p>Use the present continuous for future events that are <b>arranged with another person</b> — the diary is already booked.</p>
+            <ul>
+              <li><button class="say" data-say="I'm meeting Sarah for lunch on Friday. We booked the restaurant yesterday.">🔊 Listen</button></li>
+              <li><button class="say" data-say="They're flying to Rome on Saturday — the tickets are all sorted.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Rule: if the arrangement is already <em>in the diary</em> and involves at least one other person, present continuous often sounds the most natural.</blockquote>
+
+            <h3>Choosing the right form — quick guide</h3>
+            <table>
+              <tr><th>Situation</th><th>Form</th><th>Example</th></tr>
+              <tr><td>Instant decision / offer</td><td>will</td><td>I'll carry that for you.</td></tr>
+              <tr><td>Promise</td><td>will</td><td>I'll call you tonight.</td></tr>
+              <tr><td>Existing plan / intention</td><td>going to</td><td>I'm going to apply for a promotion.</td></tr>
+              <tr><td>Evidence-based prediction</td><td>going to</td><td>He's going to be late — he always is.</td></tr>
+              <tr><td>Diary arrangement</td><td>present continuous</td><td>I'm seeing the doctor on Monday.</td></tr>
+            </table>
+
+            <h3>Putting it together in real speech</h3>
+            <div class="ex">"I <b>am visiting</b> my parents this weekend — it is all arranged. After that, I <b>am going to</b> start decorating the kitchen; I've already bought the paint. Oh, the door — <b>I'll</b> get it." <button class="say" data-say="I am visiting my parents this weekend — it is all arranged. After that, I am going to start decorating the kitchen; I've already bought the paint. Oh, the door — I'll get it.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="I'm going to apply for a new job. I've already updated my CV."></div>
+            <div class="speakcheck" data-target="Don't worry, I'll help you with the presentation."></div>`,
+          tips: [
+            "Hear a snap decision or an offer? 'Will' is almost always right: 'I'll do it', 'I'll have the soup'.",
+            "'Going to' is your default for plans — if you thought about it before speaking, use 'going to'.",
+            "When the arrangement is in the diary and involves another person, present continuous sounds the most natural to British ears."
+          ],
+          practice: "Think about your week ahead. Say at least one thing using each form aloud: a fixed arrangement (present continuous), a plan you have already decided (going to), and a spontaneous offer or prediction (will). Record yourself and listen back.",
+          quiz: [
+            { q: "Someone asks if you want tea. You decide right now to have one. You say…", choices: ["I'm going to have tea.", "I'm having tea.", "I'll have tea, please.", "I have tea."], answer: 2 },
+            { q: "'I'm having dinner with colleagues on Thursday' suggests…", choices: ["A fixed diary arrangement", "A spontaneous decision", "An evidence-based prediction", "A general habit"], answer: 0 },
+            { q: "You can see dark clouds overhead. You say…", choices: ["It will rain, I decided.", "It's going to rain — look at those clouds.", "It rains.", "It is raining tomorrow."], answer: 1 }
+          ]
+        },
+        {
+          id: "g8", level: "Intermediate", minutes: 11,
+          title: "Modals for real life",
+          content: `
+            <p>Modal verbs — <b>can, could, should, must, have to, might, may</b> — are short words with enormous power. They express ability, obligation, advice, and possibility, and they control how <b>polite</b> or <b>direct</b> you sound. Getting them right transforms your everyday English.</p>
+
+            <h3>Can and could — ability and requests</h3>
+            <p><b>Can</b> = present ability or informal request. <b>Could</b> = politer request or past ability.</p>
+            <table>
+              <tr><th>Use</th><th>Can</th><th>Could (politer)</th></tr>
+              <tr><td>Ability</td><td>I can speak French.</td><td>I could swim well as a child.</td></tr>
+              <tr><td>Request (informal)</td><td>Can you help me?</td><td>Could you help me, please?</td></tr>
+              <tr><td>Asking permission</td><td>Can I sit here?</td><td>Could I possibly sit here?</td></tr>
+            </table>
+            <p><button class="say" data-say="Could you pass the salt, please? Could I possibly leave a bit early today?">🔊 Listen</button></p>
+            <blockquote>Rule: use 'could' instead of 'can' in requests to sound polite and British.</blockquote>
+
+            <h3>Should — advice and recommendations</h3>
+            <p><b>Should</b> suggests that something is the right or sensible thing to do. It is not as strong as 'must'.</p>
+            <ul>
+              <li>Giving advice: <button class="say" data-say="You should see a doctor if it's been hurting for a week.">🔊 Listen</button></li>
+              <li>Recommendation: <button class="say" data-say="You should try the new Italian place on the high street — it's brilliant.">🔊 Listen</button></li>
+              <li>Mild criticism: <button class="say" data-say="You shouldn't leave it so late next time.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Rule: 'should' = the right/sensible thing to do. Not a rule — a recommendation.</blockquote>
+
+            <h3>Must and have to — obligation</h3>
+            <p>Both express obligation, but with different sources of authority:</p>
+            <ul>
+              <li><b>Must</b> = obligation that comes from the <em>speaker</em> (personal rule or strong feeling): <button class="say" data-say="I must call Mum — it's been ages.">🔊 Listen</button></li>
+              <li><b>Have to</b> = obligation from an <em>external rule</em> or authority: <button class="say" data-say="I have to wear a suit for the interview. It's company policy.">🔊 Listen</button></li>
+              <li><b>Don't have to</b> = no obligation (free choice): <button class="say" data-say="You don't have to come if you're busy — honestly, it's fine.">🔊 Listen</button></li>
+              <li><b>Mustn't</b> = prohibition (do NOT do this): <button class="say" data-say="You mustn't press that button.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Watch out: 'don't have to' (not necessary) is very different from 'mustn't' (forbidden).</blockquote>
+
+            <h3>Might and may — possibility</h3>
+            <p>Both express possibility — that something is <b>perhaps true or perhaps will happen</b>. In spoken British English, 'might' is more common.</p>
+            <ul>
+              <li><button class="say" data-say="I might go to the gym later — I haven't decided.">🔊 Listen</button></li>
+              <li><button class="say" data-say="She may be running late — there's been an accident on the motorway.">🔊 Listen</button></li>
+              <li><button class="say" data-say="It might not work out — but let's give it a go.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Rule: 'might' and 'may' both mean 'possibly'. Neither is certain. In everyday speech, 'might' sounds more natural in Britain.</blockquote>
+
+            <h3>Politeness levels at a glance</h3>
+            <table>
+              <tr><th>Most direct</th><th>More polite</th><th>Very polite</th></tr>
+              <tr><td>Give me a pen.</td><td>Can you give me a pen?</td><td>Could you possibly lend me a pen?</td></tr>
+              <tr><td>I want to leave.</td><td>Can I leave now?</td><td>Would it be alright if I left a little early?</td></tr>
+            </table>
+            <div class="speakcheck" data-target="Could you possibly help me with this, please?"></div>
+            <div class="speakcheck" data-target="I might be a bit late — I'll let you know."></div>`,
+          tips: [
+            "Upgrade 'can you' to 'could you' whenever you make a request — it costs nothing and sounds far more natural in British English.",
+            "'Don't have to' means it is optional; 'mustn't' means it is forbidden. Mixing these up causes real-life misunderstandings.",
+            "When you are unsure about a plan or prediction, 'might' is your safest word: 'I might, I might not — I'll see how I feel.'"
+          ],
+          practice: "Practise these three scenarios aloud: (1) Ask a colleague to help you politely. (2) Give a friend advice about a problem. (3) Describe something you are not certain about yet. Use a different modal each time.",
+          quiz: [
+            { q: "Which is the most polite request?", choices: ["Give me the report.", "Can you give me the report?", "Could you possibly send me the report?", "I want the report."], answer: 2 },
+            { q: "'You don't have to come' means…", choices: ["You are forbidden to come.", "Coming is compulsory.", "It is not necessary for you to come.", "You should come."], answer: 2 },
+            { q: "Which modal expresses personal, internal obligation?", choices: ["Have to", "Might", "Should", "Must"], answer: 3 }
+          ]
+        },
+        {
+          id: "g9", level: "Advanced", minutes: 12,
+          title: "Conditionals you'll actually say",
+          content: `
+            <p>Conditionals let you talk about everything from scientific facts to dreams, plans, and regrets. You do not need all four types to speak well — but you absolutely need three of them. Here they are, clearly explained and ready to use.</p>
+
+            <h3>Zero conditional — general truths and facts</h3>
+            <p>Form: <b>If + present simple, present simple.</b></p>
+            <p>Use this for things that are <b>always</b> true — scientific facts, cause and effect, instructions.</p>
+            <ul>
+              <li><button class="say" data-say="If you heat water to one hundred degrees, it boils.">🔊 Listen</button></li>
+              <li><button class="say" data-say="If people don't sleep enough, they get ill.">🔊 Listen</button></li>
+              <li><button class="say" data-say="If you press this button, the machine stops.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>Zero conditional: the result is <em>always</em> true — not a possibility, a fact.</blockquote>
+
+            <h3>First conditional — real future possibilities</h3>
+            <p>Form: <b>If + present simple, will + infinitive.</b></p>
+            <p>Use this for situations that are <b>genuinely possible</b> in the future. You believe it could really happen.</p>
+            <ul>
+              <li><button class="say" data-say="If it rains tomorrow, I'll take an umbrella.">🔊 Listen</button></li>
+              <li><button class="say" data-say="If I get the job, we'll celebrate.">🔊 Listen</button></li>
+              <li><button class="say" data-say="If you study hard, you'll pass the exam.">🔊 Listen</button></li>
+            </ul>
+            <p>You can also use other modals instead of 'will': <button class="say" data-say="If you arrive early, you might get a better seat.">🔊 Listen</button></p>
+            <blockquote>First conditional: real and possible. Both speaker and listener believe it could happen.</blockquote>
+
+            <h3>Second conditional — imaginary and hypothetical</h3>
+            <p>Form: <b>If + past simple, would + infinitive.</b></p>
+            <p>Use this for <b>imaginary situations</b> — things that are unlikely, impossible, or purely hypothetical right now.</p>
+            <ul>
+              <li>Imaginary present: <button class="say" data-say="If I lived in London, I'd cycle everywhere.">🔊 Listen</button> (I don't live in London.)</li>
+              <li>Unlikely future: <button class="say" data-say="If I won the lottery, I'd quit my job and travel.">🔊 Listen</button></li>
+              <li>Advice (very natural): <button class="say" data-say="If I were you, I'd talk to the manager directly.">🔊 Listen</button></li>
+            </ul>
+            <p>Note: British speakers often say <b>'If I were'</b> (not 'was') — especially in the phrase 'If I were you'. This is grammatically correct and sounds polished.</p>
+            <blockquote>Second conditional: the situation is <em>not real now</em>. It is imaginary, unlikely, or used for advice.</blockquote>
+
+            <h3>Common mistakes — and how to fix them</h3>
+            <table>
+              <tr><th>Error</th><th>Correction</th></tr>
+              <tr><td>"If it will rain, I'll stay home."</td><td>"If it rains, I'll stay home." (no 'will' after 'if' in first conditional)</td></tr>
+              <tr><td>"If I would have money, I'd travel."</td><td>"If I had money, I'd travel." (no 'would' after 'if' in second conditional)</td></tr>
+              <tr><td>"If I was you, I take the offer."</td><td>"If I were you, I'd take the offer."</td></tr>
+            </table>
+            <p><b>The key rule:</b> <button class="say" data-say="Never use will or would in the if-clause. Keep will and would for the result clause.">🔊 Listen</button> Never use 'will' or 'would' directly after 'if'.</p>
+
+            <h3>Using conditionals to sound advanced</h3>
+            <p>In a conversation or exam, varying your conditionals signals real control of the language:</p>
+            <div class="ex">"If public transport <b>improves</b>, more people <b>will</b> use it — that's straightforward. But if I <b>were</b> in charge of city planning, I <b>would</b> invest heavily in cycling lanes first. If everyone <b>cycled</b> more, air quality <b>would</b> improve overnight." <button class="say" data-say="If public transport improves, more people will use it. But if I were in charge of city planning, I would invest heavily in cycling lanes first. If everyone cycled more, air quality would improve overnight.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="If I were you, I'd take the job offer."></div>
+            <div class="speakcheck" data-target="If it rains this afternoon, I'll work from home."></div>`,
+          tips: [
+            "Never put 'will' or 'would' immediately after 'if' — keep them for the result clause only.",
+            "'If I were you, I'd...' is the gold-standard advice phrase in British English. Practise it until it feels automatic.",
+            "Mixing a first and second conditional in the same response shows range: real possibility first, then the imaginary version."
+          ],
+          practice: "Answer these three questions aloud using the correct conditional each time: (1) What happens if you don't drink enough water? (zero) (2) What will you do if the weather is nice this weekend? (first) (3) What would you do if you could live anywhere in the world? (second).",
+          quiz: [
+            { q: "Which is a correct first conditional?", choices: ["If it rains, I stayed home.", "If it will rain, I'll stay home.", "If it rains, I'll stay home.", "If it rained, I stay home."], answer: 2 },
+            { q: "'If I were you, I'd apologise' is which type?", choices: ["Zero conditional", "First conditional", "Second conditional", "Not a conditional"], answer: 2 },
+            { q: "Which rule applies to all conditionals?", choices: ["Always use 'will' in the if-clause.", "Never use 'will' or 'would' directly after 'if'.", "The result clause always uses present simple.", "Use 'were' in first conditionals only."], answer: 1 }
+          ]
+        },
+        {
+          id: "g10", level: "Advanced", minutes: 11,
+          title: "Articles and prepositions: small words, big difference",
+          content: `
+            <p>Articles (<b>a, an, the</b>) and prepositions of time and place (<b>in, on, at</b>) are the most frequently used words in English — and the most frequently misused. Getting them right does not require memorising long lists; it requires understanding a few clear principles.</p>
+
+            <h3>A and an — introducing something new</h3>
+            <p>Use <b>a</b> (before a consonant sound) or <b>an</b> (before a vowel sound) when you mention something <b>for the first time</b>, or when it is <b>one of many</b> — the listener does not know which specific one you mean.</p>
+            <ul>
+              <li><button class="say" data-say="I saw a film last night. There was an interesting scene near the end.">🔊 Listen</button> (first mention — any film, any scene)</li>
+              <li><button class="say" data-say="She works as an engineer.">🔊 Listen</button> (one of many engineers — her job, not a unique role)</li>
+            </ul>
+            <p>Note: it is the <em>sound</em>, not the letter, that matters. <button class="say" data-say="an hour, a university, an umbrella, a European country">🔊 Listen</button> — "an hour" (silent h), "a university" (sounds like 'yoo').</p>
+            <blockquote>A/an = new information, non-specific, or one example from a category.</blockquote>
+
+            <h3>The — talking about something specific</h3>
+            <p>Use <b>the</b> when both the speaker and listener <b>know exactly which one</b> is meant.</p>
+            <ul>
+              <li>Second mention: <button class="say" data-say="I bought a jacket. The jacket is navy blue.">🔊 Listen</button></li>
+              <li>Unique things: <button class="say" data-say="The sun rises in the east. The Queen opened the building.">🔊 Listen</button></li>
+              <li>Shared context: <button class="say" data-say="Can you pass the salt? I'll catch the bus.">🔊 Listen</button> (we both know which one)</li>
+              <li>Superlatives: <button class="say" data-say="It was the best meal I've ever had.">🔊 Listen</button></li>
+            </ul>
+            <blockquote>The = both parties know which specific thing is meant.</blockquote>
+
+            <h3>Zero article — no article needed</h3>
+            <p>Use <b>no article</b> with plural and uncountable nouns when speaking in <b>general</b>, and with most names.</p>
+            <ul>
+              <li>General: <button class="say" data-say="Dogs make great pets. Water is essential for life.">🔊 Listen</button> (all dogs, water in general)</li>
+              <li>Languages, subjects, sports: <button class="say" data-say="She speaks French. He studies maths. They play football.">🔊 Listen</button></li>
+              <li>Names of people, countries, cities: <button class="say" data-say="I live in England. She's visiting London next week.">🔊 Listen</button></li>
+            </ul>
+            <p>Exception: use 'the' with country names that include a common noun: <button class="say" data-say="the United Kingdom, the United States, the Netherlands">🔊 Listen</button></p>
+
+            <h3>In, on, at — time and place</h3>
+            <p>Think of these three as <b>zoom levels</b>: <b>at</b> is the most precise point, <b>on</b> is a surface or single day, <b>in</b> is a larger container.</p>
+            <table>
+              <tr><th>Preposition</th><th>Time</th><th>Place</th></tr>
+              <tr><td><b>at</b></td><td>at 3 o'clock, at midnight, at Christmas, at the weekend</td><td>at the bus stop, at the top, at school, at home</td></tr>
+              <tr><td><b>on</b></td><td>on Monday, on 5th June, on my birthday, on New Year's Day</td><td>on the table, on the wall, on the left, on the floor</td></tr>
+              <tr><td><b>in</b></td><td>in June, in 2024, in the morning, in winter, in the 19th century</td><td>in the room, in London, in England, in my bag, in bed</td></tr>
+            </table>
+            <p><button class="say" data-say="I was born in June, on a Monday, at six in the morning.">🔊 Listen</button></p>
+            <p><button class="say" data-say="She lives in Bristol. The keys are on the table. Meet me at the station at noon.">🔊 Listen</button></p>
+            <blockquote>Memory trick: at = exact point. On = surface or day. In = inside a larger container (month, year, city, room).</blockquote>
+
+            <h3>Common errors to correct</h3>
+            <ul>
+              <li><span style="color:red">✗</span> "I met her in Monday." → <button class="say" data-say="I met her on Monday.">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "She's at home in the evening." ✓ correct — but: <span style="color:red">✗</span> "She's in home." → <button class="say" data-say="She's at home.">🔊 Listen</button></li>
+              <li><span style="color:red">✗</span> "I study the English." → <button class="say" data-say="I study English.">🔊 Listen</button> (no article with subjects)</li>
+              <li><span style="color:red">✗</span> "It's a best film I've seen." → <button class="say" data-say="It's the best film I've seen.">🔊 Listen</button></li>
+            </ul>
+            <div class="speakcheck" data-target="I'll meet you at the station on Friday at half past two."></div>
+            <div class="speakcheck" data-target="The flat is in Bristol. The keys are on the kitchen table."></div>`,
+          tips: [
+            "Ask yourself: does my listener know exactly which one I mean? Yes = the. No = a/an or nothing.",
+            "For time: at a clock time or holiday; on a day or date; in a month, year, season or part of day.",
+            "No article before languages, sports, or academic subjects: 'I study maths', never 'I study the maths'."
+          ],
+          practice: "Describe your home and neighbourhood aloud in five sentences. Include: where you live (in/at), what is near your home (on/at), what time you usually leave the house (at), and at least one use of 'the' and one use of 'a/an'. Record yourself and check the articles and prepositions.",
+          quiz: [
+            { q: "Which sentence uses the article correctly?", choices: ["I study the French.", "She is engineer.", "He is an engineer.", "It was best day."], answer: 2 },
+            { q: "Which preposition fits: '__ Monday morning'?", choices: ["In", "At", "On", "By"], answer: 2 },
+            { q: "When do you use 'the'?", choices: ["Any time you mention a noun", "When both speaker and listener know which specific thing is meant", "Before all plural nouns", "With languages and sports"], answer: 1 }
           ]
         }
       ]
@@ -1075,6 +3643,397 @@ const SPEAK_CURRICULUM = {
             { q: "Background description in a story often uses…", choices: ["Past continuous ('I was walking…')", "Future tense", "Present perfect only", "Commands"], answer: 0 },
             { q: "In IELTS Part 2, you should…", choices: ["Stop after 20 seconds", "Speak for the full 1–2 minutes", "Only answer yes/no", "Memorise a generic speech"], answer: 1 }
           ]
+        },
+        {
+          id: "x5", level: "Intermediate", minutes: 10,
+          title: "Fillers and thinking time: never freeze mid-sentence",
+          content: `
+            <p>Every fluent speaker — even native speakers — occasionally needs a moment to think. The difference is they fill that moment <b>gracefully</b>, using natural phrases rather than dead silence or an endless "errrrm". This lesson gives you a full toolkit for buying thinking time.</p>
+
+            <h3>Why fillers matter</h3>
+            <p>When you pause silently for too long, listeners grow anxious. A well-chosen filler signals: "I am still here, I am thinking, please wait." It keeps the conversation alive and makes you sound confident rather than lost.</p>
+            <ul>
+              <li>They hold your turn in a conversation — nobody interrupts.</li>
+              <li>They give your brain time to find the right word or structure.</li>
+              <li>They are completely normal; even BBC newsreaders use them.</li>
+            </ul>
+
+            <h3>Top thinking-time phrases — practise these until automatic</h3>
+            <table>
+              <tr><th>Phrase</th><th>When to use it</th><th>Listen</th></tr>
+              <tr><td>Well, let me think…</td><td>Any question, needs a moment</td><td><button class="say" data-say="Well, let me think about that for a moment.">🔊 Listen</button></td></tr>
+              <tr><td>That's a really good question.</td><td>Genuine or complex topics</td><td><button class="say" data-say="That's a really good question, actually.">🔊 Listen</button></td></tr>
+              <tr><td>How can I put this?</td><td>Searching for the right words</td><td><button class="say" data-say="How can I put this? It's rather complicated.">🔊 Listen</button></td></tr>
+              <tr><td>The thing is…</td><td>About to explain something nuanced</td><td><button class="say" data-say="The thing is, it's not quite that simple.">🔊 Listen</button></td></tr>
+              <tr><td>Right, so…</td><td>Collecting your thoughts, restarting</td><td><button class="say" data-say="Right, so where were we?">🔊 Listen</button></td></tr>
+              <tr><td>That's an interesting point…</td><td>Responding to something said to you</td><td><button class="say" data-say="That's an interesting point. I hadn't considered that.">🔊 Listen</button></td></tr>
+              <tr><td>I'd have to say…</td><td>Building up to an opinion</td><td><button class="say" data-say="I'd have to say it really depends on the situation.">🔊 Listen</button></td></tr>
+              <tr><td>To be perfectly honest…</td><td>Introducing a candid view</td><td><button class="say" data-say="To be perfectly honest, I'm not entirely sure.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>The difference: dead fillers vs. live fillers</h3>
+            <p>Not all fillers are equal. Some actually make you sound less confident:</p>
+            <table>
+              <tr><th>Avoid (dead filler)</th><th>Replace with (live filler)</th></tr>
+              <tr><td>Erm… erm… erm…</td><td>Well, let me think for a second.</td></tr>
+              <tr><td>Uhhhh…</td><td>That's a good question, actually.</td></tr>
+              <tr><td>Like… like… like…</td><td>I'd say… / The way I see it…</td></tr>
+              <tr><td>You know… you know…</td><td>What I mean is… / The thing is…</td></tr>
+            </table>
+            <p>The key is to swap one habit for another. You do not need to eliminate pauses — you need to <b>fill them meaningfully</b>.</p>
+
+            <h3>Using fillers to structure an answer</h3>
+            <p>Good fillers do double duty: they buy time <em>and</em> signal structure to your listener.</p>
+            <div class="ex">
+              <button class="say" data-say="Well, that's a really good question. The thing is, there are a couple of ways of looking at it. I'd have to say that, on balance, the benefits probably outweigh the drawbacks.">🔊 Listen to a full example</button>
+              <p><em>"Well, that's a really good question. The thing is, there are a couple of ways of looking at it. I'd have to say that, on balance, the benefits probably outweigh the drawbacks."</em></p>
+            </div>
+            <p>Notice how the fillers create a natural, flowing response rather than a sudden burst of words.</p>
+
+            <blockquote>Tip: Record yourself answering a question cold. Notice where you reach for 'erm'. Replace each one with a phrase from the table above and record again.</blockquote>
+
+            <div class="speakcheck" data-target="Well, that's a really good question. Let me think about it for a moment."></div>
+            <div class="speakcheck" data-target="The thing is, it's not quite as straightforward as it might seem."></div>`,
+          tips: [
+            "Replace every 'erm' with a real chunk: 'Well, let me think…' sounds confident and natural.",
+            "Fillers like 'The thing is…' also signal structure — they tell your listener you are about to explain something.",
+            "Overusing the same filler sounds robotic; rotate between two or three favourites."
+          ],
+          practice: "Ask a friend or use a timer: answer three random questions (e.g. 'What is your ideal job?') using at least two different thinking-time phrases per answer. No 'erm' allowed.",
+          quiz: [
+            { q: "What is the main purpose of a live filler phrase?", choices: ["To end a conversation politely", "To hold your turn and buy thinking time", "To ask for repetition", "To change the subject"], answer: 1 },
+            { q: "Which phrase signals you are about to explain something nuanced?", choices: ["Let's call it a day.", "Touch wood.", "The thing is…", "Never mind."], answer: 2 },
+            { q: "Which of these is a 'dead' filler that should be replaced?", choices: ["I'd have to say…", "Well, let me think…", "Erm… erm… erm…", "To be perfectly honest…"], answer: 2 }
+          ]
+        },
+        {
+          id: "x6", level: "Intermediate", minutes: 11,
+          title: "Storytelling: telling anecdotes that engage",
+          content: `
+            <p>A well-told story is the most powerful tool in any speaker's kit. It entertains, persuades, and makes you memorable. In this lesson you will learn the exact structure fluent storytellers use, along with the grammar and linking words that keep a listener hooked.</p>
+
+            <h3>The four-part story arc</h3>
+            <p>Almost every great spoken anecdote follows this shape:</p>
+            <ol>
+              <li><b>Hook</b> — grab attention immediately: <button class="say" data-say="You are never going to believe what happened to me last week.">🔊 Listen</button></li>
+              <li><b>Set the scene</b> — when, where, who: <button class="say" data-say="So it was a Tuesday evening, and I was on the last train back from Manchester.">🔊 Listen</button></li>
+              <li><b>Build and complicate</b> — what happened, step by step, leading to the key moment: <button class="say" data-say="I had just sat down when I noticed the man opposite me was reading my CV upside down.">🔊 Listen</button></li>
+              <li><b>Resolution and reflection</b> — how it ended, what you took from it: <button class="say" data-say="It turned out he was actually a hiring manager. We ended up having a chat, and he offered me an interview on the spot.">🔊 Listen</button></li>
+            </ol>
+
+            <h3>Narrative tenses — the grammar of stories</h3>
+            <p>Use tenses purposefully to separate events from background:</p>
+            <table>
+              <tr><th>Tense</th><th>Used for</th><th>Example</th></tr>
+              <tr><td>Past simple</td><td>The main events in order</td><td>I sat down. He looked up. We spoke.</td></tr>
+              <tr><td>Past continuous</td><td>Background / ongoing action</td><td>It was raining. Everyone was rushing.</td></tr>
+              <tr><td>Past perfect</td><td>Events before the main story</td><td>I had already missed two trains.</td></tr>
+              <tr><td>Present simple</td><td>Dramatic present (storytelling trick)</td><td>So I walk in, and there he is!</td></tr>
+            </table>
+            <p><button class="say" data-say="I had been waiting for ages. The platform was completely empty. Then, suddenly, a woman runs up and grabs my bag.">🔊 Listen to the tenses in action</button></p>
+
+            <h3>Sequencing and linking words</h3>
+            <p>These glue your story together and control pace:</p>
+            <table>
+              <tr><th>Stage</th><th>Useful words</th></tr>
+              <tr><td>Opening</td><td>So, Right, The other day, A while back, Funny thing — </td></tr>
+              <tr><td>Advancing</td><td>Then, After that, The next thing I knew, At that point, Meanwhile</td></tr>
+              <tr><td>Turning point</td><td>And then, out of nowhere… / Suddenly… / That's when… / Just as I was about to…</td></tr>
+              <tr><td>Ending</td><td>In the end… / As it turned out… / And that was that. / I still think about it now.</td></tr>
+            </table>
+
+            <h3>Keeping the listener hooked</h3>
+            <p>Fluent storytellers do three things to maintain interest:</p>
+            <ul>
+              <li><b>Vary pace:</b> slow down for important moments, speed up through background detail.</li>
+              <li><b>Add feelings:</b> <button class="say" data-say="I was absolutely mortified. I genuinely had no idea what to do.">🔊 Listen</button></li>
+              <li><b>Use direct speech:</b> instead of "he told me it was fine", say <button class="say" data-say="And he just looked at me and said, Honestly, don't even worry about it.">🔊 "And he just looked at me and said, 'Honestly, don't even worry about it.'"</button></li>
+            </ul>
+
+            <blockquote>Tip: Every story needs a point. Ask yourself: why am I telling this? Funny, surprising, moving, instructive — pick one and make sure the ending delivers it.</blockquote>
+
+            <div class="ex">
+              <button class="say" data-say="Right, so this was a few years ago. I had just moved to London and I barely knew anyone. I was walking home one evening when, out of nowhere, it absolutely poured down. I was completely drenched. And then this woman I'd never met just handed me her umbrella and walked off. I still don't know who she was.">🔊 Listen to a complete anecdote</button>
+              <p><em>"Right, so this was a few years ago. I had just moved to London and I barely knew anyone. I was walking home one evening when, out of nowhere, it absolutely poured down. I was completely drenched. And then this woman I'd never met just handed me her umbrella and walked off. I still don't know who she was."</em></p>
+            </div>
+
+            <div class="speakcheck" data-target="So this was a couple of years ago and I had just arrived at the airport."></div>
+            <div class="speakcheck" data-target="And then, out of nowhere, everything changed completely."></div>`,
+          tips: [
+            "Hook your listener in the first sentence — give them a reason to keep listening.",
+            "Mix tenses deliberately: past continuous for background, past simple for the action.",
+            "Direct speech ('And she said, I can't believe it!') brings a story to life instantly."
+          ],
+          practice: "Tell a two-minute anecdote about a journey or unexpected event. Use the four-part arc, at least two tenses, and three sequencing words. Record yourself and listen back for pacing.",
+          quiz: [
+            { q: "In a spoken story, past continuous is mainly used for…", choices: ["The main events in order", "Background and ongoing action", "Events before the story began", "Future plans"], answer: 1 },
+            { q: "Which phrase is a good story 'turning point' signal?", choices: ["In the end…", "As I mentioned earlier…", "And then, out of nowhere…", "Generally speaking…"], answer: 2 },
+            { q: "Using direct speech in a story ('She said, I don't believe it!') does what?", choices: ["Makes it harder to follow", "Brings the story to life and adds drama", "Is grammatically incorrect", "Should only be used in writing"], answer: 1 }
+          ]
+        },
+        {
+          id: "x7", level: "Intermediate", minutes: 11,
+          title: "Paraphrasing when you forget a word",
+          content: `
+            <p>Forgetting a word mid-sentence is not a failure — it happens to everyone. What separates fluent speakers from hesitant ones is <b>the ability to talk around the gap</b>. This lesson teaches you a set of paraphrasing strategies so you never grind to a halt.</p>
+
+            <h3>Why paraphrasing is a superpower</h3>
+            <p>In real conversation, and especially in language exams, paraphrasing demonstrates:</p>
+            <ul>
+              <li>Communicative resourcefulness — you find a way, no matter what.</li>
+              <li>Vocabulary range — using several words to express one idea is a sign of flexibility.</li>
+              <li>Confidence — you keep talking rather than freezing.</li>
+            </ul>
+
+            <h3>Strategy 1 — Describe its function</h3>
+            <p>Ask yourself: what does it do? Then say that.</p>
+            <table>
+              <tr><th>Forgotten word</th><th>Paraphrase</th><th>Listen</th></tr>
+              <tr><td>corkscrew</td><td>It's the thing you use to open a wine bottle.</td><td><button class="say" data-say="It's the thing you use to open a wine bottle.">🔊 Listen</button></td></tr>
+              <tr><td>stapler</td><td>It's a device that joins sheets of paper together.</td><td><button class="say" data-say="It's a device that joins sheets of paper together.">🔊 Listen</button></td></tr>
+              <tr><td>landlord</td><td>The person who owns the flat and you pay rent to.</td><td><button class="say" data-say="The person who owns the flat and you pay rent to.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>Strategy 2 — Use a category or general word</h3>
+            <p>Place the unknown word inside a broader group:</p>
+            <table>
+              <tr><th>Paraphrase pattern</th><th>Example</th><th>Listen</th></tr>
+              <tr><td>It's a kind / sort / type of…</td><td>It's a kind of spice — it's orange and quite sweet.</td><td><button class="say" data-say="It's a kind of spice. It's orange and quite sweet.">🔊 Listen</button></td></tr>
+              <tr><td>It's similar to… but…</td><td>It's similar to a violin but much bigger.</td><td><button class="say" data-say="It's similar to a violin but much bigger.">🔊 Listen</button></td></tr>
+              <tr><td>It's like… except…</td><td>It's like a coat, except you wear it indoors.</td><td><button class="say" data-say="It's like a coat, except you wear it indoors.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>Strategy 3 — Use opposites or negatives</h3>
+            <p>If you know what something is NOT, say that:</p>
+            <ul>
+              <li><button class="say" data-say="It's the opposite of optimistic — someone who always expects the worst.">🔊 Listen</button> "It's the opposite of optimistic — someone who always expects the worst." (<em>pessimistic</em>)</li>
+              <li><button class="say" data-say="It's not quite the same as tired — it means you feel completely emotionally drained.">🔊 Listen</button> "It's not quite the same as tired — it means you feel completely emotionally drained." (<em>exhausted / burnt out</em>)</li>
+            </ul>
+
+            <h3>Strategy 4 — Give an example</h3>
+            <p>Concrete examples clarify meaning instantly:</p>
+            <div class="ex">
+              <button class="say" data-say="I mean the kind of person who is always late, never replies to messages, things like that. You know, unreliable.">🔊 Listen</button>
+              <p><em>"I mean the kind of person who is always late, never replies to messages, things like that. You know, unreliable."</em></p>
+            </div>
+
+            <h3>Useful paraphrasing phrases — a quick-reference list</h3>
+            <table>
+              <tr><th>Phrase</th><th>Use it when…</th></tr>
+              <tr><td>It's the thing you use to…</td><td>Describing an object by function</td></tr>
+              <tr><td>It's a kind of… / a sort of…</td><td>Placing in a category</td></tr>
+              <tr><td>It's the opposite of…</td><td>Defining via contrast</td></tr>
+              <tr><td>It's similar to… but…</td><td>Comparing to something known</td></tr>
+              <tr><td>What I'm trying to say is…</td><td>Reformulating a difficult idea</td></tr>
+              <tr><td>If that makes sense…</td><td>Checking the listener is following</td></tr>
+              <tr><td>In other words…</td><td>Giving a simpler restatement</td></tr>
+            </table>
+
+            <blockquote>Tip: In IELTS Speaking, examiners reward paraphrasing because it demonstrates lexical resource. Never go silent — describe around the gap.</blockquote>
+
+            <div class="speakcheck" data-target="It's the thing you use to lock and unlock a door."></div>
+            <div class="speakcheck" data-target="It's a kind of vegetable — it's green and you usually eat it cooked."></div>`,
+          tips: [
+            "Describe function first: 'It's the thing you use to…' — this works for almost any object.",
+            "Use 'the opposite of…' to define via contrast when the direct word escapes you.",
+            "Examiners credit paraphrasing as a sign of strong vocabulary range, so do it confidently."
+          ],
+          practice: "Pick ten objects around you. For each one, describe it in a full sentence WITHOUT saying its name. Use a different strategy for each: function, category, comparison, opposite.",
+          quiz: [
+            { q: "Which paraphrase strategy is used in: 'It's similar to a guitar but it has four strings'?", choices: ["Describing function", "Comparing to something known", "Using an opposite", "Giving an example"], answer: 1 },
+            { q: "If you forget the word 'pessimistic', the best paraphrase is…", choices: ["Something about weather", "It's the opposite of optimistic — always expecting the worst.", "It's a kind of furniture.", "What I mean is very good."], answer: 1 },
+            { q: "Paraphrasing in an exam is…", choices: ["A sign of poor vocabulary", "Against the rules", "A positive skill that shows lexical flexibility", "Only useful in writing"], answer: 2 }
+          ]
+        },
+        {
+          id: "x8", level: "Advanced", minutes: 12,
+          title: "Idioms and phrasal verbs for fluency (Part 2)",
+          content: `
+            <p>Advanced English is full of idioms and phrasal verbs that native speakers use without thinking. In Part 2 of this series, you will learn a fresh set of high-value expressions, understand their precise meanings, and practise using them in natural sentences — not just memorising lists.</p>
+
+            <h3>High-value phrasal verbs</h3>
+            <table>
+              <tr><th>Phrasal verb</th><th>Meaning</th><th>Natural example</th><th>Listen</th></tr>
+              <tr><td>get the hang of</td><td>gradually learn how to do something</td><td>Once you get the hang of it, it's straightforward.</td><td><button class="say" data-say="Once you get the hang of it, it's really quite straightforward.">🔊 Listen</button></td></tr>
+              <tr><td>put off</td><td>postpone; or cause discomfort/dislike</td><td>Don't put off that difficult conversation.</td><td><button class="say" data-say="Don't keep putting off that difficult conversation.">🔊 Listen</button></td></tr>
+              <tr><td>look forward to</td><td>feel excited about something upcoming</td><td>I'm really looking forward to the weekend.</td><td><button class="say" data-say="I'm really looking forward to the weekend.">🔊 Listen</button></td></tr>
+              <tr><td>carry on</td><td>continue</td><td>Carry on — you're doing brilliantly.</td><td><button class="say" data-say="Do carry on — you're doing brilliantly.">🔊 Listen</button></td></tr>
+              <tr><td>come across</td><td>encounter by chance; or make an impression</td><td>I came across this article and thought of you.</td><td><button class="say" data-say="I came across this article and immediately thought of you.">🔊 Listen</button></td></tr>
+              <tr><td>fall behind</td><td>fail to keep up with others or a schedule</td><td>I can't afford to fall behind with the project.</td><td><button class="say" data-say="I really can't afford to fall behind with the project.">🔊 Listen</button></td></tr>
+              <tr><td>bring up</td><td>raise a topic; or rear a child</td><td>Could I bring up one more point?</td><td><button class="say" data-say="Could I just bring up one more point before we finish?">🔊 Listen</button></td></tr>
+              <tr><td>take on</td><td>accept responsibility or a challenge</td><td>She's taken on a lot of extra work lately.</td><td><button class="say" data-say="She's taken on a lot of extra work lately.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>Powerful idioms for natural conversation</h3>
+            <table>
+              <tr><th>Idiom</th><th>Meaning</th><th>Listen</th></tr>
+              <tr><td>hit the nail on the head</td><td>describe something exactly right</td><td><button class="say" data-say="You've hit the nail on the head — that's exactly the issue.">🔊 Listen</button></td></tr>
+              <tr><td>on the fence</td><td>undecided; unwilling to commit</td><td><button class="say" data-say="I'm still a bit on the fence about the whole thing.">🔊 Listen</button></td></tr>
+              <tr><td>bite the bullet</td><td>force yourself to do something unpleasant</td><td><button class="say" data-say="Sometimes you just have to bite the bullet and get on with it.">🔊 Listen</button></td></tr>
+              <tr><td>in the same boat</td><td>in the same (difficult) situation</td><td><button class="say" data-say="Don't worry — we're all in the same boat.">🔊 Listen</button></td></tr>
+              <tr><td>off the top of my head</td><td>without checking or thinking carefully</td><td><button class="say" data-say="Off the top of my head, I'd say about fifty.">🔊 Listen</button></td></tr>
+              <tr><td>a blessing in disguise</td><td>something bad that turns out to be good</td><td><button class="say" data-say="Losing that job was actually a blessing in disguise.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>Using them appropriately — register matters</h3>
+            <p>Most idioms and phrasal verbs are neutral-to-informal. Keep these principles in mind:</p>
+            <ul>
+              <li><b>In conversation and interviews:</b> use freely — they sound natural and engaged.</li>
+              <li><b>In formal writing or presentations:</b> use sparingly; one or two at most.</li>
+              <li><b>In IELTS/TOEFL speaking:</b> one well-placed idiom per response lifts your score; three forced ones hurts it.</li>
+            </ul>
+            <blockquote>Tip: Learn phrasal verbs as whole chunks with their object: 'look forward to + -ing', 'get the hang of + noun/-ing'. The preposition is part of the unit.</blockquote>
+
+            <h3>Putting it all together</h3>
+            <div class="ex">
+              <button class="say" data-say="To be honest, I was on the fence at first, but once I got the hang of it I really looked forward to the sessions. I'd say it was a blessing in disguise.">🔊 Listen to a natural response using multiple expressions</button>
+              <p><em>"To be honest, I was on the fence at first, but once I got the hang of it I really looked forward to the sessions. I'd say it was a blessing in disguise."</em></p>
+            </div>
+
+            <div class="speakcheck" data-target="Once you get the hang of it, you will really look forward to practising."></div>
+            <div class="speakcheck" data-target="You have hit the nail on the head — that is exactly what I was trying to say."></div>`,
+          tips: [
+            "Learn phrasal verbs as chunks with their grammar: 'look forward to + -ing', never 'look forward to + infinitive'.",
+            "Use 'hit the nail on the head' when agreeing strongly — it is more vivid than 'exactly right'.",
+            "One or two well-chosen idioms per topic shows range; more than that sounds unnatural."
+          ],
+          practice: "Choose any five expressions from the tables and use each in a genuine sentence about your own life. Say them aloud, then try using two of them naturally in a single short paragraph.",
+          quiz: [
+            { q: "'Get the hang of' means…", choices: ["Hang something up", "Gradually learn how to do something", "Feel nervous about something", "Avoid a task"], answer: 1 },
+            { q: "If someone says 'You've hit the nail on the head', they mean…", choices: ["You made an error", "You described something exactly right", "You were too aggressive", "You spoke too quietly"], answer: 1 },
+            { q: "'I'm on the fence' means the speaker is…", choices: ["Outdoors", "Very decided", "Undecided or not committed", "Excited"], answer: 2 }
+          ]
+        },
+        {
+          id: "x9", level: "Intermediate", minutes: 11,
+          title: "Fluency drills: shadowing and chunking",
+          content: `
+            <p>Fluency is a physical skill as much as a mental one. The brain needs to automate patterns so that speaking feels effortless. Two of the most effective techniques for building this automaticity are <b>shadowing</b> and <b>chunking</b>. This lesson explains both and gives you a daily practice routine.</p>
+
+            <h3>What is shadowing?</h3>
+            <p>Shadowing means listening to a recording and repeating it <em>immediately</em> — almost simultaneously — matching the speaker's rhythm, speed, and intonation. It was developed by language researcher Alexander Arguelles and is used by professional interpreters.</p>
+            <p>How to do it:</p>
+            <ol>
+              <li>Find a short recording of natural British English (a podcast clip, a BBC news segment, 30–60 seconds).</li>
+              <li>Listen once all the way through for meaning.</li>
+              <li>Play it again and speak along, half a second behind the speaker — do not read a transcript.</li>
+              <li>Focus on <b>rhythm</b> and <b>intonation</b> first, exact words second.</li>
+              <li>Repeat the same clip three to five times in a row.</li>
+            </ol>
+            <div class="ex">
+              <button class="say" data-say="Right, so the idea is that you listen and repeat almost at the same time. You're not reading — you're just following the voice, copying the melody and the rhythm.">🔊 Listen — then shadow this sentence yourself</button>
+              <p><em>"Right, so the idea is that you listen and repeat almost at the same time. You're not reading — you're just following the voice, copying the melody and the rhythm."</em></p>
+            </div>
+
+            <h3>What is chunking?</h3>
+            <p>Native speakers do not speak word-by-word. They speak in <b>chunks</b> — short, pre-packaged groups of words. Training yourself to do the same eliminates word-by-word hesitation.</p>
+            <table>
+              <tr><th>Word-by-word (slow, unnatural)</th><th>Chunked (fast, fluent)</th></tr>
+              <tr><td>I / want / to / go / to / the / shops.</td><td>I want to / go to the shops.</td></tr>
+              <tr><td>Can / you / tell / me / how / to / get / there?</td><td>Can you tell me / how to get there?</td></tr>
+              <tr><td>I / was / thinking / about / what / you / said.</td><td>I was thinking / about what you said.</td></tr>
+            </table>
+            <p>Common spoken chunks to memorise as single units:</p>
+            <ul>
+              <li><button class="say" data-say="to be honest with you">🔊 to be honest with you</button></li>
+              <li><button class="say" data-say="at the end of the day">🔊 at the end of the day</button></li>
+              <li><button class="say" data-say="as far as I'm concerned">🔊 as far as I'm concerned</button></li>
+              <li><button class="say" data-say="when it comes to">🔊 when it comes to</button></li>
+              <li><button class="say" data-say="the way I see it">🔊 the way I see it</button></li>
+              <li><button class="say" data-say="from my point of view">🔊 from my point of view</button></li>
+            </ul>
+
+            <h3>Why chunks make you faster</h3>
+            <p>When you store a phrase like "to be honest with you" as one unit, your brain retrieves it instantly — just like a word. You stop assembling it letter-by-letter. This is why advanced speakers produce long sentences at speed: they are stringing together stored chunks, not constructing grammar from scratch.</p>
+
+            <h3>Your daily fluency routine (10 minutes)</h3>
+            <table>
+              <tr><th>Time</th><th>Activity</th></tr>
+              <tr><td>2 min</td><td>Find a 30-second clip of natural British speech.</td></tr>
+              <tr><td>4 min</td><td>Shadow it four times — match rhythm and intonation.</td></tr>
+              <tr><td>2 min</td><td>Speak freely for 2 minutes on any topic without stopping.</td></tr>
+              <tr><td>2 min</td><td>Write down two new chunks you heard; say each aloud five times.</td></tr>
+            </table>
+
+            <blockquote>Tip: Consistency beats marathon sessions. Ten minutes every day produces far better results than an hour once a week.</blockquote>
+
+            <div class="speakcheck" data-target="To be honest with you, the way I see it is that practice every day makes all the difference."></div>
+            <div class="speakcheck" data-target="When it comes to fluency, shadowing is one of the most effective techniques available."></div>`,
+          tips: [
+            "Shadow the same 30-second clip multiple times in a row — repetition builds the physical habit.",
+            "Store chunks as single vocabulary items: 'at the end of the day' is one unit, not five words.",
+            "Ten minutes of daily shadowing will produce noticeable improvements within two weeks."
+          ],
+          practice: "Find a 30-second BBC News clip or podcast excerpt. Shadow it five times. Then record yourself speaking freely for 90 seconds on a topic of your choice, aiming to use at least three chunks from the lesson.",
+          quiz: [
+            { q: "In the shadowing technique, you repeat the speaker…", choices: ["After a full minute's pause", "Simultaneously or half a second behind", "Only after reading the transcript", "The next day from memory"], answer: 1 },
+            { q: "Chunking helps fluency because…", choices: ["It slows you down to be precise", "It stores phrases as single units, so retrieval is instant", "It teaches you to read faster", "It replaces grammar learning entirely"], answer: 1 },
+            { q: "Which of these is a good spoken chunk to memorise?", choices: ["The", "At the end of the day", "Walked", "If"], answer: 1 }
+          ]
+        },
+        {
+          id: "x10", level: "Advanced", minutes: 12,
+          title: "Sounding advanced: hedging, emphasis and precise word choice",
+          content: `
+            <p>Advanced speakers do not simply say more words — they choose words with surgical precision. They soften claims when appropriate, add weight when needed, and select vocabulary that is exactly right rather than merely correct. This lesson covers three powerful tools: <b>hedging</b>, <b>emphasis</b>, and <b>precision</b>.</p>
+
+            <h3>Hedging — softening claims to sound nuanced</h3>
+            <p>Hedging signals intellectual honesty. It tells your listener: "I have thought carefully about this and I acknowledge uncertainty." Overconfident statements often sound naive; hedged ones sound considered.</p>
+            <table>
+              <tr><th>Hedge</th><th>Example</th><th>Listen</th></tr>
+              <tr><td>It tends to…</td><td>It tends to work better in smaller groups.</td><td><button class="say" data-say="It tends to work better in smaller groups.">🔊 Listen</button></td></tr>
+              <tr><td>Arguably…</td><td>Arguably, the benefits outweigh the risks.</td><td><button class="say" data-say="Arguably, the benefits outweigh the risks.">🔊 Listen</button></td></tr>
+              <tr><td>I would say…</td><td>I would say the situation is more complex than it appears.</td><td><button class="say" data-say="I would say the situation is more complex than it appears.">🔊 Listen</button></td></tr>
+              <tr><td>To some extent…</td><td>To some extent, that is true, but there are exceptions.</td><td><button class="say" data-say="To some extent, that is true, but there are exceptions.">🔊 Listen</button></td></tr>
+              <tr><td>It seems as though…</td><td>It seems as though confidence plays a larger role than skill.</td><td><button class="say" data-say="It seems as though confidence plays a larger role than skill.">🔊 Listen</button></td></tr>
+              <tr><td>In many cases…</td><td>In many cases, early intervention makes a significant difference.</td><td><button class="say" data-say="In many cases, early intervention makes a significant difference.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>Emphasis — adding weight when something matters</h3>
+            <p>When you genuinely want to stress something, use emphasis adverbs and cleft constructions rather than simply raising your voice:</p>
+            <table>
+              <tr><th>Emphasiser</th><th>Example</th><th>Listen</th></tr>
+              <tr><td>Absolutely / entirely</td><td>That is absolutely the wrong approach.</td><td><button class="say" data-say="That is absolutely the wrong approach.">🔊 Listen</button></td></tr>
+              <tr><td>By far</td><td>This is by far the most effective method.</td><td><button class="say" data-say="This is by far the most effective method.">🔊 Listen</button></td></tr>
+              <tr><td>What really…</td><td>What really matters is consistency.</td><td><button class="say" data-say="What really matters here is consistency.">🔊 Listen</button></td></tr>
+              <tr><td>The key thing is…</td><td>The key thing is to start before you feel ready.</td><td><button class="say" data-say="The key thing is to start before you feel ready.">🔊 Listen</button></td></tr>
+              <tr><td>It is… that…</td><td>It is the detail that distinguishes good from excellent.</td><td><button class="say" data-say="It is the detail that distinguishes good from excellent.">🔊 Listen</button></td></tr>
+            </table>
+
+            <h3>Precise word choice — the difference that marks Advanced</h3>
+            <p>A B2 speaker says "very big"; a C1 speaker says "substantial", "considerable", or "vast" — choosing the word that fits exactly.</p>
+            <table>
+              <tr><th>Basic</th><th>Precise alternatives</th></tr>
+              <tr><td>very big</td><td>substantial, considerable, extensive, vast</td></tr>
+              <tr><td>very small</td><td>negligible, minimal, marginal, modest</td></tr>
+              <tr><td>very important</td><td>crucial, pivotal, fundamental, paramount</td></tr>
+              <tr><td>very difficult</td><td>challenging, demanding, formidable, arduous</td></tr>
+              <tr><td>good</td><td>effective, beneficial, constructive, commendable</td></tr>
+              <tr><td>bad / a problem</td><td>detrimental, counterproductive, problematic, an obstacle</td></tr>
+            </table>
+            <p><button class="say" data-say="It has had a substantial impact. The challenge is arguably more fundamental than it first appears.">🔊 Listen to precise vocabulary in use</button></p>
+
+            <h3>Combining all three for a sophisticated response</h3>
+            <div class="ex">
+              <button class="say" data-say="Well, I would say the situation is arguably more nuanced than a simple yes or no. To some extent, technology has been enormously beneficial — by far the most significant development of the last century. What really matters, though, is how we choose to use it. It tends to amplify whatever tendencies already exist in a society, which is arguably both its greatest strength and its most fundamental challenge.">🔊 Listen to a sophisticated example response</button>
+              <p><em>"Well, I would say the situation is arguably more nuanced than a simple yes or no. To some extent, technology has been enormously beneficial — by far the most significant development of the last century. What really matters, though, is how we choose to use it. It tends to amplify whatever tendencies already exist in a society, which is arguably both its greatest strength and its most fundamental challenge."</em></p>
+            </div>
+
+            <blockquote>Tip: Hedging is not weakness — it is sophistication. Saying 'arguably' or 'to some extent' shows you have considered multiple perspectives, which is exactly what examiners and interlocutors reward.</blockquote>
+
+            <div class="speakcheck" data-target="Arguably, this is by far the most fundamental challenge we face."></div>
+            <div class="speakcheck" data-target="To some extent that is true, but I would say it tends to depend on the context."></div>`,
+          tips: [
+            "Hedges like 'arguably' and 'to some extent' signal nuanced thinking — use them to elevate academic and professional speech.",
+            "Replace 'very important' with 'pivotal' or 'fundamental' — precise vocabulary is the clearest mark of advanced level.",
+            "Cleft sentences ('What really matters is…') give emphasis without volume and sound highly sophisticated."
+          ],
+          practice: "Take any simple opinion (e.g. 'Social media is bad for young people') and deliver it as a 90-second advanced response using at least two hedges, one emphasis structure, and three precise vocabulary upgrades from the table.",
+          quiz: [
+            { q: "Which sentence uses hedging correctly?", choices: ["Social media is definitely destroying society.", "Arguably, social media has had a detrimental effect on certain groups.", "Social media: good.", "I have no idea about social media."], answer: 1 },
+            { q: "Which word is a precise upgrade for 'very important'?", choices: ["Quite nice", "Pivotal", "Sort of big", "Fairly okay"], answer: 1 },
+            { q: "The cleft structure 'What really matters is…' is used to…", choices: ["Ask a question", "Hedge a claim", "Add strong emphasis to a specific point", "Introduce a story"], answer: 2 }
+          ]
         }
       ]
     },
@@ -1107,6 +4066,7 @@ const SPEAK_CURRICULUM = {
               <li>Did I use at least one complex sentence? (Grammar)</li>
               <li>Did my voice rise and fall? (Pronunciation)</li>
             </ul>
+            <p>Listen to a band-9-style answer that quietly ticks all four boxes: <button class="say" data-say="Well, in my view, it largely depends on the situation. On the one hand, technology has made life far more convenient; on the other, it can be quite isolating.">🔊 Listen</button></p>
             <div class="speakcheck" data-target="In my view, it largely depends on the situation, although there are exceptions."></div>`,
           tips: [
             "You're marked on HOW you speak, not whether your opinion is 'correct'.",
@@ -1205,6 +4165,375 @@ const SPEAK_CURRICULUM = {
             { q: "PEEL stands for…", choices: ["Point, Explain, Example, Link", "Please Explain Every Letter", "Pause, Erm, End, Leave", "Point, End, Eat, Listen"], answer: 0 },
             { q: "Part 3 questions are mainly…", choices: ["About your daily routine", "Abstract/opinion questions about society & ideas", "Yes/no only", "Spelling tests"], answer: 1 },
             { q: "A balanced answer might use…", choices: ["On the one hand… on the other hand…", "Yes. Yes. Yes.", "I don't know.", "Only idioms"], answer: 0 }
+          ]
+        },
+        {
+          id: "i5", level: "Intermediate", minutes: 11,
+          title: "IELTS Part 1: questions about you",
+          content: `
+            <p>Part 1 lasts about <b>4–5 minutes</b>. The examiner asks simple, familiar questions about your life: your home, your job or studies, hobbies, food, travel, and so on. It is designed to warm you up — but it still counts towards your mark. The most common mistake is answering too briefly.</p>
+            <h3>Why short answers lose marks</h3>
+            <p>A one-word or one-clause answer gives the examiner almost nothing to assess. Fluency, vocabulary range and grammatical complexity are all invisible in a four-word reply. Think of each answer as a <b>mini-paragraph</b>: give your answer, then support it.</p>
+            <table>
+              <tr><th>Type of answer</th><th>What the examiner thinks</th><th>Likely band</th></tr>
+              <tr><td>"Yes, I do."</td><td>Too short to assess. Hesitant.</td><td>4–5</td></tr>
+              <tr><td>"Yes, I enjoy cooking. I mostly make Italian food at the weekend."</td><td>Adequate but simple.</td><td>5–6</td></tr>
+              <tr><td>"Yes, I'm quite keen on cooking, especially Italian. I find it really therapeutic after a busy day at work, and my housemates are always happy to be the guinea pigs."</td><td>Natural, extended, varied vocabulary.</td><td>7+</td></tr>
+            </table>
+            <h3>The ARE pattern: Answer, Reason, Example</h3>
+            <p>Every Part 1 answer should follow this three-step pattern. It is simple enough to use automatically after a little practice.</p>
+            <ol>
+              <li><b>A — Answer</b> the question directly in one clause.</li>
+              <li><b>R — Reason</b> — add 'because', 'since', or 'as' to explain.</li>
+              <li><b>E — Example or extra detail</b> — a name, a memory, a comparison, or a contrast.</li>
+            </ol>
+            <div class="ex">
+              Q: "Do you enjoy sport?" <button class="say" data-say="Do you enjoy sport?">🔊 Listen to question</button><br><br>
+              <b>A:</b> "Yes, I'm fairly sporty." <br>
+              <b>R:</b> "I go running a few times a week because I find it clears my head." <br>
+              <b>E:</b> "I actually signed up for a half-marathon last spring — which was probably a bit ambitious, but I managed it."<br><br>
+              <button class="say" data-say="Yes, I'm fairly sporty. I go running a few times a week because I find it clears my head. I actually signed up for a half-marathon last spring, which was probably a bit ambitious, but I managed it.">🔊 Listen to full answer</button>
+            </div>
+            <h3>Common Part 1 topics and useful phrases</h3>
+            <table>
+              <tr><th>Topic</th><th>Useful phrases to deploy</th></tr>
+              <tr><td>Hometown / where you live</td><td>"It's a fairly busy city but…", "I've lived there all my life, so…", "The thing I like most is…"</td></tr>
+              <tr><td>Work / studies</td><td>"I'm currently training to be a…", "I work in the…sector.", "It's quite demanding but I enjoy the…"</td></tr>
+              <tr><td>Hobbies &amp; free time</td><td>"I'm quite keen on…", "I've recently got into…", "I'm not massively into… but I enjoy…"</td></tr>
+              <tr><td>Food &amp; cooking</td><td>"I'm a bit of a foodie.", "I tend to eat…", "I'd rather eat out than cook, if I'm honest."</td></tr>
+              <tr><td>Travel</td><td>"I try to travel whenever I get the chance.", "The most memorable trip I've taken was…"</td></tr>
+            </table>
+            <h3>Natural fillers — the right ones to use</h3>
+            <p>Fillers are perfectly acceptable — they are what fluent speakers use while thinking. The key is to use them <em>once</em>, not as a habit every three words.</p>
+            <blockquote>Good fillers: <b>"Well…", "Let me think…", "That's a good question, actually…", "I suppose…", "To be honest…", "I'd say…"</b> — these all sound natural and buy you a second to think without sounding hesitant.</blockquote>
+            <p>Avoid: "Erm erm erm", long silences, or the same filler ten times in a row.</p>
+            <div class="ex">
+              Q: "Do you prefer the city or the countryside?" <button class="say" data-say="Do you prefer the city or the countryside?">🔊 Listen to question</button><br><br>
+              "Well, that's something I go back and forth on, to be honest. I grew up in a small village, so I have a real soft spot for the countryside — the pace of life is just so different. That said, I've lived in London for a few years now and I'd find it hard to give up the convenience."
+              <button class="say" data-say="Well, that's something I go back and forth on, to be honest. I grew up in a small village, so I have a real soft spot for the countryside. The pace of life is just so different. That said, I've lived in London for a few years now and I'd find it hard to give up the convenience.">🔊 Listen to model answer</button>
+            </div>
+            <div class="speakcheck" data-target="Well, I'd say I'm quite keen on cooking, especially at the weekend when I have a bit more time."></div>
+            <div class="speakcheck" data-target="To be honest, I've recently got into hiking, which I never expected to enjoy as much as I do."></div>`,
+          tips: [
+            "Every Part 1 answer needs three parts: your answer, a reason, and one extra detail or example.",
+            "Two to four sentences is the ideal length — not one word, not a three-minute monologue.",
+            "One natural filler ('Well…', 'I'd say…') per answer sounds fluent; ten of them sounds nervous."
+          ],
+          practice: "Answer these five questions using ARE (Answer, Reason, Example) for each one. Aim for 3–4 sentences. <button class=\"say\" data-say=\"Question one: Do you enjoy cooking at home?\">🔊 Q1</button> <button class=\"say\" data-say=\"Question two: What do you like about where you live?\">🔊 Q2</button> <button class=\"say\" data-say=\"Question three: Do you read books in your free time?\">🔊 Q3</button> <button class=\"say\" data-say=\"Question four: Have you always lived in the same city?\">🔊 Q4</button> <button class=\"say\" data-say=\"Question five: Do you prefer spending time with friends or on your own?\">🔊 Q5</button>",
+          quiz: [
+            { q: "The ARE pattern stands for…", choices: ["Answer, Repeat, Emphasise", "Answer, Reason, Example/detail", "Ask, Reply, Extend", "Agree, Rephrase, Exaggerate"], answer: 1 },
+            { q: "The ideal length for a Part 1 answer is…", choices: ["One word or short phrase", "2–4 sentences with a reason and detail", "Five minutes of speaking", "A full essay structure"], answer: 1 },
+            { q: "Which filler sounds most natural in a Part 1 answer?", choices: ["Erm erm erm erm erm", "Well, I'd say…", "I do not know the answer.", "Please repeat the question."], answer: 1 }
+          ]
+        },
+        {
+          id: "i6", level: "Advanced", minutes: 12,
+          title: "IELTS Part 2: the long turn (cue card)",
+          content: `
+            <p>Part 2 is unlike anything in normal conversation: you must speak <b>alone for up to 2 minutes</b> on a topic you have never seen before, with only 1 minute to prepare. Many candidates find this the hardest part. With the right structure, it becomes manageable — even impressive.</p>
+            <h3>Anatomy of Part 2</h3>
+            <table>
+              <tr><th>Stage</th><th>Time</th><th>What happens</th></tr>
+              <tr><td>Prep</td><td>1 minute</td><td>You read the card and make notes. The examiner is silent.</td></tr>
+              <tr><td>Long turn</td><td>1–2 minutes</td><td>You speak. The examiner may stop you at 2 minutes.</td></tr>
+              <tr><td>Rounding-off</td><td>30 seconds</td><td>1–2 follow-up questions on the same topic.</td></tr>
+            </table>
+            <h3>Using the prep minute intelligently</h3>
+            <p>One minute sounds short. It is enough if you use it correctly. <b>Do not write full sentences</b> — you will not have time to read them, and reading aloud destroys fluency. Instead:</p>
+            <ul>
+              <li>Read every bullet point on the card.</li>
+              <li>Write one or two <b>keyword prompts</b> next to each bullet — a name, a place, a feeling.</li>
+              <li>Choose <b>one or two 'wow' words</b> you want to use (a good adjective, a collocation).</li>
+              <li>Decide your <b>opening sentence</b> — this is the one sentence worth planning.</li>
+            </ul>
+            <blockquote>Sample card: "Describe a journey that you found memorable. You should say: where you went, how you travelled, what you did there, and explain why it was memorable."</blockquote>
+            <p>Quick prep notes might be: <em>Lisbon / train from Madrid / food markets, trams, sunset / felt free, first solo trip</em>.</p>
+            <h3>A four-part structure that fills 2 minutes</h3>
+            <p>Follow this shape and you will almost never run out to say:</p>
+            <ol>
+              <li><b>Opening sentence</b> — state what/who/where. <button class="say" data-say="I'd like to talk about a journey I took a couple of years ago, a solo trip to Lisbon by train from Madrid.">🔊 Listen</button></li>
+              <li><b>Cover each bullet</b> — work through the card's prompts in order, expanding each one with a sentence or two.</li>
+              <li><b>A short story or scene</b> — describe one specific moment in vivid detail. This is your 'golden minute': it's natural, it's memorable, and it fills time effortlessly.</li>
+              <li><b>Round off with feelings/reflection</b> — why it matters or what you learnt. <button class="say" data-say="Looking back, I think it was the first time I felt genuinely independent, and that's what makes it so memorable for me.">🔊 Listen</button></li>
+            </ol>
+            <h3>Worked example — the full long turn</h3>
+            <div class="ex">
+              <button class="say" data-say="I'd like to talk about a journey I took a couple of years ago, a solo trip to Lisbon. I went by overnight train from Madrid, which was part of the adventure in itself. When I arrived, I spent three days exploring the city on foot and on the old yellow trams. I visited the food markets every morning and tried as many local dishes as I possibly could. The moment that really sticks with me, though, is sitting on a hillside at sunset, watching the light change over the river. The city just turned golden. I hadn't planned it. I'd simply followed a narrow street and ended up there. Looking back, I think it was the first time I felt genuinely independent, and I came home feeling like a completely different person. So that's why it's stayed with me.">🔊 Listen to full 2-minute model answer</button>
+              <p><em>"I'd like to talk about a journey I took a couple of years ago, a solo trip to Lisbon. I went by overnight train from Madrid, which was part of the adventure in itself. When I arrived, I spent three days exploring the city on foot and on the old yellow trams. I visited the food markets every morning and tried as many local dishes as I possibly could. The moment that really sticks with me, though, is sitting on a hillside at sunset, watching the light change over the river. The city just turned golden. I hadn't planned it — I'd simply followed a narrow street and ended up there. Looking back, I think it was the first time I felt genuinely independent, and I came home feeling like a completely different person. So that's why it's stayed with me."</em></p>
+            </div>
+            <h3>What to do if you start to dry up</h3>
+            <p>Every candidate feels this at some point. These lifelines keep you going without sounding desperate:</p>
+            <ul>
+              <li><button class="say" data-say="Now, where was I? Oh yes…">🔊 "Now, where was I? Oh yes…"</button></li>
+              <li><button class="say" data-say="What else can I say about this? Well, one thing that stands out is…">🔊 "What else can I say about this? Well, one thing that stands out is…"</button></li>
+              <li><button class="say" data-say="I should also mention that… and on top of that…">🔊 "I should also mention that… and on top of that…"</button></li>
+              <li>Add: how you felt, who you were with, what happened next, whether you would do it again, what you would do differently.</li>
+            </ul>
+            <div class="speakcheck" data-target="I'd like to talk about a person who's had a significant influence on my life."></div>
+            <div class="speakcheck" data-target="Looking back, I think that experience taught me a great deal about being patient."></div>`,
+          tips: [
+            "Use your prep minute for keyword prompts only — never write full sentences you'll try to read.",
+            "Build in one vivid scene or story: it fills time naturally and shows vocabulary range.",
+            "If you run dry, ask yourself: how did I feel, who was there, what would I do differently?"
+          ],
+          practice: "Set a 1-minute timer and prep this card. Then speak for 2 full minutes. <button class=\"say\" data-say=\"Describe a book, film, or piece of music that made a strong impression on you. You should say: what it was, when you first encountered it, what it was about or what it sounded like, and explain why it made such a strong impression on you.\">🔊 Listen to cue card</button> Record yourself if you can, and check: did you cover all four bullets? Did you reach 90 seconds minimum?",
+          quiz: [
+            { q: "During the 1-minute prep you should…", choices: ["Write full sentences to read out", "Jot keywords and decide your opening sentence", "Memorise a pre-learnt speech", "Stay silent and think"], answer: 1 },
+            { q: "If you finish your points before 2 minutes, the best response is to…", choices: ["Stop speaking and wait", "Add feelings, reflect on why it matters, or describe a specific moment", "Apologise and ask for a new card", "Repeat what you said more slowly"], answer: 1 },
+            { q: "A 'golden minute' scene or story in Part 2 is valuable because…", choices: ["It uses technical vocabulary", "It fills time naturally and demonstrates lexical range", "Examiners mark story-telling separately", "It replaces the need to cover the bullets"], answer: 1 }
+          ]
+        },
+        {
+          id: "i7", level: "Advanced", minutes: 12,
+          title: "IELTS Part 3: discussion and abstract questions",
+          content: `
+            <p>Part 3 is a two-way discussion lasting 4–5 minutes. The questions are harder and more abstract than Part 1: education systems, technology, the environment, social change. This is where Band 7, 8 and 9 are won or lost — because it requires you to <b>develop ideas</b>, not just react.</p>
+            <h3>What examiners are looking for in Part 3</h3>
+            <table>
+              <tr><th>Examiner wants to see</th><th>How to show it</th></tr>
+              <tr><td>Extended, developed answers</td><td>Use PEEL or similar — never give a one-sentence reply.</td></tr>
+              <tr><td>Ability to speculate</td><td>Use modal verbs: 'might', 'could well', 'is likely to'.</td></tr>
+              <tr><td>Comparing perspectives</td><td>"Whereas in the past…", "Compared to…", "In contrast…"</td></tr>
+              <tr><td>Balanced, nuanced opinions</td><td>"On the whole…", "That said…", "It depends to some extent on…"</td></tr>
+              <tr><td>Analytical language</td><td>"One could argue that…", "The underlying issue is…", "This suggests that…"</td></tr>
+            </table>
+            <h3>Developing ideas: the 'because — which means — for instance' chain</h3>
+            <p>A powerful technique for Part 3 is to chain your reasoning explicitly. Each step shows a different piece of grammatical range:</p>
+            <div class="ex">
+              Q: "Do you think young people today read less than previous generations?" <button class="say" data-say="Do you think young people today read less than previous generations?">🔊 Listen to question</button><br><br>
+              "On the whole, I'd say that's probably true, at least when it comes to traditional books. The reason is that smartphones have made short-form content the default — which means people's attention spans may be adapting to shorter bursts of reading. That said, you could argue that young people are actually reading more than ever, just in different formats: articles, social media, subtitles. So it depends, I think, on how you define reading."
+              <button class="say" data-say="On the whole, I'd say that's probably true, at least when it comes to traditional books. The reason is that smartphones have made short-form content the default, which means people's attention spans may be adapting to shorter bursts of reading. That said, you could argue that young people are actually reading more than ever, just in different formats: articles, social media, subtitles. So it depends, I think, on how you define reading.">🔊 Listen to model answer</button>
+            </div>
+            <h3>Speculating about the future</h3>
+            <p>Many Part 3 questions ask about trends or what might happen. Use these structures confidently:</p>
+            <ul>
+              <li><button class="say" data-say="It's quite likely that technology will continue to transform the way we work.">🔊 "It's quite likely that…"</button></li>
+              <li><button class="say" data-say="There's a real possibility that cities will become increasingly unaffordable.">🔊 "There's a real possibility that…"</button></li>
+              <li><button class="say" data-say="It could well be that governments will need to intervene more.">🔊 "It could well be that…"</button></li>
+              <li><button class="say" data-say="Whether that will actually happen remains to be seen.">🔊 "Whether that will actually happen remains to be seen."</button></li>
+            </ul>
+            <h3>Giving balanced, nuanced opinions</h3>
+            <p>Examiners at Band 7+ expect you to acknowledge complexity. Avoid stating opinions flatly and rigidly. Use these to add nuance:</p>
+            <ul>
+              <li><button class="say" data-say="It depends to a large extent on the context.">🔊 "It depends to a large extent on the context."</button></li>
+              <li><button class="say" data-say="On the whole, I think the advantages outweigh the disadvantages, although there are clearly some drawbacks.">🔊 "On the whole, I think the advantages outweigh the disadvantages, although there are clearly some drawbacks."</button></li>
+              <li><button class="say" data-say="One could argue that… and yet, on the other hand…">🔊 "One could argue that… and yet, on the other hand…"</button></li>
+              <li><button class="say" data-say="That's a double-edged sword, really.">🔊 "That's a double-edged sword, really."</button></li>
+            </ul>
+            <h3>The language of analysis</h3>
+            <table>
+              <tr><th>Function</th><th>Phrases</th></tr>
+              <tr><td>Qualifying a claim</td><td>"to some extent", "broadly speaking", "in most cases"</td></tr>
+              <tr><td>Acknowledging other views</td><td>"Admittedly…", "Some would say…", "There's a case for…"</td></tr>
+              <tr><td>Drawing conclusions</td><td>"This suggests that…", "What this really means is…", "The implication is…"</td></tr>
+              <tr><td>Comparing across time</td><td>"Compared to a generation ago…", "Whereas in the past…", "This has shifted considerably…"</td></tr>
+            </table>
+            <h3>What to do when you genuinely do not know</h3>
+            <p>Thinking aloud scores well. Never just say "I don't know." Instead: <button class="say" data-say="That's not something I've thought about a great deal, but I suppose one could argue that the key issue is… Let me think… Yes, I think on balance…">🔊 "That's not something I've thought about a great deal, but I suppose one could argue that… Let me think… Yes, on balance…"</button></p>
+            <div class="speakcheck" data-target="It depends to a large extent on the context, I think."></div>
+            <div class="speakcheck" data-target="One could argue that technology has made our lives easier, and yet on the other hand it has created new pressures."></div>`,
+          tips: [
+            "Chain your reasoning: 'because — which means — for instance' shows grammatical range effortlessly.",
+            "Use 'it depends', 'on the whole', and 'one could argue' to signal analytical thinking.",
+            "Thinking aloud ('I suppose…', 'Let me think…') is far better than silence or 'I don't know'."
+          ],
+          practice: "Answer both questions using the 'because — which means — for instance' chain and include at least one balancing phrase. <button class=\"say\" data-say=\"Question one: Do you think social media has had a positive or negative effect on society?\">🔊 Q1</button> <button class=\"say\" data-say=\"Question two: Should governments do more to protect the environment, or is it the responsibility of individuals?\">🔊 Q2</button>",
+          quiz: [
+            { q: "In Part 3, an examiner most wants to see…", choices: ["Very short, safe answers", "Extended, developed reasoning with nuance", "Memorised statistics", "Agreement with the examiner"], answer: 1 },
+            { q: "Which phrase best signals analytical thinking?", choices: ["Yes, I agree.", "One could argue that…", "I don't know.", "Maybe."], answer: 1 },
+            { q: "If you genuinely do not know about a topic you should…", choices: ["Stay silent", "Say 'I don't know' and stop", "Think aloud: 'I suppose one could argue that…'", "Change the subject"], answer: 2 }
+          ]
+        },
+        {
+          id: "i8", level: "Advanced", minutes: 12,
+          title: "Band 7+ language: cohesion, range and accuracy",
+          content: `
+            <p>There is a clearly defined gap between Band 6 and Band 7. It is not mysterious — it comes down to specific features of language that examiners are trained to listen for. This lesson breaks them down so you can deliberately practise each one.</p>
+            <h3>What the band descriptors actually say</h3>
+            <table>
+              <tr><th>Band</th><th>Fluency &amp; Coherence</th><th>Lexical Resource</th><th>Grammatical Range</th></tr>
+              <tr><td><b>6</b></td><td>Willing to keep talking but may lose coherence; over-uses connectives.</td><td>Adequate range; some inappropriate choices; paraphrases with mixed success.</td><td>Mix of simple and complex structures; frequent errors in complex sentences.</td></tr>
+              <tr><td><b>7</b></td><td>Speaks at length without noticeable effort; uses cohesive devices flexibly.</td><td>Uses less common vocabulary with some awareness of style/collocation; rare inappropriate choices.</td><td>Uses a range of complex structures with general accuracy; errors are rare.</td></tr>
+              <tr><td><b>8</b></td><td>Speaks fluently with only occasional hesitation; uses a full range of cohesive features.</td><td>Uses a wide range; uses idiomatic language naturally; rare errors.</td><td>Wide range of structures used flexibly; only occasional non-systematic errors.</td></tr>
+            </table>
+            <h3>Cohesion: linking ideas intelligently</h3>
+            <p>Band 6 candidates tend to over-use 'and', 'but', 'also', and 'because'. Band 7+ candidates use a <b>wider range of cohesive devices</b> — and crucially, they use them <em>flexibly</em>, not mechanically.</p>
+            <table>
+              <tr><th>Function</th><th>Band 6 (overused)</th><th>Band 7+ (range)</th></tr>
+              <tr><td>Adding</td><td>and, also</td><td>moreover, what's more, in addition to this, not only that but…</td></tr>
+              <tr><td>Contrasting</td><td>but</td><td>however, that said, even so, and yet, while, whereas</td></tr>
+              <tr><td>Explaining</td><td>because</td><td>which is why, the reason being that, given that, in that</td></tr>
+              <tr><td>Concluding</td><td>so</td><td>and as a result, which means that, this leads to, consequently</td></tr>
+              <tr><td>Exemplifying</td><td>for example</td><td>take…for instance, a case in point is…, to illustrate this…</td></tr>
+            </table>
+            <h3>Vocabulary range: moving beyond the obvious word</h3>
+            <p>Less common vocabulary does not mean obscure words. It means choosing a <b>more precise or more interesting</b> alternative to the first word that comes to mind.</p>
+            <div class="ex">
+              Instead of <em>good</em>: <button class="say" data-say="beneficial, rewarding, invaluable, outstanding, commendable">🔊 beneficial / rewarding / invaluable / outstanding / commendable</button><br>
+              Instead of <em>bad</em>: <button class="say" data-say="detrimental, counterproductive, alarming, problematic, concerning">🔊 detrimental / counterproductive / alarming / problematic / concerning</button><br>
+              Instead of <em>big</em>: <button class="say" data-say="substantial, considerable, significant, marked, pronounced">🔊 substantial / considerable / significant / marked / pronounced</button><br>
+              Instead of <em>people</em>: <button class="say" data-say="individuals, the population, citizens, the general public, communities">🔊 individuals / the population / citizens / communities</button>
+            </div>
+            <p>Collocations matter equally. Examiners notice when vocabulary is used <em>naturally together</em>:</p>
+            <ul>
+              <li><button class="say" data-say="raise awareness, take action, tackle a problem, strike a balance, address an issue">🔊 raise awareness / take action / tackle a problem / strike a balance / address an issue</button></li>
+            </ul>
+            <h3>Grammatical range: what 'complex structures' really means</h3>
+            <p>You do not need to cram in relative clauses for the sake of it. The goal is a <b>natural mix</b> of sentence types. Here are the structures that make the biggest difference:</p>
+            <table>
+              <tr><th>Structure</th><th>Example</th></tr>
+              <tr><td>Relative clause</td><td>"…a solution which tends to be overlooked…"</td></tr>
+              <tr><td>Conditional</td><td>"If the government were to invest more, communities would benefit enormously."</td></tr>
+              <tr><td>Passive voice</td><td>"This issue has been largely ignored by policymakers."</td></tr>
+              <tr><td>Participle clause</td><td>"Having lived abroad for several years, I can say firsthand that…"</td></tr>
+              <tr><td>Cleft sentence</td><td>"What concerns me most is the lack of long-term planning."</td></tr>
+              <tr><td>Inversion (advanced)</td><td>"Not only does it save money, but it also reduces emissions."</td></tr>
+            </table>
+            <h3>Common errors that cap your score at Band 6</h3>
+            <p>These are the mistakes that appear over and over in examiners' notes. Eliminating them alone can push many candidates up a band:</p>
+            <ul>
+              <li><b>Article errors:</b> "The people need <s>the</s> education" → "People need education."</li>
+              <li><b>Subject-verb agreement:</b> "The number of cars <s>are</s> increasing" → "is increasing".</li>
+              <li><b>Preposition errors:</b> "depend <s>of</s>" → "depend on"; "interested <s>about</s>" → "interested in".</li>
+              <li><b>Overusing 'very':</b> Replace with "extremely", "particularly", "remarkably", "deeply".</li>
+              <li><b>Tense inconsistency:</b> Stay in one tense per narrative thread; shift deliberately when the time changes.</li>
+            </ul>
+            <div class="speakcheck" data-target="What concerns me most is the lack of long-term planning in this area."></div>
+            <div class="speakcheck" data-target="Not only does it save time, but it also tends to produce better results."></div>`,
+          tips: [
+            "Swap three overused words ('good', 'bad', 'big') for precise alternatives in every practice session.",
+            "Vary your linkers: if you've used 'however' once, use 'that said' or 'and yet' next time.",
+            "One natural cleft or inversion per answer ('What concerns me is…', 'Not only does it…') signals Band 7+ range."
+          ],
+          practice: "Record your answer to this question, then listen back and identify: (a) any word you could upgrade, (b) any linker you repeated, (c) one place to add a complex structure. <button class=\"say\" data-say=\"Do you think cities are becoming better or worse places to live?\">🔊 Listen to question</button>",
+          quiz: [
+            { q: "A Band 7 candidate's cohesive devices are described as…", choices: ["Used mechanically and repeatedly", "Used flexibly across a range", "Mostly absent", "Limited to 'and' and 'but'"], answer: 1 },
+            { q: "Which is an example of a 'cleft sentence' that shows grammatical range?", choices: ["I think it is important.", "What concerns me most is the lack of planning.", "It is big and also important.", "Because people want it."], answer: 1 },
+            { q: "Which common error most often caps candidates at Band 6?", choices: ["Using too many complex structures", "Consistent tense errors and article mistakes", "Having a regional accent", "Giving long answers"], answer: 1 }
+          ]
+        },
+        {
+          id: "i9", level: "Advanced", minutes: 12,
+          title: "Cambridge B2/C1 Speaking: photos, tasks and partner work",
+          content: `
+            <p>The Cambridge B2 First and C1 Advanced speaking tests follow a <b>paired format</b>: you are examined alongside another candidate, with two examiners present (one asks questions — the interlocutor; one only listens and marks — the assessor). The test has four parts, each testing different skills. Understanding what each part demands is the first step to scoring well.</p>
+            <h3>The four parts at a glance</h3>
+            <table>
+              <tr><th>Part</th><th>Format</th><th>Key skill tested</th></tr>
+              <tr><td><b>1</b></td><td>General questions (3 min)</td><td>Personal information, extended answers</td></tr>
+              <tr><td><b>2</b></td><td>Individual long turn — compare photos (4 min)</td><td>Describing, comparing, speculating, evaluating</td></tr>
+              <tr><td><b>3</b></td><td>Collaborative task with partner (4 min)</td><td>Negotiating, discussing, agreeing/disagreeing</td></tr>
+              <tr><td><b>4</b></td><td>Discussion questions (4 min)</td><td>Expanding on Part 3 themes; abstract opinions</td></tr>
+            </table>
+            <h3>Part 2: comparing and speculating on photos</h3>
+            <p>You are given two photographs and asked to <b>compare</b> them AND respond to a question (e.g. "How might the people be feeling?", "Why might someone choose this?"). You have about <b>1 minute</b>. Your partner then answers a short follow-up question for 30 seconds.</p>
+            <blockquote>Critical rule: Spend at least 60% of your time <b>comparing</b>, not just describing. An answer that merely describes each photo separately misses the task.</blockquote>
+            <p>Use this shape: <b>brief overview → comparison → speculation → evaluation</b>.</p>
+            <div class="ex">
+              <button class="say" data-say="Both photographs show people engaged in learning, but in very different settings. In the first, students appear to be in a traditional classroom, whereas in the second, someone seems to be studying alone outdoors. What's interesting is the contrast in atmosphere: the classroom looks quite formal and structured, while the outdoor setting looks relaxed and self-directed. As for how the people might be feeling, I'd imagine the student outdoors feels a greater sense of freedom, although perhaps a little isolated. The classroom students, on the other hand, might feel more supported but also more constrained.">🔊 Listen to model Part 2 answer</button>
+            </div>
+            <p>Useful phrases for Part 2:</p>
+            <ul>
+              <li><button class="say" data-say="Both photographs show… whereas in the second…">🔊 "Both photographs show… whereas in the second…"</button></li>
+              <li><button class="say" data-say="What strikes me about this image is…">🔊 "What strikes me about this image is…"</button></li>
+              <li><button class="say" data-say="They seem to be… which suggests that…">🔊 "They seem to be… which suggests that…"</button></li>
+              <li><button class="say" data-say="I'd imagine they might be feeling… perhaps because…">🔊 "I'd imagine they might be feeling… perhaps because…"</button></li>
+              <li><button class="say" data-say="In contrast to the first photo, the second one conveys a very different mood.">🔊 "In contrast to the first photo, the second one conveys a very different mood."</button></li>
+            </ul>
+            <h3>Part 3: the collaborative decision task</h3>
+            <p>You and your partner discuss a set of options (shown on a card) and make a decision together. Examiners are watching how you <b>interact</b>: do you invite your partner's opinion? Do you build on what they say? Do you reach a decision?</p>
+            <table>
+              <tr><th>Function</th><th>Phrases</th></tr>
+              <tr><td>Inviting the partner</td><td>"What do you think about that option?", "How do you feel about…?", "Shall we start with…?"</td></tr>
+              <tr><td>Building on their idea</td><td>"That's a fair point. I'd also add that…", "Yes, and I think what makes that even more relevant is…"</td></tr>
+              <tr><td>Politely disagreeing</td><td>"I see where you're coming from, but I'm not sure that…", "That's one way of looking at it. My feeling is…"</td></tr>
+              <tr><td>Moving the discussion on</td><td>"Shall we move on to…?", "We haven't discussed… yet."</td></tr>
+              <tr><td>Reaching a decision</td><td>"So, on balance, would you agree that… is the best option?", "It seems like we both feel that…"</td></tr>
+            </table>
+            <h3>Common mistakes in the paired format</h3>
+            <ul>
+              <li><b>Talking over your partner</b> — you are both being assessed; let them speak.</li>
+              <li><b>Ignoring your partner's points</b> — always acknowledge what they say before moving on.</li>
+              <li><b>Only describing in Part 2</b> — you must compare AND speculate.</li>
+              <li><b>Agreeing too quickly in Part 3</b> — a longer discussion shows more language; explore before you decide.</li>
+              <li><b>Letting your partner dominate</b> — if they take too long, politely interject: "That's a good point — I'd also say that…"</li>
+            </ul>
+            <div class="speakcheck" data-target="Both photographs show people in very different environments, but both seem to involve some form of creative activity."></div>
+            <div class="speakcheck" data-target="I see where you're coming from, but my feeling is that the second option might be more practical."></div>`,
+          tips: [
+            "In Part 2, spend the majority of your time comparing — not just describing each photo separately.",
+            "In Part 3, invite your partner's opinion explicitly ('What do you think?') — interaction is assessed.",
+            "Polite disagreement ('I see where you're coming from, but…') shows more range than constant agreement."
+          ],
+          practice: "Practise Part 2 with this prompt. Speak for 1 minute. <button class=\"say\" data-say=\"Compare these two situations: someone cooking a meal at home alone, and someone eating at a busy restaurant with friends. How might the people be feeling, and what are the main differences between the two experiences?\">🔊 Listen to Part 2 prompt</button> Then practise a Part 3 opener: you and a partner are deciding which of three activities — cooking classes, a theatre trip, or a city walk — would be best for a team-building day. <button class=\"say\" data-say=\"So, which of these three options do you think would work best for a team-building day: cooking classes, a theatre trip, or a city walk?\">🔊 Listen to Part 3 task</button>",
+          quiz: [
+            { q: "In Cambridge B2/C1 Speaking Part 2, you must…", choices: ["Describe one photo in detail", "Compare two photos AND speculate", "List vocabulary about the photos", "Interview your partner"], answer: 1 },
+            { q: "In Part 3, the examiner is particularly assessing…", choices: ["Individual grammar accuracy only", "How you interact and negotiate with your partner", "Your knowledge of the topic", "Your accent"], answer: 1 },
+            { q: "If your partner dominates Part 3, you should…", choices: ["Stay silent and let them finish", "Walk out of the exam", "Politely interject: 'That's a good point — I'd also say that…'", "Ask the interlocutor to stop them"], answer: 2 }
+          ]
+        },
+        {
+          id: "i10", level: "Intermediate", minutes: 10,
+          title: "Exam-day strategy, common mistakes and timing",
+          content: `
+            <p>Many candidates prepare their English thoroughly and then lose marks on the day through <b>avoidable mistakes</b>: nerves, poor timing, memorised scripts, or giving up too quickly after a stumble. This lesson is about everything that happens outside the grammar books.</p>
+            <h3>The number one mistake: memorising scripts</h3>
+            <p>Examiners are trained to recognise rehearsed answers. If your language suddenly sounds scripted or unnaturally formal, your Fluency and Lexical Resource scores drop. Worse, if the question changes slightly and you cannot adapt, you may go completely blank.</p>
+            <blockquote>Prepare <b>frameworks and phrases</b>, not full answers. Know the ARE pattern, PEEL, and your favourite linkers — but always generate the actual sentences on the spot.</blockquote>
+            <h3>Recovering from a blank</h3>
+            <p>Every candidate, at every level, has a moment in the exam when the mind empties. The key is to have a <b>recovery protocol</b> ready so that the pause lasts two seconds, not twenty.</p>
+            <ul>
+              <li><button class="say" data-say="That's a really interesting question. Let me think for a moment.">🔊 "That's a really interesting question. Let me think for a moment."</button></li>
+              <li><button class="say" data-say="I've never really thought about that before, but I suppose…">🔊 "I've never really thought about that before, but I suppose…"</button></li>
+              <li><button class="say" data-say="Right, so… I think what I'm trying to say is…">🔊 "Right, so… I think what I'm trying to say is…"</button></li>
+              <li><button class="say" data-say="That's actually quite a complex question. I'd say, broadly speaking…">🔊 "That's actually quite a complex question. I'd say, broadly speaking…"</button></li>
+            </ul>
+            <p>These phrases are not 'cheating' — they are what fluent speakers say. They buy you thinking time while <b>keeping the score running</b>.</p>
+            <h3>Fluency over perfection</h3>
+            <p>A common mistake is to stop mid-sentence to correct yourself. Every time you do this, you interrupt your own fluency. The rule is:</p>
+            <table>
+              <tr><th>Situation</th><th>What to do</th></tr>
+              <tr><td>Minor grammar slip (wrong tense, wrong article)</td><td>Keep going. Do not stop. One quick self-correction is fine; three is damaging.</td></tr>
+              <tr><td>Wrong word chosen</td><td>If the meaning is still clear, keep going. If not, one short correction: "…or rather, I mean…"</td></tr>
+              <tr><td>Completely stuck mid-sentence</td><td>Finish with a different ending: "…which is to say…", "…what I mean is…"</td></tr>
+            </table>
+            <h3>Timing awareness</h3>
+            <p>Pacing is a skill. Here is what good timing looks like across the test:</p>
+            <ul>
+              <li><b>Part 1 / Cambridge Part 1:</b> 3–4 sentences per answer. Do not over-extend — the examiner needs to ask several questions.</li>
+              <li><b>IELTS Part 2:</b> Fill the full 2 minutes — check the clock on the desk if allowed, or count your four structural steps.</li>
+              <li><b>IELTS Part 3 / Cambridge Part 4:</b> 4–6 sentences per answer. Include a reason, a balance, and a conclusion.</li>
+              <li><b>Cambridge Part 3 (collaborative):</b> Keep the discussion alive — do not reach a decision in 30 seconds. Explore all options before agreeing.</li>
+            </ul>
+            <h3>Staying calm: practical strategies</h3>
+            <p>Nerves narrow your vocabulary and shorten your sentences. These strategies genuinely help:</p>
+            <ol>
+              <li><b>Breathe before you begin</b> — take one slow breath after the question is asked. The examiner expects a natural pause.</li>
+              <li><b>Speak slightly more slowly than feels comfortable</b> — most nervous candidates rush, which makes errors more likely.</li>
+              <li><b>Make eye contact</b> — this reduces the sense of performing and increases the sense of conversation.</li>
+              <li><b>Remember the examiner wants you to do well</b> — they are not looking for reasons to penalise you; they are looking for evidence to reward you.</li>
+            </ol>
+            <h3>The mistakes that lose easy marks</h3>
+            <ul>
+              <li>Answering in one word or sentence in Parts 1/4.</li>
+              <li>Starting every sentence with "I think that…" — vary your openers.</li>
+              <li>Stopping after a grammar mistake and starting over — this kills fluency.</li>
+              <li>Going completely off-topic in Part 2 — cover the bullets on the card.</li>
+              <li>Talking over or ignoring a partner in Cambridge Part 3.</li>
+              <li>Preparing memorised answers for 'popular' topics — examiners adjust the questions specifically to break scripted answers.</li>
+            </ul>
+            <div class="speakcheck" data-target="That's a really interesting question. Let me think for a moment."></div>
+            <div class="speakcheck" data-target="I've never really thought about that before, but I suppose it depends on the situation."></div>`,
+          tips: [
+            "Prepare frameworks and phrases, not full answers — scripts are recognisable and will cost you marks.",
+            "A two-second recovery phrase ('Let me think…', 'I suppose…') is always better than a long silence.",
+            "Speak slightly more slowly than feels natural — nerves make candidates rush, and rushing creates errors."
+          ],
+          practice: "Do this two-stage exercise. Stage 1: answer this question for 40 seconds WITHOUT stopping to self-correct, even if you make a grammar mistake. <button class=\"say\" data-say=\"What is the most important quality in a good friend?\">🔊 Listen to question</button> Stage 2: answer this question and practise your recovery phrase if you go blank. <button class=\"say\" data-say=\"Do you think the way people spend their free time has changed significantly in recent years?\">🔊 Listen to question</button>",
+          quiz: [
+            { q: "Why do examiners penalise memorised scripts?", choices: ["Scripts always contain grammar mistakes", "They show a lack of lexical range and break down if questions vary", "Memorising is against exam rules", "Examiners prefer shorter answers"], answer: 1 },
+            { q: "If you make a small grammar slip mid-sentence you should…", choices: ["Stop, apologise, and restart the sentence", "Keep going — fluency matters more than one minor error", "Ask the examiner to repeat the question", "Slow down to a complete halt"], answer: 1 },
+            { q: "The best pacing strategy for most candidates who are nervous is to…", choices: ["Speak as fast as possible to show fluency", "Speak slightly more slowly than feels comfortable", "Match the speed of the examiner", "Pause for 5 seconds before each sentence"], answer: 1 }
           ]
         }
       ]
@@ -1335,6 +4664,355 @@ const SPEAK_CURRICULUM = {
             { q: "When asked 'Any questions for us?', you should…", choices: ["Say no", "Ask one or two thoughtful questions", "Ask only about salary", "Leave"], answer: 1 },
             { q: "On a video interview, eye contact means looking at…", choices: ["The screen image", "The camera lens", "Your notes", "Away"], answer: 1 },
             { q: "A strong close does what?", choices: ["Hides your interest", "Clearly states you want the role", "Criticises the company", "Asks nothing"], answer: 1 }
+          ]
+        },
+        {
+          id: "j5", level: "Intermediate", minutes: 10,
+          title: "Researching the role and first impressions",
+          content: `
+            <p>The interview begins long before you sit down. How you <b>prepare in advance</b>, how you <b>walk in</b>, and how you handle the first two minutes set the tone for everything that follows. British interviewers pay close attention to professionalism, warmth, and preparation from the very first second.</p>
+
+            <h3>Research: what to do the night before</h3>
+            <p>Go beyond the job description. Spend 20–30 minutes on these sources:</p>
+            <table>
+              <tr><th>Source</th><th>What to look for</th></tr>
+              <tr><td>Company website</td><td>Mission, values, recent news, products or services</td></tr>
+              <tr><td>LinkedIn</td><td>Your interviewers' backgrounds; recent company posts</td></tr>
+              <tr><td>News / press</td><td>Funding rounds, award wins, expansions, challenges</td></tr>
+              <tr><td>Job description</td><td>Key verbs and skills — mirror their language in your answers</td></tr>
+              <tr><td>Glassdoor / Indeed</td><td>Common interview questions and culture insights</td></tr>
+            </table>
+            <p>Write down two or three things that genuinely interest you about the company. You will use these in your answers and in the questions you ask at the end.</p>
+            <blockquote>Tip: if you can mention something specific — a recent product launch, a CSR initiative, a new market — your interviewer will notice the effort immediately.</blockquote>
+
+            <h3>The greeting and handshake</h3>
+            <p>In a British professional setting, a firm but not crushing handshake, a smile, and direct eye contact is the standard greeting. Offer your hand first if the interviewer does not — it shows confidence.</p>
+            <ul>
+              <li>Greet the receptionist warmly — they sometimes give feedback.</li>
+              <li>Use the interviewer's name: <button class="say" data-say="Good morning, it's lovely to meet you, Sarah.">🔊 "Good morning — it's lovely to meet you, Sarah."</button></li>
+              <li>If the interviewer offers a drink, it is perfectly fine to accept. <button class="say" data-say="A glass of water would be lovely, thank you.">🔊 "A glass of water would be lovely, thank you."</button></li>
+            </ul>
+            <p>In a video interview, smile visibly as soon as the call connects and open with a warm greeting. The same principles apply.</p>
+
+            <h3>Small talk before the interview begins</h3>
+            <p>British interviewers almost always exchange a minute or two of small talk — about your journey, the weather, the office. Treat it as part of the interview: it shows social fluency and warmth.</p>
+            <div class="ex">"The journey was very straightforward, thank you — I took the Elizabeth line and it was quick." <button class="say" data-say="The journey was very straightforward, thank you. I took the Elizabeth line and it was quick.">🔊 Listen</button></div>
+            <div class="ex">"I've been looking forward to visiting the office — the building is wonderful." <button class="say" data-say="I've been looking forward to visiting the office. The building is wonderful.">🔊 Listen</button></div>
+            <p>Avoid controversial topics (politics, complaints about previous employers) at this stage. Keep it positive and brief.</p>
+
+            <h3>Confident body language and vocal tone</h3>
+            <p>Research consistently shows that interviewers form an impression within the first 30 seconds. Make those seconds count:</p>
+            <ul>
+              <li><b>Posture:</b> sit upright but relaxed — leaning slightly forward signals engagement.</li>
+              <li><b>Hands:</b> rest them on the table or in your lap; avoid crossing your arms.</li>
+              <li><b>Eye contact:</b> maintain natural, steady eye contact — look away occasionally so it does not feel like staring.</li>
+              <li><b>Pace:</b> speak at a measured pace. Nerves make us rush — consciously slow down.</li>
+              <li><b>Volume:</b> project your voice clearly. A quiet, fading answer sounds uncertain.</li>
+            </ul>
+            <p>Before you walk in, take three slow deep breaths and stand tall for 30 seconds. This is a well-researched technique for reducing the physical symptoms of nerves.</p>
+            <div class="speakcheck" data-target="Good morning, it's lovely to meet you. I've been looking forward to this."></div>
+            <div class="speakcheck" data-target="The journey was very straightforward, thank you."></div>`,
+          tips: [
+            "Spend 20–30 minutes researching: website, LinkedIn, recent news, and the job description.",
+            "In British settings a warm smile, firm handshake, and using the interviewer's name creates an excellent first impression.",
+            "Treat small talk as part of the interview — it signals social confidence."
+          ],
+          practice: "Before your next mock or real interview, write down three specific facts about the company you could mention naturally. Practise your opening greeting aloud: handshake, name, and a warm opener.",
+          quiz: [
+            { q: "Which source is most useful for mirroring language in your answers?", choices: ["The company canteen menu", "The job description", "A friend's opinion", "The interviewer's hobbies"], answer: 1 },
+            { q: "British small talk before an interview should be…", choices: ["Long and detailed about your personal life", "Warm, brief, and positive", "Avoided completely", "About salary expectations"], answer: 1 },
+            { q: "When someone is nervous, their speech tends to…", choices: ["Slow down automatically", "Speed up — so consciously slow down", "Stop completely", "Become louder"], answer: 1 }
+          ]
+        },
+        {
+          id: "j6", level: "Intermediate", minutes: 11,
+          title: "Tell me about yourself: your pitch",
+          content: `
+            <p>"Tell me about yourself" opens almost every interview. It looks simple, but it is a <b>gift</b>: the interviewer is handing you the microphone to frame who you are. A polished, confident 90-second pitch can set a positive tone for the entire conversation. A vague, rambling one can undo it.</p>
+
+            <h3>The Present → Past → Future structure</h3>
+            <p>This three-part framework keeps you focused and gives your answer a satisfying shape:</p>
+            <table>
+              <tr><th>Part</th><th>What to say</th><th>Approx. time</th></tr>
+              <tr><td><b>Present</b></td><td>Who you are right now — your current role, field, or main skill</td><td>20–25 sec</td></tr>
+              <tr><td><b>Past</b></td><td>One or two relevant highlights from your background</td><td>30–35 sec</td></tr>
+              <tr><td><b>Future</b></td><td>Why you are here — link your story to this specific role</td><td>20–25 sec</td></tr>
+            </table>
+            <p>Total: 70–90 seconds. Practise it until it flows naturally, but do not memorise it word for word — you want it to sound like you, not a script.</p>
+
+            <h3>What to include and what to cut</h3>
+            <p><b>Include:</b></p>
+            <ul>
+              <li>Your current job title or area of expertise</li>
+              <li>One or two achievements directly relevant to this role</li>
+              <li>A brief mention of what drives or motivates you professionally</li>
+              <li>A clear bridge to why this job appeals to you now</li>
+            </ul>
+            <p><b>Cut:</b></p>
+            <ul>
+              <li>Where you grew up or went to school (unless directly relevant)</li>
+              <li>Personal life details the interviewer did not ask for</li>
+              <li>A full chronological work history — that is what the CV is for</li>
+              <li>Anything negative about previous employers</li>
+            </ul>
+            <blockquote>Key principle: every sentence in your pitch should be relevant to the role you are applying for. If it does not serve that goal, cut it.</blockquote>
+
+            <h3>A model pitch to study</h3>
+            <div class="ex">
+              "<b>(Present)</b> I'm currently a customer success manager at a mid-sized software company, where I look after a portfolio of about forty enterprise clients. <b>(Past)</b> Before that I spent three years in technical support, which gave me a really solid grounding in the product side of things — I was also part of a project that reduced client churn by eighteen per cent. <b>(Future)</b> I'm now looking to move into a more strategic account management role, and when I came across this position I was struck by how well it aligned with both my experience and where I want to go next."
+              <button class="say" data-say="I'm currently a customer success manager at a mid-sized software company, where I look after a portfolio of about forty enterprise clients. Before that I spent three years in technical support, which gave me a really solid grounding in the product side of things. I was also part of a project that reduced client churn by eighteen per cent. I'm now looking to move into a more strategic account management role, and when I came across this position I was struck by how well it aligned with both my experience and where I want to go next.">🔊 Listen to the full pitch</button>
+            </div>
+            <p>Notice: it is specific, it contains a number, it ends by connecting to this role, and it took roughly 80 seconds.</p>
+
+            <h3>Tone and delivery</h3>
+            <p>Your pitch should sound <b>warm and confident</b>, not boastful. In British professional culture, underselling yourself is common but unhelpful — aim for a tone of quiet, evidence-backed confidence rather than enthusiastic self-promotion.</p>
+            <ul>
+              <li>Avoid filler phrases: "um", "sort of", "basically", "I guess"</li>
+              <li>Use a steady pace — the opening sentence is often the most rushed</li>
+              <li>A small smile as you finish signals you are comfortable</li>
+            </ul>
+            <div class="speakcheck" data-target="I'm currently working as a project coordinator with around four years of experience in operations."></div>
+            <div class="speakcheck" data-target="I'm now looking for a role where I can take on more responsibility, which is why this position really appeals to me."></div>`,
+          tips: [
+            "Structure your pitch as Present, then a Past highlight, then a Future bridge to this specific role.",
+            "Keep it to 70–90 seconds — tight and confident beats long and rambling every time.",
+            "Cut anything that does not directly serve the case for hiring you for this particular job."
+          ],
+          practice: "Write your own Present-Past-Future pitch for a role you want. Record yourself saying it, then time it. Cut it until it is under 90 seconds and every sentence counts.",
+          quiz: [
+            { q: "Which part of the pitch should come last?", choices: ["Your education history", "A future bridge to this role", "Your hobbies", "Your previous salary"], answer: 1 },
+            { q: "The ideal pitch length is roughly…", choices: ["20 seconds", "70–90 seconds", "4–5 minutes", "As long as you like"], answer: 1 },
+            { q: "Which of these should you cut from your pitch?", choices: ["A relevant achievement with a number", "A bridge to this specific role", "Full chronological work history", "Your current job title"], answer: 2 }
+          ]
+        },
+        {
+          id: "j7", level: "Advanced", minutes: 12,
+          title: "Strengths, weaknesses and competency questions (STAR)",
+          content: `
+            <p>Competency-based interviews are standard in British organisations — particularly in the public sector, finance, and large corporations. The interviewer asks about real past behaviour because research shows it predicts future performance. Your tool for answering these questions brilliantly is the <b>STAR method</b>.</p>
+
+            <h3>The STAR method explained</h3>
+            <table>
+              <tr><th>Letter</th><th>Element</th><th>Your job</th><th>Time share</th></tr>
+              <tr><td><b>S</b></td><td>Situation</td><td>Briefly set the scene — context and timeframe</td><td>~10%</td></tr>
+              <tr><td><b>T</b></td><td>Task</td><td>What specifically you needed to achieve or solve</td><td>~10%</td></tr>
+              <tr><td><b>A</b></td><td>Action</td><td>The steps <b>you personally</b> took — this is the heart of the answer</td><td>~60%</td></tr>
+              <tr><td><b>R</b></td><td>Result</td><td>The positive outcome — with a number or metric if possible</td><td>~20%</td></tr>
+            </table>
+            <blockquote>The most common mistake is spending too long on the Situation and running out of time before the Result. Spend the most time on Action.</blockquote>
+            <p>Prepare four to five versatile STAR stories covering: <b>leadership</b>, <b>teamwork</b>, <b>handling conflict</b>, <b>dealing with failure</b>, and <b>working under pressure</b>. Most competency questions can be answered with one of these.</p>
+
+            <h3>A worked STAR example</h3>
+            <p>Question: "Tell me about a time you dealt with a difficult stakeholder."</p>
+            <div class="ex">
+              "<b>(S)</b> In my previous role I was managing a software rollout across three departments. One department head was consistently blocking progress — she felt the project had been imposed on her team without consultation. <b>(T)</b> I needed to bring her on board without delaying the wider project timeline. <b>(A)</b> I requested a one-to-one meeting specifically to listen to her concerns rather than defend the plan. I then incorporated two of her team's suggestions into the rollout design, and I kept her informed at every milestone with a brief weekly update. <b>(R)</b> She became one of the project's most vocal supporters. The rollout completed on schedule and adoption in her department was actually the highest of the three, at ninety-four per cent."
+              <button class="say" data-say="In my previous role I was managing a software rollout across three departments. One department head was consistently blocking progress — she felt the project had been imposed on her team without consultation. I needed to bring her on board without delaying the wider project timeline. I requested a one-to-one meeting specifically to listen to her concerns rather than defend the plan. I then incorporated two of her team's suggestions into the rollout design, and I kept her informed at every milestone with a brief weekly update. She became one of the project's most vocal supporters. The rollout completed on schedule and adoption in her department was actually the highest of the three, at ninety-four per cent.">🔊 Listen to the full answer</button>
+            </div>
+            <p>Notice: <b>I</b> is used in the Action, not "we". The Result is specific (94%). The Situation is brief.</p>
+
+            <h3>Answering "What is your greatest strength?"</h3>
+            <p>Choose one strength that is <b>directly relevant to the role</b>. Back it up with a brief piece of evidence — a mini STAR story in 20 seconds.</p>
+            <div class="ex">"I'd say analytical thinking. In my last role I noticed a billing error in our supplier contracts that others had missed, and by correcting it we saved the company around twelve thousand pounds per year." <button class="say" data-say="I'd say analytical thinking. In my last role I noticed a billing error in our supplier contracts that others had missed, and by correcting it we saved the company around twelve thousand pounds a year.">🔊 Listen</button></div>
+            <p>Avoid vague claims like "I'm a hard worker" or "I'm a people person" without evidence — they mean nothing without proof.</p>
+
+            <h3>Answering "What is your greatest weakness?"</h3>
+            <p>This is not a trap — it is a test of <b>self-awareness and growth mindset</b>. The formula is: real weakness + what you are actively doing about it + a positive outcome from that effort.</p>
+            <ul>
+              <li>Do <b>not</b> say "I'm a perfectionist" — it is transparent and interviewers have heard it thousands of times.</li>
+              <li>Do <b>not</b> pick a weakness that is core to the role (e.g., poor attention to detail for an accountancy role).</li>
+              <li>Do <b>not</b> end on the weakness — always close on progress or improvement.</li>
+            </ul>
+            <div class="ex">"I used to struggle with public speaking — I would avoid presenting ideas in large meetings even when I had something valuable to contribute. I recognised it was holding me back, so I joined a Toastmasters group twelve months ago and I now present at our all-hands meetings regularly. I still feel nerves, but I manage them well and the feedback has been positive." <button class="say" data-say="I used to struggle with public speaking — I would avoid presenting ideas in large meetings even when I had something valuable to contribute. I recognised it was holding me back, so I joined a Toastmasters group twelve months ago and I now present at our all-hands meetings regularly. I still feel nerves, but I manage them well and the feedback has been positive.">🔊 Listen</button></div>
+            <div class="speakcheck" data-target="I'd say my greatest strength is staying calm under pressure, which has helped my team meet tight deadlines."></div>
+            <div class="speakcheck" data-target="I used to find it difficult to delegate, but I've been working on it and the results have genuinely improved."></div>`,
+          tips: [
+            "Spend roughly 60% of a STAR answer on the Action — use 'I', not 'we', throughout.",
+            "For strengths, always add a brief proof: a number or a specific outcome.",
+            "For weaknesses, be genuine, end on improvement, and never use the 'perfectionist' cliché."
+          ],
+          practice: "Choose a competency question ('Tell me about a time you handled conflict') and write a full STAR answer. Time the Action section — it should be the longest part. Say it aloud until it flows naturally.",
+          quiz: [
+            { q: "In a STAR answer, which section should take roughly 60% of your time?", choices: ["Situation", "Task", "Action", "Result"], answer: 2 },
+            { q: "When describing a weakness, you must always end on…", choices: ["A second weakness", "Blaming circumstances", "What you are actively doing to improve", "Silence"], answer: 2 },
+            { q: "Why should you say 'I' rather than 'we' in the Action section?", choices: ["It sounds more modest", "The interviewer is assessing your individual contribution", "Grammar rules require it", "Interviewers dislike teamwork"], answer: 1 }
+          ]
+        },
+        {
+          id: "j8", level: "Advanced", minutes: 11,
+          title: "Achievements and tricky questions",
+          content: `
+            <p>Some interview questions feel like minefields: gaps in your CV, reasons for leaving, salary expectations, or being asked to convince the panel to hire you. This lesson gives you a clear, confident framework for each one — in a way that feels honest and professional rather than rehearsed or defensive.</p>
+
+            <h3>Talking about achievements without bragging</h3>
+            <p>British workplace culture tends to be understated — overt self-promotion can feel jarring. The solution is to let <b>evidence do the talking</b>. Numbers and specifics are not bragging; they are data.</p>
+            <table>
+              <tr><th>Weak version</th><th>Strong version</th></tr>
+              <tr><td>"I'm really good at sales."</td><td>"I grew my territory revenue by thirty-two per cent year-on-year for two consecutive years."</td></tr>
+              <tr><td>"I managed a big project."</td><td>"I led a cross-functional team of twelve to deliver a platform migration three weeks ahead of schedule."</td></tr>
+              <tr><td>"I'm great with customers."</td><td>"My client satisfaction scores averaged 4.8 out of 5 over eighteen months."</td></tr>
+            </table>
+            <p>Use hedging language to soften delivery without undermining the achievement: "I'm quite proud of the fact that…", "One thing I'm pleased about is…", "The outcome we achieved was…"</p>
+            <div class="ex">"One thing I'm quite pleased about is that in my last role I introduced a new onboarding checklist that cut new-starter errors by forty per cent in the first quarter." <button class="say" data-say="One thing I'm quite pleased about is that in my last role I introduced a new onboarding checklist that cut new-starter errors by forty per cent in the first quarter.">🔊 Listen</button></div>
+
+            <h3>Handling gaps in your CV</h3>
+            <p>Gaps are far more common than people think — redundancy, illness, caring responsibilities, travel, study. The key is to be honest, brief, and forward-looking. Do not over-explain or apologise.</p>
+            <div class="ex">"I took a year out to care for a family member, which was the right decision at the time. During that period I also completed an online project management certification, and I'm fully ready and enthusiastic to return to a full-time role now." <button class="say" data-say="I took a year out to care for a family member, which was the right decision at the time. During that period I also completed an online project management certification, and I'm fully ready and enthusiastic to return to a full-time role now.">🔊 Listen</button></div>
+            <blockquote>Brevity and confidence are your allies. Give the honest reason, mention anything constructive you did during the gap, and pivot to your enthusiasm for this role.</blockquote>
+
+            <h3>"Why did you leave your last role?"</h3>
+            <p>Never criticise former employers — it reflects poorly on you regardless of whether you were wronged. Acceptable reasons include:</p>
+            <ul>
+              <li>Seeking new challenges or a broader scope of responsibility</li>
+              <li>The role had run its natural course and you wanted to grow further</li>
+              <li>Redundancy (state it matter-of-factly — it carries no stigma)</li>
+              <li>Relocating or a change in personal circumstances</li>
+            </ul>
+            <div class="ex">"I've genuinely valued my time there, but I've reached a point where I'm not going to grow further in that structure. This role offers the kind of challenge I'm looking for next." <button class="say" data-say="I've genuinely valued my time there, but I've reached a point where I'm not going to grow further in that structure. This role offers the kind of challenge I'm looking for next.">🔊 Listen</button></div>
+
+            <h3>"Why should we hire you?"</h3>
+            <p>This is an invitation to make your case directly. Prepare a concise, three-part answer: your <b>relevant skills</b>, your <b>evidence of impact</b>, and your <b>motivation for this specific role</b>.</p>
+            <div class="ex">"I bring a combination of deep technical knowledge and strong client-facing experience that I think is relatively rare. In my current role I've reduced support ticket volume by twenty-five per cent through better documentation and training. I'm also genuinely excited about the direction your product team is taking — I've followed your roadmap announcements closely — and I'd love to contribute to that." <button class="say" data-say="I bring a combination of deep technical knowledge and strong client-facing experience that I think is relatively rare. In my current role I've reduced support ticket volume by twenty-five per cent through better documentation and training. I'm also genuinely excited about the direction your product team is taking, and I'd love to contribute to that.">🔊 Listen</button></div>
+
+            <h3>Salary-adjacent traps</h3>
+            <p>If asked about salary at interview (rather than in a separate conversation), the safest approach is to defer or anchor to a range rather than naming a figure first.</p>
+            <ul>
+              <li><button class="say" data-say="I'd be happy to discuss that — could you share the budgeted range for the role first?">🔊</button> "I'd be happy to discuss that — could you share the budgeted range for the role first?"</li>
+              <li><button class="say" data-say="Based on my research and experience, I'd be looking somewhere in the region of forty-five to fifty thousand pounds, though I'm open to discussing the full package.">🔊</button> "Based on my research and experience, I'd be looking in the region of forty-five to fifty thousand, though I'm open to discussing the full package."</li>
+            </ul>
+            <div class="speakcheck" data-target="I've genuinely valued my time there, but I'm looking for a new challenge and this role is exactly the right next step."></div>
+            <div class="speakcheck" data-target="One thing I'm proud of is reducing the team's processing time by thirty per cent through a new workflow I introduced."></div>`,
+          tips: [
+            "Let numbers and specifics carry your achievements — evidence is not bragging.",
+            "CV gaps: be honest, brief, and forward-looking. Never apologise for them.",
+            "Never criticise former employers. Always frame your reason for leaving as growth-oriented."
+          ],
+          practice: "Write a 'Why should we hire you?' answer for a role you want. Include one specific achievement with a number, one skill, and one sentence about why this company or role motivates you. Say it aloud.",
+          quiz: [
+            { q: "In British interview culture, what makes an achievement claim credible rather than boastful?", choices: ["Louder delivery", "Vague positive adjectives", "Specific numbers and outcomes", "Repeating it twice"], answer: 2 },
+            { q: "When explaining a CV gap, the best approach is…", choices: ["Avoid the subject completely", "Over-explain and apologise at length", "Be honest, brief, and pivot to enthusiasm for the role", "Pretend the gap did not exist"], answer: 2 },
+            { q: "If asked for a salary figure first, a safe tactic is to…", choices: ["Refuse to answer", "Name a figure immediately without research", "Ask for their budgeted range first, or give a researched range", "Change the subject"], answer: 2 }
+          ]
+        },
+        {
+          id: "j9", level: "Intermediate", minutes: 11,
+          title: "Questions to ask and salary conversations",
+          content: `
+            <p>Near the end of most interviews the panel will ask: "Do you have any questions for us?" This is not a formality — it is a genuine opportunity. The questions you ask signal your level of preparation, your priorities, and how seriously you want the role. Similarly, if salary comes up, handling it with calm and professionalism can significantly affect your outcome.</p>
+
+            <h3>Why your questions matter</h3>
+            <p>Saying "No, I think you've covered everything" is one of the most common — and most damaging — things a candidate can say at this point. It reads as disinterest or lack of preparation. Aim to have <b>three to four questions prepared</b> and ask two or three, depending on how much time remains.</p>
+            <blockquote>Your questions reveal as much about you as your answers did. Ask about growth, the team, and success — not about holiday allowance or leaving early on Fridays.</blockquote>
+
+            <h3>Strong questions to ask the interviewer</h3>
+            <table>
+              <tr><th>Category</th><th>Example question</th></tr>
+              <tr><td>Role clarity</td><td>"What would success look like in this role after the first six months?" <button class="say" data-say="What would success look like in this role after the first six months?">🔊</button></td></tr>
+              <tr><td>Team and culture</td><td>"How would you describe the culture within the team?" <button class="say" data-say="How would you describe the culture within the team?">🔊</button></td></tr>
+              <tr><td>Challenges</td><td>"What are the biggest challenges the person in this role would face?" <button class="say" data-say="What are the biggest challenges the person in this role would face?">🔊</button></td></tr>
+              <tr><td>Development</td><td>"Are there opportunities for professional development or training within the role?" <button class="say" data-say="Are there opportunities for professional development or training within the role?">🔊</button></td></tr>
+              <tr><td>Next steps</td><td>"What are the next steps in the process and when might I expect to hear back?" <button class="say" data-say="What are the next steps in the process and when might I expect to hear back?">🔊</button></td></tr>
+              <tr><td>Interviewer insight</td><td>"What do you personally enjoy most about working here?" <button class="say" data-say="What do you personally enjoy most about working here?">🔊</button></td></tr>
+            </table>
+            <p>Tailor your questions to the conversation you have just had. If something they said earlier sparked curiosity, follow it up — it shows you were listening.</p>
+
+            <h3>Questions to avoid at this stage</h3>
+            <ul>
+              <li>Anything already covered in the job description or on the website — it looks like you did not prepare.</li>
+              <li>Salary and benefits if the interview is at an early stage — wait for an offer or a later conversation unless they raise it first.</li>
+              <li>Questions that sound entitled: "How quickly could I be promoted?" at a first interview.</li>
+            </ul>
+
+            <h3>Discussing salary politely in British style</h3>
+            <p>British professional culture tends to be indirect about money. Salary conversations happen, but they are handled with restraint. Key principles:</p>
+            <ul>
+              <li><b>Do your research first.</b> Use Glassdoor, LinkedIn Salary, and sector benchmarks to know your market rate before any conversation.</li>
+              <li><b>Let them go first if possible.</b> If they ask your expectations, respond with a researched range and frame it as a starting point.</li>
+              <li><b>Anchor to value, not need.</b> "Based on my experience and market rates" sounds professional. "I need this amount because of my rent" does not.</li>
+            </ul>
+            <div class="ex">"I've done some research and for this type of role in London, the market range seems to be around forty-five to fifty-two thousand. I'd be looking somewhere in that region, but I'm open to discussing the overall package." <button class="say" data-say="I've done some research and for this type of role in London, the market range seems to be around forty-five to fifty-two thousand. I'd be looking somewhere in that region, but I'm open to discussing the overall package.">🔊 Listen</button></div>
+
+            <h3>Negotiating professionally</h3>
+            <p>If you receive an offer below your expectation, it is entirely acceptable to negotiate — politely and positively. Frame it as a conversation, not a demand.</p>
+            <div class="ex">"Thank you so much — I'm genuinely excited about the opportunity. I was hoping to be closer to fifty thousand based on my research and the scope of the role. Is there any flexibility there?" <button class="say" data-say="Thank you so much — I'm genuinely excited about the opportunity. I was hoping to be closer to fifty thousand based on my research and the scope of the role. Is there any flexibility there?">🔊 Listen</button></div>
+            <p>If they cannot move on base salary, ask about other benefits: a signing bonus, additional holiday, flexible working, or an early performance review.</p>
+            <div class="speakcheck" data-target="What would success look like in this role after the first six months?"></div>
+            <div class="speakcheck" data-target="I've done some research and I'd be looking in the region of forty-five to fifty thousand, though I'm open to discussing the full package."></div>`,
+          tips: [
+            "Prepare three to four questions to ask — asking nothing signals disinterest.",
+            "Ask about success metrics, team culture, and challenges — not pay or perks at the first interview.",
+            "When negotiating salary, anchor to market research and frame it as an open conversation."
+          ],
+          practice: "Write four questions you would genuinely ask at an interview for a role you want. Make sure at least one is about success in the role and one is about the team. Practise saying them aloud until they sound natural.",
+          quiz: [
+            { q: "Saying 'No, I have no questions' at the end of an interview signals…", choices: ["Confidence and efficiency", "Disinterest or lack of preparation", "Strong listening skills", "Respect for their time"], answer: 1 },
+            { q: "The best questions to ask focus on…", choices: ["Holiday entitlement and perks", "Success in the role, team culture, and challenges", "Your competitor's salaries", "Why previous employees left"], answer: 1 },
+            { q: "When negotiating salary, you should anchor your ask to…", choices: ["Your current personal expenses", "What a friend was paid", "Market research and the scope of the role", "The highest salary you have ever heard of"], answer: 2 }
+          ]
+        },
+        {
+          id: "j10", level: "Intermediate", minutes: 10,
+          title: "Video and phone interviews, and following up",
+          content: `
+            <p>Video and phone interviews are now a standard part of the hiring process — often used as a first screen before an in-person interview. They have their own set of challenges, but with the right setup and technique you can come across just as strongly as in person — sometimes more so, because you can prepare your environment completely.</p>
+
+            <h3>Tech setup: get it right the day before</h3>
+            <p>Technical problems are one of the most common causes of a poor first impression on video. Eliminate them before they happen:</p>
+            <ul>
+              <li><b>Platform:</b> install and test Zoom, Teams, or Google Meet the day before. Log in and check your audio and camera.</li>
+              <li><b>Lighting:</b> face a window or a lamp in front of you — never sit with a window behind you or you will appear as a silhouette.</li>
+              <li><b>Background:</b> a plain, tidy background is ideal. Use a blurred virtual background if your space is untidy, but test it first.</li>
+              <li><b>Sound:</b> a quiet room with the door closed. Notify anyone at home that you have an important call. Turn off phone notifications.</li>
+              <li><b>Camera height:</b> position your camera at eye level — laptop screens on a stack of books if needed. Looking down into the camera is unflattering and signals disengagement.</li>
+            </ul>
+            <blockquote>Log in five minutes early. This shows punctuality and gives you time to resolve any last-minute tech issues without panic.</blockquote>
+
+            <h3>Eye contact and presence on camera</h3>
+            <p>The single most important technique in video interviews: <b>look at the camera lens, not at the screen</b>. Looking at the interviewer's face on screen means your eyes are pointing slightly downward — to them, this looks like you are avoiding eye contact.</p>
+            <p>Practical tips:</p>
+            <ul>
+              <li>Put a small sticky note or sticker just beside your camera lens as a reminder to look at it.</li>
+              <li>Keep your own video thumbnail small so you are not distracted by watching yourself.</li>
+              <li>Nod occasionally to show you are listening — in video calls, silence can feel more awkward than in person.</li>
+              <li>Speak slightly more slowly and clearly than you normally would — audio compression can muddy fast speech.</li>
+            </ul>
+            <div class="ex">"Good morning — lovely to meet you both. I can see and hear you clearly. Shall we begin?" <button class="say" data-say="Good morning — lovely to meet you both. I can see and hear you clearly. Shall we begin?">🔊 Listen</button></div>
+
+            <h3>Phone screen tips</h3>
+            <p>Phone interviews are often used for an initial screen or by recruiters. Without visual cues, your voice carries everything:</p>
+            <ul>
+              <li>Stand up or sit straight — posture affects vocal energy even though they cannot see you.</li>
+              <li>Smile when you speak — it genuinely changes your vocal tone and warmth.</li>
+              <li>Have your CV and a few key notes in front of you — one advantage of phone over in-person.</li>
+              <li>Pause naturally before answering. On the phone, a brief pause sounds thoughtful, not awkward.</li>
+              <li>Find somewhere quiet with good signal. Do not take an important call on public transport.</li>
+            </ul>
+            <div class="ex">"That's a great question — could I take a moment to gather my thoughts?" <button class="say" data-say="That's a great question — could I take a moment to gather my thoughts?">🔊 Listen</button></div>
+
+            <h3>Writing a polite thank-you and follow-up message</h3>
+            <p>Sending a brief thank-you message within 24 hours of an interview is common practice in the UK and is viewed positively — it reinforces your interest and keeps you memorable. Send it by email to the interviewer or HR contact.</p>
+            <p>Keep it to three short paragraphs:</p>
+            <ol>
+              <li>Thank them for their time and the conversation.</li>
+              <li>Briefly restate your enthusiasm for the role, mentioning one specific thing you discussed.</li>
+              <li>Say you look forward to hearing from them and offer to provide any further information.</li>
+            </ol>
+            <div class="ex">
+              "Dear Sarah,<br><br>Thank you so much for taking the time to speak with me this morning — I really enjoyed our conversation and learning more about the team's work on the new client platform.<br><br>Having heard more about the role, I'm even more enthusiastic about the opportunity. The focus on cross-functional collaboration in particular is exactly the kind of environment where I do my best work.<br><br>I look forward to hearing from you, and please do let me know if there is any further information I can provide in the meantime.<br><br>Kind regards,<br>Alex"
+              <button class="say" data-say="Dear Sarah, thank you so much for taking the time to speak with me this morning. I really enjoyed our conversation and learning more about the team's work on the new client platform. Having heard more about the role, I'm even more enthusiastic about the opportunity. The focus on cross-functional collaboration is exactly the kind of environment where I do my best work. I look forward to hearing from you, and please do let me know if there is any further information I can provide. Kind regards, Alex.">🔊 Listen to the full email</button>
+            </div>
+            <p>If you have not heard back after a week, it is entirely reasonable to send a brief, polite follow-up email asking for an update on the timeline.</p>
+            <div class="speakcheck" data-target="Good morning, lovely to meet you. I can see and hear you clearly — shall we begin?"></div>
+            <div class="speakcheck" data-target="Thank you for taking the time to speak with me today. I really enjoyed learning more about the role."></div>`,
+          tips: [
+            "Test your tech the day before: camera at eye level, face towards the light, quiet room.",
+            "On video, look at the camera lens — not the screen — to create genuine eye contact.",
+            "Send a brief, warm thank-you email within 24 hours of any interview."
+          ],
+          practice: "Set up your video interview space right now: check lighting, camera height, and background. Then draft a thank-you email for a real or imagined interview you have just had. Read it aloud to check the tone.",
+          quiz: [
+            { q: "Where should your camera be positioned for a video interview?", choices: ["Below eye level, looking up at you", "At eye level", "To the side", "Behind you"], answer: 1 },
+            { q: "On a video call, 'eye contact' means looking at…", choices: ["The interviewer's face on screen", "Your own image in the corner", "The camera lens", "Your notes"], answer: 2 },
+            { q: "A thank-you email should be sent…", choices: ["Only if you are sure you got the job", "Within 24 hours of the interview", "After a week, once they contact you", "Never — it looks desperate"], answer: 1 }
           ]
         }
       ]
@@ -1477,6 +5155,404 @@ const SPEAK_CURRICULUM = {
             { q: "When you don't know the answer to a question, you should…", choices: ["Make something up", "Be honest and offer to follow up", "Ignore it", "End the talk"], answer: 1 },
             { q: "The best first step when handling a question is to…", choices: ["Interrupt", "Listen fully, then pause to think", "Argue", "Repeat your whole talk"], answer: 1 },
             { q: "A helpful way to manage nerves is to…", choices: ["Skip rehearsing", "Rehearse aloud and nail your first line", "Drink lots of coffee", "Avoid breathing"], answer: 1 }
+          ]
+        },
+        {
+          id: "s5", level: "Intermediate", minutes: 11,
+          title: "Structuring a talk: opening, body and close",
+          content: `
+            <p>A brilliant idea buried inside a confused structure will never land. The audience needs to know where they are, where they are going, and why it matters. Master the three-part structure and your talks will feel effortless — for you and your listeners.</p>
+
+            <h3>Why structure matters</h3>
+            <p>Research consistently shows that audiences retain more when information is clearly organised. A talk without a visible spine forces listeners to do extra mental work just to follow you — and they quickly give up. Structure is not a constraint on creativity; it is the scaffold that lets your ideas shine.</p>
+            <blockquote>"Tell them what you'll tell them. Tell them. Then tell them what you told them." — the oldest and still the best advice in public speaking.</blockquote>
+
+            <h3>Part 1 — The opening (10–15 % of your time)</h3>
+            <p>The opening must do three jobs in rapid succession:</p>
+            <ol>
+              <li><b>Hook:</b> grab attention immediately (a question, a story, a statistic, a bold claim).</li>
+              <li><b>Thesis:</b> state the single core message of your talk in one sentence. <button class="say" data-say="Today I want to convince you that small daily habits beat occasional big efforts every time.">🔊 Listen</button></li>
+              <li><b>Roadmap:</b> briefly preview the structure so the audience knows what is coming. <button class="say" data-say="I'll cover three areas: why habits work, how to build them, and one common mistake to avoid.">🔊 Listen</button></li>
+            </ol>
+            <p>The roadmap removes anxiety for the audience and keeps you on track as a speaker.</p>
+
+            <h3>Part 2 — The body (70–75 % of your time)</h3>
+            <p>Divide your content into <b>two to four main points</b>. Any more and the audience cannot hold them all. For each point, use the <b>PEE pattern</b>:</p>
+            <ul>
+              <li><b>Point:</b> state it clearly. <button class="say" data-say="My first point is that consistency matters far more than intensity.">🔊 Listen</button></li>
+              <li><b>Evidence:</b> a fact, statistic, example or short anecdote that proves it.</li>
+              <li><b>Explanation:</b> connect the evidence back to your core message.</li>
+            </ul>
+            <p>Separate each point with a clear transition phrase so the audience always knows where they are (see the signposting lesson for a full list).</p>
+
+            <h3>The rule of three</h3>
+            <p>Wherever possible, group things in threes. Three is the smallest number that creates a pattern, and it is deeply satisfying to the human brain. Examples of the rule of three in action:</p>
+            <div class="ex"><button class="say" data-say="It's quick, it's simple, and it actually works.">🔊 Listen</button> "It's quick, it's simple, and it actually works."</div>
+            <div class="ex"><button class="say" data-say="We will reduce costs, improve quality, and delight our customers.">🔊 Listen</button> "We will reduce costs, improve quality, and delight our customers."</div>
+            <p>If you have five points, see whether two can be merged. If you have two, consider whether a third can be added.</p>
+
+            <h3>Part 3 — The close (10–15 % of your time)</h3>
+            <p>The close has two jobs: <b>recap</b> and <b>call to action</b>.</p>
+            <ul>
+              <li><b>Recap:</b> briefly restate your three points in one or two sentences. <button class="say" data-say="So, to recap: habits beat willpower, small steps compound over time, and your environment shapes your behaviour.">🔊 Listen</button></li>
+              <li><b>Call to action:</b> tell the audience exactly what you want them to think, feel or do next. <button class="say" data-say="This week, choose just one habit. Do it for seven days straight. See what changes.">🔊 Listen</button></li>
+            </ul>
+            <p>Always signal the end clearly so the audience can settle and absorb. Avoid trailing off with "…yeah, so that's about it." End on purpose, with a full stop.</p>
+
+            <h3>Planning tool: the talk map</h3>
+            <p>Before you write a single slide or note, fill in this skeleton on paper:</p>
+            <table>
+              <tr><th>Section</th><th>What goes here</th><th>Time</th></tr>
+              <tr><td>Hook</td><td>Opening question / story / statistic</td><td>~30 sec</td></tr>
+              <tr><td>Thesis</td><td>Your one core message</td><td>~15 sec</td></tr>
+              <tr><td>Roadmap</td><td>"I'll cover three areas…"</td><td>~20 sec</td></tr>
+              <tr><td>Point 1</td><td>Point + evidence + explanation</td><td>~3 min</td></tr>
+              <tr><td>Point 2</td><td>Point + evidence + explanation</td><td>~3 min</td></tr>
+              <tr><td>Point 3</td><td>Point + evidence + explanation</td><td>~3 min</td></tr>
+              <tr><td>Recap</td><td>Restate three points briefly</td><td>~30 sec</td></tr>
+              <tr><td>Call to action</td><td>One clear instruction</td><td>~30 sec</td></tr>
+            </table>
+            <div class="speakcheck" data-target="Today I want to share three ideas that will change how you approach your work."></div>
+            <div class="speakcheck" data-target="So to recap, the three things to remember are: prepare, practise, and pause."></div>`,
+          tips: [
+            "Limit your body to three or four points — depth and clarity beat an exhaustive list every time.",
+            "Write your thesis as a single sentence before planning anything else; it keeps your whole talk focused.",
+            "Always signal the close explicitly ('So, to bring this together…') so the audience knows to pay attention."
+          ],
+          practice: "Pick any topic you know well. In five minutes, write a talk map: one hook sentence, your thesis, three points (each with one example), and a call to action. Then say the opening roadmap aloud: 'Today I'll cover three areas…' <button class=\"say\" data-say=\"Today I'll cover three areas: first, second, and third.\">🔊 Listen</button>",
+          quiz: [
+            { q: "What are the three jobs of a talk opening?", choices: ["Hook, apology and thanks", "Hook, thesis and roadmap", "Joke, agenda slide and biography", "Statistic, slide and question"], answer: 1 },
+            { q: "The PEE pattern in the body of a talk stands for…", choices: ["Pace, Energy, Enthusiasm", "Point, Evidence, Explanation", "Pause, Emphasis, Exit", "Problem, Example, Emotion"], answer: 1 },
+            { q: "Why does the rule of three work so well?", choices: ["It fills time neatly", "Three is the minimum number that creates a satisfying pattern", "Audiences can only count to three", "It is required by presentation software"], answer: 1 }
+          ]
+        },
+        {
+          id: "s6", level: "Intermediate", minutes: 10,
+          title: "Powerful openings and hooks",
+          content: `
+            <p>You have roughly <b>thirty seconds</b> before an audience decides whether you are worth listening to. Most speakers waste those seconds with a flat "Hello, my name is… and today I'm going to talk about…" That line kills momentum before it begins. This lesson gives you five proven alternatives.</p>
+
+            <h3>Why the opening is everything</h3>
+            <p>Psychologists call this the <b>primacy effect</b>: what we hear first sticks disproportionately in memory. A strong opening does three things at once — it earns attention, it establishes your credibility, and it frames the entire talk. Equally, a weak opening is very difficult to recover from.</p>
+            <blockquote>"Your opening is not a warm-up. It is the talk. Everything else is the proof."</blockquote>
+
+            <h3>Hook type 1 — The question</h3>
+            <p>A well-chosen question pulls the audience straight into your world. Use either a rhetorical question (you don't expect an answer) or a show-of-hands question (which creates instant engagement).</p>
+            <div class="ex"><button class="say" data-say="Have you ever sat through a meeting that could have been an email?">🔊 Listen</button> "Have you ever sat through a meeting that could have been an email?"</div>
+            <div class="ex"><button class="say" data-say="How many of you have ever felt completely overwhelmed at work? Put your hand up.">🔊 Listen</button> "How many of you have ever felt completely overwhelmed at work? Put your hand up."</div>
+            <p>The question works because it makes the audience <em>think</em> before you have said anything of substance — they are already engaged.</p>
+
+            <h3>Hook type 2 — The surprising fact or statistic</h3>
+            <p>A genuinely surprising number or fact stops the audience in their tracks. The key word is <em>surprising</em> — a familiar statistic does nothing.</p>
+            <div class="ex"><button class="say" data-say="We spend an average of two hours and twenty-seven minutes every day on social media. That's more than six years over a lifetime.">🔊 Listen</button> "We spend an average of two hours and twenty-seven minutes every day on social media. That's more than six years over a lifetime."</div>
+            <p>Always give the source briefly ("According to the ONS…") to add credibility. <button class="say" data-say="According to recent research, seventy-five per cent of people fear public speaking more than death.">🔊 Listen</button></p>
+
+            <h3>Hook type 3 — The short story</h3>
+            <p>Human beings are wired for narrative. A sixty-second story that is concrete, specific and personal creates more engagement than any slide. Use the simple <b>situation–complication–resolution</b> arc:</p>
+            <ul>
+              <li><b>Situation:</b> set the scene briefly. <button class="say" data-say="Three years ago I was standing outside a boardroom, about to give the most important presentation of my career.">🔊 Listen</button></li>
+              <li><b>Complication:</b> something went wrong or something surprising happened.</li>
+              <li><b>Resolution:</b> what you learnt — and why it matters to the audience today.</li>
+            </ul>
+            <p>Keep it tight. A story that runs over ninety seconds before you have made a single point starts to feel self-indulgent.</p>
+
+            <h3>Hook type 4 — The bold statement</h3>
+            <p>A deliberately provocative or counter-intuitive claim creates instant curiosity. The audience <em>wants</em> to know whether you can back it up.</p>
+            <div class="ex"><button class="say" data-say="Everything you have been taught about productivity is making you less productive.">🔊 Listen</button> "Everything you have been taught about productivity is making you less productive."</div>
+            <div class="ex"><button class="say" data-say="The biggest problem in this organisation is not strategy. It's silence.">🔊 Listen</button> "The biggest problem in this organisation is not strategy. It's silence."</div>
+            <p>A bold statement <em>must</em> be backed up in the body of your talk. If it turns out to be empty, you lose all credibility.</p>
+
+            <h3>Hook type 5 — The relevant quote</h3>
+            <p>Use quotes sparingly, and only when they are genuinely striking. Avoid overused quotes — if you've heard it at three conferences already, so has your audience. When you do use one, deliver it slowly and let it breathe:</p>
+            <div class="ex"><button class="say" data-say="Winston Churchill once said: 'If you have an important point to make, don't try to be subtle or clever. Use a pile driver.'">🔊 Listen</button> Winston Churchill once said: "If you have an important point to make, don't try to be subtle or clever. Use a pile driver."</div>
+
+            <h3>Common openings to avoid</h3>
+            <table>
+              <tr><th>Avoid this</th><th>Why it fails</th><th>Replace it with</th></tr>
+              <tr><td>"Erm, so, yeah, today I'm going to talk about…"</td><td>Sounds unconfident; wastes the audience's time</td><td>Jump straight into your hook</td></tr>
+              <tr><td>"I'm not really a public speaker, but…"</td><td>Destroys credibility before you start</td><td>Silence, then your opening line</td></tr>
+              <tr><td>"Can everyone hear me?"</td><td>Check the mic beforehand, not during your opening</td><td>Open with authority</td></tr>
+              <tr><td>Reading the slide title aloud</td><td>Tells the audience nothing new</td><td>Tell them what the slide means to them</td></tr>
+            </table>
+            <div class="speakcheck" data-target="Have you ever wondered why some people seem to thrive under pressure while others fall apart?"></div>
+            <div class="speakcheck" data-target="Here is a fact that stopped me in my tracks when I first heard it."></div>`,
+          tips: [
+            "Rehearse your first three sentences until you can say them in your sleep — that kills the nerves at the worst moment.",
+            "Choose your hook type based on your audience: a show-of-hands question works well in a workshop; a bold statement suits a keynote.",
+            "Never apologise in your opening — not for nerves, not for preparation, not for anything."
+          ],
+          practice: "Take one talk topic and write three different openings: a question, a surprising fact, and a bold statement. Say each one aloud and notice which feels most natural for your voice. <button class=\"say\" data-say=\"Have you ever wondered why the most confident people in the room often have the least to say?\">🔊 Listen</button>",
+          quiz: [
+            { q: "The primacy effect means…", choices: ["First impressions stick disproportionately in memory", "Audiences prefer primary colours on slides", "You should always start with your main point", "Opening music helps the audience settle"], answer: 0 },
+            { q: "Which of these is a strong opening?", choices: ["'Erm, so yeah, today I'm going to talk about…'", "'Can everyone hear me alright?'", "'Three years ago I made a decision that changed everything.'", "'I apologise, I'm a bit nervous today.'"], answer: 2 },
+            { q: "The situation-complication-resolution arc is used for which hook type?", choices: ["The question", "The surprising fact", "The short story", "The bold statement"], answer: 2 }
+          ]
+        },
+        {
+          id: "s7", level: "Intermediate", minutes: 11,
+          title: "Signposting and transitions",
+          content: `
+            <p>Even a perfectly structured talk can feel confusing if the audience cannot <em>hear</em> the structure. Signposting is the art of narrating your own talk as you give it — using verbal road signs to tell people where they are, where they have been, and where they are going next. It is one of the most powerful and under-taught skills in public speaking.</p>
+
+            <h3>What is signposting?</h3>
+            <p>A signpost is any phrase that makes the architecture of your talk audible. Think of it as giving your audience a map and then regularly reminding them where they are on it. Without signposts, even an attentive listener can feel lost — and a lost listener stops listening.</p>
+            <blockquote>"Your audience cannot re-read you. Unlike a page, a talk exists only in real time. Signposts are how you help them keep up."</blockquote>
+
+            <h3>Category 1 — Announcing the structure</h3>
+            <p>Use these at the very start, after your hook, to give your audience the roadmap:</p>
+            <table>
+              <tr><th>Phrase</th><th>When to use it</th></tr>
+              <tr><td><button class="say" data-say="I'll be covering three main areas this morning.">🔊 Listen</button> "I'll be covering three main areas this morning."</td><td>Roadmap at the start</td></tr>
+              <tr><td><button class="say" data-say="My talk is divided into two parts.">🔊 Listen</button> "My talk is divided into two parts."</td><td>Two-part structure</td></tr>
+              <tr><td><button class="say" data-say="By the end of this session you'll have a clear plan for the next quarter.">🔊 Listen</button> "By the end of this session you'll have a clear plan…"</td><td>Promise a payoff upfront</td></tr>
+            </table>
+
+            <h3>Category 2 — Moving between points</h3>
+            <p>These phrases close one section and open the next. They are the most important signposts in your talk — use them every single time you shift topics:</p>
+            <table>
+              <tr><th>Transition phrase</th><th>Function</th></tr>
+              <tr><td><button class="say" data-say="So that's the background. Now let's look at the solution.">🔊 Listen</button> "So that's the background. Now let's look at the solution."</td><td>Close + open</td></tr>
+              <tr><td><button class="say" data-say="Moving on to my second point…">🔊 Listen</button> "Moving on to my second point…"</td><td>Simple numbered transition</td></tr>
+              <tr><td><button class="say" data-say="That brings me neatly to the question of cost.">🔊 Listen</button> "That brings me neatly to the question of cost."</td><td>Linked transition — shows logic</td></tr>
+              <tr><td><button class="say" data-say="Now, having covered why this matters, let's turn to how it works.">🔊 Listen</button> "Now, having covered why this matters, let's turn to how it works."</td><td>Internal summary + preview</td></tr>
+              <tr><td><button class="say" data-say="I'd like to shift focus now and look at this from a different angle.">🔊 Listen</button> "I'd like to shift focus now and look at this from a different angle."</td><td>Signals a perspective change</td></tr>
+            </table>
+
+            <h3>Category 3 — Emphasising key points</h3>
+            <p>These phrases tell the audience: "This is important — pay close attention."</p>
+            <table>
+              <tr><th>Emphasis phrase</th><th>Effect</th></tr>
+              <tr><td><button class="say" data-say="The key point here is this…">🔊 Listen</button> "The key point here is this…"</td><td>Alerts the audience</td></tr>
+              <tr><td><button class="say" data-say="What I really want you to take away from this is…">🔊 Listen</button> "What I really want you to take away from this is…"</td><td>Frames the main message</td></tr>
+              <tr><td><button class="say" data-say="This next point is perhaps the most important of all.">🔊 Listen</button> "This next point is perhaps the most important of all."</td><td>Builds anticipation</td></tr>
+              <tr><td><button class="say" data-say="I'll say that again because it really matters.">🔊 Listen</button> "I'll say that again because it really matters."</td><td>Deliberate repetition</td></tr>
+            </table>
+
+            <h3>Category 4 — Referring back and looking ahead</h3>
+            <p>These phrases link different parts of your talk, showing the audience that everything is connected:</p>
+            <ul>
+              <li><b>Referring back:</b> <button class="say" data-say="As I mentioned at the start…">🔊 Listen</button> "As I mentioned at the start…" — "You'll recall that earlier I said…"</li>
+              <li><b>Looking ahead:</b> <button class="say" data-say="I'll come back to that point in a moment.">🔊 Listen</button> "I'll come back to that point in a moment." — "We'll explore this in more depth shortly."</li>
+            </ul>
+
+            <h3>Category 5 — Closing and summarising</h3>
+            <table>
+              <tr><th>Closing phrase</th><th>When to use it</th></tr>
+              <tr><td><button class="say" data-say="So to bring this all together…">🔊 Listen</button> "So to bring this all together…"</td><td>Start of the close</td></tr>
+              <tr><td><button class="say" data-say="In summary, the three things I'd like you to remember are…">🔊 Listen</button> "In summary, the three things I'd like you to remember are…"</td><td>Recap</td></tr>
+              <tr><td><button class="say" data-say="And on that note, thank you very much.">🔊 Listen</button> "And on that note, thank you very much."</td><td>Final line</td></tr>
+            </table>
+            <p>A gentle warning: signposting should feel natural, not robotic. Vary the phrases — don't say "Moving on" seven times. The goal is clarity, not a formula.</p>
+            <div class="speakcheck" data-target="That brings me neatly to my second point, which is about communication."></div>
+            <div class="speakcheck" data-target="So to bring this all together, the three key ideas are preparation, clarity and confidence."></div>`,
+          tips: [
+            "Use a 'mini-summary' at the end of each main point before transitioning: one sentence that crystallises what you've just said.",
+            "Vary your transition phrases — repeating the same one sounds mechanical and draws attention to itself.",
+            "Signposting is not just words: a deliberate pause before a transition phrase adds weight and gives it time to register."
+          ],
+          practice: "Take a three-minute talk you know and mark exactly where each signpost goes. Then deliver it aloud using a different transition phrase each time you move between points. Aim to use at least one emphasis phrase and one back-reference. <button class=\"say\" data-say=\"Now, having looked at the problem, let's turn to the solution.\">🔊 Listen</button>",
+          quiz: [
+            { q: "What is the primary purpose of signposting in a talk?", choices: ["To add length to the talk", "To make the structure audible and help the audience follow", "To show off a large vocabulary", "To slow the talk down"], answer: 1 },
+            { q: "Which phrase is a 'close + open' transition?", choices: ["'The key point here is this…'", "'In summary…'", "'So that's the problem. Now let's look at the solution.'", "'I'll say that again.'"], answer: 2 },
+            { q: "Why should you vary your transition phrases?", choices: ["Different phrases confuse the audience helpfully", "Repetition of the same phrase sounds mechanical", "Variety uses up more time", "It impresses the audience with vocabulary"], answer: 1 }
+          ]
+        },
+        {
+          id: "s8", level: "Advanced", minutes: 11,
+          title: "Visual aids and describing data",
+          content: `
+            <p>Slides are one of the most abused tools in business communication. Used well, they amplify your message. Used badly, they compete with you and lose. This lesson covers the principles of effective slide design and — crucially — the language for describing charts, graphs and trends clearly and confidently.</p>
+
+            <h3>The golden rule: the speaker is the show</h3>
+            <p>Your slides are a visual aid, not a script. The moment your audience is reading a dense slide, they have stopped listening to you. Aim for slides that cannot be understood <em>without</em> the speaker — that is, you.</p>
+            <blockquote>"If your slides make perfect sense without you, you are not needed. Be needed."</blockquote>
+            <p>The practical test: if you can send your slides as a document and they tell the whole story, you have written a document, not a presentation. Simplify.</p>
+
+            <h3>Slide design principles</h3>
+            <ul>
+              <li><b>One idea per slide.</b> If you are tempted to add a second point, make a second slide.</li>
+              <li><b>Six words per bullet, maximum.</b> Better still, use no bullets at all — use an image or a single bold statistic.</li>
+              <li><b>Use visuals, not words.</b> A chart, photograph or diagram forces the audience to look up at you for the explanation.</li>
+              <li><b>High contrast, large font.</b> If the person in the back row cannot read it, it is not worth showing.</li>
+              <li><b>Blank slides are powerful.</b> A completely black slide forces all attention back to the speaker. Use one before an important moment.</li>
+            </ul>
+
+            <h3>Introducing a visual aid</h3>
+            <p>Never just click to the next slide and go silent. Introduce each visual explicitly — tell the audience what they are looking at and why it matters <em>before</em> they try to interpret it themselves:</p>
+            <table>
+              <tr><th>Introductory phrase</th><th>Function</th></tr>
+              <tr><td><button class="say" data-say="As you can see on this slide, sales have grown steadily over the past three years.">🔊 Listen</button> "As you can see on this slide…"</td><td>Directs attention to the visual</td></tr>
+              <tr><td><button class="say" data-say="This chart shows the relationship between staff training hours and customer satisfaction scores.">🔊 Listen</button> "This chart shows…"</td><td>Names what it represents</td></tr>
+              <tr><td><button class="say" data-say="I want to draw your attention to the figures on the right-hand side.">🔊 Listen</button> "I want to draw your attention to…"</td><td>Focuses on the key part</td></tr>
+              <tr><td><button class="say" data-say="What this graph tells us is that the problem began long before last year.">🔊 Listen</button> "What this graph tells us is…"</td><td>Gives your interpretation</td></tr>
+            </table>
+
+            <h3>Describing trends and changes</h3>
+            <p>When describing data, use precise language for direction, speed and magnitude. Combine a <b>verb</b> with an <b>adverb</b>, or a <b>noun</b> with an <b>adjective</b>:</p>
+            <table>
+              <tr><th>Direction</th><th>Verb form</th><th>Noun form</th><th>Adverb/adjective modifier</th></tr>
+              <tr><td>Upward</td><td>rose, increased, grew, climbed, surged</td><td>a rise, an increase, growth</td><td>sharply, steadily, gradually, dramatically</td></tr>
+              <tr><td>Downward</td><td>fell, declined, dropped, plummeted, decreased</td><td>a fall, a decline, a drop</td><td>slightly, significantly, rapidly, steeply</td></tr>
+              <tr><td>Stable</td><td>remained stable, levelled off, plateaued, held steady</td><td>a plateau, stability</td><td>broadly, largely, consistently</td></tr>
+              <tr><td>Peak / trough</td><td>reached a peak, hit a low, peaked at</td><td>a peak, a trough, a high</td><td>all-time, record, historic</td></tr>
+            </table>
+            <p>Examples in use:</p>
+            <div class="ex"><button class="say" data-say="Revenue rose sharply in Q3, reaching a record high of twelve million pounds.">🔊 Listen</button> "Revenue rose sharply in Q3, reaching a record high of twelve million pounds."</div>
+            <div class="ex"><button class="say" data-say="After that peak, sales declined gradually before levelling off towards the end of the year.">🔊 Listen</button> "After that peak, sales declined gradually before levelling off towards the end of the year."</div>
+            <div class="ex"><button class="say" data-say="Customer complaints fell significantly following the introduction of the new policy.">🔊 Listen</button> "Customer complaints fell significantly following the introduction of the new policy."</div>
+
+            <h3>Highlighting what matters</h3>
+            <p>Data without interpretation is just noise. After describing what happened, always add <b>your analysis</b> — what it means and why the audience should care:</p>
+            <ul>
+              <li><button class="say" data-say="The striking thing here is that the decline began six months before the external crisis hit.">🔊 Listen</button> "The striking thing here is that the decline began six months before the external crisis hit."</li>
+              <li><button class="say" data-say="What this tells us, in practical terms, is that we need to act now rather than wait for Q4.">🔊 Listen</button> "What this tells us, in practical terms, is that we need to act now rather than wait for Q4."</li>
+              <li><button class="say" data-say="If this trend continues, we can expect to see a fifty per cent increase within eighteen months.">🔊 Listen</button> "If this trend continues, we can expect to see a fifty per cent increase within eighteen months."</li>
+            </ul>
+            <div class="speakcheck" data-target="As you can see on this slide, costs rose sharply in the second quarter before levelling off."></div>
+            <div class="speakcheck" data-target="What this data tells us is that early intervention makes a significant difference to the outcome."></div>`,
+          tips: [
+            "Before finalising any slide, ask: could the audience understand this without me? If yes, cut the text further.",
+            "Always tell the audience what a chart or graph means — never assume they will draw the same conclusion you do.",
+            "Combine a direction verb with a speed adverb for precise trend language: 'fell sharply', 'grew steadily', 'climbed gradually'."
+          ],
+          practice: "Find or sketch a simple line graph showing a trend over time. Describe it aloud in four sentences: one to introduce it, one to describe the main trend, one to note any peaks or troughs, and one to say what it means. Use at least two different trend verbs. <button class=\"say\" data-say=\"This graph shows our website traffic over the past twelve months. Visits grew steadily until June, then rose sharply following the product launch. They have since levelled off at around forty thousand per month. What this tells us is that the launch was a success, but we now need a strategy to continue that growth.\">🔊 Listen</button>",
+          quiz: [
+            { q: "The 'golden rule' of slide design is that…", choices: ["Slides should contain all information in case the speaker is absent", "The speaker is the show; slides are a visual aid only", "Every slide needs at least five bullet points", "Slides should be sent as a document after the talk"], answer: 1 },
+            { q: "Which phrase best introduces a chart to the audience?", choices: ["'This is self-explanatory.'", "'I won't spend long on this.'", "'I want to draw your attention to the figures on the left.'", "'You've probably all seen this before.'"], answer: 2 },
+            { q: "What should you always add after describing a data trend?", choices: ["An apology if the numbers are bad", "Your interpretation: what it means and why it matters", "A request for questions", "A second, more detailed chart"], answer: 1 }
+          ]
+        },
+        {
+          id: "s9", level: "Advanced", minutes: 12,
+          title: "Voice, body language and managing nerves",
+          content: `
+            <p>Content and structure get you into the room. Delivery keeps the audience there. Studies suggest that the way you speak — your voice, your body, your presence — accounts for the majority of the impression you make. The good news: every element of delivery is a learnable skill, including the management of nerves.</p>
+
+            <h3>Your voice: four levers to pull</h3>
+            <p>Think of your voice as an instrument with four controls. Most speakers use only one or two; excellent speakers use all four deliberately:</p>
+            <table>
+              <tr><th>Lever</th><th>What it does</th><th>How to use it</th></tr>
+              <tr><td><b>Pace</b></td><td>Slow = gravitas; fast = energy</td><td>Slow down on the most important words; speed up slightly for background detail or narrative momentum</td></tr>
+              <tr><td><b>Pause</b></td><td>Creates anticipation and lets ideas land</td><td>Pause <em>before</em> a key phrase (builds tension); pause <em>after</em> it (gives it time to sink in)</td></tr>
+              <tr><td><b>Pitch</b></td><td>Variation holds attention; monotone loses it</td><td>Rise on questions; drop on statements you want to be believed; avoid upward inflection on statements (makes you sound uncertain)</td></tr>
+              <tr><td><b>Volume</b></td><td>Loud = emphasis; quiet = draws people in</td><td>Drop your voice for a surprising or intimate point — the audience leans forward; raise it to energise or mark a new section</td></tr>
+            </table>
+            <p>Practise this sentence using all four levers:</p>
+            <div class="ex"><button class="say" data-say="And then — nothing. Complete silence. For thirty seconds, nobody moved.">🔊 Listen</button> "And then — nothing. Complete silence. For thirty seconds, nobody moved."</div>
+
+            <h3>Replacing fillers with silence</h3>
+            <p>Every "um", "er", "you know" and "sort of" chips away at your authority. The fix is simple but requires practice: when you feel an "um" coming, <b>say nothing instead</b>. A confident pause sounds far better than a filler, and after a few weeks of conscious practice, the habit breaks.</p>
+            <p>A useful drill: record yourself speaking for two minutes on any topic. Count your fillers. Repeat once a day for a week and watch the number drop.</p>
+            <div class="ex"><button class="say" data-say="The most important decision we made — and this took some courage — was to stop.">🔊 Listen</button> "The most important decision we made — and this took some courage — was to stop."</div>
+
+            <h3>Body language: from the ground up</h3>
+            <p>Your body speaks before your mouth opens. Audiences form instant impressions from your posture and movement. Follow these principles:</p>
+            <ul>
+              <li><b>Stance:</b> feet hip-width apart, weight even, grounded. Do not sway, rock or pace — it signals anxiety. <button class="say" data-say="Stand as if you own the floor beneath your feet.">🔊 Listen</button></li>
+              <li><b>Hands:</b> rest them at your sides when not gesturing — this feels unnatural but looks natural. Avoid clasped hands, hands in pockets, or the 'fig leaf' position in front of you. Use open gestures to illustrate size, direction or emphasis.</li>
+              <li><b>Eye contact:</b> talk to <em>one person</em> for two to four seconds, then move to another. This creates a genuine conversation rather than a broadcast. Never stare at your notes, the floor, or the back wall.</li>
+              <li><b>Facial expression:</b> match your expression to your content. Smiling during a warm story and looking serious during a sobering statistic shows emotional intelligence and keeps the audience connected.</li>
+              <li><b>Movement:</b> deliberate steps towards the audience signal engagement; stepping back can signal that you're yielding the floor. Random pacing is distracting.</li>
+            </ul>
+
+            <h3>Understanding and managing nerves</h3>
+            <p>Nerves are not the enemy — adrenaline is your body's performance system activating. The speakers who seem effortlessly confident are not without nerves; they have learned to interpret the physical sensations differently.</p>
+            <p>The most effective techniques, in order of impact:</p>
+            <ol>
+              <li><b>Prepare thoroughly and rehearse aloud.</b> Most nerves come from uncertainty. Every rehearsal reduces uncertainty. Run through the whole talk on your feet, not just in your head. <button class="say" data-say="Confidence is not the absence of nerves. It is the result of thorough preparation.">🔊 Listen</button></li>
+              <li><b>Breathe slowly and deliberately.</b> Before you walk on, take four slow breaths: four counts in, hold four, four counts out. This activates the parasympathetic nervous system and lowers heart rate measurably within sixty seconds.</li>
+              <li><b>Nail your first line.</b> Memorise your opening sentence word for word. The first ten seconds are the highest anxiety moment; once you are moving, the nerves settle rapidly. <button class="say" data-say="Good morning. I'd like to start with a question that has been bothering me for three years.">🔊 Listen</button></li>
+              <li><b>Reframe adrenaline as energy.</b> Tell yourself: "I'm excited" rather than "I'm terrified." Research by Alison Wood Brooks at Harvard shows this cognitive reframe measurably improves performance.</li>
+              <li><b>Make it about the audience.</b> Nerves are self-focused — you are worried about how <em>you</em> will come across. Shift your focus to: "What does this audience need to hear today?" That outward focus quietens anxiety.</li>
+            </ol>
+            <blockquote>"The goal is not to eliminate nerves. The goal is to channel them into presence and energy."</blockquote>
+
+            <h3>The warm-up routine</h3>
+            <p>Professional speakers warm up like athletes. In the five minutes before a talk:</p>
+            <ul>
+              <li>Breathe from your diaphragm — place a hand on your belly and breathe into it.</li>
+              <li>Hum gently to warm your vocal cords.</li>
+              <li>Say your first sentence aloud at least three times.</li>
+              <li>Stand in a confident posture for two minutes (research by Amy Cuddy suggests this can shift hormone levels).</li>
+            </ul>
+            <div class="speakcheck" data-target="Good morning. Before I begin, I'd like to ask you one simple question."></div>
+            <div class="speakcheck" data-target="The most important thing I want you to take away today is this."></div>`,
+          tips: [
+            "Record yourself once a week on any topic for two minutes and count your fillers — awareness alone reduces them faster than any other drill.",
+            "Plant your feet and stay still when making your most important point; movement dilutes emphasis.",
+            "Reframe nerves as excitement — the physical sensations are identical, but the label changes your relationship to them entirely."
+          ],
+          practice: "Stand up now and deliver this sentence three times, each time using a different combination of pace, pause and volume: 'The decision we made that day changed everything.' First: fast with no pause. Second: slow, with a full pause before 'changed'. Third: drop your voice to almost a whisper on the last three words. Notice which version has the most impact. <button class=\"say\" data-say=\"The decision we made that day changed everything.\">🔊 Listen</button>",
+          quiz: [
+            { q: "Dropping your voice suddenly during a talk typically makes the audience…", choices: ["Stop listening", "Lean forward and pay closer attention", "Think the microphone has broken", "Fall asleep"], answer: 1 },
+            { q: "Research by Alison Wood Brooks suggests that reframing anxiety as 'excitement'…", choices: ["Makes no difference", "Measurably improves performance", "Is unhelpful and unrealistic", "Only works for experienced speakers"], answer: 1 },
+            { q: "Effective eye contact in a talk means…", choices: ["Scanning the room continuously without stopping", "Staring at one person for the whole talk", "Looking at one person for two to four seconds before moving on", "Looking just above the audience's heads"], answer: 2 }
+          ]
+        },
+        {
+          id: "s10", level: "Intermediate", minutes: 11,
+          title: "Handling Q&A and memorable closings",
+          content: `
+            <p>For many speakers, the Q&A session is more frightening than the talk itself — and yet it is often where trust is built or destroyed. A speaker who handles tough questions with calm and intelligence leaves a stronger impression than one who delivers a polished talk and then crumbles. This lesson covers both: confident Q&A technique and the art of the unforgettable closing line.</p>
+
+            <h3>Setting up the Q&A well</h3>
+            <p>How you invite questions shapes what happens next. Avoid the flat "Any questions?" delivered whilst staring at the floor — it suggests you hope the answer will be no. Instead:</p>
+            <div class="ex"><button class="say" data-say="I'd really welcome your questions now. What's on your mind?">🔊 Listen</button> "I'd really welcome your questions now. What's on your mind?"</div>
+            <div class="ex"><button class="say" data-say="Before we close, I'd like to open the floor. Please do ask about anything I've covered — or anything I haven't.">🔊 Listen</button> "Before we close, I'd like to open the floor. Please do ask about anything I've covered — or anything I haven't."</div>
+            <p>If there is a silence at the start (common), have a <b>planted question</b> ready: "A question I often get asked at this point is…" <button class="say" data-say="A question I often get asked at this point is how long this typically takes. The honest answer is: it depends.">🔊 Listen</button></p>
+
+            <h3>The five-step answer framework</h3>
+            <p>Use this structure for every answer, especially difficult ones:</p>
+            <ol>
+              <li><b>Listen fully.</b> Do not interrupt or begin forming your answer while they are still speaking. Eye contact and a slight nod show you are listening.</li>
+              <li><b>Acknowledge.</b> A brief acknowledgement shows you have heard the question and values it. <button class="say" data-say="That's an important question and I want to give it a proper answer.">🔊 Listen</button> Use this sparingly — do not compliment every single question.</li>
+              <li><b>Buy time if needed.</b> It is perfectly professional to pause or rephrase: <button class="say" data-say="Let me just make sure I've understood your question correctly. Are you asking whether…">🔊 Listen</button></li>
+              <li><b>Answer concisely.</b> Give a direct answer — do not deliver a second speech. Two to four sentences is usually enough.</li>
+              <li><b>Check in.</b> Optionally: <button class="say" data-say="Does that answer what you were asking?">🔊 Listen</button> "Does that answer what you were asking?" — signals respect and ensures clarity.</li>
+            </ol>
+
+            <h3>Buying time gracefully</h3>
+            <p>It is entirely professional to take a moment before answering. These phrases buy you three to five seconds of thinking time without sounding evasive:</p>
+            <table>
+              <tr><th>Buy-time phrase</th><th>What it signals</th></tr>
+              <tr><td><button class="say" data-say="That's an interesting angle. Let me think about that for a moment.">🔊 Listen</button> "That's an interesting angle. Let me think about that for a moment."</td><td>Thoughtful, not caught off guard</td></tr>
+              <tr><td><button class="say" data-say="Could you just clarify what you mean by that?">🔊 Listen</button> "Could you just clarify what you mean by that?"</td><td>Genuine clarification or buys time</td></tr>
+              <tr><td><button class="say" data-say="So if I've understood correctly, you're asking whether…">🔊 Listen</button> "So if I've understood correctly, you're asking whether…"</td><td>Paraphrasing — confirms and buys time</td></tr>
+              <tr><td><button class="say" data-say="That's exactly the kind of question this area needs more of.">🔊 Listen</button> "That's exactly the kind of question this area needs more of."</td><td>Warmly redirects while you gather thoughts</td></tr>
+            </table>
+
+            <h3>Handling difficult questions</h3>
+            <p>Three types of difficult questions — and how to handle each:</p>
+            <ul>
+              <li><b>The question you don't know the answer to:</b> be honest. <button class="say" data-say="I don't have that data to hand, but it's a good question and I'll find out and come back to you.">🔊 Listen</button> Never bluff — a knowledgeable audience will know, and you will lose all credibility instantly.</li>
+              <li><b>The hostile or challenging question:</b> do not get defensive. Stay calm, acknowledge the point, and respond factually. <button class="say" data-say="I hear that concern, and it's a fair challenge. Here's how I'd respond to it.">🔊 Listen</button> Avoid sarcasm, sighing, or any dismissive gesture.</li>
+              <li><b>The unclear or rambling question:</b> paraphrase it back. <button class="say" data-say="Thank you — if I've captured the essence of that correctly, the question is essentially about timing. Is that right?">🔊 Listen</button> This is courteous to the questioner and helpful to everyone else in the room.</li>
+            </ul>
+
+            <h3>The memorable closing</h3>
+            <p>The Q&A should not be your ending. Plan a brief, powerful closing statement that you deliver <em>after</em> the last question. This is what the audience will carry away with them.</p>
+            <p>Types of memorable closing:</p>
+            <table>
+              <tr><th>Closing type</th><th>Example</th></tr>
+              <tr><td><b>The full circle</b> (return to your opening hook)</td><td><button class="say" data-say="I started by asking you whether you'd ever felt overwhelmed. I hope today has given you at least one reason to feel the opposite.">🔊 Listen</button></td></tr>
+              <tr><td><b>The call to action</b> (one specific thing to do)</td><td><button class="say" data-say="So this week, I'd ask you to do just one thing: have the conversation you've been putting off.">🔊 Listen</button></td></tr>
+              <tr><td><b>The memorable line</b> (short, punchy, final)</td><td><button class="say" data-say="The data shows us the problem. You are the solution. Thank you.">🔊 Listen</button></td></tr>
+              <tr><td><b>The question to carry away</b></td><td><button class="say" data-say="I'll leave you with this: if not now, when?">🔊 Listen</button></td></tr>
+            </table>
+            <p>Whatever closing you choose: deliver it, pause for a full two seconds, say "Thank you" with genuine warmth, and then <b>stop</b>. Do not add "…yeah, so that's about it really." The pause and the stop are as important as the words.</p>
+            <blockquote>"The last thing you say is the first thing they remember. End on purpose."</blockquote>
+            <div class="speakcheck" data-target="If I've understood correctly, you're asking whether this approach works at scale. Is that right?"></div>
+            <div class="speakcheck" data-target="I'd like to leave you with one thought: small actions, taken consistently, change everything. Thank you."></div>`,
+          tips: [
+            "Always plan a closing line to deliver after the Q&A — never let a question be your final word.",
+            "If you don't know the answer, say so clearly and offer to follow up; honesty builds more trust than a confident bluff.",
+            "Paraphrasing a question back to the asker shows respect, ensures accuracy, and gives you vital thinking time."
+          ],
+          practice: "Practise the Q&A with a partner or record yourself. Ask them to give you one straightforward question, one you can't answer, and one hostile question. Use the five-step framework each time and finish with your prepared closing line. <button class=\"say\" data-say=\"That's a really fair challenge. Here's how I'd respond to it. And on that note, thank you very much.\">🔊 Listen</button>",
+          quiz: [
+            { q: "What should you do if you genuinely don't know the answer to a question?", choices: ["Make up a plausible-sounding answer", "Change the subject quickly", "Be honest and offer to find out and follow up", "End the Q&A immediately"], answer: 2 },
+            { q: "Why should you plan a closing statement to deliver after the Q&A?", choices: ["To use up remaining time", "So the audience's final memory is your message, not a random question", "Because Q&A sessions are optional", "To give latecomers a summary"], answer: 1 },
+            { q: "Paraphrasing a question back to the asker ('So if I've understood correctly…') achieves which two things?", choices: ["It buys thinking time and wastes the audience's time", "It shows off your vocabulary and intimidates the questioner", "It confirms accuracy and buys a few seconds of thinking time", "It makes the question seem less important"], answer: 2 }
           ]
         }
       ]

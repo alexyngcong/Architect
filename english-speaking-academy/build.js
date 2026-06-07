@@ -47,6 +47,7 @@ ${css}
     <button class="nav-pill" data-nav="home" onclick="SUA.go('')">🏠 Home</button>
     <button class="nav-pill" data-nav="plan" onclick="SUA.go('plan')">🗓️ Plan</button>
     <button class="nav-pill" data-nav="lab" onclick="SUA.go('lab')">🎤 Speaking Lab</button>
+    <button class="nav-pill" data-nav="final" onclick="SUA.go('final')">🎓 Final Exam</button>
     <button class="nav-pill" data-nav="certificate" onclick="SUA.go('certificate')">🏆 Certificate</button>
     <button class="nav-pill" data-nav="settings" onclick="SUA.go('settings')" title="Voice & speed settings">⚙️</button>
     <label class="searchbox" title="Search lessons & phrases">

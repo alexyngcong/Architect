@@ -14,6 +14,8 @@ progress automatically**. No installation, no account, no server.
 `index.html` is a **single self-contained file** — all the lessons, styling and logic
 are bundled inside it. Copy that one file anywhere (USB stick, email, phone) and it just works.
 
+**🌐 Live site:** https://alexyngcong.github.io/english-speaking-academy/
+
 ---
 
 ## ▶️ How to start
