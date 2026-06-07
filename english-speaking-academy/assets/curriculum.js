@@ -18,20 +18,31 @@ const SPEAK_CURRICULUM = {
      STUDY PLAN — a guided, week-by-week path from basic to advanced.
      ====================================================================== */
   studyPlan: {
-    title: "11-Week Speaking Plan (Basic → Advanced)",
-    intro: "Do a little every day. Aim for ~20 minutes: read a short lesson, say every example out loud (tap 🔊 first, then copy it), pass the quiz, and finish each week in the Speaking Lab. You'll start with the everyday words and the classic mix-ups (their/there/they're), then build all the way up — by week 11 you'll handle interviews, exams and public speaking with a confident British tone.",
+    title: "22-Week Complete Speaking Plan (Basic → Advanced)",
+    intro: "A complete, guided path through every single lesson — start as a total beginner and finish ready for exams, interviews and public speaking. Do a little every day: aim for ~20 minutes, read a short lesson, say every example out loud (tap 🔊 first, then copy it), and pass the quiz to tick it off. Each module is split into two weeks so you build steadily from everyday basics to confident, advanced British English. Finish each module exam, then sit the Final Mastery Exam to earn your certificate.",
     days: [
-      { day: 1,  focus: "Get started: sounds, greetings & your first everyday words", lessons: ["f1", "f2", "f3", "v1"] },
-      { day: 2,  focus: "Everyday basics + the famous their/there/they're",          lessons: ["f4", "w1", "w2"] },
-      { day: 3,  focus: "More word mix-ups + describing things",                     lessons: ["w3", "w4", "v2"] },
-      { day: 4,  focus: "Start British pronunciation: vowels & the long /ɑː/",       lessons: ["p1", "p2", "p3"] },
-      { day: 5,  focus: "British sounds & confusing meaning twins",                  lessons: ["p4", "w5", "w6"] },
-      { day: 6,  focus: "Tone & music of English + words that go together",          lessons: ["t1", "t2", "v3"] },
-      { day: 7,  focus: "Intonation, connected speech & phrasal verbs",              lessons: ["t3", "t4", "t5", "v4"] },
-      { day: 8,  focus: "Everyday British conversation & small talk",                lessons: ["c1", "c2", "c3", "c4"] },
-      { day: 9,  focus: "Grammar you speak + precise, advanced vocabulary",          lessons: ["g1", "g2", "g3", "g4", "v5"] },
-      { day: 10, focus: "Fluency, idioms & storytelling",                            lessons: ["x1", "x2", "x3", "x4"] },
-      { day: 11, focus: "Exams & the working world: IELTS, interviews, presenting",  lessons: ["i1", "i2", "j1", "s1"] }
+      { day: 1, focus: "Speaking Foundations — Part 1", lessons: ["f1", "f2", "f3", "f4", "f5"] },
+      { day: 2, focus: "Speaking Foundations — Part 2", lessons: ["f6", "f7", "f8", "f9", "f10"] },
+      { day: 3, focus: "Confusing Words & Correct Usage — Part 1", lessons: ["w1", "w2", "w3", "w4", "w5"] },
+      { day: 4, focus: "Confusing Words & Correct Usage — Part 2", lessons: ["w6", "w7", "w8", "w9", "w10"] },
+      { day: 5, focus: "Vocabulary Builder & Word Power — Part 1", lessons: ["v1", "v2", "v3", "v4", "v5"] },
+      { day: 6, focus: "Vocabulary Builder & Word Power — Part 2", lessons: ["v6", "v7", "v8", "v9", "v10"] },
+      { day: 7, focus: "British Pronunciation Lab — Part 1", lessons: ["p1", "p2", "p3", "p4", "p5"] },
+      { day: 8, focus: "British Pronunciation Lab — Part 2", lessons: ["p6", "p7", "p8", "p9", "p10"] },
+      { day: 9, focus: "Tone, Intonation & Sounding Fluent — Part 1", lessons: ["t1", "t2", "t3", "t4", "t5"] },
+      { day: 10, focus: "Tone, Intonation & Sounding Fluent — Part 2", lessons: ["t6", "t7", "t8", "t9", "t10"] },
+      { day: 11, focus: "Everyday British Conversation — Part 1", lessons: ["c1", "c2", "c3", "c4", "c5"] },
+      { day: 12, focus: "Everyday British Conversation — Part 2", lessons: ["c6", "c7", "c8", "c9", "c10"] },
+      { day: 13, focus: "Grammar for Speaking — Part 1", lessons: ["g1", "g2", "g3", "g4", "g5"] },
+      { day: 14, focus: "Grammar for Speaking — Part 2", lessons: ["g6", "g7", "g8", "g9", "g10"] },
+      { day: 15, focus: "Fluency, Vocabulary & Idioms — Part 1", lessons: ["x1", "x2", "x3", "x4", "x5"] },
+      { day: 16, focus: "Fluency, Vocabulary & Idioms — Part 2", lessons: ["x6", "x7", "x8", "x9", "x10"] },
+      { day: 17, focus: "Exam Speaking: IELTS & Cambridge — Part 1", lessons: ["i1", "i2", "i3", "i4", "i5"] },
+      { day: 18, focus: "Exam Speaking: IELTS & Cambridge — Part 2", lessons: ["i6", "i7", "i8", "i9", "i10"] },
+      { day: 19, focus: "Job Interviews in English — Part 1", lessons: ["j1", "j2", "j3", "j4", "j5"] },
+      { day: 20, focus: "Job Interviews in English — Part 2", lessons: ["j6", "j7", "j8", "j9", "j10"] },
+      { day: 21, focus: "Public Speaking & Presentations — Part 1", lessons: ["s1", "s2", "s3", "s4", "s5"] },
+      { day: 22, focus: "Public Speaking & Presentations — Part 2", lessons: ["s6", "s7", "s8", "s9", "s10"] }
     ]
   },
 
@@ -4055,6 +4066,7 @@ const SPEAK_CURRICULUM = {
               <li>Did I use at least one complex sentence? (Grammar)</li>
               <li>Did my voice rise and fall? (Pronunciation)</li>
             </ul>
+            <p>Listen to a band-9-style answer that quietly ticks all four boxes: <button class="say" data-say="Well, in my view, it largely depends on the situation. On the one hand, technology has made life far more convenient; on the other, it can be quite isolating.">🔊 Listen</button></p>
             <div class="speakcheck" data-target="In my view, it largely depends on the situation, although there are exceptions."></div>`,
           tips: [
             "You're marked on HOW you speak, not whether your opinion is 'correct'.",
